@@ -1,0 +1,138 @@
+---
+layout: post
+title:  "Servomotor module"
+date:   2019-03-15 17:46:00 +0100
+categories: modules
+tags: [Actuation]
+---
+{% include var.md %}
+{% assign module = "Servomotor" %}
+
+# How to start with the {{ module }} module
+
+This guide contains all the basic notions you will need to use the {{ module }} module.
+
+<div class="sheet" markdown="1">
+
+<p class="sheet-title" markdown="1">**Name**</p>
+
+<p class="indent" markdown="1">{{module}}</p>
+
+<p class="sheet-title" markdown="1">**Type**</p>
+
+<p class="indent" markdown="1">`Servo`</p>
+
+<p class="sheet-title" markdown="1">**Image**</p>
+
+<p class="indent" markdown="1">![{{ module }} module](/assets/img/servo-module.png)</p>
+
+<p class="sheet-title" markdown="1">**Categories**</p>
+
+<p class="indent" markdown="1">
+{% for tag in page.tags %}
+  <a href="{{ "/" | absolute_url }}tags.html">{{ tag }}</a>
+{% endfor %}
+</p>
+</div>
+
+
+
+## Module categories
+
+|<a href="{{ "/" | absolute_url }}tags.html">{{act_title}}</a>|
+|:-|
+|![{{ act_title }}]({{ act_img }})|
+|{{act_desc}}|
+
+
+## How to connect your servo-motor to your modules
+
+The Servo module has 4 servo-motor ports ordered as shown on the following picture, from `S1` to `S4`.
+
+![Servomotor ports](/assets/img/servo-1.png)
+
+The servo module accepts supply voltage from `5V` to `7V`.
+
+<blockquote class="warning"><strong>Warning:</strong> USB module generally provides too weak power to drive a servomotor properly. It must be plugged to an AC power plug module.</blockquote><br />
+
+## How to control Servo module using pyluos
+
+To control your servo-motor through a Luos Robotics module, you can use the following command as an example:
+
+```python
+robot.servo1_mod.position = 92.3
+```
+ 
+Following is the full list of this module’s commands (robot and servo are to be replaced by the actual names of your robot and of the {{module}} module):
+
+Get the last position order of the servomotor’s output, in degrees (`°`) (`0.0` by default):
+
+```python
+robot.servo.position
+```
+ 
+Set the position of the output, in degrees (`°`):
+
+```python
+robot.servo.position(0.0)
+```
+ 
+Set `max_angle` value, in degrees (`°`):
+
+```python
+robot.servo.max_angle(180.0) 
+```
+ 
+Get the last value order of `max_angle`, in degrees (`°`) (`180.0` by default)
+
+```python
+robot.servo.max_angle
+```
+ 
+Set `min_pulse` value, in seconds (`s`):
+
+```python
+robot.servo.min_pulse(0.0005)
+```
+ 
+Get the last value order of `min_pulse`, in seconds (`s`) (`0.0005` by default):
+
+```python
+robot.servo.min_pulse
+```
+ 
+Set `max_pulse` value, in seconds(`s`):
+
+```python
+robot.servo.max_pulse(0.0015)
+```
+ 
+Get last value order of `max_pulse`, in seconds (`s`) (`0.0015` by default):
+
+```python
+robot.servo.max_pulse
+```
+ 
+Open the set of controls for this module:
+
+```python
+robot.servo.control()
+```
+ 
+
+----
+
+## Functions
+List of functions of {{module}} module:
+
+| **-** | - | - | 
+
+## Variables
+List of variables of {{module}} module:
+
+| **-** | - | - | 
+
+## Events
+List of events of {{module}} module:
+
+| **-** | - | - | 

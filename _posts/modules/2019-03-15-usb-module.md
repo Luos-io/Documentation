@@ -1,0 +1,133 @@
+---
+layout: post
+title:  "USB module"
+date:   2019-03-15 17:44:00 +0100
+categories: modules
+tags: [Power]
+---
+{% include var.md %}
+{% assign module = "USB" %}
+
+# How to start with the {{ module }} module
+
+This guide contains all the basic notions you will need to use the {{ module }} module.
+
+<div class="sheet" markdown="1">
+
+<p class="sheet-title" markdown="1">**Name**</p>
+
+<p class="indent" markdown="1">{{module}}</p>
+
+<p class="sheet-title" markdown="1">**Type**</p>
+
+<p class="indent" markdown="1">``</p>
+
+<p class="sheet-title" markdown="1">**Image**</p>
+
+<p class="indent" markdown="1">![{{ module }} module](/assets/img/usb-module.png)</p>
+
+<p class="sheet-title" markdown="1">**Categories**</p>
+
+<p class="indent" markdown="1">
+{% for tag in page.tags %}
+  <a href="{{ "/" | absolute_url }}tags.html">{{ tag }}</a>
+{% endfor %}
+</p>
+</div>
+
+
+
+## Module categories
+
+|<a href="{{ "/" | absolute_url }}tags.html">{{com_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{pow_title}}</a>|
+|:-|:-|
+|![{{ com_title }}]({{ com_img }})|![{{ pow_title }}]({{ pow_img }})|
+|{{com_desc}}|{{pow_desc}}|
+
+
+## Driver installation
+With Windows, you must install `VCP` and `D2XX` drivers first. They are available for download on these pages:
+
+[https://www.ftdichip.com/Drivers/VCP.htm](https://www.ftdichip.com/Drivers/VCP.htm)<br />
+[https://www.ftdichip.com/Drivers/D2XX.htm](https://www.ftdichip.com/Drivers/D2XX.htm)
+
+Select the files to download according to your system (x86 or x64) and install them on your computer.
+
+
+## How to connect your USB module to your computer
+
+As you can see on your module, there are 2 micro-USB ports. One of them is only used to [update your module]({{ "/" | absolute_url }}update-module-firmware.html), and the other one is the one we will use in this page.
+
+The right USB port used on this page is the one at the opposite of the Robus connectors. A blue LED light should turn on when if you plug properly your USB module.
+
+![{{ module }} module](/assets/img/usb-1.jpg)
+
+## How to use the USB module
+Luos Robotics USB module is programmed to act like a serial port on your system.
+To control your robot, you have to get and set `JSON` data into the serial port opened by the USB module. To do that using pyluos you can use the following python:
+
+```python
+from pyluos import Robot
+robot = Robot('COM13')
+robot.modules
+```
+ 
+### On Windows
+On Windows, a `COM` port is usually used (like `COM1`, `COM2`, `COM3`, etc.). It can be found in *Device Manager* (`right-click` on `Start` button), after it’s plugged:
+
+![Port COM](/assets/img/usb-2.png)
+
+Once the port is known, the connexion can be set on pyluos using:
+
+```python
+robot = Robot('COM27')
+```
+ 
+### On MacOS
+
+To list your available serial ports, use the following command line:
+
+```bash
+ls /dev/cu.usbserial-*
+```
+ 
+Once the port is known, the connexion can be set on pyluos using:
+
+```python
+robot = Robot('/dev/cu.usbserial-DN30VKKB')
+```
+ 
+### On Linux
+To list your available serial ports, type the following in a terminal:
+
+```bash
+dmesg | grep tty
+```
+ 
+Once the port is known, the connexion can be set on pyluos with python:
+
+```python
+robot = Robot('/dev/ttyS0')
+```
+ 
+## USB module power delivery
+
+The USB module power-delivery in the Robus network is limited to `500 mA`. This module can’t power too many modules or power-demanding ones like DC-motor module with one or two motors connected. If you experiment power issues, feel free to add a power category module like AC-power module.
+
+----
+
+## Functions
+List of functions of {{module}} module:
+
+| **-** | - | - | 
+
+## Variables
+List of variables of {{module}} module:
+
+| **-** | - | - | 
+
+## Events
+List of events of {{module}} module:
+
+| **-** | - | - | 
+

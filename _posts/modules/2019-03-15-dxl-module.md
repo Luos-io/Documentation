@@ -1,0 +1,132 @@
+---
+layout: post
+title:  "Dynamixel module"
+date:   2019-03-15 17:55:00 +0100
+categories: modules
+tags: [Actuation, Sensor]
+---
+{% include var.md %}
+{% assign module = "Dynamixel" %}
+
+# How to start with the {{ module }} module
+
+This guide contains all the basic notions you will need to use the {{ module }} module.
+
+<div class="sheet" markdown="1">
+
+<p class="sheet-title" markdown="1">**Name**</p>
+
+<p class="indent" markdown="1">{{module}}</p>
+
+<p class="sheet-title" markdown="1">**Type**</p>
+
+<p class="indent" markdown="1">`DynamixelMotor`</p>
+
+<p class="sheet-title" markdown="1">**Images**</p>
+
+<p class="indent" markdown="1">![{{ module }} module](/assets/img/dxl1-module.png)![{{ module }} module](/assets/img/dxl2-module.png)</p>
+
+<p class="sheet-title" markdown="1">**Categories**</p>
+
+<p class="indent" markdown="1">
+{% for tag in page.tags %}
+  <a href="{{ "/" | absolute_url }}tags.html">{{ tag }}</a>
+{% endfor %}
+</p>
+</div>
+
+
+## Module categories
+
+|<a href="{{ "/" | absolute_url }}tags.html">{{act_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{sen_title}}</a>|
+|:-|:-|
+|![{{act_title}}]({{act_img}})|![{{sen_title}}]({{sen_img}})|
+|{{act_desc}}|{{sen_desc}}|
+
+
+## Versions of {{ module }} modules
+
+There are two versions of this module. One is the version for XL320 Dynamixel, the other is for other types of Dynamixel (eg. AX12). Both module have a different connector.
+
+![Dynamixel connectors](/assets/img/dxl-1.png)
+
+Both versions work the same way.
+
+## How to connect and start the motors to the modules
+
+![Dynamixel](/assets/img/dxl-mod-1.jpg)
+
+The Dynamixel module is special because it has a dynamic number of visible modules, depending on the number of motors plugged to it. If you don’t plug any motor in your module, it will be invisible in the network. If you have 5 motors on your module, you will see 5 modules.
+
+This board creates modules dynamically upon motor detection. So in order to create module, this board has to detect motors, and to detect them they need to have a proper power supply.
+
+Indeed, if you power the Luos network with a `7v` supply for `12V`-Robotis-motors, the motors won’t reply to the module request and you won’t be able to see any Dynamixel module on your network.
+
+Here is how to properly connect every part together:
+
+1. Connect the power to the Dynamixel motors
+2. Connect the motors to the {{module}} module
+3. Connect the {{module}} module to the Luos network.
+
+> **Warning:** Always be sure to respect this order to have a proper startup.
+
+Dynamixel modules don’t belong to the power category. Thus, if you power your motors on the Robotis side, you won’t be able to share this power with others modules.
+
+On the contrary, if you power your Luos network using a power category module, then your modules and your Dynamixel motors will be able to use this power supply.
+
+## How to control {{ module }} module with pyluos
+
+To control the Robotis motor through a Luos Robotics network, use the following commands:
+
+```python
+# Makes the motor compliant (True or False):
+robot.my_dxl_9.compliant = False
+ 
+# Continuous rotation (True or False):
+robot.my_dxl_9.wheel_mode = False
+ 
+# Set the rotation speed:
+robot.my_dxl_9.moving_speed = 1024
+ 
+# Give a position:
+robot.my_dxl_9.target_position = 150.2
+ 
+# Motor control tool:
+robot.my_dxl_9.control()
+```
+
+> Note: By default, the {{module}} module is compliant (ie. `robot.my_dxl.compliant` is `True`).
+
+ 
+To get the measured position, use:
+
+```python
+robot.my_dxl_9.position
+```
+ 
+It returns an angle value in degrees.
+
+----
+
+## Functions
+List of functions of {{module}} module:
+
+| **control(self)** |  |  | 
+| **control(self)** | - | - | 
+| **set_power(power)** | - | - |
+| **-** | - | - | 
+
+## Variables
+List of variables of {{module}} module:
+
+| **target_position(self, target_position)** | Exemple | Description | 
+| **moving_speed(self, moving_speed)** | - | - | 
+| **compliant(self, compliant)** | - | - | 
+| **wheel_mode(self, wheel_mode)** | - | - | 
+| **power_ratio(self, new_power)** | - | - | 
+| **-** | - | - | 
+
+## Events
+List of events of {{module}} module:
+
+| **-** | - | - | 
