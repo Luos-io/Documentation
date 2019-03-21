@@ -1,5 +1,6 @@
 ---
 layout: default
+title: "Quick start"
 ---
 {% include var.md %}
 

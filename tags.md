@@ -1,7 +1,6 @@
 ---
 layout: default
 title:  "Tags"
-date:   2019-03-20 16:43:00 +0100
 ---
 
 # Modules' categories

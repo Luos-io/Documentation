@@ -1,5 +1,6 @@
 ---
 layout: default
+title: "Pyluos"
 ---
 {% include var.md %}
 

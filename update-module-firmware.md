@@ -1,5 +1,6 @@
 ---
 layout: default
+title: "Update firmware"
 ---
 {% include var.md %}
 
