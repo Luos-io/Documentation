@@ -35,7 +35,8 @@
 			<li><a href="{{ "/" | absolute_url }}pyluos.html">Pyluos</a></li>
 			<li><a href="{{ "/" | absolute_url }}update-module-firmware.html">Firmware update</a></li>
 			<li><b>Modules:</b></li>
-		{% for post in site.posts %}
+		{% assign sorted_post = site.posts | sort: 'title' %}
+		{% for post in sorted_post %}
 			<li class="module">
 				<a href="{{ post.url }}">{{ post.title }}</a>
 			</li>
