@@ -9,6 +9,10 @@ tags: [communication]
 {% assign module = "Wifi-BLE" %}
 {% include var.md %}
 
+<div markdown="1" class="wip"><img src="/assets/img/warning.png" class="img_warning">
+The information displayed on this page may be outdated or is a work in progress.
+</div><br />
+
 # How to start with the {{ module }} module
 
 This guide contains all the basic notions you will need to use the {{ module }} module.
