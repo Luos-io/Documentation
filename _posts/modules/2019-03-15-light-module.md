@@ -16,7 +16,7 @@ This guide contains all the basic notions you will need to use the {{ module }} 
 <p class="sheet-title" markdown="1">**Name:** {{module}}</p>
 <p class="sheet-title" markdown="1">**Type:** {{type}}</p>
 <p class="sheet-title" markdown="1">**Image**</p>
-<p class="indent" markdown="1"><img height="150" src="/assets/img/{{ module }}-module.png" alt="{{ tag | Capitalize }}"></p>
+<p class="indent" markdown="1"><img height="150" src="/assets/img/{{ module | downcase }}-module.png" alt="{{ tag | Capitalize }}"></p>
 <p class="sheet-title" markdown="1">**Categories**</p>
 <p class="indent" markdown="1">
 {% for tag in page.tags %}
