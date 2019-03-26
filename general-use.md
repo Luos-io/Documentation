@@ -14,15 +14,16 @@ Luos modules are classified in 6 categories. Each module belongs to at least one
 
 On each module’s image on the website one or several small symbols are displayed, allowing you to easily see the different categories it belongs to.
 
-|Sensor|Actuator|Communication|
-|:-|:-|:-|
-|![Actuator](/assets/img/sticker-sensor.png)|![Actuator](/assets/img/sticker-actuator.png)|![Communication](/assets/img/sticker-gate.png)|
-| Sensor modules are able to measure physical world environment.|Actuators modules are able to act on the physical world.|Communication modules (also called gates) are able to share your system’s inputs, outputs and configurations outside of your robot, using a JSON API. <br />You can use these modules to control or program your entire robot with any other device (computer, phone, another robot, etc.)|
 
-|Cognition|User interface|Power|
+|<a href="{{ "/" | absolute_url }}tags.html">{{sen_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{act_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{com_title}}</a>|
 |:-|:-|:-|
-|![Cognition](/assets/img/sticker-cognition.png)|![User interface](/assets/img/sticker-interface.png)|![Power](/assets/img/sticker-power.png)|
-|Cognition are modules dedicated to execute your code or host your AI.|These modules are built to interact with the user of the machine.|Power modules are able to share their input power source into the Robus wire to feed other modules.|
+|![{{sen_title}}]({{sen_img}})|![{{act_title}}]({{act_img}})|![{{com_title}}]({{com_img}})|
+|{{sen_desc}}|{{act_desc}}|{{com_desc}}|
+
+|<a href="{{ "/" | absolute_url }}tags.html">{{cog_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{int_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{pow_title}}</a>|
+|:-|:-|:-|
+|![{{cog_title}}]({{cog_img}})|![{{int_title}}]({{int_img}})|![{{pow_title}}]({{pow_img}})|
+|{{cog_desc}}|{{int_desc}}|{{pow_desc}}|
 
 
 ## Plugging modules together

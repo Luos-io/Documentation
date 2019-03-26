@@ -3,46 +3,27 @@ layout: post
 title:  "Distance module"
 date:   2019-03-15 17:56:00 +0100
 categories: modules
-tags: [Sensor]
+tags: [sensor]
 ---
-{% include var.md %}
 {% assign module = "Distance" %}
+{% include var.md %}
 
 # How to start with the {{ module }} module
 
 This guide contains all the basic notions you will need to use the {{ module }} module.
 
 <div class="sheet" markdown="1">
-
-<p class="sheet-title" markdown="1">**Name**</p>
-
-<p class="indent" markdown="1">{{module}}</p>
-
-<p class="sheet-title" markdown="1">**Type**</p>
-
-<p class="indent" markdown="1">`Distance`</p>
-
+<p class="sheet-title" markdown="1">**Name:** {{module}}</p>
+<p class="sheet-title" markdown="1">**Type:** {{type}}</p>
 <p class="sheet-title" markdown="1">**Image**</p>
-
-<p class="indent" markdown="1">![DC-motor module](/assets/img/distance-module.png)</p>
-
+<p class="indent" markdown="1"><img height="150" src="/assets/img/{{ module }}-module.png" alt="{{ tag | Capitalize }}"></p>
 <p class="sheet-title" markdown="1">**Categories**</p>
-
 <p class="indent" markdown="1">
 {% for tag in page.tags %}
-  <a href="{{ "/" | absolute_url }}tags.html">{{ tag }}</a>
+  <a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" alt="{{ tag | capitalize }}"></a>
 {% endfor %}
 </p>
 </div>
-
-
-## Module categories
-
-|<a href="{{ "/" | absolute_url }}tags.html">{{sen_title}}</a>|
-|:-|
-|![{{sen_title}}]({{sen_img}})|
-|{{sen_desc}}| 
-
 
 ## How to control the {{ module }} module with pyluos
 

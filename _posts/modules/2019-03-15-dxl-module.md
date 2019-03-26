@@ -3,46 +3,27 @@ layout: post
 title:  "Dynamixel module"
 date:   2019-03-15 17:55:00 +0100
 categories: modules
-tags: [Actuation, Sensor]
+tags: [actuation, sensor]
 ---
-{% include var.md %}
 {% assign module = "Dynamixel" %}
+{% include var.md %}
 
 # How to start with the {{ module }} module
 
 This guide contains all the basic notions you will need to use the {{ module }} module.
 
 <div class="sheet" markdown="1">
-
-<p class="sheet-title" markdown="1">**Name**</p>
-
-<p class="indent" markdown="1">{{module}}</p>
-
-<p class="sheet-title" markdown="1">**Type**</p>
-
-<p class="indent" markdown="1">`DynamixelMotor`</p>
-
+<p class="sheet-title" markdown="1">**Name:** {{module}}</p>
+<p class="sheet-title" markdown="1">**Type:** {{type}}</p>
 <p class="sheet-title" markdown="1">**Images**</p>
-
-<p class="indent" markdown="1">![{{ module }} module](/assets/img/dxl1-module.png)![{{ module }} module](/assets/img/dxl2-module.png)</p>
-
+<p class="indent" markdown="1"><img height="150" src="/assets/img/dxl1-module.png" alt="{{ tag | Capitalize }}"><img height="150" src="/assets/img/dxl2-module.png" alt="{{ tag | Capitalize }}"></p>
 <p class="sheet-title" markdown="1">**Categories**</p>
-
 <p class="indent" markdown="1">
 {% for tag in page.tags %}
-  <a href="{{ "/" | absolute_url }}tags.html">{{ tag }}</a>
+  <a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" alt="{{ tag | capitalize }}"></a>
 {% endfor %}
 </p>
 </div>
-
-
-## Module categories
-
-|<a href="{{ "/" | absolute_url }}tags.html">{{act_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{sen_title}}</a>|
-|:-|:-|
-|![{{act_title}}]({{act_img}})|![{{sen_title}}]({{sen_img}})|
-|{{act_desc}}|{{sen_desc}}|
-
 
 ## Versions of {{ module }} modules
 

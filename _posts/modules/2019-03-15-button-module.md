@@ -3,44 +3,27 @@ layout: post
 title:  "Button module"
 date:   2019-03-15 17:59:00 +0100
 categories: modules
-tags: [Sensor, Interface]
+tags: [sensor, interface]
 ---
-{% include var.md %}
 {% assign module = "Button" %}
+{% include var.md %}
 
 # How to start with the {{ module }} module
 
 This guide contains all the basic notions you will need to use the {{ module }} module.
 
 <div class="sheet" markdown="1">
-
-<p class="sheet-title" markdown="1">**Name**</p>
-
-<p class="indent" markdown="1">{{module}}</p>
-
-<p class="sheet-title" markdown="1">**Type**</p>
-
-<p class="indent" markdown="1">`Button`</p>
-
+<p class="sheet-title" markdown="1">**Name:** {{module}}</p>
+<p class="sheet-title" markdown="1">**Type:** {{type}}</p>
 <p class="sheet-title" markdown="1">**Image**</p>
-
-<p class="indent" markdown="1">![{{ module }} module](/assets/img/button-module.png)</p>
-
+<p class="indent" markdown="1"><img height="150" src="/assets/img/{{ module }}-module.png" alt="{{ tag | Capitalize }}"></p>
 <p class="sheet-title" markdown="1">**Categories**</p>
-
 <p class="indent" markdown="1">
 {% for tag in page.tags %}
-  <a href="{{ "/" | absolute_url }}tags.html">{{ tag }}</a>
+  <a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" alt="{{ tag | capitalize }}"></a>
 {% endfor %}
 </p>
 </div>
-
-## Module categories
-
-|<a href="{{ "/" | absolute_url }}tags.html">{{ sen_title }}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{ int_title }}</a>|
-|:-|:-|
-|![{{ sen_title }}]({{ sen_img }})|![{{ int_title }}]({{ int_img }})|
-|{{ sen_desc }}|{{ int_desc }}|
 
 
 ## How to use the {{ module }} module with Pyluos

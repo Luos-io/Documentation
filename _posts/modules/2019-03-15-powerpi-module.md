@@ -3,46 +3,27 @@ layout: post
 title:  "Power Pi module"
 date:   2019-03-15 17:50:00 +0100
 categories: modules
-tags: [Communication, Cognition, Power]
+tags: [communication, cognition, power]
 ---
+{% assign module = "Power-Pi" %}
 {% include var.md %}
-{% assign module = "Power Pi" %}
 
 # How to start with the {{ module }} module
 
 This guide contains all the basic notions you will need to use the {{ module }} module.
 
 <div class="sheet" markdown="1">
-
-<p class="sheet-title" markdown="1">**Name**</p>
-
-<p class="indent" markdown="1">{{module}}</p>
-
-<p class="sheet-title" markdown="1">**Type**</p>
-
-<p class="indent" markdown="1">``</p>
-
+<p class="sheet-title" markdown="1">**Name:** {{module}}</p>
+<p class="sheet-title" markdown="1">**Type:** {{type}}</p>
 <p class="sheet-title" markdown="1">**Image**</p>
-
-<p class="indent" markdown="1">![{{ module }} module](/assets/img/powerpi-module.png)</p>
-
+<p class="indent" markdown="1"><img height="150" src="/assets/img/{{ module }}-module.png" alt="{{ tag | Capitalize }}"></p>
 <p class="sheet-title" markdown="1">**Categories**</p>
-
 <p class="indent" markdown="1">
 {% for tag in page.tags %}
-  <a href="{{ "/" | absolute_url }}tags.html">{{ tag }}</a>
+  <a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" alt="{{ tag | capitalize }}"></a>
 {% endfor %}
 </p>
 </div>
-
-
-
-## Module categories
-
-|<a href="{{ "/" | absolute_url }}tags.html">{{com_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{cog_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{pow_title}}</a>|
-|:-|:-|
-|![{{ com_title }}]({{ com_img }})|![{{ cog_title }}]({{ cog_img }})|![{{ pow_title }}]({{ pow_img }})|
-|{{com_desc}}|{{cog_desc}}|{{pow_desc}}|
 
 
 ## Connection of Power Pi module to a board

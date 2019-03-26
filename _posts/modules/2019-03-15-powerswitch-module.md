@@ -3,48 +3,27 @@ layout: post
 title:  "Power-switch module"
 date:   2019-03-15 17:49:00 +0100
 categories: modules
-tags: [Actuation]
+tags: [actuation]
 ---
-{% include var.md %}
 {% assign module = "Power-switch" %}
+{% include var.md %}
 
 # How to start with the {{ module }} module
 
 This guide contains all the basic notions you will need to use the {{ module }} module.
 
 <div class="sheet" markdown="1">
-
-<p class="sheet-title" markdown="1">**Name**</p>
-
-<p class="indent" markdown="1">{{module}}</p>
-
-<p class="sheet-title" markdown="1">**Type**</p>
-
-<p class="indent" markdown="1">`PowerSwitch`</p>
-
+<p class="sheet-title" markdown="1">**Name:** {{module}}</p>
+<p class="sheet-title" markdown="1">**Type:** {{type}}</p>
 <p class="sheet-title" markdown="1">**Image**</p>
-
-<p class="indent" markdown="1">![{{ module }} module](/assets/img/powerswitch-module.png)</p>
-
+<p class="indent" markdown="1"><img height="150" src="/assets/img/{{ module }}-module.png" alt="{{ tag | Capitalize }}"></p>
 <p class="sheet-title" markdown="1">**Categories**</p>
-
 <p class="indent" markdown="1">
 {% for tag in page.tags %}
-  <a href="{{ "/" | absolute_url }}tags.html">{{ tag }}</a>
+  <a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" alt="{{ tag | capitalize }}"></a>
 {% endfor %}
 </p>
 </div>
-
-
-
-
-## Module categories
-
-|<a href="{{ "/" | absolute_url }}tags.html">{{act_title}}</a>|
-|:-|
-|![{{ act_title }}]({{ act_img }})|
-|{{act_desc}}|
-
 
 ## How to use the {{ module }} module using Pyluos
 
