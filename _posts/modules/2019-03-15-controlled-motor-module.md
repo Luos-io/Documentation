@@ -2,7 +2,7 @@
 layout: post
 title:  "Controlled-motor module"
 date:   2019-03-15 17:58:00 +0100
-categories: modules
+categories: module
 tags: [actuation]
 ---
 {% assign module = "Controlled-motor" %}

@@ -19,6 +19,8 @@
 {% assign int_img = "/assets/img/sticker-interface.png" %}
 {% assign pow_img = "/assets/img/sticker-power.png" %}
 
+{% assign last_version = "0.4.0" %}
+
 {% case module %}
   {% when 'Button' %}
      {% assign type = "Button" %}
@@ -58,4 +60,4 @@
 {% endcase %}
 
 
-{% assign last_version = "0.3.2" %}
+

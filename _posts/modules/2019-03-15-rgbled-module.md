@@ -2,7 +2,7 @@
 layout: post
 title:  "RGB LED module"
 date:   2019-03-15 17:47:00 +0100
-categories: modules
+categories: module
 tags: [actuation, interface]
 ---
 

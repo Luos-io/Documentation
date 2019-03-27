@@ -2,7 +2,7 @@
 layout: post
 title:  "Button module"
 date:   2019-03-15 17:59:00 +0100
-categories: modules
+categories: module
 tags: [sensor, interface]
 ---
 {% assign module = "Button" %}

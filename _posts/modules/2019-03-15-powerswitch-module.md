@@ -2,7 +2,7 @@
 layout: post
 title:  "Power-switch module"
 date:   2019-03-15 17:49:00 +0100
-categories: modules
+categories: module
 tags: [actuation]
 ---
 {% assign module = "Power-switch" %}

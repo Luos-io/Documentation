@@ -2,7 +2,7 @@
 layout: post
 title:  "Stepper module"
 date:   2019-03-15 17:45:00 +0100
-categories: modules
+categories: module
 tags: [actuation]
 ---
 

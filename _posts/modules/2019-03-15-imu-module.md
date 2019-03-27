@@ -2,7 +2,7 @@
 layout: post
 title:  "IMU module"
 date:   2019-03-15 17:53:00 +0100
-categories: modules
+categories: module
 tags: [sensor]
 ---
 {% assign module = "IMU" %}

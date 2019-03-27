@@ -2,7 +2,7 @@
 layout: post
 title:  "Dynamixel module"
 date:   2019-03-15 17:55:00 +0100
-categories: modules
+categories: module
 tags: [actuation, sensor]
 ---
 {% assign module = "Dynamixel" %}

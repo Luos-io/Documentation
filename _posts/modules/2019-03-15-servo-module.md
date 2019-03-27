@@ -2,7 +2,7 @@
 layout: post
 title:  "Servomotor module"
 date:   2019-03-15 17:46:00 +0100
-categories: modules
+categories: module
 tags: [actuation]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Distance module"
 date:   2019-03-15 17:56:00 +0100
-categories: modules
+categories: module
 tags: [sensor]
 ---
 {% assign module = "Distance" %}

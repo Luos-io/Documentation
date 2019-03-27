@@ -2,7 +2,7 @@
 layout: post
 title:  "Wifi/BLE module"
 date:   2019-03-15 17:43:00 +0100
-categories: modules
+categories: module
 tags: [communication]
 ---
 

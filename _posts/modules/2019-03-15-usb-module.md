@@ -2,7 +2,7 @@
 layout: post
 title:  "USB module"
 date:   2019-03-15 17:44:00 +0100
-categories: modules
+categories: module
 tags: [power, communication]
 ---
 {% assign module = "USB" %}

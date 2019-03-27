@@ -2,7 +2,7 @@
 layout: post
 title:  "GPIO module"
 date:   2019-03-15 17:54:00 +0100
-categories: modules
+categories: module
 tags: [actuation, sensor]
 ---
 {% assign module = "GPIO" %}

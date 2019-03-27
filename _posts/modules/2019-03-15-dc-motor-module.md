@@ -2,7 +2,7 @@
 layout: post
 title:  "DC-motor module"
 date:   2019-03-15 17:57:00 +0100
-categories: modules
+categories: [module]
 tags: [actuation]
 ---
 {% assign module = "DC-motor" %}
@@ -20,10 +20,11 @@ This guide contains all the basic notions you will need to use the {{ module }} 
 <p class="sheet-title" markdown="1">**Categories**</p>
 <p class="indent" markdown="1">
 {% for tag in page.tags %}
-  <a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" alt="{{ tag | capitalize }}"></a>
+  <a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" title="{{ tag | capitalize }}" alt="{{ tag | capitalize }}"></a>
 {% endfor %}
 </p>
 </div>
+
 
 ## How to control {{ module }} module with pyluos
 

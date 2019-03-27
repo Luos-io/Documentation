@@ -2,7 +2,7 @@
 layout: post
 title:  "Raspberry Pi module"
 date:   2019-03-15 17:48:00 +0100
-categories: modules
+categories: module
 tags: [communication, cognition, power]
 ---
 {% assign module = "Raspberry-Pi" %}
