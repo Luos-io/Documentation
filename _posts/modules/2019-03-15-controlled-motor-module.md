@@ -139,7 +139,7 @@ robot.controlled_moto.****
 ``` 
 Enable or disable a value measurement:
 ```python
-robot.controlled_moto.****(True or False)
+robot.controlled_moto.**** = True (or False)
 ``` 
 The characters \*\*\*\* must be replaced by one of the following:
 
