@@ -25,50 +25,128 @@ This guide contains all the basic notions you will need to use the {{ module }} 
 </p>
 </div>
 
-## How to connect and start your {{ module }} motors to your modules
+## How to setup your {{ module }}'s Wi-Fi
 
-![Dynamixel](/assets/img/dxl-mod-1.jpg)
+Upon receiving your new Raspberry Pi module along with the actual Raspberry Pi board (already plugged together when you order it), you will need to setup it before to start using it.
 
-The Dynamixel module is somehow special because it has a dynamic number of visible modules, depending on the number of motors. If you don’t plug any motor in your module, it will be invisible. If you have 5 motors on your module, you will see 5 modules.
+First, you have to connect your Raspberry Pi to your Wi-Fi network.
 
-This board creates modules dynamically upon motor detection. So in order to create module, this board has to detect motors, and to detect them they need to have a proper power supply.
+> **Warning:** The Raspberry Pi module is specially designed to work with a Raspberry Pi Zero WH. Plugging any other type of Raspberry Pi board will lead to several power problem.
 
-Indeed, if you power your Luos network with a 7v supply for 12V-Robotis-motors, the motors won’t reply to the module request and you won’t be able to see any Dynamixel module on your network.
 
-> **Warning:** Always be sure to plug Dynamixel power supply before any other module and before connecting to the computer in order to have a proper startup.
+Several solution exist to configure the Raspberry Pi’s Wi-Fi, we provide you with two of them according to your setup:
 
-Dynamixel modules don’t belong to the power category. Thus, if you power your motors on the Robotis side, you won’t be able to share this power with others modules.
+### First solution: with a computer and the Raspberry Pi’s SD
+You will need the following parts:
 
-On the contrary, if you power your Luos network using a power category module, then your modules and your Dynamixel motors will be able to use this power supply.
+ - A micro SD to SD card adapter (provided with your Raspberry Pi module)
+ - A computer with Bonjour installed on it
+You can download Bonjour by Apple [here](https://support.apple.com/kb/DL999). Install it on your computer if you don’t already have it.
 
-## How to control {{ module }} module with pyluos
+Plug the micro SD card to the micro-SD-to-SD adapter, and plug it to your computer. Ignore the messages that ask you if you want to format, and locate the SD card directory, named Boot. In Windows, it appears as a drive; in MacOS or Linux, go to
 
-To control the Robotis motor through a Luos Robotics network, use the following commands:
+```bash
+cd /Volumes/boot
+```
+
+Create a new file in this directory called wpa_supplicant.conf. The file should contain the following code:
+
+```bash
+country=fr
+update_config=1
+ctrl_interface=/var/run/wpa_supplicant
+
+network={
+ scan_ssid=1
+ ssid="SSID-Internet-box"
+ psk="Secured-key"
+}
+```
+
+Choose the country according to where you live, and replace SSID-Internet-box by the SSID of your internet device, and Secured-key by the password.
+
+Save the file and eject the SD card. Replace it into the Raspberry Pi’s slot.
+
+The Raspberry Pi can be located with the expression raspberrypi.local, thanks to the software Bonjour.
+
+### Second solution: with a screen and a keyboard
+
+![Raspberry-Pi connection](/assets/img/rpi-setup.jpg)
+
+In order to establish a connection, you will need:
+
+<ul>
+<li>A QWERTY keyboard</li>
+<li>An HDMI screen</li>
+<li>An USB charger or USB to micro-USB cable to power up the Raspberry Pi</li>
+<li>A micro USB to female USB adapter</li>
+<li>A micro-HDMI to HDMI adapter</li>
+<li>You can find the adapters you need in the Raspberry Pi zero toolkit, for example.</li>
+</ul>
+
+Now, plug all these elements on your Raspberry pi (do not plug anything to the Luos module which is already connected to your Raspberry Pi), and power it up. You should see on the screen the boot sequence and the file system expanding. After a few seconds, you should have a prompt asking you for username and password.
+
+Your Raspberry Pi have the default Raspberry username and password:
+
+```
+Username: pi
+Password: raspberry
+```
+
+As you can see at the bottom of the boot screen, the SSH port is now open, so you should start by changing the password of your board to avoid any security issue.
+
+To do that, use the following command:
+
+```bash
+sudo raspi-config
+```
+
+Choose option 1 to change your password and hostname, and choose option 2 to connect your board to your wifi.
+
+You can check your Wi-Fi connection and retrieve the IP address using
+
+```bash
+ifconfig
+```
+
+and halt your system using
+
+```bash
+sudo halt
+```
+
+Your raspberry is now ready to be used, you can start setting your Luos network up.
+
+> **Warning:** Your Raspberry Pi module doesn’t belong to the Power category. Using the power input of your Raspberry Pi doesn’t allow you to supply your others modules. In order to make it work properly, please use a power module on your system.
+
+## How to use your {{ module }}
+ 
+### Power
+Please note that the Raspberry Pi board connected to the Raspberry Pi module is already powered by the Luos network, through the power modules you use (Power module or Battery module).
+
+However, **the USB module can’t power the Raspberry Pi board**, because several voltage transformations are applied along the network. You can also use an universal power supply (+5.1V micro USB) directly plugged to the board.
+
+### Communication mode
+By default, your Raspberry Pi starts a Luos service at boot called *pyluos-usb2ws*. This service creates a pipe between a **websocket** opened on **port 9342**, and the Luos system. If you send standard Luos Json data into this web socket, it is directly sent into the Luos network.
+
+This way, you can control your robot from your computer even if it is moving or dispatched. For example, if you are using pyluos to control your robot, you can start your program with:
 
 ```python
-# Makes the motor compliant (True or False):
-robot.my_dxl_9.compliant = False
- 
-# Continuous rotation (True or False):
-robot.my_dxl_9.wheel_mode = False
- 
-# Set the rotation speed:
-robot.my_dxl_9.moving_speed = 1024
- 
-# Give a position:
-robot.my_dxl_9.target_position = 150.2
- 
-# Motor control tool:
-robot.my_dxl_9.control()
+from pyluos import Robot
+robot = Robot("raspberrypi.local")
+robot.modules
 ```
- 
-To get the measured position, use:
 
-```python
-robot.my_dxl_9.position
-```
- 
-It returns an angle value in degrees.
+In this example, you can replace raspberrypi.local by your Raspberry Pi’s IP or hostname.
+
+You should see the list of modules connected to the Raspberry Pi module.
+
+
+### Cognition mode
+Also, you can use your Raspberry Pi like an embedded computer for your robot. You are free to use it as you want.
+
+To send your Json data to your network, please use the serial port ‘/dev/ttyAMA0′ of your Raspberry Pi, as you can do it with the USB module.
+
 
 ----
 
