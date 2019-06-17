@@ -2,5 +2,5 @@ _site
 .sass-cache
 Gemfile.lock
 *.gem
-modele-page-module.md
-test.md
+.DS_Store
+**.DS_Store
