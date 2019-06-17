@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "DC-motor module"
-date:   2019-03-15 17:57:00 +0100
-categories: [module]
-tags: [actuation]
+title:  "Light module"
+date:   2019-03-15 17:52:00 +0100
+categories: board
+tags: [sensor]
 ---
-{% assign module = "DC-motor" %}
+{% assign module = "Light" %}
 {% include var.md %}
 
 # How to start with the {{ module }} module
@@ -20,37 +20,37 @@ This guide contains all the basic notions you will need to use the {{ module }} 
 <p class="sheet-title" markdown="1">**Categories**</p>
 <p class="indent" markdown="1">
 {% for tag in page.tags %}
-  <a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" title="{{ tag | capitalize }}" alt="{{ tag | capitalize }}"></a>
+  <a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" alt="{{ tag | capitalize }}"></a>
 {% endfor %}
 </p>
 </div>
 
+## How to use the {{ module }} module using Pyluos
 
-## How to control {{ module }} module with pyluos
+To control the Light module, you have to connect it to a Luos network and connect this network through a communication module to Pyluos.
 
-To control the {{ module }} through a Luos Robotics module, you can use the power ratio value between `-100%` and `100%`:
+Then you can access to your module and control it.
+
+To get the measured light in `lux`, you can use this command:
 
 ```python
-robot.DC_motor1_mod.power_ratio = -73.3
+robot.lightSensor.lux
 ```
 
-According to the sign of the value and to the side of each motor’s wire, the motor will turn in a direction or the other.
 
 ----
 
 ## Functions
 List of functions of {{module}} module:
 
-| **control(self)** |  |  | 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Variables
 List of variables of {{module}} module:
 
-| **power_ratio(self, s):** |  |  | 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Events
 List of events of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |

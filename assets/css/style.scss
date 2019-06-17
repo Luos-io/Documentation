@@ -11,26 +11,38 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #ddd; 
+  background: #ddd;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #ccc; 
+  background: #ccc;
 }
 
-li.module{
+li.board{
 	list-style-type: none;
 	margin-left: 10px;
 }
 
-li.module:before {
+li.board:before {
     color: #f00;
+    content: '\203a \0000a0';
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+li.module{
+    list-style-type: none;
+    margin-left: 10px;
+}
+
+li.module:before {
+    color: #0f0;
     content: '\203a \0000a0';
     font-size: 1.4em;
     font-weight: bold;
@@ -83,7 +95,7 @@ hr.endpost{
 }
 
 .language{
-	
+
 }
 
 

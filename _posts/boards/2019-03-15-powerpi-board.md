@@ -2,7 +2,7 @@
 layout: post
 title:  "Power Pi module"
 date:   2019-03-15 17:50:00 +0100
-categories: module
+categories: board
 tags: [communication, cognition, power]
 ---
 {% assign module = "Power-Pi" %}
@@ -37,30 +37,30 @@ The connection of the Power Pi module to an ODrive board or to a Raspberry Pi bo
 ![Preview](/assets/img/power-pi-2.png)<br />
 *On the left, a module connected to an ODrive board; on the right, a module connected to a Raspberry Pi board.*
 
- 
+
 
 ## Power Pi vs. Raspberry Pi modules
-For the technical documentation of the Power Pi module, please refer to the page [Raspberry Pi module]({{ site.baseurl }}{% post_url modules/2019-03-15-rpi-module %}).
+For the technical documentation of the Power Pi module, please refer to the page [Raspberry Pi module]({{ site.baseurl }}{% post_url boards/2019-03-15-rpi-board %}).
 
-The difference between Power Pi and Raspberry Pi modules is that the second can only be plugged with one particular Raspberry Pi board (model ZeroW, which is included into the package), whereas the Power Pi module can be plugged to any version of Raspberry Pi boards, as well as ODroid boards. 
+The difference between Power Pi and Raspberry Pi modules is that the second can only be plugged with one particular Raspberry Pi board (model ZeroW, which is included into the package), whereas the Power Pi module can be plugged to any version of Raspberry Pi boards, as well as ODroid boards.
 
 This Power Pi module doesn’t include a Raspberry Pi or ODroid board.
 
- 
+
 
 ----
 
 ## Functions
 List of functions of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Variables
 List of variables of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Events
 List of events of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |

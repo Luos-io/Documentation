@@ -4,6 +4,6 @@ description: Luos Robotics documentation
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
-permalink: /module/:title
+permalink: /:categories/:title
 kramdown:
     auto_ids: true

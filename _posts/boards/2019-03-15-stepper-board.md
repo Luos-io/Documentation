@@ -2,7 +2,7 @@
 layout: post
 title:  "Stepper module"
 date:   2019-03-15 17:45:00 +0100
-categories: module
+categories: board
 tags: [actuation]
 ---
 
@@ -44,20 +44,20 @@ To control {{module}} module, you have to connect it to a Luos network, and conn
 
 <blockquote class="warning"><strong>Warning:</strong> These settings must be set in your code as an initialization before starting to use your module.</blockquote><br />
 
-The number of steps per turn must be defined, as well as the wheel diameter at the output of the motor. These specs may figure in your motor’s datasheet. The following set values are examples (*robot* and *stepper* are to be replaced by the actual names of your robot and {{module}} module). 
+The number of steps per turn must be defined, as well as the wheel diameter at the output of the motor. These specs may figure in your motor’s datasheet. The following set values are examples (*robot* and *stepper* are to be replaced by the actual names of your robot and {{module}} module).
 
 Number of steps per turn:
 
 ```python
 robot.stepper.stepPerTurn = 200
  ```
- 
+
 Wheel diameter, in `mm`:
 
 ```python
 robot.stepper.wheel_size = 100
  ```
- 
+
 Reinitialize the position measurement:
 
 ```python
@@ -73,13 +73,13 @@ Get a value:
 ```python
 robot.stepper.****
  ```
- 
+
 Set a value:
 
 ```python
 robot.stepper.****(value)
  ```
- 
+
 The characters `****` must be replaced by one of the following:
 
 * `compliant` (Return or set `True` or `False`)
@@ -97,21 +97,21 @@ Display the controls of the module:
 ```python
 robot.stepper.control()
 ```
- 
+
 
 ----
 
 ## Functions
 List of functions of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Variables
 List of variables of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Events
 List of events of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |

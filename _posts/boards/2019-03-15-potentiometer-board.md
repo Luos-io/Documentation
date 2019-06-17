@@ -2,7 +2,7 @@
 layout: post
 title:  "Potentiometer module"
 date:   2019-03-15 17:51:00 +0100
-categories: module
+categories: board
 tags: [interface, sensor]
 ---
 {% include var.md %}
@@ -46,14 +46,14 @@ For an example, refer to the video tutorial (Tutorial 1) of the [Quick start pag
 ## Functions
 List of functions of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Variables
 List of variables of {{module}} module:
- 
-| **-** | - | - | 
+
+| **-** | - | - |
 
 ## Events
 List of events of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |

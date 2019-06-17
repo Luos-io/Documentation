@@ -2,7 +2,7 @@
 layout: post
 title:  "Servomotor module"
 date:   2019-03-15 17:46:00 +0100
-categories: module
+categories: board
 tags: [actuation]
 ---
 
@@ -43,7 +43,7 @@ To control your servo-motor through a Luos Robotics module, you can use the foll
 ```python
 robot.servo1_mod.position = 92.3
 ```
- 
+
 Following is the full list of this module’s commands (robot and servo are to be replaced by the actual names of your robot and of the {{module}} module):
 
 Get the last position order of the servomotor’s output, in degrees (`°`) (`0.0` by default):
@@ -51,69 +51,69 @@ Get the last position order of the servomotor’s output, in degrees (`°`) (`0.
 ```python
 robot.servo.position
 ```
- 
+
 Set the position of the output, in degrees (`°`):
 
 ```python
 robot.servo.position(0.0)
 ```
- 
+
 Set `max_angle` value, in degrees (`°`):
 
 ```python
-robot.servo.max_angle(180.0) 
+robot.servo.max_angle(180.0)
 ```
- 
+
 Get the last value order of `max_angle`, in degrees (`°`) (`180.0` by default)
 
 ```python
 robot.servo.max_angle
 ```
- 
+
 Set `min_pulse` value, in seconds (`s`):
 
 ```python
 robot.servo.min_pulse(0.0005)
 ```
- 
+
 Get the last value order of `min_pulse`, in seconds (`s`) (`0.0005` by default):
 
 ```python
 robot.servo.min_pulse
 ```
- 
+
 Set `max_pulse` value, in seconds(`s`):
 
 ```python
 robot.servo.max_pulse(0.0015)
 ```
- 
+
 Get last value order of `max_pulse`, in seconds (`s`) (`0.0015` by default):
 
 ```python
 robot.servo.max_pulse
 ```
- 
+
 Open the set of controls for this module:
 
 ```python
 robot.servo.control()
 ```
- 
+
 
 ----
 
 ## Functions
 List of functions of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Variables
 List of variables of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Events
 List of events of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |

@@ -1,6 +1,6 @@
 {% assign act_desc = "Actuation modules are able to act on the physical world." %}
 {% assign sen_desc = "Sensor modules are able to measure physical world environment." %}
-{% assign com_desc = "Communication modules (also called gates) are able to share your system’s inputs, outputs and configurations outside of your robot, using a JSON API. <br />You can use these modules to control or program your entire robot with any other device (computer, phone, another robot, etc.)" %}
+{% assign com_desc = "Communication modules (also called gates) are able to share your system’s inputs, outputs and configurations outside of your robot, using a JSON API." %}
 {% assign cog_desc = "Cognition are modules dedicated to execute your code or host your AI." %}
 {% assign int_desc = "These modules are built to interact with the user of the machine." %}
 {% assign pow_desc = "Power modules are able to share their input power source into the Robus wire to feed other modules." %}
@@ -19,17 +19,17 @@
 {% assign int_img = "/assets/img/sticker-interface.png" %}
 {% assign pow_img = "/assets/img/sticker-power.png" %}
 
-{% assign last_version = "0.4.0" %} 
+{% assign last_version = "0.5.0" %}
 
-{% case module %}
+{% case board %}
   {% when 'Button' %}
-     {% assign type = "Button" %}
+     {% assign type = "[State](/module/state)" %}
   {% when 'Raspberry-Pi' %}
      {% assign type = "-" %}
   {% when 'Wifi-BLE' %}
      {% assign type = "-" %}
   {% when 'Controlled-motor' %}
-     {% assign type = "ControlledMotor" %}
+     {% assign type = "[Controlled motor](/module/controlled-motor)" %}
   {% when 'DC-motor' %}
      {% assign type = "DCMotor" %}
   {% when 'Distance' %}
@@ -45,7 +45,7 @@
   {% when 'Potentiometer' %}
      {% assign type = "Potentiometer" %}
   {% when 'Power-switch' %}
-     {% assign type = "PowerSwitch" %}
+     {% assign type = "[State](/module/state)" %}
   {% when 'RGB-LED' %}
      {% assign type = "LED" %}
   {% when 'Servomotor' %}
@@ -54,10 +54,7 @@
      {% assign type = "Stepper" %}
   {% when 'USB' %}
      {% assign type = "-" %}
- 
+
   {% else %}
      {% assign type = "-" %}
 {% endcase %}
-
-
-

@@ -1,17 +1,12 @@
 ---
 layout: post
-title:  "Wifi/BLE module"
-date:   2019-03-15 17:43:00 +0100
-categories: module
-tags: [communication]
+title:  "Distance module"
+date:   2019-03-15 17:56:00 +0100
+categories: board
+tags: [sensor]
 ---
-
-{% assign module = "Wifi-BLE" %}
+{% assign module = "Distance" %}
 {% include var.md %}
-
-<div markdown="1" class="wip"><img src="/assets/img/warning.png" class="img_warning">
-The information displayed on this page may be outdated or is a work in progress.
-</div><br />
 
 # How to start with the {{ module }} module
 
@@ -30,36 +25,31 @@ This guide contains all the basic notions you will need to use the {{ module }} 
 </p>
 </div>
 
+## How to control the {{ module }} module with pyluos
 
+To control the {{ module }} module, you have to connect it to a Luos network and connect this network through a communication module to Pyluos.
+Then you can access to your module and control it.
 
-## How to configure the Wifi network
+To get the measured distance in millimeter you can use:
 
-This module allows a communication of the Luos network where it is plugged to with Wifi. 
-
-1. Plug the module to a powered Luos network or to a power source. It auomatically turns the Wifi on.
-2. Connect your computer to the modules's Wifi. A page automatically opens in your default browser.
-3. On the page, choose the name of the Wifi network or choose an existing networ to connect to.
-
-
-
-
-## How to use the {{ module }} module with pyluos
-
-
+```python
+robot.lidar_mod.distance
+```
 
 ----
 
 ## Functions
 List of functions of {{module}} module:
 
-| **-** | - | - | 
+| **distance(self)** |  |  |
+| **-** | - | - |
 
 ## Variables
 List of variables of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |
 
 ## Events
 List of events of {{module}} module:
 
-| **-** | - | - | 
+| **-** | - | - |
