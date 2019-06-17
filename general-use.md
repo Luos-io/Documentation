@@ -4,68 +4,45 @@ title: "General use"
 ---
 {% include var.md %}
 
-# A general guide to Luos technology
+# General guide to Luos technology
 
-This guide contains all basic notions you will need to use and understand Luos technology.
+Luos is [distributed operating system](https://en.wikipedia.org/wiki/Distributed_operating_system) dedicated to embedded systems, a powerful tool using modularity to simplify and link any component or application code together as a [single system image](https://en.wikipedia.org/wiki/Single_system_image).
 
+This guide contains all basic notions you will need to use, create and understand Luos things.
 
-## Module categories
-Luos modules are classified in 6 categories. Each module belongs to at least one of these categories. Understanding your modules categories will help to understand how to combine them in order to achieve what you want.
+## What is a node
+A node is a physical component running Luos and hosting modules. In a Luos network nodes are all connected together using Robus, the Luos communication link.
+In other word a node is a microcontroler connected to other microcontrolers and running Luos.
 
-On each module’s image on the website one or several small symbols are displayed, allowing you to easily see the different categories it belongs to.
+In the Luos phylosophy each node have to carry with him all necessary programs allowing to manage the board and devices it hosting.
 
+It is possible to have multiple nodes in the same electronic board but each one will be see as different node by Luos and each one have to manage separate devices.
 
-|<a href="{{ "/" | absolute_url }}tags.html">{{sen_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{act_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{com_title}}</a>|
-|:-|:-|:-|
-|![{{sen_title}}]({{sen_img}})|![{{act_title}}]({{act_img}})|![{{com_title}}]({{com_img}})|
-|{{sen_desc}}|{{act_desc}}|{{com_desc}}|
+## What is a module
+A module is a code bloc able to communicate with any other modules in the Luos network. Each module have a particular task such as manage a motor, handle a laser range finder, or compute an inverse-kinematics for example.
+Each module is hosted in a single node, but a node can handle several modules at the same time and manage communication between them and between other modules hosted in other nodes using the same interface.
 
-|<a href="{{ "/" | absolute_url }}tags.html">{{cog_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{int_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{pow_title}}</a>|
-|:-|:-|:-|
-|![{{cog_title}}]({{cog_img}})|![{{int_title}}]({{int_img}})|![{{pow_title}}]({{pow_img}})|
-|{{cog_desc}}|{{int_desc}}|{{pow_desc}}|
+For example the dynamixel node provided by Luos Robotics can dynamically create and manage modules depending on the number of dynamixel linked to it. Any dynamixel module can't get or set value to other dynamixel modules on the same node or to any other module in any other node of the network.
 
+## Module basic informations
+To work each modules need to have some information allowing to other modules to recognize and access to it :
 
-## Plugging modules together
+ - **ID** : The ID is an unic number given to each module depending on their physical position. You don't need to define ID by yourself, the system will distribute it during the detection phase. If you move a module from microcontroler A to microcontroler B on a given robot, the ID will change. The same way if you change the wiring order of microcontroler on the network on a given robot, the ID will change too.
+ - **TYPE** : The type define the module purpose. For example distance sensor, servomotor... You can use predefined type or create your own. The module type can't be changed after module initialization.
+ - **ALIAS** : Alias is the name of the module. This alias is used to easily identify a module. Each module have a **default alias** who can be changed by users. For example a module with the default alias "motor_mod" can be named "left_knee_motor" by user. This new name will be stored in the non-volatile memory of the board. As we don’t want to have multiple modules with the same name, a duplicate name on your system will be automatically renamed with an incrementing number at the end, in the network. You can go back to the default name by setting a void name (`""`) to a module.
 
-Luos modules have at least 2 Robus connection port. All connectors are the same, so you can connect any module to any other one using any of those Robus port. Just avoid ta make a loop circuit otherwise you will degrade your communication between modules.
+## Node basic capacities
+Node can have capacities such as core temperature management, processor unic ID, input voltage... Node capacities are commonly shared with all modules hosted in.
 
-There is a correct side to plug a cable’s connector to a module. The small tab on the connector must face upward to plug correctly, as shown on the following pictures:
+## Route table
+A route table is a "service" managed by the Luos network and available for any module in any node. This service list all modules and allow to any module to get and use basic informations of any other modules. The routing table datas can be loaded or auto-generated during detection.
 
-|![Wrong side img](/assets/img/plug-no.png)|![Right side img](/assets/img/plug-yes.png)|
-|:-|:-|
-|Wrong side, the surface is flat|Right side, the tab is visible on the surface|
+## Module detection
+The module detection allow to distribute ID to modules depending on their node physical position and generate a route table.
 
+ID are distributed from the nearest to the furthest branch by branch in the point of view of the module running a detection. Following this logic the module running the detection will have the ID 1, the next one will have the ID 2, etc ...
 
-
-## Power management
-
-Luos modules can share their power inputs through the Robus connection, allowing you to feed other modules. These modules belong to the **power category**.
-
-In your network, **you can have multiple power category modules**. In this case, **the power module with the highest voltage takes over** and shares its power with other modules.
-
-For example, for a robot using a 12V motor and an USB module: The USB module belongs to the power category, so it can share is 5V into the Robus wires. But you will need 12V for your motor. So you will have to add a 12V AC plug module in your network to supply your motor. In this case, the USB module doesn’t share its power but the AC plug does because 5V < 12V.
-
-Some modules need specific voltage to work. If the Robus network voltage doesn’t match with the modules voltage limit, the modules will switch in *over-voltage* or *under-voltage* mode and disable vulnerable components.
-
-
-## External communication management
-
-Luos modules can communicate using different kind of technologies and reach devices outside of the robot. These modules belong to the **communication category**.
-
-All those communication modules use the same **JSON data format** to transmit and receive information about your Luos network.
-
-This way, it’s **easy to use** your favorite device and language to *interact and control your device*.
-
-We created an open-source **Python library** managing this JSON API called *Pyluos*. Feel free to use it, copying it, and convert it into your favorite language. We are open to contribution for any languages.
-
-
-## Naming management
-
-Each Luos module has a name also called alias. When you receive a new module, it will use its **default name**, looking like `type_mod` (eg. `lidar_mod`).
-
-You can **change the name** of a module to something easily remembered or simply convenient for you. The module saves its new name even if you unplug it.
-
-As we don’t want to have multiple modules with the same name, a duplicate name on your system will be automatically renamed with an incrementing number at the end, in the network.
-
-You can go back to the default name by setting a void name (`""`) to a module.
+## Applications (App)
+Module are just piece of code, so they are not limited to manage hardware drivers. We call application or app a module who only manage software things.
+For example you can create an app to compute inverse-kinematic of a robotics arm. In this case you can send an arm target to this App and it will compute and send orders to each motor modules he handle to reach the target.
+Applications can be placed in any nodes on your network without any modifications, but the node choice can impact global performance of the system.
