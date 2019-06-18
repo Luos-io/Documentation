@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "RGB LED module"
-date:   2019-03-15 17:47:00 +0100
+title:  "Potentiometer"
+date:   2019-03-15 17:51:00 +0100
 categories: board
-tags: [actuation, interface]
+tags: [interface, sensor]
 ---
-
-{% assign module = "RGB-LED" %}
+{% include var.md %}
+{% assign module = "Potentiometer" %}
 {% include var.md %}
 
 # How to start with the {{ module }} module
@@ -27,33 +27,30 @@ This guide contains all the basic notions you will need to use the {{ module }} 
 </div>
 
 ## How to use the {{ module }} module using Pyluos
+To control the potentiometer module, you have to connect it in a Luos network and connect this network through a communication module to Pyluos.
 
-To control the {{ module }} module you have to connect it in a Luos network and connect this network through a communication module to Pyluos. Then you can access to your module and control it.
+Then you can access to your module and control it.
 
-To set your RGB led brightness and color using an RGB standard:
+To get the state of your potentiometer, you can use:
 
 ```python
-robot.rgb_led_mod.color = [12, 128, 233]
-robot.rgb_led_mod.control()
+robot.potentiometer_mod.position
 ```
 
-The values `[0, 0, 0]` turn the LED off.
+It returns an angular value in `degrees` between `0` and `300`.
 
-{{ actuation_desc }}
+For an example, refer to the video tutorial (Tutorial 1) of the [Quick start page]({{ "/" | absolute_url }}quick-start.html)
 
 ----
 
 ## Functions
 List of functions of {{module}} module:
 
-| **change_color(red, green, blue)** | - | - |
-| **control(self)** | - | - |
 | **-** | - | - |
 
 ## Variables
 List of variables of {{module}} module:
 
-| **color(self, new_color)** | - | - |
 | **-** | - | - |
 
 ## Events
