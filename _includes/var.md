@@ -33,7 +33,7 @@
   {% when 'DC-motor' %}
      {% assign type = "[2 x DC-motor](/module/dc-motor)" %}
   {% when 'Distance' %}
-     {% assign type = "Distance" %}
+     {% assign type = "[Distance](/module/distance)" %}
   {% when 'Dynamixel' %}
      {% assign type = "DynamixelMotor" %}
   {% when 'GPIO' %}
