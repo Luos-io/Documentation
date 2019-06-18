@@ -13,7 +13,7 @@ tags: [sensor, interface]
 This module type allow to control motor with a reduction and a sensor (usually called motor-reducer or speed-reducer).
 This module compute PID for speed and position and motion planning.
 
-You can find basic information about PID control here: [<big>An introduction to PID control with DC motor</big>](https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661).
+You can find basic information about PID control here: [<big>An introduction to PID control with DC motor</big>](https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661), and a code example to tune your PID at the end of this page.
 
 The {{ module }} module type have access to all common capabilities.
 

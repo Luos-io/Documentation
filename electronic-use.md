@@ -53,10 +53,14 @@ As you probably know, some component need specific voltage to work. For example 
 
 ## External communication management
 
-Some specific board allow you to easily control a Luos board network. Those board host a module called "gate", they can communicate using different kind of technologies and reach devices outside of the robot.
+Some specific board allow you to easily control a Luos board network. Those board host a module called "gate", they can communicate using different kind of technologies and reach devices outside of the robot.<br/>To start using Luos technology you have to use one of this module to be able to program your machine behavior.
 
 The "gate" module task is to stream the Luos network activity into a standard Json format and reverse allowing an external device to easily interact with any device in the network.
 
-This way, it’s **easy to use** your favorite device and language to *interact and control your device*.
+This way, it’s **easy to use** your favorite device and language to interact and control your device.
 
-We created an open-source **Python library** managing this JSON API called *Pyluos*. Feel free to use it, copying it, and convert it into your favorite language. We are open to contribution for any languages.
+We created an open-source **Python library** managing this JSON API called [*Pyluos*]({{ "/pyluos.html" | absolute_url }}). Feel free to use it, copying it, and convert it into your favorite language. We are open to contribution for any languages.
+
+Get [pyluos on github](https://github.com/Luos-Robotics/pyluos).
+
+<blockquote class="warning"><strong>Warning:</strong> All examples codes of this documentation use the pyluos python library and are adapted to be used with Ipython notebook.</blockquote><br />
