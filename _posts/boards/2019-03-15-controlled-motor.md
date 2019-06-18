@@ -7,6 +7,7 @@ tags: [sensor, interface]
 ---
 {% assign board = "Controlled-motor" %}
 {% assign alias = "controlled_moto" %}
+{% assign type = "[Controlled motor](/module/controlled-motor)" %}
 {% include var.md %}
 
 # How to start with the {{ board }} board
