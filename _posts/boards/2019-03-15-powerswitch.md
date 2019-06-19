@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Power-switch"
+title:  "Power switch"
 date:   2019-03-15 17:59:00 +0100
 categories: board
 tags: [actuation]

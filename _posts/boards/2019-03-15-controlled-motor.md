@@ -3,9 +3,8 @@ layout: post
 title:  "Controlled motor"
 date:   2019-03-15 17:59:00 +0100
 categories: board
-tags: [sensor, interface]
 ---
-{% assign board = "Controlled-motor" %}
+{% assign board = "Controlled motor" %}
 {% assign alias = "controlled_moto" %}
 {% assign type = "[Controlled motor](/module/controlled-motor)" %}
 {% include var.md %}
