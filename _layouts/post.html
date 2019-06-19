@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h2 markdown="1"><a href="{{ "index.html" | absolute_url }}">Luos documentation</a> >> {{ page.title | Capitalize }}</h2>
+<h2 markdown="1"><a href="{{ "index.html" | absolute_url }}">Luos documentation</a> >> {{ page.categories[0] | capitalize }} >> {{ page.title | capitalize }}</h2>
 <small>Last update: {{ page.date | date: "%-d %B %Y" }}</small>
 <br /><br />
 <hr />
