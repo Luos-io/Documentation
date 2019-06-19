@@ -11,7 +11,7 @@ Discover how Luos works and how to use it.
 
 ## First steps
 
-If Luos is something new for you, you should start by reading those page allowing you to understand basic concepts.
+If Luos is something new for you, you should start by reading these pages allowing you to understand basic concepts.
 
 * [General use]({{ "/general-use.html" | absolute_url }}) – What is Luos technology and how to use it.
 * [Quick start]({{ "/quick-start.html" | absolute_url }}) – A short tutorial to help getting started with modules.
