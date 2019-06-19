@@ -35,7 +35,7 @@ Now that everything is configured, you can enable the control modes you want to 
 
 ## Functions
 
-| **function name and parameters** | **action** | **comment** |
+| **Function name and parameters** | **Action** | **Comment** |
 | setToZero(self) | Resets current position of the motor to 0 | You can use it to initialize the position of the motor |
 | control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
 
@@ -43,7 +43,7 @@ Now that everything is configured, you can enable the control modes you want to 
 
 ### Motor settings
 
-| **variable name** | **action** | **type** |
+| **Variable name** | **Action** | **Type** |
 | positionPid | Sets position PID used for rotation position mode and translation position mode | read / write: [float P, float I, float D] |
 | speedPid | Sets speed PID used for rotation speed mode and translation speed mode | read / write: [float P, float I, float D] |
 | encoder_res | Defines the motor sensor resolution<br/>*This module considers that the sensor is placed before the reduction. If it's not your case, just setup a reduction ratio of 1.* | read / write: float |
@@ -52,7 +52,7 @@ Now that everything is configured, you can enable the control modes you want to 
 
 ### Motor control modes
 
-| **variable name** | **action** | **type** |
+| **Variable name** | **Action** | **Type** |
 | compliant | - True: disables the motor driver, you can use it to move the motor by hand.<br/> - False: Enables the motor driver. | read / write: Boolean (True or False) |
 | power_mode | Enables/Disables the power control mode.<br/>*Disables any other control mode if enabled.* | read / write: Boolean (True or False) |
 | rot_position_mode | Enables/Disables the motor rotation position control mode.<br/>*Disables power mode and translation position mode if enabled.*<br/>*Doesn't work if no position PID is configured.* | read / write: Boolean (True or False) |
@@ -62,7 +62,7 @@ Now that everything is configured, you can enable the control modes you want to 
 
 ### Motor sensing
 
-| **variable name** | **action** | **type** |
+| **Variable name** | **Action** | **Type** |
 | rot_position | Reads rotation position in °<br/>*Reading it auto-Enables actualization.* | read only: float |
 | rot_position | Starts/Stops rotation position measurement actualization | write only: Boolean (True or False) |
 | rot_speed | Reads rotation speed in °/s<br/>*Reading it auto-Enables actualization.* | read only: float |
@@ -76,7 +76,7 @@ Now that everything is configured, you can enable the control modes you want to 
 
 ### Motor commands
 
-| **variable name** | **action** | **type** |
+| **Variable name** | **Action** | **Type** |
 | power_ratio | Sets the power quantity send to the motor between -100% and 100%. | read / write: float |
 | target_rot_position | Sets the target rotation position to reach in °. | read / write: float |
 | target_rot_speed | Sets the target rotation speed to reach in °/s. | read / write: float |
