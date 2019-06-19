@@ -10,86 +10,86 @@ tags: [sensor, interface]
 
 # Introduction to the {{ module }} module type
 
-This module type allow to control motor with a reduction and a sensor (usually called motor-reducer or speed-reducer).
-This module compute PID for speed and position and motion planning.
+This module type allows to control a motor with a reduction and a sensor (usually called motor-reducer or speed-reducer).
+This module computes PID for speed, position and motion planning.
 
 You can find basic information about PID control here: [<big>An introduction to PID control with DC motor</big>](https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661), and a code example to tune your PID at the end of this page.
 
-The {{ module }} module type have access to all common capabilities.
+The {{ module }} module type has access to all common capabilities.
 
 ### Modules’s type settings:
 
-<blockquote class="warning"><strong>Warning:</strong> This module don't save any of this parameters, you have to send them each time your module reboot.</blockquote><br />
+<blockquote class="warning"><strong>Warning:</strong> This module doesn't save any of the following parameters, they must be set each time your module reboots.</blockquote><br />
 
-Before using your controlled motor module you have to setup your resolution, motor reduction and eventually your wheel size if you plan to use translation modes. To check your configuration just make a complete turn on your motor shaft with your hand and check if the rotation position value is OK.
+Before using your controlled motor module, you have to setup the resolution, motor reduction and eventually the wheel size, if you plan to use translation modes. To check the configuration, just make a complete turn on the motor shaft with your hand and check if the rotation position value is OK.
 
-Both PID’s values have to be set accordingly to the motor-reducer plugged to the board. Each different motor-reducer will have different PID’s values for position and speed control, and you have to define it by yourself.
+Both PID’s values have to be set accordingly to the motor-reducer plugged to the board. Each different motor-reducer will have different PID’s values for position and speed control, and you have to define them by yourself.
 The default values `[0, 0, 0]` won’t have any effect on the motor, and must be changed if you plan to use any position or speed control mode.
 To setup your PID please refer to the example at the end of this page.
 
 <blockquote class="warning"><strong>Warning:</strong> PID for position and speed must be set in your code as an initialization before starting to use your module with position or speed control.</blockquote><br />
 
-Now, everything is configured, you can enable  control modes you want to use. You can use position and speed mode simultaneously. Power mode is only usable alone. Now everything on your controlled motor is ready to use you can disable compliance to start moving your motor.
+Now that everything is configured, you can enable the control modes you want to use. You can use position and speed mode simultaneously. Power mode is only usable alone. The controlled motor is now ready to use, you can disable compliance to start moving the motor.
 
 ----
 
 ## Functions
 
 | **function name and parameters** | **action** | **comment** |
-| setToZero(self) | Reset current position of the motor to 0 | You can use it to initialize the position of your motor |
-| control(self) | Display module type graphical interface | Only available using Ipython notebook |
+| setToZero(self) | Resets current position of the motor to 0 | You can use it to initialize the position of the motor |
+| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
 ### Motor settings
 
 | **variable name** | **action** | **type** |
-| positionPid | Set position PID used for rotation position mode and translation position mode | read / write : [float P, float I, float D] |
-| speedPid | Set speed PID used for rotation speed mode and translation speed mode | read / write : [float P, float I, float D] |
-| encoder_res | Define the motor sensor resolution<br/>*This module consider that the sensor is placed before reduction. If it's not your case, just setup a reduction ratio of 1.* | read / write : float |
-| reduction | Define the motor reduction<br/>Set this value to 1 if your sensor measure after reduction. | read / write : float |
-| wheel_size | Define wheel size used for translation mode | read / write : float |
+| positionPid | Sets position PID used for rotation position mode and translation position mode | read / write: [float P, float I, float D] |
+| speedPid | Sets speed PID used for rotation speed mode and translation speed mode | read / write: [float P, float I, float D] |
+| encoder_res | Defines the motor sensor resolution<br/>*This module considers that the sensor is placed before the reduction. If it's not your case, just setup a reduction ratio of 1.* | read / write: float |
+| reduction | Defines the motor reduction<br/>Set this value to 1 if your sensor measures after the reduction. | read / write: float |
+| wheel_size | Defines wheel size used for translation mode | read / write: float |
 
 ### Motor control modes
 
 | **variable name** | **action** | **type** |
-| compliant | - True : disable the motor driver, you can use it to move the motor by hand.<br/> - False : Enable the motor driver. | read / write : Boolean (True or False) |
-| power_mode | Enable/Disable the power control mode.<br/>*Disable any other control mode if enabled.* | read / write : Boolean (True or False) |
-| rot_position_mode | Enable/Disable the motor rotation position control mode.<br/>*Disable power mode and translation position mode if enabled.*<br/>*Doesn't work if no position PID configured.* | read / write : Boolean (True or False) |
-| rot_speed_mode | Enable/Disable the motor rotation speed control mode.<br/>*Disable power mode and translation speed mode if enabled.*<br/>*Doesn't work if no speed PID configured.* | read / write : Boolean (True or False) |
-| trans_position_mode | Enable/Disable the motor translation position control mode.<br/>*Disable power mode and rotation position mode if enabled.*<br/>*Doesn't work if no position PID configured.* | read / write : Boolean (True or False) |
-| trans_speed_mode | Enable/Disable the motor translation speed control mode.<br/>*Disable power mode and rotation speed mode if enabled.*<br/>*Doesn't work if no speed PID configured.* | read / write : Boolean (True or False) |
+| compliant | - True: disables the motor driver, you can use it to move the motor by hand.<br/> - False: Enables the motor driver. | read / write: Boolean (True or False) |
+| power_mode | Enables/Disables the power control mode.<br/>*Disables any other control mode if enabled.* | read / write: Boolean (True or False) |
+| rot_position_mode | Enables/Disables the motor rotation position control mode.<br/>*Disables power mode and translation position mode if enabled.*<br/>*Doesn't work if no position PID is configured.* | read / write: Boolean (True or False) |
+| rot_speed_mode | Enables/Disables the motor rotation speed control mode.<br/>*Disables power mode and translation speed mode if enabled.*<br/>*Doesn't work if no speed PID configured.* | read / write: Boolean (True or False) |
+| trans_position_mode | Enables/Disables the motor translation position control mode.<br/>*Disables power mode and rotation position mode if enabled.*<br/>*Doesn't work if no position PID configured.* | read / write: Boolean (True or False) |
+| trans_speed_mode | Enables/Disables the motor translation speed control mode.<br/>*Disables power mode and rotation speed mode if enabled.*<br/>*Doesn't work if no speed PID configured.* | read / write: Boolean (True or False) |
 
 ### Motor sensing
 
 | **variable name** | **action** | **type** |
-| rot_position | Read rotation position in °<br/>*Read it auto-enable actualization.* | read only : float |
-| rot_position | Start/Stop rotation position measurement actualization | write only : Boolean (True or False) |
-| rot_speed | Read rotation speed in °/s<br/>*Read it auto-enable actualization.* | read only : float |
-| rot_speed | Start/Stop rotation speed measurement actualization | write only : Boolean (True or False) |
-| trans_position | Read translation position in mm<br/>*Read it auto-enable actualization.* | read only : float |
-| trans_position | Start/Stop translation position measurement actualization | write only : Boolean (True or False) |
-| trans_speed | Read translation speed in mm/s<br/>*Read it auto-enable actualization.* | read only : float |
-| trans_speed | Start/Stop translation speed measurement actualization | write only : Boolean (True or False) |
-| current | Read the current consumption in A<br/>*Read it auto-enable actualization.* | read only : float |
-| current | Start/Stop current measurement actualization | write only : Boolean (True or False) |
+| rot_position | Reads rotation position in °<br/>*Reading it auto-Enables actualization.* | read only: float |
+| rot_position | Starts/Stops rotation position measurement actualization | write only: Boolean (True or False) |
+| rot_speed | Reads rotation speed in °/s<br/>*Reading it auto-Enables actualization.* | read only: float |
+| rot_speed | Starts/Stops rotation speed measurement actualization | write only: Boolean (True or False) |
+| trans_position | Reads translation position in mm<br/>*Reading it auto-Enables actualization.* | read only: float |
+| trans_position | Starts/Stops translation position measurement actualization | write only: Boolean (True or False) |
+| trans_speed | Reads translation speed in mm/s<br/>*Reading it auto-enables actualization.* | read only: float |
+| trans_speed | Starts/Stops translation speed measurement actualization | write only: Boolean (True or False) |
+| current | Reads the current consumption in A<br/>*Reading it auto-enables actualization.* | read only: float |
+| current | Starts/Stops current measurement actualization | write only: Boolean (True or False) |
 
 ### Motor commands
 
 | **variable name** | **action** | **type** |
-| power_ratio | Set the power quantity send to the motor between -100% and 100%. | read / write : float |
-| target_rot_position | Set the target rotation position to reach in °. | read / write : float |
-| target_rot_speed | Set the target rotation speed to reach in °/s. | read / write : float |
-| target_trans_position | Set the target translation position to reach in mm. | read / write : float |
-| target_trans_speed | Set the target translation speed to reach in mm/s. | read / write : float |
+| power_ratio | Sets the power quantity send to the motor between -100% and 100%. | read / write: float |
+| target_rot_position | Sets the target rotation position to reach in °. | read / write: float |
+| target_rot_speed | Sets the target rotation speed to reach in °/s. | read / write: float |
+| target_trans_position | Sets the target translation position to reach in mm. | read / write: float |
+| target_trans_speed | Sets the target translation speed to reach in mm/s. | read / write: float |
 
 ## PID Setting example code
 
-The PID value allow your motor to stick to your target command as fast as possible. The quality of a PID values depend on time to reach target position and position precision.
-Tune a PID is something difficult and ask a lot of practice. It's really important to have simple way to evaluate PID values impact on your motor before starting to tune your values.
-Here is the code we use at Luos robotics to tune a PID by ourself. Use it with Ipython notebook to get your plot instantly.
+The PID values allow your motor to stick to the target command as fast as possible. The quality of a set of PID values depends on time to reach the target position and position precision.
+Tuning a PID is something difficult and takes a lot of practice. It's really important to have simple ways to evaluate PID values impact on your motor before starting to tune these values.
+Here is the code we use at Luos robotics to tune a PID by ourself. Use it with Jupyter notebook to get your plot instantly.
 
-The main code :
+The main code:
 ```python
 %matplotlib inline
 from pyluos import Robot
@@ -103,7 +103,7 @@ import matplotlib.pyplot as plt
 r = Robot('/dev/cu.usbserial-DN2AAOVK')
 r.modules
 
-# 2. Select the module of your network you nedd to configure
+# 2. Select the module of your network you need to configure
 module = r.controlled_moto
 
 # 3. Setup module basic settings
@@ -177,21 +177,21 @@ def plot_test(test_time_vector, target, real):
     plt.close(fig)
 ```
 
-Now you are ready to tune your PID values for position and speed control modes. To do that you have to try values to get best result as possible. To succeed we advise you to do it step by step :
+Now, you are ready to tune the PID values for position and speed control modes. To do that, you have to try values to get best the result possible. In order to succeed, we advise you to do it step by step:
 
- 1. Put all P, I, and D values to 0
+ 1. Set P, I, and D values to 0.
  2. Increase the P value until you have a small oscillation around the target.
- 3. Increase the D value until you have a fast and stable position
- 4. Increase with really small values the I value to improve motor precision
+ 3. Increase the D value until you have a fast and stable position.
+ 4. Increase with really small figures the I value to improve the motor precision.
 
-The code you can use to tune your speed PID :
+The code you can use to tune your speed PID:
 ```python
 # Speed PID settings
 module.speedPid = [0.1,0.1,0] # speed PID [P, I, D]
 run_speed_test(100.0)
 ```
 
-The code you can use to tune your position PID :
+The code you can use to tune your position PID:
 ```python
 # Position PID settings
 module.positionPid = [4.0,0.02,100] # position PID [P, I, D]
