@@ -31,12 +31,15 @@ On the following steps, you will learn how to make a simple behavior with a LED 
 
 
 #### 1. Configure your computer
-The default tools we use to control a Luos network is a board hosting a gate module with a python lib called Pyluos.
+The default tools we use to control a Luos network are a board hosting a gate module, with a Python lib called Pyluos.
 
-To begin you have to install Python, and [Pyluos]({{ "/pyluos.html" | absolute_url }}) library, following the [pyluos documentation page]({{ "/pyluos.html" | absolute_url }}).
+To begin, you have to install Python and Pyluos library, following the [pyluos documentation page]({{ "/pyluos.html" | absolute_url }}).
 
 #### 2. Plug the boards together
-Plug together all the boards with cables. You can plug them to any of the two connectors of each board.
+Plug together all the boards with cables. You can plug them to any of the two connectors of each board, in any order. 
+
+<blockquote class="warning"><strong>Warning:</strong> Don't close a loop with the boards at each extremity.</blockquote><br />
+
 
 ![Boards](/assets/img/quickstart-1.png)<br />*From left to right: LED, Button, and USB . The plug order doesn’t matter.*
 
