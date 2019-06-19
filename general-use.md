@@ -11,9 +11,11 @@ Luos is a simple and lightweight [distributed operating system](https://en.wikip
 This guide contains all the basic notions you will need to use, create and understand Luos technology.
 
 ## What is a node
-A node is a physical component (hardware) running Luos and hosting modules. In a Luos network, nodes are all connected together using Robus, the Luos communication technology.<br/>In other words, a node is a microcontroler connected to other microcontrolers and running Luos.
+A node is a physical component (hardware) running Luos and hosting one or several modules. In a Luos network, nodes are all connected together using Robus, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers and running Luos.
 
-In the Luos philosophy, each node has to carry the necessary programs (modules) allowing to manage the boards and devices it's hosting.
+A **Luos board** hosts a single node. Each one provides a robotic function (gate, sensor, actuation, etc.).
+
+In the Luos philosophy, each node has to carry the necessary programs (modules) allowing to manage the boards and devices hosting it.
 
 It is possible to have multiple nodes in the same electronic board, but each node will be seen by Luos as a different node and has to manage separate devices, whatever the number of boards.
 
