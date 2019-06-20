@@ -15,5 +15,5 @@ tags: [sensor, interface]
 
 ## How to use {{ board }} board
 
-The {{ board }} board measure button rotation in degree.
-The {{ board }} board support 5V to 24V DC input.
+The {{ board }} board measures a potentiometer's rotation in degree.
+The {{ board }} board supports 5V to 24V DC input.

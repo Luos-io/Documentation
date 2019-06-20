@@ -14,5 +14,5 @@ tags: [actuation]
 {% include card.md %}
 
 ## Power considerations
-The {{ board }} board allow you to interrupt another circuit up to 10A on 230V AC or 30V DC. The blue led on the module indicate when the link between 2 entries on the screw connector is closed.
-The {{ board }} board support 5V to 24V DC input.
+The {{ board }} board allows you to interrupt another circuit up to 10A on 230V AC or 30V DC. The blue led on the module indicates when the link between 2 entries on the screw connector is closed.
+The {{ board }} board supports 5V to 24V DC input.
