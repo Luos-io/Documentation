@@ -23,7 +23,7 @@ It is possible to have multiple nodes in the same electronic board, but each nod
 A module is a block of code which is able to communicate with any other modules in the Luos network. Each module has a particular task such as managing a motor, handling a laser range finder, or compute an inverse-kinematics, for example.
 **Each module is hosted in a single node**, but a node can handle several modules at the same time and manage communication between them and between other modules hosted in other nodes, using the same interface.
 
-For example, the dynamixel node provided by Luos Robotics can dynamically create and manage modules depending on the number of Dynamixel motors linked to it. Any dynamixel module can get or set values to other dynamixel modules on the same node or to any other module in any other node of the network.
+For example, the [Dynamixel board](/board/dxl) provided by Luos Robotics can dynamically create and manage Dynamixel modules depending on the number of Dynamixel motors linked to it. Any Dynamixel module can get or set values to other Dynamixel modules on the same node or to any other module in any other node of the network.
 
 ## Module basic information
 To properly work, each module needs to get some information allowing to other modules to recognize and access it:
