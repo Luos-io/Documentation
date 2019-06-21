@@ -52,7 +52,7 @@ blockquote.warning{
 	background-color: #FFE5E5;
 	/*color: #eeeeee;*/
 	width: 60%;
-	padding: 15px 0 15px 5px;
+	padding: 20px 0 15px 5px;
 }
 
 blockquote.warning::before{
@@ -63,6 +63,7 @@ blockquote.warning::before{
 	content: '';
 	position: relative;
 	left: -5px;
+	top: -8px;
 }
 
 blockquote{
