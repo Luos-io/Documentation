@@ -1,9 +1,9 @@
-{% assign act_desc = "Actuation modules are able to act on the physical world." %}
-{% assign sen_desc = "Sensor modules are able to measure physical world environment." %}
-{% assign com_desc = "Communication modules (also called gates) are able to share your system’s inputs, outputs and configurations outside of your robot, using a JSON API." %}
-{% assign cog_desc = "Cognition are modules dedicated to execute your code or host your AI." %}
-{% assign int_desc = "These modules are built to interact with the user of the machine." %}
-{% assign pow_desc = "Power modules are able to share their input power source into the Robus wire to feed other modules." %}
+{% assign act_desc = "Actuation boards are able to act on the physical world." %}
+{% assign sen_desc = "Sensor boards are able to measure physical world environment." %}
+{% assign com_desc = "Communication boards (also called gates) are able to share your system’s inputs, outputs and configurations outside of your robot, using a JSON API." %}
+{% assign cog_desc = "Cognition are boards dedicated to execute your code or host your AI." %}
+{% assign int_desc = "These boards are built to interact with the user of the machine." %}
+{% assign pow_desc = "Power boards are able to share their input power source into the Robus wire to feed other boards." %}
 
 {% assign act_title = "Actuation" %}
 {% assign sen_title = "Sensor" %}
