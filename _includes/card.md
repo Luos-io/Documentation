@@ -2,10 +2,10 @@
 <p class="sheet-title" markdown="1">**Default Alias:** {{alias}}</p>
 <p class="sheet-title" markdown="1">**Type:** {{type}}</p>
 {% if {{board}} contains 'Dynamixel' %}
-<p class="sheet-title" markdown="1">**Module number:** N</p>
+<p class="sheet-title" markdown="1">**Number of module(s):** N</p>
 {% else %}
 {% assign my_array = {{alias}} | split: ", " %}
-<p class="sheet-title" markdown="1">**Module number:** {{ my_array | size }}</p>
+<p class="sheet-title" markdown="1">**Number of module(s):** {{ my_array | size }}</p>
 {% endif %}
 <p class="sheet-title" markdown="1">**Image**</p>
 {% if {{board}} contains 'Dynamixel' %}
