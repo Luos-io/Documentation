@@ -68,8 +68,8 @@ This line makes the connexion between the computer and the device. Python should
 
 Only once the connection is set it is possible to start programming behaviors.
 
-## List available modules of your robot
-The following line of code refers to the listing of all the modules available in your robot.
+## List available boards of your robot
+The following line of code refers to the listing of all the boards available in your robot.
 
 ```python
 robot.modules
@@ -80,50 +80,51 @@ For example if we have an RGB led and a button ou our system we should have:
 `[<Button alias="button_mod" id=2 state=OFF>,`<br />
 `<LED alias="rgb_led_mod" id=3 state=[0, 0, 0]>]`
 
-We can get the module type, the alias (name), the id and the state of each module.
+We can get the *module type*, the *alias* (name), *id* and *state* of each board.
+From the first line of the previous example: `Button` is the module type, `button_mod` is the board's alias, `2` is the id and `OFF` is the state.
 
-> **Note:** Communication modules are not shown in the module listing and you should never have to access it.
+> **Note:** Communication boards are not shown in the boards listing and you should never have to access it.
 
 
 ## Module type
 
-Each module has a type (eg. `Button`, `LED`, ...). 
-You can retrieve the type of a module from the previous code, or with the following Python code:
+Each board has a module type (eg. `Button`, `LED`, ...). 
+You can either retrieve your board's module type from the previous code, or with the following Python code:
 
 ```python
-robot.module_name.type
+robot.board_name.type
 ```
-`module_name` being the alias you got from the listing 
+`board_name` being the alias you got from the listing.
 
 
-## Get and set modules informations
-Once you have detected your modules, you can use these information like variables.
+## Get and set boards informations
+Once you have detected your boards, you can use these information like variables.
 
 To access values you have to address them in the robot object following this rules :
 
 ```python
-robot.module_name.information_name
+robot.board_name.information_name
 ```
  
 For example :
 
 ```python
-robot.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" module
+robot.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" board
  
 robot.button_mod.pressed # Returns the status of the push button
  
-robot.button_mod.type # Returns the type of the module "button_mod"
+robot.button_mod.type # Returns the module type of the board "button_mod"
 ```
  
 If you use *ipython* or *jupyter notebook*, you can use auto-completion using the `Tab` key to find every available objects.
 
 ![Auto-completion](/assets/img/pyluos-3.png)
 
-## Change a module name
-The name of any module can be changed following this code. To list each module and its associated alias, refer to Listing the modules in a device section.
+## Change a board name
+The name of any board can be changed following this code. To list each board and its associated alias, refer to Listing the boards in a device section.
 
 ```python
-robot.actual_module_name.rename("new_name")
+robot.actual_board_name.rename("new_name")
 ```
  
 For example:
@@ -131,7 +132,8 @@ For example:
 ```python
 robot.rgb_led_mod.rename("myLED")
 ```
- 
-> **Note:** You should restart your robot  and reconnect to it after this operation.
 
-> **Note:** To get back to the module default name set the `""` name.
+> **Note:** You should restart your robot and reconnect to it after this operation.
+
+> **Note:** To get back to the board default name set the `""` name.
+
