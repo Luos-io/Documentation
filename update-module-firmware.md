@@ -4,9 +4,9 @@ title: "Update firmware"
 ---
 {% include var.md %}
 
-# A guide to upgrade your modules
+# A guide to upgrade your boards
 
-At Luos Robotics, we work every day on new versions of the module’s internal software, in order to improve your experience with robotics. This guide explains step-by-step how to upgrade any modules with an up-to-date software provided by Luos.
+At Luos Robotics, we work every day on new versions of the boards’ internal software (the modules), in order to improve your experience with robotics. This guide explains step-by-step how to upgrade any board with an up-to-date software provided by Luos.
 
 <blockquote class="warning"><strong>Warning:</strong> Upgrading a module is a critical task that should be attempted only if you know what you are doing.</blockquote><br />
 
@@ -15,7 +15,7 @@ At Luos Robotics, we work every day on new versions of the module’s internal s
 **[\>\> Get the firmware files on *GitHub*.](https://github.com/Luos-Robotics/module_binaries/releases)**
 
 ### How to check my module firmware revision
-If you are using [pyluos](https://www.luos-robotics.com/en/documentation/pyluos) you can check the firmware revision of modules of your network using the `robot.module.firmware_revision` command.
+If you are using [pyluos](https://www.luos-robotics.com/en/documentation/pyluos) you can check the firmware revision of modules in your network using the `robot.module.firmware_revision` command.
 
 For example : 
 
@@ -31,7 +31,7 @@ robot.servo1_mod.firmware_revision
 * The DFU file manager software from ST
 * The [binary file](https://github.com/Luos-Robotics/module_binaries/releases) provided by Luos Robotics
 * A micro-USB to USB cable
-* The module that needs to be upgraded
+* The board that needs to be upgraded
 
 **[\>\> Windows steps](#windows)**
 
@@ -40,7 +40,7 @@ robot.servo1_mod.firmware_revision
 * A computer with one of these OS
 * The [binary file](https://github.com/Luos-Robotics/module_binaries/releases) provided by Luos Robotics
 * A micro-USB to USB cable
-* The module that needs to be upgraded
+* The board that needs to be upgraded
 
 **[\>\> Mac / Linux steps](#unix)**
 
@@ -78,12 +78,12 @@ Click the `Generate…` button, choose the DFU file’s name and location and sa
 
 You can close the program.
 
-### Step 3: Connect the module to the computer
-Each module has a micro-USB port. Plug the USB cable to this port and then to your computer.
+### Step 3: Connect the board to the computer
+Each Luos board has a micro-USB port. Plug the USB cable to this port and then to your computer.
 
-> **Note:** The USB module has two USB ports, you should always plug the port situated on the L0, under the connectors. You should not see any light from the module when you plug it.
+> **Note:** The USB board has two USB ports, you should always plug the port situated on the L0, under the connectors. You should not see any light from the board when you plug it.
 
-### Step 4: Upload the new file into the module
+### Step 4: Upload the new file into the board
 Execute the program *DfuSeDemo.exe*.<br />
 Click on `Choose…` and load the DFU file you just converted from binary.
 
@@ -94,7 +94,7 @@ Click on `Upgrade`. A message may appear. If it does, click `Yes`.
 ![Dfuse2](/assets/img/firmwareupdate-6.png)
 
 After uploading, you should see a new message in the bottom.<br />
-Your module is now ready, you can close the program and unplug the USB form the computer.
+Your board is now ready, you can close the program and unplug the USB form the computer.
 
 ![Dfuse3](/assets/img/firmwareupdate-7.png)
 
@@ -108,16 +108,16 @@ These steps are only for Mac or Linux. For Windows, ignore them and go directly 
 ### Step 1: Install the software
 Install the program *dfu-util*.
 
-### Step 2: Connect the module to the computer
-Each module has a micro-USB port. Plug the USB cable to this port and then to your computer.
+### Step 2: Connect the board to the computer
+Each Luyos board has a micro-USB port. Plug the USB cable to this port and then to your computer.
 
-> **Note:** The USB module has two USB ports, you should always plug the port situated on the L0, under the connectors. You should not see any light from the module when you plug it.
+> **Note:** The USB board has two USB ports, you should always plug the port situated on the L0, under the connectors. You should not see any light from the board when you plug it.
 
-### Step 3: Upload the file into the module
+### Step 3: Upload the file into the board
 You can download the last release firmwares at our GitHub page.
 
 Type the following line and replace `module.bin` by the filename of the binary file provided by Luos Robotics:
 
 `dfu-util -d 0483:df11 -a 0 -s 0x08000000 -D module.bin`
  
-After executed, your module is ready to be used, you can unplug the USB from the computer.
+After executed, your board is ready to be used, you can unplug the USB from the computer.
