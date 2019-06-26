@@ -6,14 +6,39 @@ title: "Pyluos"
 
 # A Pyluos guide
 
-The python library to manage a Luos systems
+The python library to manage a Luos systems.
 
-## Installing Pyluos library
+## Installing Python and Pip
+
+<blockquote class="warning"><strong>Warning:</strong> In order to use pyluos library, *Python* and the *pip packet manager* must be installed on your computer.</blockquote><br />
+
+To install Python, download the last release according to your computer's OS: https://www.python.org/downloads/
+
+To install Pip, type the following commands in a console:
+
+```bash
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo python get-pip.py
+```
+
+> **Note:** If you are using Windows, the second command line must be typed without `sudo`:
+
+```bash
+python get-pip.py
+```
+
+## Installing or updating Pyluos library
 
 In a console, the following code will install the *pyluos* library using the *pip packet manager*:
 
 ```bash
 pip install pyluos
+```
+
+If pyluos is already installed, it may need to be updated:
+
+```bash
+pip install --upgrade pyluos
 ```
  
 ## Installing Jupyter Notebook
@@ -135,5 +160,5 @@ robot.rgb_led_mod.rename("myLED")
 
 > **Note:** You should restart your robot and reconnect to it after this operation.
 
-> **Note:** To get back to the board default name set the `""` name.
+> **Note:** To get back to the board default name, set the `""` name.
 
