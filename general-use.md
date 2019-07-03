@@ -13,7 +13,7 @@ This guide contains all the basic notions you will need to use, create and under
 ## What is a node
 A node is a physical component (hardware) running Luos and hosting one or several modules. In a Luos network, nodes are all connected together using Robus, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers and running Luos.
 
-A **Luos board** hosts a single node. Each one provides a robotic function (gate, sensor, actuation, etc.).
+A **Luos prototyping board** hosts a single node. Each one provides a robotic function (gate, sensor, actuation, etc.).
 
 In the Luos philosophy, each node has to carry the necessary programs (modules) allowing to manage the boards and devices hosting it.
 
