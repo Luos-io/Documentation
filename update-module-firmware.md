@@ -85,7 +85,7 @@ Each Luos board has a micro-USB port. Plug the USB cable to this port and then t
 
 ### Step 4: Upload the new file into the board
 Execute the program *DfuSeDemo.exe*.<br />
-Click on `Choose…` and load the DFU file you just converted from binary.
+Click on `Choose…` in the section `Upgrade or Verify Action` and load the DFU file you just converted from binary.
 
 ![Dfuse1](/assets/img/firmwareupdate-5.png)
 
