@@ -52,7 +52,7 @@ robot.servo1_mod.firmware_revision
 These steps are only for Windows. For Mac or Linux, ignore them and go directly to [Mac / Linux steps](#unix).
 
 ### Step 1: Download and install the software
-The software can be downloaded here. You will have to create an account in order to download it.
+The software can be downloaded **(here)[https://www.st.com/en/development-tools/stsw-stm32080.html#getsoftware-scroll]**. You will have to create an account in order to download it.
 
 After the download, install the software on your computer. The files you will need usually figure here on your computer:
 
@@ -72,7 +72,7 @@ Click `OK`, and fill the Product ID and Version values with the respective addre
 
 The Address must be `0x08000000`.
 
-Load the binary file provided by Luos Robotics (button …), and click `Add to list >>`, then click `OK`.<br />
+Load the binary file provided by Luos Robotics (button `…`), and click `Add to list >>`, then click `OK`.<br />
 Click the `Generate…` button, choose the DFU file’s name and location and save it.
 
 ![DfuFileMgr4](/assets/img/firmwareupdate-4.png)
@@ -104,7 +104,7 @@ Your board is now ready, you can close the program and unplug the USB form the c
 ## Mac / Linux steps 
 {: #unix }
 
-These steps are only for Mac or Linux. For Windows, ignore them and go directly to [Windows steps](#windows).
+These steps are only for Mac or Linux. If you're using Windows, ignore them and go directly to [Windows steps](#windows).
 
 ### Step 1: Install the software
 Install the program *dfu-util*.
