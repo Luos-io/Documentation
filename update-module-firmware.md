@@ -59,6 +59,7 @@ After the download, install the software on your computer. The files you will ne
 `[Windows Installation Disk]:\Program Files (x86)\STMicroelectronics\Software\DfuSe v3.0.6\Bin`
 
 ### Step 2: Convert the binary file
+Download the binary file at **[this address](https://github.com/Luos-Robotics/module_binaries/releases)**.
 Execute the program *DfuFileMgr.exe*.
 
 ![DfuFileMgr1](/assets/img/firmwareupdate-1.png)
@@ -114,7 +115,7 @@ Each Luyos board has a micro-USB port. Plug the USB cable to this port and then 
 > **Note:** The USB board has two USB ports, you should always plug the port situated on the L0, under the connectors. You should not see any light from the board when you plug it.
 
 ### Step 3: Upload the file into the board
-You can download the last release firmwares at our GitHub page.
+Download the binary file at **[this address](https://github.com/Luos-Robotics/module_binaries/releases)**.
 
 Type the following line and replace `module.bin` by the filename of the binary file provided by Luos Robotics:
 
