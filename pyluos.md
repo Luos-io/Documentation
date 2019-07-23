@@ -6,11 +6,13 @@ title: "Pyluos"
 
 # A Pyluos guide
 
-The python library to manage a Luos systems.
+Pyluos is the python library to manage a Luos systems.
 
 ## Installing Python and Pip
 
 <blockquote class="warning"><strong>Warning:</strong> In order to use pyluos library, Python and the pip packet manager must be installed on your computer.</blockquote><br />
+
+<p class="bigger" markdown="1">Last Pyluos version: {{ last_version_pyluos }}</p>
 
 To install Python, download the last release according to your computer's OS: [https://www.python.org/downloads/](https://www.python.org/downloads/).
 
