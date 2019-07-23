@@ -19,4 +19,5 @@
 {% assign int_img = "/assets/img/sticker-interface.png" %}
 {% assign pow_img = "/assets/img/sticker-power.png" %}
 
-{% assign last_version = "0.5.0" %}
+{% assign last_version_fw = "0.5.1" %}
+{% assign last_version_pyluos = "0.1.1" %}
