@@ -10,7 +10,7 @@ At Luos Robotics, we work every day on new versions of the boards’ internal so
 
 <blockquote class="warning"><strong>Warning:</strong> Upgrading a module is a critical task that should be attempted only if you know what you are doing.</blockquote><br />
 
-<p class="bigger" markdown="1">Last firmware version: {{ last_version }}</p>
+<p class="bigger" markdown="1">Last firmware version: {{ last_version_fw }}</p>
 
 **[\>\> Get the firmware files on *GitHub*.](https://github.com/Luos-Robotics/module_binaries/releases)**
 
