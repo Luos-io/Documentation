@@ -52,7 +52,7 @@ In a Luos network, **you can have multiple power category boards**. In this case
 
 For example, for a robot using a 12V motor and an USB board: The USB board belongs to the power category, so it can share its 5V into the network's wires. But you need 12V for your motor, so you will have to add a 12V AC plug board in your network to supply the motor. In this case, the USB board doesn’t share its power, only the AC plug board does, because 5V < 12V.
 
-As you probably know, some component needs specific voltage to work properly. For example, in order to use standard servomotor you have to feed the Luos network with 5V or 7V. If you need to combine 7V and 12V motors in a robotic system, for example, you can manage multiple voltages on the same network using a Power isolator board.
+As you probably know, some component needs specific voltage to work properly. For example, in order to use standard servomotor you have to feed the Luos network with 5V or 7V. If you need to combine 7V and 12V motors in a robotic system, for example, you can manage multiple voltages on the same network using a [power isolator board]({{ "/board/power-isolator" | absolute_url }}).
 
 
 ## External communication management
