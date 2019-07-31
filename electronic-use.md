@@ -31,7 +31,7 @@ On each board’s image in the website, one or several small colored symbols are
 |{{cog_desc}}|{{int_desc}}|{{pow_desc}}|
 
 
-## Plugging boards together
+## <a name="plug"></a>Plugging boards together
 
 Luos boards have at least 2 connection ports. All connectors are the same, so that any board can be connected to another one using any of these ports. Just avoid to make a loop circuit, otherwise you will damage the communication between modules.
 
