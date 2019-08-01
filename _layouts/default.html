@@ -25,11 +25,6 @@
 
         <h3>{{ site.description | default: site.github.project_tagline }}</h3>
 
-        {%- if site.github.is_project_page -%}
-        <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
-        {%- endif -%}
-
-
 		<ul>
 			<li><a href="{{ "/general-use.html" | absolute_url }}">General use</a></li>
 			<li><a href="{{ "/quick-start.html" | absolute_url }}">Quick start</a></li>
