@@ -19,11 +19,11 @@ The {{ board }} board is designed to control motors with a reducer and a sensor.
 
 ### Connector's reference
 
-![Male connector](../assets/img/ctrl_mot_male_connector.jpg){: .small_img } Male connector's reference (on the board): **B6B-PH-K-S(LF)(SN)**
+![Male connector](../assets/img/ctrl_mot_male_connector.jpg){: .small_img } Male connector's reference (on the board): [**B6B-PH-K-S(LF)(SN)**](https://octopart.com/b6b-ph-k-s%28lf%29%28sn%29-jst-248872)
 
-![Female connector](../assets/img/ctrl_mot_female_connector.jpg){: .small_img } Female connector's reference (on the wire): **PHR-6**
+![Female connector](../assets/img/ctrl_mot_female_connector.jpg){: .small_img } Female connector's reference (on the wire): [**PHR-6**](https://octopart.com/phr-6-jst-279165)
 
-![Crimp](../assets/img/ctrl_mot_crimp.jpg){: .small_img } Crimp's reference (on the wire): **BPH-002T-P0.5S**
+![Crimp](../assets/img/ctrl_mot_crimp.jpg){: .small_img } Crimp's reference (on the wire): [**BPH-002T-P0.5S**](https://octopart.com/bph-002t-p0.5s-jst-8407485)
 
 ### Pinout and characteristics
 
