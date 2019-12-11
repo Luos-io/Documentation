@@ -17,7 +17,19 @@ tags: [actuation]
 
 The {{ board }} board is designed to control motors with a reducer and a sensor. It provides PH connector with 6 pins, where the motor can be plugged.
 
-![Pinout](/assets/img/controlled_motor_pinout.png)<br />*PH connector pinout.*
+### Connector's reference
+
+![Male connector](../assets/img/ctrl_mot_male_connector.jpg){: .small_img } Male connector's reference (on the board): **B6B-PH-K-S(LF)(SN)**
+
+![Female connector](../assets/img/ctrl_mot_female_connector.jpg){: .small_img } Female connector's reference (on the wire): **PHR-6**
+
+![Crimp](../assets/img/ctrl_mot_crimp.jpg){: .small_img } Crimp's reference (on the wire): **BPH-002T-P0.5S**
+
+### Pinout and characteristics
+
+![Pinout](/assets/img/controlled_motor_pinout.png)<br />*PHR-6 connector pinout.*
+
+
 
 This board accepts supply voltage from 7V to 24V.
 
