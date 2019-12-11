@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Controlled motor"
-date:   2019-03-15 17:59:00 +0100
+date:   2019-12-11 17:20:00 +0100
 categories: board
 tags: [actuation]
 ---
