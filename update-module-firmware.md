@@ -52,7 +52,7 @@ robot.servo1_mod.firmware_revision
 These steps are only for Windows. For Mac or Linux, ignore them and go directly to [Mac / Linux steps](#unix).
 
 ### Step 1: Download and install the software
-The software can be downloaded **(here)[https://www.st.com/en/development-tools/stsw-stm32080.html#getsoftware-scroll]**. You will have to create an account in order to download it.
+The software can be downloaded **[here](https://www.st.com/en/development-tools/stsw-stm32080.html#getsoftware-scroll)**. You will have to create an account in order to download it.
 
 After the download, install the software on your computer. The files you will need usually figure here on your computer:
 
