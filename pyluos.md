@@ -138,7 +138,7 @@ For example :
 ```python
 robot.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" board
  
-robot.button_mod.pressed # Returns the status of the push button
+robot.button_mod.state # Returns the status of the push button
  
 robot.button_mod.type # Returns the module type of the board "button_mod"
 ```
