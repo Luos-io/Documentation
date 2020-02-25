@@ -6,7 +6,7 @@ title: "Boards general use"
 
 # General guide to Luos electronic boards
 
-Luos Robotics provides simple electronic boards to start prototyping using Luos modular technology.
+Luos provides simple electronic boards to start prototyping using Luos modular technology.
 This guide contains all the basic notions you will need to use Luos electronic boards.
 
 

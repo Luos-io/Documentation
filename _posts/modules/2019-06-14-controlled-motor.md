@@ -87,7 +87,7 @@ Now that everything is configured, you can enable the control modes you want to 
 
 The PID values allow your motor to stick to the target command as fast as possible. The quality of a set of PID values depends on time to reach the target position and position precision.
 Tuning a PID is something difficult and takes a lot of practice. It's really important to have simple ways to evaluate PID values impact on your motor before starting to tune these values.
-Here is the code we use at Luos robotics to tune a PID by ourself. Use it with Jupyter notebook to get your plot instantly.
+Here is the code we use at Luos to tune a PID by ourself. Use it with Jupyter notebook to get your plot instantly.
 
 The main code:
 ```python

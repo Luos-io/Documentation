@@ -6,7 +6,7 @@ title: "Update firmware"
 
 # A guide to upgrade your boards
 
-At Luos Robotics, we work every day on new versions of the boards’ internal software (the modules), in order to improve your experience with robotics. This guide explains step-by-step how to upgrade any board with an up-to-date software provided by Luos.
+At Luos, we work every day on new versions of the boards’ internal software (the modules), in order to improve your experience with electronics. This guide explains step-by-step how to upgrade any board with an up-to-date software provided by Luos.
 
 <blockquote class="warning"><strong>Warning:</strong> Upgrading a module is a critical task that should be attempted only if you know what you are doing.</blockquote><br />
 
@@ -29,7 +29,7 @@ robot.servo1_mod.firmware_revision
 
 * A computer with Windows.
 * The DFU file manager software from ST
-* The [binary file](https://github.com/Luos-Robotics/module_binaries/releases) provided by Luos Robotics
+* The [binary file](https://github.com/Luos-Robotics/module_binaries/releases) provided by Luos
 * A micro-USB to USB cable
 * The board that needs to be upgraded
 
@@ -38,7 +38,7 @@ robot.servo1_mod.firmware_revision
 #### For Mac and Linux:
 
 * A computer with one of these OS
-* The [binary file](https://github.com/Luos-Robotics/module_binaries/releases) provided by Luos Robotics
+* The [binary file](https://github.com/Luos-Robotics/module_binaries/releases) provided by Luos
 * A micro-USB to USB cable
 * The board that needs to be upgraded
 
@@ -72,7 +72,7 @@ Click `OK`, and fill the Product ID and Version values with the respective addre
 
 The Address must be `0x08000000`.
 
-Load the binary file provided by Luos Robotics (button `…`), and click `Add to list >>`, then click `OK`.<br />
+Load the binary file provided by Luos (button `…`), and click `Add to list >>`, then click `OK`.<br />
 Click the `Generate…` button, choose the DFU file’s name and location and save it.
 
 ![DfuFileMgr4](/assets/img/firmwareupdate-4.png)
@@ -117,7 +117,7 @@ Each Luyos board has a micro-USB port. Plug the USB cable to this port and then 
 ### Step 3: Upload the file into the board
 Download the binary file at **[this address](https://github.com/Luos-Robotics/module_binaries/releases)**.
 
-Type the following line and replace `module.bin` by the filename of the binary file provided by Luos Robotics:
+Type the following line and replace `module.bin` by the filename of the binary file provided by Luos:
 
 `dfu-util -d 0483:df11 -a 0 -s 0x08000000 -D module.bin`
  
