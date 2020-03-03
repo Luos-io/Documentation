@@ -12,12 +12,12 @@
 {% assign int_title = "User interface" %}
 {% assign pow_title = "Power" %}
 
-{% assign act_img = "/assets/img/sticker-actuation.png" %}
-{% assign sen_img = "/assets/img/sticker-sensor.png" %}
-{% assign com_img = "/assets/img/sticker-communication.png" %}
-{% assign cog_img = "/assets/img/sticker-cognition.png" %}
-{% assign int_img = "/assets/img/sticker-interface.png" %}
-{% assign pow_img = "/assets/img/sticker-power.png" %}
+{% assign act_img = "{{ "/" | absolute_url }}/assets/img/sticker-actuation.png" %}
+{% assign sen_img = "{{ "/" | absolute_url }}/assets/img/sticker-sensor.png" %}
+{% assign com_img = "{{ "/" | absolute_url }}/assets/img/sticker-communication.png" %}
+{% assign cog_img = "{{ "/" | absolute_url }}/assets/img/sticker-cognition.png" %}
+{% assign int_img = "{{ "/" | absolute_url }}/assets/img/sticker-interface.png" %}
+{% assign pow_img = "{{ "/" | absolute_url }}/assets/img/sticker-power.png" %}
 
 {% assign last_version_fw = "0.5.1" %}
 {% assign last_version_pyluos = "0.1.1" %}
