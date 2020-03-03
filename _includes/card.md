@@ -11,11 +11,11 @@
 {% endif %}
 <p class="sheet-title" markdown="1">**Image**</p>
 {% if {{board}} contains 'Dynamixel' %}
-<p class="indent" markdown="1"><img height="150" src="/assets/img/dxl1-module.png" alt="Dynamixel 1}"><img height="150" src="/assets/img/dxl2-module.png" alt="Dynamixel 2"></p>
+<p class="indent" markdown="1"><img height="150" src="{{ "/" | absolute_url }}/assets/img/dxl1-module.png" alt="Dynamixel 1"><img height="150" src="{{ "/" | absolute_url }}/assets/img/dxl2-module.png" alt="Dynamixel 2"></p>
 {% elsif {{board}} contains 'Cable' %}
-<p class="indent" markdown="1"><img height="150" src="/assets/img/cable-10cm.png" alt="Cable 10 cm"><img height="150" src="/assets/img/cable-20cm.png" alt="Cable 20 cm"></p>
+<p class="indent" markdown="1"><img height="150" src="{{ "/" | absolute_url }}/assets/img/cable-10cm.png" alt="Cable 10 cm"><img height="150" src="{{ "/" | absolute_url }}/assets/img/cable-20cm.png" alt="Cable 20 cm"></p>
 {% else %}
-<p class="indent" markdown="1"><img height="150" src="/assets/img/{{ board | downcase | replace: ' ', '-' }}-module.png" alt="{{ board | Capitalize }}"></p>
+<p class="indent" markdown="1"><img height="150" src="{{ "/" | absolute_url }}/assets/img/{{ board | downcase | replace: ' ', '-' }}-module.png" alt="{{ board | Capitalize }}"></p>
 {% endif %}
 <p class="sheet-title" markdown="1">**Categories**</p>
 <p class="indent" markdown="1">
@@ -23,7 +23,7 @@
 N/A
 {% else %}
 {% for tag in page.tags %}
-<a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="/assets/img/sticker-{{ tag }}.png" alt="{{ tag | capitalize }}"></a>
+<a href="{{ "/" | absolute_url }}tags.html"><img height="50" src="{{ "/" | absolute_url }}/assets/img/sticker-{{ tag }}.png" alt="{{ tag | capitalize }}"></a>
 {% endfor %}{% endif %}
 </p>
 </div>
