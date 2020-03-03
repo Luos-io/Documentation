@@ -57,5 +57,7 @@ There are two types of modules:
 ### Drivers
 Drivers are modules managing hardware. They are passive modules that retrieve pieces of information from electronic devices.
 
+### Applications (App)
+An application or app is a module which only manages software items.
 For example, you can create an app to compute the inverse-kinematic of a robotic arm. In this case, you can send an arm target position to this app so that it computes and sends orders to each motor modules it handles in order to reach the target.
 Applications can be placed in any nodes on your network without any modification, but the node choice can impact global performances of the system.
