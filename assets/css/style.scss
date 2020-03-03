@@ -209,6 +209,24 @@ code.highlighter-rouge{
 	border-radius: 2px;
 }
 
+/********* Bus comparison table **********/
+
+table.bus td {
+    text-align: center; 
+    vertical-align: middle;
+	border: solid 1px grey;
+}
+
+table.bus td.luos {
+    text-align: center; 
+    vertical-align: middle;
+	border: solid 1px grey;
+	background-color: rgba(0,100,0,0.15);
+}
+
+table.bus .head {
+	background-color: rgba(100,100,100,0.05);
+}
 
 /********* Title lines **********/
 
