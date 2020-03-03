@@ -5,18 +5,59 @@ layout: default
 
 # Welcome to Luos documentation
 
-Discover how Luos works and how to use it.
+<span style="font-size: 20px;">Discover how Luos works and how to use it.</span>
 
-----
+<hr class="hr_top">
 
-## First steps
+{% assign cat_order = site.categories | sort: categories %}
+{%- for cat in cat_order -%}
+{%- assign category = cat | first -%}
+{% if category contains "modules_list" or category contains "boards_list" %}{% continue %}{% endif %}
+## {{ cat | first | slice: 2, 30 | replace:"_", " " | capitalize }}
+{% if category == "prototyping_boards" %}
+Luos provides [prototyping boards]("https://www.generationrobots.com/fr/256_luos") to start understanding and using the technology.
+{% endif %}
+<ul>
+{% assign sorted = cat.last | sort: "order" %}
+{% for post in sorted %}
+<li><a class="{% if post.wip == 1 %}wip_txt{% endif %}" href="{{ post.url }}">{{ post.title }}</a> – {{ post.desc }}</li>
+{% endfor %}
+{%- assign test_cat = cat | first -%}
+{%- if test_cat contains 'modules' -%}
+	<li class="ul_tree"><span class="branch_closed">Modules list</span>
+		<ul class="closed">
+			{%- assign sorted_post = site.posts | sort: 'title' -%}
+			{%- for post in sorted_post -%}
+			{%- if post.url contains 'modules_list' -%}
+			<li class="branch_single"><a href="{{ post.url }}">{{ post.title }}</a></li>
+			{%- endif -%}
+			{%- endfor -%}
+		</ul>
+	</li>
+{%- endif -%}
+{%- if test_cat contains 'prototyping_boards' -%}
+	<li class="ul_tree"><span class="branch_closed">Boards list</span>
+		<ul class="closed">
+			{%- assign sorted_post = site.posts | sort: 'title' -%}
+			{%- for post in sorted_post -%}
+			{%- if post.url contains 'boards_list' -%}
+			<li class="branch_single"><a href="{{ post.url }}">{{ post.title }}</a></li>
+			{%- endif -%}
+			{%- endfor -%}
+		</ul>
+	</li>
+{%- endif -%}
+</ul>
+{%- endfor -%}
 
-If the Luos technology is something new for you, you should start by reading these pages allowing you to understand basic concepts.
-
-* [General use]({{ "/general-use.html" | absolute_url }}) – What is Luos technology and how to use it.
-* [Quick start]({{ "/quick-start.html" | absolute_url }}) – A short tutorial to help getting started with modules.
-* [Pyluos]({{ "/pyluos.html" | absolute_url }}) – An explanation of the pyluos library we use in our examples.
-* [Luos boards general use]({{ "/electronic-use.html" | absolute_url }}) – Rules to understand and use Luos electronic boards.
-* [Firmware update]({{ "/update-module-firmware.html" | absolute_url }}) – How to update your modules firmware.
-
-The pages displayed on the left give inputs about the module functionalities and how to use them on Luos boards.
+{% for cat in site.categories %}
+{% assign category = cat | first %}
+{% if category == "others" %}
+## {{ cat | first | replace:"_", " " | capitalize }}
+<ul>
+{% assign sorted = cat.last | sort: "order" %}
+{% for post in sorted %}
+<li><a class="{% if post.wip == 1 %}wip_txt{% endif %}" href="{{ post.url }}">{{ post.title }}</a> – {{ post.desc }}</li>
+{% endfor %}
+{% endif %}
+{% endfor %}

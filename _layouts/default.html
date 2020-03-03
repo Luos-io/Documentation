@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
 
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 {% seo %}
 
@@ -13,6 +13,14 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+	
+	<!-- BOOTSTRAP -->
+	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">-->
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	
+	
   </head>
   <body>
     <div class="wrapper">
@@ -23,46 +31,62 @@
           <a href="{{ "/index.html" | absolute_url }}"><img width="120" src="{{site.logo | relative_url}}" alt="Documentation" /></a><br /><br />
         {%- endif -%}
 
-        <h3>{{ site.description | default: site.github.project_tagline }}</h3>
+        <h3 class="no_line">{{ site.description | default: site.github.project_tagline }}</h3>
 
-		<ul>
-			<li><a href="{{ "/general-use.html" | absolute_url }}">General use</a></li>
-			<li><a href="{{ "/quick-start.html" | absolute_url }}">Quick start</a></li>
-			<li><a href="{{ "/pyluos.html" | absolute_url }}">Pyluos</a></li>
-			<li><a href="{{ "/electronic-use.html" | absolute_url }}">Luos boards general use</a></li>
-			<li><a href="{{ "/update-module-firmware.html" | absolute_url }}">Firmware update</a></li>
+		<ul id="tree">
+			<li class="main_branch"><a href="{{ "/index.html" | absolute_url }}">Home</a>
+				<ul class="ul_tree">
+					{% assign cat_order = site.categories | sort: categories %}
+					{% for cat in cat_order %}
+						{% assign category = cat | first %}
+						{% assign id_span = "" %}
+						{% if category contains "modules_list" or category contains "boards_list" %}{% continue %}{% endif %}
+						<li class="li_tree_1"><span id="{% if category contains 'modules' %}mod_span{% endif %}{% if category contains 'prototyping_boards' %}board_span{% endif %}" class="branch_closed">{{ cat | first | slice: 2, 20 | replace:"_", " " | capitalize }}</span>
+						<ul id="first_branch" class="closed">
+							{% assign sorted = cat.last | sort: "order" %}
+							{% for post in sorted %}
+								<li class="branch_single {% if post.wip == 1 %}wip_txt{% endif %}"><a href="{{ post.url }}">{{ post.title }}</a></li>
+							{% endfor %}
+							
+							{%- assign test_cat = cat | first -%}
+							{%- if test_cat contains 'modules' -%}
+								<li class="li_tree_2"><span id="mod_list" class="branch_closed">Modules list</span>
+									<ul class="closed">
+										{%- assign sorted_post = site.posts | sort: 'title' -%}
+										{%- for post in sorted_post -%}
+										{%- if post.url contains 'modules_list' -%}
+										<li class="branch_single"><a href="{{ post.url }}">{{ post.title }}</a></li>
+										{%- endif -%}
+										{%- endfor -%}
+									</ul>
+								</li>
+							{%- endif -%}
+							{%- if test_cat contains 'prototyping_boards' -%}
+								<li class="li_tree_2"><span id="board_list" class="branch_closed">Boards list</span>
+									<ul class="closed">
+										{%- assign sorted_post = site.posts | sort: 'title' -%}
+										{%- for post in sorted_post -%}
+										{%- if post.url contains 'boards_list' -%}
+										<li class="branch_single"><a href="{{ post.url }}">{{ post.title }}</a></li>
+										{%- endif -%}
+										{%- endfor -%}
+									</ul>
+								</li>
+							{%- endif -%}
+							</ul>
+					  </li>
+					{% endfor %}
+					
+				</ul>
+			</li>
 		</ul>
-    <b>Modules:</b></li>
-    <ul>
-  		{%- assign sorted_post = site.posts | sort: 'title' -%}
-  		{%- for post in sorted_post -%}
-        {%- unless post.url contains 'board' -%}
-    			<li class="module">
-    				<a href="{{ post.url  | absolute_url }}">{{ post.title }}</a>
-    			</li>
-        {%- endunless -%}
-  		{%- endfor -%}
-    </ul>
-    <b>Boards:</b></li>
-    <ul>
-      {%- assign sorted_post = site.posts | sort: 'title' -%}
-      {%- for post in sorted_post -%}
-        {%- if post.url contains 'board' -%}
-          <li class="board">
-            <a href="{{ post.url  | absolute_url }}">{{ post.title }}</a>
-          </li>
-        {%- endif -%}
-      {%- endfor -%}
-		</ul>
-		>> A question? <a href="https://forum.luos.io"><b>Ask us on the forum</b></a><br /><br />
+		<br />
+		<br />
+		
+		<div class="footer_menu">
+		>> A question? <a href="https://community.luos-robotics.com/"><b>Ask it on the forum</b></a><br /><br />
+		</div>
 
-        {% if site.show_downloads %}
-        <ul class="downloads">
-          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-        </ul>
-        {% endif %}
       </header>
       <section>
 
@@ -93,6 +117,64 @@
       ga('send', 'pageview');
     </script>
     {% endif %}
+	
+	
+	<script>
+	// Keep active link visible in its branch, jQuery
+	$(document).ready(function(){
+		// full URL of the page
+		var url = window.location.href; 
+		
+		if (url.includes("index")) {url = "";} // avoid every item of the menu to be active
 
+		// testing every a tag's url in menu #tree 
+		$("#tree a").each(function() {
+		
+			// checks if it's the same than url
+			if(url == (this.href)) { 
+				
+				// if page is a modules list
+				if (url.includes("modules_list")){
+					$("#mod_list").addClass("branch_open"); // Css pour rotater le ">" du span niveau modules list
+					$(this).closest("ul").parents().parents().addClass("open"); // Css pour laisser une branch ouverte
+					$(this).parents().parents().parents().parents().parents().parents().parents().find("#mod_span").addClass("branch_open"); // Css pour rotater le ">" du span un niveau au dessus
+
+				}
+				
+				// if page is a boards list, idem que pour modules
+				if (url.includes("boards_list")){
+					$("#board_list").addClass("branch_open");
+					$(this).closest("ul").parents().parents().addClass("open");
+					$(this).parents().parents().parents().parents().parents().parents().parents().find("#board_span").addClass("branch_open");
+				}
+				
+				$(this).href = ''; // deactivate link
+				$(this).closest("li").addClass("menu_active"); // CSS to show text as active page
+				$(this).closest("ul").addClass("open"); // Open branch
+				$(this).closest("ul").closest("li").find("span:first").addClass("branch_open"); // Rotate the ">"
+
+
+				
+			}
+		});
+	});
+	</script>
+
+	<script>
+	var toggler = document.getElementsByClassName("branch_closed");
+	var i;
+
+	for (i = 0; i < toggler.length; i++) {
+	  toggler[i].addEventListener("click", function() {
+		this.parentElement.querySelector(".closed").classList.toggle("open"); // opens the branch
+		this.classList.toggle("branch_open"); // rotates the >
+	  });
+	}
+	</script>
+		
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

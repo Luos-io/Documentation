@@ -1,13 +1,14 @@
 ---
 layout: default
 ---
+{% include var.md %}
 
-<h2 markdown="1"><a href="{{ "index.html" | absolute_url }}">Luos documentation</a> >> {{ page.categories[0] | capitalize }} >> {{ page.title | capitalize }}</h2>
-<small>Last update: {{ page.date | date: "%-d %B %Y" }}</small>
+<h3 class="directory no_line" markdown="1"><a class="directory" href="{{ "index.html" | absolute_url }}">Luos documentation</a> >> {{ page.categories[0] | slice: 2, page.categories[0].size | capitalize | replace: '_', ' ' }} >> {{ page.title | capitalize }}</h3>
+<!--<small>Last update: {{ page.date | date: "%-d %B %Y" }}</small><br />-->
+<small>Last update: {{ last_doc_update }}</small><br />
+<small>Luos version: {{ last_version_luos }}</small>
 <br /><br />
-<hr />
-
-<!--<p class="view">by {{ page.author | default: site.author }}</p>-->
+<hr class="hr_top" />
 
 {{content}}
 
