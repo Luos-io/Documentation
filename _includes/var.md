@@ -5,6 +5,11 @@
 {% assign int_desc = "These boards are built to interact with the user of the machine." %}
 {% assign pow_desc = "Power boards are able to share their input power source into the Robus wire to feed other boards." %}
 
+{% assign node_def = "Hardware element (MCU) running Luos and hosting one or several modules." %}
+{% assign module_def = "Software element ran by Luos that can communicate with other modules. Can be driver or app, or both in the same time." %}
+{% assign od_def = "Set of typical objects that can be transmitted through Luos messages. Any object can easily be converted in other units." %}
+
+
 {% assign act_title = "Actuation" %}
 {% assign sen_title = "Sensor" %}
 {% assign com_title = "Communication" %}
