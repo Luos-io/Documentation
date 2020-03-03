@@ -20,15 +20,15 @@ On each board’s image in the website, one or several small colored symbols are
 
 **Below is the list of the six categories:**
 
-|<a href="{{ "/" | absolute_url }}tags.html">{{sen_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{act_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{com_title}}</a>|
+| <a href="{{ "/" | absolute_url }}tags.html">{{sen_title}}</a> | <a href="{{ "/" | absolute_url }}tags.html">{{act_title}}</a> | <a href="{{ "/" | absolute_url }}tags.html">{{com_title}}</a> |
 |:-|:-|:-|
-|![{{sen_title}}]({{sen_img}})|![{{act_title}}]({{act_img}})|![{{com_title}}]({{com_img}})|
-|{{sen_desc}}|{{act_desc}}|{{com_desc}}|
+| ![{{sen_title}}]({{ "/" | absolute_url }}assets/img/sticker-sensor.png) | ![{{act_title}}]({{ "/" | absolute_url }}assets/img/sticker-actuation.png) | ![{{com_title}}]({{ "/" | absolute_url }}assets/img/sticker-communication.png) |
+| {{sen_desc}} | {{act_desc}} | {{com_desc}} |
 
 |<a href="{{ "/" | absolute_url }}tags.html">{{cog_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{int_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{pow_title}}</a>|
 |:-|:-|:-|
-|![{{cog_title}}]({{cog_img}})|![{{int_title}}]({{int_img}})|![{{pow_title}}]({{pow_img}})|
-|{{cog_desc}}|{{int_desc}}|{{pow_desc}}|
+| ![{{cog_title}}]({{ "/" | absolute_url }}assets/img/sticker-cognition.png) | ![{{int_title}}]({{ "/" | absolute_url }}assets/img/sticker-interface.png) | ![{{pow_title}}]({{ "/" | absolute_url }}assets/img/sticker-power.png) |
+| {{cog_desc}} | {{int_desc}} | {{pow_desc}} |
 
 
 ## <a name="plug"></a>Plugging boards together
@@ -37,7 +37,7 @@ Luos boards have at least 2 connection ports. All connectors are the same, so th
 
 There is a correct side to plug a cable’s connector to a board. The small tab on the connector must face upward to plug correctly, as shown on the following pictures:
 
-|![Wrong side img](/assets/img/plug-no.png)|![Right side img](/assets/img/plug-yes.png)|
+|![Wrong side img]({{ "/" | absolute_url }}/assets/img/plug-no.png)|![Right side img]({{ "/" | absolute_url }}/assets/img/plug-yes.png)|
 |:-|:-|
 |Wrong side, the upper surface is flat|Right side, the tab is visible on the upper surface|
 
