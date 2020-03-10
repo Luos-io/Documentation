@@ -2,12 +2,12 @@
 layout: post
 title:  "Potentiometer"
 date:   2019-03-15 17:57:00 +0100
-categories: board
+categories: -_boards_list
 tags: [sensor, interface]
 ---
 {% assign board = "Potentiometer" %}
 {% assign alias = "potentiometer_mod" %}
-{% assign type = "[Angle](/module/angle)" %}
+{% assign type = "[Angle](/../modules_list/angle)" %}
 {% include var.md %}
 
 # How to start with the {{ board }} board

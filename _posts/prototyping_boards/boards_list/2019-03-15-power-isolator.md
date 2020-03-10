@@ -2,12 +2,12 @@
 layout: post
 title:  "Power isolator"
 date:   2019-03-15 17:57:00 +0100
-categories: board
+categories: -_boards_list
 tags: [power]
 ---
 {% assign board = "Power isolator" %}
-{% assign alias = "" %}
-{% assign type = "" %}
+{% assign alias = "N/A" %}
+{% assign type = "N/A" %}
 {% include var.md %}
 
 # How to start with the {{ board }} board

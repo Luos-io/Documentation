@@ -2,12 +2,12 @@
 layout: post
 title:  "Controlled motor"
 date:   2019-12-11 17:20:00 +0100
-categories: board
+categories: -_boards_list
 tags: [actuation]
 ---
 {% assign board = "Controlled motor" %}
 {% assign alias = "controlled_moto" %}
-{% assign type = "[Controlled motor](/module/controlled-motor)" %}
+{% assign type = "[Controlled motor](/../modules_list/controlled-motor)" %}
 {% include var.md %}
 
 # How to start with the {{ board }} board
@@ -33,7 +33,7 @@ The {{ board }} board is designed to control motors with a reducer and a sensor.
 
 This board accepts supply voltage from 7V to 24V.
 
-To control regular DC motors (without reduction neither sensor), please refer to [DC motor board’s documentation](/board/dc-motor).
+To control regular DC motors (without reduction neither sensor), please refer to [DC motor board’s documentation](/boards_list/dc-motor).
 
 <blockquote class="warning"><strong>Warning:</strong> The USB board provides too weak power to drive a motor-reducer with this board. A power board such as Battery board or Power plug board shall be used.</blockquote><br />
 
