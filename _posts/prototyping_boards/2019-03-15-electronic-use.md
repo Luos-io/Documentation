@@ -26,12 +26,12 @@ On each board’s image in the website, one or several small colored symbols are
 
 |<a href="{{ "/" | absolute_url }}tags.html">{{sen_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{act_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{com_title}}</a>|
 |:-|:-|:-|
-|![{{sen_title}}]({{sen_img}})|![{{act_title}}]({{act_img}})|![{{com_title}}]({{com_img}})|
+|![{{sen_title}}]({{ "/assets/img/sticker-sensor.png" | absolute_url }})|![{{act_title}}]({{ "/assets/img/sticker-actuation.png" | absolute_url }})|![{{com_title}}]({{ "/assets/img/sticker-communication.png" | absolute_url }})|
 |{{sen_desc}}|{{act_desc}}|{{com_desc}}|
 
 |<a href="{{ "/" | absolute_url }}tags.html">{{cog_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{int_title}}</a>|<a href="{{ "/" | absolute_url }}tags.html">{{pow_title}}</a>|
 |:-|:-|:-|
-|![{{cog_title}}]({{cog_img}})|![{{int_title}}]({{int_img}})|![{{pow_title}}]({{pow_img}})|
+|![{{cog_title}}]({{ "/assets/img/sticker-cognition.png" | absolute_url }})|![{{int_title}}]({{ "/assets/img/sticker-interface.png" | absolute_url }})|![{{pow_title}}]({{ "/assets/img/sticker-power.png" | absolute_url }})|
 |{{cog_desc}}|{{int_desc}}|{{pow_desc}}|
 
 

@@ -3,7 +3,6 @@
 
 @import "jekyll-theme-minimal";
 
-
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -107,11 +106,6 @@ hr.endpost{
     border: 0;
 }
 
-.language{
-
-}
-
-
 .img_warning{
 	vertical-align:middle;
 }
@@ -127,8 +121,260 @@ code.highlighter-rouge{
 	padding: 3px 3px 3px 3px;
 }
 
+
 .small_img{
   position: relative;
   vertical-align: middle;
   right: 15px;
+}
+
+.footer_menu{
+	position:fixed;
+	bottom:40px;
+	padding:10px 50px 0px 5px;
+	background-color: #fff;
+}
+
+.wip_txt::after {
+	content: " [WIP] ";
+	-webkit-user-select: none;
+	-moz-user-select: none; 
+	user-select: none;
+	font-size: 1.0em;
+	font-weight: bold;
+	position: relative;
+	bottom: 1px;
+	font-size: .6em;
+	line-height: 1.0em;
+	vertical-align:super;
+	text-decoration:none;
+	color:#999;
+}
+
+.wip_img {
+  background-image: url("../img/wip.png");
+  -webkit-filter: grayscale(100%) opacity(5%); 
+  filter: grayscale(100%) opacity(5%);
+  background-color: #fff; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 90%;
+  width: 90%;
+  z-index:-99;
+}
+
+.directory {
+	color: #999;
+	font-style: italic;
+}
+
+/********* Code types **********/
+
+.language-c::before {
+	content: 'Language C';
+	font-size: 0.7em;
+	color: grey;
+	font-weight: bold;
+	letter-spacing: 1px;
+	position: absolute;
+	right: 40px;
+}
+
+.language-python::before {
+	content: 'Language Python';
+	font-size: 0.7em;
+	color: grey;
+	font-weight: bold;
+	letter-spacing: 1px;
+	position: absolute;
+	right: 40px;
+}
+
+.language-bash::before {
+	content: 'Console';
+	font-size: 0.7em;
+	color: grey;
+	font-weight: bold;
+	letter-spacing: 1px;
+	position: absolute;
+	right: 40px;
+}
+
+.hr_top{
+	border: 4px solid #e5e5e5; 
+	border-radius: 2px;
+}
+
+/********* Bus comparison table **********/
+
+table.bus td {
+    text-align: center; 
+    vertical-align: middle;
+	border: solid 1px grey;
+}
+
+table.bus td.luos {
+    text-align: center; 
+    vertical-align: middle;
+	border: solid 1px grey;
+	background-color: rgba(0,100,0,0.15);
+}
+
+table.bus .head {
+	background-color: rgba(100,100,100,0.05);
+}
+
+/********* Title lines **********/
+
+h1::after, h2::after, h3::after {
+	display: inline-block;
+    content: "";
+    border-top: 1px dashed #ddd;
+    width: 100%;
+ 
+}
+
+.no_line::after {
+	visibility: hidden;
+}
+
+
+
+/********* Description table (parameters, etc.) **********/
+
+table.table_desc th:first-of-type {
+    width: 20%;
+}
+table.table_desc th:nth-of-type(2) {
+    width: 60%;
+}
+table.table_desc th:nth-of-type(3) {
+    width: 20%;
+}
+
+table.small_table {
+    width: 40%;
+}
+table.small_table th:first-of-type {
+    width: 20%;
+}
+table.small_table th:nth-of-type(2) {
+    width: 20%;
+}
+
+/***************** MENU DYNAMIQUE *****************/
+
+.ul_tree, .li_tree_1, .li_tree_2, .closed, .open, #tree {
+  list-style-type: none;
+}
+
+#tree {
+  margin: 0;
+  padding: 0;
+}
+
+.main_branch {
+	font-weight: bold;
+}
+
+.main_branch::before {
+  content: '\203a';
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+  margin-left: 6px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #f00;
+  cursor: pointer;
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */
+  transform: rotate(90deg);  
+}
+
+.branch_closed {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+  font-weight: bold;
+}
+
+.branch_closed::before {
+  content: '\203a';
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #f00;
+}
+
+.branch_open::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */
+  transform: rotate(90deg);  
+}
+
+.closed {
+  display: none;
+}
+
+.open {
+  display: block;
+}
+
+li.branch_single::before {
+    color: #c0c0c0;
+    content: '\203a';
+	margin-right: 6px;
+    font-size: 1.2em;
+}
+
+li.branch_single {
+    font-weight: normal;
+}
+
+.menu_active{
+	background-color: rgba(100,100,100,0.1);
+}
+
+.menu_active a{
+	color: #333;
+	text-decoration: none;
+	pointer-events: none;
+	font-weight: bold;
+}
+
+/**************************  HOVER OVER DEFINITION  ****************************/
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted #ccc;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 350px;
+	background-color: #fff;
+	color: #555;
+	text-align: left;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 8px;
+	position: absolute;
+	bottom: 150%;
+	left: 50%;
+	margin-left: -60px;
+}
+
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
 }
