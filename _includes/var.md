@@ -5,6 +5,17 @@
 {% assign int_desc = "These boards are built to interact with the user of the machine." %}
 {% assign pow_desc = "Power boards are able to share their input power source into the Robus wire to feed other boards." %}
 
+{% assign node_def = "Hardware element (MCU) hosting and running Luos and hosting one or several modules." %}
+{% assign module_def = "Software element ran by Luos that can communicate with other modules. Can be driver or app, or both in the same time." %}
+{% assign od_def = "Set of typical objects that can be transmitted through Luos messages. Any object can easily be converted in other units." %}
+{% assign microservices_def = "Microservices are a software development technique that arranges an application as a collection of loosely coupled services." %}
+
+{% assign node_def = "<span class='tooltip'>**node**<span class='tooltiptext'>Hardware element (MCU) hosting and running Luos and hosting one or several modules.</span></span>" %}
+
+{% assign node_def = "Hardware element (MCU) running Luos and hosting one or several modules." %}
+{% assign module_def = "Software element ran by Luos that can communicate with other modules. Can be driver or app, or both in the same time." %}
+{% assign od_def = "Set of typical objects that can be transmitted through Luos messages. Any object can easily be converted in other units." %}
+
 {% assign act_title = "Actuation" %}
 {% assign sen_title = "Sensor" %}
 {% assign com_title = "Communication" %}
@@ -19,5 +30,15 @@
 {% assign int_img = "{{ "/" | absolute_url }}/assets/img/sticker-interface.png" %}
 {% assign pow_img = "{{ "/" | absolute_url }}/assets/img/sticker-power.png" %}
 
-{% assign last_version_fw = "0.5.1" %}
+{% assign last_version_luos = "0.6.0" %}
 {% assign last_version_pyluos = "0.1.1" %}
+{% assign last_doc_update = "31/12/2019" %}
+
+{% assign table_prop_module = '{:.table_desc}
+| Name | Description | Format |
+| :---: | :---: | :---: |
+| **ID** | The ID is an unique number given to each module depending on their physical position. The system automatically assign each ID during the detection phase. If you move a module from a microcontroller A to a microcontroller B on a given robot, the ID will change. In the same way, if you change the wiring order of a microcontroler on the network on a given robot, the ID will change too. | Integer<br />e.g. `Id=1` |
+| **TYPE** | The type defines the module purpose. A few types are predefined and can be used, or new ones can be created. The module type cannot be changed after module initialization. | String<br />e.g. `type=DISTANCE_MOD` |
+| **ALIAS** | Alias is the name of the module. It is used to easily identify a module. Each module has a **default alias** who can be changed by users. For example, a module with the default alias `motor_mod` can be named `left_knee_motor` by user. This new name will be stored in the non-volatile memory of the board. As we do not want to have multiple modules with the same name, a duplicate name on your system will be automatically assigned with an incrementing number at its end, in the network. You can go back to the default name by setting a void name (`""`) to a module. | String<br />e.g. `alias="gate"` |' %}
+
+
