@@ -1,0 +1,24 @@
+name: documentation build test
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Build
+        run: |
+          cargo install mdbook
+          echo installation done !
+          mdbook init
+          mdbook build
+
+

@@ -1,0 +1,19 @@
+name: documentation check
+on: push
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Link Checker
+      id: lc
+      uses: peter-evans/link-checker@v1
+      with:
+        args: -v -r *
+    - name: Results
+      run: |
+        if [ -f "link-checker/out.md" ]
+        then
+          cat link-checker/out.md
+          exit 1
+        fi
