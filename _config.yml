@@ -1,9 +1,0 @@
-title: Luos documentation
-logo: /assets/img/logo.png
-description: Luos documentation
-show_downloads: false
-google_analytics:
-theme: jekyll-theme-minimal
-permalink: /:categories/:title
-kramdown:
-    auto_ids: true
