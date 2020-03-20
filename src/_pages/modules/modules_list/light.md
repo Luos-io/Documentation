@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Light"
+date:   2019-03-15 17:58:00 +0100
+categories: -_modules_list
+tags: [sensor]
+---
+{% assign module = "Light" %}
+{% include var.md %}
+
+# Introduction to the {{ module }} module type
+
+The {{ module }} module is a sensor measuring a light intensity in lux.
+
+The {{ module }} module type have access to all common capabilities.
+
+----
+
+## Variables
+
+| **Variable name** | **Action** | **Type** |
+| lux | Reads the measured light intensity in lux | read only: Float |
+| threshold | Thresholds light intensity variation before *filter_changed* event trigers. Default value 10 lux. | read / write: Float |
+
+## Events
+
+| **Event name** | **Trigger** |
+| changed | Any movement on the light intensity measurement |
+| filter_changed | Movement bigger than *threshold* |
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/light.md">Edit this page</a></div>
