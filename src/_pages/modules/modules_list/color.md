@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Color"
+date:   2019-03-15 17:58:00 +0100
+categories: -_modules_list
+---
+{% assign module = "Color" %}
+{% include var.md %}
+
+# Introduction to the {{ module }} module type
+
+The {{ module }} module is an RGB color data.
+
+The {{ module }} module type has access to all common capabilities.
+
+----
+
+## Functions
+
+| **Function name and parameters** | **Action** | **Comment** |
+| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+
+## Variables
+
+| **Variable name** | **Action** | **Type** |
+| color | RGB color | read / write: [Char, Char, Char] |
+| time | Transition time between color command | read / write: Float |
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/color.md">Edit this page</a></div>
