@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Light"
+date:   2019-03-15 17:57:00 +0100
+categories: -_boards_list
+tags: [sensor]
+---
+{% assign board = "Light" %}
+{% assign alias = "light_sensor_mod" %}
+{% assign type = "[Light](/../modules_list/light)" %}
+{% include var.md %}
+
+# How to start with the {{ board }} board
+{% include card.md %}
+
+## How to use {{ board }} board
+
+The {{ board }} board measures human visible light intensity in lux.
+The {{ board }} board supports 5V to 24V DC input.
