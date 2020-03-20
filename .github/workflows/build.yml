@@ -18,7 +18,6 @@ jobs:
         run: |
           cargo install mdbook
           echo installation done !
-          mdbook init
+          mdbook init --theme
           mdbook build
-
 
