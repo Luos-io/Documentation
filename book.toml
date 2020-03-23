@@ -25,8 +25,8 @@ module_def = "Software element ran by Luos that can communicate with other modul
 od_def = "Set of typical objects that can be transmitted through Luos messages. Any object can easily be converted in other units."
 microservices_def = "Microservices are a software development technique that arranges an application as a collection of loosely coupled services."
 last_version_pyluos = "0.6.0"
-gh_path = "github.com/Luos-io/doc/src/"
-boards_path = "/_pages/prototyping_boards/boards_list/"
+gh_path = "github.com/Luos-io/doc/src"
+boards_path = "/_pages/prototyping_boards/boards_list"
 
 [preprocessor.links]
 renderers = ["html"]
