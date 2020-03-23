@@ -6,6 +6,9 @@ src = "src"
 title = "Luos.io - Documentation"
 description = "Luos official documentation pages"
 
+[build]
+create-missing = false
+
 [output.html]
 theme = "src/theme"
 additional-css = ["src/_assets/css/custom.css"]
