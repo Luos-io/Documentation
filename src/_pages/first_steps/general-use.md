@@ -16,7 +16,7 @@ Luos is composed as well of **code subdivisions** called <span class="cust_toolt
 A node is a physical component (hardware) running Luos and hosting one or several modules. In a Luos network, nodes are all connected together using <a href="link the Robus Page or dont talk about Robus here">Robus</a>, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (modules) allowing it to manage its boards and features.
 
-TODO : Put an image of microcontrollers whith Luos on it (gif?)
+![](/_assets/img/luos-iso.png)
 
 Nodes can have capacities such as measuring the core temperature, sending the processor's unique ID or input voltage. A node's capacities are commonly shared by all the modules hosted into it and are accessible through each of them.
 
