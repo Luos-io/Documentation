@@ -85,3 +85,26 @@ a.cust_menu_item:hover {
   clear: both;
   box-sizing: border-box;
 }
+
+/*******************  Card boards  *******************/
+
+.cust_sheet {
+	background-color: #f6f6f6;
+	width: 40%;
+	padding: 20px 20px 20px 20px;
+	margin: 0 0 30px 50px;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+}
+
+.cust_indent{
+	/*border-left: 3px solid #ddd;
+	padding: 0 0 0 8px;*/
+	position: relative;
+	left: 20px;
+}
+
+.cust_sheet-title{
+	border-bottom: 2px dotted #aaa;
+}
+/*************************************/
