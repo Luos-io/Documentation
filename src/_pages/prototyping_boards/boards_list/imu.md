@@ -1,18 +1,18 @@
----
-layout: post
-title:  "Imu"
-date:   2019-03-15 17:59:00 +0100
-categories: -_boards_list
-tags: [sensor, interface]
----
-{% assign board = "IMU" %}
-{% assign alias = "Imu_mod" %}
-{% assign type = "[Imu](/../modules_list/imu)" %}
-{% include var.md %}
+# IMU board
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> Imu_mod</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/_pages/modules/modules_list/imu.md">Imu</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/imu-module.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_indent" markdown="1">
+<img height="50" src="{{img_path}}/sticker-sensor.png" title="Sensor">
+</p>
+</div>
 
-# How to start with the {{ board }} board
-{% include card.md %}
+## IMU board functions
+The IMU board measures a wide set of position data and return values in several units. Refer to the [IMU module page](../../modules/modules_list/imu.md) for more details.
 
 ## Power considerations
-
-The {{ board }} board supports 5V to 24V DC.
+The IMU board supports 5V to 24V DC.

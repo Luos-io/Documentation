@@ -1,17 +1,14 @@
----
-layout: post
-title:  "Cables"
-date:   2019-03-15 17:43:00 +0100
-categories: -_boards_list
-tags: []
----
-{% assign board = "Cable" %}
-{% assign alias = "N/A" %}
-{% assign type = "N/A" %}
-{% include var.md %}
-
-# How to start with the cables
-{% include card.md %}
+# Cables
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> N/A</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N/A</p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> N/A</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/cable-10cm.png"><img height="150" src="{{img_path}}/cable-20cm.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_indent" markdown="1">N/A
+</p>
+</div>
 
 ## How do the cables work?
 

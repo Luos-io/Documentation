@@ -1,19 +1,19 @@
----
-layout: post
-title:  "Potentiometer"
-date:   2019-03-15 17:57:00 +0100
-categories: -_boards_list
-tags: [sensor, interface]
----
-{% assign board = "Potentiometer" %}
-{% assign alias = "potentiometer_mod" %}
-{% assign type = "[Angle](/../modules_list/angle)" %}
-{% include var.md %}
+# Potentiometer board
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> potentiometer_mod</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/_pages/modules/modules_list/angle.md">Angle</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/potentiometer-module.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_indent" markdown="1">
+<img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
+<img height="50" src="{{img_path}}/sticker-sensor.png" title="Sensor">
+</p>
+</div>
 
-# How to start with the {{ board }} board
-{% include card.md %}
+## Potentiometer board functions
+The Potentiometer board measures the board potentiometer's rotation in degree.
 
-## How to use {{ board }} board
-
-The {{ board }} board measures a potentiometer's rotation in degree.
-The {{ board }} board supports 5V to 24V DC input.
+## Power considerations
+The board supports 5V to 24V DC input.

@@ -1,26 +1,28 @@
----
-layout: post
-title:  "Jack power input"
-date:   2019-03-15 17:57:00 +0100
-categories: -_boards_list
-tags: [power]
----
-{% assign board = "Jack power input" %}
-{% assign alias = "" %}
-{% assign type = "" %}
-{% include var.md %}
+# How to start with the Jack power input board
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> N/A</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N/A</p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 0</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/jack-power-input-module.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_indent" markdown="1">
+<img height="50" src="{{img_path}}/sticker-power.png" title="Power">
+</p>
+</div>
 
-# How to start with the {{ board }} board
-{% include card.md %}
+## Jack power input board functions
 
-## How to use {{ board }} board
-
-The {{ board }} board allows to power your Luos Network using a power Jack.
+The Jack power input board allows to power your Luos Network using a power Jack.
 
  - plug inner diameter : 2 mm
- - plug outer diameter : 6.4 mm
+ - plug outer diameter : 5.5 mm
 
-This board is not active, you can't detect it.
-The {{ board }} board can provide 5V to 24V DC.
+ See the <a href="https://datasheet.octopart.com/694106301002-W%C3%BCrth-Elektronik-datasheet-111088219.pdf" target="_blank">DC power jack datasheet</a> for more information.
 
-You can manage multiple voltage in the same network following Luos power rules defined in [Luos boards general use]({{ "/../prototyping_boards/electronic-use" | absolute_url }}) or by using a [power isolator board]({{ "/../boards_list/power-isolator" | absolute_url }}).
+This board is not active, you can't detect it in a network.
+
+You can manage multiple voltage in the same network following Luos power rules defined in [Luos boards general use](../electronic-use.md) or by using a [Power isolator board](power-isolator.md).
+
+## Power considerations
+The Jack power input board can provide 5V to 24V DC.

@@ -1,29 +1,28 @@
----
-layout: post
-title:  "Dynamixel"
-date:   2019-03-15 17:59:00 +0100
-categories: -_boards_list
-tags: [sensor, interface]
----
-{% assign board = "Dynamixel" %}
-{% assign alias = "dxl_*id*" %}
-{% assign type = "N x [Dynamixel motor](/../modules_list/dxl)" %}
-{% include var.md %}
+# Dynamixel board
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> dxl_*id*</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N x <a href="/_pages/modules/modules_list/dxl.md">Dynamixel motor</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> N</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/dxl1-module.png"><img height="150" src="{{img_path}}/dxl2-module.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_indent" markdown="1">
+<img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
+<img height="50" src="{{img_path}}/sticker-sensor.png" title="Sensor">
+</p>
+</div>
 
-# How to start with the {{ board }} board
-{% include card.md %}
-
-## Versions of {{ board }} board
+## Versions of Dynamixel board
 
 There are two versions of this board. One is the version for XL320 Dynamixel, the other is for other types of Dynamixel (eg. AX12). Both boards have a different connector.
 
-![Dynamixel connectors]({{ "/" | absolute_url }}/assets/img/dxl-1.png)
+![Dynamixel connectors]({{img_path}}/dxl-1.png)
 
 Except for this connection, both versions work exactly the same way.
 
 ## How to connect and start the motors to the board
 
-![Dynamixel]({{ "/" | absolute_url }}/assets/img/dxl-mod-1.jpg)
+![Dynamixel]({{img_path}}/dxl-mod-1.jpg)
 
 The Dynamixel board is special because it has a dynamic number of visible modules, depending on the number of motors plugged to it. If you have 5 motors on your board, you will see 5 DynamixelMotor modules.
 
@@ -44,6 +43,7 @@ When your Dynamixel motors are properly configured, you can connect them to the 
 
 > **Note:** The blue LED is ON when the network is busy detecting Dynamixel motors.
 
-In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel module](/../modules_list/dxl).
+In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel module](/../../modules/modules_list/dxl).
 
-<blockquote class="warning"><strong>Warning:</strong> Dynamixel boards don’t belong to the power category. Thus, do not power your motors on the Robotis side, you won’t be able to share this power with others boards.</blockquote><br />
+> **Warning:** Dynamixel boards don’t belong to the power category. Thus, do not power your motors on the Robotis side, you won’t be able to share this power with others boards.
+
