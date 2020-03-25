@@ -16,7 +16,7 @@ Its type has access to all common capabilities.
 
 | **Variable name** | **Action** | **Type** |
 |:---:|:---:|:---:|
-| color | RGB color | read / write: [Char, Char, Char] |
+| color | RGB color | read / write: \[Char, Char, Char\] |
 | time | Transition time between color command | read / write: Float |
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/color.md">Edit this page</a></div>

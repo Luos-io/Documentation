@@ -44,23 +44,23 @@ device.Imu_mod.linear_acceleration = False
 
 | **Variable name** | **Action** | **Type** |
 |:---:|:---:|:---:|
-| compass | Magnetic field data in micro-tesla on each axis | read only: [Float, Float, Float] |
+| compass | Magnetic field data in micro-tesla on each axis | read only: \[Float, Float, Float\] |
 | compass | Starts/Stops compass measurement actualization | write only: Boolean (True or False) |
-| gyro | X, Y, Z axis rotational acceleration data in degrees per second | read only: [Float, Float, Float] |
+| gyro | X, Y, Z axis rotational acceleration data in degrees per second | read only: \[Float, Float, Float\] |
 | gyro | Starts/Stops gyro measurement actualization | write only: Boolean (True or False) |
-| acceleration | X, Y, Z axis linear acceleration data in G | read only: [Float, Float, Float] |
+| acceleration | X, Y, Z axis linear acceleration data in G | read only: \[Float, Float, Float\] |
 | acceleration | Starts/Stops acceleration measurement actualization | write only: Boolean (True or False) |
-| heading | 360 degrees from North with Y+ axis as the pointer | read only: [Float, Float, Float] |
+| heading | 360 degrees from North with Y+ axis as the pointer | read only: \[Float, Float, Float\] |
 | heading | Starts/Stops heading measurement actualization | write only: Boolean (True or False) |
-| rotational_matrix | Linear math 9 element matrix representation | read only: [Float, Float, Float, Float, Float, Float, Float, Float, Float] |
+| rotational_matrix | Linear math 9 element matrix representation | read only: \[Float, Float, Float, Float, Float, Float, Float, Float, Float\] |
 | rotational_matrix | Starts/Stops rotational_matrix measurement actualization | write only: Boolean (True or False) |
-| euler | Pitch, roll, yaw based in degrees with frame reference | read only: [Float, Float, Float] |
+| euler | Pitch, roll, yaw based in degrees with frame reference | read only: \[Float, Float, Float\] |
 | euler | Starts/Stops euler measurement actualization | write only: Boolean (True or False) |
-| quaternion | Sensor fused w, x, y, z rotational angles | read only: [Float, Float, Float, Float] |
+| quaternion | Sensor fused w, x, y, z rotational angles | read only: \[Float, Float, Float, Float\] |
 | quaternion | Starts/Stops quaternion measurement actualization | write only: Boolean (True or False) |
-| linear_acceleration | Linear acceleration in body frame coordinates | read only: [Float, Float, Float] |
+| linear_acceleration | Linear acceleration in body frame coordinates | read only: \[Float, Float, Float\] |
 | linear_acceleration | Starts/Stops linear_acceleration measurement actualization | write only: Boolean (True or False) |
-| gravity_vector | Which access gravity effects | read only: [Float, Float, Float] |
+| gravity_vector | Which access gravity effects | read only: \[Float, Float, Float\] |
 | gravity_vector | Starts/Stops gravity_vector measurement actualization | write only: Boolean (True or False) |
 | pedometer | Step number | read only: int |
 | pedometer | Starts/Stops pedometer measurement actualization | write only: Boolean (True or False) |
