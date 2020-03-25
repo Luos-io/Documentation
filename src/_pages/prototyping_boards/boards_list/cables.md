@@ -17,7 +17,7 @@ However, it's possible to build a cable from any disired length (see the next se
 
 **Maximal current value:** The Luos cable can handle up to 7 A.
 
-**Boards connection:** The connectors on the board side and on the cable side have a foolproof so that they can plug together in one way only. Fore more information about plugging boards together with cables, please follow [this link](/../integrating_luos/electronic-use#plug).
+**Boards connection:** The connectors on the board side and on the cable side have a foolproof so that they can plug together in one way only. Fore more information about plugging boards together with cables, please follow [this link](/../../integrating_luos/electronic-use.md#plug).
 
 ## How to buid a Luos compatible-cable?
 
@@ -26,17 +26,17 @@ If you need a cable with a length not available, you can build one, provided you
 - Electrical wire: `AWG 22`
 - Connectors: `DF11-8DS-2C, 2mm`
 
-[The datasheet connector is available here.](https://datasheet.octopart.com/DF11-8DS-2C-Hirose-datasheet-15540170.pdf)
+<a href="https://datasheet.octopart.com/DF11-8DS-2C-Hirose-datasheet-15540170.pdf" target="_blank">The datasheet connector is available here</a>.
 
 The board connector associated to the cables is `DF11-8DP-2DS`. this connector's pinout on Luos' boards is shown in the following picture:
 
-![Luos board connector pinout]({{ "/" | absolute_url }}/assets/img/pinout-board-connector.png)
+![Luos board connector pinout]({{img_path}}/pinout-board-connector.png)
 
 The routing of the board connector is as shown below:
 
-![Luos board connector routing]({{ "/" | absolute_url }}/assets/img/board-large-view.png)
+![Luos board connector routing]({{img_path}}/board-large-view.png)
 
-[![Luos board connector routing](/assets/img/routing-board-connector-small.png)]({{ "/" | absolute_url }}/assets/img/routing-board-connector.png)
+[![Luos board connector routing]({{img_path}}/routing-board-connector-small.png)]({{img_path}}/routing-board-connector.png)
 <br />*Click on the image to display it in full size.*
 
 On a Luos cable, the wires are organized in this order:
