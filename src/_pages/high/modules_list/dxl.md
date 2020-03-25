@@ -25,8 +25,8 @@ Its type has access to all common capabilities.
 | wheel_mode | Enables or disables wheel mode on motor | read / write: Boolean (True or False) |
 | rot_position | Measured position of the motor in °. | read / write: Float |
 | temperature | Measured temperature of the motor in °C. | read / write: Float |
-| positionPid | Sets position PID used for rotation position mode and translation position mode | read / write: [float P, float I, float D] |
+| positionPid | Sets position PID used for rotation position mode and translation position mode | read / write: \[float P, float I, float D\] |
 | power_ratio_limit | Max power limit in %. | read / write: Float |
-| rot_position_limit | Min and Max rotation position limit in °. | read / write: [Float(min), Float(max)] |
+| rot_position_limit | Min and Max rotation position limit in °. | read / write: \[Float(min), Float(max)\] |
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/dxl.md">Edit this page</a></div>
