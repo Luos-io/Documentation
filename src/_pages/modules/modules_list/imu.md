@@ -1,20 +1,10 @@
----
-layout: post
-title:  "Imu"
-date:   2019-03-15 17:58:00 +0100
-categories: -_modules_list
-tags: [sensor, interface]
----
-{% assign module = "Imu" %}
-{% include var.md %}
+# Imu module type
 
-# Introduction to the {{ module }} module type
+The Imu module handles an inertial sensor.
 
-The {{ module }} module is an inertial sensor.
+Its type has access to all common capabilities.
 
-The {{ module }} module type has access to all common capabilities.
-
-{{ module }} modules can measure:
+Imu modules can measure:
 
 * Compass – Magnetic field data in micro-tesla on each axis
 * Gyro – X, Y, Z axis rotational acceleration data in degrees per second
@@ -33,13 +23,13 @@ By default, the module will send only quaternions to keep a low number of data a
 The easiest way to enable a measure is by using it, as pyluos automatically enables a called measure. For example, to retrieve the linear acceleration value when it’s disabled, you can execute:
 
 ```python
-robot.Imu_mod.linear_acceleration
+device.Imu_mod.linear_acceleration
 ```
 
-This command doesn’t allow you to disable the value after using it in order to keep your robot responsive. Another way to enable or disable a value is to set it to `True` or `False`. For example, if you want to disable the linear acceleration measure previously activated, you can execute:
+This command doesn’t allow you to disable the value after using it in order to keep your device responsive. Another way to enable or disable a value is to set it to `True` or `False`. For example, if you want to disable the linear acceleration measure previously activated, you can execute:
 
 ```python
-robot.Imu_mod.linear_acceleration = False
+device.Imu_mod.linear_acceleration = False
 ```
 
 ----
@@ -47,11 +37,13 @@ robot.Imu_mod.linear_acceleration = False
 ## Functions
 
 | **Function name and parameters** | **Action** | **Comment** |
+|:---:|:---:|:---:|
 | control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
 | **Variable name** | **Action** | **Type** |
+|:---:|:---:|:---:|
 | compass | Magnetic field data in micro-tesla on each axis | read only: [Float, Float, Float] |
 | compass | Starts/Stops compass measurement actualization | write only: Boolean (True or False) |
 | gyro | X, Y, Z axis rotational acceleration data in degrees per second | read only: [Float, Float, Float] |
@@ -92,7 +84,7 @@ jupyter nbextension enable --py --sys-prefix pythreejs
 Now, restart *jupyter notebook* and add this code to a new python script:
 
 ```python
-from pyluos import Robot
+from pyluos import Device
 import time
 from pythreejs import *
 
@@ -133,7 +125,7 @@ renderer.shadowMap.type = 'PCFSoftShadowMap'
 display(renderer)
 
 # Connect your Luos network (here using an USB module)
-r = Robot('/dev/cu.usbserial-DN38OIYT')
+r = Device('/dev/cu.usbserial-DN38OIYT')
 
 # Control the rotation of the cube with the rotation of the Imu sensor
 while(True):

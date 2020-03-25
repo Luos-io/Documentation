@@ -1,30 +1,22 @@
----
-layout: post
-title:  "Distance"
-date:   2019-03-15 17:58:00 +0100
-categories: -_modules_list
-tags: [sensor]
----
-{% assign module = "Distance" %}
-{% include var.md %}
+# Distance module type
 
-# Introduction to the {{ module }} module type
+The Distance module handles a sensor measuring a distance in mm.
 
-The {{ module }} module is a sensor measuring a distance in mm.
-
-The {{ module }} module type has access to all common capabilities.
+Its type has access to all common capabilities.
 
 ----
 
 ## Variables
 
 | **Variable name** | **Action** | **Type** |
+|:---:|:---:|:---:|
 | distance | Reads the measured distance in mm | read only: Float |
 | threshold | Thresholds distance variation before filter_changed event trigers. Default value 10 mm. | read / write: Float |
 
 ## Events
 
 | **Event name** | **Trigger** |
+|:---:|:---:|
 | changed | Any movement on the distance measurement |
 | filter_changed | Movement bigger than *threshold* |
 

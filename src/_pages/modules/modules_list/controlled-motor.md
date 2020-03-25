@@ -1,25 +1,15 @@
----
-layout: post
-title:  "Controlled motor"
-date:   2019-03-15 17:58:00 +0100
-categories: -_modules_list
-tags: [sensor, interface]
----
-{% assign module = "Controlled-motor" %}
-{% include var.md %}
-
-# Introduction to the {{ module }} module type
+# Controlled-motor module type
 
 This module type allows to control a motor with a reduction and a sensor (usually called motor-reducer or speed-reducer).
 This module computes PID for speed, position and motion planning.
 
-You can find basic information about PID control here: [<big>An introduction to PID control with DC motor</big>](https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661), and a code example to tune your PID at the end of this page.
+You can find basic information about PID control here: <a href="https://medium.com/luosdeviceics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661" target="_blank">An introduction to PID control with DC motor</a>, and a code example to tune your PID at the end of this page.
 
-The {{ module }} module type has access to all common capabilities.
+Its type has access to all common capabilities.
 
 ### Modules’s type settings:
 
-<blockquote class="warning"><strong>Warning:</strong> This module doesn't save any of the following parameters, they must be set each time your module reboots.</blockquote><br />
+> **Warning:** This module doesn't save any of the following parameters, they must be set each time your module reboots.
 
 Before using your controlled motor module, you have to setup the resolution, motor reduction and eventually the wheel size, if you plan to use translation modes. To check the configuration, just make a complete turn on the motor shaft with your hand and check if the rotation position value is OK.
 
@@ -27,7 +17,7 @@ Both PID’s values have to be set accordingly to the motor-reducer plugged to t
 The default values `[0, 0, 0]` won’t have any effect on the motor, and must be changed if you plan to use any position or speed control mode.
 To setup your PID please refer to the example at the end of this page.
 
-<blockquote class="warning"><strong>Warning:</strong> PID for position and speed must be set in your code as an initialization before starting to use your module with position or speed control.</blockquote><br />
+> **Warning:** PID for position and speed must be set in your code as an initialization before starting to use your module with position or speed control.
 
 Now that everything is configured, you can enable the control modes you want to use. You can use position and speed mode simultaneously. Power mode is only usable alone. The controlled motor is now ready to use, you can disable compliance to start moving the motor.
 
@@ -36,6 +26,7 @@ Now that everything is configured, you can enable the control modes you want to 
 ## Functions
 
 | **Function name and parameters** | **Action** | **Comment** |
+|:---:|:---:|:---:|
 | setToZero(self) | Resets current position of the motor to 0 | You can use it to initialize the position of the motor |
 | control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
 
@@ -44,6 +35,7 @@ Now that everything is configured, you can enable the control modes you want to 
 ### Motor settings
 
 | **Variable name** | **Action** | **Type** |
+|:---:|:---:|:---:|
 | positionPid | Sets position PID used for rotation position mode and translation position mode | read / write: [float P, float I, float D] |
 | speedPid | Sets speed PID used for rotation speed mode and translation speed mode | read / write: [float P, float I, float D] |
 | encoder_res | Defines the motor sensor resolution, in steps by rotation.<br/>*This module considers that the sensor is placed before the reduction. If it's not your case, just setup a reduction ratio of 1.* | read / write: float |
@@ -53,6 +45,7 @@ Now that everything is configured, you can enable the control modes you want to 
 ### Motor control modes
 
 | **Variable name** | **Action** | **Type** |
+|:---:|:---:|:---:|
 | compliant | - True: disables the motor driver, you can use it to move the motor by hand.<br/> - False: Enables the motor driver. | read / write: Boolean (True or False) |
 | power_mode | Enables/Disables the power control mode.<br/>*Disables any other control mode if enabled.* | read / write: Boolean (True or False) |
 | rot_position_mode | Enables/Disables the motor rotation position control mode.<br/>*Disables power mode and translation position mode if enabled.*<br/>*Doesn't work if no position PID is configured.* | read / write: Boolean (True or False) |
@@ -63,6 +56,7 @@ Now that everything is configured, you can enable the control modes you want to 
 ### Motor sensing
 
 | **Variable name** | **Action** | **Type** |
+|:---:|:---:|:---:|
 | rot_position | Reads rotation position in °<br/>*Reading it auto-Enables actualization.* | read only: float |
 | rot_position | Starts/Stops rotation position measurement actualization | write only: Boolean (True or False) |
 | rot_speed | Reads rotation speed in °/s<br/>*Reading it auto-Enables actualization.* | read only: float |
@@ -77,6 +71,7 @@ Now that everything is configured, you can enable the control modes you want to 
 ### Motor commands
 
 | **Variable name** | **Action** | **Type** |
+|:---:|:---:|:---:|
 | power_ratio | Sets the power quantity send to the motor between -100% and 100%. | read / write: float |
 | target_rot_position | Sets the target rotation position to reach in °. | read / write: float |
 | target_rot_speed | Sets the target rotation speed to reach in °/s. | read / write: float |
@@ -92,7 +87,7 @@ Here is the code we use at Luos to tune a PID by ourself. Use it with Jupyter no
 The main code:
 ```python
 %matplotlib inline
-from pyluos import Robot
+from pyluos import Device
 from IPython.display import clear_output
 import time
 import matplotlib
@@ -100,7 +95,7 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 # 1. Connect your Luos network (here using an USB module for example)
-r = Robot('/dev/cu.usbserial-DN2AAOVK')
+r = Device('/dev/cu.usbserial-DN2AAOVK')
 r.modules
 
 # 2. Select the module of your network you need to configure

@@ -1,8 +1,8 @@
-# Introduction to the Voltage module type
+# Voltage module type
 
-The Voltage module is generally a sensor measuring voltage.
+The Voltage module handles a sensor measuring voltage.
 
-The Voltage module type has access to all common capabilities.
+Its type has access to all common capabilities.
 
 ----
 

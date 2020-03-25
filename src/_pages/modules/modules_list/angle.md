@@ -1,30 +1,22 @@
----
-layout: post
-title:  "Angle"
-date:   2019-03-15 17:58:00 +0100
-categories: -_modules_list
-tags: [sensor]
----
-{% assign module = "Angle" %}
-{% include var.md %}
+# Angle module type
 
-# Introduction to the {{ module }} module type
+The Angle module handles a rotation position value in degree.
 
-The {{ module }} module is a rotation position value in degree.
-
-The {{ module }} module type has access to all common capabilities.
+Its type has access to all common capabilities.
 
 ----
 
 ## Variables
 
 | **Variable name** | **Action** | **Type** |
+|:---:|:---:|:---:|
 | rot_position | Reads the rotation position in degree | Reads only: Float |
 | Thresholds | Thresholds position variation before *filter_changed* event triggers. Default value 10 °. | Read / write: Float |
 
 ## Events
 
 | **Event name** | **Trigger** |
+|:---:|:---:|
 | changed | Any movement on the position measurement |
 | filter_changed | Movement bigger than *threshold* |
 
