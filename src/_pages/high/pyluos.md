@@ -22,7 +22,7 @@ python get-pip.py
 ### Installing Jupyter Notebook
 The tool _Jupyter Notebook_ is needed for this tutorial. Jupyter Notebook will allow you to type Python commands in an internet browser to communicate with a Luos system, via Pyluos.
 
-_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access [...] or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source</a></small>)_
+_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source</a></small>)_
 
 Type the following command in the console to install Jupyter:
 
@@ -108,7 +108,7 @@ device.modules
 
 For example if you have an RGB LED and a button in your system, it should display the following table:
 
-```
+```AsciiDoc
 -------------------------------------------------
 Type                Alias               ID
 -------------------------------------------------
