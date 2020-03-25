@@ -38,6 +38,6 @@ This board is able to control DC motors with a reduction and a sensor (usually c
 
 The Controlled-motor board provides a PID control on the output position, and PID control on the output speed, taking into account the reducer and the encoder.
 
-You can find basic information about PID control here: <a href="https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661" target="_blank">**An introduction to PID control with DC motor**</a> and a example code to tune your PID on the [Controlled motor module](/../../modules/modules_list/controlled-motor.md) page of this documentation.
+You can find basic information about PID control here: <a href="https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661" target="_blank">**An introduction to PID control with DC motor**</a> and a example code to tune your PID on the [Controlled motor module](/_pages/modules/modules_list/controlled-motor.md) page of this documentation.
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/controlled-motor.md">Edit this page</a></div>

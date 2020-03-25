@@ -35,7 +35,7 @@ That's why we created a small piece of code allowing to convert the Gate module 
 By using this Web Socket, you can connect pyluos or any other lib you created to your Raspberry Pi. This way you can create and execute your device's behaviors directly on your computer.
 When your behavior is complete and tested on your device, you just have to copy it into your Raspberry Pi to obtain an autonomous device.
 
-To setup this pipe on your Raspberry Pi, please [follow the tutorial on our forum](https://forum.luos.io/t/create-a-web-socket-pipe-to-luos-network-using-raspberry-pi/197).
+To setup this pipe on your Raspberry Pi, please <a href="https://community.luos.io/t/create-a-web-socket-pipe-to-luos-network-using-raspberry-pi/197" target="_blank">follow the tutorial on our forum</a>.
 
 
 ## How to setup your Power Pi's Gate

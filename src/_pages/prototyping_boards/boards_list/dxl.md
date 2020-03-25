@@ -43,7 +43,7 @@ When your Dynamixel motors are properly configured, you can connect them to the 
 
 > **Note:** The blue LED is ON when the network is busy detecting Dynamixel motors.
 
-In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel module](/../../modules/modules_list/dxl).
+In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel module](/_pages/modules/modules_list/dxl.md).
 
 > **Warning:** Dynamixel boards don’t belong to the power category. Thus, do not power your motors on the Robotis side, you won’t be able to share this power with others boards.
 

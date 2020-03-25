@@ -1,4 +1,4 @@
-# How to start with the Jack power input board
+# Jack power input board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> N/A</p>
 <p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N/A</p>
