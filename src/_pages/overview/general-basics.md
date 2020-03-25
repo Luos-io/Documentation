@@ -13,7 +13,7 @@ Luos is composed as well of **code subdivisions** called <span class="cust_toolt
 
 <a name="node"></a>
 ## Node
-A node is a physical component (hardware) running Luos and hosting one or several modules. In a Luos network, nodes are all connected together using <a href="link the Robus Page or dont talk about Robus here">Robus</a>, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
+A node is a physical component (hardware) running Luos and hosting one or several modules. In a Luos network, nodes are all connected together using Robus, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (modules) allowing it to manage its boards and features.
 
 <img src="/_assets/img/MCU-luos.png" height="100px" />
@@ -39,7 +39,7 @@ A module own properties allowing to other modules to recognize it and have acces
 ## Routing table
 A routing table is a "service" managed by the Luos network and available for any modules in any nodes. This service lists all the modules and allows to any modules to get and use basic information of any other modules. The routing table's data can be loaded or auto-generated during detection.
 
-[Go to Routing table page](/_pages/modules/routing-table.md).
+[Go to Routing table page](/_pages/low/modules/routing-table.md).
 
 ## Module detection
 The module detection assigns IDs to modules depending on their node's physical position in the network, and generates a routing table.
@@ -56,13 +56,13 @@ There are two types of modules:
 ### Drivers
 Drivers are modules managing hardware. They are passive modules that retrieve pieces of information from electronic devices, format them, and share them through the Luos API.
 
-[Go to Drivers page](/_pages/modules/drivers.md).
+[Go to Drivers page](/_pages/low/modules/drivers.md).
 
 ### Applications (App)
 An application or app is a module which only manages software items such as functions.
 For example, you can create an app to compute the inverse-kinematic of a robotic arm. In this case, you can send an arm target position to this app so that it would compute and send orders to each motor modules (drivers) it handles, in order to reach the target.
 Apps can be placed in any nodes on your network without any hardware or code modifications, but the choice of the hosting node can impact global performances of the system.
 
-[Go to Apps page](/_pages/modules/apps.md).
+[Go to Apps page](/_pages/low/modules/apps.md).
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/first_steps/general-use.md">Edit this page</a></div>
