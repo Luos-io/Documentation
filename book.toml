@@ -16,6 +16,8 @@ enable = true
 
 [output.markdown]
 
+[output.linkcheck]
+
 [preprocessor.variables.variables]
 node_def = "Hardware element (MCU) hosting and running Luos and hosting one or several modules."
 module_def = "Software element ran by Luos that can communicate with other modules. Can be driver or app."
