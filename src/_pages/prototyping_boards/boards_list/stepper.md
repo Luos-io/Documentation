@@ -1,21 +1,22 @@
----
-layout: post
-title:  "Stepper"
-date:   2019-03-15 17:45:00 +0100
-categories: -_boards_list
-tags: [actuation]
----
-{% assign board = "Stepper" %}
-{% assign alias = "stepper_mod" %}
-{% assign type = "[Stepper](/../modules_list/stepper)" %}
-{% include var.md %}
+# Stepper board
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> stepper_mod</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/_pages/modules/modules_list/stepper.md">Stepper</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/stepper-module.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_indent" markdown="1">
+<img height="50" src="{{img_path}}/sticker-actuation.png" title="Actuation">
+</p>
+</div>
 
-# How to start with the {{ board }} board
-{% include card.md %}
+## How to connect a stepper motor to the Stepper board
+The Stepper board has one 4-pin PH connector where a stepper motor can be plugged.
 
-## How to connect the stepper motor to the {{ board }} board
-The {{ board }} board have one PH connector with 4 pins where a stepper motor can be plugged.
-
+## Power considerations
 This board accepts supply voltage from `7V` to `24V`.
 
-<blockquote class="warning"><strong>Warning:</strong> USB board provides too weak power to drive a motor-reducer with the {{ board }} board. A power board such as Battery board or Power plug board shall be used.</blockquote><br />
+> **Warning:** USB board provides too weak power to drive a motor-reducer with the Stepper board. A power board such as Battery board or Power plug board shall be used.
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/stepper.md">Edit this page</a></div>

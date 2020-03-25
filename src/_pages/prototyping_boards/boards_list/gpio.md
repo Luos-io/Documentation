@@ -4,7 +4,7 @@
 <p class="cust_sheet-title" markdown="1"><strong>Types:</strong> <a href="/_pages/modules/modules_list/state.md">State</a>, <a href="/_pages/modules/modules_list/voltage.md">Voltage</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 9</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/power-switch-module.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/gpio-module.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
@@ -25,4 +25,7 @@ This board creates a module for each available pin.
 The GPIO board supports 5V to 24V DC input.
 
 > **Warning:** The pins only support 3.3V.
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/gpio.md">Edit this page</a></div>
+
 

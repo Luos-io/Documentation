@@ -1,54 +1,53 @@
----
-layout: post
-title:  "USB"
-date:   2019-03-15 17:44:00 +0100
-categories: -_boards_list
-tags: [power, communication]
----
-{% assign board = "USB" %}
-{% assign alias = "Gate" %}
-{% assign type = "[Gate](/../modules_list/gate)" %}
-{% include var.md %}
-
-# How to start with the {{ board }} board
-{% include card.md %}
+# USB board
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> gate</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/_pages/modules/modules_list/gate.md">Gate</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/usb-module.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_indent" markdown="1">
+<img height="50" src="{{img_path}}/sticker-communication.png" title="Communication">
+<img height="50" src="{{img_path}}/sticker-power.png" title="Power">
+</p>
+</div>
 
 ## Driver installation
 With Windows, you must install `VCP` and `D2XX` drivers first. They are available for download on these pages:
 
-[https://www.ftdichip.com/Drivers/VCP.htm](https://www.ftdichip.com/Drivers/VCP.htm)<br />
-[https://www.ftdichip.com/Drivers/D2XX.htm](https://www.ftdichip.com/Drivers/D2XX.htm)
+<a href="https://www.ftdichip.com/Drivers/VCP.htm" target="_blank">https://www.ftdichip.com/Drivers/VCP.htm</a>
+
+<a href="https://www.ftdichip.com/Drivers/D2XX.htm" target="_blank">https://www.ftdichip.com/Drivers/D2XX.htm</a>
 
 Select the files to download according to your system (x86 or x64) and install them on your computer.
 
 
-## How to connect the {{ board }} board to your computer
-
-As you can see on your board, there are 2 micro-USB ports. One of them is only used to [update your board]({{ "/../prototyping_boards/update-module-firmware.html" | absolute_url }}), and the other one is the one we will use in this page.
+## How to connect the USB board to your computer
+There are 2 micro-USB ports, but one of them is only used to manually update the board. The other one is the one we will use in this page.
 
 The right USB port used on this page is the one at the opposite of the 2 Luos connectors.
 
-![{{ board }} board]({{ "/" | absolute_url }}/assets/img/usb-1.jpg)
+![USB board]({{img_path}}/usb-1.jpg)
 
-## How to use the {{ board }} board
-Luos' {{ board }} board acts like a serial port on your system.
-To control your robot, you have to get and set Json data into the serial port opened by the {{ board }} board. In order do that with pyluos, you can use the following python code:
+## How to use the USB board
+Luos' USB board acts like a serial port on your system.
+To control your device, you have to get and set Json data into the serial port opened by the USB board. In order do that with pyluos, you can use the following python code:
 
 ```python
-from pyluos import Robot
-robot = Robot('COM13')
-robot.modules
+from pyluos import Device
+device = Device('COM13')
+device.modules
 ```
 
 ### On Windows
 On Windows, a *COM* port is usually used (like `COM1`, `COM2`, `COM3`, etc.). It can be found in *Device Manager* (right-click on *Start* button), after it’s plugged:
 
-![Port COM]({{ "/" | absolute_url }}/assets/img/usb-2.png)
+![Port COM]({{img_path}}/usb-2.png)
 
 Once the port is known, the connexion can be set on pyluos with python:
 
 ```python
-robot = Robot('COM27')
+device = Device('COM27')
 ```
 
 ### On MacOS
@@ -61,7 +60,7 @@ ls /dev/cu.usbserial-*
 Once the port is known, the connexion can be set on pyluos with python:
 
 ```python
-robot = Robot('/dev/cu.usbserial-DN30VKKB')
+device = Device('/dev/cu.usbserial-DN30VKKB')
 ```
 
 ### On Linux
@@ -74,9 +73,10 @@ dmesg | grep tty
 Once the port is known, the connexion can be set on pyluos with python:
 
 ```python
-robot = Robot('/dev/ttyS0')
+device = Device('/dev/ttyS0')
 ```
 
-## {{ board }} board power delivery
+## USB board power delivery
+The USB board power-delivery in the Luos network is limited to `500 mA`. This board can’t power too many boards and power-demanding ones like, for example, a DC-motor board with one or two motors connected. If you experiment power issues, feel free to add a power category board like a [Jack power input board](jack-power-input.md).
 
-The {{ board }} board power-delivery in the Luos network is limited to `500 mA`. This board can’t power too many boards and power-demanding ones like DC-motor board with one or two motors connected. If you experiment power issues, feel free to add a power category board like AC-power board.
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/usb.md">Edit this page</a></div>

@@ -18,3 +18,5 @@ This board contains an RGB LED that can be controlled to make a light of any cho
 
 ## Power considerations
 The RGB LED board supports 5V to 24V DC.
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/rgbled.md">Edit this page</a></div>

@@ -16,3 +16,6 @@ The Distance board measures a distance using a time-of-flight laser range finder
 
 ## Power considerations
 The Distance board supports 5V to 24V DC input.
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/distance.md">Edit this page</a></div>
+

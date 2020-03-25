@@ -48,3 +48,5 @@ On a Luos cable, the wires are organized in this order:
 - Pin 8 (first connector end) on pin 8 (second connector end)
 
 > **Note:** If you wish to use only 4 wires instead of 8 (data only, no power), this is possible with using the pins 4 (`B_RS_485_P`), 5 (`A_RS_485_N`), 3 or 6 (`PTP`), and `GND`. 
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/cables.md">Edit this page</a></div>
