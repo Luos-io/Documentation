@@ -60,4 +60,7 @@
         - [Wifi BLE](./_pages/prototyping_boards/boards_list/wifible.md)
         - [Wire power input](./_pages/prototyping_boards/boards_list/wire-power-input.md)
         - [Cables](./_pages/prototyping_boards/boards_list/cables.md)
+- [Development boards](./_pages/development_boards/dev-board-list.md)
+	- [L0 dev](./_pages/development_boards/l0-dev.md)
+	- [Luos breakout](./_pages/development_boards/breakout.md)
 [](./404.md)
