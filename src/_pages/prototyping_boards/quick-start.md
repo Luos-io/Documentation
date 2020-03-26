@@ -18,7 +18,7 @@ In the following example, we will make a LED turn on and off by pushing and rele
 #### 1. Configure your computer
 The default tool we use to control a Luos network is a board hosting a Gate module, with a Python lib called Pyluos.
 
-To begin, you have to install Python and Pyluos library, following the [pyluos documentation page](/_pages/first_steps/pyluos.html).
+To begin, you have to install Python and Pyluos library, following the [pyluos documentation page](/_pages/high/pyluos.html).
 
 #### 2. Plug the boards together
 Plug together all the boards with cables. You can plug them to any of the two connectors of each board, in any order. 
@@ -26,7 +26,7 @@ Plug together all the boards with cables. You can plug them to any of the two co
 > **Warning:** Don't close a loop with the boards at each extremity.
 
 
-![Boards](/_assets/img/quickstart-1.png)
+![Boards](/_assets/img/quickstart-1.png)<br />
 *From left to right: LED, Button, and USB . The plug order doesn’t matter.*
 
 #### 3. Connect the device to a computer
@@ -36,7 +36,7 @@ Plug the USB board to a computer with micro-USB to USB cable.
 
 Your device is now powered and connected. All the low-level code and electronics is ready to use to help you program your own behaviors.
 
-![USB board](/_assets/img/quickstart-2.png)
+![USB board](/_assets/img/quickstart-2.png)<br />
 *The blue light from the L0 on the USB board turns on when plugged to a computer.*
 
 #### 4. Interact with the device
