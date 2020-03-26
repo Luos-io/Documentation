@@ -112,7 +112,7 @@ For example if you have an RGB LED and a button in your system, it should displa
 -------------------------------------------------
 Type                Alias               ID
 -------------------------------------------------
-Gate                r_right_arm         1
+Gate                gate                1
 Button              button_mod          2
 Led                 rgb_led_mod         3
 ```
