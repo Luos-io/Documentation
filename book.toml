@@ -26,7 +26,7 @@ microservices_def = "Microservices are a software development technique that arr
 last_version_pyluos = "0.6.0"
 gh_path = "github.com/Luos-io/doc/src"
 boards_path = "/_pages/prototyping_boards/boards_list"
-modules_path = "/_pages/modules/modules_list"
+modules_path = "/_pages/high/modules_list"
 img_path = "/_assets/img"
 
 [preprocessor.links]
