@@ -14,7 +14,7 @@ Almost every prototyping board is composed of a motherboard and a shield board. 
 
 Here are the specifications of this motherboard:
 
-{{ #include ../../_includes/specs.md }}
+{{ #include ././_includes/specs.md }}
 
 ## Boards categories
 Luos boards are organized in 6 categories. Each board belongs to at least one of these categories. Understanding every categories will help to understand how to connect the Luos boards together in order to achieve any robotic system you want.

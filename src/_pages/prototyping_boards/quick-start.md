@@ -3,7 +3,7 @@
 This page provides quick and easy tutorials to get started with Luos prototyping boards.
 
 ## Tutorial \#1
-On the following steps, you will learn how to make a simple behavior with a [RGB LED](./_pages/prototyping_boards/boards_list/rgbled.md) board and a [Button](./_pages/prototyping_boards/boards_list/button.md) board step-by-step.
+On the following steps, you will learn how to make a simple behavior with a [RGB LED](/_pages/prototyping_boards/boards_list/rgbled.md) board and a [Button](/_pages/prototyping_boards/boards_list/button.md) board step-by-step.
 
 ### What you will need
 In the following example, we will make a LED turn on and off by pushing and releasing a button. You will need the following boards and accessories:
@@ -16,12 +16,12 @@ In the following example, we will make a LED turn on and off by pushing and rele
 ### STEPS
 
 #### 1. Configure your computer
-The default tool we use to control a Luos network is a board hosting a [Gate](./_pages/high/modules_list/gate.md) module, with a Python lib called [Pyluos](./_pages/high/pyluos.md).
+The default tool we use to control a Luos network is a board hosting a [Gate](/_pages/high/modules_list/gate.md) module, with a Python lib called [Pyluos](/_pages/high/pyluos.md).
 
 To begin, you have to install Python and Pyluos library, following the [pyluos documentation page](/_pages/high/pyluos.html).
 
 #### 2. Plug the boards together
-Plug together all the boards with [cables](./_pages/prototyping_boards/boards_list/cables.md). You can plug them to any of the two connectors of each board, in any order.
+Plug together all the boards with [cables](/_pages/prototyping_boards/boards_list/cables.md). You can plug them to any of the two connectors of each board, in any order.
 
 > **Warning:** Don't close a loop with the boards at each extremity.
 
@@ -39,7 +39,7 @@ Your device is now powered and connected. All the low-level code and electronics
 ![USB board](/_assets/img/quickstart-2.png)<br />
 
 #### 4. Interact with the device
-*The USB node handle a specific module called "[Gate](./_pages/high/modules_list/gate.md)". There are other boards hosting "Gate" module and using different connection than USB. These particular modules convert Luos modules data into something easier to understand and manage, using [JSON API](./_pages/high/json-api.md).*
+*The USB node handle a specific module called "[Gate](/_pages/high/modules_list/gate.md)". There are other boards hosting "Gate" module and using different connection than USB. These particular modules convert Luos modules data into something easier to understand and manage, using [JSON API](/_pages/high/json-api.md).*
 
 Interacting with the Luos system and program behaviors will require to spot the USB connection on your computer. The following steps are explained on the [General board use page](/_pages/prototyping_boards/electronic-use.md) with more details. In the following example, the associated port is `COM13`.
 
