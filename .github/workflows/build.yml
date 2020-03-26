@@ -1,0 +1,36 @@
+name: documentation build test
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache mdbook
+      id: cache-mdbook
+      uses: actions/cache@v1
+      with:
+        path: ~/.cargo
+        key: ${{ runner.os }}-mdbook
+
+    - name: rust install
+      if: steps.cache-mdbook.outputs.cache-hit != 'true'
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+
+    - name: install
+      if: steps.cache-mdbook.outputs.cache-hit != 'true'
+      run: |
+        cargo install mdbook
+        cargo install -f mdbook-variables
+        cargo install mdbook-linkcheck
+
+    - name: build
+      run: mdbook build
+
+    - name: test
+      run: mdbook test

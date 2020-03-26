@@ -1,0 +1,110 @@
+@import 'variables.css';
+
+a.cust_menu_item{
+	color:var(--sidebar-fg);
+	font-size: 0.875em;
+	text-decoration: none;
+}
+
+a.cust_menu_item:hover {
+    color: var(--sidebar-active);
+}
+
+/*******************  HOVER OVER DEFINITION  *******************/
+
+.cust_tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 2px dotted #aaa;
+}
+
+.cust_tooltip .cust_tooltiptext {
+	visibility: hidden;
+	width: 350px;
+	background-color: #fff;
+	color: #555;
+	text-align: left;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 8px;
+	position: absolute;
+	bottom: 150%;
+	left: 50%;
+	margin-left: -60px;
+	font-size: 0.875em;
+}
+/*************************************/
+
+.cust_container {
+	margin: 10px auto;
+	max-width: 600px;
+	text-align: center;
+}
+.cust_container > h1 {
+	margin: 30px 0;
+	font-size: 4em;
+	line-height: 1;
+	letter-spacing: -1px;
+}
+
+.cust_tooltip:hover .cust_tooltiptext {
+	visibility: visible;
+}
+
+.cust_footer {
+	font-size: 10px;
+}
+
+.cust_edit_page:before {
+	content:"✎ "; 
+	
+}
+.cust_edit_page {
+	font-size: 0.8em;
+	margin-top:50px;
+	border-top: 1px solid #ccc;
+}
+
+* {
+  
+}
+
+/* Create two equal columns that floats next to each other */
+.cust_column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  box-sizing: border-box;
+}
+
+/* Clear floats after the columns */
+.cust_row:after {
+  content: "";
+  display: table;
+  clear: both;
+  box-sizing: border-box;
+}
+
+/*******************  Card boards  *******************/
+
+.cust_sheet {
+	background-color: #f6f6f6;
+	width: 40%;
+	padding: 20px 20px 20px 20px;
+	margin: 0 0 30px 50px;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+}
+
+.cust_indent{
+	/*border-left: 3px solid #ddd;
+	padding: 0 0 0 8px;*/
+	position: relative;
+	left: 20px;
+}
+
+.cust_sheet-title{
+	border-bottom: 2px dotted #aaa;
+}
+/*************************************/

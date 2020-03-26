@@ -1,6 +1,2 @@
-_site
-.sass-cache
-Gemfile.lock
-*.gem
-.DS_Store
+book
 **.DS_Store

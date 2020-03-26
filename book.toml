@@ -1,0 +1,36 @@
+[book]
+authors = ["Luos"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Luos.io - Documentation"
+description = "Luos official documentation pages"
+
+[output.html]
+theme = "src/theme"
+additional-css = ["src/_assets/css/custom.css"]
+google-analytics = "UA-153509818-3"
+
+[output.html.fold]
+enable = true
+
+[output.markdown]
+
+[output.linkcheck]
+
+[preprocessor.variables.variables]
+node_def = "Hardware element (MCU) hosting and running Luos and hosting one or several modules."
+module_def = "Software element ran by Luos that can communicate with other modules. Can be driver or app."
+od_def = "Set of objects based on SI metric system that can be transmitted through Luos messages. Any object can easily be converted in other units."
+microservices_def = "Microservices are a software development technique that arranges an application as a collection of loosely coupled services."
+last_version_pyluos = "0.6.0"
+gh_path = "github.com/Luos-io/doc/src"
+boards_path = "/_pages/prototyping_boards/boards_list"
+modules_path = "/_pages/high/modules_list"
+img_path = "/_assets/img"
+
+[preprocessor.links]
+renderers = ["html"]
+some_extra_feature = true
+
+[preprocessor.index]
