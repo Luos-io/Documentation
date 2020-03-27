@@ -126,4 +126,4 @@ void button_loop(void) {
 }
 ```
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}_pages/low/modules/rt-config.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/low/modules/rt-config.md">Edit this page</a></div>
