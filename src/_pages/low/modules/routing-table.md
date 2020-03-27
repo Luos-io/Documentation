@@ -38,7 +38,7 @@ device.modules
 > **Note:** `device` is the name of the network. 
 
 The routing table is displayed as in the following example:
-```
+```AsciiDoc
 -------------------------------------------------
 Type                Alias               ID   
 -------------------------------------------------
@@ -71,7 +71,7 @@ device.nodes
 
 The routing table is displayed as in the following example:
 
-```
+```AsciiDoc
  root : [4653093, 1194612501, 540554032]
         |  Type                Alias               ID   
         └> Gate                gate                1    
