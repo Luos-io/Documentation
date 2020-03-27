@@ -65,4 +65,4 @@ Apps can be placed in any nodes on your network without any hardware or code mod
 
 [Go to Apps page](/_pages/low/modules/apps.md).
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/first_steps/general-use.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/overview/general-basics.md">Edit this page</a></div>
