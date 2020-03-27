@@ -14,7 +14,7 @@ Almost every prototyping board is composed of a motherboard and a shield board. 
 
 Here are the specifications of this motherboard:
 
-{{ #include ././_includes/specs.md }}
+{{ #include ./../../_includes/specs.md }}
 
 ## Boards categories
 Luos boards are organized in 6 categories. Each board belongs to at least one of these categories. Understanding every categories will help to understand how to connect the Luos boards together in order to achieve any robotic system you want.
@@ -27,12 +27,12 @@ On each board’s image in the website, one or several small colored symbols are
 
 |Sensor|Actuator|Communication|
 |:-|:-|:-|
-|![]({{img_path}}/sticker-sensor.png)|![]({{img_path}}/sticker-actuation.png)|![]({{img_path}}/sticker-communication.png)|
+|<img src="{{img_path}}/sticker-sensor.png" height="80" />|<img src="{{img_path}}/sticker-actuation.png" height="80" />|<img src="{{img_path}}/sticker-communication.png" height="80" />|
 |Sensor boards are able to measure physical world environment.|Actuation boards are able to act on the physical world.|Communication boards (also called gates) are able to share your system’s inputs, outputs and configurations outside of your robot, using a JSON API.|
 
 |Cognition|Interface|Power|
 |:-|:-|:-|
-|![]({{img_path}}/sticker-cognition.png)|![]({{img_path}}/sticker-interface.png)|![]({{img_path}}/sticker-power.png)|
+|<img src="{{img_path}}/sticker-cognition.png" height="80" />|<img src="{{img_path}}/sticker-interface.png" height="80" />|<img src="{{img_path}}/sticker-power.png" height="80" />|
 |Cognition are boards dedicated to execute your code or host your AI.|These boards are built to interact with the user of the machine.|Power boards are able to share their input power source into the Robus wire to feed other boards.|
 
 <a name="plug"></a>
