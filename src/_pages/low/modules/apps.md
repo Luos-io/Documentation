@@ -4,7 +4,7 @@ This page details what is an app, how to create and initialize one, and how to u
 
 ## What is an app?
 An applications or app is a type of module. An app is a module which only manages software items such a functions, and which can communicate with and use any other module ([drivers](/_pages/low/modules/drivers.md) or apps). An app can't have access to hardware like a driver can.
-Apps can be placed in any nodes on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
+Apps can be placed in any <span class="cust_tooltip">[**nodes**](#node)<span class="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
 
 > **Note:** Theoretically, we separate the definitions of an app and a driver: they are both modules but they don't have the same functions into a Luos architecture. However, it's practically possible to create a module which can be in the same time an app and a driver, that is, a module which controls hardware and can have access to any other module.
 
@@ -20,7 +20,6 @@ As an app is a module, it has the same properties allowing to other modules to r
 
 
 ### Other apps' characteristics
-
 Apps allow to create and use new kinds of messages (besides regular Luos messages) by adding new types over the defined Luos types. As a result, apps use the Robus and Luos protocols, along with messages specific to the application. Their inputs and outputs are not entirely managed by Luos, by the gates or by Robus. Therefore, some additional code modifications may be necessary to allow proper *special* message reception into the gates or into Pyluos.
 
 Apps can't be managed by Pyluos, except for run/stop flag.
