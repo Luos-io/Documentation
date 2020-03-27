@@ -18,7 +18,7 @@ Watch this video for additional details:
 
 &#8594; Start reading how to integrate Luos in you [Development environment](/_pages/low/dev-env.md).
 
-&#8594; Then learn how to [Create and initialize a module](/_pages/low/modules/create-init.md).
+&#8594; Then learn how to [Create a luos project](/_pages/low/modules/create-project.md).
 
 #### You simply want to shape your device behavior?
 
