@@ -9,7 +9,7 @@ The basic version of Robus uses RS485, but you can use any support allowing to r
 
 Here is the example of the schematic of L0 boards (available <a href="https://github.com/Luos-io/Electronics" target="_blank">on GitHub</a>).
 
-![](/_assets/img/L0_sch.png)
+![]({{img_path}}/L0_sch.png)
 
 A Luos-friendly electronic board must contain *at least* the following elements:
  - **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU**</a> (microcontroller unit): It hosts the Luos firmware along with the different modules (drivers and apps).
@@ -24,4 +24,4 @@ A Luos-friendly electronic board must contain *at least* the following elements:
 
   - STM32F072
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/modules/electronic-design.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/low/electronic-design.md">Edit this page</a></div>
