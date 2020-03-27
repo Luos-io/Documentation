@@ -28,6 +28,8 @@ jobs:
         cargo install mdbook
         cargo install -f mdbook-variables
         cargo install mdbook-linkcheck
+        # change rust folder permission avoiding Cache init fail. C.F. https://github.com/actions/cache/issues/133
+        sudo chown -R $(whoami):$(id -ng) ~/.cargo/
 
     - name: build
       run: mdbook build
