@@ -1,4 +1,4 @@
-# luos-io.github.io
+# doc.luos.io
 Luos documentation: [access to the full documentation!](http://doc.luos.io)
 
 ## Introduction
