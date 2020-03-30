@@ -4,7 +4,7 @@ Luos is a simple and lightweight <a href="https://en.wikipedia.org/wiki/Distribu
 
 This guide contains all the basic notions you will need to use, create and understand Luos technology.
 
-Luos is a low-level software technology uploaded into every board (<span class="cust_tooltip">[**node**](#node)<span class="cust_tooltiptext">{{node_def}}</span></span>) of a device.
+Luos is a low-level software technology uploaded into every board's (<span class="cust_tooltip">[**node**](#node)<span class="cust_tooltiptext">{{node_def}}</span></span>) of a device.
 You can use Luos as a **bare metal** lib or as a driver into your **embedded OS**.
 
 Luos is composed as well of **code subdivisions** called <span class="cust_tooltip">[**modules**](#module)<span class="cust_tooltiptext">{{module_def}}</span></span>. Modules are distributed into every nodes in a network.
@@ -27,7 +27,7 @@ A module is a block of code which is able to communicate with any other modules 
 
 For example, the [Dynamixel board]({{boards_path}}/dxl.md) provided by Luos can dynamically create and manage Dynamixel modules depending on the number of Dynamixel motors linked to it. Any Dynamixel modules can get or set values to other Dynamixel modules on the same node or to any other modules in any other nodes in the network.
 
-[Go to Modules page](/_pages/low/modules/modules.md).
+[Go to Modules page](/_pages/low/modules.md).
 
 ## Routing table
 A routing table is a "service" managed by the Luos network and available for any modules in any nodes. This service lists all the modules and allows to any modules to get and use basic information of any other modules. The routing table's data can be loaded or auto-generated during detection.
@@ -43,7 +43,7 @@ IDs are assigned from the nearest to the furthest node branch by branch, from th
 
 It is possible to detect the network frequently in order to dynamically discover included or excluded modules while running.
 
-### Applications (App)
+### Applications (Apps)
 An application or app is a module which only manages software items such as functions.
 For example, you can create an app to compute the inverse-kinematic of a robotic arm. In this case, you can send an arm target position to this app so that it would compute and send orders to each motor modules (drivers) it handles, in order to reach the target.
 Apps can be placed in any nodes on your network without any hardware or code modifications, but the choice of the hosting node can impact global performances of the system.

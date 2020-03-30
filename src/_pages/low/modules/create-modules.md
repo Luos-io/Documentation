@@ -48,22 +48,22 @@ void button_loop(void) {
 
 > **Note:** According to the real-time configuration you chose, an additional line of code may be necessary. See [Real-time configuration page](/_pages/low/modules/rt-config.md) for more details.
 
-## Modules category
-To make your development as clean as possible you have to understand which category (Driver or App) your module project is.
+## Modules categories
+To make your development as clean as possible, you have to understand in which category (Driver or App) your module project is.
 
-By following categories guideline you will make clean and reusable functionalities.
+By following the categories guidelines, you will be able to make clean and reusable functionalities.
 
 ## Drivers guidelines
-A driver is a type of module that drive hardware. Motors, distance sensor, leds are all drivers.
+A driver is a type of module that drives hardware. Motors, distance sensors, LEDs are all drivers.
 
-By designing a driver you have to keep those rules in mind :
+By designing a driver, you have to keep the following rules in mind:
 
- - A driver module always use a standard Luos type to be usable by any other modules.
- - A driver module always use standard object dictionary structures to be usable by any other modules.
- - A driver module never depend or use any other modules (driver or app).
- - A driver module is "dumb" it can't do anything else than manage its hardware feature (but it do it really well).
+ - A driver module always uses a standard Luos type to be usable by any other modules.
+ - A driver module always uses standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures to be usable by any other modules.
+ - A driver module never depends or uses any other modules (driver or app).
+ - A driver module is "dumb", as it can't do anything else than manage its hardware feature (but it does it very well).
 
- You can have multiple driver modules on the same node managing different hardware functionalities of your board, It's your call to sort them depending on your design.
+ You can have multiple driver modules on the same <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> managing different hardware functionalities of your board, it's your call to sort them depending on your design.
 
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/low/modules/create-modules.md">Edit this page</a></div>
