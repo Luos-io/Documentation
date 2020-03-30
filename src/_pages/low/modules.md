@@ -1,11 +1,11 @@
 # Modules
 
 A module is a block of code which is able to communicate with any other modules in the Luos network. Each module provides a particular set of tasks such as managing a motor, handling a laser range finder, or compute an inverse-kinematics.
-Each module is hosted in a single <span class="cust_tooltip">**node**<span class="cust_tooltiptext">{{node_def}}</span></span> (MCU), but a node can handle several modules at the same time and manage communication between them and between other modules hosted in other nodes, using the same interface.
+Each module is hosted in a single <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> (MCU), but a node can handle several modules at the same time and manage communication between them and between other modules hosted in other nodes, using the same interface.
 
 A module can be a [drivers](/_pages/low/modules/drivers.md) (managing hardware) or an [app](/_pages/low/modules/apps.md) (managing software items).
 
-**As a developer you will always develop your functionalities into modules, and never into the main program.** The only information that should be put on the main code are MCU setup data and modules' run functions.
+**As a developer you will always develop your functionalities into modules, and never into the `main()` program.** The only information that should be put on the `main()` code are MCU setup parameters and modules' run functions.
 
 ## Module properties
 To properly work, each module owns some properties allowing to other modules to recognize and access it:
