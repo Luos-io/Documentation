@@ -27,6 +27,11 @@ For example, the [Dynamixel board]({{boards_path}}/dxl.md) provided by Luos can 
 
 [Go to Modules page](/_pages/low/modules.md).
 
+## Messages
+All modules can share and receive datas using messages.
+
+[Go to Messages handling page](/_pages/low/modules/msg-handling.md).
+
 ## Routing table
 A routing table is a "service" managed by the Luos network and available for any modules in any nodes. This service lists all the modules and allows to any modules to get and use basic information of any other modules. The routing table's data can be loaded or auto-generated during detection.
 
