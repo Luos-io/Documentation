@@ -1,8 +1,8 @@
 # Create Luos Projects
 ## How to properly organize your Luos projects
-### How to make Luos run
-Luos is like a task that you will have to run regularly. So you will have to make it run by adding `luos_init()` and `luos_loop()` in the main of your program.<br/>
-Basically your main will look like :
+### How to run Luos
+Luos is like a task that has to be ran regularly. So you will have to mrun it by adding `luos_init()` and `luos_loop()` in the `main()` of your program.<br/>
+Basically, your `main()` will look like this:
 
 ```C
 #include "luos.h"
@@ -18,14 +18,15 @@ int main(void)
 }
 
 ```
-Putting this code on your node make it able to react to a Luos network. It's now ready to host your modules.
+Putting this code into a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> makes it able to react to a Luos network. It's now ready to host your modules.
 
-**As a developer you will ALWAYS develop your functionalities into modules and NEVER into the main program.**
-> **Note:** The only things that should be put on the main code are MCU setup things and modules run functions.
+**As a developer you will always develop your functionalities into modules and never into the `main()` program.**
 
-### How to put modules in your project
-A node can host multiple modules, and we want a module as portable as possible. To do that modules have to be independent code folders that can be easily copy and paste in another project.<br/>
-To make it at Luos we always use the same way to organize our projects. We put modules on a `modules` folder and name modules code files with the name of the module :
+> **Note:** The only information that should be put on the `main()` code are MCU setup parameters and modules' run functions.
+
+### How to add modules in your project
+A node can host multiple modules, and a module has to be as portable as possible. In order to do that, modules have to be independent code folders that can be easily copied and pasted in another project.<br/>
+To make it at Luos we always use the same way to organize our projects: we put the modules into a `modules` folder and name the modules' code files with the name of each module:
 
 ```AsciiDoc
  Project
@@ -47,8 +48,8 @@ To make it at Luos we always use the same way to organize our projects. We put m
 ```
 
 ### Basic modules functions
-At Luos we make our modules always expose the same functions in the `module.h` file. The same as Luos need it, modules are like tasks that you will have to run regularly, so we choose to use the exact same stategy as presented for Luos functions by exposing a `module_init()` and `module_loop()` functions and to add it on the main.
-Following the previous folder organization our main code looks like :
+We choose to put the public functions of our modules in the `module.h` file. Like Luos, modules are similar to tasks that need to be run regularly, so we choose to use the exact same stategy as presented for Luos functions by providing a `module_init()` and a `module_loop()` functions and to add them in the `main()`.
+Following the previous folder organization, the `main()` code looks like this:
 
 ```C
 #include "luos.h"
@@ -70,4 +71,7 @@ int main(void)
 }
 
 ```
-This way it's easy to manage all your modules and to add it on your main file as you want.
+
+This way, it's easy to manage all your modules and to add as many of them in the `main()` file as you want.
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/low/modules/create-project.md">Edit this page</a></div>
