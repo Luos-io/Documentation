@@ -14,7 +14,7 @@ Watch this video for additional details:
 
 &#8594; Start reading the [Basics](/_pages/overview/general-basics.md) page.
 
-#### You want to make your own board with [Luos drivers](/_pages/low/modules/drivers.md) or [Luos apps](/_pages/low/modules/apps.md)?
+#### You want to make your own board with [Luos modules](/_pages/low/modules/create-modules.md)?
 
 &#8594; Start reading how to integrate Luos in you [Development environment](/_pages/low/dev-env.md).
 
