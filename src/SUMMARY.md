@@ -6,6 +6,7 @@
 - [Low level](./_pages/low/low-level.md)
     - [Development environment](./_pages/low/dev-env.md)
     - [Electronic design](./_pages/low/electronic-design.md)
+    - [Robus](./_pages/low/robus.md)
 	- [Modules](./_pages/low/modules.md)
 	    - [Create Luos projects](./_pages/low/modules/create-project.md)
 	    - [Create Luos modules](./_pages/low/modules/create-modules.md)
