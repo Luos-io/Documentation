@@ -1,8 +1,7 @@
 # Summary
 [Home](./index.md)
-- [Luos overview](./_pages/overview/general-basics.md)
-	- [Basics](./_pages/overview/general-basics.md)
-	- [How to start](./_pages/overview/general-start.md)
+- [Basics](./_pages/overview/general-basics.md)
+- [How to start](./_pages/overview/general-start.md)
 - [Low level](./_pages/low/low-level.md)
     - [Development environment](./_pages/low/dev-env.md)
     - [Electronic design](./_pages/low/electronic-design.md)
@@ -11,7 +10,6 @@
 	    - [Create Luos projects](./_pages/low/modules/create-project.md)
 	    - [Create Luos modules](./_pages/low/modules/create-modules.md)
 	    - [Luos apps](./_pages/low/modules/apps.md)
-	    - [Luos drivers](./_pages/low/modules/drivers.md)
 	    - [Object dictionary](./_pages/low/modules/od.md)
 	    - [Routing table](./_pages/low/modules/routing-table.md)
 	    - [Messages handling](./_pages/low/modules/msg-handling.md)
