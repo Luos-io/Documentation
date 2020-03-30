@@ -12,8 +12,8 @@ Here is the example of the schematic of L0 boards (available <a href="https://gi
 ![]({{img_path}}/L0_sch.png)
 
 A Luos-friendly electronic board must contain *at least* the following elements:
- - **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU**</a> (microcontroller unit): It hosts the Luos firmware along with the different modules (drivers and apps).
- - **At least 2 connectors** (Luos official is: <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">*DF11-8DP-2DS(24)*</a>): They allow to link boards together.
+ - **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU**</a> (microcontroller unit): It hosts, as a node, the Luos firmware along with the different <span class="cust_tooltip">modules<span class="cust_tooltiptext">{{module_def}}</span></span> (drivers and apps).
+ - **At least 2 connectors**: They allow to link boards together into a Luos network (Luos' official connector is: <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">*DF11-8DP-2DS(24)*</a>).
 
  ## Compatible MCUs
  Luos manages any type of microcontrollers, but they need to be added manually to the library. If your microcontroller is not managed yet, please contact us:
