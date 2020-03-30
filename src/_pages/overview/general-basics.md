@@ -43,11 +43,4 @@ IDs are assigned from the nearest to the furthest node branch by branch, from th
 
 It is possible to detect the network frequently in order to dynamically discover included or excluded modules while running.
 
-### Applications (Apps)
-An application or app is a module which only manages software items such as functions.
-For example, you can create an app to compute the inverse-kinematic of a robotic arm. In this case, you can send an arm target position to this app so that it would compute and send orders to each motor modules (drivers) it handles, in order to reach the target.
-Apps can be placed in any nodes on your network without any hardware or code modifications, but the choice of the hosting node can impact global performances of the system.
-
-[Go to Apps page](/_pages/low/modules/apps.md).
-
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/overview/general-basics.md">Edit this page</a></div>

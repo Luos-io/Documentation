@@ -9,7 +9,6 @@
 	- [Modules](./_pages/low/modules.md)
 	    - [Create Luos projects](./_pages/low/modules/create-project.md)
 	    - [Create Luos modules](./_pages/low/modules/create-modules.md)
-	    - [Luos apps](./_pages/low/modules/apps.md)
 	    - [Object dictionary](./_pages/low/modules/od.md)
 	    - [Routing table](./_pages/low/modules/routing-table.md)
 	    - [Messages handling](./_pages/low/modules/msg-handling.md)

@@ -65,5 +65,16 @@ By designing a driver, you have to keep the following rules in mind:
 
  You can have multiple driver modules on the same <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> managing different hardware functionalities of your board, it's your call to sort them depending on your design.
 
+## Apps guidelines
+An applications or app is a type of module that only manages software items such a functions or algorithm. Apps use other modules to make your device do things.
+Apps can be placed in any <span class="cust_tooltip">[**nodes**](#node)<span class="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
+
+By designing an app, you have to keep the following rules in mind:
+
+ - An app can't have hardware dependencies.
+ - An app can use custom module types.
+ - An app should use as standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures as possible or Gates modules could be completely unable to manage them.
+
+Apps are the embedded smartness of your device, and at least one of them should make a detection in order to make your device work. Go to [Routing table](/_pages/low/modules/routing-table.md) page for more informations.
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/low/modules/create-modules.md">Edit this page</a></div>

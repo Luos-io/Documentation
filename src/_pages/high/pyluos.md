@@ -129,7 +129,7 @@ device.module_alias.type
 ```
 `module_alias` being the alias you got from the previous listing.
 
-> **Note:** *Unknown* module types are defaulty set for custom module types such as [Luos apps](/_pages/low/modules/apps.md).
+> **Note:** *Unknown* module types are defaulty set for custom module types such as some [Luos apps](/_pages/low/modules/create-modules.md).
 
 ### Get and set modules informations
 Once you have detected your modules, you can use these information like variables.
