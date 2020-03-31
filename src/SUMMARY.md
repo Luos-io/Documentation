@@ -1,7 +1,6 @@
 # Summary
 [Home](./index.md)
 - [Basics](./_pages/overview/general-basics.md)
-- [How to start](./_pages/overview/general-start.md)
 - [Low level](./_pages/low/low-level.md)
     - [Development environment](./_pages/low/dev-env.md)
     - [Electronic design](./_pages/low/electronic-design.md)
