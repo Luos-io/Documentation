@@ -49,7 +49,7 @@ void button_loop(void) {
 > **Note:** According to the real-time configuration you chose, an additional line of code may be necessary. See [Real-time configuration page](/_pages/low/modules/rt-config.md) for more details.
 
 ## Modules categories
-To make your development as clean as possible, you have to understand in which category (Driver or App) your module project is.
+To make your development as clean as possible, you have to understand in which category ([**Driver**](#drivers-guidelines) or [**App**](#apps-guidelines)) each module of the project is.
 
 By following the categories guidelines, you will be able to make clean and reusable functionalities.
 
@@ -65,5 +65,16 @@ By designing a driver, you have to keep the following rules in mind:
 
  You can have multiple driver modules on the same <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> managing different hardware functionalities of your board, it's your call to sort them depending on your design.
 
+## Apps guidelines
+An applications or app is a type of module that only manages software items such as functions or algorithms. Apps use other modules to make your device act, operate, and behave.
+Apps can be placed in any <span class="cust_tooltip">[nodes](#node)<span class="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
+
+By designing an app, you have to keep the following rules in mind:
+
+ - An app can't have hardware dependencies.
+ - An app can use custom module types.
+ - An app must use standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures. If the structures used are not standard, Gate modules could be completely unable to manage them.
+
+Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every modules in every nodes in your device and make it work properly. Go to [Routing table](/_pages/low/modules/routing-table.md) page for more informations.
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/low/modules/create-modules.md">Edit this page</a></div>

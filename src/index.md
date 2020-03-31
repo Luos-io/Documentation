@@ -24,7 +24,7 @@ Watch this video for additional details:
 
 &#8594; Luos provides a sets of [Prototyping boards](/_pages/prototyping_boards/boards-list.md) you can use as example or to develop your project.
 
-&#8594; You can make your own embedded [Luos apps](/_pages/low/modules/apps.md).
+&#8594; You can make your own embedded [Luos apps](/_pages/low/modules/create-modules.md).
 
 &#8594; You can control your devices through a [Gate](/_pages/high/modules_list/gate.md) module using [Pyluos](/_pages/high/pyluos.md).
 

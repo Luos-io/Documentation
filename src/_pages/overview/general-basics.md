@@ -4,14 +4,13 @@ Luos is a simple and lightweight <a href="https://en.wikipedia.org/wiki/Distribu
 
 This guide contains all the basic notions you will need to use, create and understand Luos technology.
 
-Luos is a low-level software technology uploaded into every board's (<span class="cust_tooltip">[**node**](#node)<span class="cust_tooltiptext">{{node_def}}</span></span>) of a device.
+Luos is a low-level software technology uploaded into every board's (<span class="cust_tooltip">[**node**](#what-is-a-node)<span class="cust_tooltiptext">{{node_def}}</span></span>) of a device.
 You can use Luos as a **bare metal** lib or as a driver into your **embedded OS**.
 
 Luos is composed as well of **code subdivisions** called <span class="cust_tooltip">[**modules**](#module)<span class="cust_tooltiptext">{{module_def}}</span></span>. Modules are distributed into every nodes in a network.
 
 <a href="/_assets/img/feature-module-node-board.jpg" target="_blank"><img src="/_assets/img/feature-module-node-board.jpg" width="800px" /></a>
 
-<a name="node"></a>
 ## What is a Node
 A node is a physical component (hardware) running Luos and hosting one or several modules. In a Luos network, nodes are all connected together using Robus, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (modules) allowing it to manage its boards and features.
@@ -20,7 +19,6 @@ In the Luos philosophy, each node has to carry the necessary programs (modules) 
 
 Nodes can have capacities such as measuring the core temperature, sending the processor's unique ID or input voltage. A node's capacities are commonly shared by all the modules hosted into it and are accessible through each of them.
 
-<a name="module"></a>
 ## Module
 A module is a block of code which is able to communicate with any other modules through the Luos network. Each module provides an API allowing to manage a motor, handle a laser range finder, or compute an inverse-kinematics, for example.
 **Each module is hosted in a single node**, but a node can handle several modules at the same time and manage communication between them and between other modules hosted in other nodes, using the same interface.
@@ -41,13 +39,6 @@ IDs are assigned from the nearest to the furthest node branch by branch, from th
 
 > *Note:* Multiple detection by different modules at the same time is not allowed.
 
-It is possible to detect the network frequently in order to dynamically discover included or excluded modules while running.
-
-### Applications (Apps)
-An application or app is a module which only manages software items such as functions.
-For example, you can create an app to compute the inverse-kinematic of a robotic arm. In this case, you can send an arm target position to this app so that it would compute and send orders to each motor modules (drivers) it handles, in order to reach the target.
-Apps can be placed in any nodes on your network without any hardware or code modifications, but the choice of the hosting node can impact global performances of the system.
-
-[Go to Apps page](/_pages/low/modules/apps.md).
+It's possible to detect the network frequently in order to dynamically discover included or excluded modules while running. Go to [Routing table](/_pages/low/modules/routing-table.md) page for more informations.
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/overview/general-basics.md">Edit this page</a></div>
