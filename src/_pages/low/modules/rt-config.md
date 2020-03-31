@@ -2,7 +2,7 @@
 
 > **Warning:** Make sure to read and understand how to [Create Luos modules](/_pages/low/modules/create-modules.md) before reading this page.
 
-Message callbacks of modules could be really difficult to use when a project include high real-time constraints.<br/>
+Message callbacks of modules can be really difficult to use when a project include high real-time constraints.<br/>
 Luos provides different "real-time" configurations allowing you to choose the best way for you to deal with messages.
 The configuration of real-time is set during the [initialization of a module](/_pages/low/modules/create-modules.md).
 
@@ -15,12 +15,12 @@ The configuration of real-time is set during the [initialization of a module](/_
 The following sections detail how the different configurations work.
 
 ## No real-time configuration
-This one is the default and most common configuration. In this configuration, Luos calls the module callback during runtime (not interrupt). The time between the physical reception of a message and the callback may vary depending on the `luos_loop()` function call frequency.<br/>
+This configuration is the default and most common setup. In this configuration, Luos calls the module callback during runtime (not interrupt). The time between the physical reception of a message and the callback may vary depending on the `luos_loop()` function call frequency.<br/>
 With this configuration, you have no real constraints on the callback's time of execution, you can reply to a message directly on the callback.
 
 To setup this configuration you have to simply setup the callback at module creation.
 
-Here is a code example with a button :
+Here is a code example with a button:
 ```c
 void rx_btn_cb(module_t *module, msg_t *msg) {
     if (msg->header.cmd == ASK_PUB_CMD) {
@@ -47,13 +47,12 @@ void button_loop(void) {
 ```
 
 ## Polling configuration
-This configuration is often used into Arduino libraries to receive informations in a basic way. This method allows to manage the messages only when the user wants to do it on the loop of the module.
+This configuration is often used into Arduino libraries to receive information in a basic way. This method allows to manage the messages only when the user wants to do it on the loop of the module.
 
-To setup this configuration you have to create your module without any callback.
+To setup this configuration, you have to create your module without any callback.
 
-See the following code as an example:
+See the following code as an example, with a button:
 
-Here is a code example with a button :
 ```c
 module_t* module;
 void button_init(void) {
@@ -81,13 +80,13 @@ void button_loop(void) {
 ## Real-time configuration
 This method is adapted to high-frequency messages updates and requires an advanced understanding of embedded code and hardware capabilities. This configuration is not set by default.
 
-In this configuration, module's callback is called in interruption. It means that if the execustion time is too long into module's callback, it will block all the other interruptions and any other messages receptions. The callback execution must be finished before any new message.
+In this configuration, module's callback is called in interruption. It means that if the execution time is too long into module's callback, it will block all the other interruptions and any other messages reception. The callback execution must be ended before any new message.
 
-With this configuration you don't have time to send a reply back in the callaback. The answer will then have to be deported into the main loop.
+With this configuration you don't have time to send a reply back in the callaback. The response will then have to be deported into the main loop.
 
 In order to use this configuration, you have to setup the callback at module creation and enable the real time mode.
 
-Here is a code example with a button :
+Here is a code example with a button:
 ```c
 static module_t *module_pointer;
 static volatile msg_t pub_msg;
