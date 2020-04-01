@@ -5,6 +5,8 @@ Luos library has been designed to run on low-cost hardware. It works with all Ar
 
 The prototyping boards are a set or small electronic boards, each one hosting Luos and providing with an electronic function (motor, distance sensor, battery, LED, potentiometer, etc.). These boards can be used to quickly develop an electronic device prototype in order to prove a concept without any knowledge in electronics: prototype boards are connected together with cables, behaviors can be programmed through a [gate]({{boards_path}}/usb.md) board on a computer, and the device can be tested in a matter of minutes!
 
+> **Warning:** All examples codes of this documentation use the pyluos Python library and are adapted to be used with Jupyter Notebook.
+
 ## Boards general specifications
 Almost every prototyping board is composed of a motherboard and a shield board. The motherboard, called L0, has a {{ node_def }} that hosts Luos. The shield board is added to a L0 to type it with an electronic function.
 
@@ -66,6 +68,10 @@ We created an open-source **Python library** managing this JSON API called [*Pyl
 
 Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">pyluos on github</a>.
 
-> **Warning:** All examples codes of this documentation use the pyluos Python library and are adapted to be used with Jupyter Notebook.
+## Update board's firmware
+
+> **WIP** This section si in progress
+
+> To do: content
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/prototyping_boards/electronic-use.md">Edit this page</a></div>
