@@ -1,13 +1,20 @@
+> **Warning:** Make sure to read and understand how to [Create Luos modules](/_pages/low/modules/create-modules.md) before reading this page.
+
 # Routing Table
 
-The routing table is a library which contains a data table listing every <span class="cust_tooltip">[nodes](/_pages/overview/general-basics.md#node)<span class="cust_tooltiptext">{{ node_def }}</span></span> and <span class="cust_tooltip">[modules](/_pages/overview/general-basics.md#module)<span class="cust_tooltiptext">{{ module_def }}</span></span> connected to a Luos Network. It also provides tools to search or manage modules and nodes.
+The routing table is a feature of Luos allowing every modules to have a "map" of the entire network  of your device. This map allow modules to know their physical position and to search and interact with other modules easily.<br/>
+This feature is particularly used by apps modules to find others modules they need to interact with.
 
 ## Modes
+As you know <span class="cust_tooltip">[nodes](/_pages/overview/general-basics.md#node)<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple <span class="cust_tooltip">[modules](/_pages/overview/general-basics.md#module)<span class="cust_tooltiptext">{{ module_def }}</span></span>. To get topology of your device the routing table reference physical connexions between your <span class="cust_tooltip">[nodes](/_pages/overview/general-basics.md#node)<span class="cust_tooltiptext">{{ node_def }}</span></span> and list all <span class="cust_tooltip">[modules](/_pages/overview/general-basics.md#module)<span class="cust_tooltiptext">{{ module_def }}</span></span> in each of them.
 
-The routing table has two modes: *module entry mode* and *node entry mode*.
+Basically the routing table is a table of routing_table_t structure containing nodes or modules informations.
+Tha maximum number of modules and node are managed by `MAX_MODULES_NUMBER` precompilation constant (set to 40 by default).
+```C
+route_table_t route_table[MAX_MODULES_NUMBER];
+```
 
-The structure of *module entry mode* contains the id, type and alias of each module.
-The structure of *node entry mode* contains the UUID and a node link table which shows the number of connectors.
+The routing table structure have two modes: *module entry mode* and *node entry mode*.
 
 ```c
 typedef struct __attribute__((__packed__)){
@@ -26,91 +33,38 @@ typedef struct __attribute__((__packed__)){
 }routing_table_t;
 ```
 
-The table can be displayed with both mode in Jupyter Notebook after connecting to a Luos network through a [USB gate](/_pages/high/modules_list/gate.md) on a computer with [Pyluos](/_pages/high/pyluos.md). 
+### Module entry mode
+This mode allow route_table to contain :
+ - ID : module unic Id
+ - type : module type
+ - alias : module alias
 
-### Calling *module entry mode*
-The *module entry mode* displays a list of all the modules into the Luos network, and their associated characteristics (type, alias and ID).
-To call this mode, type the following line in Jupyter Notebook:
-```python
-device.modules
-```
+For more informations please refer to the [Modules](/_pages/low/modules.md) section of this documentation.
 
-> **Note:** `device` is the name of the network. 
+### Node entry mode
+This mode give physical informations of your devices.
 
-The routing table is displayed as in the following example:
-```AsciiDoc
--------------------------------------------------
-Type                Alias               ID   
--------------------------------------------------
-Gate                gate                1    
-Voltage             analog_read_P1      2    
-Voltage             analog_read_P7      3    
-Voltage             analog_read_P8      4    
-Voltage             analog_read_P9      5    
-State               digit_read_P5       6    
-State               digit_read_P6       7    
-State               digit_write_P2      8    
-State               digit_write_P3      9    
-State               digit_write_P4      10   
-ControlledMotor     controlled_moto     11   
-Imu                 Imu                 12   
-Color               bat_lvl             13   
-Angle               potentiometer_m     14   
-```
+The **uuid** is the serial number of the microcontroler hosting Luos. This number is unic, you can use it to identify all your nodes.
 
-In this example, 14 modules are listed, but the nodes (where they physically are in the network) are not displayed.
+The **port_table** allow to share topological informations of your network. Each element of this table correspond to a physical Luos port of the node and indicate which node is connected to it by sharing a module ID.
 
-### Calling *node entry mode*
-The *node entry mode* displays the various nodes of the Luos network, and the modules contained in each of them.
-To call this mode, type the following line in Jupyter Notebook:
-```python
-device.nodes
-```
+let's take an example :
 
-> **Note:** `device` is the name of the network. 
+<img src="{{img_path}}/routing-table.png" title="Route table">
 
-The routing table is displayed as in the following example:
+As you can see here elements of the port_table indicate the first or last module id of the Node connected trough a given port.
 
-```AsciiDoc
- root : [4653093, 1194612501, 540554032]
-        |  Type                Alias               ID   
-        └> Gate                gate                1    
-└── 1<=>0 : [4653107, 1347571976, 540555569]
-            |  Type                Alias               ID   
-            └> Angle               potentiometer_m     2    
-    └── 1<=>0 : [2687014, 1194612503, 540554032]
-                |  Type                Alias               ID   
-                └> Color               bat_lvl             3    
-        └── 1<=>0 : [3801124, 1498566923, 540621113]
-                    |  Type                Alias               ID   
-                    └> Imu                 Imu                 4    
-            └── 1<=>0 : [4259877, 1194612501, 540554032]
-                        |  Type                Alias               ID   
-                        └> ControlledMotor     controlled_moto     5    
-                └── 1<=>0 : [4456498, 1347571976, 540555569]
-                            |  Type                Alias               ID   
-                            └> Voltage             analog_read_P1      6    
-                            └> Voltage             analog_read_P7      7    
-                            └> Voltage             analog_read_P8      8    
-                            └> Voltage             analog_read_P9      9    
-                            └> State               digit_read_P5       10   
-                            └> State               digit_read_P6       11   
-                            └> State               digit_write_P2      12   
-                            └> State               digit_write_P3      13   
-                            └> State               digit_write_P4      14   
-                    └── 1<=>1 : [1638451, 1430802710, 540227889]
-                                |  Type                Alias               ID   
-                                └> DCMotor             DC_motor1_mod       15   
-                                └> DCMotor             DC_motor2_mod       16
-```
-In this example, 7 nodes (MCU) and their associated UUID are listed, along with their modules and associated characteristics (type, alias and ID). 
-The characters after each set of node's modules and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from it's second connector (1) to the first connector (0) of the next node.
+Specific values of port_table :
 
+ - **0** : this port is waiting to discover who is connected with. You should never see one.
+ - **0xFF** : this port is not connected to any other Node.
+
+> **Info:** Route tables can be easily displayed using [Pyluos](/_pages/high/pyluos.md) through a [USB gate](/_pages/high/modules_list/gate.md). Please refer to the [Pyluos routing table section](/_pages/high/pyluos.md#routing-table-display)
 
 ## Search tools
 The routing table library provides the following search tools to find modules and nodes' information into a Luos network:
 
-| Description | Function | Return | 
+| Description | Function | Return |
 | :---: | :---: | :---: |
 | Find a module's ID from its alias | `id_from_alias(char* alias);` | `int` |
 | Find a module's ID from its type (return the first of the list) | `id_from_type(module_type_t type);` | `int` |
@@ -126,7 +80,7 @@ The routing table library provides the following search tools to find modules an
 ## Management tools
 Here are the management tools provided by the routing table library:
 
-| Description | Function | Return | 
+| Description | Function | Return |
 | :---: | :---: | :---: |
 | Compute the rooting table | `compute_route_table_entry_nb(void);` | `void` |
 | Detect the modules in a Luos network | `detect_modules(module_t* module);` | `void` |

@@ -99,25 +99,66 @@ This line makes the connexion between the computer and the device. Python should
 
 Only once the connection is set it is possible to start programming behaviors.
 
-### List available modules of your device
-The following line of code refers to the listing of all the modules available in your device.
 
+### Routing table display
+
+[Routing table](/_pages/low/modules/routing-table.md) can be easily displayed using Pyluos.
+
+Pyluos can displays a list of all the modules by filtering the route table, and their associated characteristics (type, alias and ID).
+To display it, use the following command:
 ```python
 device.modules
 ```
 
-For example if you have an RGB LED and a button in your system, it should display the following table:
+> **Note:** `device` is the name of the network.
 
+Pyluos will give you a list of all modules without any topological informations :
 ```AsciiDoc
 -------------------------------------------------
 Type                Alias               ID
 -------------------------------------------------
 Gate                gate                1
-Button              button_mod          2
-Led                 rgb_led_mod         3
+Voltage             analog_read_P1      2
+Voltage             analog_read_P7      3
+Voltage             analog_read_P8      4
+Voltage             analog_read_P9      5
+State               digit_read_P5       6
+State               digit_read_P6       7
+State               digit_write_P2      8
+State               digit_write_P3      9
+State               digit_write_P4      10
+Angle               potentiometer_m     11
 ```
 
-This retrieves the *module type*, the *alias* (name), and *id* of each module.
+Pyluos also can interpreate route_table and transform it into a tree. This way we can display a lot more complete information usinig the following command :
+```python
+device.nodes
+```
+
+> **Note:** `device` is the name of the network.
+
+Based on the previous example Pyluos will give you all informations about modules and topological informations :
+```AsciiDoc
+ root : [4653093, 1194612501, 540554032]
+        |  Type                Alias               ID
+        └> Gate                gate                1
+└── 1<=>0 : [4456498, 1347571976, 540555569]
+            |  Type                Alias               ID
+            └> Voltage             analog_read_P1      2
+            └> Voltage             analog_read_P7      3
+            └> Voltage             analog_read_P8      4
+            └> Voltage             analog_read_P9      5
+            └> State               digit_read_P5       6
+            └> State               digit_read_P6       7
+            └> State               digit_write_P2      8
+            └> State               digit_write_P3      9
+            └> State               digit_write_P4      10
+    └── 1<=>0 : [4653107, 1347571976, 540555569]
+                |  Type                Alias               ID
+                └> Angle               potentiometer_m     11
+```
+In this example, 3 nodes (MCU) and their associated UUID are listed, along with their modules and associated characteristics (type, alias and ID).
+The characters after each set of node's modules and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from it's second connector (1) to the first connector (0) of the next node.
 
 ### Module type
 
