@@ -68,10 +68,40 @@ We created an open-source **Python library** managing this JSON API called [*Pyl
 
 Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">pyluos on github</a>.
 
-## Update board's firmware
+## Update Luos, Robus and board's firmware
+Follow [this page](/_pages/low/dev-env.md)'s instruction to install Platform IO if it's not already the case.
 
-> **WIP** This section si in progress
+To Update Luos, Robus or your modules' code, you must open the librairies tab ![]({{img_path}}/vscode-lib-button.png) of PlatformIO in Visual Studio Code:
 
-> To do: content
+![]({{img_path}}/Update_Luos_Robus_Modules.png)
+
+To update the board's firmware you need to follow 3 steps:
+
+### 1. Open the module folder that you want to update in Visual Studio Code
+To do this, you must go to *File* -> *Open the folder* and go to the folder of the module you want.
+
+### 2. Compile it to ensure there is no error
+To compile your code, you must click on the *Compile* button ![]({{img_path}}/compile-button.png) at the bottom of your window:
+
+![]({{img_path}}/compile.png)
+
+If your terminal goes like this, it means that your download was successful:
+
+![]({{img_path}}/compile_success.png)
+
+If the compilation goes wrong in spite of your code having been perfectly compiled, do a cleaning by clicking on the ant button ![]({{img_path}}/vscode-ant-button.png) and choosing *Clean* in the list of project tasks:
+
+![]({{img_path}}/clean.png)
+
+### 3. Upload the new code into the board
+To upload the new code into the board you must click on the *Upload* button ![]({{img_path}}/upload-button.png):
+
+![]({{img_path}}/upload.png)
+
+If your terminal goes like this, it means that your download was successful:
+
+![]({{img_path}}/upload_success.png)
+
+If the compilation goes wrong, it may be because your driver is not updated specially on Windows. If this is the case, you need to install and run *Zadig* by following <a href="https://github.com/profezzorn/ProffieOS/wiki/zadig" target="blank_">this tutorial</a> on github.
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/prototyping_boards/electronic-use.md">Edit this page</a></div>
