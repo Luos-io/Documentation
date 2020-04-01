@@ -1,7 +1,7 @@
 # Servo board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> servo1_mod, servo2_mod, servo3_mod, servo4_mod</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/_pages/modules/modules_list/servo.md">Servo</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/_pages/high/modules_list/servo.md">Servo</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 4</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/servo-module.png"></p>

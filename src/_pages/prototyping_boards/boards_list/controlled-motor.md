@@ -1,7 +1,7 @@
 # Controlled-motor board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> controlled_moto</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/_pages/modules/modules_list/controlled-motor.md">Controlled motor</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/_pages/high/modules_list/controlled-motor.md">Controlled motor</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/controlled-motor-module.png"></p>
