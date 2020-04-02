@@ -5,10 +5,11 @@
 <p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 4</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/servo-module.png"></p>
-<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-actuation.png" title="Actuation">
 </p>
+<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Mod_servo" target="_blank">Mod_servo</a></p>
 </div>
 
 ## How to connect your servo-motors to your modules

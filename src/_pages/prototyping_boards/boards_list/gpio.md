@@ -5,11 +5,12 @@
 <p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 9</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/gpio-module.png"></p>
-<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
 <img height="50" src="{{img_path}}/sticker-sensor.png" title="Sensor">
 </p>
+<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Mod_gpio" target="_blank">Mod_gpio</a></p>
 </div>
 
 
