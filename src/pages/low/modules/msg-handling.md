@@ -104,5 +104,6 @@ void modules_cb(module_t *module, msg_t *msg) {
 }
 ```
 
+> **Info:** If you have to deal with high frequency real time data, please read [the streaming page](/pages/low/modules/streaming.md).
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/modules/msg-handling.md">Edit this page</a></div>
