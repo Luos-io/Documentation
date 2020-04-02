@@ -15,7 +15,6 @@
 - [High level](./_pages/high/high-level.md)
     - [JSON API](./_pages/high/json-api.md)
     - [Pyluos](./_pages/high/pyluos.md)
-    - [Modules list](./_pages/high/modules-list.md)
         - [Gate](./_pages/high/modules_list/gate.md)
         - [Angle](./_pages/high/modules_list/angle.md)
         - [Color](./_pages/high/modules_list/color.md)
