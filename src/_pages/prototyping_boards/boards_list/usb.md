@@ -5,11 +5,12 @@
 <p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/usb-module.png"></p>
-<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-communication.png" title="Communication">
 <img height="50" src="{{img_path}}/sticker-power.png" title="Power">
 </p>
+<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Mod_gate" target="_blank">Mod_gate</a></p>
 </div>
 
 ## Driver installation

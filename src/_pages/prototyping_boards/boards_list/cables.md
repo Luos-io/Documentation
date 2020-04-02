@@ -5,7 +5,7 @@
 <p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> N/A</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/cable-10cm.png"><img height="150" src="{{img_path}}/cable-20cm.png"></p>
-<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">N/A
 </p>
 </div>

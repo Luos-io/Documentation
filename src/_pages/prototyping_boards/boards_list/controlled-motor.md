@@ -5,10 +5,11 @@
 <p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/controlled-motor-module.png"></p>
-<p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-actuation.png" title="Actuation">
 </p>
+<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Mod_controlled_motor" target="_blank">Mod_controlled_motor</a></p>
 </div>
 
 ## How to connect your motor-reducer to your boards
