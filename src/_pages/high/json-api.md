@@ -1,27 +1,42 @@
 # JSON API
-The [Gate module]({{modules_path}}/gate.md) converts Luos messages from a device's network into <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a>, and the other way from JSON to Luos messages. The JSON data format is very common and widely used by many programming languages.
 
-## Message types
+The JSON data format is very common and widely used by many programming languages. Luos allow you to convert low level Luos informations into Json objects, enabling conventional programming languages to interact with you device easily.<br/>
+To do that you have to add a sepcific App module called [Gate]({{modules_path}}/gate.md)  on your device.
 
-Three types of messages can be converted to JSON and back: [routing table messages](#routing-table-messages), [module's information messages](#modules-information-messages), and [module exclusion messages](#module-exclusion-messages).
+The [Gate module]({{modules_path}}/gate.md) is an app that converts Luos messages from a device's network into <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a>, and the other way from JSON to Luos messages.<br/>
+The gate module can be hosted into different kind of nodes allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth,...)
 
-### Routing table messages
-Luos uses a routing table, a library which contains a data table listing every <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> and <span class="cust_tooltip">modules<span class="cust_tooltiptext">{{module_def}}</span></span> connected to a Luos Network. More information on the [Routing table page](/_pages/low/modules/routing-table.md).
+> **Warning:**: Gate App module refresh sensors informations as fast as it can and could be Luos bandwidth intensive.
 
+## How to start using the Json API
 
-#### Routing table
-A routing table in JSON format has the following structure:
+Before using your device through Json you have to be connected to the communication flux depending on the node type hosting your Gate app module.<br/>
+Then you can start the Gate by sending :
+```JSON
+{"detection": {}}\r
+```
+
+This command ask the Gate to start a topological detection, create a route table, convert it into Json and send it back to you.
+
+## Routing table messages
+> **Warning:** Make sure to read and understand how [routing table](/_pages/low/modules/routing-table.md) work before reading this part.
+
+After Gate start, the first message you receive is a route table.<br/>
+This first message is really important, because it contain all the informations allowing you to create a code object for your device containing all its features.
+
+### Routing table structure
+A routing table in JSON is a list of nodes
 
 ```JSON
 {
    "route_table":[
-      { 
+      {
          // node 1
       },
-      { 
+      {
          // node 2
       },
-       { 
+       {
          // node 3
       }
       // ...
@@ -29,65 +44,46 @@ A routing table in JSON format has the following structure:
 }
 ```
 
-#### Node
-Each listed node of the network has the following strcture, with the following parameters:
+#### Nodes informations
+Each listed node of the network has basic node informations and a list of hosted modules:
 
 ```JSON
 { // node 1
    "uuid":[1, 2, 3],
    "port_table":[1, 2],
    "modules":[
-   {
-      // module 1
-   },
-   {
-      // module 2
-   }
-   // ...
-]
+      {
+         // module 1
+      },
+      {
+         // module 2
+      }
+      // ...
+   ]
 }
 ```
-
-|Parameter|Name|Definition|Format|
-|:---:|:---:|:---:|:---:|
-|Node's id|`"uuid"`|The uuid is the unique id of a node. |`luos_uuid_t ` structure|
-|Node's port|`"port_table"`|Display the ports connected to the node, that is the connectors.|Table of two integers:<br />`"port_table":[int, int]`|
-|Node's modules|`"modules"`|All the modules existing into the node. See the next table for more details|Table of one or several module objects.<br /> `"modules":[{//module 1},{//module 2},...]`|
-
+> **Note:** To understand meanings of *uuid* and *port_table*, pleas refer to the [routing table page](/_pages/low/modules/routing-table.md).
 
 #### Modules
-Each listed module of the node has the following structure, with the following parameters:
+Each listed module of a node has basics modules informations:
 
 ```JSON
 { // module 1
-   "type":"Type_example",
+   "type":"Type",
    "id":1,
-   "alias":"Alias_example"
+   "alias":"Alias"
 }
 ```
-
-|Parameter|Name|Definition|Format|
-|:---:|:---:|:---:|:---:|
-|Module's type|`"type"`|The module's type.|`module_type_t`|
-|Module's id|`"id"`|The module's id.|`uint16_t`|
-|Module's alias|`"alias"`|The module's name|String|
+> **Note:** To understand meanings of *type*, *id* and "alias", pleas refer to the [module page](/_pages/low/modules.html).
 
 #### Full routing table example
 
-The following JSON data is an example of a routing table: 
 ```JSON
 {
    "route_table":[
       {
-         "uuid":[
-            2031684,
-            1112756496,
-            540423216
-         ],
-         "port_table":[
-            2,
-            65535
-         ],
+         "uuid":[2031684, 1112756496, 540423216],
+         "port_table":[2, 65535],
          "modules":[
             {
                "type":"Gate",
@@ -97,15 +93,8 @@ The following JSON data is an example of a routing table:
          ]
       },
       {
-         "uuid":[
-            4915239,
-            1194612503,
-            540554032
-         ],
-         "port_table":[
-            4,
-            1
-         ],
+         "uuid":[4915239, 1194612503, 540554032],
+         "port_table":[4, 1],
          "modules":[
             {
                "type":"State",
@@ -120,15 +109,8 @@ The following JSON data is an example of a routing table:
          ]
       },
       {
-         "uuid":[
-            2818086,
-            1194612503,
-            540554032
-         ],
-         "port_table":[
-            5,
-            3
-         ],
+         "uuid":[2818086, 1194612503, 540554032],
+         "port_table":[5, 3],
          "modules":[
             {
                "type":"Imu",
@@ -138,15 +120,8 @@ The following JSON data is an example of a routing table:
          ]
       },
       {
-         "uuid":[
-            2097186,
-            1194612503,
-            540554032
-         ],
-         "port_table":[
-            65535,
-            4
-         ],
+         "uuid":[2097186, 1194612503, 540554032],
+         "port_table":[65535, 4],
          "modules":[
             {
                "type":"Color",
@@ -164,18 +139,35 @@ The following JSON data is an example of a routing table:
 }
 ```
 
-Visual of the associated network:
+Visual representation of this route table:
 
 ![](/_assets/img/luos-network-ex.png)
 
 
 ### Module's information messages
 
-The module's information messages can be converted from message to JSON and from JSON to message.
+When route table Json is transmitted Gate start to update and stream your network data with modules informations.
 
-Here is the list of all JSON objects:
+This Json is a "modules" object listing all modules by alias and all those modules contains values :
+```JSON
+{
+   "modules":{
+      "module_alias1":{
+         "value1":12.5
+      },
+      "module_alias2":{
+         "value1":13.6,
+         "value2":[1, 2, 3, 4]
+      }
+   }
+}
+```
 
-|Object|Definition|
+You can use the exact same Json object structure to send datas to modules.
+
+Here is the list of all values that can be used by modules:
+
+|value name|Definition|
 |:---:|:---:|
 |power_ratio|Percentage of power of an actuator (-100% to 100%)|
 |target_rot_position|Actuator's target angular position (can be a number or an array)|
@@ -215,26 +207,34 @@ Some messages are specifically handled:
 
 |Object|Definition|
 |:---:|:---:|
-|register|Memory register|
+|register|Motor memory register filed with \[register_number, value\]|
 |set_id|A set id command|
-|wheel_mode|The wheel mode parameter for Dynamixel servomotors|
+|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|
 
  - For [Stepper]({{modules_path}}/stepper.md), [Controlled-motor]({{modules_path}}/controlled-motor.md) and [Servo]({{modules_path}}/servo.md) modules:
 
 |Object|Definition|
 |:---:|:---:|
-|parameters|Parameters for IMU|
+|parameters|enabling or disabling some measurement|
 
-
- - For [Dynamixel]({{modules_path}}/gate.md) module:
+ - For [Imu]({{modules_path}}/imu.md) module:
 
 |Object|Definition|
 |:---:|:---:|
-|delay|Delay time|
+|parameters|enabling or disabling some measurement|
 
-### Module exclusion messages 
+ - For [Gate]({{modules_path}}/gate.md) module:
 
-The exclusion mesages happen when a module in a Luos network is not responsive. It's then removed from the routing table.
+|Object|Definition|
+|:---:|:---:|
+|delay|reduce modules refresh rate|
+
+### Module exclusion messages
+
+Module can be excluded of the network if a problem occurs (See [message handling](/_pages/low/modules/msg-handling.html#module-exclusion) for more information). In this case Gate send an exclusion message indicating that this module is no longer available :
+```JSON
+{"dead_module": "module_alias"}
+```
 
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/high/json-api.md">Edit this page</a></div>
