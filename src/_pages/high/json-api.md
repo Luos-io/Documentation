@@ -137,7 +137,7 @@ Each listed module of a node has basics modules information:
 }
 ```
 
-Above is a visual representation of this routing table:
+Below is a visual representation of this routing table:
 
 ![](/_assets/img/luos-network-ex.png)
 
@@ -183,6 +183,7 @@ Here is the list of all values that can be used by modules:
 |reduction|Ratio of an actuator's reduction|
 |dimension|Dimension value|
 |volt|Voltage value|
+|current|Electric current value|
 |reinit|Reinitialisation command|
 |control|Control command (play, pause, stop, rec)|
 |color|Color value|
@@ -197,7 +198,6 @@ Here is the list of all values that can be used by modules:
 |trans_speed|Translation speed value|
 |rot_position|Rotation position value|
 |rot_speed|Rotation speed value|
-|current|Electric current value|
 |lux|Lux (light intensity) value|
 |temperature|Temperature value|
 |force|Force value|
