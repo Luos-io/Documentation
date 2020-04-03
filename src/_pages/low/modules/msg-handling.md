@@ -74,6 +74,11 @@ void modules_cb(module_t *module, msg_t *msg) {
 }
 ```
 
+## Module exclusion
+Luos includes an acknowledgement management using the **ID_ACK** target_mode. This mode guaranties the proper reception of critical messages.
+
+If Luos fails to reach its target using ID_ACK, it will retries 10 times. If the acknowledgement still fails, the targeted module is declared excluded. Excluded modules are removed from the routing table to avoid any messaging by any modules, preserving bandwidth for the rest of the system.
+
 ## Large data
 You will sometimes have to deal with large data that could be larger than the maximum 128-byte data on a Luos message. Fortunately, Luos is able to automatically fragment and de-fragment the data above this side. To do that, you will have to use another send function that will take care of setting the messages' size, and the data fields.
 
