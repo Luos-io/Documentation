@@ -28,9 +28,6 @@
         - [State](./_pages/high/modules_list/state.md)
         - [Stepper motor](./_pages/high/modules_list/stepper.md)
         - [Voltage](./_pages/high/modules_list/voltage.md)
-- [Development boards](./_pages/development_boards/dev-board-list.md)
-    - [L0 dev](./_pages/development_boards/l0-dev.md)
-    - [Luos breakout](./_pages/development_boards/breakout.md)
 - [Prototyping boards](./_pages/prototyping_boards/electronic-use.md)
     - [Boards general use](./_pages/prototyping_boards/electronic-use.md)
     - [Quick start](./_pages/prototyping_boards/quick-start.md)
@@ -56,6 +53,11 @@
         - [Wifi BLE](./_pages/prototyping_boards/boards_list/wifible.md)
         - [Wire power input](./_pages/prototyping_boards/boards_list/wire-power-input.md)
         - [Cables](./_pages/prototyping_boards/boards_list/cables.md)
+<!--
+- [Development boards](./_pages/development_boards/dev-board-list.md)
+    - [L0 dev](./_pages/development_boards/l0-dev.md)
+    - [Luos breakout](./_pages/development_boards/breakout.md)
 - [Dig deeper into Luos](./_pages/more_information/dig-deeper.md)
     - [Robus](./_pages/more_information/robus.md)
 [](./404.md)
+-->
