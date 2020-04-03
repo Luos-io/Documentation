@@ -11,7 +11,7 @@
 	    - [Routing table](./_pages/low/modules/routing-table.md)
 	    - [Messages handling](./_pages/low/modules/msg-handling.md)
 	    - [Real-time configuration](./_pages/low/modules/rt-config.md)
-		- [Code Examples](./_pages/low/modules/modules-list.md)
+		- [Codes Examples](./_pages/low/modules/examples.md)
 - [High level](./_pages/high/high-level.md)
     - [JSON API](./_pages/high/json-api.md)
     - [Pyluos](./_pages/high/pyluos.md)
