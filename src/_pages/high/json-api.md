@@ -1,31 +1,29 @@
 # JSON API
+The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with you device easily.<br/>
+To do that, you must add a specific app module called [Gate]({{modules_path}}/gate.md) on your device.
 
-The JSON data format is very common and widely used by many programming languages. Luos allow you to convert low level Luos informations into Json objects, enabling conventional programming languages to interact with you device easily.<br/>
-To do that you have to add a sepcific App module called [Gate]({{modules_path}}/gate.md)  on your device.
+The [Gate module]({{modules_path}}/gate.md) is an app that converts Luos messages from a device's network into JSON data format, and the other way from JSON to Luos messages.<br/>
+The Gate module can be hosted into different kinds of <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
 
-The [Gate module]({{modules_path}}/gate.md) is an app that converts Luos messages from a device's network into <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a>, and the other way from JSON to Luos messages.<br/>
-The gate module can be hosted into different kind of nodes allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth,...)
+> **Warning:**: The Gate module refreshes sensors information as fast as it can, so that can be intensive to Luos bandwidth.
 
-> **Warning:**: Gate App module refresh sensors informations as fast as it can and could be Luos bandwidth intensive.
-
-## How to start using the Json API
-
-Before using your device through Json you have to be connected to the communication flux depending on the node type hosting your Gate app module.<br/>
-Then you can start the Gate by sending :
+## How to start using the JSON API
+Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate module.<br/>
+Then you can start the Gate by sending:
 ```JSON
 {"detection": {}}\r
 ```
 
-This command ask the Gate to start a topological detection, create a route table, convert it into Json and send it back to you.
+This command asks the Gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
 
 ## Routing table messages
-> **Warning:** Make sure to read and understand how [routing table](/_pages/low/modules/routing-table.md) work before reading this part.
+> **Warning:** Make sure to read and understand how [routing table](/_pages/low/modules/routing-table.md) works before reading this part.
 
-After Gate start, the first message you receive is a route table.<br/>
-This first message is really important, because it contain all the informations allowing you to create a code object for your device containing all its features.
+After the Gate starts, the first message you receive is a routing table.<br/>
+This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
 
 ### Routing table structure
-A routing table in JSON is a list of nodes
+A routing table in JSON consists in a list of the nodes present in the Luos network:
 
 ```JSON
 {
@@ -36,7 +34,7 @@ A routing table in JSON is a list of nodes
       {
          // node 2
       },
-       {
+      {
          // node 3
       }
       // ...
@@ -44,8 +42,8 @@ A routing table in JSON is a list of nodes
 }
 ```
 
-#### Nodes informations
-Each listed node of the network has basic node informations and a list of hosted modules:
+#### Nodes information
+Each listed node of the network has basic node information and a list of hosted modules:
 
 ```JSON
 { // node 1
@@ -62,10 +60,10 @@ Each listed node of the network has basic node informations and a list of hosted
    ]
 }
 ```
-> **Note:** To understand meanings of *uuid* and *port_table*, pleas refer to the [routing table page](/_pages/low/modules/routing-table.md).
+> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](/_pages/low/modules/routing-table.md).
 
 #### Modules
-Each listed module of a node has basics modules informations:
+Each listed module of a node has basics modules information:
 
 ```JSON
 { // module 1
@@ -74,7 +72,7 @@ Each listed module of a node has basics modules informations:
    "alias":"Alias"
 }
 ```
-> **Note:** To understand meanings of *type*, *id* and "alias", pleas refer to the [module page](/_pages/low/modules.html).
+> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [module page](/_pages/low/modules.html).
 
 #### Full routing table example
 
@@ -139,16 +137,15 @@ Each listed module of a node has basics modules informations:
 }
 ```
 
-Visual representation of this route table:
+Above is a visual representation of this routing table:
 
 ![](/_assets/img/luos-network-ex.png)
 
 
 ### Module's information messages
+When the JSON routing table is transmitted, the Gate starts to update and stream your network data with **modules information**.
 
-When route table Json is transmitted Gate start to update and stream your network data with modules informations.
-
-This Json is a "modules" object listing all modules by alias and all those modules contains values :
+This JSON is a "module" object listing all the modules by their alias and the values they send:
 ```JSON
 {
    "modules":{
@@ -163,11 +160,11 @@ This Json is a "modules" object listing all modules by alias and all those modul
 }
 ```
 
-You can use the exact same Json object structure to send datas to modules.
+You can use the exact same JSON object structure to send data to modules.
 
 Here is the list of all values that can be used by modules:
 
-|value name|Definition|
+|Value name|Definition|
 |:---:|:---:|
 |power_ratio|Percentage of power of an actuator (-100% to 100%)|
 |target_rot_position|Actuator's target angular position (can be a number or an array)|
@@ -196,9 +193,41 @@ Here is the list of all values that can be used by modules:
 |uuid|Module's uuid|
 |rename|Renaming an alias|
 |revision|Firmware revision|
+|trans_position|Translation position value|
+|trans_speed|Translation speed value|
+|rot_position|Rotation position value|
+|rot_speed|Rotation speed value|
+|current|Electric current value|
+|lux|Lux (light intensity) value|
+|temperature|Temperature value|
+|force|Force value|
+|moment|Torque value|
+|power|Power value|
+|linear_accel|Linear acceleration value|
+|gravity_vector|Gravity vector value|
+|compass|Compass value|
+|gyro|Gyroscope value|
+|accel|Acceleration value|
+|euler|Euler angle value|
+|quaternion|Quaternion values|
+|rotational_matrix|Rotational matrix values|
+|heading|Heading|
+|pedometer|Steps number value|
+|walk_time|Walk time value|
+
+
+Here is an exemple of a message sent by a Potentiometer module about the rotation angle of the associated potentiometer:
+```JSON
+{
+   "modules":{
+      "potentiometer_m":{
+         "rot_position":12.5
+      }
+   }
+}
+```
 
 ##### Specific messages
-
 Some messages are specifically handled:
 
 <!-- - If the type is `VOID_MOD`, the module is empty and no message is converted.-->
@@ -230,11 +259,9 @@ Some messages are specifically handled:
 |delay|reduce modules refresh rate|
 
 ### Module exclusion messages
-
-Module can be excluded of the network if a problem occurs (See [message handling](/_pages/low/modules/msg-handling.html#module-exclusion) for more information). In this case Gate send an exclusion message indicating that this module is no longer available :
+Module can be excluded of the network if a problem occurs (See [message handling](/_pages/low/modules/msg-handling.html#module-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this module is no longer available:
 ```JSON
 {"dead_module": "module_alias"}
 ```
-
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/_pages/high/json-api.md">Edit this page</a></div>
