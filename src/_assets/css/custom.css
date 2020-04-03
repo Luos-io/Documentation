@@ -108,3 +108,17 @@ a.cust_menu_item:hover {
 	border-bottom: 2px dotted #aaa;
 }
 /*************************************/
+
+
+table#cust_table {
+  table-layout: fixed ;
+  width: 100% ;
+  border-collapse: collapse ;
+}
+table#cust_table td {
+  width: 16.6% ;
+  padding: 10px ;
+}
+table#cust_table caption {
+  font-style: italic ;
+}
