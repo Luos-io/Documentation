@@ -12,21 +12,21 @@ Watch this video for additional details:
 
 ### You are not familiar with Luos operations?
 
-&#8594; Start reading the [Basics](/_pages/overview/general-basics.md) page.
+&#8594; Start reading the [Basics](/pages/overview/general-basics.md) page.
 
-### You want to make your own board with [Luos modules](/_pages/low/modules/create-modules.md)?
+### You want to make your own board with [Luos modules](/pages/low/modules/create-modules.md)?
 
-&#8594; Start reading how to integrate Luos in you [Development environment](/_pages/low/dev-env.md).
+&#8594; Start reading how to integrate Luos in you [Development environment](/pages/low/dev-env.md).
 
-&#8594; Then learn how to [Create a luos project](/_pages/low/modules/create-project.md).
+&#8594; Then learn how to [Create a luos project](/pages/low/modules/create-project.md).
 
 ### You want to shape your device behavior?
 
-&#8594; Luos provides a sets of [Prototyping boards](/_pages/prototyping_boards/boards-list.md) you can use as example or to develop your project.
+&#8594; Luos provides a sets of [Prototyping boards](/pages/prototyping_boards/boards-list.md) you can use as example or to develop your project.
 
-&#8594; You can make your own embedded [Luos apps](/_pages/low/modules/create-modules.md).
+&#8594; You can make your own embedded [Luos apps](/pages/low/modules/create-modules.md).
 
-&#8594; You can control your devices through a [Gate](/_pages/high/modules_list/gate.md) module using [Pyluos](/_pages/high/pyluos.md).
+&#8594; You can control your devices through a [Gate](/pages/high/modules_list/gate.md) module using [Pyluos](/pages/high/pyluos.md).
 
  If you have questions about a specific topic, you can refer or ask it on the <a href="https://community.luos.io" target="_blank">Luos' Forum</a>. And if you have suggestions about this documentation don't hesitate to create pull requests.
 
