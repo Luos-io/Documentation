@@ -8,7 +8,7 @@ We started designing Luos with the conviction that building electronic systems s
 
 Watch this video for additional details:
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/xQe3z0M_FE8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br />
+<iframe class="cust_video" src="https://www.youtube.com/embed/xQe3z0M_FE8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br />
 
 ### You are not familiar with Luos operations?
 

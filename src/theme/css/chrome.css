@@ -1,7 +1,7 @@
 /* CSS for UI elements (a.k.a. chrome) */
 
 @import 'variables.css';
-
+/* Scrollbar effects *//*
 ::-webkit-scrollbar {
     background: var(--bg);
 }
@@ -11,6 +11,7 @@
 html {
     scrollbar-color: var(--scrollbar) var(--bg);
 }
+*/
 #searchresults a,
 .content a:link,
 a:visited,

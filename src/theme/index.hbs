@@ -88,7 +88,7 @@
         </script>
 
 		<nav id="sidebar" class="sidebar" aria-label="Table of contents">
-			<div id="sidebar-scrollbox" class="sidebar-scrollbox">
+			<div id="sidebar-scrollbox" class="sidebar-scrollbox" style="padding-top: 60px;">
 				<!--<a href="https://www.luos.io"><img src="/_assets/img/luos_logo_100px.png" height="50px" />-->{{#toc}}{{/toc}}
 			<a class="cust_menu_item" href="https://www.luos.io" target="_blank">Go to Luos.io</a>
             </div>
@@ -99,12 +99,84 @@
 
             <div class="page">
                 {{> header}}
+
+<script src="https://kit.fontawesome.com/e122236495.js" crossorigin="anonymous"></script>
+<header class="cust_header" height="79">
+    <div class="cust_menu_container">
+        <div class="cust_column cust_logo_container">
+            <a href="https://www.luos.io/"><img src="/_assets/img/logo-luos.png" alt="Luos" id="logo" height="33px"></a>
+        </div>
+        <div class="cust_column cust_middle">
+            
+            <a href="https://www.luos.io/us/technology/">Technology</a> <a href="https://www.luos.io/us/careers/">Careers</a> <a href="https://www.luos.io/us/contact/">Contact</a>
+
+            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar"><i class="fa fa-bars"></i>
+            </button>
+            <a><button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                <i class="fa fa-paint-brush"></i>
+            </button></a>
+            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                <li role="none"><button role="menuitem" class="theme" id="light">{{ theme_option "Light" }}</button></li>
+                <li role="none"><button role="menuitem" class="theme" id="rust">{{ theme_option "Rust" }}</button></li>
+                <li role="none"><button role="menuitem" class="theme" id="coal">{{ theme_option "Coal" }}</button></li>
+                <li role="none"><button role="menuitem" class="theme" id="navy">{{ theme_option "Navy" }}</button></li>
+                <li role="none"><button role="menuitem" class="theme" id="ayu">{{ theme_option "Ayu" }}</button></li>
+            </ul>
+            {{#if search_enabled}}
+            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                <i class="fa fa-search"></i>
+            </button>
+            {{/if}}
+
+        </div>
+        <div class="cust_column cust_right">
+
+            <a title="Join the Luos Community" href="https://community.luos.io"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i> Forum</a>
+
+            <a title="Our repository on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io"><i class="fab fa-github fa-lg" aria-hidden="true"></i> GitHub</a>
+
+            <a href="{{ path_to_root }}print.html" title="Print this book" aria-label="Print this book"><i id="print-button" class="fa fa-print"></i></a>
+
+        </div>
+    </div>
+<!--    <div class="cust_menu_container">
+        <div class="cust_logo_container">
+            
+        </div>
+        <div class="cust_menu_items" height="60px" style="padding-left: 131px;">
+            <nav id="top-menu-nav">
+                <ul id="top-menu" class="nav">
+                    
+                    <li id="menu-item-122538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-122538"><a href="https://www.luos.io/us/technology/">Technology</a></li>
+
+                    <li id="menu-item-122537" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-122537"><a href="https://www.luos.io/us/careers/">Careers</a></li>
+
+                    <li id="menu-item-122539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-122539"><a href="https://www.luos.io/us/contact/">Contact</a></li>
+
+                    <li id="menu-item-124267" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-124267"><a title="Go read our Documentation" href="https://doc.luos.io"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a></li>
+
+                    <li id="menu-item-124263" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-124263"><a title="Join the Luos Community" href="https://community.luos.io"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i></a></li>
+
+                    <li id="menu-item-124268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-124268"><a title="Our repository on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="et_search_outer">
+        <div class="container et_search_form_container">
+            <a href="/search" data-auto-route="true" title="search topics, posts, users, or categories" aria-label="search topics, posts, users, or categories" id="search-button" class="icon btn-flat"><svg class="fa d-icon d-icon-search svg-icon svg-node" aria-hidden="true"><use xlink:href="#search"></use></svg></a>
+            <span class="et_close_search_field"></span>
+        </div>
+    </div>
+-->
+</header>
 				
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
-                    <div class="left-buttons">
-                        <a href="https://www.luos.io"><img src="/_assets/img/luos_logo_100px.png" height="50px" /></a>
-						<button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                    <div class="left-buttons cust_shift">
+
+						<!--<button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
                         </button>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
@@ -134,7 +206,7 @@
                         <a href="{{git_repository_url}}" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa {{git_repository_icon}}"></i>
                         </a>
-                        {{/if}}
+                        {{/if}}-->
                     </div>
                 </div>
 
