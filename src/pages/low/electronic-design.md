@@ -5,7 +5,7 @@ Electronic boards must respect some design rules in order to properly work in a 
 # Electronic design
 Board examples and electronic sources are available <a href="https://github.com/Luos-io/Electronics" target="_blank">on GitHub</a>. You are free to use them as you want.
 
-The basic version of Robus uses RS485, but you can use any support allowing to receive transmitted data in the same time.
+The basic version of Robus uses RS485, but you can use any Half duplex support allowing to check transmitted data.
 
 Here is the example of the schematic of L0 boards (available <a href="https://github.com/Luos-io/Electronics" target="_blank">on GitHub</a>).
 
