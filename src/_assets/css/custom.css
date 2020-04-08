@@ -189,7 +189,7 @@ table#cust_table caption {
 
 .cust_right{
 	float: right;
-	width: 20%;
+	width: 30%;
 }
 
 .cust_logo_container{
@@ -203,6 +203,10 @@ table#cust_table caption {
 
 .cust_shift{
 	padding-top: 60px;
+}
+
+.cust_idle{
+	filter:contrast(1%);
 }
 
 
