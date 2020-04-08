@@ -1,5 +1,5 @@
 # Integrating Luos into an electronic board
-Luos uses Robus to communicate with other boards. To design your board, you have to understand that Robus needs to adapt to your own design.
+Luos uses <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> to communicate with other boards. To design your board, you have to understand that Robus needs to adapt to your own design.
 Electronic boards must respect some design rules in order to properly work in a Luos network.
 
 # Electronic design
