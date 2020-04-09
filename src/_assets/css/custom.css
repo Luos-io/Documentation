@@ -211,10 +211,6 @@ table#cust_table caption {
 	padding-top: 60px;
 }
 
-.cust_idle{
-	filter:contrast(1%);
-}
-
 
 @media screen and (max-width: 800px) {
 	.cust_header{
