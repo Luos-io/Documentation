@@ -27,7 +27,7 @@ A Luos-friendly electronic board must contain *at least* the following elements:
 
   **Want to see your favorite MCU on this list? <a href="https://www.luos.io/us/contact/" target="_blank">>> Ask-us to add it!</a>**
 
-  > **Note:** If you developed your own porting of Luos on a MCU which is not in the above list, you can create a pull request on 
-  <a href="https://github.com/luos-io" target="_blank">Luos' GitHub repository</a> to include the new MCU in this list.
+  > **Note:** If you developed your own porting of Luos on a MCU which is not in the above list, you can create an issue on 
+  <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">Luos' GitHub repository</a> to ask for a porting and include the new MCU in this list.
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/electronic-design.md">Edit this page</a></div>
