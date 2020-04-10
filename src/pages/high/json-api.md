@@ -189,8 +189,8 @@ Here is the list of all values that can be used by modules:
 |color|Color value|
 |io_state|IO state|
 |led|Board's LED|
-|L0_temperature|Node's temperature|
-|L0_voltage|Node's voltage|
+|node_temperature|Node's temperature|
+|node_voltage|Node's voltage|
 |uuid|Module's uuid|
 |rename|Renaming an alias|
 |revision|Firmware revision|
