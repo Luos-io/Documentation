@@ -1,6 +1,8 @@
+<a href="https://luos.io"><img src="https://www.luos.io/wp-content/uploads/2020/03/Luos-color.png" alt="Luos logo" title="Luos" align="right" height="60" /></a>
+
 [![](https://img.shields.io/github/license/Luos-io/Documentation)](https://github.com/Luos-io/Documentation/blob/master/LICENSE)
 
-# docs.luos.io
+# Luos Documentation: [docs.luos.io](https://docs.luos.io)
 Luos documentation: [access to the full documentation!](http://docs.luos.io)
 
 ## Introduction
