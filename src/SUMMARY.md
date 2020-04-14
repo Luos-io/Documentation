@@ -10,6 +10,7 @@
 	    - [Object dictionary](./pages/low/modules/od.md)
 	    - [Routing table](./pages/low/modules/routing-table.md)
 	    - [Messages handling](./pages/low/modules/msg-handling.md)
+        - [Streaming](./pages/low/modules/streaming.md)
 	    - [Real-time configuration](./pages/low/modules/rt-config.md)
 		- [Codes Examples](./pages/low/modules/examples.md)
 - [High level](./pages/high/high-level.md)
