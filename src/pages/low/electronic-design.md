@@ -23,7 +23,6 @@ A Luos-friendly electronic board must contain *at least* the following elements:
  Here is a non-exhaustive list of Luos-compatible MCUs:
 
   - STM32F072
-  - STM32L4
 
   **Want to see your favorite MCU on this list? <a href="https://www.luos.io/us/contact/" target="_blank">>> Ask-us to add it!</a>**
 
