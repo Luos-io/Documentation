@@ -1,7 +1,7 @@
 # Create Luos Projects
 ## How to properly organize your Luos projects
 ### How to run Luos
-Luos is like a task that has to be ran regularly. So you will have to mrun it by adding `luos_init()` and `luos_loop()` in the `main()` of your program.<br/>
+Luos is like a task that has to be ran regularly. So you will have to run it by adding `luos_init()` and `luos_loop()` in the `main()` of your program.<br/>
 Basically, your `main()` will look like this:
 
 ```C
