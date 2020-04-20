@@ -18,15 +18,6 @@ A Luos-friendly electronic board must contain *at least* the following elements:
  ## Compatible MCUs
  Luos manages any type of microcontrollers, but they need to be added manually to the library. If your microcontroller is not managed yet, please contact us:
   - by mail: contact@luos.io
-  - on <a href="https://github.com/Luos-io/Pre_luos/issues/new/choose" target="_blank">GitHub</a>
-
- Here is a non-exhaustive list of Luos-compatible MCUs:
-
-  - STM32F072
-
-  **Want to see your favorite MCU on this list? <a href="https://www.luos.io/us/contact/" target="_blank">>> Ask-us to add it!</a>**
-
-  > **Note:** If you are a developer, you can create an issue on 
-  <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">Luos' GitHub repository</a> to ask for a porting and include the new MCU in this list.
+  - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/electronic-design.md">Edit this page</a></div>
