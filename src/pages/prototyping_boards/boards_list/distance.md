@@ -9,7 +9,7 @@
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-sensor.png" title="Sensor">
 </p>
-<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Mod_distance" target="_blank">Mod_distance</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Luos/tree/master/Drivers/Mod_distance" target="_blank">Mod_distance</a></p>
 </div>
 
 ## Distance board functions

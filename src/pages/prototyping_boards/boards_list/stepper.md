@@ -9,7 +9,7 @@
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-actuation.png" title="Actuation">
 </p>
-<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Mod_stepper" target="_blank">Mod_stepper</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Luos/tree/master/Drivers/Mod_stepper" target="_blank">Mod_stepper</a></p>
 </div>
 
 ## How to connect a stepper motor to the Stepper board
