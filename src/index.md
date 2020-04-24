@@ -28,6 +28,8 @@ Watch this video for additional details:
 
 &#8594; You can control your devices through a [Gate](/pages/high/modules_list/gate.md) module using [Pyluos](/pages/high/pyluos.md).
 
- If you have questions about a specific topic, you can refer or ask it on the <a href="https://community.luos.io" target="_blank">Luos' Forum</a>. And if you have suggestions about this documentation don't hesitate to create pull requests.
+If you have questions about a specific topic, you can refer or ask it on the <a href="https://community.luos.io" target="_blank">Luos' Forum</a>. And if you have suggestions about this documentation don't hesitate to create pull requests.
+
+<small>Luos is free for non-commercial use. It's protected by a license that <a href="https://github.com/Luos-io/Luos/blob/master/LICENSE.md" target="_blank">you can consult here</a>.</small>
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/index.md">Edit this page</a></div>
