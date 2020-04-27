@@ -29,7 +29,7 @@
         - [State](./pages/high/modules_list/state.md)
         - [Stepper motor](./pages/high/modules_list/stepper.md)
         - [Voltage](./pages/high/modules_list/voltage.md)
-- [Prototyping boards](./pages/prototyping_boards/electronic-use.md)
+- [Prototyping boards examples](./pages/prototyping_boards/proto-boards.md)
     - [Boards general use](./pages/prototyping_boards/electronic-use.md)
     - [Quick start](./pages/prototyping_boards/quick-start.md)
     - [Boards list](./pages/prototyping_boards/boards-list.md)
