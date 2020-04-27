@@ -2,7 +2,7 @@
 Luos uses <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> to communicate with other boards. To design your board, you have to understand that Robus needs to adapt to your own design.
 Electronic boards must respect some design rules in order to properly work in a Luos network.
 
-# Electronic design
+## Electronic design
 Board examples and electronic sources are available <a href="https://github.com/Luos-io/Electronics" target="_blank">on GitHub</a>. You are free to use them as you want.
 
 The basic version of Robus uses RS485, but you can use any Half duplex support allowing to check transmitted data.

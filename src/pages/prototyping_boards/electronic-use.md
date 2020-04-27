@@ -1,6 +1,4 @@
 # General guide to Luos electronic boards
-Luos provides simple electronic boards examples to build in order to start prototyping using Luos modular technology.
-These examples are available on Github and contain the schematic and the Kicad file so that they can be easily reproduced to test Luos.
 
 Luos library has been designed to run on low-cost hardware. It works with all Arm microcontrollers, starting with the smallest and cheapest one: the <a href="https://developer.arm.com/ip-products/processors/cortex-m/cortex-m0" target="_blank">Cortex-M0</a>. 
 
@@ -34,7 +32,7 @@ Luos boards examples are organized in 6 categories. Each board belongs to at lea
 |Cognition|Interface|Power|
 |:-|:-|:-|
 |<img src="{{img_path}}/sticker-cognition.png" height="80" />|<img src="{{img_path}}/sticker-interface.png" height="80" />|<img src="{{img_path}}/sticker-power.png" height="80" />|
-|Cognition are boards dedicated to execute your code or host your AI.|These boards are built to interact with the user of the machine.|Power boards are able to share their input power source into the Robus wire to feed other boards.|
+|Cognition are boards dedicated to execute your code or host your AI.|These boards are built to interact with the user of the machine.|Power boards are able to share their input power source into the <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> wire to feed other boards.|
 
 <a name="plug"></a>
 ## Plugging boards together
@@ -70,7 +68,7 @@ Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">pyluos on github
 ## Update Luos, Robus and board's firmware
 Follow [this page](/pages/low/dev-env.md)'s instruction to install Platform IO if it's not already the case.
 
-To Update Luos, Robus or your modules' code, you must open the librairies tab ![]({{img_path}}/vscode-lib-button.png) of PlatformIO in Visual Studio Code:
+To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your modules' code, you must open the librairies tab ![]({{img_path}}/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
 
 ![]({{img_path}}/Update_Luos_Robus_Modules.png)
 

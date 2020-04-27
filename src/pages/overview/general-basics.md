@@ -12,7 +12,7 @@ Luos is composed as well of **code subdivisions** called <span class="cust_toolt
 <a href="/_assets/img/feature-module-node-board.jpg" target="_blank"><img src="/_assets/img/feature-module-node-board.jpg" width="800px" /></a>
 
 ## What is a Node
-A node is a physical component (hardware) running Luos and hosting one or several modules. In a Luos network, nodes are all connected together using Robus, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
+A node is a physical component (hardware) running Luos and hosting one or several modules. In a Luos network, nodes are all connected together using <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span>, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (modules) allowing it to manage its boards and features.
 
 <img src="/_assets/img/MCU-luos.png" height="100px" />

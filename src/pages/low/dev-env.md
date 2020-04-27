@@ -29,7 +29,7 @@ Luos also shares some [development boards](/pages/development_boards/dev-board-l
 
 Luos works as a library. Our technology is constituted of 2 libs:
 
- - <a href="https://github.com/Luos-io/Pre_robus" target="_blank">Robus</a>: This library is the communication way used by Luos.
+ - <a href="https://github.com/Luos-io/Pre_robus" target="_blank"><span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span></a>: This library is the communication way used by Luos.
  - <a href="https://github.com/Luos-io/Pre_luos" target="_blank">Luos</a>: This is the main library you will be working with.
 
 To make it work on your environment, you have to:

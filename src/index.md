@@ -22,7 +22,7 @@ Watch this video for additional details:
 
 ### You want to shape your device behavior?
 
-&#8594; Luos provides a sets of [Prototyping boards](/pages/prototyping_boards/boards-list.md) you can use as examples or to develop your project.
+&#8594; Luos provides schematics and BOM for a sets of [Prototyping boards](/pages/prototyping_boards/boards-list.md) that you can buid and use as examples, or to develop your project.
 
 &#8594; You can make your own embedded [Luos apps](/pages/low/modules/create-modules.md).
 
