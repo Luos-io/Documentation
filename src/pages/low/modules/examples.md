@@ -9,7 +9,7 @@ You can use this table to find interesting project regarding specific features e
 <th align="left"><small>Projects</small></th>
 <th align="center"><small><a href="/pages/low/modules.md">Dynamic modules allocation</a></small></th>
 <th align="center"><small><a href="/pages/low/modules/msg-handling.md">Large data</a></small></th>
-<th align="center"><small>Streaming</small></th>
+<th align="center"><small><a href="/pages/low/modules/streaming.html">Streaming</a></small></th>
 <th align="left"><small><a href="/pages/low/modules/od.md">Object Dictionnary</a></small></th>
 <th align="center"><small><a href="/pages/low/modules/routing-table.md">Routing table</a></small></th>
 </tr>
@@ -18,17 +18,17 @@ You can use this table to find interesting project regarding specific features e
 <tr>
 <td align="left"><a  href="https://github.com/Luos-io/Mod_gate" target="_blank">Gate</a></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 </tr>
 <tr>
 <td align="left"><a  href="https://github.com/Luos-io/Mod_potentiometer" target="_blank">Potentiometer</a></td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -36,7 +36,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -44,7 +44,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -52,15 +52,15 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
 <td align="left"><a  href="https://github.com/Luos-io/Mod_dxl" target="_blank">Dxl</a></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -68,7 +68,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -76,7 +76,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -84,7 +84,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -92,7 +92,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -100,7 +100,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -108,23 +108,23 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
 <td align="left"><a  href="https://github.com/Luos-io/Mod_controlled_motor" target="_blank">Controlled motor</a></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
 <td align="left"><a  href="https://github.com/Luos-io/Mod_led_strip" target="_blank">LED strip</a></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -132,7 +132,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -140,7 +140,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"><strong>&#10003;</strong></td>
+<td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
 </tr>
 </tbody>
