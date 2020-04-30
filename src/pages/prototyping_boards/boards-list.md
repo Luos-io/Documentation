@@ -9,6 +9,7 @@ List of prototyping boards examples available on GitHub:
 - [GPIO]({{boards_path}}/gpio.md)
 - [IMU]({{boards_path}}/imu.md)
 - [Jack power input]({{boards_path}}/jack-power-input.md)
+- [Led strip]({{boards_path}}/led-strip.md)
 - [Light sensor]({{boards_path}}/light.md)
 - [Potentiometer]({{boards_path}}/potentiometer.md)
 - [Power isolator]({{boards_path}}/power-isolator.md)
