@@ -10,7 +10,7 @@
 <img height="50" src="{{img_path}}/sticker-power.png" title="Power">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/examples/tree/master/Projects/0_electronics_basis/wiring_and_power/Wire_power_input" target="_blank">Wire power input</a>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/0_electronics_basis/wiring_and_power/Wire_power_input" target="_blank">Wire power input</a>
 </div>
 
 ## How to use the Wire power input board

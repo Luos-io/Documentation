@@ -10,7 +10,7 @@
 <img height="50" src="{{img_path}}/sticker-actuation.png" title="Actuation">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/examples/tree/master/Projects/Dc_motor" target="_blank">DC motor</a>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Dc_motor" target="_blank">DC motor</a>
 </div>
 
 ## DC-motor board functions
