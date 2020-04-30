@@ -11,7 +11,8 @@
 <img height="50" src="{{img_path}}/sticker-power.png" title="Power">
 <img height="50" src="{{img_path}}/sticker-cognition.png" title="Cognition">
 </p>
-<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Mod_gate" target="_blank">Mod_gate</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/examples/tree/master/Projects/Gate" target="_blank">Gate</a>
 </div>
 
 ## Power Pi board

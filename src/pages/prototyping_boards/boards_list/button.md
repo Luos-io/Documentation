@@ -10,8 +10,10 @@
 <img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
 <img height="50" src="{{img_path}}/sticker-sensor.png" title="Sensor">
 </p>
-<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Mod_button" target="_blank">Mod_button</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/examples/tree/master/Projects/Button" target="_blank">Button</a>
 </div>
+
 
 ## Button board functions
 The Button board provides a push-button that can be used as an interface human-machine or as a end-of-course sensor, for example. It returns the state of the button (pushed or idle).

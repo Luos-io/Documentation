@@ -10,7 +10,8 @@
 <img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
 <img height="50" src="{{img_path}}/sticker-sensor.png" title="Sensor">
 </p>
-<p class="cust_sheet-title" markdown="1"><strong>Project source: </strong><a href="https://github.com/Luos-io/Mod_potentiometer" target="_blank">Mod_potentiometer</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/examples/tree/master/Projects/Potentiometer" target="_blank">Potentiometer</a>
 </div>
 
 ## Potentiometer board functions

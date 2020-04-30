@@ -10,15 +10,15 @@ At Luos, we use PlatformIO to share all our examples and to make our lib integra
  2. Create a new projet on PlatformIO
  3. Add Luos as dependancy and select HAL on your `platformio.ini` file:
 
-   ```Json
-    lib_deps = Luos
-    build_flags = -D HAL=hal_name
-    ```
+```Json
+lib_deps = Luos
+build_flags = -D HAL=hal_name
+```
 
-> *Note:* More information about how Luos libs are managed into PlatformIO is available by <a href="https://community.luos.io/t/how-to-link-luos-and-robus-to-platformio/244" target="_blank">following this post on our forum</a>.
+> *Note:* More information about how Luos libs are managed into PlatformIO is available by <a href="https://community.luos.io/t/how-to-link-luos-and-robus-to-platformio/244" target="\_blank">following this post on our forum</a>.
 
 ### Project examples
-Luos shares a lot of <a href="https://github.com/Luos-io/Modules" target="_blank">code examples</a>, feel free to use and modify them as you want.
+Luos shares a lot of <a href="https://github.com/Luos-io/Luos/tree/master/examples/" target="_blank">code examples</a>, feel free to use and modify them as you want.
 
 ### Development boards
 Luos created [a sets of boards](/pages/prototyping_boards/boards-list.md) allowing to easily prototype a device.
@@ -29,8 +29,8 @@ Luos also shares some [development boards](/pages/development_boards/dev-board-l
 
 Luos works as a library. Our technology is constituted of 2 libs:
 
- - <a href="https://github.com/Luos-io/Pre_robus" target="_blank"><span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span></a>: This library is the communication way used by Luos.
- - <a href="https://github.com/Luos-io/Pre_luos" target="_blank">Luos</a>: This is the main library you will be working with.
+ - <a href="https://github.com/Luos-io/Robus" target="_blank"><span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span></a>: This library is the communication way used by Luos.
+ - <a href="https://github.com/Luos-io/Luos/tree/master/luos" target="_blank">Luos</a>: This is the main library you will be working with.
 
 To make it work on your environment, you have to:
 

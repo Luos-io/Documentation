@@ -2,7 +2,7 @@
 
 The Light module handles a sensor measuring a light intensity in lux.
 
-Its type have access to all common capabilities.
+Its type has access to all common capabilities.
 
 ----
 
