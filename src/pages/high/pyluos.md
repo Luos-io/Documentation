@@ -189,6 +189,10 @@ device.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_m
 device.button_mod.state # Returns the status of the push button
 
 device.button_mod.type # Returns the module type of the module "button_mod"
+
+device.button_mod.luos_revision # Returns the version of luos
+
+device.button_mod.robus_revision # Returns the version of robus
 ```
 
 If you use *ipython* or *Jupyter Notebook*, you can use auto-completion using the `Tab` key to find every available objects and variables.
