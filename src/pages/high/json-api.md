@@ -214,6 +214,8 @@ Here is the list of all values that can be used by modules:
 |heading|Heading|
 |pedometer|Steps number value|
 |walk_time|Walk time value|
+|luos_revision|luos's version|
+|robus_revision|robus's version|
 
 
 Here is an exemple of a message sent by a Potentiometer module about the rotation angle of the associated potentiometer:
