@@ -3,11 +3,11 @@ Luos uses <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus
 Electronic boards must respect some design rules in order to properly work in a Luos network.
 
 ## Electronic design
-Board examples and electronic sources are available <a href="https://github.com/Luos-io/Luos/tree/master/examples/drivers" target="_blank">on GitHub</a>. You are free to use them as you want.
+Board examples and electronic sources are available <a href="https://github.com/Luos-io/Examples/tree/master/Projects" target="_blank">on GitHub</a>. You are free to use them as you want.
 
 The basic version of Robus uses RS485, but you can use any Half duplex support allowing to check transmitted data.
 
-Here is the example of the schematic of L0 boards (available <a href="https://github.com/Luos-io/Luos/tree/master/examples/drivers/Electronics_examples" target="_blank">on GitHub</a>).
+Here is the example of the schematic of L0 boards (available <a href="https://github.com/Luos-io/Examples/tree/master/Projects/0_electronics_basis/l0" target="_blank">on GitHub</a>).
 
 ![]({{img_path}}/L0_sch.png)
 

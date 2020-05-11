@@ -20,10 +20,8 @@ build_flags = -D HAL=hal_name
 ### Project examples
 Luos shares a lot of <a href="https://github.com/Luos-io/Luos/tree/master/examples/" target="_blank">code examples</a>, feel free to use and modify them as you want.
 
-### Development boards
+### Prototyping boards
 Luos created [a sets of boards](/pages/prototyping_boards/boards-list.md) allowing to easily prototype a device.
-
-Luos also shares some [development boards](/pages/development_boards/dev-board-list.md) allowing you to create from scratch and debug easily.
 
 ## General integration consideration
 
