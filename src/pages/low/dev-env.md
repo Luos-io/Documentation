@@ -12,8 +12,9 @@ At Luos, we use PlatformIO to share all our examples and to make our lib integra
 
 ```Json
 lib_deps = Luos
-build_flags = -D HAL=hal_name
+board = <board name>
 ```
+Replace `<board name>` with the name of the board you're using, eg. `board = l0` for the L0 board.
 
 > *Note:* More information about how Luos libs are managed into PlatformIO is available by <a href="https://community.luos.io/t/how-to-link-luos-and-robus-to-platformio/244" target="\_blank">following this post on our forum</a>.
 
