@@ -1,5 +1,5 @@
 # JSON API
-The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with you device easily.<br/>
+The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
 To do that, you must add a specific app module called [Gate]({{modules_path}}/gate.md) on your device.
 
 The [Gate module]({{modules_path}}/gate.md) is an app that converts Luos messages from a device's network into JSON data format, and the other way from JSON to Luos messages.<br/>
@@ -264,6 +264,25 @@ Some messages are specifically handled:
 Module can be excluded of the network if a problem occurs (See [message handling](/pages/low/modules/msg-handling.html#module-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this module is no longer available:
 ```JSON
 {"dead_module": "module_alias"}
+```
+
+## Sending large binary data
+Binary data such as, for example, a motor tarjectory can't be included into a Json file if it's too large. In order to allow this type of transmission, the size of the binary data is sent through the Json, then followed by the actual data in binary format.
+
+ - If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [Module's information messages section](#modules-information-messages)), or as a table of several values (for example a motor trajectory).
+
+ - If the data is large, the defined value must be a **table of one element**, containing only the size of the binary data to be transfered, in bytes.
+
+The following example shows a transfert of a binary data of 1024 bytes.
+```JSON
+{
+   "modules":{
+      "module_alias1":{
+         "rot_position":[1024]
+      }
+   }
+}
+###BINARY_DATA###
 ```
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/high/json-api.md">Edit this page</a></div>
