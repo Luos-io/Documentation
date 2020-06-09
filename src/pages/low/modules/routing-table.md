@@ -4,6 +4,22 @@
 The routing table is a feature of Luos allowing every <span class="cust_tooltip">[modules](/pages/overview/general-basics.md#module)<span class="cust_tooltiptext">{{ module_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows modules to know their physical position and to search and interact with other modules easily.<br/>
 This feature is particularly used by apps modules to find other modules they need to interact with.
 
+## Detection
+Route table are automatically generated and shared to all module by network detections. A detection can be initiated by any modules but driver modules should not be able to run it and this kind of features should be only used on app modules.
+To run a detection you can do :
+```C
+detect_modules(app);
+```
+Where app is the module_t pointer running the detection.
+
+A non detected module have a specific ID of 0. At the beginning of the detection Luos erase all ID off all modules on the network so they all will have a 0 as ID during this operation. You can use it on your modules code to act consequently to this detection if you need it.
+The module running the detection will have the ID 1 and other modules will have an ID between 2 and 4096 depending on their position from the detector.
+When all modules of the network have an ID the detection algorithm proceed to the creation of the route table and share it with all modules (saved only one time per node).
+
+Sometime multiple modules on the network could have the same Alias witch is not allowed to prevent module confusion. In this case detection algorithm will add a number after each instance of this Alias on the route_table.
+
+Watch out during a detection module can change ID depending on the module running it, Do not consider your module ID fix. Also all modules remove their auto-updates configuration during the detection to prevent any ID movement.
+
 ## Modes
 As explained in [this page](/pages/overview/general-basics.md#what-is-a-node), <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple modules. To get the topology of your device, the routing table references physical connexions between your nodes and lists all the modules in each one of them.
 
