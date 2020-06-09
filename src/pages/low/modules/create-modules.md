@@ -8,7 +8,7 @@
 
 To create a module, you have to call this function:
 ```c
-module_t* luos_module_create(void* callback, module_type_t type, char* default_alias);
+module_t* luos_module_create(void* callback, module_type_t type, char* default_alias, char *firm_revision);
 ```
 
 The returned `module_t*` is a module structure pointer that will be useful to make your module act in the network after this initialization.
@@ -28,6 +28,7 @@ The returned `module_t*` is a module structure pointer that will be useful to ma
 
  **default alias** is the alias by default for your new module. e.g. `MyModule02`. This alias is the one your module will take if no other alias is set by the user of your functionality hosted in your module. Aliases have a maximum size of 16 characters.
 
+**firm_revision** is the version number of the module you are creating and which will be accessible via pyluos.
 
 Following the [project rules](/pages/low/modules/create-project.html#basic-modules-functions), here is a code example for a button module:
 
@@ -39,8 +40,8 @@ void rx_btn_cb(module_t *module, msg_t *msg){
 }
 
 void button_init(void) {
-    module_t* module_btn = luos_module_create(rx_btn_cb, STATE_MOD, "button_mod");
-}
+	//STRINGIFY (VERSION) is used to get the module version in the module's library.json file
+    module_t* module_btn = luos_module_create(rx_btn_cb, STATE_MOD, "button_mod", STRINGIFY(VERSION));
 
 void button_loop(void) {
 }
