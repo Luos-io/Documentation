@@ -42,6 +42,7 @@ void rx_btn_cb(module_t *module, msg_t *msg){
 void button_init(void) {
 	//STRINGIFY (VERSION) is used to get the module version in the module's library.json file
     module_t* module_btn = luos_module_create(rx_btn_cb, STATE_MOD, "button_mod", STRINGIFY(VERSION));
+}
 
 void button_loop(void) {
 }
