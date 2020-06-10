@@ -106,4 +106,21 @@ void modules_cb(module_t *module, msg_t *msg) {
 
 > **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page](/pages/low/modules/streaming.md).
 
+## Time triggered updates messages
+Luos provide a standard command to ask a module to publish values from a sensor called `ASK_PUB_CMD`. Sometime Apps need to poll values from sensors and always asking a value using the `ASK_PUB_CMD` command to one or more values use bandwidth and take useless resources.
+In this kind of polling situation you can use the time triggered auto update features available from any Luos module. This feature allow you to ask a module to send you update each XX milliseconds.
+To use it you have to setup targeted module with a message containing a standard time object dictionary but with a specific command on it.
+For example to update a module each 10ms :
+```C
+time_luos_t time = time_from_ms(10);
+msg_t msg;
+msg.header.target = id;
+msg.header.target_mode = IDACK;
+time_to_msg(&time, &msg);
+msg.header.cmd = UPDATE_PUB;
+luos_send(app, &msg);
+```
+> **Info:** Modules can handle only one time triggered target, 2 modules of the same network can't ask a time triggered value from the same module.
+> **Warning:** To prevent any ID movement auto-update configuration is reseted on all modules at each detection.
+
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/modules/msg-handling.md">Edit this page</a></div>
