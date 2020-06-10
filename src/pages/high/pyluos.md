@@ -158,7 +158,7 @@ Based on the previous example Pyluos will give you all informations about module
                 └> Angle               potentiometer_m     11
 ```
 In this example, 3 nodes (MCU) and their associated UUID are listed, along with their modules and associated characteristics (type, alias and ID).
-The characters after each set of node's modules and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from it's second connector (1) to the first connector (0) of the next node.
+The characters after each set of node's modules and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from its second connector (1) to the first connector (0) of the next node.
 
 ### Module type
 

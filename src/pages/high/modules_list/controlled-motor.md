@@ -38,7 +38,7 @@ Now that everything is configured, you can enable the control modes you want to 
 |:---:|:---:|:---:|
 | positionPid | Sets position PID used for rotation position mode and translation position mode | read / write: \[float P, float I, float D\] |
 | speedPid | Sets speed PID used for rotation speed mode and translation speed mode | read / write: \[float P, float I, float D\] |
-| encoder_res | Defines the motor sensor resolution, in steps by rotation.<br/>*This module considers that the sensor is placed before the reduction. If it's not your case, just setup a reduction ratio of 1.* | read / write: float |
+| encoder_res | Defines the motor sensor resolution, in steps by rotation.<br/>*This module considers that the sensor is placed before the reduction. If it is not your case, just setup a reduction ratio of 1.* | read / write: float |
 | reduction | Defines the motor reduction.<br/>Set this value to 1 if your sensor measures after the reduction. | read / write: float |
 | wheel_size | Defines wheel size used for translation mode, in mm. | read / write: float |
 

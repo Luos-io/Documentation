@@ -66,7 +66,7 @@ We created an open-source **Python library** managing this JSON API called [*Pyl
 Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">pyluos on github</a>.
 
 ## Update Luos, Robus and board's firmware
-Follow [this page](/pages/low/dev-env.md)'s instruction to install Platform IO if it's not already the case.
+Follow [this page](/pages/low/dev-env.md)'s instruction to install Platform IO if it is not already the case.
 
 To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your modules' code, you must open the librairies tab ![]({{img_path}}/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
 

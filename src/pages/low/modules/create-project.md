@@ -72,6 +72,6 @@ int main(void)
 
 ```
 
-This way, it's easy to manage all your modules and to add as many of them in the `main()` file as you want.
+This way, it is easy to manage all your modules and to add as many of them in the `main()` file as you want.
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/modules/create-project.md">Edit this page</a></div>
