@@ -20,7 +20,7 @@ The returned `module_t*` is a module structure pointer that will be useful to ma
  void module_cb(module_t *module, msg_t *msg)
  ```
 
- - **module** is the module pointer of the module receiving the data (basically, it's your module).
+ - **module** is the module pointer of the module receiving the data (basically, it is your module).
  - **msg** is the message your module received.
 
  **type** is the type of the your new module represented by a number. Some basic types (e.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `module_type_t` enum structure of Luos. You can also create your own on top of the luos one.
@@ -64,7 +64,7 @@ By designing a driver, you have to keep the following rules in mind:
  - A driver module never depends or uses any other modules (driver or app).
  - A driver module is "dumb", as it can't do anything else than manage its hardware feature (but it does it very well).
 
- You can have multiple driver modules on the same <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> managing different hardware functionalities of your board, it's your call to sort them depending on your design.
+ You can have multiple driver modules on the same <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> managing different hardware functionalities of your board, it is your call to sort them depending on your design.
 
 ## Apps guidelines
 An applications or app is a type of module that only manages software items such as functions or algorithms. Apps use other modules to make your device act, operate, and behave.

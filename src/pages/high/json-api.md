@@ -267,7 +267,7 @@ Module can be excluded of the network if a problem occurs (See [message handling
 ```
 
 ## Sending large binary data
-Binary data such as, for example, a motor tarjectory can't be included into a Json file if it's too large. In order to allow this type of transmission, the size of the binary data is sent through the Json, then followed by the actual data in binary format.
+Binary data such as, for example, a motor tarjectory can't be included into a Json file if it is too large. In order to allow this type of transmission, the size of the binary data is sent through the Json, then followed by the actual data in binary format.
 
  - If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [Module's information messages section](#modules-information-messages)), or as a table of several values (for example a motor trajectory).
 

@@ -15,7 +15,7 @@
 ## How do the cables work?
 
 The cables are used to link the Luos bords together. There are two lengths of cables : 10 cm (3.9 in) cables and 20 cm (7.9 in) cables.
-However, it's possible to build a cable from any disired length (see the next section).
+However, it is possible to build a cable from any disired length (see the next section).
 
 **Maximal current value:** The Luos cable can handle up to 7 A.
 

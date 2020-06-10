@@ -2,7 +2,7 @@
 # Modules communication is based on messages
 > **Warning:** Make sure to read and understand how to [Create Luos modules](/pages/low/modules/create-project.md) before reading this page.
 
-As a developer, you will have to create and use Luos messages to exchange informations between modules. In order to do that, you have to understand how messages works.
+As a developer, you will have to create and use Luos messages to exchange informations between <span class="cust_tooltip">modules<span class="cust_tooltiptext">{{module_def}}</span></span>. In order to do that, you have to understand how messages works.
 
 ## Message structure
 
@@ -105,5 +105,25 @@ void modules_cb(module_t *module, msg_t *msg) {
 ```
 
 > **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page](/pages/low/modules/streaming.md).
+
+## Time-triggered update messages
+Luos provides a standard command to ask a module to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take useless resources.
+In this kind of polling situation, **you can use the time-triggered auto-update features available from any Luos module**. This feature allows you to ask a module to send you an update of any value each X milliseconds.
+To use it, you have to setup targeted module with a message containing a standard time <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span>, but with a specific command associated to it.
+
+For example, to update a module each 10ms:
+```C
+time_luos_t time = time_from_ms(10);
+msg_t msg;
+msg.header.target = id;
+msg.header.target_mode = IDACK;
+time_to_msg(&time, &msg);
+msg.header.cmd = UPDATE_PUB;
+luos_send(app, &msg);
+```
+
+> **Info:** Modules can handle only one time-triggered target, 2 modules of the same network can't ask a time-triggered value from the same module.
+
+> **Warning:** To prevent any ID movement, auto-update configuration is reseted on all modules at each detection (see [Routing table page](/pages/low/modules/routing-table.md) for more information).
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/modules/msg-handling.md">Edit this page</a></div>
