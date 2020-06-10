@@ -15,8 +15,9 @@ where app is the `module_t` pointer running the detection.
 
 A non-detected module (not in the routing table) has a specific ID of `0`. At the beginning of the detection, Luos erases each module's ID in the network, so all of them will have the ID `0` during this operation. You can use it on your modules code to act consequently to this detection if you need it (for example, a module can monitor its ID to detect if a detection has been made and if it has to reconfigure its auto-update).
 
-Then the module running the detection will have the ID `1` and the other modules will have an ID between `2` and `4096`, depending on their position from the module detector.
+Then the module running the detection will have the ID `1` and the other modules will have an ID between `2` and `4096`, depending on their position from the module detector. The IDs are attributed to the modules according to their position from the detector module and to the branch they are in. The ID attribution begins first to the PTPA port, then PTPB, etc.
 When each module in the network has an attributed ID, the detection algorithm proceeds to the creation of the routing table and shares it with every modules (saved only one time per node).
+
 
 Sometimes, multiple modules in the network can have the same alias, which is not allowed to prevent module confusion. In this case, detection algorithm will add a number after each instance of this alias on the routing table.
 
