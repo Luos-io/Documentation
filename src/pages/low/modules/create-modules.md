@@ -8,7 +8,7 @@
 
 To create a module, you have to call this function:
 ```c
-module_t* luos_module_create(void* callback, module_type_t type, char* default_alias, char *firm_revision);
+module_t* luos_module_create(void* callback, module_type_t type, char* default_alias, char* firm_revision);
 ```
 
 The returned `module_t*` is a module structure pointer that will be useful to make your module act in the network after this initialization.
@@ -22,7 +22,6 @@ The returned `module_t*` is a module structure pointer that will be useful to ma
 
  - **module** is the module pointer of the module receiving the data (basically, it's your module).
  - **msg** is the message your module received.
-
 
  **type** is the type of the your new module represented by a number. Some basic types (e.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `module_type_t` enum structure of Luos. You can also create your own on top of the luos one.
 
