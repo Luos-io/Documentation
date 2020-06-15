@@ -37,6 +37,4 @@ To make it work on your environment, you have to:
  - Select the good hal folder to use, depending on you hardware,
  - Include Luos.h on your source file.
 
-> *Note:* Robus and Luos repositories are pre-releases with limited access. Complete sources will be available soon.
-
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/dev-env.md">Edit this page</a></div>
