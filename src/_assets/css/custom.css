@@ -340,3 +340,107 @@ table#cust_table caption {
 
 */
 
+#container1 {
+    width:600px;
+    font-family:verdana,arial,helvetica,sans-serif;
+    font-size:11px;
+    text-align:center;
+    margin:auto;
+    margin-bottom: 50px;
+    border: 0px solid #000;
+}
+
+/* It's supposed to look like a tree diagram */
+.tree, .tree ul.wf_ul, .tree li.wf_li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-size:12px;
+}
+
+.tree {
+    margin: 0 0 1em;
+    text-align: center;
+}
+.tree strong {
+    font-size:16px;
+}
+.tree strong.cust_number {
+    font-size:30px;
+}
+.tree, .tree ul.wf_ul {
+    display: table;
+}
+.tree ul.wf_ul {
+  width: 100%;
+}
+.tree li.wf_li {
+display: table-cell;
+padding: 1.5em 0;
+vertical-align: top;
+}
+/* horizontal connectors */
+.tree li.wf_li:before {
+    outline: solid 1px #666;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.tree li.wf_li:first-child:before {left: 50%;}
+.tree li.wf_li:last-child:before {right: 50%;}
+
+/* cells */
+.tree span {
+    border: solid .1em #666;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 0 .5em 1.5em;
+    padding: .9em .6em;
+    position: relative;
+    min-width: 80px;
+    max-width: 220px;
+    min-height: 30px;
+    max-height: 200px;
+    background-color:#fff;
+}
+.tree span:hover {
+	background-color:#e5eecc;
+}
+.tree span.cust_basics {
+	border: dashed 1px;
+}
+.tree span.cust_choice {
+	border: solid 2px;
+	font-size: 12px;
+}
+.tree :target {
+	/*border: double;*/
+	background-color:#e5eecc;
+}
+
+/* vertical connectors */
+.tree ul.wf_ul:before,
+.tree span:before {
+    outline: solid 0.001em #666;
+    content: "";
+    height: 1.5em;
+    left: 50%;
+    position: absolute;
+}
+.tree ul.wf_ul:before {
+    top: -1.5em;
+}
+.tree span:before {
+    top: -1.55em;
+}
+
+/* The root node doesn't connect upwards */
+.tree > li.wf_li {margin-top: 0;}
+.tree > li.wf_li:before,
+.tree > li.wf_li:after,
+.tree > li.wf_li > span:before {
+	outline: none;
+}
