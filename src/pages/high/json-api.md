@@ -5,7 +5,7 @@ To do that, you must add a specific app module called [Gate]({{modules_path}}/ga
 The [Gate module]({{modules_path}}/gate.md) is an app that converts Luos messages from a device's network into JSON data format, and the other way from JSON to Luos messages.<br/>
 The Gate module can be hosted into different kinds of <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
 
-> **Warning:**: The Gate module refreshes sensors information as fast as it can, so that can be intensive to Luos bandwidth.
+> **Warning:** The Gate module refreshes sensors information as fast as it can, so that can be intensive to Luos bandwidth.
 
 ## How to start using the JSON API
 Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate module.<br/>
@@ -229,36 +229,44 @@ Here is an exemple of a message sent by a Potentiometer module about the rotatio
 }
 ```
 
-##### Specific messages
+#### Custom parameters and specific messages 
 Some messages are specifically handled:
 
 <!-- - If the type is `VOID_MOD`, the module is empty and no message is converted.-->
 
- - For[Dynamixel]({{modules_path}}/dxl.md) and void modules:
+Custom parameters can be defined and sent to modules through the JSON API, either with Python (Pyluos) or any other programming language on a computer side.
+Here is an example of a C function that can be implemented in order to send commands to modules in a Luos Network, through a gate:
+```C
+def sendCmd(s, cmd, sleep_time=0.5):
+    cmd = cmd + '\r'
+    print(cmd)
+    s.write(cmd.encode())
+    time.sleep(sleep_time)
+s = serial.Serial(sys.argv[1], 1000000)
+# detect Luos network
+sendCmd(s, '{"detection": {}}')
+# set speed mode and compliant mode
+sendCmd(s, '{"modules": {"controlled_moto": {"parameters": 2441}}}')
+# set pid parameters
+sendCmd(s, '{"modules": {"controlled_moto": { "pid": [20, 0.02, 90]}}}')
+# set speed mode and non compliant mode
+sendCmd(s, '{"modules": {"controlled_moto": {"parameters": 2440}}}')
+```
+Parameters are defined by a 16-bit bitfield.
 
-|Object|Definition|
-|:---:|:---:|
-|register|Motor memory register filed with \[register_number, value\]|
-|set_id|A set id command|
-|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|
+|Object|Definition|Structure|Module(s)|
+|:---:|:---:|:---:|:---:|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Controlled_motor/controlled_motor.h#L7-L31)|[Stepper]({{modules_path}}/stepper.md), [Controlled-motor]({{modules_path}}/controlled-motor.md), [Servo]({{modules_path}}/servo.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Imu/mpu_configuration.h#L37-L56)|[Imu]({{modules_path}}/imu.md)|
 
- - For [Stepper]({{modules_path}}/stepper.md), [Controlled-motor]({{modules_path}}/controlled-motor.md) and [Servo]({{modules_path}}/servo.md) modules:
+Other specific messages:
 
-|Object|Definition|
-|:---:|:---:|
-|parameters|enabling or disabling some measurement|
-
- - For [Imu]({{modules_path}}/imu.md) module:
-
-|Object|Definition|
-|:---:|:---:|
-|parameters|enabling or disabling some measurement|
-
- - For [Gate]({{modules_path}}/gate.md) module:
-
-|Object|Definition|
-|:---:|:---:|
-|delay|reduce modules refresh rate|
+|Object|Definition|Module(s)|
+|:---:|:---:|:---:|
+|register|Motor memory register filed with \[register_number, value\]|[Dynamixel]({{modules_path}}/dxl.md), void|
+|set_id|A set id command|[Dynamixel]({{modules_path}}/dxl.md), void|
+|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|[Dynamixel]({{modules_path}}/dxl.md), void|
+|delay|reduce modules refresh rate|[Gate]({{modules_path}}/gate.md)|
 
 ### Module exclusion messages
 Module can be excluded of the network if a problem occurs (See [message handling](/pages/low/modules/msg-handling.html#module-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this module is no longer available:
