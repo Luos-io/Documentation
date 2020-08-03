@@ -67,6 +67,22 @@ device.Imu_mod.linear_acceleration = False
 | walk_time | Duration (second) of the walk | read only: Float  |
 | walk_time | Starts/Stops walk_time measurement actualization | write only: Boolean (True or False) |
 
+## ROS topics
+
+| **Topic name** | **Message type** |
+|:----|:---:|
+| /Imu_mod/acceleration | geometry_msgs/Accel
+| /Imu_mod/compass | sensor_msgs/MagneticField
+| /Imu_mod/imu | sensor_msgs/Imu
+| /Imu_mod/variables/gravity_vector/read | geometry_msgs/Vector3
+| /Imu_mod/variables/gravity_vector/write | std_msgs/Bool
+| /Imu_mod/variables/heading/read | std_msgs/UInt32
+| /Imu_mod/variables/heading/write | std_msgs/Bool
+| /Imu_mod/variables/pedometer/read | std_msgs/UInt32
+| /Imu_mod/variables/pedometer/write | std_msgs/Bool
+| /Imu_mod/variables/walk_time/read | std_msgs/Float32
+| /Imu_mod/variables/walk_time/write | std_msgs/Bool
+
 ## Example of use of your IMU module using Jupyter notebook
 
 In this example, we will display in 3D the rotation sensor by using quaternions. In order to do that, we will use the *pythreejs* lib and *jupyter notebook*.

@@ -22,4 +22,9 @@ Its type has access to all common capabilities.
 |:---:|:---:|:---:|
 | delay | Sets or reads the network refresh delay in ms. | read / write: Integer |
 
+## ROS topics
+
+The gate has no topic but all topics names of all modules are prefixed with the name given to the broker associated to this gate at runtime.
+Default is `luos_broker` but can be changed by passing an argument to the launchfile, e.g.: `ros2 launch luos_interface broker.launch.py name:=luos_broker_2`. This name must be unique to prevent conflicts.
+
 <div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/gate.md">Edit this page</a></div>
