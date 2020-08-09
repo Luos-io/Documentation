@@ -1,8 +1,8 @@
 ---
 name: Feature request
-about: Suggest a new feature to be working in Luos
+about: Suggest a new feature for Luos
 title: "[NEW FEATURE] "
-labels: feature
+labels: ''
 assignees: nicolas-rabault
 
 ---
