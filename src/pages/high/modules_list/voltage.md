@@ -26,4 +26,15 @@ Its type has access to all common capabilities.
 | changed | Any state modification falling or raising |
 | filter_changed | Voltage variation bigger than *threshold* |
 
+## ROS topics
+| **Topic name** | **Message type** |
+|:----|:---:|
+| /mod/variables/volt/read | std_msgs/msg/Float32
+| /mod/variables/volt/write | std_msgs/msg/Float32
+| /mod/variables/threshold/read | std_msgs/msg/Float32
+| /mod/variables/threshold/write | std_msgs/msg/Float32
+| /mod/events/changed | luos_msgs/msg/FloatChange
+| /mod/events/filter_changed | luos_msgs/msg/FloatChange
+
+
 <div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/voltage.md">Edit this page</a></div>

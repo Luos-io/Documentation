@@ -68,20 +68,20 @@ device.Imu_mod.linear_acceleration = False
 | walk_time | Starts/Stops walk_time measurement actualization | write only: Boolean (True or False) |
 
 ## ROS topics
-
 | **Topic name** | **Message type** |
 |:----|:---:|
-| /Imu_mod/acceleration | geometry_msgs/Accel
-| /Imu_mod/compass | sensor_msgs/MagneticField
-| /Imu_mod/imu | sensor_msgs/Imu
-| /Imu_mod/variables/gravity_vector/read | geometry_msgs/Vector3
-| /Imu_mod/variables/gravity_vector/write | std_msgs/Bool
-| /Imu_mod/variables/heading/read | std_msgs/UInt32
-| /Imu_mod/variables/heading/write | std_msgs/Bool
-| /Imu_mod/variables/pedometer/read | std_msgs/UInt32
-| /Imu_mod/variables/pedometer/write | std_msgs/Bool
-| /Imu_mod/variables/walk_time/read | std_msgs/Float32
-| /Imu_mod/variables/walk_time/write | std_msgs/Bool
+| /Imu_mod/variables/pedometer/read | std_msgs/msg/UInt32
+| /Imu_mod/variables/pedometer/write | std_msgs/msg/Bool
+| /Imu_mod/variables/walk_time/read | std_msgs/msg/Float32
+| /Imu_mod/variables/walk_time/write | std_msgs/msg/Bool
+| /Imu_mod/variables/gravity_vector/read | geometry_msgs/msg/Vector3
+| /Imu_mod/variables/gravity_vector/write | std_msgs/msg/Bool
+| /Imu_mod/variables/heading/read | std_msgs/msg/UInt32
+| /Imu_mod/variables/heading/write | std_msgs/msg/Bool
+| /Imu_mod/acceleration | geometry_msgs/msg/Accel
+| /Imu_mod/imu | sensor_msgs/msg/Imu
+| /Imu_mod/compass | sensor_msgs/msg/MagneticField
+
 
 ## Example of use of your IMU module using Jupyter notebook
 

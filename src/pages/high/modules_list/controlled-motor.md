@@ -78,7 +78,55 @@ Now that everything is configured, you can enable the control modes you want to 
 | target_trans_position | Sets the target translation position to reach in mm. | read / write: float |
 | target_trans_speed | Sets the target translation speed to reach in mm/s. | read / write: float |
 
-## PID Setting example code
+## ROS topics
+| **Topic name** | **Message type** |
+|:----|:---:|
+| /mod/variables/positionPid/read | geometry_msgs/msg/Vector3
+| /mod/variables/positionPid/write | geometry_msgs/msg/Vector3
+| /mod/variables/speedPid/read | geometry_msgs/msg/Vector3
+| /mod/variables/speedPid/write | geometry_msgs/msg/Vector3
+| /mod/variables/encoder_res/read | std_msgs/msg/Float32
+| /mod/variables/encoder_res/write | std_msgs/msg/Float32
+| /mod/variables/reduction/read | std_msgs/msg/Float32
+| /mod/variables/reduction/write | std_msgs/msg/Bool
+| /mod/variables/wheel_size/read | std_msgs/msg/Float32
+| /mod/variables/wheel_size/write | std_msgs/msg/Float32
+| /mod/variables/compliant/read | std_msgs/msg/Bool
+| /mod/variables/compliant/write | std_msgs/msg/Bool
+| /mod/variables/power_mode/read | std_msgs/msg/Bool
+| /mod/variables/power_mode/write | std_msgs/msg/Bool
+| /mod/variables/rot_position_mode/read | std_msgs/msg/Bool
+| /mod/variables/rot_position_mode/write | std_msgs/msg/Bool
+| /mod/variables/rot_speed_mode/read | std_msgs/msg/Bool
+| /mod/variables/rot_speed_mode/write | std_msgs/msg/Bool
+| /mod/variables/trans_position_mode/read | std_msgs/msg/Bool
+| /mod/variables/trans_position_mode/write | std_msgs/msg/Bool
+| /mod/variables/trans_speed_mode/read | std_msgs/msg/Bool
+| /mod/variables/trans_speed_mode/write | std_msgs/msg/Bool
+| /mod/variables/rot_position/read | std_msgs/msg/Float32
+| /mod/variables/rot_position/write | std_msgs/msg/Bool
+| /mod/variables/rot_speed/read | std_msgs/msg/Float32
+| /mod/variables/rot_speed/write | std_msgs/msg/Bool
+| /mod/variables/trans_position/read | std_msgs/msg/Float32
+| /mod/variables/trans_position/write | std_msgs/msg/Bool
+| /mod/variables/trans_speed/read | std_msgs/msg/Float32
+| /mod/variables/trans_speed/write | std_msgs/msg/Bool
+| /mod/variables/current/read | std_msgs/msg/Float32
+| /mod/variables/current/write | std_msgs/msg/Bool
+| /mod/variables/power_ratio/read | std_msgs/msg/Float32
+| /mod/variables/power_ratio/write | std_msgs/msg/Float32
+| /mod/variables/target_rot_position/read | std_msgs/msg/Float32
+| /mod/variables/target_rot_position/write | std_msgs/msg/Float32
+| /mod/variables/target_rot_speed/read | std_msgs/msg/Float32
+| /mod/variables/target_rot_speed/write | std_msgs/msg/Float32
+| /mod/variables/target_trans_position/read | std_msgs/msg/Float32
+| /mod/variables/target_trans_position/write | std_msgs/msg/Float32
+| /mod/variables/target_trans_speed/read | std_msgs/msg/Float32
+| /mod/variables/target_trans_speed/write | std_msgs/msg/Float32
+
+## Example code
+
+### PID Setting example code
 
 The PID values allow your motor to stick to the target command as fast as possible. The quality of a set of PID values depends on time to reach the target position and position precision.
 Tuning a PID is something difficult and takes a lot of practice. It's really important to have simple ways to evaluate PID values impact on your motor before starting to tune these values.
@@ -192,5 +240,21 @@ The code you can use to tune your position PID:
 module.positionPid = [4.0,0.02,100] # position PID [P, I, D]
 run_pos_test(100.0)
 ```
+
+### Example command from ROS topics
+
+By publishing on 3 topics you will take control over the controlled motor named `controlled_moto` to a velocity command of 90 deg/s:
+
+```bash
+# Launch the broker. Note: warnings will be displayed, please ignore them
+ros2 launch luos_interface broker.launch.py
+
+# Start the command in velocity mode
+ros2 topic pub -1 /controlled_moto/variables/rot_speed_mode/write std_msgs/msg/Bool data:\ true\ 
+ros2 topic pub -1 /controlled_moto/variables/target_rot_speed/write std_msgs/msg/Float32 data:\ 90.0\ 
+ros2 topic pub -1 /controlled_moto/variables/compliant/write std_msgs/msg/Bool data:\ false\ 
+```
+
+Then publish `true` to the `/controlled_moto/variables/compliant/write` topic to stop the driver.
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/controlled-motor.md">Edit this page</a></div>
