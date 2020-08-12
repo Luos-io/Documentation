@@ -30,7 +30,7 @@ Now you know the basics, let's put in practice...
 
 ## Install ROS 2 and Luos
 
-First install [ROS 2 Foxy](https://index.ros.org/doc/ros2/Installation/Foxy/) for your OS with FastRTPS. Also install [`colcon`](https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon) as advised in the guidelines. If you are not familiar with ROS, you should maye go on with a couple of ROS 2 tutorials to get started.
+First install [ROS 2 Foxy](https://index.ros.org/doc/ros2/Installation/Foxy/) for your OS with FastRTPS. Also install [`colcon`](https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon) as advised in the guidelines. If you are not familiar with ROS, you should go on with a couple of ROS 2 tutorials to get started.
 
 Then clone `luos_ros2` to your workspace and compile it with colcon:
 
