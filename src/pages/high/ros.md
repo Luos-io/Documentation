@@ -21,7 +21,7 @@ There is a particular node whose role is to connect the Luos ecosystem with the 
 
 With Luos, topics names all start with a prefix being the module's alias and end with suffixes:
 * `.../read`: this topic is read-only and a `.../write` topic exists
-* `/write`: this topic is write-only and a `.../read` topic exists. It is often a boolean type that (de)activates some source of data publishing
+* `.../write`: this topic is write-only and a `.../read` topic exists. It is often a boolean type that (de)activates some source of data publishing
 * no suffix: this topic is read-only and no other related topic exists
 
 As an example, `/Imu_mod/variables/pedometer/read` allow to read-only the current pedometer variable from the IMU module named `Imu_mod`.
@@ -134,5 +134,4 @@ cd ~/ros2_ws/src
 ros2 pkg create my_luos_ros2_package --build-type ament_python --dependencies luos_interface
 ```
 You can then add your ROS Python scripts, by taking example on the [bike sharing example](./ros/bike_alarm.md).
-
 
