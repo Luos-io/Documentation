@@ -2,11 +2,11 @@
 
 This is a Luos example using ROS 2, the bike sharing application, that works this way:
 
-* The bike pops up in steady green when it's idle
-* Agitate the imu when it's idle, it's being stolen, the RGB alarm flashes in red
+* The bike pops up in steady green when it is idle
+* Shake the Imu when it is idle, meaning the bike is being stolen, the RGB alarm then flashes in red
 * Press the state button to acknowledge the alarm
-* Press again to start riding, the bike slighly blinks in green
-* Press a new time to stop riding, it becomes idle again
+* Press again to start riding, the bike slightly blinks in green
+* Press again to stop riding, it becomes idle again
 
 It relies on the 3D vizualizer embedded in ROS 2, named `RViz 2`:
 
@@ -32,4 +32,3 @@ Then, start the bike example from its launchfile:
 ```
 
 RViz2 will pop up and show a bike, agitate the Luo Imu node in order to update the RViz2 view in real time. If the bike shows but does not actuate, make sure that Imu data comes from the expected topic `/Imu_mod/imu`, or change the topic name.
-
