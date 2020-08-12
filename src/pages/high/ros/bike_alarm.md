@@ -31,4 +31,4 @@ Then, start the bike example from its launchfile:
 ~/ros2_ws/$ ros2 launch luos_bike_alarm_example example.launch.py
 ```
 
-RViz2 will pop up and show a bike, agitate the Luo Imu node in order to update the RViz2 view in real time. If the bike shows but does not actuate, make sure that Imu data comes from the expected topic `/Imu_mod/imu`, or change the topic name.
+RViz2 will pop up and show a bike, shake the Luos Imu node in order to update the RViz2 view in real time. If the bike is displayed but does not actuate, make sure that Imu data comes from the expected topic `/Imu_mod/imu`, or change the topic name.
