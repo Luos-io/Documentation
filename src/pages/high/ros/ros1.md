@@ -1,7 +1,7 @@
 # Luos with ROS 1
 
 The `ROS 1 Bridge` allows ROS 2 packages such as `luos_ros2` to communicate with a ROS 1 ecosystem. However, both ROS 1 and 2 need to be installed and the bridge takes care of the translation. 
-This procedure has been tested with ROS 1 Noetic + ROS 2 Foxy and Python 3.8.2 in Ubuntu. It might work with older distributions although it hasn't been tested.
+This procedure has been tested with ROS 1 Noetic + ROS 2 Foxy and Python 3.8.2 in Ubuntu. It might work with older distributions although it has not been tested.
 
 ## 1. Install ROS 2 and Luos
 
