@@ -15,7 +15,7 @@ We assume your ROS 1 workspace is `~/ros_ws`.
 
 ## 3. Initialize the bridge
 
-The bridge has it own workspace that is to be compiled with colcon (ROS 2):
+The bridge has its own workspace that is to be compiled with colcon (ROS 2):
 ```
 mkdir -p ~/ros1_bridge_ws/src
 cd ~/ros1_bridge_ws/src
