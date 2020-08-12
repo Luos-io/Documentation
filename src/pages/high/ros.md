@@ -64,8 +64,8 @@ Color               rgb_led_mod         5
 ros2 launch luos_interface broker.launch.py device:=/dev/ttyUSB1 name:=brokerUSB1
 ```
 
-According the modules you've plugged-in, the broker will automatically publish the revelant topics in the namespace of your modules' aliases.
-Here we've plugged a `State` module (alias `button_mod`), a `Imu` module (alias `Imu_mod`) and a `Color` module (alias `rgb_led_mod`) to the gate ; thus the broker publishes the following topics:
+According the modules you have plugged-in, the broker will automatically publish the relevant topics in the namespace of your modules' aliases.
+Here we have plugged a `State` module (alias `button_mod`), a `Imu` module (alias `Imu_mod`) and a `Color` module (alias `rgb_led_mod`) to the gate; thus the broker publishes the following topics:
 ```
 ~$ ros2 topic list
 /Imu_mod/acceleration
