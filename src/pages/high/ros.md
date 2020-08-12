@@ -12,7 +12,7 @@ Here is a summary of core concepts in ROS:
 * **ROS workspace**: this is the directory in which you download all ROS software that is built from sourcecode. You will likely setup your own projects there but it is also common to download dependencies there, such as `luos_ros2`. Here we assume your workspace is `~/ros2_ws`
 * **ROS node**: this is the name given to a single program or script being executed
 * **ROS launchfile**: this is a file that launches multiple nodes at once
-* **ROS messages and topics**: several nodes communicates with each other be exchanging information, they are structured pieces of data called **messages**, being exchanged through named communication channels called **topics**. Just like the filesystem of your hardrive, topics are hierarchised e.g. `/something/into/something/else/data`
+several nodes communicate with each other exchanging information in the form of structured pieces of data called **messages**, being exchanged through named communication channels called **topics**. Just like the filesystem of your hardrive, topics are hierarchised. E.g. `/something/into/something/else/data`
 * **ROS package**: a package is a folder that contains resources such as nodes, launchfiles, messages, ... here we have 2 packages named `luos_msgs` and `luos_interface`
 
 With Luos, data coming from/to Luos modules are messages sent on topics. Some messages representing popular types of data comply to existing message formats, e.g. `sensor_msgs/Imu` representing IMU data: this message is provided by the `sensor_msgs` package. Some other messages are Luos-specific and are provided by the `luos_msgs` package.
@@ -134,6 +134,5 @@ cd ~/ros2_ws/src
 ros2 pkg create my_luos_ros2_package --build-type ament_python --dependencies luos_interface
 ```
 You can then add your ROS Python scripts, by taking example on the [bike sharing example](./ros/bike_alarm.md).
-
 
 
