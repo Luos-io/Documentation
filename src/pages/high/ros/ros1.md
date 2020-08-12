@@ -47,7 +47,7 @@ ros2 launch luos_interface broker.launch.py
 ```
 
 ### In terminal 1: Your ROS 1 app in workspace `~/ros_ws`
-Let's consider here that `rostopic` is the ROS 1 app you want to run with Luos modules.
+Let us consider here that `rostopic` is the ROS 1 app you want to run with Luos modules.
 ```
 source ~/ros_ws/devel/setup.bash
 rostopic list
