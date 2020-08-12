@@ -94,7 +94,7 @@ Here we have plugged a `State` module (alias `button_mod`), a `Imu` module (alia
 
 Most variables advertise both `/read` and `/write` topics, to get data, write data, or (de)activate this data source. Other types of data might be aggregates of Luos variables (such as the imu) or Luos events.
 
-In order to echo messages from the terminal, use a regular ROS subscriber. For instance here's the current IMU data:
+In order to echo messages from the terminal, use a regular ROS subscriber. For instance here is the current IMU data:
 ```
 ~$ ros2 topic echo /Imu_mod/imu
 header:
