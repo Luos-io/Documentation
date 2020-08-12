@@ -133,4 +133,4 @@ This command lines will create a new package `my_luos_ros2_package` relying on `
 cd ~/ros2_ws/src
 ros2 pkg create my_luos_ros2_package --build-type ament_python --dependencies luos_interface
 ```
-You can then add your ROS Python scripts, by taking example on the [bike sharing example](./ros/bike_alarm.md).
+You can then add your ROS Python scripts, by taking example on the [bike sharing example](./ros/bike_alarm.md) page.
