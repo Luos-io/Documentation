@@ -121,7 +121,7 @@ linear_acceleration_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 ---
 ```
 
-In order to publish messages to the Luos modules, use a regular ROS publisher. For instance, here's how to light up the Luos RGB module, in pink color:
+In order to publish messages to the Luos modules, use a regular ROS publisher. For instance, here is how to light up the Luos RGB module, in a pink color:
 ```
 ros2 topic pub /rgb_led_mod/variables/color/write std_msgs/msg/ColorRGBA "{r: 64, g: 0, b: 64}" --once
 ```
