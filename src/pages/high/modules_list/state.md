@@ -24,6 +24,16 @@ Its type has access to all common capabilities.
 |:---:|:---:|
 | changed | Any state modification falling or raising |
 | falling | State modification from True to False |
-| raising | State modification from False to True |
+| rising | State modification from False to True |
+
+## ROS topics
+| **Topic name** | **Message type** |
+|:----|:---:|
+| /button_mod/variables/state/read | std_msgs/msg/Bool
+| /button_mod/variables/state/write | std_msgs/msg/Bool
+| /button_mod/events/rising | luos_msgs/msg/BoolChange
+| /button_mod/events/falling | luos_msgs/msg/BoolChange
+| /button_mod/events/changed | luos_msgs/msg/BoolChange
+
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/state.md">Edit this page</a></div>
