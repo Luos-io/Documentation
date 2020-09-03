@@ -17,18 +17,20 @@ It relies on the 3D vizualizer embedded in ROS 2, named `RViz 2`:
 This example package relies on `luos_interface`, make sure you first installed it by following [its own procedure](../ros.md).
 
 Then, download the example package and build your workspace with `colcon`:
-```
+```bash
 ~/ros2_ws/src/$ git clone https://github.com/aubrune/luos_bike_alarm_example.git
 
 ~/ros2_ws/$ colcon build --symlink-install    # Build the ROS workspace
 ~/ros2_ws/$ source ~/.bashrc                  # Source all new launches messages and resources
 ```
 
-Plug at least a Luos Imu node and a Gate to your computer, as well as optional RGB and State modules. The expected Luos modules' aliases are the default, if they are not, update the [topic names](https://github.com/aubrune/luos_bike_alarm_example/blob/master/luos_bike_alarm_example/bike_alarm.py#L12-L15) with your custom aliases.
+Plug at least a Luos Imu node and a Gate to your computer, as well as optional RGB and State modules. The expected Luos modules' aliases are the default. If they are not, update the [topic names](https://github.com/aubrune/luos_bike_alarm_example/blob/master/luos_bike_alarm_example/bike_alarm.py#L12-L15) with your custom aliases.
 
 Then, start the bike example from its launchfile:
-```
+```bash
 ~/ros2_ws/$ ros2 launch luos_bike_alarm_example example.launch.py
 ```
 
-RViz2 will pop up and show a bike, shake the Luos Imu node in order to update the RViz2 view in real time. If the bike is displayed but does not actuate, make sure that Imu data comes from the expected topic `/Imu_mod/imu`, or change the topic name.
+`RViz2` will pop up and show a 3D bike. Shake the Luos Imu node in order to update the RViz2 view in real time. If the bike is displayed but does not actuate, make sure that Imu data comes from the expected topic `/Imu_mod/imu`, or try to change the topic name.
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/high/ros/bike_alarm.md">Edit this page</a></div>

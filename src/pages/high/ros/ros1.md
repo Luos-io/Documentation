@@ -16,7 +16,7 @@ We assume your ROS 1 workspace is `~/ros_ws`.
 ## 3. Initialize the bridge
 
 The bridge has its own workspace that is to be compiled with colcon (ROS 2):
-```
+```bash
 mkdir -p ~/ros1_bridge_ws/src
 cd ~/ros1_bridge_ws/src
 git clone -b foxy https://github.com/ros2/ros1_bridge.git
@@ -28,28 +28,30 @@ colcon build --packages-select ros1_bridge --cmake-force-configure --cmake-args 
 
 ## 4. Start Luos in ROS 1
 ### In terminal 1: ROS Core in workspace `~/ros_ws`
-```
+```bash
 source ~/ros_ws/devel/setup.bash
 roscore
 ```
 
 ### In terminal 2: ROS 1 Bridge in workspace `~/ros1_bridge_ws`
-```
+```bash
 source ~/ros1_bridge_ws/install/setup.bash
 ros2 run ros1_bridge dynamic_bridge --bridge-all-2to1-topics
 ```
 
 ### In terminal 3: Luos broker in workspace `~/ros2_ws`
 Plug some Luos modules before starting the broker.
-```
+```bash
 source ~/ros2_ws/install/setup.bash
 ros2 launch luos_interface broker.launch.py
 ```
 
 ### In terminal 1: Your ROS 1 app in workspace `~/ros_ws`
 Let us consider here that `rostopic` is the ROS 1 app you want to run with Luos modules.
-```
+```bash
 source ~/ros_ws/devel/setup.bash
 rostopic list
 ```
 You can then publish and subscribe to the available topics in ROS 1.
+
+<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/high/ros/ros1.md">Edit this page</a></div>
