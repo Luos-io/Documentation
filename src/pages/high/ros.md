@@ -1,8 +1,11 @@
-# Luos with ROS1 and ROS2
 
-Luos comes with a package for the [Robot Operating System](https://www.ros.org/).
+<img src="{{img_path}}/ros-logo.png">
 
-ROS 2 is the default version but backward compatibility with ROS 1 is ensured via the official ROS 1 bridge. You can get an example of an application using Luos modules in ROS 2 with the [bike sharing example](https://github.com/aubrune/luos_bike_alarm_example).
+# Using Luos with ROS1 and ROS2
+
+Luos comes with a package for the <a href="https://www.ros.org/" target="_blank">Robot Operating System</a>.
+
+ROS 2 is the default version but backward compatibility with ROS 1 is ensured via the official ROS 1 bridge. You can get an example of an application using Luos modules in ROS 2 with the <a href="https://github.com/aubrune/luos_bike_alarm_example" target="_blank">bike sharing example</a>.
 
 In this tutorial, we will assume you're using ROS 2. If you want to communicate with a ROS 1 ecosystem, follow this quickstart anyway since ROS 2 needs to be installed and then refer to the [Retrocompatibility with ROS 1](./ros/ros1.md) page.
 
@@ -29,7 +32,7 @@ As an example, `/Imu_mod/variables/pedometer/read` allows to read-only the curre
 
 ## Install ROS 2 and Luos
 
-First install [ROS 2 Foxy](https://index.ros.org/doc/ros2/Installation/Foxy/) for your OS with FastRTPS. Also install [`colcon`](https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon) as advised in the guidelines. If you are not familiar with ROS, you should go on with a couple of ROS 2 tutorials to get started.
+First install <a href="https://index.ros.org/doc/ros2/Installation/Foxy/" target="_blank">ROS 2 Foxy</a> for your OS with FastRTPS. Also install <a href="https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon" target="_blank">`colcon`</a> as advised in the guidelines. If you are not familiar with ROS, you should go on with a couple of ROS 2 tutorials to get started.
 
 Then clone `luos_ros2` to your workspace and compile it with colcon:
 
