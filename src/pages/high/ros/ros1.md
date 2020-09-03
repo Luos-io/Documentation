@@ -10,7 +10,7 @@ We assume your ROS 2 workspace is `~/ros2_ws`.
 
 ## 2. Install ROS 1 and the ROS 1 bridge
 
-Then install [ROS 1 Noetic on Ubuntu 20.04](http://wiki.ros.org/noetic/Installation/Ubuntu).
+Then install <a href="http://wiki.ros.org/noetic/Installation/Ubuntu" target="_blank">ROS 1 Noetic on Ubuntu 20.04</a>.
 We assume your ROS 1 workspace is `~/ros_ws`.
 
 ## 3. Initialize the bridge
