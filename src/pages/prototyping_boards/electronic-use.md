@@ -99,6 +99,16 @@ If your terminal goes like this, it means that your download was successful:
 
 ![]({{img_path}}/upload_success.png)
 
-If the compilation goes wrong, it may be because your driver is not updated specially on Windows. If this is the case, you need to install and run *Zadig* by following <a href="https://github.com/profezzorn/ProffieOS/wiki/zadig" target="blank_">this tutorial</a> on github.
+### Troubleshooting
+If the upload goes wrong, it may be because your driver is not up-to-date. The fix depends of your OS:
+
+#### Windows
+You need to install and run *Zadig* by following <a href="https://github.com/profezzorn/ProffieOS/wiki/zadig" target="blank_">this tutorial</a> on github.
+
+#### Linux
+You need permissions to access the device for non-root users:
+```
+echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", GROUP="plugdev", MODE="0666"' > /etc/udev/rules.d/60-luos.rules
+```
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/prototyping_boards/electronic-use.md">Edit this page</a></div>
