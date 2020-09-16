@@ -24,14 +24,14 @@ Its type has access to all common capabilities.
 ## ROS topics
 | **Topic name** | **Message type** |
 |:----|:---:|
-| /mod/variables/rot_position/read | std_msgs/msg/Float32
-| /mod/variables/rot_position/write | std_msgs/msg/Float32
-| /mod/variables/max_angle/read | std_msgs/msg/Float32
-| /mod/variables/max_angle/write | std_msgs/msg/Float32
-| /mod/variables/min_pulse/read | std_msgs/msg/Float32
-| /mod/variables/min_pulse/write | std_msgs/msg/Float32
-| /mod/variables/max_pulse/read | std_msgs/msg/Float32
-| /mod/variables/max_pulse/write | std_msgs/msg/Float32
+| /servo1_mod/variables/rot_position/read | std_msgs/msg/Float32
+| /servo1_mod/variables/rot_position/write | std_msgs/msg/Float32
+| /servo1_mod/variables/max_angle/read | std_msgs/msg/Float32
+| /servo1_mod/variables/max_angle/write | std_msgs/msg/Float32
+| /servo1_mod/variables/min_pulse/read | std_msgs/msg/Float32
+| /servo1_mod/variables/min_pulse/write | std_msgs/msg/Float32
+| /servo1_mod/variables/max_pulse/read | std_msgs/msg/Float32
+| /servo1_mod/variables/max_pulse/write | std_msgs/msg/Float32
 
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/servo.md">Edit this page</a></div>

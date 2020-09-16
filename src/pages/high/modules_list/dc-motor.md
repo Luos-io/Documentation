@@ -21,7 +21,7 @@ Its type has access to all common capabilities.
 ## ROS topics
 | **Topic name** | **Message type** |
 |:----|:---:|
-| /mod/variables/power_ratio/read | std_msgs/msg/Float32
-| /mod/variables/power_ratio/write | std_msgs/msg/Float32
+| /DC_motor1_mod/variables/power_ratio/read | std_msgs/msg/Float32
+| /DC_motor1_mod/variables/power_ratio/write | std_msgs/msg/Float32
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/dc-motor.md">Edit this page</a></div>
