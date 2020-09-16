@@ -1,3 +1,5 @@
+<img src="{{img_path}}/json-logo.png" height="100px">
+
 # JSON API
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
 To do that, you must add a specific app module called [Gate]({{modules_path}}/gate.md) on your device.
