@@ -1,12 +1,12 @@
-# Stepper module type
+# Stepper container type
 
-This module type allows to control a stepper motor. It computes micro-stepping and motion planning.
+This container type allows to control a stepper motor. It computes micro-stepping and motion planning.
 
 Its type has access to all common capabilities.
 
-### Modules’s type settings:
+### containers’s type settings:
 
-> **Warning:** This module doesn't save any of the following parameters, they must be set each time your module reboots.
+> **Warning:** This container doesn't save any of the following parameters, they must be set each time your container reboots.
 
 The number of steps per turn must be defined, as well as the wheel diameter at the output of the motor if you wahnt to use translation. These specs may figure in your motor’s datasheet.
 
@@ -17,7 +17,7 @@ The number of steps per turn must be defined, as well as the wheel diameter at t
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
 | setToZero(self) | Resets current position of the motor to 0 | You can use it to initialize the position of the motor |
-| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
@@ -47,4 +47,4 @@ The number of steps per turn must be defined, as well as the wheel diameter at t
 | target_trans_position | Sets the target translation position to reach in mm. | read / write: float |
 | target_trans_speed | Sets the target translation speed to reach in mm/s. | read / write: float |
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/stepper.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/stepper.md">Edit this page</a></div>

@@ -1,6 +1,6 @@
-# Color module type
+# Color container type
 
-The Color module handles an RGB color data.
+The Color container handles an RGB color data.
 
 Its type has access to all common capabilities.
 
@@ -10,7 +10,7 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
-| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
@@ -27,4 +27,4 @@ Its type has access to all common capabilities.
 | /rgb_led_mod/variables/time/read | std_msgs/msg/Float32
 | /rgb_led_mod/variables/time/write | std_msgs/msg/Float32
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/color.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/color.md">Edit this page</a></div>

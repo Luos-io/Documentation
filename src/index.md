@@ -4,7 +4,7 @@
 
 We started designing Luos with the conviction that building electronic systems should be made easier than it is today. Most of the time should be spent on designing the applications and behaviors instead of on complex and time-and-money-eating technicalities. To give a simple example, adding a new sensor &mdash;for instance a distance sensor&mdash; to an electronic device in conception should not take more than a few minutes. So you can try, test and iterate fast on a project to truly design what users want.
 
-**Luos works like <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices architecture</a> in the software world, and a <a href="https://en.wikipedia.org/wiki/Distributed_operating_system" target="_blank">distributed operating systems</a>: it encapsulates any software or hardware function to make it communicate and work with any other encapsulated module, however it was developed, either on bare metal or on top of an embedded OS.**
+**Luos works like <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices architecture</a> in the software world, and a <a href="https://en.wikipedia.org/wiki/Distributed_operating_system" target="_blank">distributed operating systems</a>: it encapsulates any software or hardware function to make it communicate and work with any other encapsulated container, however it was developed, either on bare metal or on top of an embedded OS.**
 
 ### You are not familiar with Luos operations? Follow this flowchart:
 
@@ -31,19 +31,19 @@ We started designing Luos with the conviction that building electronic systems s
               <ul class="wf_ul">
                 <li class="wf_li"><span><a href="/pages/low/dev-env.md">Choose and configure your <b>development environment</b></a></span>
                 	<ul class="wf_ul">
-                		<li class="wf_li"><span><a href="/pages/low/modules.md">Read about <b>modules</b> and how they work
+                		<li class="wf_li"><span><a href="/pages/low/containers.md">Read about <b>containers</b> and how they work
 </a></span>
                 			<ul class="wf_ul">
-                				<li class="wf_li"><span><a href="/pages/low/modules/create-project.md">Create a <b>project</b></a><br /> and <br /><a href="/pages/low/modules/create-modules.md">start creating <b>modules</b></a></span>
+                				<li class="wf_li"><span><a href="/pages/low/containers/create-project.md">Create a <b>project</b></a><br /> and <br /><a href="/pages/low/containers/create-containers.md">start creating <b>containers</b></a></span>
                 					<ul class="wf_ul">
                 						<li class="wf_li"><span>Learn more about the tools and configurations available with Luos:<br /> 
-											➜ <a href="/pages/low/modules/od.md"><b>Object dictionary</b></a><br />
-											➜ <a href="/pages/low/modules/routing-table.md"><b>Routing table</b></a><br />
-											➜ <a href="/pages/low/modules/msg-handling.md"><b>Messages handling</b></a><br />
-											➜ <a href="/pages/low/modules/streaming.md"><b>Streaming</b></a><br />
-											➜ <a href="/pages/low/modules/rt-config.md"><b>Real-time</b> configuration</a></span>
+											➜ <a href="/pages/low/containers/od.md"><b>Object dictionary</b></a><br />
+											➜ <a href="/pages/low/containers/routing-table.md"><b>Routing table</b></a><br />
+											➜ <a href="/pages/low/containers/msg-handling.md"><b>Messages handling</b></a><br />
+											➜ <a href="/pages/low/containers/streaming.md"><b>Streaming</b></a><br />
+											➜ <a href="/pages/low/containers/rt-config.md"><b>Real-time</b> configuration</a></span>
                 							<ul class="wf_ul">
-                								<li class="wf_li"><span><a href="/pages/low/modules/examples.md">Read the Codes Examples</a> and <a href="https://community.luos.io/t/a-new-way-to-design-embedded-app-using-luos-intro/277">follow the bike alarm tutorial</a>
+                								<li class="wf_li"><span><a href="/pages/low/containers/examples.md">Read the Codes Examples</a> and <a href="https://community.luos.io/t/a-new-way-to-design-embedded-app-using-luos-intro/277">follow the bike alarm tutorial</a>
 												</span>
 													<ul class="wf_ul">
 								                		<li class="wf_li"><span><a href="#step3">Go to 3 <strong>↗</strong></a></span>
@@ -60,7 +60,7 @@ We started designing Luos with the conviction that building electronic systems s
                 </li>
               </ul>
             </li>
-            <li class="wf_li"><span class="cust_choice"><strong class="cust_number">❸</strong><br />Use Luos-ready boards and modules</span>
+            <li class="wf_li"><span class="cust_choice"><strong class="cust_number">❸</strong><br />Use Luos-ready boards and containers</span>
                 <ul class="wf_ul">
                 	<li class="wf_li"><span><a href="/pages/high/json-api.md#"><img src="{{img_path}}/json-logo.png" height="30px"><br />Learn how to use the <b>JSON API</b></a></span>
                 		<ul class="wf_ul">

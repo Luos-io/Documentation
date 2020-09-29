@@ -1,10 +1,10 @@
 # Dynamixel board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> dxl_*id*</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N x <a href="/pages/high/modules_list/dxl.md">Dynamixel motor</a></p>
-<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> N</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N x <a href="/pages/high/containers_list/dxl.md">Dynamixel motor</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> N</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/dxl1-module.png"><img height="150" src="{{img_path}}/dxl2-module.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/dxl1-container.png"><img height="150" src="{{img_path}}/dxl2-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
@@ -26,13 +26,13 @@ Except for this connection, both versions work exactly the same way.
 
 ![Dynamixel]({{img_path}}/dxl-mod-1.jpg)
 
-The Dynamixel board is special because it has a dynamic number of visible modules, depending on the number of motors plugged to it. If you have 5 motors on your board, you will see 5 DynamixelMotor modules.
+The Dynamixel board is special because it has a dynamic number of visible containers, depending on the number of motors plugged to it. If you have 5 motors on your board, you will see 5 DynamixelMotor containers.
 
-> **Note:** If you don’t plug any motor to the board, it will create a special module called `void_dxl`.
+> **Note:** If you don’t plug any motor to the board, it will create a special container called `void_dxl`.
 
-This board creates modules dynamically upon motor detection. So in order to create modules, this board has to detect motors, and to detect them each motor needs to have a proper power supply.
+This board creates containers dynamically upon motor detection. So in order to create containers, this board has to detect motors, and to detect them each motor needs to have a proper power supply.
 
-Indeed, if you power the Luos network with an unadapted voltage, the motors won’t reply to the board requests and you won’t be able to see any Dynamixel module on your network.
+Indeed, if you power the Luos network with an unadapted voltage, the motors won’t reply to the board requests and you won’t be able to see any Dynamixel container on your network.
 
 To be detected, the Dynamixel motors need to use a baudrate of 1 000 000 `baud` and to have an ID between 1 and 30.
 
@@ -45,7 +45,7 @@ When your Dynamixel motors are properly configured, you can connect them to the 
 
 > **Note:** The blue LED is ON when the network is busy detecting Dynamixel motors.
 
-In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel module]({{modules_path}}/dxl.md).
+In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel container]({{containers_path}}/dxl.md).
 
 > **Warning:** Dynamixel boards don’t belong to the power category. Thus, do not power your motors on the Robotis side, you won’t be able to share this power with others boards.
 

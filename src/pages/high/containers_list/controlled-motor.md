@@ -1,23 +1,23 @@
-# Controlled-motor module type
+# Controlled-motor container type
 
-This module type allows to control a motor with a reduction and a sensor (usually called motor-reducer or speed-reducer).
-This module computes PID for speed, position and motion planning.
+This container type allows to control a motor with a reduction and a sensor (usually called motor-reducer or speed-reducer).
+This container computes PID for speed, position and motion planning.
 
 You can find basic information about PID control here: <a href="https://medium.com/luosdeviceics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661" target="_blank">An introduction to PID control with DC motor</a>, and a code example to tune your PID at the end of this page.
 
 Its type has access to all common capabilities.
 
-### Modules’s type settings:
+### containers’s type settings:
 
-> **Warning:** This module doesn't save any of the following parameters, they must be set each time your module reboots.
+> **Warning:** This container doesn't save any of the following parameters, they must be set each time your container reboots.
 
-Before using your controlled motor module, you have to setup the resolution, motor reduction and eventually the wheel size, if you plan to use translation modes. To check the configuration, just make a complete turn on the motor shaft with your hand and check if the rotation position value is OK.
+Before using your controlled motor container, you have to setup the resolution, motor reduction and eventually the wheel size, if you plan to use translation modes. To check the configuration, just make a complete turn on the motor shaft with your hand and check if the rotation position value is OK.
 
 Both PID’s values have to be set accordingly to the motor-reducer plugged to the board. Each different motor-reducer will have different PID’s values for position and speed control, and you have to define them by yourself.
 The default values `[0, 0, 0]` won’t have any effect on the motor, and must be changed if you plan to use any position or speed control mode.
 To setup your PID please refer to the example at the end of this page.
 
-> **Warning:** PID for position and speed must be set in your code as an initialization before starting to use your module with position or speed control.
+> **Warning:** PID for position and speed must be set in your code as an initialization before starting to use your container with position or speed control.
 
 Now that everything is configured, you can enable the control modes you want to use. You can use position and speed mode simultaneously. Power mode is only usable alone. The controlled motor is now ready to use, you can disable compliance to start moving the motor.
 
@@ -28,7 +28,7 @@ Now that everything is configured, you can enable the control modes you want to 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
 | setToZero(self) | Resets current position of the motor to 0 | You can use it to initialize the position of the motor |
-| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
@@ -38,7 +38,7 @@ Now that everything is configured, you can enable the control modes you want to 
 |:---:|:---:|:---:|
 | positionPid | Sets position PID used for rotation position mode and translation position mode | read / write: \[float P, float I, float D\] |
 | speedPid | Sets speed PID used for rotation speed mode and translation speed mode | read / write: \[float P, float I, float D\] |
-| encoder_res | Defines the motor sensor resolution, in steps by rotation.<br/>*This module considers that the sensor is placed before the reduction. If it is not your case, just setup a reduction ratio of 1.* | read / write: float |
+| encoder_res | Defines the motor sensor resolution, in steps by rotation.<br/>*This container considers that the sensor is placed before the reduction. If it is not your case, just setup a reduction ratio of 1.* | read / write: float |
 | reduction | Defines the motor reduction.<br/>Set this value to 1 if your sensor measures after the reduction. | read / write: float |
 | wheel_size | Defines wheel size used for translation mode, in mm. | read / write: float |
 
@@ -142,73 +142,73 @@ import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
-# 1. Connect your Luos network (here using an USB module for example)
+# 1. Connect your Luos network (here using an USB container for example)
 r = Device('/dev/cu.usbserial-DN2AAOVK')
-r.modules
+r.containers
 
-# 2. Select the module of your network you need to configure
-module = r.controlled_moto
+# 2. Select the container of your network you need to configure
+container = r.controlled_moto
 
-# 3. Setup module basic settings
-module.encoder_res = 48
-module.reduction = 26.851
+# 3. Setup container basic settings
+container.encoder_res = 48
+container.reduction = 26.851
 
 def run_speed_test(velocity_target):
-    module.rot_position = False
-    module.rot_speed = True
-    module.rot_position_mode = False
-    module.rot_speed_mode = True
-    module.target_rot_speed = 0.0
-    module.compliant = False
+    container.rot_position = False
+    container.rot_speed = True
+    container.rot_position_mode = False
+    container.rot_speed_mode = True
+    container.target_rot_speed = 0.0
+    container.compliant = False
     target = []
     real = []
     test_time_vector = []
     test_start_time = time.time()
-    target.append(module.target_rot_speed)
-    real.append(module.rot_speed)
+    target.append(container.target_rot_speed)
+    real.append(container.rot_speed)
     test_time = time.time()
     test_time_vector.append(0.0)
     while (test_time < test_start_time + 0.5):
-        target.append(module.target_rot_speed)
-        real.append(module.rot_speed)
+        target.append(container.target_rot_speed)
+        real.append(container.rot_speed)
         test_time_vector.append(test_time - test_start_time)
         test_time = time.time()
-    module.target_rot_speed = velocity_target
+    container.target_rot_speed = velocity_target
     while (test_time < test_start_time + 2.5):
-        target.append(module.target_rot_speed)
-        real.append(module.rot_speed)
+        target.append(container.target_rot_speed)
+        real.append(container.rot_speed)
         test_time_vector.append(test_time - test_start_time)
         test_time = time.time()
-    module.compliant = True
+    container.compliant = True
     plot_test(test_time_vector, target, real)
 
 def run_pos_test(pos_target):
-    module.rot_speed = False
-    module.rot_position = True
-    module.rot_speed_mode = False
-    module.rot_position_mode = True
-    module.target_rot_position = 0.0
-    module.compliant = False
+    container.rot_speed = False
+    container.rot_position = True
+    container.rot_speed_mode = False
+    container.rot_position_mode = True
+    container.target_rot_position = 0.0
+    container.compliant = False
     target = []
     real = []
     test_time_vector = []
     test_start_time = time.time()
-    target.append(module.target_rot_position)
-    real.append(module.rot_position)
+    target.append(container.target_rot_position)
+    real.append(container.rot_position)
     test_time = time.time()
     test_time_vector.append(0.0)
     while (test_time < test_start_time + 1):
-        target.append(module.target_rot_position)
-        real.append(module.rot_position)
+        target.append(container.target_rot_position)
+        real.append(container.rot_position)
         test_time_vector.append(test_time - test_start_time)
         test_time = time.time()
-    module.target_rot_position = pos_target
+    container.target_rot_position = pos_target
     while (test_time < test_start_time + 2.5):
-        target.append(module.target_rot_position)
-        real.append(module.rot_position)
+        target.append(container.target_rot_position)
+        real.append(container.rot_position)
         test_time_vector.append(test_time - test_start_time)
         test_time = time.time()
-    module.compliant = True
+    container.compliant = True
     plot_test(test_time_vector, target, real)
 
 def plot_test(test_time_vector, target, real):
@@ -230,14 +230,14 @@ Now, you are ready to tune the PID values for position and speed control modes. 
 The code you can use to tune your speed PID:
 ```python
 # Speed PID settings
-module.speedPid = [0.1,0.1,0] # speed PID [P, I, D]
+container.speedPid = [0.1,0.1,0] # speed PID [P, I, D]
 run_speed_test(100.0)
 ```
 
 The code you can use to tune your position PID:
 ```python
 # Position PID settings
-module.positionPid = [4.0,0.02,100] # position PID [P, I, D]
+container.positionPid = [4.0,0.02,100] # position PID [P, I, D]
 run_pos_test(100.0)
 ```
 
@@ -257,4 +257,4 @@ ros2 topic pub -1 /controlled_moto/variables/compliant/write std_msgs/msg/Bool d
 
 Then publish `true` to the `/controlled_moto/variables/compliant/write` topic to stop the driver.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/controlled-motor.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/controlled-motor.md">Edit this page</a></div>

@@ -1,6 +1,6 @@
-# Servo module type
+# Servo container type
 
-The Servo module allows to drive RC elements like servomotor
+The Servo container allows to drive RC elements like servomotor
 
 Its type has access to all common capabilities.
 
@@ -10,7 +10,7 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
-| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
@@ -34,4 +34,4 @@ Its type has access to all common capabilities.
 | /mod/variables/max_pulse/write | std_msgs/msg/Float32
 
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/servo.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/servo.md">Edit this page</a></div>

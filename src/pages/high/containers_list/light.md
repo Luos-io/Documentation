@@ -1,6 +1,6 @@
-# Distance module type
+# Light container type
 
-The Distance module handles a sensor measuring a distance in mm.
+The Light container handles a sensor measuring a light intensity in lux.
 
 Its type has access to all common capabilities.
 
@@ -10,24 +10,24 @@ Its type has access to all common capabilities.
 
 | **Variable name** | **Action** | **Type** |
 |:---:|:---:|:---:|
-| distance | Reads the measured distance in mm | read only: Float |
-| threshold | Thresholds distance variation before filter_changed event trigers. Default value 10 mm. | read / write: Float |
+| lux | Reads the measured light intensity in lux | read only: Float |
+| threshold | Thresholds light intensity variation before *filter_changed* event trigers. Default value 10 lux. | read / write: Float |
 
 ## Events
 
 | **Event name** | **Trigger** |
 |:---:|:---:|
-| changed | Any movement on the distance measurement |
+| changed | Any movement on the light intensity measurement |
 | filter_changed | Movement bigger than *threshold* |
 
 ## ROS topics
 | **Topic name** | **Message type** |
 |:----|:---:|
-| /mod/variables/distance/read | std_msgs/msg/Float32
+| /mod/variables/lux/read | std_msgs/msg/Float32
 | /mod/variables/threshold/read | std_msgs/msg/Float32
 | /mod/variables/threshold/write | std_msgs/msg/Float32
 | /mod/events/changed | luos_msgs/msg/FloatChange
 | /mod/events/filter_changed | luos_msgs/msg/FloatChange
 
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/distance.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/light.md">Edit this page</a></div>

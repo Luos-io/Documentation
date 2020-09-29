@@ -1,7 +1,7 @@
 <img src="{{img_path}}/python-logo.png" height="100px">
 
 # A Pyluos guide
-Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](/pages/high/modules_list/gate.md) module.
+Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](/pages/high/containers_list/gate.md) container.
 
 ## Installation
 
@@ -131,17 +131,17 @@ Only once the connection is set it is possible to start programming behaviors.
 
 ### Routing table display
 
-[Routing table](/pages/low/modules/routing-table.md) can be easily displayed using Pyluos.
+[Routing table](/pages/low/containers/routing-table.md) can be easily displayed using Pyluos.
 
-Pyluos can displays a list of all the modules by filtering the route table, and their associated characteristics (type, alias and ID).
+Pyluos can displays a list of all the containers by filtering the route table, and their associated characteristics (type, alias and ID).
 To display it, use the following command:
 ```python
-device.modules
+device.containers
 ```
 
 > **Note:** `device` is the name of the network.
 
-Pyluos will give you a list of all modules without any topological informations :
+Pyluos will give you a list of all containers without any topological informations :
 ```AsciiDoc
 -------------------------------------------------
 Type                Alias               ID
@@ -166,7 +166,7 @@ device.nodes
 
 > **Note:** `device` is the name of the network.
 
-Based on the previous example Pyluos will give you all informations about modules and topological informations :
+Based on the previous example Pyluos will give you all informations about containers and topological informations :
 ```AsciiDoc
  root : [4653093, 1194612501, 540554032]
         |  Type                Alias               ID
@@ -186,38 +186,38 @@ Based on the previous example Pyluos will give you all informations about module
                 |  Type                Alias               ID
                 └> Angle               potentiometer_m     11
 ```
-In this example, 3 nodes (MCU) and their associated UUID are listed, along with their modules and associated characteristics (type, alias and ID).
-The characters after each set of node's modules and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from its second connector (1) to the first connector (0) of the next node.
+In this example, 3 nodes (MCU) and their associated UUID are listed, along with their containers and associated characteristics (type, alias and ID).
+The characters after each set of node's containers and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from its second connector (1) to the first connector (0) of the next node.
 
-### Module type
+### Container type
 
-Each module has a type (eg. `Button`, `Led`, ...).
-You can either retrieve your module's type from the previous code, or with the following line:
+Each container has a type (eg. `Button`, `Led`, ...).
+You can either retrieve your container's type from the previous code, or with the following line:
 
 ```python
-device.module_alias.type
+device.container_alias.type
 ```
-`module_alias` being the alias you got from the previous listing.
+`container_alias` being the alias you got from the previous listing.
 
-> **Note:** *Unknown* module types are defaulty set for custom module types such as some [Luos apps](/pages/low/modules/create-modules.md).
+> **Note:** *Unknown* container types are defaulty set for custom container types such as some [Luos apps](/pages/low/containers/create-containers.md).
 
-### Get and set modules informations
-Once you have detected your modules, you can use these information like variables.
+### Get and set containers informations
+Once you have detected your containers, you can use these information like variables.
 
 To access values you have to address them in the device object following this rules :
 
 ```python
-device.module_alias.variable
+device.container_alias.variable
 ```
 
 For example :
 
 ```python
-device.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" module
+device.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" container
 
 device.button_mod.state # Returns the status of the push button
 
-device.button_mod.type # Returns the module type of the module "button_mod"
+device.button_mod.type # Returns the container type of the container "button_mod"
 
 device.button_mod.luos_revision # Returns the version of luos
 
@@ -228,11 +228,11 @@ If you use *ipython* or *Jupyter Notebook*, you can use auto-completion using th
 
 ![Auto-completion](/_assets/img/pyluos-3.png)
 
-### Change a module name
-The name of any module can be changed following this code. To list each module and its associated alias, refer to [List available modules of your device](#list-available-modules-of-your-device) section.
+### Change a container name
+The name of any container can be changed following this code. To list each container and its associated alias, refer to [List available containers of your device](#list-available-containers-of-your-device) section.
 
 ```python
-device.module_alias.rename("new_name")
+device.container_alias.rename("new_name")
 ```
 
 For example:
@@ -243,7 +243,7 @@ device.rgb_led_mod.rename("myLED")
 
 > **Note:** You should restart your device and reconnect to it after this operation.
 
-> **Note:** To get back to the module default name, set a void name (`""`).
+> **Note:** To get back to the container default name, set a void name (`""`).
 
 ### Full script
 
@@ -251,7 +251,7 @@ device.rgb_led_mod.rename("myLED")
 from pyluos import Device
 device = Device('address of the device')
 
-device.modules
+device.containers
 
 device.rgb_led_mod.color = [50,80,5]
 device.button_mod.state

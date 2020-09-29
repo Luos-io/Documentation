@@ -1,6 +1,6 @@
-# Load module type
+# Load container type
 
-The Load module handles a sensor measuring a force (Newton).
+The Load container handles a sensor measuring a force (Newton).
 
 Its type has access to all common capabilities.
 
@@ -9,7 +9,7 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 | :---: | :---: | :---: |
-| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
@@ -27,4 +27,4 @@ Its type has access to all common capabilities.
 | changed | Any movement on the force intensity measurement |
 | filter_changed | Movement bigger than *threshold* |
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/load.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/load.md">Edit this page</a></div>

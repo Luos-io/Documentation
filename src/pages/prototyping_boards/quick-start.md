@@ -16,7 +16,7 @@ In the following example, we will make a LED turn on and off by pushing and rele
 ### STEPS
 
 #### 1. Configure your computer
-The default tool we use to control a Luos network is a board hosting a [Gate](/pages/high/modules_list/gate.md) module, with a Python lib called [Pyluos](/pages/high/pyluos.md).
+The default tool we use to control a Luos network is a board hosting a [Gate](/pages/high/containers_list/gate.md) container, with a Python lib called [Pyluos](/pages/high/pyluos.md).
 
 To begin, you have to install Python and Pyluos library, following the [pyluos documentation page](/pages/high/pyluos.html).
 
@@ -39,7 +39,7 @@ Your device is now powered and connected. All the low-level code and electronics
 ![USB board](/_assets/img/quickstart-2.png)<br />
 
 #### 4. Interact with the device
-*The USB node handle a specific module called "[Gate](/pages/high/modules_list/gate.md)". There are other boards hosting "Gate" module and using different connection than USB. These particular modules convert Luos modules data into something easier to understand and manage, using [JSON API](/pages/high/json-api.md).*
+*The USB node handle a specific container called "[Gate](/pages/high/containers_list/gate.md)". There are other boards hosting "Gate" container and using different connection than USB. These particular containers convert Luos containers data into something easier to understand and manage, using [JSON API](/pages/high/json-api.md).*
 
 Interacting with the Luos system and program behaviors will require to spot the USB connection on your computer. The following steps are explained on the [General board use page](/pages/prototyping_boards/electronic-use.md) with more details. In the following example, the associated port is `COM13`.
 
@@ -50,12 +50,12 @@ import pyluos
 from pyluos import Device
 device = Device('COM13')
 ```
-When Pyluos establishes the connection with a Gate module, it asks to run a network detection. This detection allows to discover all boards wired together on the network.
+When Pyluos establishes the connection with a Gate container, it asks to run a network detection. This detection allows to discover all boards wired together on the network.
 
 To list the discovered boards you can run:
 
 ```python
-print(device.modules)
+print(device.containers)
 ```
 
 In this tutorial, Python should find three boards, the Gate (USB), the LED, and the Button boards. You can check that all are detected:

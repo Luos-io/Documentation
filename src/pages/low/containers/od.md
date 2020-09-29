@@ -1,10 +1,10 @@
 # Object Dictionary
-To keep interoperability between <span class="cust_tooltip">modules<span class="cust_tooltiptext">{{module_def}}</span></span>, Luos provides an Object Dictionary (OD).
+To keep interoperability between <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span>, Luos provides an Object Dictionary (OD).
 
 ## What is OD?
-An Object Dictionary (OD) allows different developers of different modules to make them interoperate regardless of the unit they uses on the module.
+An Object Dictionary (OD) allows different developers of different containers to make them interoperate regardless of the unit they uses on the container.
 
-Let's take an example: If module1 uses an angle as radians and module2 uses degrees, what is the unit they should use to share the angle information?
+Let's take an example: If container1 uses an angle as radians and container2 uses degrees, what is the unit they should use to share the angle information?
 
 An Object Dictionary defines a set of typical objects that can be transmitted through Luos messages. It allows to send these objects with a predefined type and to use it in the units the user want.
 
@@ -82,4 +82,4 @@ Here are listed the existing types:
 >
 > Examples: convert a linear speed to mm/s: `linear_speed_to_mm_s()`; convert a value in &mu;m to a linear position: `linear_position_from_um()`; convert a value in revolutions/s to an angular speed: `angular_speed_from_rev_s()`;
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/modules/od.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/od.md">Edit this page</a></div>

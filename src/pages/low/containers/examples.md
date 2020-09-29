@@ -7,11 +7,11 @@ You can use this table to find interesting project regarding specific features e
 <thead>
 <tr>
 <th align="left"><small>Projects</small></th>
-<th align="center"><small><a href="/pages/low/modules.md">Dynamic modules allocation</a></small></th>
-<th align="center"><small><a href="/pages/low/modules/msg-handling.md">Large data</a></small></th>
-<th align="center"><small><a href="/pages/low/modules/streaming.md">Streaming</a></small></th>
-<th align="left"><small><a href="/pages/low/modules/od.md">Object Dictionnary</a></small></th>
-<th align="center"><small><a href="/pages/low/modules/routing-table.md">Routing table</a></small></th>
+<th align="center"><small><a href="/pages/low/containers.md">Dynamic containers allocation</a></small></th>
+<th align="center"><small><a href="/pages/low/containers/msg-handling.md">Large data</a></small></th>
+<th align="center"><small><a href="/pages/low/containers/streaming.md">Streaming</a></small></th>
+<th align="left"><small><a href="/pages/low/containers/od.md">Object Dictionnary</a></small></th>
+<th align="center"><small><a href="/pages/low/containers/routing-table.md">Routing table</a></small></th>
 </tr>
 </thead>
 <tbody>
@@ -146,4 +146,4 @@ You can use this table to find interesting project regarding specific features e
 </tbody>
 </table>
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/modules/examples.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/examples.md">Edit this page</a></div>

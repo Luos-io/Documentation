@@ -1,6 +1,6 @@
-# DC-motor module type
+# DC-motor container type
 
-The DC-motor module allows to drive a DC motor using only power mode.
+The DC-motor container allows to drive a DC motor using only power mode.
 
 Its type has access to all common capabilities.
 
@@ -10,7 +10,7 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
-| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
@@ -24,4 +24,4 @@ Its type has access to all common capabilities.
 | /mod/variables/power_ratio/read | std_msgs/msg/Float32
 | /mod/variables/power_ratio/write | std_msgs/msg/Float32
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/dc-motor.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/dc-motor.md">Edit this page</a></div>
