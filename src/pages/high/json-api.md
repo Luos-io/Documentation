@@ -191,9 +191,6 @@ Here is the list of all values that can be used by containers:
 |control|Control command (play, pause, stop, rec)|
 |color|Color value|
 |io_state|IO state|
-|led|Board's LED|
-|node_temperature|Node's temperature|
-|node_voltage|Node's voltage|
 |uuid|Container's uuid|
 |rename|Renaming an alias|
 |revision|Firmware revision|
@@ -218,7 +215,8 @@ Here is the list of all values that can be used by containers:
 |pedometer|Steps number value|
 |walk_time|Walk time value|
 |luos_revision|luos's version|
-|robus_revision|robus's version|
+|luos_statistics|luos's memory usage statistics [Allocator stack, Message stack, Luos stack, Dropped messages, Loop delay]|
+
 
 
 Here is an exemple of a message sent by a Potentiometer container about the rotation angle of the associated potentiometer:
@@ -232,7 +230,7 @@ Here is an exemple of a message sent by a Potentiometer container about the rota
 }
 ```
 
-#### Custom parameters and specific messages 
+#### Custom parameters and specific messages
 Some messages are specifically handled:
 
 <!-- - If the type is `VOID_MOD`, the container is empty and no message is converted.-->
