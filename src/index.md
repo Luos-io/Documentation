@@ -1,5 +1,7 @@
 # Welcome to Luos documentation
 
+<small>Luos version: {{last_version_luos}}</small>
+
 ## Introduction
 
 We started designing Luos with the conviction that building electronic systems should be made easier than it is today. Most of the time should be spent on designing the applications and behaviors instead of on complex and time-and-money-eating technicalities. To give a simple example, adding a new sensor &mdash;for instance a distance sensor&mdash; to an electronic device in conception should not take more than a few minutes. So you can try, test and iterate fast on a project to truly design what users want.

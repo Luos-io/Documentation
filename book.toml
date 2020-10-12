@@ -25,6 +25,7 @@ od_def = "Set of objects based on SI metric system that can be transmitted throu
 microservices_def = "Microservices are a software development technique that arranges an application as a collection of loosely coupled services."
 robus_def = "Core communication bus used by Luos to detect and communicate with containers in a network."
 last_version_pyluos = "1.2.0"
+last_version_luos = "0.6.9"
 gh_path = "github.com/Luos-io/doc/tree/master/src"
 boards_path = "/pages/prototyping_boards/boards_list"
 containers_path = "/pages/high/containers_list"
