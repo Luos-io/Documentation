@@ -1,8 +1,12 @@
 
 #sidebar,
 #menu-bar,
+#zsiq_float, #zsiq_floatmain, #zls-sptwndw, .zsiq_flt_rel, #zsiq_agtpic,
+.no_print,
+.cust_edit_page,
 .nav-chapters,
-.mobile-nav-chapters {
+.mobile-nav-chapters,
+.cust_menu_container {
     display: none;
 }
 
@@ -52,3 +56,4 @@ pre, code {
 .fa {
     display: none !important;
 }
+

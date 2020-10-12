@@ -1,6 +1,7 @@
-<img src="{{img_path}}/python-logo.png" height="100px">
+<img class="print-break" src="{{img_path}}/python-logo.png" height="100px">
 
-# A Pyluos guide
+<h1 class="no-break">A Pyluos guide</h1>
+
 Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](/pages/high/containers_list/gate.md) container.
 
 ## Installation

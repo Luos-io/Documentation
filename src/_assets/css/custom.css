@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 @import 'variables.css';
 
+@media print {
+  h1 {page-break-before: always;}
+  h1.no-break {page-break-before: avoid;}
+  .print-break {page-break-before: always;}
+}
+
+h1.no-break {
+	padding-top: 50px;
+}
+
 a.cust_menu_item{
 	color:var(--sidebar-fg);
 	font-size: 0.875em;

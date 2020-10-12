@@ -1,4 +1,4 @@
-# Welcome to Luos documentation
+<h1 class="no-break">Welcome to Luos documentation</h1>
 
 <small>Luos version: {{last_version_luos}}</small>
 
@@ -12,7 +12,7 @@ We started designing Luos with the conviction that building electronic systems s
 
 <div id="container1">
 
-<figure>
+<figure  class="print-break">
   <figcaption></figcaption>
   <ul class="tree">
     <li class="wf_li"><span class="cust_choice"><img src="{{img_path}}/logo-luos.png" height="30px"><br /><strong>What do you want to do?</strong></span>
