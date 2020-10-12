@@ -59,7 +59,7 @@ To send a message you have to:
 
 Here is a basic reply example that you can find in a container reception callback:
 ```c
-void containers_cb(container_t *container, msg_t *msg) {
+void containers_MsgHandler(container_t *container, msg_t *msg) {
     if (msg->header.cmd == ASK_PUB_CMD) {
         // fill the message info
         msg_t pub_msg;
@@ -68,7 +68,7 @@ void containers_cb(container_t *container, msg_t *msg) {
         pub_msg.header.cmd = IO_STATE;
         pub_msg.header.size = sizeof(char);
         pub_msg.data[0] = 0x01;
-        luos_send(container, &pub_msg);
+        Luos_SendMsg(container, &pub_msg);
         return;
     }
 }
@@ -90,16 +90,16 @@ color_t picture[300*300] = {/*Your favorite cat picture data*/};
 msg.header.target_mode = ID_ACK;
 msg.header.target = 12;
 msg.header.cmd = COLOR;
-luos_send_data(container, &msg, picture, sizeof(color_t)*300*300);
+Luos_SendData(container, &msg, picture, sizeof(color_t)*300*300);
 return;
 ```
 
 In the reception callback, here is the code for retrieve the message with the receiving container (the one with ID 12):
 ```c
 color_t picture[300*300];
-void containers_cb(container_t *container, msg_t *msg) {
+void containers_MsgHandler(container_t *container, msg_t *msg) {
     if (msg->header.cmd == COLOR) {
-        luos_get_data(container, msg, (void*)picture);
+        Luos_ReceiveData(container, msg, (void*)picture);
     }
 }
 ```
@@ -113,13 +113,13 @@ To use it, you have to setup targeted container with a message containing a stan
 
 For example, to update a container each 10ms:
 ```C
-time_luos_t time = time_from_ms(10);
+time_luos_t time = TimeOD_TimeFrom_ms(10);
 msg_t msg;
 msg.header.target = id;
 msg.header.target_mode = IDACK;
-time_to_msg(&time, &msg);
+TimeOD_TimeToMsg(&time, &msg);
 msg.header.cmd = UPDATE_PUB;
-luos_send(app, &msg);
+Luos_Send(app, &msg);
 ```
 
 > **Info:** containers can handle only one time-triggered target, 2 containers of the same network can't ask a time-triggered value from the same container.

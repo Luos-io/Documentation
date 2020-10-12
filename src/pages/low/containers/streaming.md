@@ -49,9 +49,9 @@ Before starting using streaming method, you have to create a streaming channel l
 volatile angular_position_t trajectory_ring_buf[BUFFER_SIZE];
 streaming_channel_t trajectory;
 
-void motor_init(void) {
-    trajectory = create_streaming_channel(trajectory_ring_buf, BUFFER_SIZE, sizeof(angular_position_t));
-    luos_container_create(rx_mot_cb, CONTROLLED_MOTOR_MOD, "motor_mod");
+void Motor_Init(void) {
+    trajectory = Stream_CreateStreamingChannel(trajectory_ring_buf, BUFFER_SIZE, sizeof(angular_position_t));
+    Luos_CreateContainer(Motor_MsgHandler, CONTROLLED_MOTOR_MOD, "motor_mod");
 }
 ```
 
@@ -63,18 +63,18 @@ Now you can use this channel to receive or transmit a streaming flux:
 This is used to make the motor move.<br/>
 When your streaming channel has been created, you can feed it with received messages on your reception callback:
  ```C
-void rx_mot_cb(container_t *container, msg_t *msg) {
+void Motor_MsgHandler(container_t *container, msg_t *msg) {
     // check message command
     if (msg->header.cmd == ANGULAR_POSITION) {
         // this is our trajectory reception
-        luos_receive_streaming(container, msg, &trajectory);
+        Luos_ReceiveStreaming(container, msg, &trajectory);
     }
 }
 ```
 Now your container is able to receive trajectory chunks. For the next step, you need to have a real-time callback (using a timer for example) which is able to manage the consumption of this trajectory at 200hz:
 ```C
 void 200hz_callback(void) {
-    get_sample(&trajectory, &motor.target_angular_position);
+    Stream_GetSample(&trajectory, &motor.target_angular_position);
 }
 ```
 
@@ -84,12 +84,12 @@ To go the other way and send a sampled signal such as a position measurement, yo
 First you have to put values into your streaming channel at 200Hz:
 ```C
 void 200hz_callback(void) {
-    set_sample(&trajectory, &motor.angular_position);
+    Stream_PutSample(&trajectory, &motor.angular_position);
 }
 ```
 This way, samples are buffered into your ring buffer, and you can send this real-time information as you want. For example only when someone ask you to:
  ```C
-void rx_mot_cb(container_t *container, msg_t *msg) {
+void Motor_MsgHandler(container_t *container, msg_t *msg) {
     msg_t pub_msg;
     // check message command
     if (msg->header.cmd == ASK_PUB_CMD) {
@@ -97,11 +97,11 @@ void rx_mot_cb(container_t *container, msg_t *msg) {
         pub_msg.header.target_mode = ID;
         pub_msg.header.target = msg->header.source;
         pub_msg.header.cmd = ANGULAR_POSITION;
-        luos_send_streaming(container, &pub_msg, &measurement);
+        Luos_SendStreaming(container, &pub_msg, &measurement);
     }
 }
 ```
-The `luos_send_streaming` function sends data available on your streaming channel. You can continue to feed your channel with samples at the same time.
+The `Luos_SendStreaming` function sends data available on your streaming channel. You can continue to feed your channel with samples at the same time.
 
 > **Warning:** This example doesn't work if your container is configured as real-time. Please read [Real-time configuration page](/pages/low/containers/rt-config.md) for more informations.
 

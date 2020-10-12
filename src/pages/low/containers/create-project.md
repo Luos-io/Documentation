@@ -9,10 +9,10 @@ Basically, your `main()` will look like this:
 
 int main(void)
 {
-    luos_init();
+    Luos_Init();
     while(1)
     {
-        luos_loop();
+        Luos_Loop();
     }
     return 0;
 }
@@ -41,31 +41,31 @@ To make it at Luos we always use the same way to organize our projects: we put t
     │
     ├─── Inc
     │    ├─── Luos
-    │    └─── Robus
+    │    └─── LuosHAL
     │
     └─── Src
          └─── Main.c
 ```
 
 ### Basic containers functions
-We choose to put the public functions of our containers in the `container.h` file. Like Luos, containers are similar to tasks that need to be run regularly, so we choose to use the exact same stategy as presented for Luos functions by providing a `container_init()` and a `container_loop()` functions and to add them in the `main()`.
+We choose to put the public functions of our containers in the `container.h` file. Like Luos, containers are similar to tasks that need to be run regularly, so we choose to use the exact same stategy as presented for Luos functions by providing a `Container_Init()` and a `Container_Loop()` functions and to add them in the `main()`.
 Following the previous folder organization, the `main()` code looks like this:
 
 ```C
 #include "luos.h"
-#include "container_1.h"
-#include "container_2.h"
+#include "container1.h"
+#include "container2.h"
 
 int main(void)
 {
-    luos_init();
-    container_1_init();
-    container_2_init();
+    Luos_Init();
+    Container1_Init();
+    Container2_Init();
     while(1)
     {
-        luos_loop();
-        container_1_loop();
-        container_2_loop();
+        Luos_Loop();
+        Container1_Loop();
+        Container2_Loop();
     }
     return 0;
 }

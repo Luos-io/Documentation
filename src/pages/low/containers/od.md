@@ -21,7 +21,7 @@ angular_position_t angular_position;
 You can create your variables using these objects but **never set OD variables directly with a value**. Instead, you have to use functions available on the Luos OD:
 ```c
 // Set object angular_position
-angular_position_t angular_position = angular_position_from_deg (12.0); 
+angular_position_t angular_position = AngularOD_PositionTo_deg (12.0); 
 ```
 Following this rule, everybody will be able to use your values.
 
@@ -33,31 +33,31 @@ As many units exist, many conversion functions are available. As a result, they 
 ### Unit conversions
 There are two types of unit conversion: in one way (OD type from desired unit), and in the other way (OD type to desired unit):
 
- - **`from` conversion:** Converts a value with a defined unit into a desired OD type. Format:  `[type_var] = [type]_from_[unit]([value])`
+ - **`from` conversion:** Converts a value with a defined unit into a desired OD type. Format:  `[type_var] = [type]From_[unit]([value])`
 ```c
 // save a linear_position from a mm value
-linear_position_t linear_position_from_mm(float mm); 
+linear_position_t LinearOD_PositionFrom_mm(float mm); 
 ```
 
- - **`to` conversion:** Converts a type to a unit. Format: `[value] = [type]_to_[unit]([type_var])`
+ - **`to` conversion:** Converts a type to a unit. Format: `[value] = [type]To_[unit]([type_var])`
 ```c
 // convert the variable linear_position into a mm
-float linear_position_to_mm(linear_position_t linear_position); 
+float LinearOD_PositionTo_mm(linear_position_t linear_position); 
 ```
 
 ### Messages conversions
 The same both way of conversion are available for messages (OD type from message and OD type to message):
 
- - **`from` conversion:** Gets a type from a message. Format: `[type]_from_msg([type_var], msg)`
+ - **`from` conversion:** Gets a type from a message. Format: `[type]FromMsg([type_var], msg)`
 ```C
 // get the linear_position from the message msg
-void linear_position_from_msg(linear_position_t* linear_position, msg_t* msg); 
+void LinearOD_PositionFromMsg(linear_position_t* linear_position, msg_t* msg); 
 ```
 
- - **`to` conversion:** Inserts a desired type into a message. Format: `[type]_to_msg(type_var], msg)`
+ - **`to` conversion:** Inserts a desired type into a message. Format: `[type]ToMsg(type_var], msg)`
 ```c
 // insert the linear_position into the message msg
-void linear_position_to_msg(linear_position_t* linear_position, msg_t* msg);
+void LinearOD_PositionToMsg(linear_position_t* linear_position, msg_t* msg);
 ```
 
 ## Types and units table summary
@@ -80,6 +80,6 @@ Here are listed the existing types:
 
 > **Note:** to find out a conversion function, replace the characters `/` or `.` in the units by the character `_`. The character `µ` is replaced by `u`, and `revolution` is replaced by `rev`.
 >
-> Examples: convert a linear speed to mm/s: `linear_speed_to_mm_s()`; convert a value in &mu;m to a linear position: `linear_position_from_um()`; convert a value in revolutions/s to an angular speed: `angular_speed_from_rev_s()`;
+> Examples: convert a linear speed to mm/s: `LinearOD_SpeedTo_mm_s()`; convert a value in &mu;m to a linear position: `LinearOD_PositionFrom_um()`; convert a value in revolutions/s to an angular speed: `AngularOD_SpeedFrom_rev_s()`;
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/od.md">Edit this page</a></div>

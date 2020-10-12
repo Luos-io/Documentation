@@ -8,7 +8,7 @@
 
 To create a container, you have to call this function:
 ```c
-container_t* luos_container_create(void* callback, container_type_t type, char* default_alias, char* firm_revision);
+container_t* Luos_CreateContainer(void* callback, container_type_t type, char* default_alias, char* firm_revision);
 ```
 
 The returned `container_t*` is a container structure pointer that will be useful to make your container act in the network after this initialization.
@@ -17,7 +17,7 @@ The returned `container_t*` is a container structure pointer that will be useful
  This function needs to have a specific format:
 
  ```c
- void container_cb(container_t *container, msg_t *msg)
+ void Container_MsgHandler(container_t *container, msg_t *msg)
  ```
 
  - **container** is the container pointer of the container receiving the data (basically, it is your container).
@@ -34,16 +34,16 @@ Following the [project rules](/pages/low/containers/create-project.html#basic-co
 ```c
 container_t* container_btn;
 
-void rx_btn_cb(container_t *container, msg_t *msg){
+static void Button_MsgHandler(container_t *container, msg_t *msg){
     // Manage received messages
 }
 
-void button_init(void) {
+void Button_Init(void) {
 	//STRINGIFY (VERSION) is used to get the container version in the container's library.json file
-    container_t* container_btn = luos_container_create(rx_btn_cb, STATE_MOD, "button_mod", STRINGIFY(VERSION));
+    container_t* container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_MOD, "button_mod", STRINGIFY(VERSION));
 }
 
-void button_loop(void) {
+void Button_Loop(void) {
 }
 ```
 
