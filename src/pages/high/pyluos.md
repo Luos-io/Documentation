@@ -247,8 +247,8 @@ device.rgb_led_mod.rename("myLED")
 > **Note:** To get back to the container default name, set a void name (`""`).
 
 ### Get a node statistics
-Nodes are able to send back some values representing the sanity of a node. You can use it to evaluate The Luos needs depending on your particular configuration.
-The RAM usage of Luos depend on the number of messages the node have to treat and the max luos loop delay.
+Nodes are able to send back some values representing the sanity of a node. You can use it to evaluate the Luos needs depending on your particular configuration.
+The RAM usage of Luos depends on the number of messages the node has to treat and the max Luos loop delay.
 
 ```python
 device.container_alias.luos_statistics
@@ -268,11 +268,11 @@ rgb_led_mod statistics :
 .Dropped messages number    = 0
 .Max luos loop delay        = 1ms
 ```
- - **luos allocated RAM occupation** represent the global Luos RAM usage based on **Allocator stack**, **Message stack**, and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos trough the `MAX_MSG_NB` configuration flag (equal to `2 * MAX_VM_NUMBER` by default).
+ - **luos allocated RAM occupation** represents the global Luos RAM usage based on **Allocator stack**, **Message stack**, and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_VM_NUMBER` by default).
 
- - **Dropped messages number** represent the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too many memory. If you experience message drop you should increase the `MSG_BUFFER_SIZE` configuration flag (equal to `3 * sizeof(msg_t)` by default).
+ - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default).
 
- - The RAM occupation  and message drop number is also related to **Max luos loop delay**. If **Max luos loop delay** is too big, Luos have to buffer more messages between loop executions and consume more RAM. So you can reduce the ram consumption and messages dropping by reducing the **Max luos loop delay**. To do that you have to call the `Luos_Loop()` function more frequently.
+ - The RAM occupation and message drop number is also related to **Max luos loop delay**. If **Max luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. So you can reduce the RAM consumption and messages dropping by reducing the **Max luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
 
 ### Full script
 
