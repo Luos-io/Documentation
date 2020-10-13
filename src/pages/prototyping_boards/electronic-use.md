@@ -36,7 +36,7 @@ Luos boards examples are organized in 6 categories. Each board belongs to at lea
 
 <a name="plug"></a>
 ## Plugging boards together
-Luos boards have at least 2 connection ports in their design. All connectors are the same, so that any board can be connected to another one using any of these ports. Just avoid to make a loop circuit, otherwise you will damage the communication between modules.
+Luos boards have at least 2 connection ports in their design. All connectors are the same, so that any board can be connected to another one using any of these ports. Just avoid to make a loop circuit, otherwise you will damage the communication between containers.
 
 There is a correct side to plug a cable’s connector to a board. The small tab on the connector must face upward to plug correctly, as shown on the following pictures:
 
@@ -55,9 +55,9 @@ For example, for a device using a 12V motor and an USB board: The USB board belo
 Some component needs specific voltage to work properly. For example, in order to use standard servomotor, you have to feed the Luos network with 5V or 7V. If you need to combine 7V and 12V motors in a system, for example, you can manage multiple voltages on the same network using a [power isolator board]({{boards_path}}/power-isolator.md).
 
 ## External communication management
-The boards from the Communication category allow you to easily control a Luos network. These boards host a module called "gate", they can communicate using different kinds of technologies and reach devices outside the device.<br/>To start using Luos technology, you have to use at least one of these gates to be able to program your machine's behaviors.
+The boards from the Communication category allow you to easily control a Luos network. These boards host a container called "gate", they can communicate using different kinds of technologies and reach devices outside the device.<br/>To start using Luos technology, you have to use at least one of these gates to be able to program your machine's behaviors.
 
-The "gate" module's task is to stream the Luos network activity into a standard Json format file, and on the oposite to allow an external device to easily interact with any device in the network.
+The "gate" container's task is to stream the Luos network activity into a standard Json format file, and on the oposite to allow an external device to easily interact with any device in the network.
 
 This way, it’s **easy to use** your favorite device and language to interact and control your device.
 
@@ -68,14 +68,14 @@ Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">pyluos on github
 ## Update Luos, Robus and board's firmware
 Follow [this page](/pages/low/dev-env.md)'s instruction to install Platform IO if it is not already the case.
 
-To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your modules' code, you must open the librairies tab ![]({{img_path}}/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
+To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your containers' code, you must open the librairies tab ![]({{img_path}}/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
 
-![]({{img_path}}/Update_Luos_Robus_Modules.png)
+![]({{img_path}}/Update_Luos_Robus_Containers.png)
 
 To update the board's firmware you need to follow 3 steps:
 
-### 1. Open the module folder that you want to update in Visual Studio Code
-To do this, you must go to *File* -> *Open the folder* and go to the folder of the module you want.
+### 1. Open the container folder that you want to update in Visual Studio Code
+To do this, you must go to *File* -> *Open the folder* and go to the folder of the container you want.
 
 ### 2. Compile it to ensure there is no error
 To compile your code, you must click on the *Compile* button ![]({{img_path}}/compile-button.png) at the bottom of your window:

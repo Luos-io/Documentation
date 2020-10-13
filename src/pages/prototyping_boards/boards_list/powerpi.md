@@ -1,10 +1,10 @@
 # Power Pi board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> gate</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/modules_list/gate.md">Gate</a></p>
-<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/gate.md">Gate</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/power-pi-module.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/power-pi-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-communication.png" title="Comunication">
@@ -16,7 +16,7 @@
 </div>
 
 ## Power Pi board
-The Power Pi board links any Raspberry Pi-like board to a Luos network. This board allows you to convert the Luos network power into 5V and up to 2A in order to power your Raspberry Pi or Odroid without any other power source. This board hosts a Gate module allowing to your Raspberry Pi to control your entire Luos network using Pyluos or any other language as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image</a>.
+The Power Pi board links any Raspberry Pi-like board to a Luos network. This board allows you to convert the Luos network power into 5V and up to 2A in order to power your Raspberry Pi or Odroid without any other power source. This board hosts a Gate container allowing to your Raspberry Pi to control your entire Luos network using Pyluos or any other language as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image</a>.
 The Power Pi board supports 5V to 24V DC input.
 
 ## Connection of Power Pi board to a Raspberry Pi
@@ -33,7 +33,7 @@ The connection of the Power Pi board to an ODrive board or to a Raspberry Pi boa
 ## How to easily start to create your code using this board
 
 Coding on a Raspberry Pi in a device can be quite boring. Generally, you can't connect any screen and keyboard to work properly.
-That's why we created a small piece of code allowing to convert the Gate module stream into Web Socket messages.
+That's why we created a small piece of code allowing to convert the Gate container stream into Web Socket messages.
 By using this Web Socket, you can connect pyluos or any other lib you created to your Raspberry Pi. This way you can create and execute your device's behaviors directly on your computer.
 When your behavior is complete and tested on your device, you just have to copy it into your Raspberry Pi to obtain an autonomous device.
 
@@ -144,12 +144,12 @@ This way, you can control your device from your computer even if it is moving or
 ```python
 from pyluos import Device
 device = Device("raspberrypi.local")
-device.modules
+device.containers
 ```
 
 In this example, you can replace `raspberrypi.local` by your Raspberry Pi’s IP or hostname.
 
-You should see the list of modules connected to the Power Pi board.
+You should see the list of containers connected to the Power Pi board.
 
 
 ### Cognition mode

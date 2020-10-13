@@ -7,43 +7,43 @@ This guide contains all the basic notions you will need to use, create and under
 Luos is a low-level software technology uploaded into every board's (<span class="cust_tooltip">[**node**](#what-is-a-node)<span class="cust_tooltiptext">{{node_def}}</span></span>) of a device.
 You can use Luos as a **bare metal** lib or as a driver into your **embedded OS**.
 
-Luos is composed as well of **code subdivisions** called <span class="cust_tooltip">[**modules**](#module)<span class="cust_tooltiptext">{{module_def}}</span></span>. Modules are distributed into every nodes in a network.
+Luos is composed as well of **code subdivisions** called <span class="cust_tooltip">[**containers**](#container)<span class="cust_tooltiptext">{{container_def}}</span></span>. Containers are distributed into every nodes in a network.
 
-<a href="/_assets/img/feature-module-node-board.jpg" target="_blank"><img src="/_assets/img/feature-module-node-board.jpg" width="800px" /></a>
+<a href="/_assets/img/feature-container-node-board.jpg" target="_blank"><img src="/_assets/img/feature-container-node-board.jpg" width="800px" /></a>
 
 ## What is a Node
-A node is a physical component (hardware) running Luos and hosting one or several modules. In a Luos network, nodes are all connected together using <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span>, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
-In the Luos philosophy, each node has to carry the necessary programs (modules) allowing it to manage its boards and features.
+A node is a physical component (hardware) running Luos and hosting one or several containers. In a Luos network, nodes are all connected together using <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span>, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
+In the Luos philosophy, each node has to carry the necessary programs (containers) allowing it to manage its boards and features.
 
 <img src="/_assets/img/MCU-luos.png" height="100px" />
 
-Nodes can have capacities such as measuring the core temperature, sending the processor's unique ID or input voltage. A node's capacities are commonly shared by all the modules hosted into it and are accessible through each of them.
+Nodes can have capacities such as measuring the core temperature, sending the processor's unique ID or input voltage. A node's capacities are commonly shared by all the containers hosted into it and are accessible through each of them.
 
-## Module
-A module is a block of code which is able to communicate with any other modules through the Luos network. Each module provides an API allowing to manage a motor, handle a laser range finder, or compute an inverse-kinematics, for example.
-**Each module is hosted in a single node**, but a node can handle several modules at the same time and manage communication between them and between other modules hosted in other nodes, using the same interface.
+## Container
+A container is a block of code which is able to communicate with any other containers through the Luos network. Each container provides an API allowing to manage a motor, handle a laser range finder, or compute an inverse-kinematics, for example.
+**Each container is hosted in a single node**, but a node can handle several containers at the same time and manage communication between them and between other containers hosted in other nodes, using the same interface.
 
-For example, the [Dynamixel board]({{boards_path}}/dxl.md) provided by Luos can dynamically create and manage Dynamixel modules depending on the number of Dynamixel motors linked to it. Any Dynamixel modules can get or set values to other Dynamixel modules on the same node or to any other modules in any other nodes in the network.
+For example, the [Dynamixel board]({{boards_path}}/dxl.md) provided by Luos can dynamically create and manage Dynamixel containers depending on the number of Dynamixel motors linked to it. Any Dynamixel containers can get or set values to other Dynamixel containers on the same node or to any other containers in any other nodes in the network.
 
-[Go to Modules page](/pages/low/modules.md).
+[Go to Containers page](/pages/low/containers.md).
 
 ## Messages
-All modules can share and receive datas using messages.
+All containers can share and receive datas using messages.
 
-[Go to Messages handling page](/pages/low/modules/msg-handling.md).
+[Go to Messages handling page](/pages/low/containers/msg-handling.md).
 
 ## Routing table
-A routing table is a "service" managed by the Luos network and available for any modules in any nodes. This service lists all the modules and allows to any modules to get and use basic information of any other modules. The routing table's data can be loaded or auto-generated during detection.
+A routing table is a "service" managed by the Luos network and available for any containers in any nodes. This service lists all the containers and allows to any containers to get and use basic information of any other containers. The routing table's data can be loaded or auto-generated during detection.
 
-[Go to Routing table page](/pages/low/modules/routing-table.md).
+[Go to Routing table page](/pages/low/containers/routing-table.md).
 
-## Module detection
-The module detection assigns IDs to modules depending on their node's physical position in the network, and generates a routing table.
+## Container detection
+The container detection assigns IDs to containers depending on their node's physical position in the network, and generates a routing table.
 
-IDs are assigned from the nearest to the furthest node branch by branch, from the point of view of the module running the detection. Following this logic, the module running the detection will have the ID 1, the next one will have the ID 2, etc.
+IDs are assigned from the nearest to the furthest node branch by branch, from the point of view of the container running the detection. Following this logic, the container running the detection will have the ID 1, the next one will have the ID 2, etc.
 
-> *Note:* Multiple detection by different modules at the same time is not allowed.
+> *Note:* Multiple detection by different containers at the same time is not allowed.
 
-It's possible to detect the network frequently in order to dynamically discover included or excluded modules while running. Go to [Routing table](/pages/low/modules/routing-table.md) page for more informations.
+It's possible to detect the network frequently in order to dynamically discover included or excluded containers while running. Go to [Routing table](/pages/low/containers/routing-table.md) page for more informations.
 
 <div class="cust_edit_page"><a href="https://{{gh_path}}/pages/overview/general-basics.md">Edit this page</a></div>

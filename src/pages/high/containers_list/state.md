@@ -1,6 +1,6 @@
-# State module type
+# State container type
 
-The State module can handles a sensor (Button board for example), or an actuator (Power Switch board for example). Generally, this type of modules allows to manage bi-state elements such as on/off, pushed/release, 0/1, ...
+The State container can handles a sensor (Button board for example), or an actuator (Power Switch board for example). Generally, this type of containers allows to manage bi-state elements such as on/off, pushed/release, 0/1, ...
 
 Its type has access to all common capabilities.
 
@@ -10,13 +10,13 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
-| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
 | **Variable name** | **Action** | **Type** |
 |:---:|:---:|:---:|
-| state | Sets or reads the module state | read / write: Boolean (True or False) |
+| state | Sets or reads the container state | read / write: Boolean (True or False) |
 
 ## Events
 
@@ -36,4 +36,4 @@ Its type has access to all common capabilities.
 | /button_mod/events/changed | luos_msgs/msg/BoolChange
 
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/state.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/state.md">Edit this page</a></div>

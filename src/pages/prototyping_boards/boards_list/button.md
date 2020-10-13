@@ -1,10 +1,10 @@
 # Button board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> button_mod</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/modules_list/state.md">State</a></p>
-<p class="cust_sheet-title" markdown="1"><strong>Number of module(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/state.md">State</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/button-module.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/button-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">

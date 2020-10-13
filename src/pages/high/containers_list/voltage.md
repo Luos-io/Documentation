@@ -1,6 +1,6 @@
-# Voltage module type
+# Voltage container type
 
-The Voltage module handles a sensor measuring voltage.
+The Voltage container handles a sensor measuring voltage.
 
 Its type has access to all common capabilities.
 
@@ -10,7 +10,7 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 | :---: | :---: | :---: |
-| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 

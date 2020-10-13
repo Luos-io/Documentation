@@ -1,6 +1,6 @@
-# Dynamixel module type
+# Dynamixel container type
 
-The Dynamixel module allows to control Dynamixel motors.
+The Dynamixel container allows to control Dynamixel motors.
 
 Its type has access to all common capabilities.
 
@@ -13,7 +13,7 @@ Its type has access to all common capabilities.
 | set_id(self, id) | Changes motor ID | This new Id will be saved by the Dynamixel motor. You have to detect motors again to make it work after this change. |
 | detect(self) | Launches a motor detection | You have to run a luos detection to include or exclude new motors. |
 | register(self, register, val) | Sets a Dynamixel register value. | This register only manage *word* size register. Use it only if you know what you do. |
-| control(self) | Displays module type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
@@ -29,4 +29,4 @@ Its type has access to all common capabilities.
 | power_ratio_limit | Max power limit in %. | read / write: Float |
 | rot_position_limit | Min and Max rotation position limit in °. | read / write: \[Float(min), Float(max)\] |
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{modules_path}}/dxl.md">Edit this page</a></div>
+<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/dxl.md">Edit this page</a></div>
