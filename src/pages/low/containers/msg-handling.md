@@ -1,5 +1,5 @@
 
-# containers communication is based on messages
+# Containers communication handling messages
 > **Warning:** Make sure to read and understand how to [Create Luos containers](/pages/low/containers/create-project.md) before reading this page.
 
 As a developer, you will have to create and use Luos messages to exchange informations between <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span>. In order to do that, you have to understand how messages works.
