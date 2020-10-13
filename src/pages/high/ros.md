@@ -1,7 +1,7 @@
 
 <img class="print-break" src="{{img_path}}/ros-logo.png">
 
-<h1 class="no-break">Using Luos with ROS1 and ROS2</h1>
+<h1 class="no-break"><a href="#ros" class="header">Using Luos with ROS1 and ROS2</a></h1>
 
 Luos comes with a package for the <a href="https://www.ros.org/" target="_blank">Robot Operating System</a>.
 
