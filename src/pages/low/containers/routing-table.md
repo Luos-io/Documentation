@@ -2,7 +2,7 @@
 > **Warning:** Make sure to read and understand how to [Create Luos containers](/pages/low/containers/create-containers.md) before reading this page.
 
 The routing table is a feature of Luos allowing every <span class="cust_tooltip">[containers](/pages/overview/general-basics.md#container)<span class="cust_tooltiptext">{{ container_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows containers to know their physical position and to search and interact with other containers easily.<br/>
-This feature is particularly used by apps containers to find other containers they need to interact with. The route table is share by the container who lunch the detection to other container but only app container store the route table internaly
+This feature is particularly used by apps containers to find other containers they need to interact with. The routing table is shared by the container which launches the detection to other containers, but only apps containers store the routing table internaly.
 
 ## Detection
 Routing table is automatically generated when a network detections is initiate by a container and shared with other containers at the end of the detection. A detection can be initiated by any container, but driver containers should not be able to run it and this kind of features should be only used on app containers by including routingTable.h an using this routing table API.
@@ -30,7 +30,7 @@ The routing table is a table of a `routing_table_t` structure containing nodes o
 The maximum number of containers and nodes are managed by the precompilation constant `MAX_containerS_NUMBER` (set to 40 by default).
 
 ```c
-route_table_t route_table[MAX_containers_NUMBER];
+route_table_t route_table[MAX_CONTAINERS_NUMBER];
 ```
 
 The routing table structure has two modes: *container entry mode* and *node entry mode*.

@@ -14,7 +14,7 @@ The message handling configuration is set during the [initialization of a contai
 The following sections detail how the different configurations work.
 
 ## Callback configuration
-This configuration is the default and most common setup. In this configuration, Luos calls directly the container callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `luos_loop()` function call frequency.<br/>
+This configuration is the default and most common setup. In this configuration, Luos directly calls the container callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `luos_loop()` function call frequency.<br/>
 With this configuration, you have no real constraints on the callback's time of execution, you can reply to a message directly on the callback.
 
 To setup this configuration you have to simply setup the callback at container creation.
