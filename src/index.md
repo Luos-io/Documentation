@@ -1,4 +1,4 @@
-<h1 class="no-break">Welcome to Luos documentation</h1>
+<h1 class="no-break"><a href="#welcome" class="header">Welcome to Luos documentation</a></h1>
 
 <small>Luos version: {{last_version_luos}}</small>
 
