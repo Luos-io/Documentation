@@ -30,7 +30,7 @@ A routing table in JSON consists in a list of the nodes present in the Luos netw
 
 ```JSON
 {
-   "route_table":[
+   "routing_table":[
       {
          // node 1
       },
@@ -81,7 +81,7 @@ Each listed container of a node has basics containers information:
 
 ```JSON
 {
-   "route_table":[
+   "routing_table":[
       {
          "uuid":[2031684, 1112756496, 540423216],
          "port_table":[2, 65535],

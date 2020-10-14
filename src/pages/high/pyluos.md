@@ -134,7 +134,7 @@ Only once the connection is set it is possible to start programming behaviors.
 
 [Routing table](/pages/low/containers/routing-table.md) can be easily displayed using Pyluos.
 
-Pyluos can displays a list of all the containers by filtering the route table, and their associated characteristics (type, alias and ID).
+Pyluos can displays a list of all the containers by filtering the routing table, and their associated characteristics (type, alias and ID).
 To display it, use the following command:
 ```python
 device.containers
@@ -160,7 +160,7 @@ State               digit_write_P4      10
 Angle               potentiometer_m     11
 ```
 
-Pyluos also can interpreate route_table and transform it into a tree. This way we can display a lot more complete information usinig the following command :
+Pyluos also can interpreate routing_table and transform it into a tree. This way we can display a lot more complete information usinig the following command :
 ```python
 device.nodes
 ```
