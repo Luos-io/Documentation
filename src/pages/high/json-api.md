@@ -50,7 +50,8 @@ Each listed node of the network has basic node information and a list of hosted 
 
 ```JSON
 { // node 1
-   "uuid":[1, 2, 3],
+   "node_id":1,
+   "certified":true,
    "port_table":[1, 2],
    "containers":[
       {
@@ -83,7 +84,8 @@ Each listed container of a node has basics containers information:
 {
    "routing_table":[
       {
-         "uuid":[2031684, 1112756496, 540423216],
+         "node_id":1,
+         "certified":true,
          "port_table":[2, 65535],
          "containers":[
             {
@@ -94,7 +96,8 @@ Each listed container of a node has basics containers information:
          ]
       },
       {
-         "uuid":[4915239, 1194612503, 540554032],
+         "node_id":2,
+         "certified":true,
          "port_table":[4, 1],
          "containers":[
             {
@@ -110,7 +113,8 @@ Each listed container of a node has basics containers information:
          ]
       },
       {
-         "uuid":[2818086, 1194612503, 540554032],
+         "node_id":3,
+         "certified":true,
          "port_table":[5, 3],
          "containers":[
             {
@@ -121,7 +125,8 @@ Each listed container of a node has basics containers information:
          ]
       },
       {
-         "uuid":[2097186, 1194612503, 540554032],
+         "node_id":4,
+         "certified":true,
          "port_table":[65535, 4],
          "containers":[
             {

@@ -68,7 +68,7 @@ By designing a driver, you have to keep the following rules in mind:
 
 ## Apps guidelines
 An applications or app is a type of container that only manages software items such as functions or algorithms. Apps use other containers to make your device act, operate, and behave.
-Apps can be placed in any <span class="cust_tooltip">[nodes](#node)<span class="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
+Apps can be placed in any <span class="cust_tooltip">[nodes](/pages/overview/general-basics.html#what-is-a-node)<span class="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
 
 By designing an app, you have to keep the following rules in mind:
 

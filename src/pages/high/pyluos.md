@@ -169,10 +169,10 @@ device.nodes
 
 Based on the previous example Pyluos will give you all informations about containers and topological informations :
 ```AsciiDoc
- root : [4653093, 1194612501, 540554032]
+ root : node 1    Certified
         |  Type                Alias               ID
         └> Gate                gate                1
-└── 1<=>0 : [4456498, 1347571976, 540555569]
+└── 1<=>0 : node 2    Certified
             |  Type                Alias               ID
             └> Voltage             analog_read_P1      2
             └> Voltage             analog_read_P7      3
@@ -183,7 +183,7 @@ Based on the previous example Pyluos will give you all informations about contai
             └> State               digit_write_P2      8
             └> State               digit_write_P3      9
             └> State               digit_write_P4      10
-    └── 1<=>0 : [4653107, 1347571976, 540555569]
+    └── 1<=>0 : node 3    Certified
                 |  Type                Alias               ID
                 └> Angle               potentiometer_m     11
 ```
