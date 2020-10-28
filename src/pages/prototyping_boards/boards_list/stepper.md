@@ -16,6 +16,23 @@
 ## How to connect a stepper motor to the Stepper board
 The Stepper board has one 4-pin PH connector where a stepper motor can be plugged.
 
+## Current limitations
+The current allowed in the stepper motor must be limited in order to avoid overheat into the board. The trimming potentiometer situated at the left of the radiator on the board is used to control the output current.
+
+<img height="150" src="{{img_path}}/steppermotor-potar.jpg" title="Stepper motor" />
+
+
+The trimming potentiometer is used as followed:
+
+1. Turning the trimming potentiometer clockwise (towards pin 3) has the effect of **reducing** the output current.
+2. Turning the trimming potentiometer counterclockwise (towards pin 1) has the effect of **rising** the output current (with overheating risks).
+
+<img height="100" src="{{img_path}}/potentiometer-stepper-motor.png" title="Potentiometer Stepper motor" />
+
+> **Warning:** Considering these specifications, be sure to have the trimming potentiometer fully turned clockwise to the pin 3 in order to limit the current and avoid overheat. Then you can set the right amount of output current by slowly turning the trimming potentiometer counterclockwise.
+
+
+
 ## Power considerations
 This board accepts supply voltage from `7V` to `24V`.
 
