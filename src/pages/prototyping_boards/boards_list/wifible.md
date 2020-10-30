@@ -23,4 +23,4 @@ This board allows to enable Wi-Fi communication into a Luos network.
 ## Power considerations
 This board accepts supply voltage from `7V` to `24V`.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/wifible.md">Edit this page</a></div>
+

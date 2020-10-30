@@ -18,4 +18,4 @@ To properly work, each container owns some properties allowing to other containe
 | **TYPE** | The type defines the container purpose. A few types are predefined and can be used, or new ones can be created. The container type can't be changed after container initialization. | String<br />e.g. `type=DISTANCE_MOD` |
 | **ALIAS** | Alias is the name of the container. It's used to easily identify a container. Each container has a **default alias** which can be changed by users. For example, a container with the default alias `motor_mod` can be named `left_knee_motor` by user. This new name will be stored in the non-volatile memory of the board. As we don't want to have multiple containers with the same name, a duplicate name on your system will be automatically assigned with an incrementing number at its end, in the network. You can go back to the default name by setting a void name (`""`) to a container. | String<br />e.g. `alias="gate"` |
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers.md">Edit this page</a></div>
+

@@ -21,4 +21,4 @@ The Button board provides a push-button that can be used as an interface human-m
 ## Power considerations
 The Button board supports 5V to 24V DC.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/button.md">Edit this page</a></div>
+

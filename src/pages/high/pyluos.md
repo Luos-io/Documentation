@@ -289,4 +289,4 @@ device.button_mod.type
 device.rgb_led_mod.rename("myLED")
 ```
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/first_steps/pyluos.md">Edit this page</a></div>
+

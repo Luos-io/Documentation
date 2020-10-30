@@ -25,4 +25,4 @@ List of prototyping boards examples available on GitHub:
 - [Wire power input]({{boards_path}}/wire-power-input.md)
 - Accessory: [Cables]({{boards_path}}/cables.md)
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/prototyping_boards/boards-list.md">Edit this page</a></div>
+

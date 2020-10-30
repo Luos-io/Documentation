@@ -157,5 +157,5 @@ Also, you can use your Raspberry Pi like an embedded computer for your device.
 
 To send your Json data to your network, please use the serial port `/dev/ttyAMA0` of your Raspberry Pi, as you can do it with the USB board.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/powerpi.md">Edit this page</a></div>
+
 

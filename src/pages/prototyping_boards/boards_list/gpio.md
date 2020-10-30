@@ -28,6 +28,6 @@ The GPIO board supports 5V to 24V DC input.
 
 > **Warning:** The pins only support 3.3V.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/gpio.md">Edit this page</a></div>
+
 
 

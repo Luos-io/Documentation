@@ -105,4 +105,4 @@ The `Luos_SendStreaming` function sends data available on your streaming channel
 
 > **Warning:** This example doesn't work if your container is configured as real-time. Please read [Real-time configuration page](/pages/low/containers/rt-config.md) for more informations.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/streaming.md">Edit this page</a></div>
+

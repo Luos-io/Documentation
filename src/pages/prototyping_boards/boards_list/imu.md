@@ -19,4 +19,4 @@ The IMU board measures a wide set of position data and return values in several 
 ## Power considerations
 The IMU board supports 5V to 24V DC.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/imu.md">Edit this page</a></div>
+

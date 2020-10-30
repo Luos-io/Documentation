@@ -125,4 +125,4 @@ These were simple tutorials to get you on tracks.
 
 Now you just have to create awesome projects and share them with <a href="https://community.luos.io" target="_blank">the community</a>.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/prototyping_boards/quick-start.md">Edit this page</a></div>
+

@@ -38,4 +38,4 @@ To make it work on your environment, you have to:
  - Change, if necessary, `LuosHAL_Config.h` in you project, the default configuration created by Luos (before including `Luos.h`) in order to match LuosHAL with your hardware (eg: match pins with your design);
  - Include `Luos.h` on your source file.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/dev-env.md">Edit this page</a></div>
+

@@ -19,4 +19,4 @@ The Load board uses a load sensor to measures a load. Refer to the [Load contain
 ## Power considerations
 The Load board supports 5V to 24V DC.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/load.md">Edit this page</a></div>
+

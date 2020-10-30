@@ -19,5 +19,5 @@ The Light board measures human visible light intensity and returns a value in lu
 ## Power considerations
 The Light board supports 5V to 24V DC input.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/light.md">Edit this page</a></div>
+
 

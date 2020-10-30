@@ -47,4 +47,4 @@ The number of steps per turn must be defined, as well as the wheel diameter at t
 | target_trans_position | Sets the target translation position to reach in mm. | read / write: float |
 | target_trans_speed | Sets the target translation speed to reach in mm/s. | read / write: float |
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/stepper.md">Edit this page</a></div>
+

@@ -24,4 +24,4 @@ The Servo board accepts supply voltage from `5V` to `7V`. Watch out to always po
 
 > **Warning:** A USB board generally provides too weak power to drive a servomotor properly. It must be plugged to a Power plug board, for example.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/servo.md">Edit this page</a></div>
+

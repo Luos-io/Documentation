@@ -126,4 +126,4 @@ Luos_Send(app, &msg);
 
 > **Warning:** To prevent any ID movement, auto-update configuration is reseted on all containers at each detection (see [Routing table page](/pages/low/containers/routing-table.md) for more information).
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/msg-handling.md">Edit this page</a></div>
+

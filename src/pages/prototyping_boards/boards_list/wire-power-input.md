@@ -22,4 +22,4 @@ The Wire power input board can provide 5V to 24V DC.
 
 You can manage multiple voltage in the same network following Luos power rules defined in [Luos boards general use](/pages/prototyping_boards/electronic-use.md) or by using a [Power isolator board]({{boards_path}}/power-isolator.md).
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/wire-power-input.md">Edit this page</a></div>
+

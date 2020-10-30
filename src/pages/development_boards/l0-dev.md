@@ -4,4 +4,4 @@
 > 
 > It will be available soon...
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/development_boards/l0-dev.md">Edit this page</a></div>
+

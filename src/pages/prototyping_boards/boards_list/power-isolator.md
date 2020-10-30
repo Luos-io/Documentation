@@ -20,5 +20,5 @@ This board isolates the voltage between each plugged-in side. You can use it to 
 
 <img height="350" src="{{img_path}}/power_isolator_example.png" alt="Power isolator example image">
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/power-isolator.md">Edit this page</a></div>
+
 

@@ -146,4 +146,4 @@ You can use this table to find interesting project regarding specific features e
 </tbody>
 </table>
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/examples.md">Edit this page</a></div>
+

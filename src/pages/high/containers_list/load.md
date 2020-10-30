@@ -27,4 +27,4 @@ Its type has access to all common capabilities.
 | changed | Any movement on the force intensity measurement |
 | filter_changed | Movement bigger than *threshold* |
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/load.md">Edit this page</a></div>
+

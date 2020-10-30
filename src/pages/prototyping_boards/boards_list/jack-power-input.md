@@ -29,5 +29,5 @@ You can manage multiple voltage in the same network following Luos power rules d
 ## Power considerations
 The Jack power input board can provide 5V to 24V DC.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/jack-power-input.md">Edit this page</a></div>
+
 

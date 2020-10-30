@@ -20,5 +20,5 @@ The Potentiometer board measures the board potentiometer's rotation in degree.
 ## Power considerations
 The board supports 5V to 24V DC input.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/potentiometer.md">Edit this page</a></div>
+
 

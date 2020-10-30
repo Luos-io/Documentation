@@ -19,5 +19,5 @@ The DC-motor board allows to drive up to 2 low-power DC motors. This board is us
 ## Power considerations
 The DC-motor board supports 5V to 12V DC input to drive 5V to 12V DC motors up to 2 x 1.5 A (2 A peak).
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/dc-motor.md">Edit this page</a></div>
+
 

@@ -38,4 +38,4 @@ This board accepts supply voltage from `7V` to `24V`.
 
 > **Warning:** USB board provides too weak power to drive a motor-reducer with the Stepper board. A power board such as Battery board or Power plug board shall be used.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/stepper.md">Edit this page</a></div>
+

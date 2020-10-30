@@ -22,4 +22,4 @@ The Battery power input board can provide 5V to 24V DC.
 
 You can manage multiple voltage in the same network following Luos power rules defined in [Luos boards general use](/pages/prototyping_boards/electronic-use.md) or by using a [power isolator board]({{boards_path}}/power-isolator.md).
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/battery-power-input.md">Edit this page</a></div>
+

@@ -162,4 +162,4 @@ void init_luos_comm(luos_t* m)
 ## USB board power delivery
 The USB board power-delivery in the Luos network is limited to `500 mA`. This board can’t power too many boards and power-demanding ones like, for example, a DC-motor board with one or two motors connected. If you experiment power issues, feel free to add a power category board like a [Jack power input board]({{boards_path}}/jack-power-input.md).
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/usb.md">Edit this page</a></div>
+

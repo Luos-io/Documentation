@@ -49,4 +49,4 @@ In order to begin using this board, you must disable the compliant mode, and you
 
 > **Warning:** Dynamixel boards don’t belong to the power category. Thus, do not power your motors on the Robotis side, you won’t be able to share this power with others boards.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/dxl.md">Edit this page</a></div>
+

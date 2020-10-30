@@ -36,4 +36,4 @@ Its type has access to all common capabilities.
 | /button_mod/events/changed | luos_msgs/msg/BoolChange
 
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/state.md">Edit this page</a></div>
+

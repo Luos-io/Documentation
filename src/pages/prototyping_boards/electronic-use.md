@@ -101,4 +101,4 @@ If your terminal goes like this, it means that your download was successful:
 
 If the compilation goes wrong, it may be because your driver is not updated specially on Windows. If this is the case, you need to install and run *Zadig* by following <a href="https://github.com/profezzorn/ProffieOS/wiki/zadig" target="blank_">this tutorial</a> on github.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/prototyping_boards/electronic-use.md">Edit this page</a></div>
+

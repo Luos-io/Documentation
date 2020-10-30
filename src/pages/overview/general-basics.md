@@ -46,4 +46,4 @@ IDs are assigned from the nearest to the furthest node branch by branch, from th
 
 It's possible to detect the network frequently in order to dynamically discover included or excluded containers while running. Go to [Routing table](/pages/low/containers/routing-table.md) page for more informations.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/overview/general-basics.md">Edit this page</a></div>
+

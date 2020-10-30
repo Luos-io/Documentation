@@ -93,4 +93,4 @@ Watch this video for additional details:
 
 <small>Luos is free for non-commercial use. It's protected by a license that <a href="https://github.com/Luos-io/Luos/blob/master/LICENSE.md" target="_blank">you can consult here</a>.</small>
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/index.md">Edit this page</a></div>
+

@@ -20,4 +20,4 @@ The Power-switch board allows you to interrupt another circuit up to 10A on 230V
 ## Power considerations
 The Power-switch board supports 5V to 24V DC input.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{boards_path}}/powerswitch.md">Edit this page</a></div>
+
