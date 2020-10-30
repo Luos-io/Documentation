@@ -56,11 +56,11 @@
     </head>
     <body>
 
-            <!-- Provide site root to javascript 
+            <!-- Provide site root to javascript -->
             <script type="text/javascript">
-                var path_to_root = "{{ path_to_root }}";
+                //var path_to_root = "{{ path_to_root }}";
                 var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "{{ preferred_dark_theme }}" : "{{ default_theme }}";
-            </script>-->
+            </script>
     		
             <!-- Work around some values being stored in localStorage wrapped in quotes -->
             <script type="text/javascript">
