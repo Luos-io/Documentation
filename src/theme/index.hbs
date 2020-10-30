@@ -193,9 +193,54 @@
 
                                 <a class="github-button" href="https://github.com/Luos-io/Luos/subscription" data-icon="octicon-eye" data-show-count="true" aria-label="Watch Luos-io/Luos on GitHub">Watch</a>
 
-                                <a class="github-button" href="https://github.com/Luos-io/Luos" data-icon="octicon-star" data-show-count="true" aria-label="Star Luos-io/Luos on GitHub">Star</a>
+                            
+                            <script language="javascript">
+                                function showFeedback() {
+                                  var x = document.getElementById("feedback-block");
+                                  if (x.style.display === "none") {
+                                    x.style.display = "block";
+                                  } else {
+                                    x.style.display = "none";
+                                  }
+                                }
+                                var page = window.location.pathname.slice(0, -4)+'md';
+                                document.getElementById('gh_link').href = 'https://github.com/Luos-io/doc/tree/master/src'+page;
                                 
-                            </div>
+                            </script>
+
+
+<div style="display:none; margin: 20px 0 20px 0; padding: 10px 20px 20px 20px; width: 100%; background-color: #efefef;" id="feedback-block">
+    <form action='https://forms.zohopublic.eu/luosio/form/Thumbsurvey/formperma/BlTjwTQeX5v3FQDKFEHW5NNUgyllNOKxC-9a5miMlSw/htmlRecords/submit' name='form' method='POST' onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data' id='form'>
+        <input type="hidden" name="zf_referrer_name" value="">
+        <input type="hidden" name="zf_redirect_url" value="">
+        <input type="hidden" name="zc_gad" value="">
+        <div style="margin: 5px 5px 5px 0px; color: #333; font-size: 1.5em;">Help us to improve our documentation.</div><div style="float: right; font-weight: bold; position: relative; top: -45px; cursor: pointer; " onclick="showFeedback()">⨉</div>
+            
+        <div style="margin: 0 0 0 10px; padding: 0 0 0 15px; border-left: 2px solid #ccc">
+            <label style="color: #909090; font-size: 0.9em; font-style: italic;">Add details to help us improve this page: </label>
+            <div>
+                <textarea id="details_feedback" name="MultiLine" checktype="c1" maxlength="65535"></textarea>
+                <p id="MultiLine_error" style="display:none;">Invalid value</p>
+            </div>
+            <label style="display:none;">window.location.href </label>
+            <div style="display:none;">
+                <textarea id="pageLocation" name="MultiLine1" checktype="c1" maxlength="65535"></textarea>
+                <p id="MultiLine1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+            </div>
+            <button class="zf-submitColor" style="margin-top: 12px;">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">var zf_DateRegex = new RegExp("^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$");
+var zf_MandArray = []; 
+var zf_FieldArray = [ "MultiLine", "MultiLine1"]; 
+var isSalesIQIntegrationEnabled = false;
+var salesIQFieldsArray = [];
+document.getElementById('pageLocation').value = window.location.href;
+</script>
+
+
                             <br />
 
                                 <!-- newsletter subscription -->
