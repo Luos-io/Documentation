@@ -20,7 +20,9 @@ The Jack power input board allows to power your Luos Network using a power Jack.
  - plug inner diameter : 2 mm
  - plug outer diameter : 5.5 mm
 
- See the <a href="https://datasheet.octopart.com/694106301002-W%C3%BCrth-Elektronik-datasheet-111088219.pdf" target="_blank">DC power jack datasheet</a> for more information.
+See the <a href="https://datasheet.octopart.com/694106301002-W%C3%BCrth-Elektronik-datasheet-111088219.pdf" target="_blank">DC power jack datasheet</a> for more information.
+
+> **Warning:** For your choice of power supply adapter, the max Ampere value should not exceed 5A.
 
 This board is not active, you can't detect it in a network.
 
@@ -28,6 +30,3 @@ You can manage multiple voltage in the same network following Luos power rules d
 
 ## Power considerations
 The Jack power input board can provide 5V to 24V DC.
-
-
-
