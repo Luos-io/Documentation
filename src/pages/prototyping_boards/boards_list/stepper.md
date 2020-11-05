@@ -36,6 +36,6 @@ The trimming potentiometer is used as followed:
 ## Power considerations
 This board accepts supply voltage from `7V` to `24V`.
 
-> **Warning:** USB board provides too weak power to drive a motor-reducer with the Stepper board. A power board such as Battery board or Power plug board shall be used.
+> **Warning:** USB Gate board doesn't provide enough voltage through USB cable to power the Stepper board nor drive a stepper motor. A power board such as Battery board or Power plug board shall be used.
 
 
