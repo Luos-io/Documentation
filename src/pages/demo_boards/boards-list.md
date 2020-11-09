@@ -1,6 +1,6 @@
-# Prototyping boards list
+# Demonstration boards list
 
-List of prototyping boards examples available on GitHub:
+List of demonstration boards available on GitHub:
 
 - [Battery power input]({{boards_path}}/battery-power-input.md)
 - [Button]({{boards_path}}/button.md)

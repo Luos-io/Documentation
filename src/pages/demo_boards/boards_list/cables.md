@@ -19,7 +19,7 @@ However, it is possible to build a cable from any disired length (see the next s
 
 **Maximal current value:** The Luos cable can handle up to 7 A.
 
-**Boards connection:** The connectors on the board side and on the cable side have a foolproof so that they can plug together in one way only. Fore more information about plugging boards together with cables, please follow [this link](/pages/prototyping_boards/electronic-use.md#plug).
+**Boards connection:** The connectors on the board side and on the cable side have a foolproof so that they can plug together in one way only. Fore more information about plugging boards together with cables, please follow [this link](/pages/demo_boards/electronic-use.md#plug).
 
 ## How to buid a Luos compatible-cable?
 

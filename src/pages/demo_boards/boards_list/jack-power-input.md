@@ -26,7 +26,7 @@ See the <a href="https://datasheet.octopart.com/694106301002-W%C3%BCrth-Elektron
 
 This board is not active, you can't detect it in a network.
 
-You can manage multiple voltage in the same network following Luos power rules defined in [Luos boards general use](/pages/prototyping_boards/electronic-use.md) or by using a [Power isolator board]({{boards_path}}/power-isolator.md).
+You can manage multiple voltage in the same network following Luos power rules defined in [Luos boards general use](/pages/demo_boards/electronic-use.md) or by using a [Power isolator board]({{boards_path}}/power-isolator.md).
 
 ## Power considerations
 The Jack power input board can provide 5V to 24V DC.

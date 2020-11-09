@@ -86,11 +86,11 @@ This line is always used while programming behaviors and should be called before
 
 ### Device connection
 
-Connect your device to your computer through a [Gate](/pages/prototyping_boards/boards_list/usb.html) with a USB cable.
+Connect your device to your computer through a [Gate](/pages/demo_boards/boards_list/usb.html) with a USB cable.
 
 #### Configuring USB transfer sizes and latency timer
 
-Some devices may not work properly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device properly while connected to your computer from a [Gate](/pages/prototyping_boards/boards_list/usb.html).
+Some devices may not work properly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device properly while connected to your computer from a [Gate](/pages/demo_boards/boards_list/usb.html).
 
 **USB Transfer Sizes**: Default value is 4096 Bytes, however if you have issues to use your connected device, you should try the minimum possible values both for `Receive` and `Transmit`.
 

@@ -28,7 +28,7 @@ luoshal_def = "Hardware Abstraction Layer used to fit Luos with various hardware
 last_version_pyluos = "1.2.0"
 last_version_luos = "0.6.9"
 gh_path = "github.com/Luos-io/doc/tree/master/src"
-boards_path = "/pages/prototyping_boards/boards_list"
+boards_path = "/pages/demo_boards/boards_list"
 containers_path = "/pages/high/containers_list"
 img_path = "/_assets/img"
 

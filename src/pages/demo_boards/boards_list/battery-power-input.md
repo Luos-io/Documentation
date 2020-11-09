@@ -20,6 +20,6 @@
 The Battery power input board allows to power your Luos Network using XT60 or JST battery interface. This board is not active, you can't detect it.
 The Battery power input board can provide 5V to 24V DC.
 
-You can manage multiple voltage in the same network following Luos power rules defined in [Luos boards general use](/pages/prototyping_boards/electronic-use.md) or by using a [power isolator board]({{boards_path}}/power-isolator.md).
+You can manage multiple voltage in the same network following Luos power rules defined in [Luos boards general use](/pages/demo_boards/electronic-use.md) or by using a [power isolator board]({{boards_path}}/power-isolator.md).
 
 

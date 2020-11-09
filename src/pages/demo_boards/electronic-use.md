@@ -2,12 +2,12 @@
 
 Luos library has been designed to run on low-cost hardware. It works with all Arm microcontrollers, starting with the smallest and cheapest one: the <a href="https://developer.arm.com/ip-products/processors/cortex-m/cortex-m0" target="_blank">Cortex-M0</a>. 
 
-The prototyping boards are a set of small electronic boards examples, each one hosting Luos and providing with an electronic function (motor, distance sensor, battery, LED, potentiometer, etc.). These boards can be used to quickly develop an electronic device prototype in order to prove a concept without any knowledge in electronics: prototype boards are connected together with cables, behaviors can be programmed through a [gate]({{boards_path}}/usb.md) board on a computer, and the device can be tested in a matter of minutes!
+The demonstration boards are a set of small electronic boards examples, each one hosting Luos and providing with an electronic function (motor, distance sensor, battery, LED, potentiometer, etc.). These boards can be used to test the technology, or to quickly develop an electronic device prototype in order to prove a concept without any knowledge in electronics: demonstration boards are connected together with cables, behaviors can be programmed through a [gate]({{boards_path}}/usb.md) board on a computer, and the device can be tested in a matter of minutes!
 
 > **Warning:** All examples codes of this documentation use the pyluos Python library and are adapted to be used with Jupyter Notebook.
 
 ## Boards general specifications
-Almost every prototyping board in the provided examples is composed of a motherboard and a shield board. The motherboard, called L0, has a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> that hosts Luos. The shield board is added to a L0 to type it with an electronic function.
+Almost every demonstration board in the provided examples is composed of a motherboard and a shield board. The motherboard, called L0, has a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> that hosts Luos. The shield board is added to a L0 to type it with an electronic function.
 
 <img src="{{img_path}}/assembly.png" height="200px" />
 
