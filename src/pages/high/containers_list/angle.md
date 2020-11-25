@@ -29,4 +29,4 @@ Its type has access to all common capabilities.
 | /mod/events/changed | luos_msgs/msg/FloatChange
 | /mod/events/filter_changed | luos_msgs/msg/FloatChange
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/angle.md">Edit this page</a></div>
+

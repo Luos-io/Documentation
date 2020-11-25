@@ -34,4 +34,4 @@ Its type has access to all common capabilities.
 | /mod/variables/max_pulse/write | std_msgs/msg/Float32
 
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/servo.md">Edit this page</a></div>
+

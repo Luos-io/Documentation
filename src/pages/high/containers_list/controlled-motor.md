@@ -257,4 +257,4 @@ ros2 topic pub -1 /controlled_moto/variables/compliant/write std_msgs/msg/Bool d
 
 Then publish `true` to the `/controlled_moto/variables/compliant/write` topic to stop the driver.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/controlled-motor.md">Edit this page</a></div>
+

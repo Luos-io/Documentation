@@ -299,4 +299,4 @@ The following example shows a transfert of a binary data of 1024 bytes.
 ###BINARY_DATA###
 ```
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/high/json-api.md">Edit this page</a></div>
+

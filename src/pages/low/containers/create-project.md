@@ -74,4 +74,4 @@ int main(void)
 
 This way, it is easy to manage all your containers and to add as many of them in the `main()` file as you want.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/create-project.md">Edit this page</a></div>
+

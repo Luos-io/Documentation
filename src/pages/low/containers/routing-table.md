@@ -112,4 +112,4 @@ Here are the management tools provided by the routing table library:
 | Get the last container in a Luos network | `RoutingTB_GetLastContainer(void);` | `int` |
 | Get the last entry in a Luos network | `RoutingTB_GetLastEntry(void);` | `int` |
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/routing-table.md">Edit this page</a></div>
+

@@ -78,4 +78,4 @@ By designing an app, you have to keep the following rules in mind:
 
 Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every containers in every nodes in your device and make it work properly. Go to [Routing table](/pages/low/containers/routing-table.md) page for more informations.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/create-containers.md">Edit this page</a></div>
+

@@ -21,4 +21,4 @@ A Luos-friendly electronic board must contain *at least* the following elements:
   - by mail: contact@luos.io
   - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/electronic-design.md">Edit this page</a></div>
+

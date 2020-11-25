@@ -54,4 +54,4 @@ rostopic list
 ```
 You can then publish and subscribe to the available topics in ROS 1.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/high/ros/ros1.md">Edit this page</a></div>
+

@@ -82,4 +82,4 @@ Here are listed the existing types:
 >
 > Examples: convert a linear speed to mm/s: `LinearOD_SpeedTo_mm_s()`; convert a value in &mu;m to a linear position: `LinearOD_PositionFrom_um()`; convert a value in revolutions/s to an angular speed: `AngularOD_SpeedFrom_rev_s()`;
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/containers/od.md">Edit this page</a></div>
+

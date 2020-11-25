@@ -1,0 +1,28 @@
+# Demonstration boards list
+
+List of demonstration boards available on GitHub:
+
+- [Battery power input]({{boards_path}}/battery-power-input.md)
+- [Button]({{boards_path}}/button.md)
+- [Controlled motor]({{boards_path}}/controlled-motor.md)
+- [DC motor]({{boards_path}}/dc-motor.md)
+- [Distance sensor]({{boards_path}}/distance.md)
+- [Dynamixel motor]({{boards_path}}/dxl.md)
+- [GPIO]({{boards_path}}/gpio.md)
+- [IMU]({{boards_path}}/imu.md)
+- [Jack power input]({{boards_path}}/jack-power-input.md)
+- [Led strip]({{boards_path}}/led-strip.md)
+- [Light sensor]({{boards_path}}/light.md)
+- [Potentiometer]({{boards_path}}/potentiometer.md)
+- [Power isolator]({{boards_path}}/power-isolator.md)
+- [Power Pi]({{boards_path}}/powerpi.md)
+- [Power switch]({{boards_path}}/powerswitch.md)
+- [RGB LED]({{boards_path}}/rgbled.md)
+- [Servo motor]({{boards_path}}/servo.md)
+- [Stepper motor]({{boards_path}}/stepper.md)
+- [USB]({{boards_path}}/usb.md)
+- [Wifi BLE]({{boards_path}}/wifible.md)
+- [Wire power input]({{boards_path}}/wire-power-input.md)
+- Accessory: [Cables]({{boards_path}}/cables.md)
+
+

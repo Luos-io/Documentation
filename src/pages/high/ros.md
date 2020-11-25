@@ -137,4 +137,4 @@ ros2 pkg create my_luos_ros2_package --build-type ament_python --dependencies lu
 ```
 You can then add your ROS Python scripts, by taking example on the [bike sharing example](./ros/bike_alarm.md) page.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/high/ros.md">Edit this page</a></div>
+

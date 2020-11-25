@@ -29,4 +29,4 @@ Its type has access to all common capabilities.
 | power_ratio_limit | Max power limit in %. | read / write: Float |
 | rot_position_limit | Min and Max rotation position limit in °. | read / write: \[Float(min), Float(max)\] |
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}{{containers_path}}/dxl.md">Edit this page</a></div>
+

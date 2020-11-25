@@ -21,8 +21,8 @@ Replace `<board name>` with the name of the board you're using, eg. `board = l0`
 ### Project examples
 Luos shares a lot of <a href="https://github.com/Luos-io/Examples" target="_blank">code examples</a>, feel free to use and modify them as you want.
 
-### Prototyping boards
-Luos created [a sets of boards](/pages/prototyping_boards/boards-list.md) allowing to easily prototype a device.
+### Demonstration boards
+Luos created [a sets of boards](/pages/demo_boards/boards-list.md) allowing to easily test the technology.
 
 ## General integration consideration
 
@@ -38,4 +38,4 @@ To make it work on your environment, you have to:
  - Change, if necessary, `LuosHAL_Config.h` in you project, the default configuration created by Luos (before including `Luos.h`) in order to match LuosHAL with your hardware (eg: match pins with your design);
  - Include `Luos.h` on your source file.
 
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/dev-env.md">Edit this page</a></div>
+
