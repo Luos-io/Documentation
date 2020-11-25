@@ -11,7 +11,7 @@ Luos messages are managed by the `msg_t` structure:
 ```C
 typedef struct{
     header_t header;
-    unsigned char data[MAX_DATA_MSG_SIZE];
+    uint8_t data[MAX_DATA_MSG_SIZE];
 }msg_t;
 ```
 
@@ -27,12 +27,12 @@ To send data to any containers you want, you will have to fill some information 
 here is the `header_t` structure:
 ```C
 typedef struct{
-    unsigned short protocol : 4;       /*!< RESERVED Protocol version. */
-    unsigned short target : 12;        /*!< Target address, it can be (ID, Multicast/Broadcast, Type). */
-    unsigned short target_mode : 4;    /*!< Select targeting mode (ID, ID+ACK, Multicast/Broadcast, Type). */
-    unsigned short source : 12;        /*!< Source address, it can be (ID, Multicast/Broadcast, Type). */
-    unsigned char cmd;                 /*!< msg definition. */
-    unsigned short size;                /*!< Size of the data field. */
+    uint16_t protocol : 4;    /*!< Protocol version. */
+    uint16_t target : 12;     /*!< Target address, it can be (ID, Multicast/Broadcast, Type). */
+    uint16_t target_mode : 4; /*!< Select targeting mode (ID, ID+ACK, Multicast/Broadcast, Type). */
+    uint16_t source : 12;     /*!< Source address, it can be (ID, Multicast/Broadcast, Type). */
+    uint8_t cmd;              /*!< msg definition. */
+    uint16_t size;            /*!< Size of the data field. */
 }header_t;
 ```
 
@@ -119,7 +119,7 @@ msg.header.target = id;
 msg.header.target_mode = IDACK;
 TimeOD_TimeToMsg(&time, &msg);
 msg.header.cmd = UPDATE_PUB;
-Luos_Send(app, &msg);
+Luos_SendMsg(app, &msg);
 ```
 
 > **Info:** containers can handle only one time-triggered target, 2 containers of the same network can't ask a time-triggered value from the same container.

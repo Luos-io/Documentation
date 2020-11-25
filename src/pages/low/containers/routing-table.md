@@ -36,20 +36,33 @@ routing_table_t routing_table[MAX_CONTAINERS_NUMBER];
 The routing table structure has two modes: *container entry mode* and *node entry mode*.
 
 ```c
-typedef struct __attribute__((__packed__)){
+typedef struct __attribute__((__packed__))
+{
     entry_mode_t mode;
-    union {
-        struct __attribute__((__packed__)){ // container entry mode
-            unsigned short id; // container ID
-            unsigned char type; /*!< container type. */
-            char alias[MAX_ALIAS_SIZE]; /*!< container alias. */
+    union
+    {
+        struct __attribute__((__packed__))// CONTAINER mode entry
+        {                               
+            uint16_t id;                // Container ID.
+            uint16_t type;              // Container type.
+            char alias[MAX_ALIAS_SIZE]; // Container alias.
         };
-        struct __attribute__((__packed__)){ // NODE entry mode
-            luos_uuid_t uuid; // Node UUID
-            unsigned short port_table[4]; // Node link table
+        struct __attribute__((__packed__))// NODE mode entry
+        { 
+            // Watch out this structure have a lot similarities with the node_t struct.
+            // It is similar to allow copy of a node_t struct directly in this one.
+            // But you there is potentially a port_table size difference so
+            // Do not replace it with node_t struct.
+            struct __attribute__((__packed__))
+            {
+                uint16_t node_id : 12;  // Node id
+                uint16_t certified : 4; // True if the node have a certificate
+            };
+            uint16_t port_table[(MAX_ALIAS_SIZE + 2 + 2 - 2) / 2]; // Node link table
         };
+        uint8_t unmap_data[MAX_ALIAS_SIZE + 2 + 2];
     };
-}routing_table_t;
+} routing_table_t;
 ```
 
 ### container entry mode
@@ -63,9 +76,11 @@ For more information, please refer to the [containers](/pages/low/containers.md)
 ### Node entry mode
 This mode gives physical information of your devices.
 
-The **uuid** is the serial number of the microcontroler hosting Luos. This number is unique, you can use it to identify each one of your nodes.
+The **node_id** is unique number that you can use it to identify each one of your nodes. At the beguinning or when a reset detection is perfom all node ID are set to 0. When RoutingTB_DetectContainers API is call Luos give to node and container a unique ID according to your system topology 
 
-The **port_table** allows to share topological information of your network. Each element of this table corresponds to a physical Luos port of the node and indicates which node is connected to it by sharing a container's `id`.
+The **certified** Luos node can be certify for your system by including Luos liscencing number in your product (feature in progress)
+
+The **port_table** allows to share topological information of your network. Each element of this table corresponds to a physical Luos port of the node and indicates which node is connected to it by sharing a node's `id`.
 
 Here is an example:
 
@@ -85,16 +100,17 @@ The routing table library provides the following search tools to find containers
 
 | Description | Function | Return |
 | :---: | :---: | :---: |
-| Find a container's id from its alias | `RoutingTB_IDFromAlias(char* alias);` | `int` |
-| Find a container's id from its type (return the first of the list) | `RoutingTB_IDFromType(luos_type_t type);` | `int` |
-| Find a container's string from its type (return the first of the list) | `RoutingTB_StringFromType(luos_type_t type);` | `char*` |
+| Find a container's id from its alias | `RoutingTB_IDFromAlias(char* alias);` | `uint16_t` |
+| Find a container's id from its type (return the first of the list) | `RoutingTB_IDFromType(luos_type_t type);` | `uint16_t` |
+| Find a container's id from a container | `RoutingTB_IDFromContainer(container_t *container);` | `uint16_t` |
 | Find a container's alias from its id (return the first of the list) | `RoutingTB_AliasFromId(uint16_t id);` | `char*` |
 | Find a container's type from its id | `RoutingTB_TypeFromID(uint16_t id);` | `container_type_t` |
 | Find a container's type from its alias | `RoutingTB_TypeFromAlias(char* alias);` | `container_type_t` |
+| Find a container's string from its type (return the first of the list) | `RoutingTB_StringFromType(luos_type_t type);` | `char*` |
 | Test if a container's type is a sensor | `RoutingTB_ContainerIsSensor(container_type_t type);` | `uint8_t` |
-| Get a node's id | `RoutingTB_GetNodeID(unsigned short index);` | `int` |
-| Get the number of nodes in a Luos network | `RoutingTB_GetNodeNB(void);` | `int` |
-| Get the list of all the nodes in a Luos network | `RoutingTB_GetNodeList(unsigned short* list);` | `void` |
+| Get the number of nodes in a Luos network | `RoutingTB_GetNodeNB(void);` | `uint16_t` |
+| Get a node's id | `RoutingTB_GetNodeID(unsigned short index);` | `uint16_t` |
+
 
 ## Management tools
 Here are the management tools provided by the routing table library:
@@ -103,13 +119,13 @@ Here are the management tools provided by the routing table library:
 | :---: | :---: | :---: |
 | Compute the rooting table | `RoutingTB_ComputeRoutingTableEntryNB(void);` | `void` |
 | Detect the containers in a Luos network | `RoutingTB_DetectContainers(container_t* container);` | `void` |
-| Convert a node to a routing table entry | `RoutingTB_ConvertNodeToRoutingTable(routing_table_t* entry, luos_uuid_t uuid, unsigned short* port_table, int branch_nb);` | `void` |
+| Convert a node to a routing table entry | `RoutingTB_ConvertNodeToRoutingTable(routing_table_t *entry, node_t *node);` | `void` |
 | Convert a container to a routing table entry | `RoutingTB_ConvertContainerToRoutingTable(routing_table_t* entry, container_t* container);` | `void` |
-| Insert an entry into the routing table | `RoutingTB_InsertOnRoutingTable(routing_table_t* entry);` | `void` |
-| Remove an entry in the routing table (by id) | `RoutingTB_RemoveOnRoutingTable(int id);` | `void` |
+| Remove an entry in the routing table (by id) | `RoutingTB_RemoveOnRoutingTable(uint16_t id);` | `void` |
 | Erase routing table | `RoutingTB_Erase(void);` | `void` |
 | Get the routing table | `RoutingTB_Get(void);` | `routing_table_t*` |
-| Get the last container in a Luos network | `RoutingTB_GetLastContainer(void);` | `int` |
-| Get the last entry in a Luos network | `RoutingTB_GetLastEntry(void);` | `int` |
+| Get the last container in a Luos network | `RoutingTB_GetLastContainer(void);` | `uint16_t` |
+| Get the last entry in a Luos network | `RoutingTB_GetLastEntry(void);` | `uint16_t` |
+| Get the last node in a Luos network | `RoutingTB_GetLastNode(void);` | `uint16_t*` |
 
 
