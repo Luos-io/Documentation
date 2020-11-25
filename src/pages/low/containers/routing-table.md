@@ -49,10 +49,10 @@ typedef struct __attribute__((__packed__))
         };
         struct __attribute__((__packed__))// NODE mode entry
         { 
-            // Watch out this structure have a lot similarities with the node_t struct.
-            // It is similar to allow copy of a node_t struct directly in this one.
-            // But you there is potentially a port_table size difference so
-            // Do not replace it with node_t struct.
+            // Watch out, this structure has a lot of similarities with the node_t struct.
+            // It is similar to allow copy of a node_t struct directly in this one
+            // but there is potentially a port_table size difference so
+            // do not replace it with node_t struct.
             struct __attribute__((__packed__))
             {
                 uint16_t node_id : 12;  // Node id
@@ -76,9 +76,9 @@ For more information, please refer to the [containers](/pages/low/containers.md)
 ### Node entry mode
 This mode gives physical information of your devices.
 
-The **node_id** is unique number that you can use it to identify each one of your nodes. At the beguinning or when a reset detection is perfom all node ID are set to 0. When RoutingTB_DetectContainers API is call Luos give to node and container a unique ID according to your system topology 
+The **node_id** is the unique number that you can use to identify each one of your nodes. At the beginning or when a reset detection is perfomed, all node ID are set to 0. When RoutingTB_DetectContainers API is called, Luos gives to nodes and containers a unique ID according to your system topology.
 
-The **certified** Luos node can be certify for your system by including Luos liscencing number in your product (feature in progress)
+The **certified** Luos node can be certified for your system by including Luos licencing number in your product (feature in progress).
 
 The **port_table** allows to share topological information of your network. Each element of this table corresponds to a physical Luos port of the node and indicates which node is connected to it by sharing a node's `id`.
 
