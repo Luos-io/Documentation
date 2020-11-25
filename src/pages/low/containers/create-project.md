@@ -41,7 +41,7 @@ To make it at Luos we always use the same way to organize our projects: we put t
     │
     ├─── Inc
     │    ├─── Luos
-    │    └─── LuosHAL
+    │    └─── luos_hal
     │
     └─── Src
          └─── Main.c

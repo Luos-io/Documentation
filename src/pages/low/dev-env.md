@@ -34,8 +34,8 @@ Luos works as a code library running on nodes. To match Luos library with your h
 To make it work on your environment, you have to:
 
  - Include Luos lib folders in your project compilation;
- - Select the right LuosHAL from your family device in LuosHAL folder, and include `LuosHAL.c`, `LuosHAL.h` and `LuosHAL_Config.h` in your project;
- - Change, if necessary, `LuosHAL_Config.h` in you project, the default configuration created by Luos (before including `Luos.h`) in order to match LuosHAL with your hardware (eg: match pins with your design);
- - Include `Luos.h` on your source file.
+ - Select the right LuosHAL from your family device in LuosHAL folder, and include `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` in your project;
+ - Change, if necessary, `luos_hal_config.h` in you project, the default configuration created by Luos (before including `luos.h`) in order to match LuosHAL with your hardware (eg: match pins with your design);
+ - Include `luos.h` on your source file.
 
 
