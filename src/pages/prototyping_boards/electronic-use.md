@@ -100,7 +100,7 @@ If your terminal goes like this, it means that your download was successful:
 ![]({{img_path}}/upload_success.png)
 
 ### Troubleshooting
-If the upload goes wrong, it may be because your driver is not up-to-date. The fix depends of your OS:
+If the upload goes wrong, it may be because your driver is not up-to-date. The fix depends on your OS:
 
 #### Windows
 You need to install and run *Zadig* by following <a href="https://github.com/profezzorn/ProffieOS/wiki/zadig" target="blank_">this tutorial</a> on github.
