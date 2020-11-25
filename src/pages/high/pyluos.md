@@ -169,23 +169,29 @@ device.nodes
 
 Based on the previous example Pyluos will give you all informations about containers and topological informations :
 ```AsciiDoc
- root : node 1    Certified
-        |  Type                Alias               ID
-        └> Gate                gate                1
-└── 1<=>0 : node 2    Certified
-            |  Type                Alias               ID
-            └> Voltage             analog_read_P1      2
-            └> Voltage             analog_read_P7      3
-            └> Voltage             analog_read_P8      4
-            └> Voltage             analog_read_P9      5
-            └> State               digit_read_P5       6
-            └> State               digit_read_P6       7
-            └> State               digit_write_P2      8
-            └> State               digit_write_P3      9
-            └> State               digit_write_P4      10
-    └── 1<=>0 : node 3    Certified
-                |  Type                Alias               ID
-                └> Angle               potentiometer_m     11
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1                Certified            ┃
+  ┃  │  Type                Alias           ID   ┃
+  ┃  ╰> Gate                gate            1    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃1 ╭node 2                Certified            ┃
+      ┃  │  Type                Alias           ID   ┃
+      ┃  ├> Voltage             analog_read_P1  2    ┃
+      ┃  ├> Voltage             analog_read_P7  3    ┃
+      ┃  ├> Voltage             analog_read_P8  4    ┃
+      ┃  ├> Voltage             analog_read_P9  5    ┃
+      ┃  ├> State               digit_read_P5   6    ┃
+      ┃  ├> State               digit_read_P6   7    ┃
+      ┃  ├> State               digit_write_P2  8    ┃
+      ┃  ├> State               digit_write_P3  9    ┃
+      ┃  ╰> State               digit_write_P4  10   ┃
+    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ╚══ 0>┃1 ╭node 3                Certified            ┃
+          ┃  │  Type                Alias           ID   ┃
+          ┃  ╰> Angle               potentiometer_m 11   ┃
+         >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 In this example, 3 nodes (MCU) and their associated UUID are listed, along with their containers and associated characteristics (type, alias and ID).
 The characters after each set of node's containers and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from its second connector (1) to the first connector (0) of the next node.
@@ -262,15 +268,14 @@ device.rgb_led_mod.luos_statistics
 ```AsciiDoc
 rgb_led_mod statistics :
 .luos allocated RAM occupation  = 10%
-    .Allocator stack    = 5%
-    .Message stack      = 10%
-    .Luos stack         = 10%
+	.Message stack      = 10%
+	.Luos stack         = 10%
 .Dropped messages number    = 0
 .Max luos loop delay        = 1ms
 ```
- - **luos allocated RAM occupation** represents the global Luos RAM usage based on **Allocator stack**, **Message stack**, and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_VM_NUMBER` by default).
+ - **luos allocated RAM occupation** represents the global Luos RAM usage based on **Message stack** and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_CONTAINER_NUMBER` where MAX_CONTAINER_NUMBER = 5 by default ).
 
- - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default).
+ - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default. sizeof(msg_t) -> 7 bytes Header + 128 bytes data).
 
  - The RAM occupation and message drop number is also related to **Max luos loop delay**. If **Max luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. So you can reduce the RAM consumption and messages dropping by reducing the **Max luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
 
@@ -288,5 +293,3 @@ device.button_mod.type
 
 device.rgb_led_mod.rename("myLED")
 ```
-
-

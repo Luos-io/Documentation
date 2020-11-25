@@ -1,5 +1,5 @@
 # Integrating Luos into an electronic board
-Luos uses a communication protocol call <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> to communicate with other containers. Luos creates a network for the communication between containers located on different nodes. This communication goes through a physical layer, which must be adapted to your own design (through the file `LuosHAL_Config.h`).
+Luos uses a communication protocol call <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> to communicate with other containers. Luos creates a network for the communication between containers located on different nodes. This communication goes through a physical layer, which must be adapted to your own design (through the file `luos_hal_config.h`).
 
 Electronic boards must respect some design rules in order to properly work in a Luos network.
 
