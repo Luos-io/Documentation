@@ -4,7 +4,7 @@ List of demonstration boards available on GitHub:
 
 - [Battery power input]({{boards_path}}/battery-power-input.md)
 - [Button]({{boards_path}}/button.md)
-- [Controlled motor]({{boards_path}}/controlled-motor.md)
+- [Controller motor]({{boards_path}}/controller-motor.md)
 - [DC motor]({{boards_path}}/dc-motor.md)
 - [Distance sensor]({{boards_path}}/distance.md)
 - [Dynamixel motor]({{boards_path}}/dxl.md)

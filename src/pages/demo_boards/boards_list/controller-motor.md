@@ -1,21 +1,21 @@
-# Controlled-motor board
+# Controller-motor board
 <div class="cust_sheet" markdown="1">
-<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> controlled_moto</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/controlled-motor.md">Controlled motor</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> controller_moto</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/controller-motor.md">Controller motor</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/controlled-motor-container.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/controller-motor-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="{{img_path}}/sticker-actuation.png" title="Actuation">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Controlled_motor" target="_blank">Controlled_motor</a>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Controller_motor" target="_blank">Controller_motor</a>
 </div>
 
 ## How to connect your motor-reducer to your boards
 
-The Controlled-motor board is designed to control motors with a reducer and a sensor. It provides PH connector with 6 pins, where the motor can be plugged.
+The Controller-motor board is designed to control motors with a reducer and a sensor. It provides PH connector with 6 pins, where the motor can be plugged.
 
 ### Connector's reference
 
@@ -27,7 +27,7 @@ The Controlled-motor board is designed to control motors with a reducer and a se
 
 ### Pinout and characteristics
 
-![Pinout]({{img_path}}/controlled_motor_pinout.png)<br />*PHR-6 connector pinout.*
+![Pinout]({{img_path}}/controller_motor_pinout.png)<br />*PHR-6 connector pinout.*
 
 
 This board accepts supply voltage from 7V to 24V.
@@ -38,8 +38,8 @@ To control regular DC motors (without reduction neither sensor), please refer to
 
 This board is able to control DC motors with a reduction and a sensor (usually called motor-reducer or speed-reducer).
 
-The Controlled-motor board provides a PID control on the output position, and PID control on the output speed, taking into account the reducer and the encoder.
+The Controller-motor board provides a PID control on the output position, and PID control on the output speed, taking into account the reducer and the encoder.
 
-You can find basic information about PID control here: <a href="https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661" target="_blank">**An introduction to PID control with DC motor**</a> and a example code to tune your PID on the [Controlled motor container]({{containers_path}}/controlled-motor.md) page of this documentation.
+You can find basic information about PID control here: <a href="https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661" target="_blank">**An introduction to PID control with DC motor**</a> and a example code to tune your PID on the [Controller motor container]({{containers_path}}/controller-motor.md) page of this documentation.
 
 

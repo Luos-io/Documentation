@@ -1,4 +1,4 @@
-# Controlled-motor container type
+# Controller-motor container type
 
 This container type allows to control a motor with a reduction and a sensor (usually called motor-reducer or speed-reducer).
 This container computes PID for speed, position and motion planning.
@@ -11,7 +11,7 @@ Its type has access to all common capabilities.
 
 > **Warning:** This container doesn't save any of the following parameters, they must be set each time your container reboots.
 
-Before using your controlled motor container, you have to setup the resolution, motor reduction and eventually the wheel size, if you plan to use translation modes. To check the configuration, just make a complete turn on the motor shaft with your hand and check if the rotation position value is OK.
+Before using your Controller-motor container, you have to setup the resolution, motor reduction and eventually the wheel size, if you plan to use translation modes. To check the configuration, just make a complete turn on the motor shaft with your hand and check if the rotation position value is OK.
 
 Both PID’s values have to be set accordingly to the motor-reducer plugged to the board. Each different motor-reducer will have different PID’s values for position and speed control, and you have to define them by yourself.
 The default values `[0, 0, 0]` won’t have any effect on the motor, and must be changed if you plan to use any position or speed control mode.
@@ -19,7 +19,7 @@ To setup your PID please refer to the example at the end of this page.
 
 > **Warning:** PID for position and speed must be set in your code as an initialization before starting to use your container with position or speed control.
 
-Now that everything is configured, you can enable the control modes you want to use. You can use position and speed mode simultaneously. Power mode is only usable alone. The controlled motor is now ready to use, you can disable compliance to start moving the motor.
+Now that everything is configured, you can enable the control modes you want to use. You can use position and speed mode simultaneously. Power mode is only usable alone. The Controller-motor is now ready to use, you can disable compliance to start moving the motor.
 
 ----
 
@@ -147,7 +147,7 @@ r = Device('/dev/cu.usbserial-DN2AAOVK')
 r.containers
 
 # 2. Select the container of your network you need to configure
-container = r.controlled_moto
+container = r.controller_moto
 
 # 3. Setup container basic settings
 container.encoder_res = 48
@@ -243,16 +243,16 @@ run_pos_test(100.0)
 
 ### Example command from ROS topics
 
-By publishing on 3 topics you will take control over the controlled motor named `controlled_moto` to a velocity command of 1.57 rad/s:
+By publishing on 3 topics you will take control over the Controller-motor named `controller_moto` to a velocity command of 1.57 rad/s:
 
 ```bash
 # Launch the broker. Note: warnings will be displayed, please ignore them
 ros2 launch luos_interface broker.launch.py
 
 # Start the command in velocity mode
-ros2 topic pub -1 /controlled_moto/variables/rot_speed_mode/write std_msgs/msg/Bool data:\ true\ 
-ros2 topic pub -1 /controlled_moto/variables/target_rot_speed/write std_msgs/msg/Float32 data:\ 90.0\ 
-ros2 topic pub -1 /controlled_moto/variables/compliant/write std_msgs/msg/Bool data:\ false\ 
+ros2 topic pub -1 /controller_moto/variables/rot_speed_mode/write std_msgs/msg/Bool data:\ true\ 
+ros2 topic pub -1 /controller_moto/variables/target_rot_speed/write std_msgs/msg/Float32 data:\ 90.0\ 
+ros2 topic pub -1 /controller_moto/variables/compliant/write std_msgs/msg/Bool data:\ false\ 
 ```
 
-Then publish `true` to the `/controlled_moto/variables/compliant/write` topic to stop the driver.
+Then publish `true` to the `/controller_moto/variables/compliant/write` topic to stop the driver.

@@ -270,17 +270,17 @@ s = serial.Serial(sys.argv[1], 1000000)
 # detect Luos network
 sendCmd(s, '{"detection": {}}')
 # set speed mode and compliant mode
-sendCmd(s, '{"containers": {"controlled_moto": {"parameters": 2441}}}')
+sendCmd(s, '{"containers": {"controller_moto": {"parameters": 2441}}}')
 # set pid parameters
-sendCmd(s, '{"containers": {"controlled_moto": { "pid": [20, 0.02, 90]}}}')
+sendCmd(s, '{"containers": {"controller_moto": { "pid": [20, 0.02, 90]}}}')
 # set speed mode and non compliant mode
-sendCmd(s, '{"containers": {"controlled_moto": {"parameters": 2440}}}')
+sendCmd(s, '{"containers": {"controller_moto": {"parameters": 2440}}}')
 ```
 Parameters are defined by a 16-bit bitfield.
 
 |Object|Definition|Structure|Container(s)|
 |:---:|:---:|:---:|:---:|
-|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Controlled_motor/controlled_motor.h#L7-L31)|[Stepper]({{containers_path}}/stepper.md), [Controlled-motor]({{containers_path}}/controlled-motor.md), [Servo]({{containers_path}}/servo.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Controller_motor/controller_motor.h#L7-L31)|[Stepper]({{containers_path}}/stepper.md), [Controller-motor]({{containers_path}}/controller-motor.md), [Servo]({{containers_path}}/servo.md)|
 |parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Imu/mpu_configuration.h#L37-L56)|[Imu]({{containers_path}}/imu.md)|
 
 Other specific messages:

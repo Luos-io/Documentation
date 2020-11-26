@@ -51,7 +51,7 @@ streaming_channel_t trajectory;
 
 void Motor_Init(void) {
     trajectory = Stream_CreateStreamingChannel(trajectory_ring_buf, BUFFER_SIZE, sizeof(angular_position_t));
-    Luos_CreateContainer(Motor_MsgHandler, CONTROLLED_MOTOR_MOD, "motor_mod");
+    Luos_CreateContainer(Motor_MsgHandler, CONTROLLER_MOTOR_MOD, "motor_mod");
 }
 ```
 

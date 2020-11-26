@@ -112,7 +112,7 @@ You can use this table to find interesting project regarding specific features e
 <td align="center"></td>
 </tr>
 <tr>
-<td align="left"><a href="https://github.com/Luos-io/Examples/tree/master/Projects/Controlled_motor" target="_blank">Controlled motor</a></td>
+<td align="left"><a href="https://github.com/Luos-io/Examples/tree/master/Projects/Controller_motor" target="_blank">Controller motor</a></td>
 <td align="center"></td>
 <td align="center"></td>
 <td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
