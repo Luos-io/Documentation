@@ -4,10 +4,10 @@
 <p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/dc-motor.md">DC-motor</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 2</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/dc-motor-container.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/dc-motor-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
-<img height="50" src="{{img_path}}/sticker-actuation.png" title="Actuation">
+<img height="50" src="../../../_assets/img/sticker-actuation.png" title="Actuation">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Dc_motor" target="_blank">DC motor</a>

@@ -153,5 +153,3 @@ time.sleep(0.05)
 You should obtain a result like this:
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/eTRd8a0ABMM?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-

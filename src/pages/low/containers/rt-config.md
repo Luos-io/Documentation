@@ -1,10 +1,10 @@
 # Message Handling configuration
 
-> **Warning:** Make sure to read and understand how to [Create Luos containers](/pages/low/containers/create-containers.md) before reading this page.
+> **Warning:** Make sure to read and understand how to [Create Luos containers](./create-containers.md) before reading this page.
 
 Message callbacks of containers can be really difficult to use when a project include high real-time constraints.<br/>
 Luos provides two different configurations allowing you to choose the best way for you to deal with messages.
-The message handling configuration is set during the [initialization of a container](/pages/low/containers/create-containers.md).
+The message handling configuration is set during the [initialization of a container](./create-containers.md).
 
 |Configuration|execution type|
 |:---:|:---:|
@@ -75,5 +75,3 @@ void Button_Loop(void) {
     }
 }
 ```
-
-

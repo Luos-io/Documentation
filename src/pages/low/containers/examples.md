@@ -7,11 +7,11 @@ You can use this table to find interesting project regarding specific features e
 <thead>
 <tr>
 <th align="left"><small>Projects</small></th>
-<th align="center"><small><a href="/pages/low/containers.md">Dynamic containers allocation</a></small></th>
-<th align="center"><small><a href="/pages/low/containers/msg-handling.md">Large data</a></small></th>
-<th align="center"><small><a href="/pages/low/containers/streaming.md">Streaming</a></small></th>
-<th align="left"><small><a href="/pages/low/containers/od.md">Object Dictionnary</a></small></th>
-<th align="center"><small><a href="/pages/low/containers/routing-table.md">Routing table</a></small></th>
+<th align="center"><small><a href="../containers.md">Dynamic containers allocation</a></small></th>
+<th align="center"><small><a href="./msg-handling.md">Large data</a></small></th>
+<th align="center"><small><a href="./streaming.md">Streaming</a></small></th>
+<th align="left"><small><a href="./od.md">Object Dictionnary</a></small></th>
+<th align="center"><small><a href="./routing-table.md">Routing table</a></small></th>
 </tr>
 </thead>
 <tbody>
@@ -145,5 +145,3 @@ You can use this table to find interesting project regarding specific features e
 </tr>
 </tbody>
 </table>
-
-

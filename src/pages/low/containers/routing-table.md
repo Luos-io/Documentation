@@ -1,7 +1,7 @@
 # Routing Table
-> **Warning:** Make sure to read and understand how to [Create Luos containers](/pages/low/containers/create-containers.md) before reading this page.
+> **Warning:** Make sure to read and understand how to [Create Luos containers](./create-containers.md) before reading this page.
 
-The routing table is a feature of Luos allowing every <span class="cust_tooltip">[containers](/pages/overview/general-basics.md#container)<span class="cust_tooltiptext">{{ container_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows containers to know their physical position and to search and interact with other containers easily.<br/>
+The routing table is a feature of Luos allowing every <span class="cust_tooltip">[containers](../../overview/general-basics.md#container)<span class="cust_tooltiptext">{{ container_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows containers to know their physical position and to search and interact with other containers easily.<br/>
 This feature is particularly used by apps containers to find other containers they need to interact with. The routing table is shared by the container which launches the detection to other containers, but only apps containers store the routing table internaly.
 
 ## Detection
@@ -24,7 +24,7 @@ Sometimes, multiple containers in the network can have the same alias, which is 
 > **Warning:** Be careful that during a detection, a container can change ID depending on the container running this detection. Do not consider your container's ID fixed. Also, be aware that every containers remove their auto-update configuration during the detection to prevent any ID movement.
 
 ## Modes
-As explained in [this page](/pages/overview/general-basics.md#what-is-a-node), <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple containers. To get the topology of your device, the routing table references physical connexions between your nodes and lists all the containers in each one of them.
+As explained in [this page](../../overview/general-basics.md#what-is-a-node), <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple containers. To get the topology of your device, the routing table references physical connexions between your nodes and lists all the containers in each one of them.
 
 The routing table is a table of a `routing_table_t` structure containing nodes or containers information.
 The maximum number of containers and nodes are managed by the precompilation constant `MAX_containerS_NUMBER` (set to 40 by default).
@@ -71,7 +71,7 @@ This mode allows `routing_table` to contain:
  - type: container's type
  - alias: container's alias
 
-For more information, please refer to the [containers](/pages/low/containers.md) page of this documentation.
+For more information, please refer to the [containers](../containers.md) page of this documentation.
 
 ### Node entry mode
 This mode gives physical information of your devices.
@@ -93,7 +93,7 @@ Specific values taken by `port_table`:
  - **0**: this port is waiting to discover who is connected with. You should never see this value.
  - **0x0FFF**: this port is not connected to any other Node.
 
-> **Note:** Routing tables can be easily displayed using [Pyluos](/pages/high/pyluos.md) through a [USB gate](/pages/high/containers_list/gate.md). Please refer to the [Pyluos routing table section](/pages/high/pyluos.md#routing-table-display) for more information.
+> **Note:** Routing tables can be easily displayed using [Pyluos](../../high/pyluos.md) through a [USB gate](../../high/containers_list/gate.md). Please refer to the [Pyluos routing table section](../../high/pyluos.md#routing-table-display) for more information.
 
 ## Search tools
 The routing table library provides the following search tools to find containers and nodes' information into a Luos network:
@@ -127,5 +127,3 @@ Here are the management tools provided by the routing table library:
 | Get the last container in a Luos network | `RoutingTB_GetLastContainer(void);` | `uint16_t` |
 | Get the last entry in a Luos network | `RoutingTB_GetLastEntry(void);` | `uint16_t` |
 | Get the last node in a Luos network | `RoutingTB_GetLastNode(void);` | `uint16_t*` |
-
-

@@ -23,19 +23,19 @@ Nodes can have capacities such as measuring the core temperature, sending the pr
 A container is a block of code which is able to communicate with any other containers through the Luos network. Each container provides an API allowing to manage a motor, handle a laser range finder, or compute an inverse-kinematics, for example.
 **Each container is hosted in a single node**, but a node can handle several containers at the same time and manage communication between them and between other containers hosted in other nodes, using the same interface.
 
-For example, the [Dynamixel board]({{boards_path}}/dxl.md) provided by Luos can dynamically create and manage Dynamixel containers depending on the number of Dynamixel motors linked to it. Any Dynamixel containers can get or set values to other Dynamixel containers on the same node or to any other containers in any other nodes in the network.
+For example, the [Dynamixel board](../demo_boards/boards_list/dxl.md) provided by Luos can dynamically create and manage Dynamixel containers depending on the number of Dynamixel motors linked to it. Any Dynamixel containers can get or set values to other Dynamixel containers on the same node or to any other containers in any other nodes in the network.
 
-[Go to Containers page](/pages/low/containers.md).
+[Go to Containers page](../low/containers.md).
 
 ## Messages
 All containers can share and receive datas using messages.
 
-[Go to Messages handling page](/pages/low/containers/msg-handling.md).
+[Go to Messages handling page](../low/containers/msg-handling.md).
 
 ## Routing table
 A routing table is a "service" managed by the Luos network and available for any containers in any nodes. This service lists all the containers and allows to any containers to get and use basic information of any other containers. The routing table's data can be loaded or auto-generated during detection.
 
-[Go to Routing table page](/pages/low/containers/routing-table.md).
+[Go to Routing table page](../low/containers/routing-table.md).
 
 ## Container detection
 The container detection assigns IDs to containers depending on their node's physical position in the network, and generates a routing table.
@@ -44,6 +44,6 @@ IDs are assigned from the nearest to the furthest node branch by branch, from th
 
 > *Note:* Multiple detection by different containers at the same time is not allowed.
 
-It's possible to detect the network frequently in order to dynamically discover included or excluded containers while running. Go to [Routing table](/pages/low/containers/routing-table.md) page for more informations.
+It's possible to detect the network frequently in order to dynamically discover included or excluded containers while running. Go to [Routing table](../low/containers/routing-table.md) page for more informations.
 
 

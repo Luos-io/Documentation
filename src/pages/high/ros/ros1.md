@@ -53,5 +53,3 @@ source ~/ros_ws/devel/setup.bash
 rostopic list
 ```
 You can then publish and subscribe to the available topics in ROS 1.
-
-

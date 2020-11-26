@@ -2,7 +2,7 @@
 
 <h1 class="no-break"><a href="#pyluos" class="header" id="pyluos">A Pyluos guide</a></h1>
 
-Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](/pages/high/containers_list/gate.md) container.
+Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](containers_list/gate.md) container.
 
 ## Installation
 
@@ -65,11 +65,11 @@ jupyter notebook
 
 In the browser page that opened, the `New` button creates a new Python file:
 
-![python](/_assets/img/pyluos-1.png)
+![python](../../_assets/img/pyluos-1.png)
 
 > **Note:** In the previous picture, *Jupyter* use *Python 3* but you also can use *Python 2.7* depending on your computer configuration.
 
-![Jupyter](/_assets/img/pyluos-2.png)
+![Jupyter](../../_assets/img/pyluos-2.png)
 
 The Jupyter work-space looks like the following image. On the keyboard,  `Maj+Enter` executes any selected part of code.
 
@@ -86,11 +86,11 @@ This line is always used while programming behaviors and should be called before
 
 ### Device connection
 
-Connect your device to your computer through a [Gate](/pages/demo_boards/boards_list/usb.html) with a USB cable.
+Connect your device to your computer through a [Gate](../demo_boards/boards_list/usb.html) with a USB cable.
 
 #### Configuring USB transfer sizes and latency timer
 
-Some devices may not work properly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device properly while connected to your computer from a [Gate](/pages/demo_boards/boards_list/usb.html).
+Some devices may not work properly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device properly while connected to your computer from a [Gate](../demo_boards/boards_list/usb.html).
 
 **USB Transfer Sizes**: Default value is 4096 Bytes, however if you have issues to use your connected device, you should try the minimum possible values both for `Receive` and `Transmit`.
 
@@ -98,15 +98,15 @@ Some devices may not work properly with the default USB transfer sizes and laten
 
 To access to these parameters, open the Device Manager in Windows, and right-click on the *USB Serial Port (COMX)* where your device is connected, then click on *Properties*.
 
-![](/_assets/img/device-manager.png)
+![](../../_assets/img/device-manager.png)
 
 Click on *Port Settings* tab and click on *Advanced...* button.
 
-![](/_assets/img/serial-properties.png)
+![](../../_assets/img/serial-properties.png)
 
 Change the desired values.
 
-![](/_assets/img/com-port-adv-settings.png)
+![](../../_assets/img/com-port-adv-settings.png)
 
 These values can give you better results, for example if your device has motors to control.
 
@@ -132,7 +132,7 @@ Only once the connection is set it is possible to start programming behaviors.
 
 ### Routing table display
 
-[Routing table](/pages/low/containers/routing-table.md) can be easily displayed using Pyluos.
+[Routing table](../low/containers/routing-table.md) can be easily displayed using Pyluos.
 
 Pyluos can displays a list of all the containers by filtering the routing table, and their associated characteristics (type, alias and ID).
 To display it, use the following command:
@@ -206,7 +206,7 @@ device.container_alias.type
 ```
 `container_alias` being the alias you got from the previous listing.
 
-> **Note:** *Unknown* container types are defaulty set for custom container types such as some [Luos apps](/pages/low/containers/create-containers.md).
+> **Note:** *Unknown* container types are defaulty set for custom container types such as some [Luos apps](../low/containers/create-containers.md).
 
 ### Get and set containers informations
 Once you have detected your containers, you can use these information like variables.
@@ -233,7 +233,7 @@ device.button_mod.robus_revision # Returns the version of robus
 
 If you use *ipython* or *Jupyter Notebook*, you can use auto-completion using the `Tab` key to find every available objects and variables.
 
-![Auto-completion](/_assets/img/pyluos-3.png)
+![Auto-completion](../../_assets/img/pyluos-3.png)
 
 ### Change a container name
 The name of any container can be changed following this code. To list each container and its associated alias, refer to [List available containers of your device](#list-available-containers-of-your-device) section.

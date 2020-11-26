@@ -4,7 +4,7 @@
 <p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N/A</p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> N/A</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/cable-10cm.png"><img height="150" src="{{img_path}}/cable-20cm.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/cable-10cm.png"><img height="150" src="../../../_assets/img/cable-20cm.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">N/A
 </p>
@@ -19,7 +19,7 @@ However, it is possible to build a cable from any disired length (see the next s
 
 **Maximal current value:** The Luos cable can handle up to 7 A.
 
-**Boards connection:** The connectors on the board side and on the cable side have a foolproof so that they can plug together in one way only. Fore more information about plugging boards together with cables, please follow [this link](/pages/demo_boards/electronic-use.md#plug).
+**Boards connection:** The connectors on the board side and on the cable side have a foolproof so that they can plug together in one way only. Fore more information about plugging boards together with cables, please follow [this link](../electronic-use.md#plug).
 
 ## How to buid a Luos compatible-cable?
 
@@ -32,13 +32,13 @@ If you need a cable with a length not available, you can build one, provided you
 
 The board connector associated to the cables is `DF11-8DP-2DS`. this connector's pinout on Luos' boards is shown in the following picture:
 
-![Luos board connector pinout]({{img_path}}/pinout-board-connector.png)
+![Luos board connector pinout](../../../_assets/img/pinout-board-connector.png)
 
 The routing of the board connector is as shown below:
 
-![Luos board connector routing]({{img_path}}/board-large-view.png)
+![Luos board connector routing](../../../_assets/img/board-large-view.png)
 
-[![Luos board connector routing]({{img_path}}/routing-board-connector-small.png)]({{img_path}}/routing-board-connector.png)
+[![Luos board connector routing](../../../_assets/img/routing-board-connector-small.png)](../../../_assets/img/routing-board-connector.png)
 <br />*Click on the image to display it in full size.*
 
 On a Luos cable, the wires are organized in this order:

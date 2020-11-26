@@ -22,7 +22,7 @@ Replace `<board name>` with the name of the board you're using, eg. `board = l0`
 Luos shares a lot of <a href="https://github.com/Luos-io/Examples" target="_blank">code examples</a>, feel free to use and modify them as you want.
 
 ### Demonstration boards
-Luos created [a sets of boards](/pages/demo_boards/boards-list.md) allowing to easily test the technology.
+Luos created [a sets of boards](../demo_boards/boards-list.md) allowing to easily test the technology.
 
 ## General integration consideration
 
@@ -37,5 +37,3 @@ To make it work on your environment, you have to:
  - Select the right LuosHAL from your family device in LuosHAL folder, and include `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` in your project;
  - Change, if necessary, `luos_hal_config.h` in you project, the default configuration created by Luos (before including `luos.h`) in order to match LuosHAL with your hardware (eg: match pins with your design);
  - Include `luos.h` on your source file.
-
-

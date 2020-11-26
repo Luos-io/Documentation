@@ -4,10 +4,10 @@
 <p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/servo.md">Servo</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 4</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/servo-container.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/servo-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
-<img height="50" src="{{img_path}}/sticker-actuation.png" title="Actuation">
+<img height="50" src="../../../_assets/img/sticker-actuation.png" title="Actuation">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Servo" target="_blank">Servo</a>
@@ -17,7 +17,7 @@
 
 The Servo board has 4 servo-motor ports ordered as shown on the following picture, from `S1` to `S4`.
 
-![Servomotor ports]({{img_path}}/servo-1.png)
+![Servomotor ports](../../../_assets/img/servo-1.png)
 
 ## Power considerations
 The Servo board accepts supply voltage from `5V` to `7V`. Watch out to always power your motor with an appropriate voltage.

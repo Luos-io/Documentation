@@ -8,8 +8,8 @@
 <p class="cust_indent" markdown="1">N/A</p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
-<img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
-<img height="50" src="{{img_path}}/sticker-actuation.png" title="Actuation">
+<img height="50" src="../../../_assets/img/sticker-interface.png" title="Interface">
+<img height="50" src="../../../_assets/img/sticker-actuation.png" title="Actuation">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Led_strip" target="_blank">Led strip</a>
@@ -17,7 +17,7 @@
 
 ## Board function
 This board controls a strip of several RGB LED. 
-Refer to the [Color container page]({{containers_path}}/color.md) for more details.
+Refer to the [Color container page](../../high/containers_list/color.md) for more details.
 
 ## Power considerations
 The RGB LED strip board supports 5V to 24V DC.

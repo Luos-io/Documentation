@@ -10,7 +10,7 @@ The basic physical layer to create a Luos network is based on RS485, but you can
 
 Here is the example of the schematic of L0 boards (available <a href="https://github.com/Luos-io/Examples/tree/master/Projects/0_electronics_basis/l0" target="_blank">on GitHub</a>).
 
-![]({{img_path}}/L0_sch.png)
+![](../../_assets/img/L0_sch.png)
 
 A Luos-friendly electronic board must contain *at least* the following elements:
  - **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU**</a> (microcontroller unit): It hosts, as a node, the Luos firmware along with the different <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span> (drivers and apps).
@@ -20,5 +20,3 @@ A Luos-friendly electronic board must contain *at least* the following elements:
  Luos manages any type of microcontrollers, but they need to be added manually to the library. If your microcontroller is not managed yet, please contact us:
   - by mail: contact@luos.io
   - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
-
-

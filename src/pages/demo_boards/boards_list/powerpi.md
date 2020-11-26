@@ -4,12 +4,12 @@
 <p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/gate.md">Gate</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/power-pi-container.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/power-pi-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
-<img height="50" src="{{img_path}}/sticker-communication.png" title="Comunication">
-<img height="50" src="{{img_path}}/sticker-power.png" title="Power">
-<img height="50" src="{{img_path}}/sticker-cognition.png" title="Cognition">
+<img height="50" src="../../../_assets/img/sticker-communication.png" title="Comunication">
+<img height="50" src="../../../_assets/img/sticker-power.png" title="Power">
+<img height="50" src="../../../_assets/img/sticker-cognition.png" title="Cognition">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Gate" target="_blank">Gate</a>
@@ -24,10 +24,10 @@ The connection of the Power Pi board to an ODrive board or to a Raspberry Pi boa
 
 > **Warning:** Be sure to plug the board on the right pins of the Raspberry Pi, and facing the right side. A bad connection may damage both boards.
 
-![Plug location]({{img_path}}/power-pi-1.png)<br />
+![Plug location](../../../_assets/img/power-pi-1.png)<br />
 *Red rectangles show where to plug the Power Pi board on an ODrive board (left) and on a Raspberry Pi board (right).*
 
-![Preview]({{img_path}}/power-pi-2.png)<br />
+![Preview](../../../_assets/img/power-pi-2.png)<br />
 *On the left, a Power Pi board connected to an ODrive board; on the right, a Power Pi board connected to a Raspberry Pi board.*
 
 ## How to easily start to create your code using this board
@@ -81,7 +81,7 @@ Save the file and eject the SD card. Replace it into the Raspberry Pi’s slot.
 The Raspberry Pi can be located with the expression `raspberrypi.local`, thanks to the software *Bonjour*.
 
 ### Second solution: with a screen and a keyboard
-![Raspberry-Pi connection]({{img_path}}/rpi-setup.jpg)
+![Raspberry-Pi connection](../../../_assets/img/rpi-setup.jpg)
 
 In order to establish a connection, you will need:
 

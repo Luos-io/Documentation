@@ -4,11 +4,11 @@
 <p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/gate.md">Gate</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/usb-container.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/usb-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
-<img height="50" src="{{img_path}}/sticker-communication.png" title="Communication">
-<img height="50" src="{{img_path}}/sticker-power.png" title="Power">
+<img height="50" src="../../../_assets/img/sticker-communication.png" title="Communication">
+<img height="50" src="../../../_assets/img/sticker-power.png" title="Power">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Gate" target="_blank">Gate</a>
@@ -29,7 +29,7 @@ There are 2 micro-USB ports, but one of them is only used to manually update the
 
 The right USB port used on this page is the one at the opposite of the 2 Luos connectors.
 
-![USB board]({{img_path}}/usb-1.jpg)
+![USB board](../../../_assets/img/usb-1.jpg)
 
 ## How to use the USB board
 Luos' USB board acts like a serial port on your system.
@@ -44,7 +44,7 @@ device.containers
 ### On Windows
 On Windows, a *COM* port is usually used (like `COM1`, `COM2`, `COM3`, etc.). It can be found in *Device Manager* (right-click on *Start* button), after it’s plugged:
 
-![Port COM]({{img_path}}/usb-2.png)
+![Port COM](../../../_assets/img/usb-2.png)
 
 Once the port is known, the connexion can be set on pyluos with python:
 
@@ -90,7 +90,7 @@ In order to communicate from a computer to a Luos network through a gate, a seri
  - Least significant bit sent first
  - Non inverted
 
- ![]({{img_path}}/serial-configuration.png)
+ ![](../../../_assets/img/serial-configuration.png)
 
  Although the connection can be made with Pyluos, the Python library, other languages can be used on the computer side. Here is a C Linux serial connection example:
 
@@ -160,6 +160,4 @@ void init_luos_comm(luos_t* m)
 
 
 ## USB board power delivery
-The USB board power-delivery in the Luos network is limited to `500 mA`. This board can’t power too many boards and power-demanding ones like, for example, a DC-motor board with one or two motors connected. If you experiment power issues, feel free to add a power category board like a [Jack power input board]({{boards_path}}/jack-power-input.md).
-
-
+The USB board power-delivery in the Luos network is limited to `500 mA`. This board can’t power too many boards and power-demanding ones like, for example, a DC-motor board with one or two motors connected. If you experiment power issues, feel free to add a power category board like a [Jack power input board](./jack-power-input.md).

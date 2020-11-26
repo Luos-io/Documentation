@@ -4,11 +4,11 @@
 <p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N x <a href="/pages/high/containers_list/dxl.md">Dynamixel motor</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> N</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/dxl1-container.png"><img height="150" src="{{img_path}}/dxl2-container.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/dxl1-container.png"><img height="150" src="../../../_assets/img/dxl2-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
-<img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
-<img height="50" src="{{img_path}}/sticker-sensor.png" title="Sensor">
+<img height="50" src="../../../_assets/img/sticker-interface.png" title="Interface">
+<img height="50" src="../../../_assets/img/sticker-sensor.png" title="Sensor">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Dxl" target="_blank">Dxl</a>
@@ -18,13 +18,13 @@
 
 There are two versions of this board. One is the version for XL320 Dynamixel, the other is for other types of Dynamixel (eg. AX12). Both boards have a different connector.
 
-![Dynamixel connectors]({{img_path}}/dxl-1.png)
+![Dynamixel connectors](../../../_assets/img/dxl-1.png)
 
 Except for this connection, both versions work exactly the same way.
 
 ## How to connect and start the motors to the board
 
-![Dynamixel]({{img_path}}/dxl-mod-1.jpg)
+![Dynamixel](../../../_assets/img/dxl-mod-1.jpg)
 
 The Dynamixel board is special because it has a dynamic number of visible containers, depending on the number of motors plugged to it. If you have 5 motors on your board, you will see 5 DynamixelMotor containers.
 
@@ -45,7 +45,7 @@ When your Dynamixel motors are properly configured, you can connect them to the 
 
 > **Note:** The blue LED is ON when the network is busy detecting Dynamixel motors.
 
-In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel container]({{containers_path}}/dxl.md).
+In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel container](../../high/containers_list/dxl.md).
 
 > **Warning:** Dynamixel boards don’t belong to the power category. Thus, do not power your motors on the Robotis side, you won’t be able to share this power with others boards.
 

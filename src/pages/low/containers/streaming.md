@@ -39,7 +39,7 @@ chunk_size = 1 x 200 = 200 samples
 > **Note:** You can play pause, stop or record stream flux with the standard **CONTROL** command using the **control_type_t** structure.
 
 ## How to use it
-**A streaming channel is always created by the strict real-time container.** The other container (the no-real-time one) will just send or receive its data chunks using [large data messages](/pages/low/containers/msg-handling.html#large-data).
+**A streaming channel is always created by the strict real-time container.** The other container (the no-real-time one) will just send or receive its data chunks using [large data messages](./msg-handling.html#large-data).
 
 ### Streaming channel creation
 Before starting using streaming method, you have to create a streaming channel linked to a buffer into the init function of your real-time container:
@@ -103,6 +103,4 @@ void Motor_MsgHandler(container_t *container, msg_t *msg) {
 ```
 The `Luos_SendStreaming` function sends data available on your streaming channel. You can continue to feed your channel with samples at the same time.
 
-> **Warning:** This example doesn't work if your container is configured as real-time. Please read [Real-time configuration page](/pages/low/containers/rt-config.md) for more informations.
-
-
+> **Warning:** This example doesn't work if your container is configured as real-time. Please read [Real-time configuration page](./rt-config.md) for more informations.

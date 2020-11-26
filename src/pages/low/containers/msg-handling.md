@@ -1,6 +1,6 @@
 
 # Containers communication handling messages
-> **Warning:** Make sure to read and understand how to [Create Luos containers](/pages/low/containers/create-project.md) before reading this page.
+> **Warning:** Make sure to read and understand how to [Create Luos containers](./create-project.md) before reading this page.
 
 As a developer, you will have to create and use Luos messages to exchange informations between <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span>. In order to do that, you have to understand how messages works.
 
@@ -104,7 +104,7 @@ void containers_MsgHandler(container_t *container, msg_t *msg) {
 }
 ```
 
-> **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page](/pages/low/containers/streaming.md).
+> **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page](./streaming.md).
 
 ## Time-triggered update messages
 Luos provides a standard command to ask a container to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take useless resources.
@@ -124,6 +124,4 @@ Luos_SendMsg(app, &msg);
 
 > **Info:** containers can handle only one time-triggered target, 2 containers of the same network can't ask a time-triggered value from the same container.
 
-> **Warning:** To prevent any ID movement, auto-update configuration is reseted on all containers at each detection (see [Routing table page](/pages/low/containers/routing-table.md) for more information).
-
-
+> **Warning:** To prevent any ID movement, auto-update configuration is reseted on all containers at each detection (see [Routing table page](./routing-table.md) for more information).

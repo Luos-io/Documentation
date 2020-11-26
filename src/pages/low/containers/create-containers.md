@@ -2,7 +2,7 @@
 # Create Luos containers
 **As a developer you will always develop your functionalities into containers and never into the `main()` program.**
 
-> **Warning:** Make sure to read and understand how to [Create Luos projects](/pages/low/containers/create-project.md) before reading this page.
+> **Warning:** Make sure to read and understand how to [Create Luos projects](./create-project.md) before reading this page.
 
 ## How to create and initialize a container
 
@@ -13,7 +13,7 @@ container_t* Luos_CreateContainer(void* callback, container_type_t type, char* d
 
 The returned `container_t*` is a container structure pointer that will be useful to make your container act in the network after this initialization.
 
- **callback** is a pointer to a callback function called by Luos when your container receive messages from other containers (see [Real-time configuration page](/pages/low/containers/rt-config.md) for more details).
+ **callback** is a pointer to a callback function called by Luos when your container receive messages from other containers (see [Real-time configuration page](./rt-config.md) for more details).
  This function needs to have a specific format:
 
  ```c
@@ -29,7 +29,7 @@ The returned `container_t*` is a container structure pointer that will be useful
 
 **firm_revision** is the version number of the container you are creating and which will be accessible via pyluos.
 
-Following the [project rules](/pages/low/containers/create-project.html#basic-containers-functions), here is a code example for a button container:
+Following the [project rules](./create-project.html#basic-containers-functions), here is a code example for a button container:
 
 ```c
 container_t* container_btn;
@@ -47,7 +47,7 @@ void Button_Loop(void) {
 }
 ```
 
-> **Note:** According to the real-time configuration you chose, an additional line of code may be necessary. See [Real-time configuration page](/pages/low/containers/rt-config.md) for more details.
+> **Note:** According to the real-time configuration you chose, an additional line of code may be necessary. See [Real-time configuration page](./rt-config.md) for more details.
 
 ## Containers categories
 To make your development as clean as possible, you have to understand in which category ([**Driver**](#drivers-guidelines) or [**App**](#apps-guidelines)) each container of the project is.
@@ -68,7 +68,7 @@ By designing a driver, you have to keep the following rules in mind:
 
 ## Apps guidelines
 An applications or app is a type of container that only manages software items such as functions or algorithms. Apps use other containers to make your device act, operate, and behave.
-Apps can be placed in any <span class="cust_tooltip">[nodes](/pages/overview/general-basics.html#what-is-a-node)<span class="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
+Apps can be placed in any <span class="cust_tooltip">[nodes](../../overview/general-basics.html#what-is-a-node)<span class="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
 
 By designing an app, you have to keep the following rules in mind:
 
@@ -76,6 +76,4 @@ By designing an app, you have to keep the following rules in mind:
  - An app can use custom container types.
  - An app must use standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures. If the structures used are not standard, Gate containers could be completely unable to manage them.
 
-Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every containers in every nodes in your device and make it work properly. Go to [Routing table](/pages/low/containers/routing-table.md) page for more informations.
-
-
+Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every containers in every nodes in your device and make it work properly. Go to [Routing table](./routing-table.md) page for more informations.

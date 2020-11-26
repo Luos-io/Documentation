@@ -3,9 +3,9 @@
 <h1 class="no-break"><a href="#json-api" class="header" id="json-api">JSON API</a></h1>
 
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
-To do that, you must add a specific app container called [Gate]({{containers_path}}/gate.md) on your device.
+To do that, you must add a specific app container called [Gate](./containers_list/gate.md) on your device.
 
-The [Gate container]({{containers_path}}/gate.md) is an app that converts Luos messages from a device's network into JSON data format, and the other way from JSON to Luos messages.<br/>
+The [Gate container](./containers_list/gate.md) is an app that converts Luos messages from a device's network into JSON data format, and the other way from JSON to Luos messages.<br/>
 The Gate container can be hosted into different kinds of <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
 
 > **Warning:** The Gate container refreshes sensors information as fast as it can, so that can be intensive to Luos bandwidth.
@@ -20,7 +20,7 @@ Then you can start the Gate by sending:
 This command asks the Gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
 
 ## Routing table messages
-> **Warning:** Make sure to read and understand how [routing table](/pages/low/containers/routing-table.md) works before reading this part.
+> **Warning:** Make sure to read and understand how [routing table](../low/containers/routing-table.md) works before reading this part.
 
 After the Gate starts, the first message you receive is a routing table.<br/>
 This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
@@ -64,7 +64,7 @@ Each listed node of the network has basic node information and a list of hosted 
    ]
 }
 ```
-> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](/pages/low/containers/routing-table.md).
+> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](../low/containers/routing-table.md).
 
 #### Containers
 Each listed container of a node has basics containers information:
@@ -76,7 +76,7 @@ Each listed container of a node has basics containers information:
    "alias":"Alias"
 }
 ```
-> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [container page](/pages/low/containers.html).
+> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [container page](../low/containers.html).
 
 #### Full routing table example
 
@@ -147,7 +147,7 @@ Each listed container of a node has basics containers information:
 
 Below is a visual representation of this routing table:
 
-![](/_assets/img/luos-network-ex.png)
+![](../../_assets/img/luos-network-ex.png)
 
 
 ### Container's information messages
@@ -281,20 +281,20 @@ Parameters are defined by a 16-bit bitfield.
 
 |Object|Definition|Structure|Container(s)|
 |:---:|:---:|:---:|:---:|
-|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Controller_motor/controller_motor.h#L7-L31)|[Stepper]({{containers_path}}/stepper.md), [Controller-motor]({{containers_path}}/controller-motor.md), [Servo]({{containers_path}}/servo.md)|
-|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Imu/mpu_configuration.h#L37-L56)|[Imu]({{containers_path}}/imu.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Controller_motor/controller_motor.h#L7-L31)|[Stepper](./containers_list/stepper.md), [Controller-motor](./containers_list/controller-motor.md), [Servo](./containers_list/servo.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Imu/mpu_configuration.h#L37-L56)|[Imu](./containers_list/imu.md)|
 
 Other specific messages:
 
 |Object|Definition|Container(s)|
 |:---:|:---:|:---:|
-|register|Motor memory register filed with \[register_number, value\]|[Dynamixel]({{containers_path}}/dxl.md), void|
-|set_id|A set id command|[Dynamixel]({{containers_path}}/dxl.md), void|
-|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|[Dynamixel]({{containers_path}}/dxl.md), void|
-|delay|reduce containers refresh rate|[Gate]({{containers_path}}/gate.md)|
+|register|Motor memory register filed with \[register_number, value\]|[Dynamixel](./containers_list/dxl.md), void|
+|set_id|A set id command|[Dynamixel](./containers_list/dxl.md), void|
+|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|[Dynamixel](./containers_list/dxl.md), void|
+|delay|reduce containers refresh rate|[Gate](./containers_list/gate.md)|
 
 ### Container exclusion messages
-Container can be excluded of the network if a problem occurs (See [message handling](/pages/low/containers/msg-handling.html#container-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this container is no longer available:
+Container can be excluded of the network if a problem occurs (See [message handling](../low/containers/msg-handling.html#container-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this container is no longer available:
 ```JSON
 {"dead_container": "container_alias"}
 ```
@@ -317,5 +317,3 @@ The following example shows a transfert of a binary data of 1024 bytes.
 }
 ###BINARY_DATA###
 ```
-
-

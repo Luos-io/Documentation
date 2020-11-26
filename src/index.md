@@ -15,7 +15,7 @@ We started designing Luos with the conviction that building electronic systems s
 <figure  class="print-break">
   <figcaption></figcaption>
   <ul class="tree">
-    <li class="wf_li"><span class="cust_choice"><img src="{{img_path}}/logo-luos.png" height="30px"><br /><strong>What do you want to do?</strong></span>
+    <li class="wf_li"><span class="cust_choice"><img src="/_assets/img/logo-luos.png" height="30px"><br /><strong>What do you want to do?</strong></span>
       <ul class="wf_ul">
         <li class="wf_li"><span class="cust_basics"><a name="step2"></a><a name="step3"></a><a href="/pages/overview/general-basics.md">Begin with the <b>basics</b></a></span>
           <ul class="wf_ul">
@@ -64,11 +64,11 @@ We started designing Luos with the conviction that building electronic systems s
             </li>
             <li class="wf_li"><span class="cust_choice"><strong class="cust_number">❸</strong><br />Use Luos-ready boards and containers</span>
                 <ul class="wf_ul">
-                	<li class="wf_li"><span><a href="/pages/high/json-api.md#"><img src="{{img_path}}/json-logo.png" height="30px"><br />Learn how to use the <b>JSON API</b></a></span>
+                	<li class="wf_li"><span><a href="/pages/high/json-api.md#"><img src="/_assets/img/json-logo.png" height="30px"><br />Learn how to use the <b>JSON API</b></a></span>
                 		<ul class="wf_ul">
-                			<li class="wf_li"><span><a href="/pages/high/pyluos.md"><img src="{{img_path}}/python-logo.png" height="40px"><br />Read about <b>Pyluos</b> and how to create behaviors</a></span>
+                			<li class="wf_li"><span><a href="/pages/high/pyluos.md"><img src="/_assets/img/python-logo.png" height="40px"><br />Read about <b>Pyluos</b> and how to create behaviors</a></span>
                         <ul class="wf_ul">
-                          <li class="wf_li"><span><a href="/pages/high/ros.md"><img src="{{img_path}}/ros-logo.png" height="30px"><br />Read about <b>ROS</b> integration and how to use it with Luos</a></span>
+                          <li class="wf_li"><span><a href="/pages/high/ros.md"><img src="/_assets/img/ros-logo.png" height="30px"><br />Read about <b>ROS</b> integration and how to use it with Luos</a></span>
                           </li>
                         </ul>
                 			</li>

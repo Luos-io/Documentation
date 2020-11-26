@@ -4,11 +4,11 @@
 <p class="cust_sheet-title" markdown="1"><strong>Types:</strong> <a href="/pages/high/containers_list/state.md">State</a>, <a href="/pages/high/containers_list/voltage.md">Voltage</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 9</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="{{img_path}}/gpio-container.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/gpio-container.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
-<img height="50" src="{{img_path}}/sticker-interface.png" title="Interface">
-<img height="50" src="{{img_path}}/sticker-sensor.png" title="Sensor">
+<img height="50" src="../../../_assets/img/sticker-interface.png" title="Interface">
+<img height="50" src="../../../_assets/img/sticker-sensor.png" title="Sensor">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Gpio" target="_blank">Gpio</a>
@@ -19,7 +19,7 @@
 
 The GPIO board allows you to use the pins of the L0 board through the Luos system. You can use `Digital Write`, `Digital Read`, or `Analog Read` pins.
 
-![GPIO pinout]({{img_path}}/GPIO_pinout.png)
+![GPIO pinout](../../../_assets/img/GPIO_pinout.png)
 
 This board creates a container for each available pin.
 
