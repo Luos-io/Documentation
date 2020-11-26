@@ -223,7 +223,6 @@ Here is the list of all values that can be used by containers:
 |luos_statistics|Luos's memory usage statistics \[Message stack, Luos stack, Dropped messages, Loop delay, Fail ratio, Nak max number, Collision max number\]|
 
 
-
 Here is an exemple of a message sent by a Potentiometer container about the rotation angle of the associated potentiometer:
 ```JSON
 {

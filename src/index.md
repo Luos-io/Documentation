@@ -19,17 +19,17 @@ We started designing Luos with the conviction that building electronic systems s
       <ul class="wf_ul">
         <li class="wf_li"><span class="cust_basics"><a name="step2"></a><a name="step3"></a><a href="/pages/overview/general-basics.md">Begin with the <b>basics</b></a></span>
           <ul class="wf_ul">
-            <li class="wf_li"><span class="cust_choice"><strong class="cust_number">❶</strong><br />Build a Luos-ready board</span>
+            <li class="wf_li"><span class="cust_choice"><strong class="cust_number">&#9312;</strong><br />Build a Luos-ready board</span>
               <ul class="wf_ul">
                 <li class="wf_li"><span><a href="/pages/low/electronic-design.md">Read about the <b>electronic design rules</b></a></span>
                 	<ul class="wf_ul">
-                		<li class="wf_li"><span><a href="#step2">Go to 2 <strong>↗</strong></a></span>
+                		<li class="wf_li"><span><a href="#step2">Go to 2 <strong>&#8599;</strong></a></span>
                 		</li>
                 	</ul>
                 </li>
               </ul>
             </li>
-           <li class="wf_li"><span class="cust_choice"><strong class="cust_number">❷</strong><br />Make <b>drivers</b> and <b>apps</b> for your hardware</span>
+           <li class="wf_li"><span class="cust_choice"><strong class="cust_number">&#9313;</strong><br />Make <b>drivers</b> and <b>apps</b> for your hardware</span>
               <ul class="wf_ul">
                 <li class="wf_li"><span><a href="/pages/low/dev-env.md">Choose and configure your <b>development environment</b></a></span>
                 	<ul class="wf_ul">
@@ -39,16 +39,16 @@ We started designing Luos with the conviction that building electronic systems s
                 				<li class="wf_li"><span><a href="/pages/low/containers/create-project.md">Create a <b>project</b></a><br /> and <br /><a href="/pages/low/containers/create-containers.md">start creating <b>containers</b></a></span>
                 					<ul class="wf_ul">
                 						<li class="wf_li"><span>Learn more about the tools and configurations available with Luos:<br /> 
-											➜ <a href="/pages/low/containers/od.md"><b>Object dictionary</b></a><br />
-											➜ <a href="/pages/low/containers/routing-table.md"><b>Routing table</b></a><br />
-											➜ <a href="/pages/low/containers/msg-handling.md"><b>Messages handling</b></a><br />
-											➜ <a href="/pages/low/containers/streaming.md"><b>Streaming</b></a><br />
-											➜ <a href="/pages/low/containers/rt-config.md"><b>Real-time</b> configuration</a></span>
+											&#8594; <a href="/pages/low/containers/od.md"><b>Object dictionary</b></a><br />
+											&#8594; <a href="/pages/low/containers/routing-table.md"><b>Routing table</b></a><br />
+											&#8594; <a href="/pages/low/containers/msg-handling.md"><b>Messages handling</b></a><br />
+											&#8594; <a href="/pages/low/containers/streaming.md"><b>Streaming</b></a><br />
+											&#8594; <a href="/pages/low/containers/rt-config.md"><b>Real-time</b> configuration</a></span>
                 							<ul class="wf_ul">
                 								<li class="wf_li"><span><a href="/pages/low/containers/examples.md">Read the Codes Examples</a> and <a href="https://community.luos.io/t/a-new-way-to-design-embedded-app-using-luos-intro/277">follow the bike alarm tutorial</a>
 												</span>
 													<ul class="wf_ul">
-								                		<li class="wf_li"><span><a href="#step3">Go to 3 <strong>↗</strong></a></span>
+								                		<li class="wf_li"><span><a href="#step3">Go to 3 <strong>&#8599;</strong></a></span>
 								                		</li>
 								                	</ul>
                 								</li>
@@ -62,7 +62,7 @@ We started designing Luos with the conviction that building electronic systems s
                 </li>
               </ul>
             </li>
-            <li class="wf_li"><span class="cust_choice"><strong class="cust_number">❸</strong><br />Use Luos-ready boards and containers</span>
+            <li class="wf_li"><span class="cust_choice"><strong class="cust_number">&#9314;</strong><br />Use Luos-ready boards and containers</span>
                 <ul class="wf_ul">
                 	<li class="wf_li"><span><a href="/pages/high/json-api.md#"><img src="/_assets/img/json-logo.png" height="30px"><br />Learn how to use the <b>JSON API</b></a></span>
                 		<ul class="wf_ul">
@@ -92,5 +92,3 @@ Watch this video for additional details:
 
 
 <small>Luos is free for non-commercial use. It's protected by a license that <a href="https://github.com/Luos-io/Luos/blob/master/LICENSE.md" target="_blank">you can consult here</a>.</small>
-
-
