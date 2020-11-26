@@ -220,7 +220,7 @@ Here is the list of all values that can be used by containers:
 |pedometer|Steps number value|
 |walk_time|Walk time value|
 |luos_revision|Luos's version|
-|luos_statistics|Luos's memory usage statistics \[Allocator stack, Message stack, Luos stack, Dropped messages, Loop delay\]|
+|luos_statistics|Luos's memory usage statistics \[Message stack, Luos stack, Dropped messages, Fail ratio, NAK max number ,Loop delay\]|
 
 
 
@@ -235,6 +235,24 @@ Here is an exemple of a message sent by a Potentiometer container about the rota
 }
 ```
 
+Here is an exemple of a message sent by a gate container about Luos statistic:
+
+```JSON
+{
+   "containers":{
+      "gate":{
+         "luos_statistics":{
+            "msg_stack":60,
+            "luos_stack":53,
+            "msg_drop":0,
+            "fail_ratio":0,
+            "NAK_max":3,
+            "loop_ms":16,
+         }
+      }
+   }
+}
+```
 #### Custom parameters and specific messages
 Some messages are specifically handled:
 

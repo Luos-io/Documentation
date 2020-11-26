@@ -263,19 +263,23 @@ device.container_alias.luos_statistics
 For example:
 
 ```python
-device.rgb_led_mod.luos_statistics
+device.gate.luos_statistics
 ```
 ```AsciiDoc
-rgb_led_mod statistics :
-.luos allocated RAM occupation  = 10%
-	.Message stack      = 10%
-	.Luos stack         = 10%
-.Dropped messages number    = 0
-.Max luos loop delay        = 1ms
+gate statistics :
+.luos allocated RAM occupation  = 60%
+  .Message stack    = 60%
+  .Luos stack     = 60%
+.Dropped messages number  = 3
+.Msg fail ratio     = 0%
+.NAK msg max number     = 1
+.Max luos loop delay    = 56ms
 ```
  - **luos allocated RAM occupation** represents the global Luos RAM usage based on **Message stack** and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_CONTAINER_NUMBER` where MAX_CONTAINER_NUMBER = 5 by default ).
 
  - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default. sizeof(msg_t) -> 7 bytes Header + 128 bytes data).
+
+- Contrary to **Message stack**,  **Luos stack**, **Max luos loop delay** which are Node relatif statistics, **Msg fail ratio** and **NAK msg max number** are container's statistic. **Msg fail ratio** give a ratio of msg send fail base a all the msg that the container has sent. **NAK msg max number** give the max number of NAK receive when a message has been sent.
 
  - The RAM occupation and message drop number is also related to **Max luos loop delay**. If **Max luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. So you can reduce the RAM consumption and messages dropping by reducing the **Max luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
 
