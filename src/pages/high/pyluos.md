@@ -267,13 +267,14 @@ device.gate.luos_statistics
 ```
 ```AsciiDoc
 gate statistics :
-.luos allocated RAM occupation  = 60%
-  .Message stack    = 60%
-  .Luos stack     = 60%
-.Dropped messages number  = 3
-.Msg fail ratio     = 0%
-.NAK msg max number     = 1
-.Max luos loop delay    = 56ms
+.luos allocated RAM occupation  = 53%
+  .Message stack                = 50%
+  .Luos stack                   = 53%
+.Dropped messages number        = 0
+.Max luos loop delay            = 16ms
+.Msg fail ratio                 = 0%
+.Nak msg max number             = 1
+.Collision msg max number       = 5
 ```
  - **luos allocated RAM occupation** represents the global Luos RAM usage based on **Message stack** and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_CONTAINER_NUMBER` where MAX_CONTAINER_NUMBER = 5 by default ).
 
