@@ -220,7 +220,7 @@ Here is the list of all values that can be used by containers:
 |pedometer|Steps number value|
 |walk_time|Walk time value|
 |luos_revision|Luos's version|
-|luos_statistics|Luos's memory usage statistics [Allocator stack, Message stack, Luos stack, Dropped messages, Loop delay]|
+|luos_statistics|Luos's memory usage statistics \[Allocator stack, Message stack, Luos stack, Dropped messages, Loop delay\]|
 
 
 
