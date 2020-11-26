@@ -23,10 +23,8 @@ Its type has access to all common capabilities.
 ## ROS topics
 | **Topic name** | **Message type** |
 |:----|:---:|
-| /mod/variables/rot_position/read | std_msgs/msg/Float32
-| /mod/variables/threshold/read | std_msgs/msg/Float32
-| /mod/variables/threshold/write | std_msgs/msg/Float32
-| /mod/events/changed | luos_msgs/msg/FloatChange
-| /mod/events/filter_changed | luos_msgs/msg/FloatChange
-
-
+| /potentiometer_m/variables/rot_position/read | std_msgs/msg/Float32
+| /potentiometer_m/variables/threshold/read | std_msgs/msg/Float32
+| /potentiometer_m/variables/threshold/write | std_msgs/msg/Float32
+| /potentiometer_m/events/changed | luos_msgs/msg/FloatChange
+| /potentiometer_m/events/filter_changed | luos_msgs/msg/FloatChange

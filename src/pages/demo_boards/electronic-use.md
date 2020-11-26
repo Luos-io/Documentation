@@ -66,7 +66,7 @@ We created an open-source **Python library** managing this JSON API called [*Pyl
 Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">pyluos on github</a>.
 
 ## Update Luos, Robus and board's firmware
-Follow [this page](/pages/low/dev-env.md)'s instruction to install Platform IO if it is not already the case.
+[Instal PlatformIO](https://docs.luos.io/pages/low/dev-env.html) if you don't have it yet and clone the [Examples](https://github.com/Luos-io/Examples) repository.
 
 To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your containers' code, you must open the librairies tab ![]({{img_path}}/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
 
@@ -75,7 +75,7 @@ To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{
 To update the board's firmware you need to follow 3 steps:
 
 ### 1. Open the container folder that you want to update in Visual Studio Code
-To do this, you must go to *File* -> *Open the folder* and go to the folder of the container you want.
+To do this, you must go to *File* -> *Open the folder* and go to the folder of the container you want from [Examples/Projects](https://github.com/Luos-io/Examples/tree/master/Projects).
 
 ### 2. Compile it to ensure there is no error
 To compile your code, you must click on the *Compile* button ![]({{img_path}}/compile-button.png) at the bottom of your window:
@@ -99,6 +99,14 @@ If your terminal goes like this, it means that your download was successful:
 
 ![]({{img_path}}/upload_success.png)
 
-If the compilation goes wrong, it may be because your driver is not updated specially on Windows. If this is the case, you need to install and run *Zadig* by following <a href="https://github.com/profezzorn/ProffieOS/wiki/zadig" target="blank_">this tutorial</a> on github.
+### Troubleshooting
+If the upload goes wrong, it may be because your driver is not up-to-date. The fix depends on your OS:
 
+#### Windows
+You need to install and run *Zadig* by following <a href="https://github.com/profezzorn/ProffieOS/wiki/zadig" target="blank_">this tutorial</a> on github.
 
+#### Linux
+You need permissions to access the device for non-root users:
+```bash
+echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", GROUP="plugdev", MODE="0666"' > /etc/udev/rules.d/60-luos.rules
+```

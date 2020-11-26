@@ -22,18 +22,15 @@ Its type has access to all common capabilities.
 
 | **Event name** | **Trigger** |
 |:---:|:---:|
-| changed | Any state modification falling or raising |
-| falling | State modification from True to False |
-| rising | State modification from False to True |
+| changed | Any state modification pressed or released |
+| pressed | State modification from True to False |
+| released | State modification from False to True |
 
 ## ROS topics
 | **Topic name** | **Message type** |
 |:----|:---:|
 | /button_mod/variables/state/read | std_msgs/msg/Bool
 | /button_mod/variables/state/write | std_msgs/msg/Bool
-| /button_mod/events/rising | luos_msgs/msg/BoolChange
-| /button_mod/events/falling | luos_msgs/msg/BoolChange
+| /button_mod/events/released | luos_msgs/msg/BoolChange
+| /button_mod/events/pressed | luos_msgs/msg/BoolChange
 | /button_mod/events/changed | luos_msgs/msg/BoolChange
-
-
-

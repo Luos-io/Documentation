@@ -82,8 +82,8 @@ Here we have plugged a `State` container (alias `button_mod`), a `Imu` container
 /Imu_mod/variables/walk_time/read
 /Imu_mod/variables/walk_time/write
 /button_mod/events/changed
-/button_mod/events/falling
-/button_mod/events/rising
+/button_mod/events/pressed
+/button_mod/events/released
 /button_mod/variables/state/read
 /button_mod/variables/state/write
 /parameter_events

@@ -79,50 +79,50 @@ Now that everything is configured, you can enable the control modes you want to 
 | target_trans_speed | Sets the target translation speed to reach in mm/s. | read / write: float |
 
 ## ROS topics
-| **Topic name** | **Message type** |
-|:----|:---:|
-| /mod/variables/positionPid/read | geometry_msgs/msg/Vector3
-| /mod/variables/positionPid/write | geometry_msgs/msg/Vector3
-| /mod/variables/speedPid/read | geometry_msgs/msg/Vector3
-| /mod/variables/speedPid/write | geometry_msgs/msg/Vector3
-| /mod/variables/encoder_res/read | std_msgs/msg/Float32
-| /mod/variables/encoder_res/write | std_msgs/msg/Float32
-| /mod/variables/reduction/read | std_msgs/msg/Float32
-| /mod/variables/reduction/write | std_msgs/msg/Bool
-| /mod/variables/wheel_size/read | std_msgs/msg/Float32
-| /mod/variables/wheel_size/write | std_msgs/msg/Float32
-| /mod/variables/compliant/read | std_msgs/msg/Bool
-| /mod/variables/compliant/write | std_msgs/msg/Bool
-| /mod/variables/power_mode/read | std_msgs/msg/Bool
-| /mod/variables/power_mode/write | std_msgs/msg/Bool
-| /mod/variables/rot_position_mode/read | std_msgs/msg/Bool
-| /mod/variables/rot_position_mode/write | std_msgs/msg/Bool
-| /mod/variables/rot_speed_mode/read | std_msgs/msg/Bool
-| /mod/variables/rot_speed_mode/write | std_msgs/msg/Bool
-| /mod/variables/trans_position_mode/read | std_msgs/msg/Bool
-| /mod/variables/trans_position_mode/write | std_msgs/msg/Bool
-| /mod/variables/trans_speed_mode/read | std_msgs/msg/Bool
-| /mod/variables/trans_speed_mode/write | std_msgs/msg/Bool
-| /mod/variables/rot_position/read | std_msgs/msg/Float32
-| /mod/variables/rot_position/write | std_msgs/msg/Bool
-| /mod/variables/rot_speed/read | std_msgs/msg/Float32
-| /mod/variables/rot_speed/write | std_msgs/msg/Bool
-| /mod/variables/trans_position/read | std_msgs/msg/Float32
-| /mod/variables/trans_position/write | std_msgs/msg/Bool
-| /mod/variables/trans_speed/read | std_msgs/msg/Float32
-| /mod/variables/trans_speed/write | std_msgs/msg/Bool
-| /mod/variables/current/read | std_msgs/msg/Float32
-| /mod/variables/current/write | std_msgs/msg/Bool
-| /mod/variables/power_ratio/read | std_msgs/msg/Float32
-| /mod/variables/power_ratio/write | std_msgs/msg/Float32
-| /mod/variables/target_rot_position/read | std_msgs/msg/Float32
-| /mod/variables/target_rot_position/write | std_msgs/msg/Float32
-| /mod/variables/target_rot_speed/read | std_msgs/msg/Float32
-| /mod/variables/target_rot_speed/write | std_msgs/msg/Float32
-| /mod/variables/target_trans_position/read | std_msgs/msg/Float32
-| /mod/variables/target_trans_position/write | std_msgs/msg/Float32
-| /mod/variables/target_trans_speed/read | std_msgs/msg/Float32
-| /mod/variables/target_trans_speed/write | std_msgs/msg/Float32
+| **Topic name** | **Message type** | **Comment** |
+|:----|:---:|:---:|
+| /mod/variables/positionPid/read | geometry_msgs/msg/Vector3 |
+| /mod/variables/positionPid/write | geometry_msgs/msg/Vector3 |
+| /mod/variables/speedPid/read | geometry_msgs/msg/Vector3 |
+| /mod/variables/speedPid/write | geometry_msgs/msg/Vector3 |
+| /mod/variables/encoder_res/read | std_msgs/msg/Float32 |
+| /mod/variables/encoder_res/write | std_msgs/msg/Float32 |
+| /mod/variables/reduction/read | std_msgs/msg/Float32 |
+| /mod/variables/reduction/write | std_msgs/msg/Bool |
+| /mod/variables/wheel_size/read | std_msgs/msg/Float32 |
+| /mod/variables/wheel_size/write | std_msgs/msg/Float32 |
+| /mod/variables/compliant/read | std_msgs/msg/Bool |
+| /mod/variables/compliant/write | std_msgs/msg/Bool |
+| /mod/variables/power_mode/read | std_msgs/msg/Bool |
+| /mod/variables/power_mode/write | std_msgs/msg/Bool |
+| /mod/variables/rot_position_mode/read | std_msgs/msg/Bool |
+| /mod/variables/rot_position_mode/write | std_msgs/msg/Bool |
+| /mod/variables/rot_speed_mode/read | std_msgs/msg/Bool |
+| /mod/variables/rot_speed_mode/write | std_msgs/msg/Bool |
+| /mod/variables/trans_position_mode/read | std_msgs/msg/Bool |
+| /mod/variables/trans_position_mode/write | std_msgs/msg/Bool |
+| /mod/variables/trans_speed_mode/read | std_msgs/msg/Bool |
+| /mod/variables/trans_speed_mode/write | std_msgs/msg/Bool |
+| /mod/variables/rot_position/read | std_msgs/msg/Float32 |
+| /mod/variables/rot_position/write | std_msgs/msg/Bool |
+| /mod/variables/rot_speed/read | std_msgs/msg/Float32 |
+| /mod/variables/rot_speed/write | std_msgs/msg/Bool |
+| /mod/variables/trans_position/read | std_msgs/msg/Float32 |
+| /mod/variables/trans_position/write | std_msgs/msg/Bool |
+| /mod/variables/trans_speed/read | std_msgs/msg/Float32 |
+| /mod/variables/trans_speed/write | std_msgs/msg/Bool |
+| /mod/variables/current/read | std_msgs/msg/Float32 |
+| /mod/variables/current/write | std_msgs/msg/Bool |
+| /mod/variables/power_ratio/read | std_msgs/msg/Float32 |
+| /mod/variables/power_ratio/write | std_msgs/msg/Float32 |
+| /mod/variables/target_rot_position/read | std_msgs/msg/Float32 | value in radians
+| /mod/variables/target_rot_position/write | std_msgs/msg/Float32 | value in radians
+| /mod/variables/target_rot_speed/read | std_msgs/msg/Float32 | value in radians
+| /mod/variables/target_rot_speed/write | std_msgs/msg/Float32 | value in radians
+| /mod/variables/target_trans_position/read | std_msgs/msg/Float32 |
+| /mod/variables/target_trans_position/write | std_msgs/msg/Float32 |
+| /mod/variables/target_trans_speed/read | std_msgs/msg/Float32 |
+| /mod/variables/target_trans_speed/write | std_msgs/msg/Float32 |
 
 ## Example code
 
@@ -243,7 +243,7 @@ run_pos_test(100.0)
 
 ### Example command from ROS topics
 
-By publishing on 3 topics you will take control over the controlled motor named `controlled_moto` to a velocity command of 90 deg/s:
+By publishing on 3 topics you will take control over the controlled motor named `controlled_moto` to a velocity command of 1.57 rad/s:
 
 ```bash
 # Launch the broker. Note: warnings will be displayed, please ignore them
@@ -256,5 +256,3 @@ ros2 topic pub -1 /controlled_moto/variables/compliant/write std_msgs/msg/Bool d
 ```
 
 Then publish `true` to the `/controlled_moto/variables/compliant/write` topic to stop the driver.
-
-
