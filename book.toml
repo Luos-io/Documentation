@@ -30,7 +30,7 @@ last_version_luos = "0.6.9"
 gh_path = "github.com/Luos-io/doc/tree/master/src"
 boards_path = "/pages/demo_boards/boards_list"
 containers_path = "/pages/high/containers_list"
-img_path = "/_assets/img"
+img_path = "../../../_assets/img"
 
 [preprocessor.links]
 renderers = ["html"]
