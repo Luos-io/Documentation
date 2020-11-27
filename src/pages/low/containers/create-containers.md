@@ -40,7 +40,6 @@ static void Button_MsgHandler(container_t *container, msg_t *msg){
 }
 
 void Button_Init(void) {
-	//STRINGIFY (VERSION) is used to get the container version in the container's library.json file
     container_t* container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_MOD, "button_mod", ButtonRevision);
 }
 
