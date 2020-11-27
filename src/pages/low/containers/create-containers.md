@@ -8,7 +8,7 @@
 
 To create a container, you have to call this function:
 ```c
-container_t* Luos_CreateContainer(void* callback, container_type_t type, char* default_alias, char* firm_revision);
+container_t* Luos_CreateContainer(void* callback, container_type_t type, char* default_alias, revision_t revision);
 ```
 
 The returned `container_t*` is a container structure pointer that will be useful to make your container act in the network after this initialization.
@@ -27,11 +27,12 @@ The returned `container_t*` is a container structure pointer that will be useful
 
  **default alias** is the alias by default for your new container. e.g. `Mycontainer02`. This alias is the one your container will take if no other alias is set by the user of your functionality hosted in your container. Aliases have a maximum size of 16 characters.
 
-**firm_revision** is the version number of the container you are creating and which will be accessible via pyluos.
+**revision** is the revision number of the container you are creating and which will be accessible via pyluos.
 
 Following the [project rules](./create-project.html#basic-containers-functions), here is a code example for a button container:
 
 ```c
+revision_t ButtonRevision = {.unmap = {0,0,7}};
 container_t* container_btn;
 
 static void Button_MsgHandler(container_t *container, msg_t *msg){
@@ -40,7 +41,7 @@ static void Button_MsgHandler(container_t *container, msg_t *msg){
 
 void Button_Init(void) {
 	//STRINGIFY (VERSION) is used to get the container version in the container's library.json file
-    container_t* container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_MOD, "button_mod", STRINGIFY(VERSION));
+    container_t* container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_MOD, "button_mod", ButtonRevision);
 }
 
 void Button_Loop(void) {
