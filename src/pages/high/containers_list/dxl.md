@@ -79,4 +79,4 @@ ros2 topic pub -1 /dxl_1/variables/target_rot_position/write std_msgs/msg/Float3
 ```
 The motor will go to angle zero. 
 
-**Note**: If no motor is connected to the Dynamixel module, the ROS broker will display a warning message and ignore the module.
+**Note**: If no motor is connected to the Dynamixel board, the ROS broker will display a warning message and ignore the board.
