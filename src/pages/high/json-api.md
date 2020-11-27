@@ -1,16 +1,17 @@
-<img src="{{img_path}}/json-logo.png" height="100px">
+<img class="print-break" src="../../_assets/img/json-logo.png" height="100px">
 
-# JSON API
+<h1 class="no-break"><a href="#json-api" class="header" id="json-api">JSON API</a></h1>
+
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
-To do that, you must add a specific app module called [Gate]({{modules_path}}/gate.md) on your device.
+To do that, you must add a specific app container called [Gate](./containers_list/gate.md) on your device.
 
-The [Gate module]({{modules_path}}/gate.md) is an app that converts Luos messages from a device's network into JSON data format, and the other way from JSON to Luos messages.<br/>
-The Gate module can be hosted into different kinds of <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
+The [Gate container](./containers_list/gate.md) is an app that converts Luos messages from a device's network into JSON data format, and the other way from JSON to Luos messages.<br/>
+The Gate container can be hosted into different kinds of <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
 
-> **Warning:** The Gate module refreshes sensors information as fast as it can, so that can be intensive to Luos bandwidth.
+> **Warning:** The Gate container refreshes sensors information as fast as it can, so that can be intensive to Luos bandwidth.
 
 ## How to start using the JSON API
-Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate module.<br/>
+Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate container.<br/>
 Then you can start the Gate by sending:
 ```JSON
 {"detection": {}}\r
@@ -19,7 +20,7 @@ Then you can start the Gate by sending:
 This command asks the Gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
 
 ## Routing table messages
-> **Warning:** Make sure to read and understand how [routing table](/pages/low/modules/routing-table.md) works before reading this part.
+> **Warning:** Make sure to read and understand how [routing table](../low/containers/routing-table.md) works before reading this part.
 
 After the Gate starts, the first message you receive is a routing table.<br/>
 This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
@@ -29,7 +30,7 @@ A routing table in JSON consists in a list of the nodes present in the Luos netw
 
 ```JSON
 {
-   "route_table":[
+   "routing_table":[
       {
          // node 1
       },
@@ -45,46 +46,48 @@ A routing table in JSON consists in a list of the nodes present in the Luos netw
 ```
 
 #### Nodes information
-Each listed node of the network has basic node information and a list of hosted modules:
+Each listed node of the network has basic node information and a list of hosted containers:
 
 ```JSON
 { // node 1
-   "uuid":[1, 2, 3],
+   "node_id":1,
+   "certified":true,
    "port_table":[1, 2],
-   "modules":[
+   "containers":[
       {
-         // module 1
+         // container 1
       },
       {
-         // module 2
+         // container 2
       }
       // ...
    ]
 }
 ```
-> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](/pages/low/modules/routing-table.md).
+> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](../low/containers/routing-table.md).
 
-#### Modules
-Each listed module of a node has basics modules information:
+#### Containers
+Each listed container of a node has basics containers information:
 
 ```JSON
-{ // module 1
+{ // container 1
    "type":"Type",
    "id":1,
    "alias":"Alias"
 }
 ```
-> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [module page](/pages/low/modules.html).
+> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [container page](../low/containers.html).
 
 #### Full routing table example
 
 ```JSON
 {
-   "route_table":[
+   "routing_table":[
       {
-         "uuid":[2031684, 1112756496, 540423216],
+         "node_id":1,
+         "certified":true,
          "port_table":[2, 65535],
-         "modules":[
+         "containers":[
             {
                "type":"Gate",
                "id":1,
@@ -93,9 +96,10 @@ Each listed module of a node has basics modules information:
          ]
       },
       {
-         "uuid":[4915239, 1194612503, 540554032],
+         "node_id":2,
+         "certified":true,
          "port_table":[4, 1],
-         "modules":[
+         "containers":[
             {
                "type":"State",
                "id":2,
@@ -109,9 +113,10 @@ Each listed module of a node has basics modules information:
          ]
       },
       {
-         "uuid":[2818086, 1194612503, 540554032],
+         "node_id":3,
+         "certified":true,
          "port_table":[5, 3],
-         "modules":[
+         "containers":[
             {
                "type":"Imu",
                "id":4,
@@ -120,9 +125,10 @@ Each listed module of a node has basics modules information:
          ]
       },
       {
-         "uuid":[2097186, 1194612503, 540554032],
+         "node_id":4,
+         "certified":true,
          "port_table":[65535, 4],
-         "modules":[
+         "containers":[
             {
                "type":"Color",
                "id":5,
@@ -141,20 +147,20 @@ Each listed module of a node has basics modules information:
 
 Below is a visual representation of this routing table:
 
-![](/_assets/img/luos-network-ex.png)
+![](../../_assets/img/luos-network-ex.png)
 
 
-### Module's information messages
-When the JSON routing table is transmitted, the Gate starts to update and stream your network data with **modules information**.
+### Container's information messages
+When the JSON routing table is transmitted, the Gate starts to update and stream your network data with **containers information**.
 
-This JSON is a "module" object listing all the modules by their alias and the values they send:
+This JSON is a "container" object listing all the containers by their alias and the values they send:
 ```JSON
 {
-   "modules":{
-      "module_alias1":{
+   "containers":{
+      "container_alias1":{
          "value1":12.5
       },
-      "module_alias2":{
+      "container_alias2":{
          "value1":13.6,
          "value2":[1, 2, 3, 4]
       }
@@ -162,9 +168,9 @@ This JSON is a "module" object listing all the modules by their alias and the va
 }
 ```
 
-You can use the exact same JSON object structure to send data to modules.
+You can use the exact same JSON object structure to send data to containers.
 
-Here is the list of all values that can be used by modules:
+Here is the list of all values that can be used by containers:
 
 |Value name|Definition|
 |:---:|:---:|
@@ -190,10 +196,7 @@ Here is the list of all values that can be used by modules:
 |control|Control command (play, pause, stop, rec)|
 |color|Color value|
 |io_state|IO state|
-|led|Board's LED|
-|node_temperature|Node's temperature|
-|node_voltage|Node's voltage|
-|uuid|Module's uuid|
+|uuid|Container's uuid|
 |rename|Renaming an alias|
 |revision|Firmware revision|
 |trans_position|Translation position value|
@@ -216,14 +219,14 @@ Here is the list of all values that can be used by modules:
 |heading|Heading|
 |pedometer|Steps number value|
 |walk_time|Walk time value|
-|luos_revision|luos's version|
-|robus_revision|robus's version|
+|luos_revision|Luos's version|
+|luos_statistics|Luos's memory usage statistics \[Message stack, Luos stack, Dropped messages, Loop delay, Fail ratio, Nak max number, Collision max number\]|
 
 
-Here is an exemple of a message sent by a Potentiometer module about the rotation angle of the associated potentiometer:
+Here is an exemple of a message sent by a Potentiometer container about the rotation angle of the associated potentiometer:
 ```JSON
 {
-   "modules":{
+   "containers":{
       "potentiometer_m":{
          "rot_position":12.5
       }
@@ -231,13 +234,32 @@ Here is an exemple of a message sent by a Potentiometer module about the rotatio
 }
 ```
 
-#### Custom parameters and specific messages 
+Here is an exemple of a message sent by a gate container about Luos statistic:
+
+```JSON
+{
+   "containers":{
+      "gate":{
+         "luos_statistics":{
+            "msg_stack":60,
+            "luos_stack":53,
+            "msg_drop":0,
+            "loop_ms":16,
+            "fail_ratio":0,
+            "nak_max":1,
+            "collision_max":5,
+         }
+      }
+   }
+}
+```
+#### Custom parameters and specific messages
 Some messages are specifically handled:
 
-<!-- - If the type is `VOID_MOD`, the module is empty and no message is converted.-->
+<!-- - If the type is `VOID_MOD`, the container is empty and no message is converted.-->
 
-Custom parameters can be defined and sent to modules through the JSON API, either with Python (Pyluos) or any other programming language on a computer side.
-Here is an example of a C function that can be implemented in order to send commands to modules in a Luos Network, through a gate:
+Custom parameters can be defined and sent to containers through the JSON API, either with Python (Pyluos) or any other programming language on a computer side.
+Here is an example of a C function that can be implemented in order to send commands to containers in a Luos Network, through a gate:
 ```C
 def sendCmd(s, cmd, sleep_time=0.5):
     cmd = cmd + '\r'
@@ -248,51 +270,49 @@ s = serial.Serial(sys.argv[1], 1000000)
 # detect Luos network
 sendCmd(s, '{"detection": {}}')
 # set speed mode and compliant mode
-sendCmd(s, '{"modules": {"controlled_moto": {"parameters": 2441}}}')
+sendCmd(s, '{"containers": {"controller_moto": {"parameters": 2441}}}')
 # set pid parameters
-sendCmd(s, '{"modules": {"controlled_moto": { "pid": [20, 0.02, 90]}}}')
+sendCmd(s, '{"containers": {"controller_moto": { "pid": [20, 0.02, 90]}}}')
 # set speed mode and non compliant mode
-sendCmd(s, '{"modules": {"controlled_moto": {"parameters": 2440}}}')
+sendCmd(s, '{"containers": {"controller_moto": {"parameters": 2440}}}')
 ```
 Parameters are defined by a 16-bit bitfield.
 
-|Object|Definition|Structure|Module(s)|
+|Object|Definition|Structure|Container(s)|
 |:---:|:---:|:---:|:---:|
-|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Controlled_motor/controlled_motor.h#L7-L31)|[Stepper]({{modules_path}}/stepper.md), [Controlled-motor]({{modules_path}}/controlled-motor.md), [Servo]({{modules_path}}/servo.md)|
-|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Imu/mpu_configuration.h#L37-L56)|[Imu]({{modules_path}}/imu.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Controller_motor/controller_motor.h#L7-L31)|[Stepper](./containers_list/stepper.md), [Controller-motor](./containers_list/controller-motor.md), [Servo](./containers_list/servo.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Imu/mpu_configuration.h#L37-L56)|[Imu](./containers_list/imu.md)|
 
 Other specific messages:
 
-|Object|Definition|Module(s)|
+|Object|Definition|Container(s)|
 |:---:|:---:|:---:|
-|register|Motor memory register filed with \[register_number, value\]|[Dynamixel]({{modules_path}}/dxl.md), void|
-|set_id|A set id command|[Dynamixel]({{modules_path}}/dxl.md), void|
-|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|[Dynamixel]({{modules_path}}/dxl.md), void|
-|delay|reduce modules refresh rate|[Gate]({{modules_path}}/gate.md)|
+|register|Motor memory register filed with \[register_number, value\]|[Dynamixel](./containers_list/dxl.md), void|
+|set_id|A set id command|[Dynamixel](./containers_list/dxl.md), void|
+|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|[Dynamixel](./containers_list/dxl.md), void|
+|delay|reduce containers refresh rate|[Gate](./containers_list/gate.md)|
 
-### Module exclusion messages
-Module can be excluded of the network if a problem occurs (See [message handling](/pages/low/modules/msg-handling.html#module-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this module is no longer available:
+### Container exclusion messages
+Container can be excluded of the network if a problem occurs (See [message handling](../low/containers/msg-handling.html#container-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this container is no longer available:
 ```JSON
-{"dead_module": "module_alias"}
+{"dead_container": "container_alias"}
 ```
 
 ## Sending large binary data
 Binary data such as, for example, a motor tarjectory can't be included into a Json file if it is too large. In order to allow this type of transmission, the size of the binary data is sent through the Json, then followed by the actual data in binary format.
 
- - If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [Module's information messages section](#modules-information-messages)), or as a table of several values (for example a motor trajectory).
+ - If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [Container's information messages section](#containers-information-messages)), or as a table of several values (for example a motor trajectory).
 
  - If the data is large, the defined value must be a **table of one element**, containing only the size of the binary data to be transfered, in bytes.
 
 The following example shows a transfert of a binary data of 1024 bytes.
 ```JSON
 {
-   "modules":{
-      "module_alias1":{
+   "containers":{
+      "container_alias1":{
          "rot_position":[1024]
       }
    }
 }
 ###BINARY_DATA###
 ```
-
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/high/json-api.md">Edit this page</a></div>

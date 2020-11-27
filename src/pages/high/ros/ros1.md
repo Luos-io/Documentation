@@ -40,18 +40,16 @@ ros2 run ros1_bridge dynamic_bridge --bridge-all-2to1-topics
 ```
 
 ### In terminal 3: Luos broker in workspace `~/ros2_ws`
-Plug some Luos modules before starting the broker.
+Plug some Luos containers before starting the broker.
 ```bash
 source ~/ros2_ws/install/setup.bash
 ros2 launch luos_interface broker.launch.py
 ```
 
 ### In terminal 1: Your ROS 1 app in workspace `~/ros_ws`
-Let us consider here that `rostopic` is the ROS 1 app you want to run with Luos modules.
+Let us consider here that `rostopic` is the ROS 1 app you want to run with Luos containers.
 ```bash
 source ~/ros_ws/devel/setup.bash
 rostopic list
 ```
 You can then publish and subscribe to the available topics in ROS 1.
-
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/high/ros/ros1.md">Edit this page</a></div>

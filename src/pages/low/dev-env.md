@@ -16,25 +16,24 @@ board = <board name>
 ```
 Replace `<board name>` with the name of the board you're using, eg. `board = l0` for the L0 board.
 
-> *Note:* More information about how Luos libs are managed into PlatformIO is available by <a href="https://community.luos.io/t/how-to-link-luos-and-robus-to-platformio/244" target="\_blank">following this post on our forum</a>.
+> *Note:* More information about how Luos libs are managed into PlatformIO is available by <a href="https://community.luos.io/t/how-to-link-luos-with-platformio/303" target="\_blank">following this post on our forum</a>.
 
 ### Project examples
 Luos shares a lot of <a href="https://github.com/Luos-io/Examples" target="_blank">code examples</a>, feel free to use and modify them as you want.
 
-### Prototyping boards
-Luos created [a sets of boards](/pages/prototyping_boards/boards-list.md) allowing to easily prototype a device.
+### Demonstration boards
+Luos created [a sets of boards](../demo_boards/boards-list.md) allowing to easily test the technology.
 
 ## General integration consideration
 
-Luos works as a library. Our technology is constituted of 2 libs:
+Luos works as a code library running on nodes. To match Luos library with your hardware, Luos offers a *Hardware Abstraction Layer* for a lot of devices in <span class="cust_tooltip">LuosHAL<span class="cust_tooltiptext">{{luoshal_def}}</span></span>.  
 
- - <a href="https://github.com/Luos-io/Robus" target="_blank"><span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span></a>: This library is the communication way used by Luos.
+ - <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>: This repository gives you a list of family device covers to match Luos library with your hardware.
  - <a href="https://github.com/Luos-io/Luos/tree/master/luos" target="_blank">Luos</a>: This is the main library you will be working with.
 
 To make it work on your environment, you have to:
 
- - Include both lib folders (Robus and Luos) in your project compilation,
- - Select the good hal folder to use, depending on you hardware,
- - Include Luos.h on your source file.
-
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/low/dev-env.md">Edit this page</a></div>
+ - Include Luos lib folders in your project compilation;
+ - Select the right LuosHAL from your family device in LuosHAL folder, and include `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` in your project;
+ - Change, if necessary, `luos_hal_config.h` in you project, the default configuration created by Luos (before including `luos.h`) in order to match LuosHAL with your hardware (eg: match pins with your design);
+ - Include `luos.h` on your source file.

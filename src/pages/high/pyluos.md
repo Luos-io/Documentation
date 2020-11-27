@@ -1,7 +1,8 @@
-<img src="{{img_path}}/python-logo.png" height="100px">
+<img class="print-break" src="../../_assets/img/python-logo.png" height="100px">
 
-# A Pyluos guide
-Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](/pages/high/modules_list/gate.md) module.
+<h1 class="no-break"><a href="#pyluos" class="header" id="pyluos">A Pyluos guide</a></h1>
+
+Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](./containers_list/gate.md) container.
 
 ## Installation
 
@@ -64,11 +65,11 @@ jupyter notebook
 
 In the browser page that opened, the `New` button creates a new Python file:
 
-![python](/_assets/img/pyluos-1.png)
+![python](../../_assets/img/pyluos-1.png)
 
 > **Note:** In the previous picture, *Jupyter* use *Python 3* but you also can use *Python 2.7* depending on your computer configuration.
 
-![Jupyter](/_assets/img/pyluos-2.png)
+![Jupyter](../../_assets/img/pyluos-2.png)
 
 The Jupyter work-space looks like the following image. On the keyboard,  `Maj+Enter` executes any selected part of code.
 
@@ -85,11 +86,11 @@ This line is always used while programming behaviors and should be called before
 
 ### Device connection
 
-Connect your device to your computer through a [Gate](/pages/prototyping_boards/boards_list/usb.html) with a USB cable.
+Connect your device to your computer through a [Gate](../demo_boards/boards_list/usb.html) with a USB cable.
 
 #### Configuring USB transfer sizes and latency timer
 
-Some devices may not work properly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device properly while connected to your computer from a [Gate](/pages/prototyping_boards/boards_list/usb.html).
+Some devices may not work properly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device properly while connected to your computer from a [Gate](../demo_boards/boards_list/usb.html).
 
 **USB Transfer Sizes**: Default value is 4096 Bytes, however if you have issues to use your connected device, you should try the minimum possible values both for `Receive` and `Transmit`.
 
@@ -97,15 +98,15 @@ Some devices may not work properly with the default USB transfer sizes and laten
 
 To access to these parameters, open the Device Manager in Windows, and right-click on the *USB Serial Port (COMX)* where your device is connected, then click on *Properties*.
 
-![](/_assets/img/device-manager.png)
+![](../../_assets/img/device-manager.png)
 
 Click on *Port Settings* tab and click on *Advanced...* button.
 
-![](/_assets/img/serial-properties.png)
+![](../../_assets/img/serial-properties.png)
 
 Change the desired values.
 
-![](/_assets/img/com-port-adv-settings.png)
+![](../../_assets/img/com-port-adv-settings.png)
 
 These values can give you better results, for example if your device has motors to control.
 
@@ -131,17 +132,17 @@ Only once the connection is set it is possible to start programming behaviors.
 
 ### Routing table display
 
-[Routing table](/pages/low/modules/routing-table.md) can be easily displayed using Pyluos.
+[Routing table](../low/containers/routing-table.md) can be easily displayed using Pyluos.
 
-Pyluos can displays a list of all the modules by filtering the route table, and their associated characteristics (type, alias and ID).
+Pyluos can displays a list of all the containers by filtering the routing table, and their associated characteristics (type, alias and ID).
 To display it, use the following command:
 ```python
-device.modules
+device.containers
 ```
 
 > **Note:** `device` is the name of the network.
 
-Pyluos will give you a list of all modules without any topological informations :
+Pyluos will give you a list of all containers without any topological informations :
 ```AsciiDoc
 -------------------------------------------------
 Type                Alias               ID
@@ -159,65 +160,71 @@ State               digit_write_P4      10
 Angle               potentiometer_m     11
 ```
 
-Pyluos also can interpreate route_table and transform it into a tree. This way we can display a lot more complete information usinig the following command :
+Pyluos also can interpreate routing_table and transform it into a tree. This way we can display a lot more complete information usinig the following command :
 ```python
 device.nodes
 ```
 
 > **Note:** `device` is the name of the network.
 
-Based on the previous example Pyluos will give you all informations about modules and topological informations :
+Based on the previous example Pyluos will give you all informations about containers and topological informations :
 ```AsciiDoc
- root : [4653093, 1194612501, 540554032]
-        |  Type                Alias               ID
-        └> Gate                gate                1
-└── 1<=>0 : [4456498, 1347571976, 540555569]
-            |  Type                Alias               ID
-            └> Voltage             analog_read_P1      2
-            └> Voltage             analog_read_P7      3
-            └> Voltage             analog_read_P8      4
-            └> Voltage             analog_read_P9      5
-            └> State               digit_read_P5       6
-            └> State               digit_read_P6       7
-            └> State               digit_write_P2      8
-            └> State               digit_write_P3      9
-            └> State               digit_write_P4      10
-    └── 1<=>0 : [4653107, 1347571976, 540555569]
-                |  Type                Alias               ID
-                └> Angle               potentiometer_m     11
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1                Certified            ┃
+  ┃  │  Type                Alias           ID   ┃
+  ┃  ╰> Gate                gate            1    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃1 ╭node 2                Certified            ┃
+      ┃  │  Type                Alias           ID   ┃
+      ┃  ├> Voltage             analog_read_P1  2    ┃
+      ┃  ├> Voltage             analog_read_P7  3    ┃
+      ┃  ├> Voltage             analog_read_P8  4    ┃
+      ┃  ├> Voltage             analog_read_P9  5    ┃
+      ┃  ├> State               digit_read_P5   6    ┃
+      ┃  ├> State               digit_read_P6   7    ┃
+      ┃  ├> State               digit_write_P2  8    ┃
+      ┃  ├> State               digit_write_P3  9    ┃
+      ┃  ╰> State               digit_write_P4  10   ┃
+    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ╚══ 0>┃1 ╭node 3                Certified            ┃
+          ┃  │  Type                Alias           ID   ┃
+          ┃  ╰> Angle               potentiometer_m 11   ┃
+         >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
-In this example, 3 nodes (MCU) and their associated UUID are listed, along with their modules and associated characteristics (type, alias and ID).
-The characters after each set of node's modules and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from its second connector (1) to the first connector (0) of the next node.
+In this example, 3 nodes (MCU) and their associated UUID are listed, along with their containers and associated characteristics (type, alias and ID).
+The characters after each set of node's containers and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from its second connector (1) to the first connector (0) of the next node.
 
-### Module type
+### Container type
 
-Each module has a type (eg. `Button`, `Led`, ...).
-You can either retrieve your module's type from the previous code, or with the following line:
+Each container has a type (eg. `Button`, `Led`, ...).
+You can either retrieve your container's type from the previous code, or with the following line:
 
 ```python
-device.module_alias.type
+device.container_alias.type
 ```
-`module_alias` being the alias you got from the previous listing.
+`container_alias` being the alias you got from the previous listing.
 
-> **Note:** *Unknown* module types are defaulty set for custom module types such as some [Luos apps](/pages/low/modules/create-modules.md).
+> **Note:** *Unknown* container types are defaulty set for custom container types such as some [Luos apps](../low/containers/create-containers.md).
 
-### Get and set modules informations
-Once you have detected your modules, you can use these information like variables.
+### Get and set containers informations
+Once you have detected your containers, you can use these information like variables.
 
 To access values you have to address them in the device object following this rules :
 
 ```python
-device.module_alias.variable
+device.container_alias.variable
 ```
 
 For example :
 
 ```python
-device.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" module
+device.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" container
 
 device.button_mod.state # Returns the status of the push button
 
-device.button_mod.type # Returns the module type of the module "button_mod"
+device.button_mod.type # Returns the container type of the container "button_mod"
 
 device.button_mod.luos_revision # Returns the version of luos
 
@@ -226,13 +233,13 @@ device.button_mod.robus_revision # Returns the version of robus
 
 If you use *ipython* or *Jupyter Notebook*, you can use auto-completion using the `Tab` key to find every available objects and variables.
 
-![Auto-completion](/_assets/img/pyluos-3.png)
+![Auto-completion](../../_assets/img/pyluos-3.png)
 
-### Change a module name
-The name of any module can be changed following this code. To list each module and its associated alias, refer to [List available modules of your device](#list-available-modules-of-your-device) section.
+### Change a container name
+The name of any container can be changed following this code. 
 
 ```python
-device.module_alias.rename("new_name")
+device.container_alias.rename("new_name")
 ```
 
 For example:
@@ -243,7 +250,39 @@ device.rgb_led_mod.rename("myLED")
 
 > **Note:** You should restart your device and reconnect to it after this operation.
 
-> **Note:** To get back to the module default name, set a void name (`""`).
+> **Note:** To get back to the container default name, set a void name (`""`).
+
+### Get a node statistics
+Nodes are able to send back some values representing the sanity of a node. You can use it to evaluate the Luos needs depending on your particular configuration.
+The RAM usage of Luos depends on the number of messages the node has to treat and the max Luos loop delay.
+
+```python
+device.container_alias.luos_statistics
+```
+
+For example:
+
+```python
+device.gate.luos_statistics
+```
+```AsciiDoc
+gate statistics :
+.luos allocated RAM occupation  = 53%
+  .Message stack                = 50%
+  .Luos stack                   = 53%
+.Dropped messages number        = 0
+.Max luos loop delay            = 16ms
+.Msg fail ratio                 = 0%
+.Nak msg max number             = 1
+.Collision msg max number       = 5
+```
+ - **luos allocated RAM occupation** represents the global Luos RAM usage based on **Message stack** and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_CONTAINER_NUMBER` where MAX_CONTAINER_NUMBER = 5 by default ).
+
+ - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default. sizeof(msg_t) -> 7 bytes Header + 128 bytes data).
+
+- Contrary to **Message stack**,  **Luos stack**, **Max luos loop delay** which are Node relatif statistics, **Msg fail ratio** and **NAK msg max number** are container's statistic. **Msg fail ratio** give a ratio of msg send fail base a all the msg that the container has sent. **NAK msg max number** give the max number of NAK receive when a message has been sent.
+
+ - The RAM occupation and message drop number is also related to **Max luos loop delay**. If **Max luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. So you can reduce the RAM consumption and messages dropping by reducing the **Max luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
 
 ### Full script
 
@@ -251,7 +290,7 @@ device.rgb_led_mod.rename("myLED")
 from pyluos import Device
 device = Device('address of the device')
 
-device.modules
+device.containers
 
 device.rgb_led_mod.color = [50,80,5]
 device.button_mod.state
@@ -259,5 +298,3 @@ device.button_mod.type
 
 device.rgb_led_mod.rename("myLED")
 ```
-
-<div class="cust_edit_page"><a href="https://{{gh_path}}/pages/first_steps/pyluos.md">Edit this page</a></div>
