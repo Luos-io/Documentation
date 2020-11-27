@@ -1,7 +1,7 @@
 # DC-motor board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> DC_motor1_mod, DC_motor2_mod</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/dc-motor.md">DC-motor</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../high/containers_list/dc-motor.md">DC-motor</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 2</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/dc-motor-container.png"></p>

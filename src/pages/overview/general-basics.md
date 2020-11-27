@@ -1,6 +1,6 @@
 # General guide to Luos technology
 
-Luos is a simple and lightweight <a href="https://en.wikipedia.org/wiki/Distributed_operating_system" target="_blank">distributed operating system</a> dedicated to embedded systems enabling <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices</a> architecture for electronics. It's a powerful tool using modularity to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image</a>.
+Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices</a> architecture for electronics. It's a powerful tool using modularity to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image</a>.
 
 This guide contains all the basic notions you will need to use, create and understand Luos technology.
 
@@ -9,13 +9,13 @@ You can use Luos as a **bare metal** lib or as a driver into your **embedded OS*
 
 Luos is composed as well of **code subdivisions** called <span class="cust_tooltip">[**containers**](#container)<span class="cust_tooltiptext">{{container_def}}</span></span>. Containers are distributed into every nodes in a network.
 
-<a href="/_assets/img/feature-container-node-board.jpg" target="_blank"><img src="/_assets/img/feature-container-node-board.jpg" width="800px" /></a>
+<a href="../../_assets/img/feature-container-node-board.jpg" target="_blank"><img src="../../_assets/img/feature-container-node-board.jpg" width="800px" /></a>
 
 ## What is a Node
 A node is a physical component (hardware) running Luos and hosting one or several containers. In a Luos network, nodes are all connected together using <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span>, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (containers) allowing it to manage its boards and features.
 
-<img src="/_assets/img/MCU-luos.png" height="100px" />
+<img src="../../_assets/img/MCU-luos.png" height="100px" />
 
 Nodes can have capacities such as measuring the core temperature, sending the processor's unique ID or input voltage. A node's capacities are commonly shared by all the containers hosted into it and are accessible through each of them.
 

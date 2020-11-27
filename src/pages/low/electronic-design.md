@@ -18,5 +18,5 @@ A Luos-friendly electronic board must contain *at least* the following elements:
 
  ## Compatible MCUs
  Luos manages any type of microcontrollers, but they need to be added manually to the library. If your microcontroller is not managed yet, please contact us:
-  - by mail: contact@luos.io
+  - by mail: <a href="mailto:hello@luos.io">hello@luos.io</a>
   - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>

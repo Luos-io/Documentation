@@ -3,15 +3,15 @@
 This page provides quick and easy tutorials to get started with Luos demonstration boards.
 
 ## Tutorial \#1
-On the following steps, you will learn how to make a simple behavior with a [RGB LED](boards_list/rgbled.md) board and a [Button](boards_list/button.md) board step-by-step.
+On the following steps, you will learn how to make a simple behavior with a [RGB LED](./boards_list/rgbled.md) board and a [Button](./boards_list/button.md) board step-by-step.
 
 ### What you will need
 In the following example, we will make a LED turn on and off by pushing and releasing a button. You will need the following boards and accessories:
 
-* 1x Luos [LED board](boards_list/rgbled.md)
-* 1x Luos [Button board](boards_list/button.md)
-* 1x Luos [USB board](boards_list/usb.md) and an USB cable
-* 2x Luos [cables](boards_list/cables.md)
+* 1x Luos [LED board](./boards_list/rgbled.md)
+* 1x Luos [Button board](./boards_list/button.md)
+* 1x Luos [USB board](./boards_list/usb.md) and an USB cable
+* 2x Luos [cables](./boards_list/cables.md)
 
 ### STEPS
 
@@ -89,7 +89,7 @@ The LED turns on.
 
 Changing to the value `[0, 0, 0]` will turn it off.
 
-More details are provided on the page <a href="../../demo_boards/electronic-use.md">Luos boards general use</a>.
+More details are provided on the page <a href="./electronic-use.md">Luos boards general use</a>.
 
 #### 5. Write a simple beahvior
 You can now write a simple behavior that makes the LED to turn on when pushing the button and turn off when releasing it.

@@ -26,7 +26,7 @@ chunk_size = 1 x 200 = 200 samples
  In our configuration, data chunk needs to be 200 position samples each second, allowing to feed the streaming channel.
 
  Following our example, if we want to send trajectory to the motor, we will have a *ring buffer* in the motor side managed by the *streaming channel*. Here are the different states of this ring_buffer:
-<img src="/_assets/img/streaming.png"/>
+<img src="../../../_assets/img/streaming.png"/>
 
  1) The container who sends the trajectory has to make sure that the motor container always has data to consume. To do that you have to bootstrap your streaming flux by sending 2 data chunks to start and then send a new data chunk each *chunk_time*.
  This way, receiver always has at least one data chunk (1s in this example) ready to be consumed.
@@ -103,4 +103,4 @@ void Motor_MsgHandler(container_t *container, msg_t *msg) {
 ```
 The `Luos_SendStreaming` function sends data available on your streaming channel. You can continue to feed your channel with samples at the same time.
 
-> **Warning:** This example doesn't work if your container is configured as real-time. Please read [Real-time configuration page](./rt-config.md) for more informations.
+> **Warning:** This example doesn't work if your container is configured as real-time. Please read [Message Handling configuration page](./rt-config.md) for more informations.

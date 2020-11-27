@@ -1,5 +1,5 @@
 
-<img class="print-break" src="{{img_path}}/ros-logo.png">
+<img class="print-break" src="../../_assets/img/ros-logo.png">
 
 <h1 class="no-break"><a href="#ros" class="header" id="ros">Using Luos with ROS1 and ROS2</a></h1>
 

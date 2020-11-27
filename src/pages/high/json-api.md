@@ -1,4 +1,4 @@
-<img class="print-break" src="{{img_path}}/json-logo.png" height="100px">
+<img class="print-break" src="../../_assets/img/json-logo.png" height="100px">
 
 <h1 class="no-break"><a href="#json-api" class="header" id="json-api">JSON API</a></h1>
 

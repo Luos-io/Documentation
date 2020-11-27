@@ -1,8 +1,8 @@
-<img class="print-break" src="{{img_path}}/python-logo.png" height="100px">
+<img class="print-break" src="../../_assets/img/python-logo.png" height="100px">
 
 <h1 class="no-break"><a href="#pyluos" class="header" id="pyluos">A Pyluos guide</a></h1>
 
-Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](containers_list/gate.md) container.
+Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](./containers_list/gate.md) container.
 
 ## Installation
 
@@ -236,7 +236,7 @@ If you use *ipython* or *Jupyter Notebook*, you can use auto-completion using th
 ![Auto-completion](../../_assets/img/pyluos-3.png)
 
 ### Change a container name
-The name of any container can be changed following this code. To list each container and its associated alias, refer to [List available containers of your device](#list-available-containers-of-your-device) section.
+The name of any container can be changed following this code. 
 
 ```python
 device.container_alias.rename("new_name")

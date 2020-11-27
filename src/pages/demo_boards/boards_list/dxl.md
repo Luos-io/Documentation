@@ -1,7 +1,7 @@
 # Dynamixel board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> dxl_*id*</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N x <a href="/pages/high/containers_list/dxl.md">Dynamixel motor</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N x <a href="../../high/containers_list/dxl.md">Dynamixel motor</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> N</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/dxl1-container.png"><img height="150" src="../../../_assets/img/dxl2-container.png"></p>

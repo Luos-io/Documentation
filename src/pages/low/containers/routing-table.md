@@ -84,7 +84,7 @@ The **port_table** allows to share topological information of your network. Each
 
 Here is an example:
 
-<img src="{{container}}/routing-table.png" title="Routing table">
+<img src="../../../_assets/img/routing-table.png" title="Routing table">
 
 As shown on this image, elements of the `port_table` indicate the first or last container id of the connected node through a given port.
 

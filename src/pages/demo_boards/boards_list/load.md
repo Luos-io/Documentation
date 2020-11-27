@@ -1,7 +1,7 @@
 # Load board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> load_mod</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="/pages/high/containers_list/load.md">Load</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../high/containers_list/load.md">Load</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1">N/A</p>

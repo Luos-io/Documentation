@@ -2,7 +2,7 @@
 
 Luos library has been designed to run on low-cost hardware. It works with all Arm microcontrollers, starting with the smallest and cheapest one: the <a href="https://developer.arm.com/ip-products/processors/cortex-m/cortex-m0" target="_blank">Cortex-M0</a>. 
 
-The demonstration boards are a set of small electronic boards examples, each one hosting Luos and providing with an electronic function (motor, distance sensor, battery, LED, potentiometer, etc.). These boards can be used to test the technology, or to quickly develop an electronic device prototype in order to prove a concept without any knowledge in electronics: demonstration boards are connected together with cables, behaviors can be programmed through a [gate](boards_list/usb.md) board on a computer, and the device can be tested in a matter of minutes!
+The demonstration boards are a set of small electronic boards examples, each one hosting Luos and providing with an electronic function (motor, distance sensor, battery, LED, potentiometer, etc.). These boards can be used to test the technology, or to quickly develop an electronic device prototype in order to prove a concept without any knowledge in electronics: demonstration boards are connected together with cables, behaviors can be programmed through a [gate](./boards_list/usb.md) board on a computer, and the device can be tested in a matter of minutes!
 
 > **Warning:** All examples codes of this documentation use the pyluos Python library and are adapted to be used with Jupyter Notebook.
 
@@ -52,7 +52,7 @@ In a Luos network, **you can have multiple power category boards**. In this case
 
 For example, for a device using a 12V motor and an USB board: The USB board belongs to the power category, so it can share its 5V into the network's wires. But you need 12V for your motor, so you will have to add a 12V AC plug board in your network to supply the motor. In this case, the USB board doesn’t share its power, only the AC plug board does, because 5V < 12V.
 
-Some component needs specific voltage to work properly. For example, in order to use standard servomotor, you have to feed the Luos network with 5V or 7V. If you need to combine 7V and 12V motors in a system, for example, you can manage multiple voltages on the same network using a [power isolator board](boards_list/power-isolator.md).
+Some component needs specific voltage to work properly. For example, in order to use standard servomotor, you have to feed the Luos network with 5V or 7V. If you need to combine 7V and 12V motors in a system, for example, you can manage multiple voltages on the same network using a [power isolator board](./boards_list/power-isolator.md).
 
 ## External communication management
 The boards from the Communication category allow you to easily control a Luos network. These boards host a container called "gate", they can communicate using different kinds of technologies and reach devices outside the device.<br/>To start using Luos technology, you have to use at least one of these gates to be able to program your machine's behaviors.
@@ -66,7 +66,7 @@ We created an open-source **Python library** managing this JSON API called [*Pyl
 Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">pyluos on github</a>.
 
 ## Update Luos, Robus and board's firmware
-[Instal PlatformIO](https://docs.luos.io/pages/low/dev-env.html) if you don't have it yet and clone the [Examples](https://github.com/Luos-io/Examples) repository.
+[Instal PlatformIO](../low/dev-env.html) if you don't have it yet and clone the [Examples](https://github.com/Luos-io/Examples) repository.
 
 To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your containers' code, you must open the librairies tab ![](../../_assets/img/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
 
