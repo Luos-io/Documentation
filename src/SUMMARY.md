@@ -10,7 +10,7 @@
 	    - [Object dictionary](./pages/low/containers/od.md)
 	    - [Routing table](./pages/low/containers/routing-table.md)
 	    - [Messages handling](./pages/low/containers/msg-handling.md)
-	    - [Self healing](./pages/low/containers/self-healing.md)
+	    - [Self-healing](./pages/low/containers/self-healing.md)
 	    - [Streaming](./pages/low/containers/streaming.md)
 	    - [Real-time configuration](./pages/low/containers/rt-config.md)
 		- [Codes Examples](./pages/low/containers/examples.md)
