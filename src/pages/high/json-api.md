@@ -292,10 +292,22 @@ Other specific messages:
 |wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|[Dynamixel](./containers_list/dxl.md), void|
 |delay|reduce containers refresh rate|[Gate](./containers_list/gate.md)|
 
-### Container exclusion messages
-Container can be excluded of the network if a problem occurs (See [message handling](../low/containers/msg-handling.html#container-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this container is no longer available:
+### Containers exclusion messages
+Containers can be excluded of the network if a problem occurs (see [self-healing](../low/containers/self-healing.md#container-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this container is no longer available:
 ```JSON
 {"dead_container": "container_alias"}
+```
+
+### Node assert messages
+Nodes can assert if a critical issue occurs (see [self-healing](../low/containers/self-healing.html#assert) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some detail about the crash:
+```JSON
+{
+   "assert":{
+      "node_id":3,
+      "file":"/Users/foo/luos/Examples/Drivers/Button/button.c",
+      "line":75
+   }
+}
 ```
 
 ## Sending large binary data

@@ -43,12 +43,17 @@
         {{/if}}
 
         <!-- Chat Zoho -->
-        <script type="text/javascript">
-        var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||
-        {widgetcode:"3527438c9fcafa0972a3a2576fae389697318c441cbf5997f080a4db435631f7", values:{},ready:function(){}};
-        var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
-        s.src="https://salesiq.zoho.eu/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
-        </script>
+        <script type="text/javascript"> 
+            var $zoho=$zoho || {};
+            $zoho.salesiq = $zoho.salesiq || {widgetcode:"3527438c9fcafa0972a3a2576fae38964b4fe1b8f520ccf46ff8317a97584595", values:{},ready:function(){}};
+            var d=document;s=d.createElement("script");
+            s.type="text/javascript";
+            s.id="zsiqscript";
+            s.defer=true;
+            s.src="https://salesiq.zoho.eu/widget";
+            t=d.getElementsByTagName("script")[0];
+            t.parentNode.insertBefore(s,t);
+            d.write("<div id='zsiqwidget'></div>"); </script>
 
         <link href="{{ path_to_root }}_assets/css/form.css" rel="stylesheet" type="text/css">
         <script src="{{ path_to_root }}_assets/js/validation.js"></script>
@@ -194,25 +199,19 @@
 
                             
                             <script language="javascript">
-                                function showFeedback() {
-                                  var x = document.getElementById("feedback-block");
-                                  if (x.style.display === "none") {
-                                    x.style.display = "block";
-                                  } else {
-                                    x.style.display = "none";
-                                  }
-                                }
+                                // Contribute to this page's href address
                                 var page = window.location.pathname.slice(0, -4)+'md';
                                 document.getElementById('gh_link').href = 'https://github.com/Luos-io/doc/tree/master/src'+page;
                                 
                             </script>
 
 
-                            <script>
-                            function openFeedback() {
-                              var myWindow = window.open("", "MsgWindow", "toolbar=yes,scrollbars=no,resizable=no,width=550,height=280");
-                              myWindow.document.write("<!DOCTYPE HTML><html><head><title>Luos documentation feedback</title><style>body{font-family: 'Roboto', sans-serif;} .zf-fmFooter .zf-submitColor{ font-size:14px; padding:4px 10px;}.zf-submitColor{ color: #fff; border:1px solid; border-color: #2F9EEC #1988D6 1988D6; background: #2596e6; background: -webkit-gradient(linear, left top, left bottom, from(#2f9eec), to(#1988d6)); background: moz-linear-gradienttop,  #2f9eec,  #1988d6); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f9eec', endColorstr='#1988d6'); moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); text-shadow:0 1px 0 rgba(0, 0, 0, 0.25);  } .zf-submitColor:hover{ background: #1988d6; background: -webkit-gradient(linear, left top, left bottom, from(#1988d6), to(#1988d6)); background: -moz-linear-gradient(top,  #1988d6,  #1988d6);   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1988d6', endColorstr='#1988d6'); }textarea#details_feedback{  width: 90%;  height: 100px;  padding: 12px 12px;  margin: 8px 0;  display: inline-block;  border: 1px solid #ccc;  border-radius: 4px;  box-sizing: border-box;}</style></head><body><div style=\"margin: 20px 0 20px 0; padding: 10px 20px 20px 20px; width: 90%; background-color: #efefef;\" id=\"feedback-block\"><form action=\'https://forms.zohopublic.eu/luosio/form/Thumbsurvey/formperma/BlTjwTQeX5v3FQDKFEHW5NNUgyllNOKxC-9a5miMlSw/htmlRecords/submit\' name=\'form\' method=\'POST\' onSubmit=\'javascript:document.charset=\"UTF-8\"; return zf_ValidateAndSubmit();\' accept-charset=\'UTF-8\' enctype=\'multipart/form-data\' id=\'form\'><input type=\"hidden\" name=\"zf_referrer_name\" value=\"\"><input type=\"hidden\" name=\"zf_redirect_url\" value=\"\"><input type=\"hidden\" name=\"zc_gad\" value=\"\"><div style=\"margin: 5px 5px 5px 0px; color: #333; font-size: 1.5em;\">Help us to improve our documentation.<\/div><div style=\"margin: 0 0 0 10px; padding: 0 0 0 15px; border-left: 2px solid #ccc\"<label style=\"color: #909090; font-size: 0.9em; font-style: italic;\">Add details to help us improve this page: <\/label><div><textarea id=\"details_feedback\" name=\"MultiLine\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine_error\" style=\"display:none;\">Invalid value<\/p><\/div><label style=\"display:none;\">window.location.href <\/label><div style=\"display:none;\"><textarea id=\"pageLocation\" name=\"MultiLine1\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine1_error\" class=\"zf-errorMessage\" style=\"display:none;\">Invalid value<\/p><\/div><button class=\"zf-submitColor\" style=\"margin-top: 12px;\">Submit<\/button><\/div><\/form><\/div><script type=\"text/javascript\">var zf_DateRegex = new RegExp(\"^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$\"); var zf_MandArray = []; var zf_FieldArray = [ \"MultiLine\", \"MultiLine1\"];var isSalesIQIntegrationEnabled = false; var salesIQFieldsArray = []; document.getElementById(\'pageLocation\').value = window.location.href;<\/script></body>");
-                            }
+                            <script language="javascript">
+                                // Open the new window for feedback page
+                                function openFeedback() {
+                                  var myWindow = window.open("", "MsgWindow", "toolbar=yes,scrollbars=no,resizable=no,width=550,height=280");
+                                  myWindow.document.write("<!DOCTYPE HTML><html><head><title>Luos documentation feedback</title><style>body{font-family: 'Roboto', sans-serif;} .zf-fmFooter .zf-submitColor{ font-size:14px; padding:4px 10px;}.zf-submitColor{ color: #fff; border:1px solid; border-color: #2F9EEC #1988D6 1988D6; background: #2596e6; background: -webkit-gradient(linear, left top, left bottom, from(#2f9eec), to(#1988d6)); background: moz-linear-gradienttop,  #2f9eec,  #1988d6); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f9eec', endColorstr='#1988d6'); moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); text-shadow:0 1px 0 rgba(0, 0, 0, 0.25);  } .zf-submitColor:hover{ background: #1988d6; background: -webkit-gradient(linear, left top, left bottom, from(#1988d6), to(#1988d6)); background: -moz-linear-gradient(top,  #1988d6,  #1988d6);   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1988d6', endColorstr='#1988d6'); }textarea#details_feedback{  width: 90%;  height: 100px;  padding: 12px 12px;  margin: 8px 0;  display: inline-block;  border: 1px solid #ccc;  border-radius: 4px;  box-sizing: border-box;}</style></head><body><div style=\"margin: 20px 0 20px 0; padding: 10px 20px 20px 20px; width: 90%; background-color: #efefef;\" id=\"feedback-block\"><form action=\'https://forms.zohopublic.eu/luosio/form/Thumbsurvey/formperma/BlTjwTQeX5v3FQDKFEHW5NNUgyllNOKxC-9a5miMlSw/htmlRecords/submit\' name=\'form\' method=\'POST\' onSubmit=\'javascript:document.charset=\"UTF-8\"; return zf_ValidateAndSubmit();\' accept-charset=\'UTF-8\' enctype=\'multipart/form-data\' id=\'form\'><input type=\"hidden\" name=\"zf_referrer_name\" value=\"\"><input type=\"hidden\" name=\"zf_redirect_url\" value=\"\"><input type=\"hidden\" name=\"zc_gad\" value=\"\"><div style=\"margin: 5px 5px 5px 0px; color: #333; font-size: 1.5em;\">Help us to improve our documentation.<\/div><div style=\"margin: 0 0 0 10px; padding: 0 0 0 15px; border-left: 2px solid #ccc\"<label style=\"color: #909090; font-size: 0.9em; font-style: italic;\">Add details to help us improve this page: <\/label><div><textarea id=\"details_feedback\" name=\"MultiLine\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine_error\" style=\"display:none;\">Invalid value<\/p><\/div><label style=\"display:none;\">window.location.href <\/label><div style=\"display:none;\"><textarea id=\"pageLocation\" name=\"MultiLine1\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine1_error\" class=\"zf-errorMessage\" style=\"display:none;\">Invalid value<\/p><\/div><button class=\"zf-submitColor\" style=\"margin-top: 12px;\">Submit<\/button><\/div><\/form><\/div><script type=\"text/javascript\">var zf_DateRegex = new RegExp(\"^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$\"); var zf_MandArray = []; var zf_FieldArray = [ \"MultiLine\", \"MultiLine1\"];var isSalesIQIntegrationEnabled = false; var salesIQFieldsArray = []; document.getElementById(\'pageLocation\').value = window.location.href;<\/script></body>");
+                                }
                             </script>
 
 
