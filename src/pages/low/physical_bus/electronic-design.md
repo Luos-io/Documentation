@@ -1,12 +1,8 @@
 # Integrating Luos into an electronic board
-Luos uses a communication protocol call <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> to communicate with other containers. Luos creates a network for the communication between containers located on different nodes. This communication goes through a physical layer, which must be adapted to your own design (through the file `luos_hal_config.h`).
-
-Electronic boards must respect some design rules in order to properly work in a Luos network.
+To create and match with the default reference design, electronic boards must respect some design rules in order to properly work in a Luos network.
 
 ## Electronic design
 Board examples and electronic sources are available <a href="https://github.com/Luos-io/Examples/tree/master/Projects" target="_blank">on GitHub</a>. You are free to use them as you want.
-
-The basic physical layer to create a Luos network is based on RS485, but you can use any half duplex support allowing to check transmitted data.
 
 Here is the example of the schematic of L0 boards (available <a href="https://github.com/Luos-io/Examples/tree/master/Projects/0_electronics_basis/l0" target="_blank">on GitHub</a>).
 
