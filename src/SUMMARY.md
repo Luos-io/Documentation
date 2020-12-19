@@ -5,7 +5,7 @@
     - [Development environment](./pages/low/dev-env.md)
     - [Physical Bus](./pages/low/physical-bus.md)
         - [Electronic design](./pages/low/physical_bus/electronic-design.md)
-        - [Use Luos HAL](./pages/low/physical_bus/Luos-hal.md)
+        - [Use Luos HAL](./pages/low/physical_bus/luos-hal.md)
 	- [Containers](./pages/low/containers.md)
 	    - [Create Luos projects](./pages/low/containers/create-project.md)
 	    - [Create Luos containers](./pages/low/containers/create-containers.md)
