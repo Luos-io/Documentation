@@ -42,8 +42,9 @@ To use and visualize it locally:
 
  - Download and install [Rust](https://www.rust-lang.org/) (at least 1.35) and Cargo
  - Download and install [Visual Studio C++ Community](https://visualstudio.microsoft.com/fr/vs/features/cplusplus/)
+ - Update rust: `rustup update`
  - Install mdBook: `cargo install mdbook`
- - Install linkcheck preprocessor: `cargo install mdbook-linkcheck`
+ - Install various preprocessors for mdBook: `cargo install -f mdbook-variables` and `cargo install mdbook-linkcheck`
  - In the documentation folder, run `mdbook serve`. You will be able to see local changes at `http://localhost:3000`
 
 More information: <a href="https://rust-lang.github.io/mdBook/index.html" target="_blank">Official mdBook documentation</a>
