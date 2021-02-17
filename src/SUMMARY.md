@@ -9,7 +9,7 @@
     - [Hardware Topics](./pages/low/hardware-topics.md)
         - [Minimum Requirements](./pages/low/hardware_topics/minimal-requirements.md)
         - [Electronic design](./pages/low/hardware_topics/electronic-design.md)
-        - [Use Luos HAL](./pages/low/hardware_topics/luos-hal.md)
+        - [Use of Luos HAL](./pages/low/hardware_topics/luos-hal.md)
 	- [Containers](./pages/low/containers.md)
 	    - [Create Luos projects](./pages/low/containers/create-project.md)
 	    - [Create Luos containers](./pages/low/containers/create-containers.md)

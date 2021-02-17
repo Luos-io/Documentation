@@ -1,12 +1,11 @@
-# Minimum Requirements
-Luos Library will use hardware and software MCU ressource. this is the minimum requirement to make Luos Library work properly
+# Minimum requirements
+Luos Library uses hardware and software MCU ressources. Here are the minimum requirements to make Luos Library work properly:
 
 ## MCU consideration
-
 | Hardware | Specification |
 | :---: | :---: | 
-| Flash | Luos Library use less than 15ko of Flash |
-| RAM | Luos Library use at least 2ko of RAM for Library usage and protocol message buffering |
+| Flash | Luos Library uses less than 15ko of Flash memory |
+| RAM | Luos Library uses at least 2ko of RAM for Library usage and protocol message buffering |
 | Stack | 512o | 
 | Heap | 0 needed | 
 | GPIO | 4 in one wire / 6 in RS485  |
