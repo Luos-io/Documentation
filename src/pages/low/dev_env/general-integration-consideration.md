@@ -3,13 +3,13 @@
 ## Library
 Luos works as a code library running on nodes. To match Luos library with your hardware, Luos offers a *Hardware Abstraction Layer* for various devices in <span class="cust_tooltip">LuosHAL<span class="cust_tooltiptext">{{luoshal_def}}</span></span>.  
 
- - <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>: This repository gives you a list of family device covers to match Luos library with your hardware.
+ - <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>: This repository provides a list of family devices coverd to match the Luos library with your hardware.
  - <a href="https://github.com/Luos-io/Luos/tree/master/luos" target="_blank">Luos</a>: This is the main library you will be working with.
 
 To make it work in your environment, you have to:
 
- - Include Luos library folders in your project compilation;
- - Select the right LuosHAL from your family device in LuosHAL folder, and include `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` in your project;
+ - Include the Luos lib folders in your project compilation;
+ - Select the right LuosHAL for your device family in LuosHAL folder, and include `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` in your project;
  - Change, if necessary, `luos_hal_config.h` in you project, the default configuration created by Luos (before including `luos.h`) in order to match LuosHAL with your hardware (eg: match pins with your design);
  - Include `luos.h` on your source file.
 
