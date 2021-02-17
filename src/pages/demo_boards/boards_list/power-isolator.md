@@ -10,7 +10,7 @@
 <img height="50" src="../../../_assets/img/sticker-power.png" title="Power">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/0_electronics_basis/wiring_and_power/Cable_power_isolator" target="_blank">Power isolator</a>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Hardware/wiring_and_power/Cable_power_isolator" target="_blank">Power isolator</a>
 </div>
 
 ## Power isolator board

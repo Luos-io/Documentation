@@ -4,7 +4,7 @@ To create and match with a default reference design, electronic boards must resp
 ## Electronic design
 Board examples and electronic sources are available <a href="https://github.com/Luos-io/Examples/tree/master/Projects" target="_blank">on GitHub</a>. You are free to use them as you want.
 
-You can Find the schematic of a Luos ready board call L0 for a quick hardware example(available <a href="https://github.com/Luos-io/Examples/tree/master/Projects/0_electronics_basis/l0" target="_blank">on GitHub</a>).
+You can Find the schematic of a Luos ready board call L0 for a quick hardware example (available <a href="https://github.com/Luos-io/Examples/tree/master/Hardware/l0" target="_blank">on GitHub</a>).
 
 A Luos-friendly electronic board must contain *at least* the following elements:
  - **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU**</a> (microcontroller unit): It hosts, as a node, the Luos firmware along with the different <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span> (drivers and apps).

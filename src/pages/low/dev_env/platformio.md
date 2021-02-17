@@ -16,7 +16,7 @@ Replace `<board name>` with the name of the board you're using, eg. `board = l0`
 > *Note:* More information about how Luos libs are managed into PlatformIO is available by <a href="https://community.luos.io/t/how-to-link-luos-with-platformio/303" target="\_blank">following this post on our forum</a>.
 
 ### Project examples
-Luos shares a lot of <a href="https://github.com/Luos-io/Examples" target="_blank">code examples</a>, feel free to use and modify them as you want.
+Luos shares a lot of <a href="https://github.com/Luos-io/Examples/tree/master/Projects" target="_blank">code examples</a>, feel free to use and modify them as you want.
 
 ### Demonstration boards
 Luos created [a sets of boards](../../demo_boards/boards-list.md) allowing to easily test the technology.
