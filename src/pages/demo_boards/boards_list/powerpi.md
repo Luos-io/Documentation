@@ -34,7 +34,7 @@ The connection of the Power Pi board to an ODrive board or to a Raspberry Pi boa
 
 Coding on a Raspberry Pi in a device can be quite boring. Generally, you can't connect any screen and keyboard to work properly.
 That's why we created a small piece of code allowing to convert the Gate container stream into Web Socket messages.
-By using this Web Socket, you can connect pyluos or any other lib you created to your Raspberry Pi. This way you can create and execute your device's behaviors directly on your computer.
+By using this Web Socket, you can connect Pyluos or any other lib you created to your Raspberry Pi. This way you can create and execute your device's behaviors directly on your computer.
 When your behavior is complete and tested on your device, you just have to copy it into your Raspberry Pi to obtain an autonomous device.
 
 To setup this pipe on your Raspberry Pi, please <a href="https://community.luos.io/t/create-a-web-socket-pipe-to-luos-network-using-raspberry-pi/197" target="_blank">follow the tutorial on our forum</a>.
@@ -139,7 +139,7 @@ However, **the USB board can’t power the Raspberry Pi board**, because several
 ### Communication mode
 By default, your Raspberry Pi starts a Luos service at boot called *pyluos-usb2ws*. This service creates a pipe between a **websocket** opened on **port 9342**, and the Luos system. If you send standard Luos Json data into this web socket, it is directly sent into the Luos network.
 
-This way, you can control your device from your computer even if it is moving or dispatched. For example, if you are using pyluos to control your device, you can start your program with:
+This way, you can control your device from your computer even if it is moving or dispatched. For example, if you are using Pyluos to control your device, you can start your program with:
 
 ```python
 from pyluos import Device

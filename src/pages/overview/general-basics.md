@@ -1,6 +1,6 @@
 # General guide to Luos technology
 
-Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices</a> architecture for electronics. It's a powerful tool using modularity to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image</a>.
+Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices</a> architecture for electronics. It's a powerful tool using modularity to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image</a>.
 
 This guide contains all the basic notions you will need to use, create and understand Luos technology.
 
@@ -28,12 +28,12 @@ For example, the [Dynamixel board](../demo_boards/boards_list/dxl.md) provided b
 [Go to Containers page](../low/containers.md).
 
 ## Messages
-All containers can share and receive datas using messages.
+All containers can share and receive data using messages.
 
 [Go to Messages handling page](../low/containers/msg-handling.md).
 
 ## Routing table
-A routing table is a "service" managed by the Luos network and available for any containers in any nodes. This service lists all the containers and allows to any containers to get and use basic information of any other containers. The routing table's data can be loaded or auto-generated during detection.
+A routing table is a "service" managed by the Luos network and available for any containers on any nodes. This service lists all the containers on the network and allows any containers to access and use basic information of any other containers. The routing table's data can be loaded or auto-generated during detection.
 
 [Go to Routing table page](../low/containers/routing-table.md).
 
@@ -42,8 +42,8 @@ The container detection assigns IDs to containers depending on their node's phys
 
 IDs are assigned from the nearest to the furthest node branch by branch, from the point of view of the container running the detection. Following this logic, the container running the detection will have the ID 1, the next one will have the ID 2, etc.
 
-> *Note:* Multiple detection by different containers at the same time is not allowed.
+> *Note:* Multiple detections by different containers at the same time is not allowed.
 
-It's possible to detect the network frequently in order to dynamically discover included or excluded containers while running. Go to [Routing table](../low/containers/routing-table.md) page for more informations.
+It is possible to execute a detection on the network frequently in order to dynamically discover included or excluded containers while running. Go to [Routing table](../low/containers/routing-table.md) page for more information.
 
 

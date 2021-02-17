@@ -2,7 +2,7 @@
 To keep interoperability between <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span>, Luos provides an Object Dictionary (OD).
 
 ## What is OD?
-An Object Dictionary (OD) allows different developers of different containers to make them interoperate regardless of the unit they uses on the container.
+An Object Dictionary (OD) allows different developers of different containers to make them interoperate regardless of the unit they use on the container.
 
 Let's take an example: If container1 uses an angle as radians and container2 uses degrees, what is the unit they should use to share the angle information?
 
@@ -46,7 +46,7 @@ float LinearOD_PositionTo_mm(linear_position_t linear_position);
 ```
 
 ### Messages conversions
-The same both way of conversion are available for messages (OD type from message and OD type to message):
+In the same way, both conversion are available for messages (OD type from message and OD type to message):
 
  - **`from` conversion:** Gets a type from a message. Format: `[type]FromMsg([type_var], msg)`
 ```C

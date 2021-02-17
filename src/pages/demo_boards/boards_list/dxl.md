@@ -39,7 +39,7 @@ To be detected, the Dynamixel motors need to use a baudrate of 1 000 000 `baud` 
 When your Dynamixel motors are properly configured, you can connect them to the Luos network. Be sure to respect the following order to have a proper start-up:
 
 1. Connect the {{board}} board to the Luos network and to the Dynamixel motors.
-2. Connect the correct power supply to the luos network.
+2. Connect the correct power supply to the Luos network.
 3. Connect the USB board to your computer.
 4. Wait for the blue LED at the back of the board to turn off.
 

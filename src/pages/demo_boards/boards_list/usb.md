@@ -33,7 +33,7 @@ The right USB port used on this page is the one at the opposite of the 2 Luos co
 
 ## How to use the USB board
 Luos' USB board acts like a serial port on your system.
-To control your device, you have to get and set Json data into the serial port opened by the USB board. In order do that with pyluos, you can use the following python code:
+To control your device, you have to get and set Json data into the serial port opened by the USB board. In order do that with Pyluos, you can use the following python code:
 
 ```python
 from pyluos import Device
@@ -46,7 +46,7 @@ On Windows, a *COM* port is usually used (like `COM1`, `COM2`, `COM3`, etc.). It
 
 ![Port COM](../../../_assets/img/usb-2.png)
 
-Once the port is known, the connexion can be set on pyluos with python:
+Once the port is known, the connexion can be set on Pyluos with python:
 
 ```python
 device = Device('COM27')
@@ -59,7 +59,7 @@ To list the available serial ports, use the following command line:
 ls /dev/cu.usbserial-*
 ```
 
-Once the port is known, the connexion can be set on pyluos with python:
+Once the port is known, the connexion can be set on Pyluos with python:
 
 ```python
 device = Device('/dev/cu.usbserial-DN30VKKB')
@@ -72,7 +72,7 @@ To list the available serial ports, type the following in a terminal:
 dmesg | grep tty
 ```
 
-Once the port is known, the connexion can be set on pyluos with python:
+Once the port is known, the connexion can be set on Pyluos with python:
 
 ```python
 device = Device('/dev/ttyS0')

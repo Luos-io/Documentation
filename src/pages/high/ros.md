@@ -7,7 +7,7 @@ Luos comes with a package for the <a href="https://www.ros.org/" target="_blank"
 
 ROS 2 is the default version but backward compatibility with ROS 1 is ensured via the official ROS 1 bridge. You can get an example of an application using Luos containers in ROS 2 with the <a href="https://github.com/aubrune/luos_bike_alarm_example" target="_blank">bike sharing example</a>.
 
-In this tutorial, we will assume you're using ROS 2. If you want to communicate with a ROS 1 ecosystem, follow this quickstart anyway since ROS 2 needs to be installed and then refer to the [Retrocompatibility with ROS 1](./ros/ros1.md) page.
+In this tutorial, we will assume you're using ROS 2. If you want to communicate with a ROS 1 ecosystem, begin with this quickstart since ROS 2 needs to be installed, and then refer to the [Retrocompatibility with ROS 1](./ros/ros1.md) page.
 
 ## Basics: a few ROS-applied-to-Luos concepts
 
@@ -47,7 +47,7 @@ source ~/ros2_ws/install/setup.bash
 
 ## Get started with Luos in ROS 2
 
-Plug in your Luos gate and other containers, such as Imu, Color or State, and run the broker. It will return the detected containers: 
+Plug in your Luos gate and other containers, such as IMU, Color or State, and run the broker. It will return the detected containers: 
 ```bash
 ~$ ros2 launch luos_interface broker.launch.py
 [INFO] [luos_broker]: Connecting to /dev/ttyUSB0...

@@ -2,7 +2,7 @@
 # Containers communication handling messages
 > **Warning:** Make sure to read and understand how to [Create Luos containers](./create-project.md) before reading this page.
 
-As a developer, you will have to create and use Luos messages to exchange informations between <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span>. In order to do that, you have to understand how messages works.
+As a developer, you will have to create and use Luos messages to exchange information between <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span>. In order to do that, you have to understand how messages work.
 
 ## Message structure
 
@@ -17,12 +17,12 @@ typedef struct{
 
 All messages have a header. A header is a 7-byte field containing all information allowing containers to understand messages context. All containers on the network catch and decode the header of each sent and received message.
 
-`data` is a table containing informations.
+`data` is a table containing data.
 
 > **Info:** MAX_DATA_MSG_SIZE represenst the maximum size of messages (default value is 128 bytes);
 
 ## Header
-To send data to any containers you want, you will have to fill some information on the header.
+To send data to any containers you want, you will have to first fill out some information on the header.
 
 here is the `header_t` structure:
 ```C
@@ -74,10 +74,10 @@ void containers_MsgHandler(container_t *container, msg_t *msg) {
 }
 ```
 
-## container exclusion
+## Container exclusion
 Luos includes an acknowledgement management using the **ID_ACK** target_mode. This mode guaranties the proper reception of critical messages.
 
-If Luos fails to reach its target using ID_ACK, it will retries 10 times. If the acknowledgement still fails, the targeted container is declared excluded. Excluded containers are removed from the routing table to avoid any messaging by any containers, preserving bandwidth for the rest of the system.
+If Luos fails to reach its target using ID_ACK, it will retry, sending up to 10 times. If the acknowledgement still fails, the targeted container is declared excluded. Excluded containers are removed from the routing table to avoid any messaging by any containers, preserving bandwidth for the rest of the system.
 
 ## Large data
 You will sometimes have to deal with large data that could be larger than the maximum 128-byte data on a Luos message. Fortunately, Luos is able to automatically fragment and de-fragment the data above this side. To do that, you will have to use another send function that will take care of setting the messages' size, and the data fields.
@@ -107,7 +107,7 @@ void containers_MsgHandler(container_t *container, msg_t *msg) {
 > **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page](./streaming.md).
 
 ## Time-triggered update messages
-Luos provides a standard command to ask a container to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take useless resources.
+Luos provides a standard command to ask a container to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take up valuable resources.
 In this kind of polling situation, **you can use the time-triggered auto-update features available from any Luos container**. This feature allows you to ask a container to send you an update of any value each X milliseconds.
 To use it, you have to setup targeted container with a message containing a standard time <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span>, but with a specific command associated to it.
 
@@ -124,4 +124,4 @@ Luos_SendMsg(app, &msg);
 
 > **Info:** containers can handle only one time-triggered target, 2 containers of the same network can't ask a time-triggered value from the same container.
 
-> **Warning:** To prevent any ID movement, auto-update configuration is reseted on all containers at each detection (see [Routing table page](./routing-table.md) for more information).
+> **Warning:** To prevent any ID movement, auto-update configuration is reset on all containers on each detection (see [Routing table page](./routing-table.md) for more information).

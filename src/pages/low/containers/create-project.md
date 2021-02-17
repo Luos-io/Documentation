@@ -27,7 +27,7 @@ Putting this code into a <span class="cust_tooltip">node<span class="cust_toolti
 
 ### How to add containers in your project
 A node can host multiple containers, and a container has to be as portable as possible. In order to do that, containers have to be independent code folders that can be easily copied and pasted in another project.<br/>
-To make it at Luos we always use the same way to organize our projects: we put the containers into a `containers` folder and name the containers' code files with the name of each container:
+When designing projects at Luos we always use the same way to organize our code: we put the containers into a `containers` folder and name the containers' code files with the name of each container:
 
 ```AsciiDoc
  Project
@@ -73,9 +73,9 @@ int main(void)
 
 ```
 
-This way, it is easy to manage all your containers and to add as many of them in the `main()` file as you want.
+This way, it is easy to manage all of your containers and to add as many of them as you want in to `main()`.
 
 ### How to use Luos hardware abstraction layer
-To ease the use of Luos Library on a specific target, Luos compagny provides luos_hal.c, luos_hal.h and luos_hal_config.h from LuosHAL folder for a lot of different MCU families. The purpose of these files is to make Los communcation to work directly on the chosen MCU. however, this default configuration for a MCU Family should be adapted to fit with your design. See how to do it on [Luos HAL](../physical_bus/luos-hal.md) page.
+To ease the use of Luos Library on a specific target, the Luos company provides `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` from the LuosHAL folder for a lot of different MCU families. The purpose of these files is to make Luos communcations work directly on the chosen MCU. However, this default configuration for a MCU Family should be adapted to fit your design. See how to do it on the [Luos HAL](../physical_bus/luos-hal.md) page.
 
 
