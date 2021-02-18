@@ -10,7 +10,7 @@
 <img height="50" src="../../../_assets/img/sticker-sensor.png" title="Sensor">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Distance" target="_blank">Distance</a>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/l0/Distance" target="_blank">Distance</a>
 </div>
 
 ## Distance board functions

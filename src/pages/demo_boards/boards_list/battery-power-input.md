@@ -12,7 +12,7 @@
 <img height="50" src="../../../_assets/img/sticker-power.png" title="Power">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/0_electronics_basis/wiring_and_power/XT60_power_input" target="_blank">Battery power input</a>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Hardware/wiring_and_power/XT60_power_input" target="_blank">Battery power input</a>
 </div>
 
 ## How to use the Battery power input board

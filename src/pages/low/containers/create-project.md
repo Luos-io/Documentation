@@ -76,6 +76,6 @@ int main(void)
 This way, it is easy to manage all of your containers and to add as many of them as you want in to `main()`.
 
 ### How to use Luos hardware abstraction layer
-To ease the use of Luos Library on a specific target, the Luos company provides `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` from the LuosHAL folder for a lot of different MCU families. The purpose of these files is to make Luos communcations work directly on the chosen MCU. However, this default configuration for a MCU Family should be adapted to fit your design. See how to do it on the [Luos HAL](../physical_bus/luos-hal.md) page.
 
+To ease the use of Luos Library on a specific target, the Luos company provides `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` from the LuosHAL folder for a lot of different MCU families. The purpose of these files is to make Luos communcations work directly on the chosen MCU. However, this default configuration for a MCU Family should be adapted to fit your design. See how to do it on the [Luos HAL](../hardware_topics/luos-hal.md) page.
 

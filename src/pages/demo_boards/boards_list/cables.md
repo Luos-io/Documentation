@@ -9,7 +9,7 @@
 <p class="cust_indent" markdown="1">N/A
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/0_electronics_basis/" target="_blank">Cables</a>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Hardware/" target="_blank">Cables</a>
 </div>
 
 ## How do the cables work?

@@ -10,7 +10,7 @@
 <img height="50" src="../../../_assets/img/sticker-actuation.png" title="Actuation">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/Controller_motor" target="_blank">Controller_motor</a>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/l0/Controller_motor" target="_blank">Controller_motor</a>
 </div>
 
 ## How to connect your motor-reducer to your boards
