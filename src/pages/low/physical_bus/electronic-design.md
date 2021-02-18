@@ -13,6 +13,6 @@ A Luos-friendly electronic board must contain *at least* the following elements:
  - **At least 2 connectors**: They allow to link boards together into a Luos network (Luos' official connector is: <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">*DF11-8DP-2DS(24)*</a>).
 
  ## Compatible MCUs
- Luos manages any type of microcontrollers, but they need to be added manually to the library. If your microcontroller is not managed yet, please contact us:
+ Luos manages any type of microcontrollers, but they need to be added manually to the library. If your microcontroller is not yet supported, please contact us:
   - by mail: <a href="mailto:hello@luos.io">hello@luos.io</a>
   - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>

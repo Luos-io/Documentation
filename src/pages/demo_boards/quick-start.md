@@ -18,7 +18,7 @@ In the following example, we will make a LED turn on and off by pushing and rele
 #### 1. Configure your computer
 The default tool we use to control a Luos network is a board hosting a [Gate](../high/containers_list/gate.md) container, with a Python lib called [Pyluos](../high/pyluos.md).
 
-To begin, you have to install Python and Pyluos library, following the [pyluos documentation page](../high/pyluos.html).
+To begin, you have to install Python and Pyluos library, following the [Pyluos documentation page](../high/pyluos.html).
 
 #### 2. Plug the boards together
 Plug together all the boards with [cables](./boards_list/cables.md). You can plug them to any of the two connectors of each board, in any order.

@@ -4,26 +4,26 @@
 
 As a developer, you will have bugs. 😲
 
-Finding, understanding, and managing bugs on multiple boards running multiple containers can be really hard. To make your life easier, Luos allows you to get some basic information about the defaults of your system allowing you to react to it.
+Finding, understanding, and managing bugs on multiple boards running multiple containers can be really hard. To make your life easier, Luos allows you to get some basic information about any problems in your system allowing you to adapt to them.
 
 ## Container exclusion
 Luos includes an [acknowledgement management using the **ID_ACK** target_mode](./msg-handling.md). This mode guaranties the proper reception of critical messages.
 
 If Luos fails to reach its target using ID_ACK, it will retry 10 times. If the acknowledgement still fails, the targeted container is declared excluded. Excluded containers are removed from the routing table to avoid any messaging from any containers, preserving bandwidth for the rest of the system.
 
-> **Note:** Gates containers can report container exclusion through Json.
+> **Note:** Gates containers can report container exclusion through JSON.
 
 > **Note:** Pyluos can report container exclusion through Gates.
 
 ## Luos statistics
 Luos monitors some values representing the sanity of your nodes and containers.
 
-> **Note:** Gates containers can report statistics trough Json.
+> **Note:** Gates containers can report statistics trough JSON.
 
 > **Note:** Pyluos can display statistics trough Gates.
 
 ### Node statistics
-In any container you can have access to the host node's statistics values using the `luos_stats_t` structure.
+Inside any container, you can have access to the host node's statistics values using the `luos_stats_t` structure.
 This structure gives you access to several values:
 
  - **memory**: Mmory statisctics information
@@ -46,7 +46,7 @@ You can access node statistics by using `container.statistics`.
 
 ## Assert
 Luos allows you to declare to an entire network a critical failure on a container.
-To manage it, Luos exposes a `LUOS_ASSERT` macro that allows you to test some conditions on it to prevent wrong values.
+To handle it, Luos exposes a `LUOS_ASSERT` macro that allows you to test some conditions on it to prevent wrong values.
 for example:
 ``` C
  LUOS_ASSERT(arg_ptr != NULL);

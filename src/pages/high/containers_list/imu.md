@@ -21,7 +21,7 @@ Imu containers can measure:
 
 By default, the container will send only quaternions to keep a low number of data and avoid bus congestion. Retrieving any other types of measures requires to enable them first.
 
-The easiest way to enable a measure is by using it, as pyluos automatically enables a called measure. For example, to retrieve the linear acceleration value when it’s disabled, you can execute:
+The easiest way to enable a measure is by using it, as Pyluos automatically enables a called measure. For example, to retrieve the linear acceleration value when it’s disabled, you can execute:
 
 ```python
 device.Imu_mod.linear_acceleration

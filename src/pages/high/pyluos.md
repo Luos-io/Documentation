@@ -7,13 +7,13 @@ Pyluos is the standard Python library to manage a Luos system with a computer. I
 ## Installation
 
 ### Required: Installing Python and Pip
-> **Warning:** In order to use Pyluos library, Python and the Pip packet manager must be installed on your computer.
+> **Warning:** In order to use Pyluos library, Python and the Pip package manager must be installed on your computer.
 
 _« Python is a programming language that lets you work more quickly and integrate your systems more effectively. » (<small><a href="https://python.org" target="_blank">Source</a></small>)_
 
 _« <a href="https://pip.pypa.io/en/stable/" target="_blank">Pip</a> is the standard package manager for Python. It allows you to install and manage additional packages that are not part of the Python standard library. » (<small><a href="https://realpython.com/what-is-pip/#getting-started-with-pip" target="_blank">Source</a></small>)_
 
-If Python is not installed on you computer, download and run the last release according to your computer's OS: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>.
+If Python is not installed on your computer, download and run the last release according to your computer's OS: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>.
 
 To install Pip, type the following commands in a console:
 
@@ -38,7 +38,7 @@ pip install jupyter
 ### Installing or updating Pyluos library
 You are now ready to install Pyluos. **The last Pyluos version is `{{last_version_pyluos}}`.**
 
-In a console, the following command will install the *Pyluos* library using the *Pip packet manager*:
+In a console, the following command will install the *Pyluos* library using the *Pip package manager*:
 
 ```bash
 pip install pyluos
@@ -71,7 +71,7 @@ In the browser page that opened, the `New` button creates a new Python file:
 
 ![Jupyter](../../_assets/img/pyluos-2.png)
 
-The Jupyter work-space looks like the following image. On the keyboard,  `Maj+Enter` executes any selected part of code.
+The Jupyter work-space looks like the following image. On the keyboard,  `Shift+Enter` executes any selected part of code.
 
 Now you are ready to code using Python.
 
@@ -94,7 +94,7 @@ Some devices may not work properly with the default USB transfer sizes and laten
 
 **USB Transfer Sizes**: Default value is 4096 Bytes, however if you have issues to use your connected device, you should try the minimum possible values both for `Receive` and `Transmit`.
 
-**Latency Timer**: Default value is 16 msec, but you can rise lower it to the minimal value of 1 msc.
+**Latency Timer**: Default value is 16 msec, but you can rise lower it to the minimal value of 1 msec.
 
 To access to these parameters, open the Device Manager in Windows, and right-click on the *USB Serial Port (COMX)* where your device is connected, then click on *Properties*.
 
@@ -236,7 +236,7 @@ If you use *ipython* or *Jupyter Notebook*, you can use auto-completion using th
 ![Auto-completion](../../_assets/img/pyluos-3.png)
 
 ### Change a container name
-The name of any container can be changed following this code. 
+The name of any container can be changed by using this code: 
 
 ```python
 device.container_alias.rename("new_name")

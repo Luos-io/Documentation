@@ -23,11 +23,11 @@ The returned `container_t*` is a container structure pointer that will be useful
  - **container** is the container pointer of the container receiving the data (basically, it is your container).
  - **msg** is the message your container received.
 
- **type** is the type of the your new container represented by a number. Some basic types (e.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `container_type_t` enum structure of Luos. You can also create your own on top of the luos one.
+ **type** is the type of the your new container represented by a number. Some basic types (e.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `container_type_t` enum structure of Luos. You can also create your own on top of the Luos one.
 
- **default alias** is the alias by default for your new container. e.g. `Mycontainer02`. This alias is the one your container will take if no other alias is set by the user of your functionality hosted in your container. Aliases have a maximum size of 16 characters.
+ **default alias** is the alias by default for your new container. e.g. `Mycontainer02`. This alias is the one your container will use if no other alias is set by the user of your functionality hosted in your container. Aliases have a maximum size of 16 characters.
 
-**revision** is the revision number of the container you are creating and which will be accessible via pyluos.
+**revision** is the revision number of the container you are creating and which will be accessible via Pyluos.
 
 Following the [project rules](./create-project.html#basic-containers-functions), here is a code example for a button container:
 
@@ -55,19 +55,19 @@ To make your development as clean as possible, you have to understand in which c
 By following the categories guidelines, you will be able to make clean and reusable functionalities.
 
 ## Drivers guidelines
-A driver is a type of container that drives hardware. Motors, distance sensors, LEDs are all drivers.
+A driver is a type of container that handles hardware. Motors, distance sensors, LEDs are all drivers.
 
 By designing a driver, you have to keep the following rules in mind:
 
  - A driver container always uses a standard Luos type to be usable by any other containers.
  - A driver container always uses standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures to be usable by any other containers.
- - A driver container never depends or uses any other containers (driver or app).
+ - A driver container never depends on or uses any other containers (driver or app).
  - A driver container is "dumb", as it can't do anything else than manage its hardware feature (but it does it very well).
 
- You can have multiple driver containers on the same <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> managing different hardware functionalities of your board, it is your call to sort them depending on your design.
+ You can have multiple driver containers on the same <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> managing different hardware functionalities of your board, it is up to you to sort them depending on your design.
 
 ## Apps guidelines
-An applications or app is a type of container that only manages software items such as functions or algorithms. Apps use other containers to make your device act, operate, and behave.
+An application or app is a type of container that only manages software items such as functions or algorithms. Apps use other containers to make your device act, operate, and behave.
 Apps can be placed in any <span class="cust_tooltip">[nodes](../../overview/general-basics.html#what-is-a-node)<span class="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
 
 By designing an app, you have to keep the following rules in mind:
@@ -76,4 +76,4 @@ By designing an app, you have to keep the following rules in mind:
  - An app can use custom container types.
  - An app must use standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures. If the structures used are not standard, Gate containers could be completely unable to manage them.
 
-Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every containers in every nodes in your device and make it work properly. Go to [Routing table](./routing-table.md) page for more informations.
+Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every containers in every nodes in your device and make it work properly. Go to the [Routing table](./routing-table.md) page for more information.

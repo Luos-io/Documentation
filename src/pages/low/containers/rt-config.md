@@ -2,7 +2,7 @@
 
 > **Warning:** Make sure to read and understand how to [Create Luos containers](./create-containers.md) before reading this page.
 
-Message callbacks of containers can be really difficult to use when a project include high real-time constraints.<br/>
+Message callbacks of containers can be really difficult to use when a project has high real-time constraints.<br/>
 Luos provides two different configurations allowing you to choose the best way for you to deal with messages.
 The message handling configuration is set during the [initialization of a container](./create-containers.md).
 
@@ -46,9 +46,9 @@ void Button_Loop(void) {
 ```
 
 ## Polling configuration
-This configuration is often used into Arduino libraries to receive information in a basic way. This method allows to manage the messages only when the user wants to do it on the loop of the container.
+This configuration is often used in Arduino libraries to receive information in a basic way. This method allows you handle messages only when the user wants to do it in the loop of the container.
 
-To setup this configuration, you have to create your container without any callback.
+To setup this configuration, you have to create your container without any callbacks.
 
 See the following code as an example, with a button:
 

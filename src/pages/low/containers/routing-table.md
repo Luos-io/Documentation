@@ -1,11 +1,11 @@
 # Routing Table
 > **Warning:** Make sure to read and understand how to [Create Luos containers](./create-containers.md) before reading this page.
 
-The routing table is a feature of Luos allowing every <span class="cust_tooltip">[containers](../../overview/general-basics.md#container)<span class="cust_tooltiptext">{{ container_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows containers to know their physical position and to search and interact with other containers easily.<br/>
+The routing table is a feature of Luos allowing every <span class="cust_tooltip">[container](../../overview/general-basics.md#container)<span class="cust_tooltiptext">{{ container_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows containers to know their physical position and to search and interact with other containers easily.<br/>
 This feature is particularly used by apps containers to find other containers they need to interact with. The routing table is shared by the container which launches the detection to other containers, but only apps containers store the routing table internaly.
 
 ## Detection
-Routing table is automatically generated when a network detections is initiate by a container and shared with other containers at the end of the detection. A detection can be initiated by any container, but driver containers should not be able to run it and this kind of features should be only used on app containers by including routingTable.h an using this routing table API.
+The routing table is automatically generated when a network detections is initiated by a container and shared with other containers at the end of the detection. A detection can be initiated by any container, but driver containers should not be able to run it and this kind of features should be only used on app containers by including routingTable.h an using this routing table API.
 
 To run a detection, type:
 ```C
@@ -76,11 +76,11 @@ For more information, please refer to the [containers](../containers.md) page of
 ### Node entry mode
 This mode gives physical information of your devices.
 
-The **node_id** is the unique number that you can use to identify each one of your nodes. At the beginning or when a reset detection is perfomed, all node ID are set to 0. When RoutingTB_DetectContainers API is called, Luos gives to nodes and containers a unique ID according to your system topology.
+The **node_id** is the unique number that you can use to identify each one of your nodes. At the beginning (or when a reset detection is perfomed), all node IDs are set to 0. When the RoutingTB_DetectContainers API is called, Luos assigns a unique ID to nodes and containers in your system topology.
 
 The **certified** Luos node can be certified for your system by including Luos licencing number in your product (feature in progress).
 
-The **port_table** allows to share topological information of your network. Each element of this table corresponds to a physical Luos port of the node and indicates which node is connected to it by sharing a node's `id`.
+The **port_table** allows sharing of topological information of your network. Each element of this table corresponds to a physical Luos port of the node and indicates which node is connected to it by sharing a node's `id`.
 
 Here is an example:
 

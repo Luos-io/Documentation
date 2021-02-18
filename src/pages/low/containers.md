@@ -10,7 +10,7 @@ Each container is hosted in a single <span class="cust_tooltip">node<span class=
 **As a developer you will always develop your functionalities into containers, and never into the `main()` program.** The only information that should be put on the `main()` code are MCU setup parameters and containers' run functions.
 
 ## Container properties
-To properly work, each container owns some properties allowing to other containers to recognize and access it:
+To properly work, each container has some properties allowing other containers to recognize and access it:
 
 | Name | Description | Format |
 | :---: | :---: | :---: |
