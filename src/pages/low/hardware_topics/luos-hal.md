@@ -71,3 +71,4 @@ There are many possible configurations that you can change, not all of them bein
 | LUOS_TIMER/LUOS_TIMER_IRQ/LUOS_TIMER_IRQHANDLER | Choose Timer, IRQ and callback| Necessary for Timeout |
 | PAGE_SIZE/ADRESS_LAST_PAGE | Defines space in flash for alias| Necessary to rename container alias |
 
+
