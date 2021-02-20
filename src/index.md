@@ -21,7 +21,7 @@ We started designing Luos with the conviction that building electronic systems s
           <ul class="wf_ul">
             <li class="wf_li"><span class="cust_choice"><strong class="cust_number">&#9312;</strong><br />Build a Luos-ready board</span>
               <ul class="wf_ul">
-                <li class="wf_li"><span><a href="./pages/low/electronic-design.md">Read about the <b>electronic design rules</b></a></span>
+                <li class="wf_li"><span><a href="./pages/low/hardware_topics/electronic-design.md">Read about the <b>electronic design rules</b></a></span>
                 	<ul class="wf_ul">
                 		<li class="wf_li"><span><a href="#step2">Go to 2 <strong>&#8599;</strong></a></span>
                 		</li>
