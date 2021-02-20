@@ -12,7 +12,7 @@
 <img height="50" src="../../../_assets/img/sticker-actuation.png" title="Actuation">
 </p>
 <p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/l0/Led_strip" target="_blank">Led strip</a>
+<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/blob/master/Projects/l0/Led_strip" target="_blank">Led strip</a>
 </div>
 
 ## Board function

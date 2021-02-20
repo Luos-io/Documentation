@@ -280,8 +280,8 @@ Parameters are defined by a 16-bit bitfield.
 
 |Object|Definition|Structure|Container(s)|
 |:---:|:---:|:---:|:---:|
-|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Controller_motor/controller_motor.h#L7-L31)|[Stepper](./containers_list/stepper.md), [Controller-motor](./containers_list/controller-motor.md), [Servo](./containers_list/servo.md)|
-|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Drivers/Imu/mpu_configuration.h#L37-L56)|[Imu](./containers_list/imu.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31)|[Stepper](./containers_list/stepper.md), [Controller-motor](./containers_list/controller-motor.md), [Servo](./containers_list/servo.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)|[Imu](./containers_list/imu.md)|
 
 Other specific messages:
 
