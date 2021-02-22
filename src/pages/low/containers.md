@@ -1,11 +1,12 @@
 # Containers
 
-A container is a block of code which is able to communicate with any other containers in the Luos network. 
+A container is a block of code which will provide functionality. Containers are able to communicate with any other containers present in the Luos network. 
 
 A container can be an [application](./containers/create-containers.html#apps-guidelines) or a [driver](./containers/create-containers.html#drivers-guidelines).
 
-Each container provides a particular set of tasks such as managing a motor, handling a laser range finder, or compute an inverse-kinematics.
-Each container is hosted in a single <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> (MCU), but a node can handle several containers at the same time and manage communication between them and between other containers hosted in other nodes, using the same interface.
+Each container provides a particular set of tasks such as managing a motor, handling a laser range finder, or more complex operations like computing an inverse-kinematics.
+
+Each container is hosted in a single <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> (MCU), but a node can handle several containers at the same time and manage communication between them and between other containers hosted in other nodes, using the same network interface.
 
 **As a developer you will always develop your functionalities into containers, and never into the `main()` program.** The only information that should be put on the `main()` code are MCU setup parameters and containers' run functions.
 
