@@ -1,10 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 @import 'variables.css';
 
 @media print {
   h1 {page-break-before: always;}
   h1.no-break {page-break-before: avoid;}
   .print-break {page-break-before: always;}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Mono',sans-serif;
+}
+
+.sidebar-scrollbox{
+	font-family: 'Roboto Mono',sans-serif;
+}
+
+.content main {
+    padding-top: 50px;
+    font-family: 'Roboto Light',sans-serif;
 }
 
 h1.no-break {
@@ -85,7 +99,7 @@ a.cust_menu_item:hover {
   float: left;
   width: 50%;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  /*height: 300px;  Should be removed. Only for demonstration */
   box-sizing: border-box;
 }
 
@@ -150,15 +164,16 @@ table#cust_table caption {
 
 .cust_menu_container{
 	width: 100%;
-	height: 60px;
+	height: 88px;
 	position: fixed;
 	left: 0;
 	top: 0;
-	background-color: #fff;
+	background-color: #161616;
 	flex-direction: column;
-	box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+	/*box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);*/
 	padding-left: 70px;
 	z-index: 10;
+	border-bottom: 1px solid #454545;
 
 	/*margin: auto; /* Center horizontally */
 	/*border: 1px solid #000;*/
@@ -171,23 +186,31 @@ table#cust_table caption {
 }/**/
 
 .cust_column {
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 17.23px;
-	text-decoration: none;
-	color: #333;
+	font-family: 'Roboto Mono',sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
 	height: 60px;
-	line-height: 40px;
+	line-height: 65px;
 	white-space: nowrap;
 	/*border: 1px solid #000;*/
 }
 
 .cust_column a{
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 17.23px;
-	text-decoration: none;
-	color: #333;
-	padding: 10px 6px;
+	font-family: 'Roboto Mono',sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    padding-right: 30px;
 
+}
+
+.cust_right a:hover{
+	color: #bd99ff;
 }
 
 .icon-button{
@@ -196,22 +219,28 @@ table#cust_table caption {
 }
 
 .cust_middle{
+	height:100%;
 	float: left;
 	width: 30%;
 }
 
 .cust_right{
 	float: right;
-	/*width: 30%;
-	border: 1px solid #000;*/
+	height:100%;
+	/*width: 50%;
+	border: 1px solid #fff;*/
 	text-align: right;
-	padding-right: 200px;
+	padding-right: 250px;
 
 }
 
 .cust_logo_container{
+	margin: 0;
+	top: 50%;
+	height:100%;
 	float: left;
 	width: 9%;
+	padding-top: 16px;
 }
 
 .cust_menu_items{
@@ -238,7 +267,7 @@ table#cust_table caption {
 
 
 	.cust_menu_container{
-		height: 150px;
+		height: 180px;
 		margin-bottom: 50px;		
 		width: 100%;
 		padding-left: 0px;

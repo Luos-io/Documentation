@@ -111,7 +111,7 @@
             </script>
 
     		<nav id="sidebar" class="sidebar" aria-label="Table of contents">
-    			<div id="sidebar-scrollbox" class="sidebar-scrollbox" style="padding-top: 60px;">
+    			<div id="sidebar-scrollbox" class="sidebar-scrollbox" style="padding-top: 100px;">
     				{{#toc}}{{/toc}}
     			<p style="marging-bottom: 40px;"><a class="cust_menu_item" href="https://www.luos.io" target="_blank">Go to Luos.io</a></p>
                
@@ -126,16 +126,16 @@
             <div class="cust_menu_container">
 
                 <div class="cust_column cust_logo_container">
-                    <a href="https://docs.luos.io/"><img src="{{ path_to_root }}_assets/img/logo_luos_animated_black.gif" alt="Luos" id="logo" height="33px"></a>
+                    <a href="https://docs.luos.io/"><img src="{{ path_to_root }}_assets/img/logo_luos_animated_white.gif" alt="Luos" id="logo" width="72px"></a>
                 </div>
 
                 <div class="cust_column cust_middle">
 
                     <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar"><i class="fa fa-bars"></i>
                     </button>
-                    <a><button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                         <i class="fa fa-paint-brush"></i>
-                    </button></a>
+                    </button>
                     <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
                         <li role="none"><button role="menuitem" class="theme" id="light">{{ theme_option "Light" }}</button></li>
                         <li role="none"><button role="menuitem" class="theme" id="rust">{{ theme_option "Rust" }}</button></li>
@@ -148,21 +148,18 @@
                         <i class="fa fa-search"></i>
                     </button>
                     {{/if}}
+                    <a href="{{ path_to_root }}print.html" title="Print this documentation" aria-label="Print this book"><i id="print-button" class="fa fa-print" style="padding-left: 5px;transform: translate(0px,1px) scale(0.8);"></i></a>
 
                 </div>
                 <div class="cust_column cust_right">
 
-                    <a title="" href="https://www.luos.io/#technology"><i class="fas fa-microchip"></i> Technology</a>
-
-                    <a title="Download on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io"><i class="fab fa-github fa-lg" aria-hidden="true"></i> Download</a>
-
-                    <a title="Join the Luos Community" href="https://community.luos.io"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i> Community</a>
-
-                    <a title="" href="https://www.luos.io/appstore"><i class="far fa-calendar-check"></i> App'Store</a>
-
-                    <a title="" href="https://www.luos.io/pricing"><i class="far fa-money-bill-alt fa-lg"></i> Pricing</a>
+                    <a title="" target="_blank" href="https://www.luos.io/#technology">Technology</a>
+                    <a title="" target="_blank" href="https://www.luos.io/pricing">Pricing</a>
+                    <a title="" target="_blank" href="https://www.luos.io/appstore">Appstore</a>
+                    <a title="" target="_blank" href="https://www.luos.io/blog">Blog</a>
+                    <a style="color: #bd99ff;">Docs</a>
+                    <a title="Download on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io">Download</a>                    
                     
-                    <a href="{{ path_to_root }}print.html" title="Print this book" aria-label="Print this book"><i id="print-button" class="fa fa-print"></i></a>
 
                 </div>
             </div>
