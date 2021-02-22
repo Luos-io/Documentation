@@ -1,6 +1,6 @@
-<img class="print-break" src="../../_assets/img/json-logo.png" height="100px">
 
-<h1 class="no-break"><a href="#json-api" class="header" id="json-api">JSON API</a></h1>
+
+<h1><a href="#json-api" class="header" id="json-api"><img src="../../_assets/img/json-logo.png" width="80px"> / JSON API</a></h1>
 
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
 To do that, you must add a specific app container called a [Gate](./containers_list/gate.md) on your device.
