@@ -1,6 +1,6 @@
 <h1 class="no-break"><a href="#welcome" class="header" id="welcome">Welcome to Luos documentation</a></h1>
 
-<small>Luos revision: {{last_version_luos}}</small>
+<small><a href="https://github.com/Luos-io/Luos" target="blank">Luos revision: {{last_version_luos}}</a></small>
 
 ## Introduction
 
