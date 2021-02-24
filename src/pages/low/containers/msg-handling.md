@@ -111,7 +111,7 @@ Luos provides a standard command to ask a container to retrieve values from a se
 In this kind of polling situation, **you can use the time-triggered auto-update features available from any Luos container**. This feature allows you to ask a container to send you an update of any value each X milliseconds.
 To use it, you have to setup targeted container with a message containing a standard time <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span>, but with a specific command associated to it.
 
-For example, to update a container each 10ms:
+For example, to update a container each 10 ms:
 ```C
 time_luos_t time = TimeOD_TimeFrom_ms(10);
 msg_t msg;

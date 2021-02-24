@@ -26,7 +26,7 @@ However, it is possible to build a cable from any disired length (see the next s
 If you need a cable with a length not available, you can build one, provided you have electrical wire and two connectors:
 
 - Electrical wire: `AWG 22`
-- Connectors: `DF11-8DS-2C, 2mm`
+- Connectors: `DF11-8DS-2C, 2 mm`
 
 <a href="https://datasheet.octopart.com/DF11-8DS-2C-Hirose-datasheet-15540170.pdf" target="_blank">The datasheet connector is available here</a>.
 
