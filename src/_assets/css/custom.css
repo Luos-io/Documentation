@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Mono',sans-serif;
 }
 
+
 .sidebar-scrollbox{
 	font-family: 'Roboto Mono',sans-serif;
 }
@@ -154,8 +155,13 @@ table#cust_table caption {
 
 /***************** HEADER ********************/
 
+#theme-list{
+	position: fixed;
+	left: 25%;
+}
+
 #search-wrapper{
-	padding-top: 120px;
+	padding-top: 170px;
 }
 
 .content{

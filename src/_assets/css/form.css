@@ -787,7 +787,7 @@ input, input[type="text"], input[type="search"], isindex, textarea, button {
     margin: -10px 0 0 -30px;
 }
 .zf-descFld  blockquote.block_quote {
-    background: url("../images/newQuote.gif") no-repeat scroll 12px 10px rgba(0, 0, 0, 0);
+    background: url("../img/newQuote.gif") no-repeat scroll 12px 10px rgba(0, 0, 0, 0);
     border-left: 3px solid #EFEFEF;
     font: 13px/20px georgia,Arial,verdana,Helvetica,sans-serif;
     margin: 15px 3px 15px 15px;

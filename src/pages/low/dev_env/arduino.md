@@ -17,7 +17,7 @@ https://raw.githubusercontent.com/Luos-io/Arduino_core/main/package_luos_index.j
 
  ![](../../../_assets/img/arduino_Luos_board.png)
 
- 5. Download Luos Library <a href="https://github.com/Luos-io/Luos/releases" target="_blank">on GitHub</a>. 
+ 5. Download Luos Library <a href="https://github.com/Luos-io/Luos/releases/tag/1.1.1" target="_blank">on GitHub &#8599;</a>. 
 
  6.	Include Luos Library to your IDE:
 

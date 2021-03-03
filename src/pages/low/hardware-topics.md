@@ -9,5 +9,5 @@ List of advantages and drawbacks for each bus:
 
 | Network | Advantages | Drawbacks
 | :---: | :---: | :---: |
-| One-wire | Needs only 4 GPIO; Simple; 100% Collision detection | No recessive bit and no collision avoidance; Short distance wires; Less nodes connectable to network; 1Mbps |
-| RS485 | Noise immunity; Long distance wires; 256 nodes connectable to network; 10Mbps  | Needs 6 GPIO and a RS485 tranceiver; Collision avoidance not secured|
+| One-wire | Needs only 4 GPIO; Simple; 100% Collision detection | No recessive bit and no collision avoidance; Short distance wires; Less nodes connectable to network; 1 Mbps |
+| RS485 | Noise immunity; Long distance wires; 256 nodes connectable to network; 10 Mbps  | Needs 6 GPIO and a RS485 tranceiver; Collision avoidance not secured|
