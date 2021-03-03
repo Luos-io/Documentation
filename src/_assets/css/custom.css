@@ -263,12 +263,16 @@ table#cust_table caption {
 		padding-top: 200px;
 	}
 
+	.chapter{
+		padding-top: 92px;
+	}
+
 	.content{
-		padding-top: 200px;
+		padding-top: 212px;
 	}
 
 	#search-wrapper{
-		padding-top: 200px;
+		padding-top: 262px;
 	}
 
 
