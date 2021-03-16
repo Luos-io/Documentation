@@ -17,7 +17,7 @@
     --sidebar-bg: #14191f;
     --sidebar-fg: #c8c9db;
     --sidebar-non-existant: #5c6773;
-    --sidebar-active: #ffb454;
+    --sidebar-active: #bd99ff;
     --sidebar-spacer: #2d334f;
 
     --scrollbar: var(--sidebar-fg);
@@ -25,7 +25,7 @@
     --icons: #737480;
     --icons-hover: #b7b9cc;
 
-    --links: #0096cf;
+    --links: #bd99ff;
 
     --inline-code-color: #ffb454;
 
@@ -57,7 +57,7 @@
     --sidebar-bg: #292c2f;
     --sidebar-fg: #a1adb8;
     --sidebar-non-existant: #505254;
-    --sidebar-active: #3473ad;
+    --sidebar-active: #bd99ff;
     --sidebar-spacer: #393939;
 
     --scrollbar: var(--sidebar-fg);
@@ -65,7 +65,7 @@
     --icons: #43484d;
     --icons-hover: #b3c0cc;
 
-    --links: #2b79a2;
+    --links: #bd99ff;
 
     --inline-code-color: #c5c8c6;;
 
@@ -97,7 +97,7 @@
     --sidebar-bg: #fafafa;
     --sidebar-fg: #364149;
     --sidebar-non-existant: #aaaaaa;
-    --sidebar-active: #008cff;
+    --sidebar-active: #bd99ff;
     --sidebar-spacer: #f4f4f4;
 
     --scrollbar: #cccccc;
@@ -105,7 +105,7 @@
     --icons: #cccccc;
     --icons-hover: #333333;
 
-    --links: #4183c4;
+    --links: #bd99ff;
 
     --inline-code-color: #6e6b5e;
 
@@ -137,7 +137,7 @@
     --sidebar-bg: #282d3f;
     --sidebar-fg: #c8c9db;
     --sidebar-non-existant: #505274;
-    --sidebar-active: #2b79a2;
+    --sidebar-active: #bd99ff;
     --sidebar-spacer: #2d334f;
 
     --scrollbar: var(--sidebar-fg);
@@ -145,7 +145,7 @@
     --icons: #737480;
     --icons-hover: #b7b9cc;
 
-    --links: #2b79a2;
+    --links: #bd99ff;
 
     --inline-code-color: #c5c8c6;;
 
@@ -177,7 +177,7 @@
     --sidebar-bg: #3b2e2a;
     --sidebar-fg: #c8c9db;
     --sidebar-non-existant: #505254;
-    --sidebar-active: #e69f67;
+    --sidebar-active: #bd99ff;
     --sidebar-spacer: #45373a;
 
     --scrollbar: var(--sidebar-fg);
@@ -185,7 +185,7 @@
     --icons: #737480;
     --icons-hover: #262625;
 
-    --links: #2b79a2;
+    --links: #bd99ff;
 
     --inline-code-color: #6e6b5e;
 
@@ -218,7 +218,7 @@
         --sidebar-bg: #292c2f;
         --sidebar-fg: #a1adb8;
         --sidebar-non-existant: #505254;
-        --sidebar-active: #3473ad;
+        --sidebar-active: #bd99ff;
         --sidebar-spacer: #393939;
 
         --scrollbar: var(--sidebar-fg);
@@ -226,7 +226,7 @@
         --icons: #43484d;
         --icons-hover: #b3c0cc;
 
-        --links: #2b79a2;
+        --links: #bd99ff;
 
         --inline-code-color: #c5c8c6;;
 
