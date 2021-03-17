@@ -36,6 +36,11 @@ a.cust_menu_item:hover {
     color: var(--sidebar-active);
 }
 
+a.cust_red_link {
+	color: #ff5100;
+	cursor: pointer;
+}
+
 /*******************  HOVER OVER DEFINITION  *******************/
 
 .cust_tooltip {
