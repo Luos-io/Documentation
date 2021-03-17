@@ -462,7 +462,7 @@ vertical-align: top;
     background-color:#fff;
 }
 .tree span:hover {
-	background-color:#e5eecc;
+	background-color:#75dbc7;
 }
 .tree span.cust_basics {
 	border: dashed 1px;
@@ -473,7 +473,7 @@ vertical-align: top;
 }
 .tree :target {
 	/*border: double;*/
-	background-color:#e5eecc;
+	background-color:#75dbc7;
 }
 
 /* vertical connectors */
