@@ -25,6 +25,7 @@ Luos manages any type of microcontrollers, but they need to be added manually to
  - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
 ## PTP
+peer to peer connection between node for topology detection
 ### Daisy-chain
 with 2 PTP pin par board you must chained you device
 ![](../../../_assets/img/daisy_chain.png)
