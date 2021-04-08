@@ -8,7 +8,7 @@ You can Find the schematic of a Luos ready board call L0 for a quick hardware ex
 
 A Luos-friendly electronic board must contain *at least* the following elements:
  - **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU**</a> (microcontroller unit): It hosts, as a node, the Luos firmware along with the different <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span> (drivers and apps).
- - **At least 2 connectors**: They allow to link boards together into a Luos network as a daisy-chain. Througt PTP pin, nodes knows if there is another node connect on connector. this is use when you want to make a topology detection of your system
+ - **At least 2 connectors**: They allow to link boards together into a Luos network as a daisy-chain. Through PTP pins, nodes know if there is another node connected to the connector. This is used when the user wants to make a topology detection of the system.
 
 
 ## One-wire reference design
@@ -25,11 +25,12 @@ Luos manages any type of microcontrollers, but they need to be added manually to
  - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
 ## PTP
-peer to peer connection between node for topology detection
+Peer-to-peer connection between nodes for topology detection.
+
 ### Daisy-chain
-with 2 PTP pin par board you must chained you device
+With 2 PTP pins per board, you must chained you device as below:
 ![](../../../_assets/img/daisy_chain.png)
 
 ### Star Mounting
-with at least 3 PTP pin par board you can create a star monting configuration
+With at least 3 PTP pins per board, you can create a star mounting configuration:
 ![](../../../_assets/img/star_mounting.png)

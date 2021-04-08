@@ -15,15 +15,15 @@ To make it work in your environment, you have to:
 
 ## Configuration
 
-Through a configuration file, <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc" target="_blank">config.h</a>, Luos allows user to customize many parameters needed for the library. these parameters can be set as compiler variables listed above:
+Through the configuration file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h</a>, Luos allows users to customize many parameters needed for the library. These parameters can be set as compiler variables listed above:
 
 | Parameters | Defaults value | Description |
 | :---: | :---: | :---: |
-| PROTOCOL_REVISION | 0 | Luos protocol version |
-| DEFAULTBAUDRATE | 1Mbps | Default network bauderate |
-| MAX_DATA_MSG_SIZE | 128 | Number of bytes of the data field |
-| NBR_NAK_RETRY | 10 | Number of retries to send after a received NAK |
-| MAX_CONTAINER_NUMBER | 5 | Number of containers in the node (memory optimisation) |
-| MSG_BUFFER_SIZE | 3*size_msg | Message buffer size. size max of a message(3 * (7 bytes header + 128 bytes data + 2 bytes CRC)) |
-| MAX_MSG_NB | 2*MAX_CONTAINER_NUMBER | Number max of message for container that can be buffered |
-| NBR_PORT | 2 | Number of PTP on the node ( max 8). see [electronic design](../hardware_topics/electronic-design.md).|
+| PROTOCOL_REVISION | 0 | Luos protocol version. |
+| DEFAULTBAUDRATE | 1Mbps | Default network bauderate. |
+| MAX_DATA_MSG_SIZE | 128 | Number of bytes of the data field. |
+| NBR_NAK_RETRY | 10 | Number of retries to send after a received NAK. |
+| MAX_CONTAINER_NUMBER | 5 | Number of containers in the node (memory optimisation). |
+| MSG_BUFFER_SIZE | 3*size_msg | Message buffer size. Max size of a message (3 * (7 bytes header + 128 bytes data + 2 bytes CRC)). |
+| MAX_MSG_NB | 2*MAX_CONTAINER_NUMBER | Max number of messages for a container that can be buffered. |
+| NBR_PORT | 2 | Number of PTP on the node ( max 8). See [electronic design](../hardware_topics/electronic-design.md) page.|

@@ -26,21 +26,21 @@ Luos monitors some values representing the sanity of your nodes and containers.
 Inside any container, you can have access to the host node's statistics values using the `luos_stats_t` structure.
 This structure gives you access to several values:
 
- - **memory**: Memory statisctics information
-     - **rx_msg_stack_ratio**: Prcentage of memory occupation of rx message management tasks
-     - **luos_stack_ratio**: Percentage of memory occupation of luos tasks
-     - **tx_msg_stack_ratio**: Prcentage of memory occupation of tx message management tasks
-     - **buffer_occupation_ratio**: Prcentage of memory occupation of the message buffer
-     - **msg_drop_number**: Number of messages dropped due to a lack of memory (older messages are dropped to be replaced by new ones)
+ - **memory**: Memory statisctics information.
+     - **rx_msg_stack_ratio**: Percentage of memory occupation of Rx message management tasks.
+     - **luos_stack_ratio**: Percentage of memory occupation of Luos tasks.
+     - **tx_msg_stack_ratio**: Percentage of memory occupation of Tx message management tasks.
+     - **buffer_occupation_ratio**: Percentage of memory occupation of the message buffer.
+     - **msg_drop_number**: Number of messages dropped due to a lack of memory (older messages are dropped to be replaced by new ones).
  - **max_loop_time_ms**: Maximum time in ms between luos_loop executions.
 
 You can access to node statistics by using `container.node_statistics`.
 
 ### Container statistics
 In any container you have access to statistics values using the `container_stats_t` structure.
-This structure gives you access to a specific container statistic value:
+This structure gives you access to a specific container's statistic value:
 
- - **max_retry**: Maximum number of send retries due to a NAK or collision with another container
+ - **max_retry**: Maximum number of sent retries due to a NAK or collision with another container.
 
 You can access node statistics by using `container.statistics`.
 

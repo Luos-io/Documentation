@@ -14,7 +14,7 @@ Luos Library uses hardware and software MCU ressources. Here are the minimum req
 ## Network consideration
 | MCU frequency | Bus frequency |
 | :---: | :---: |
-| >=48 Mhz | 1 Mbps |
-| >=32 Mhz | 500 kbps |
-| >=16 Mhz | 250 kbps |
-| >=8 Mhz | 100 kbps |
+| >=48 MHz | 1 Mbps |
+| >=32 MHz | 500 kbps |
+| >=16 MHz | 250 kbps |
+| >=8 MHz | 100 kbps |
