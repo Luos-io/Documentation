@@ -220,7 +220,7 @@ Here is the list of all values that can be used by containers:
 |pedometer|Steps number value|
 |walk_time|Walk time value|
 |luos_revision|Luos's version|
-|luos_statistics|Luos's memory usage statistics \[Message stack, Luos stack, Dropped messages, Loop delay, Fail ratio, Nak max number, Collision max number\]|
+|luos_statistics|Luos's memory usage statistics \[Rx stack, Luos stack, Tx stack, Dropped messages, Loop delay, Send retry max number\]|
 
 
 Here is an exemple of a message sent by a Potentiometer container about the rotation angle of the associated potentiometer:

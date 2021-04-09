@@ -57,7 +57,7 @@ To send a message you have to:
  6) Set your data
  7) Send it.
 
-Here is a basic reply example that you can find in a container reception callback:
+Below is a basic reply example that you can find in a container reception callback. For more information on handling a message received, see [Real-time configuration](./rt-config.md) page.
 ```c
 void containers_MsgHandler(container_t *container, msg_t *msg) {
     if (msg->header.cmd == ASK_PUB_CMD) {
@@ -72,6 +72,11 @@ void containers_MsgHandler(container_t *container, msg_t *msg) {
         return;
     }
 }
+```
+> **Note:** the function _Luos_SendMsg_ return an error_status that informw user if the message was stored in buffer and is ready to be sent. User can monitor the return value and make a blocking statement to be sure that the message is ready to be sent.
+
+```c
+while(Luos_SendMsg(container, &pub_msg) ! SUCCEED);
 ```
 
 ## Container exclusion
