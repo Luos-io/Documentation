@@ -4,7 +4,7 @@ To create and match with a default reference design, electronic boards must resp
 ## Electronic design
 Board examples and electronic sources are available <a href="https://github.com/Luos-io/Examples/tree/master/Projects" target="_blank">on GitHub</a>. You are free to use them as you want.
 
-You can Find the schematic of a Luos ready board call L0 for a quick hardware example (available <a href="https://github.com/Luos-io/Examples/tree/master/Hardware/l0" target="_blank">on GitHub</a>).
+You can find the schematic of a Luos-ready board called L0 <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">on Github<a> for a quick hardware example.
 
 A Luos-friendly electronic board must contain *at least* the following elements:
  - **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU**</a> (microcontroller unit): It hosts, as a node, the Luos firmware along with the different <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span> (drivers and apps).
@@ -20,7 +20,7 @@ Luos' One-wire official connector is: <a href="https://octopart.com/df11-4dp-2ds
 Luos' RS485 official connector is: <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">*DF11-8DP-2DS*</a>.
 
 ## Compatible MCUs
-Luos manages any type of microcontrollers, but they need to be added manually to the library. If your microcontroller is not supported yet, please contact us:
+Luos can manage any type of microcontrollers as long as they are first added to the library manually. If your microcontroller is not supported yet, please contact us:
  - by mail: <a href="mailto:hello@luos.io">hello@luos.io</a>
  - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
