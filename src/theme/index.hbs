@@ -154,13 +154,12 @@
                 </div>
                 <div class="cust_column cust_right">
 
-                    <a title="" target="_blank" href="https://www.luos.io/#technology">Technology</a>
-                    <a title="" target="_blank" href="https://www.luos.io/pricing">Pricing</a>
-                    <a title="" target="_blank" href="https://www.luos.io/appstore">Appstore</a>
-                    <a title="" target="_blank" href="https://www.luos.io/blog">Blog</a>
-                    <a style="color: #bd99ff;">Docs</a>
-                    <a title="Download on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io">Download</a>                    
-                    
+                    <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/#technology">Technology</a></div>
+                    <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/pricing">Pricing</a></div>
+                    <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/appstore">Appstore</a></div>
+                    <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/blog">Blog</a></div>
+                    <div class="cust_menu_inline"><a style="color: #bd99ff;">Docs</a></div>
+                    <div class="cust_menu_inline"><a title="Download on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io">Download</a></div>
 
                 </div>
             </div>
@@ -194,40 +193,7 @@
 
                     <div id="content" class="content">
                         <main>
-                            {{{ content }}}
-
-                            <div class="cust_edit_page"><a id="gh_link">Contribute to this page</a>&nbsp;|&nbsp;<a id="feedback" class="cust_red_link" onclick="openFeedback()">This page wasn't helpful? &#128078;</a></div><div align="right" style="float: right; height: 30px; width: 400px; position: relative; top: -18px;"><a class="github-button" href="https://github.com/Luos-io" data-show-count="true" aria-label="Follow @Luos-io on GitHub">Follow @Luos-io</a>&nbsp;<a class="github-button" href="https://github.com/Luos-io/Luos/subscription" data-icon="octicon-eye" data-show-count="true" aria-label="Watch Luos-io/Luos on GitHub">Watch</a>&nbsp;<a class="github-button" href="https://github.com/Luos-io/Luos" data-icon="octicon-star" data-show-count="true" aria-label="Star Luos-io/Luos on GitHub">Star</a></div>
-
-                            
-                            <script language="javascript">
-                                // Contribute to this page's href address
-                                var page = window.location.pathname.slice(0, -4)+'md';
-                                document.getElementById('gh_link').href = 'https://github.com/Luos-io/doc/tree/master/src'+page;
-                                
-                            </script>
-
-
-                            <script language="javascript">
-                                // Open the new window for feedback page
-                                function openFeedback() {
-                                  var myWindow = window.open("", "MsgWindow", "toolbar=yes,scrollbars=no,resizable=no,width=550,height=280");
-                                  myWindow.document.write("<!DOCTYPE HTML><html><head><title>Luos documentation feedback</title><style>body{font-family: 'Roboto', sans-serif;} .zf-fmFooter .zf-submitColor{ font-size:14px; padding:4px 10px;}.zf-submitColor{ color: #fff; border:1px solid; border-color: #2F9EEC #1988D6 1988D6; background: #2596e6; background: -webkit-gradient(linear, left top, left bottom, from(#2f9eec), to(#1988d6)); background: moz-linear-gradienttop,  #2f9eec,  #1988d6); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f9eec', endColorstr='#1988d6'); moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); text-shadow:0 1px 0 rgba(0, 0, 0, 0.25);  } .zf-submitColor:hover{ background: #1988d6; background: -webkit-gradient(linear, left top, left bottom, from(#1988d6), to(#1988d6)); background: -moz-linear-gradient(top,  #1988d6,  #1988d6);   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1988d6', endColorstr='#1988d6'); }textarea#details_feedback{  width: 90%;  height: 100px;  padding: 12px 12px;  margin: 8px 0;  display: inline-block;  border: 1px solid #ccc;  border-radius: 4px;  box-sizing: border-box;}</style></head><body><div style=\"margin: 20px 0 20px 0; padding: 10px 20px 20px 20px; width: 90%; background-color: #efefef;\" id=\"feedback-block\"><form action=\'https://forms.zohopublic.eu/luosio/form/Thumbsurvey/formperma/BlTjwTQeX5v3FQDKFEHW5NNUgyllNOKxC-9a5miMlSw/htmlRecords/submit\' name=\'form\' method=\'POST\' onSubmit=\'javascript:document.charset=\"UTF-8\"; return zf_ValidateAndSubmit();\' accept-charset=\'UTF-8\' enctype=\'multipart/form-data\' id=\'form\'><input type=\"hidden\" name=\"zf_referrer_name\" value=\"\"><input type=\"hidden\" name=\"zf_redirect_url\" value=\"\"><input type=\"hidden\" name=\"zc_gad\" value=\"\"><div style=\"margin: 5px 5px 5px 0px; color: #333; font-size: 1.5em;\">Help us to improve our documentation.<\/div><div style=\"margin: 0 0 0 10px; padding: 0 0 0 15px; border-left: 2px solid #ccc\"<label style=\"color: #909090; font-size: 0.9em; font-style: italic;\">Add details to help us improve this page: <\/label><div><textarea id=\"details_feedback\" name=\"MultiLine\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine_error\" style=\"display:none;\">Invalid value<\/p><\/div><label style=\"display:none;\">window.location.href <\/label><div style=\"display:none;\"><textarea id=\"pageLocation\" name=\"MultiLine1\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine1_error\" class=\"zf-errorMessage\" style=\"display:none;\">Invalid value<\/p><\/div><button class=\"zf-submitColor\" style=\"margin-top: 12px;\">Submit<\/button><\/div><\/form><\/div><script type=\"text/javascript\">var zf_DateRegex = new RegExp(\"^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$\"); var zf_MandArray = []; var zf_FieldArray = [ \"MultiLine\", \"MultiLine1\"];var isSalesIQIntegrationEnabled = false; var salesIQFieldsArray = []; document.getElementById(\'pageLocation\').value = window.location.href;<\/script></body>");
-                                }
-                            </script>
-
-
-                            <br />
-
-                                <!-- newsletter subscription -->
-                                <iframe frameborder="0" style="height:200px;width:99%;border:none;" src='https://luos.maillist-manage.eu/ua/Optin?od=12ba7e1d8761&zx=14ac451cc1&lD=1b0211bfd6a6409&n=11699f74e8efc17&sD=1b0211bfd6dd285'></iframe>
-
-
-                            <br />
-
-                            <div class="cust_footer">
-                                <p align="center">©2018-2020 <a href="https://www.luos.io">Luos.io</a></p>
-                            </div>
-
+                            {{{ content }}}   
                         </main>
 
                         <nav class="nav-wrapper" aria-label="Page navigation">
@@ -262,6 +228,42 @@
                         </a>
                     {{/next}}
                 </nav>
+
+                <footer id="footer">
+                    <div class="cust_edit_page">
+                        <a id="gh_link">Contribute to this page</a>&nbsp;|&nbsp;<a id="feedback" class="cust_red_link" onclick="openFeedback()">This page wasn't helpful? &#128078;</a>
+                    </div>
+                    <div align="right" style="float: right; height: 30px; width: 400px; position: relative; top: -13px;">
+                        <a class="github-button" href="https://github.com/Luos-io" data-show-count="true" aria-label="Follow @Luos-io on GitHub">Follow @Luos-io</a>&nbsp;<a class="github-button" href="https://github.com/Luos-io/Luos/subscription" data-icon="octicon-eye" data-show-count="true" aria-label="Watch Luos-io/Luos on GitHub">Watch</a>&nbsp;<a class="github-button" href="https://github.com/Luos-io/Luos" data-icon="octicon-star" data-show-count="true" aria-label="Star Luos-io/Luos on GitHub">Star</a>
+                    </div>
+                    
+                    <script language="javascript">
+                        // Contribute to this page's href address
+                        var page = window.location.pathname.slice(0, -4)+'md';
+                        document.getElementById('gh_link').href = 'https://github.com/Luos-io/doc/tree/master/src'+page;
+                        
+                    </script>
+
+                    <script language="javascript">
+                        // Open the new window for feedback page
+                        function openFeedback() {
+                          var mywidth = 550;
+                          var myheight = 280;
+                          var myleft = (screen.width - mywidth) /2 ;
+                          var mytop = (screen.height - myheight) / 4;
+                          var myWindow = window.open("", "MsgWindow", "toolbar=yes,scrollbars=no,resizable=no,width="+mywidth+",height="+myheight+",left="+myleft+",top="+mytop);
+                          myWindow.document.write("<!DOCTYPE HTML><html><head><title>Luos documentation feedback</title><style>body{font-family: 'Roboto', sans-serif;} .zf-fmFooter .zf-submitColor{ font-size:14px; padding:4px 10px;}.zf-submitColor{ color: #fff; border:1px solid; border-color: #2F9EEC #1988D6 1988D6; background: #2596e6; background: -webkit-gradient(linear, left top, left bottom, from(#2f9eec), to(#1988d6)); background: moz-linear-gradienttop,  #2f9eec,  #1988d6); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f9eec', endColorstr='#1988d6'); moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); text-shadow:0 1px 0 rgba(0, 0, 0, 0.25);  } .zf-submitColor:hover{ background: #1988d6; background: -webkit-gradient(linear, left top, left bottom, from(#1988d6), to(#1988d6)); background: -moz-linear-gradient(top,  #1988d6,  #1988d6);   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1988d6', endColorstr='#1988d6'); }textarea#details_feedback{  width: 90%;  height: 100px;  padding: 12px 12px;  margin: 8px 0;  display: inline-block;  border: 1px solid #ccc;  border-radius: 4px;  box-sizing: border-box;}</style></head><body><div style=\"margin: 20px 0 20px 0; padding: 10px 20px 20px 20px; width: 90%; background-color: #efefef;\" id=\"feedback-block\"><form action=\'https://forms.zohopublic.eu/luosio/form/Thumbsurvey/formperma/BlTjwTQeX5v3FQDKFEHW5NNUgyllNOKxC-9a5miMlSw/htmlRecords/submit\' name=\'form\' method=\'POST\' onSubmit=\'javascript:document.charset=\"UTF-8\"; return zf_ValidateAndSubmit();\' accept-charset=\'UTF-8\' enctype=\'multipart/form-data\' id=\'form\'><input type=\"hidden\" name=\"zf_referrer_name\" value=\"\"><input type=\"hidden\" name=\"zf_redirect_url\" value=\"\"><input type=\"hidden\" name=\"zc_gad\" value=\"\"><div style=\"margin: 5px 5px 5px 0px; color: #333; font-size: 1.5em;\">Help us to improve our documentation.<\/div><div style=\"margin: 0 0 0 10px; padding: 0 0 0 15px; border-left: 2px solid #ccc\"<label style=\"color: #909090; font-size: 0.9em; font-style: italic;\">Add details to help us improve this page: <\/label><div><textarea id=\"details_feedback\" name=\"MultiLine\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine_error\" style=\"display:none;\">Invalid value<\/p><\/div><label style=\"display:none;\">window.location.href <\/label><div style=\"display:none;\"><textarea id=\"pageLocation\" name=\"MultiLine1\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine1_error\" class=\"zf-errorMessage\" style=\"display:none;\">Invalid value<\/p><\/div><button class=\"zf-submitColor\" style=\"margin-top: 12px;\">Submit<\/button><\/div><\/form><\/div><script type=\"text/javascript\">var zf_DateRegex = new RegExp(\"^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$\"); var zf_MandArray = []; var zf_FieldArray = [ \"MultiLine\", \"MultiLine1\"];var isSalesIQIntegrationEnabled = false; var salesIQFieldsArray = []; document.getElementById(\'pageLocation\').value = window.location.href;<\/script></body>");
+                        }
+                    </script>
+
+                    <br />
+
+                    <!-- newsletter subscription -->
+                    <iframe frameborder="0" style="height:110px;width:99%;border:none;" src='https://luos.maillist-manage.eu/ua/Optin?od=12ba7e1d8761&zx=14ac451cc1&lD=1b0211bfd6a6409&n=11699f74e8efc17&sD=1b0211bfd6dd285'></iframe>
+
+                    <div style="font-size: 10px; margin: auto; padding-bottom: 15px; width: 50%; text-align: center;" >©2018-2021 <a href="https://www.luos.io">Luos.io</a></div>
+                    </div>
+                </footer>
 
             </div>
 
