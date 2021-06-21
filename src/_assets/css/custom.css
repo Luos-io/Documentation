@@ -28,9 +28,10 @@
     width: 65%;
 }
 
-.cust_menu_inline{
-	display: inline-block;
-}
+.cust_menu_element{
+	display: inline;
+	flex-direction: row;
+}/**/
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Mono',sans-serif;
@@ -184,9 +185,21 @@ table#cust_table caption {
 
 /***************** HEADER ********************/
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 #theme-list{
 	position: fixed;
-	left: 25%;
+	left: 40%;
+}
+
+#cust_separator {
+	color: #aaa;
+	position: inline-block;
 }
 
 #search-wrapper{
@@ -205,15 +218,10 @@ table#cust_table caption {
 	top: 0;
 	background-color: #161616;
 	flex-direction: column;
-	/*box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);*/
 	padding-left: 70px;
 	z-index: 10;
-	border-bottom: 1px solid #454545;
-
-	/*margin: auto; /* Center horizontally */
-	/*border: 1px solid #000;*/
 }
-
+/*
 .cust_menu_container:after {
   content: "";
   display: table;
@@ -253,19 +261,19 @@ table#cust_table caption {
 	cursor: pointer;
 }
 
-.cust_middle{
+/*.cust_middle{
 	height:100%;
 	float: left;
 	width: 30%;
-}
+}/**/
 
-.cust_right{
-	float: right;
-	height:100%;
-	/*width: 50%;
-	border: 1px solid #fff;*/
-	text-align: left;
-	/*padding-right: 00px;*/
+.cust_right {
+	position: absolute;
+	right: 0;
+	/*float: right;*/
+	height: 100%;
+	text-align: right;
+	direction: rtl; /* fonctionne mais inverse l'ordre des éléments */
 }
 
 .cust_logo_container{
@@ -338,6 +346,10 @@ table#cust_table caption {
 
 	.cust_shift{
 		padding-top: 150px;
+	}
+
+	.cust_right {
+		top: 88px;
 	}
 
 
