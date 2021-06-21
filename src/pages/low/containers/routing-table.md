@@ -5,7 +5,7 @@ The routing table is a feature of Luos allowing every <span class="cust_tooltip"
 This feature is particularly used by apps containers to find other containers they need to interact with. The routing table is shared by the container which launches the detection to other containers, but only apps containers store the routing table internaly.
 
 ## Detection
-The routing table is automatically generated when a network detections is initiated by a container and shared with other containers at the end of the detection. A detection can be initiated by any container, but driver containers should not be able to run it and this kind of features should be only used on app containers by including routingTable.h an using this routing table API.
+The routing table is automatically generated when a network detections is initiated by a container. It is then shared with other containers at the end of the detection. A detection can be initiated by any container, but driver containers should not be able to run it; this kind of features should be only used with app containers by including routingTable.h and using this routing table API.
 
 To run a detection, type:
 ```C

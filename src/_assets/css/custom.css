@@ -8,6 +8,30 @@
   .print-break {page-break-before: always;}
 }
 
+
+#page-wrapper {
+	position: relative;
+	min-height: 100vh;
+}
+
+.page {
+	padding-bottom: 200px;
+}
+
+#footer {
+	vertical-align: bottom;
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; 
+    width: 65%;
+}
+
+.cust_menu_inline{
+	display: inline-block;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Mono',sans-serif;
 }
@@ -240,9 +264,8 @@ table#cust_table caption {
 	height:100%;
 	/*width: 50%;
 	border: 1px solid #fff;*/
-	text-align: right;
-	padding-right: 250px;
-
+	text-align: left;
+	/*padding-right: 00px;*/
 }
 
 .cust_logo_container{
