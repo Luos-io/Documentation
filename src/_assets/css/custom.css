@@ -233,12 +233,12 @@ html {
     color: #fff;
     font-size: 16px;
     font-weight: 400;
-    text-align: center;
+    text-align: right;
     text-decoration: none;
 	height: 60px;
 	line-height: 65px;
 	white-space: nowrap;
-	/*border: 1px solid #000;*/
+	border: 1px solid #fff;/**/
 }
 
 .cust_column a{
@@ -261,10 +261,12 @@ html {
 	cursor: pointer;
 }
 
-/*.cust_middle{
+.cust_middle{
 	height:100%;
-	float: left;
 	width: 30%;
+	position: absolute;
+	text-align: right;
+	float: right;
 }/**/
 
 .cust_right {
