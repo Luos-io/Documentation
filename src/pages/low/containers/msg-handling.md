@@ -85,7 +85,9 @@ Luos includes an acknowledgement management using the **ID_ACK** target_mode. Th
 If Luos fails to reach its target using ID_ACK, it will retry, sending up to 10 times. If the acknowledgement still fails, the targeted container is declared excluded. Excluded containers are removed from the routing table to avoid any messaging by any containers, preserving bandwidth for the rest of the system.
 
 ## Large data
-You will sometimes have to deal with large data that could be larger than the maximum 128-byte data on a Luos message. Fortunately, Luos is able to automatically fragment and de-fragment the data above this side. To do that, you will have to use another send function that will take care of setting the messages' size, and the data fields.
+You will sometimes have to deal with large data that could be larger than the maximum 128-byte data on a Luos message. Fortunately, Luos is able to automatically fragment and de-fragment the data above this size. In order to do that, instead of using `Luos_SendMsg()` function, you will have to use the `Luos_SendData()` function, that will take care of setting the messages' size and the data fields. This function is responsible for separating each message with a data size larger than 128 bytes into multiple messages. The size parameter is equal to the full data size decremented by the size of the data that have already been sent. 
+
+For instance, if you have a message with a data size equal to 256 bytes, it will be divided in 2 separated messages each one with a size of 128 bytes. The size's field of the header is equal to 256 bytes for the first message and 128 bytes for the second.
 
 For example, here is how to send a picture:
 ```c
@@ -108,6 +110,8 @@ void containers_MsgHandler(container_t *container, msg_t *msg) {
     }
 }
 ```
+
+In the above example, the *send* function used sent the pixels of the image in multiple messages of 128-byte data. Then the *receive* function remerged the full image after receiving each separated message.
 
 > **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page](./streaming.md).
 
