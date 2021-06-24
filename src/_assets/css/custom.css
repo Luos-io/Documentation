@@ -45,8 +45,11 @@ html {
 #top_menu_logo {
 	height: 100%;
 	float: left;
-	padding-top: 6px;
 	padding-left: 70px;
+}
+
+#top_menu_logo a {
+	padding-top: 6px;
 }
 
 #top_menu_icons {
