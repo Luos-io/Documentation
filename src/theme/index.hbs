@@ -1,6 +1,15 @@
 <!DOCTYPE HTML>
 <html lang="{{ language }}" class="sidebar-visible no-js {{ default_theme }}">
     <head>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M73ZRR4');</script>
+        <!-- End Google Tag Manager -->
+
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 
         <!-- Book generated using mdBook -->
@@ -65,296 +74,301 @@
     </head>
     <body>
 
-            <!-- Provide site root to javascript -->
-            <script type="text/javascript">
-                var path_to_root = "{{ path_to_root }}";
-                var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "{{ preferred_dark_theme }}" : "{{ default_theme }}";
-            </script>
-    		
-            <!-- Work around some values being stored in localStorage wrapped in quotes -->
-            <script type="text/javascript">
-                try {
-                    var theme = localStorage.getItem('mdbook-theme');
-                    var sidebar = localStorage.getItem('mdbook-sidebar');
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M73ZRR4"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
 
-                    if (theme.startsWith('"') && theme.endsWith('"')) {
-                        localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                    }
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "{{ path_to_root }}";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "{{ preferred_dark_theme }}" : "{{ default_theme }}";
+        </script>
+		
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
 
-                    if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                        localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                    }
-                } catch (e) { }
-            </script>
-
-            <!-- Set the theme before any content is loaded, prevents flash -->
-            <script type="text/javascript">
-                var theme;
-                try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-                if (theme === null || theme === undefined) { theme = default_theme; }
-                var html = document.querySelector('html');
-                html.classList.remove('no-js')
-                html.classList.remove('{{ default_theme }}')
-                html.classList.add(theme);
-                html.classList.add('js');
-            </script>
-
-            <!-- Hide / unhide sidebar before it is displayed -->
-            <script type="text/javascript">
-                var html = document.querySelector('html');
-                var sidebar = 'hidden';
-                if (document.body.clientWidth >= 1080) {
-                    try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                    sidebar = sidebar || 'visible';
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
                 }
-                html.classList.remove('sidebar-visible');
-                html.classList.add("sidebar-" + sidebar);
-            </script>
 
-    		<nav id="sidebar" class="sidebar" aria-label="Table of contents">
-    			<div id="sidebar-scrollbox" class="sidebar-scrollbox" style="padding-top: 100px;">
-    				{{#toc}}{{/toc}}
-    			<p style="marging-bottom: 40px;"><a class="cust_menu_item" href="https://www.luos.io" target="_blank">Go to Luos.io &#8599;</a></p>
-               
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('{{ default_theme }}')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+		<nav id="sidebar" class="sidebar" aria-label="Table of contents">
+			<div id="sidebar-scrollbox" class="sidebar-scrollbox" style="padding-top: 100px;">
+				{{#toc}}{{/toc}}
+			<p style="marging-bottom: 40px;"><a class="cust_menu_item" href="https://www.luos.io" target="_blank">Go to Luos.io &#8599;</a></p>
+           
+            </div>
+
+
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <script src="https://kit.fontawesome.com/e122236495.js" crossorigin="anonymous"></script>
+
+        <div class="cust_menu_container">
+
+            <div class="cust_column cust_logo_container">
+                <a href="https://docs.luos.io/"><img src="{{ path_to_root }}_assets/img/logo_luos_animated_white.gif" alt="Luos" id="logo" width="72px"></a>
+            </div>
+
+            <div class="cust_column cust_middle">
+
+                <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar"><i class="fa fa-bars"></i>
+                </button>
+                <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                    <i class="fa fa-paint-brush"></i>
+                </button>
+                <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                    <li role="none"><button role="menuitem" class="theme" id="light">{{ theme_option "Light" }}</button></li>
+                    <li role="none"><button role="menuitem" class="theme" id="rust">{{ theme_option "Rust" }}</button></li>
+                    <li role="none"><button role="menuitem" class="theme" id="coal">{{ theme_option "Coal" }}</button></li>
+                    <li role="none"><button role="menuitem" class="theme" id="navy">{{ theme_option "Navy" }}</button></li>
+                    <li role="none"><button role="menuitem" class="theme" id="ayu">{{ theme_option "Ayu" }}</button></li>
+                </ul>
+                {{#if search_enabled}}
+                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                    <i class="fa fa-search"></i>
+                </button>
+                {{/if}}
+                <a href="{{ path_to_root }}print.html" title="Print this documentation" aria-label="Print this book"><i id="print-button" class="fa fa-print" style="padding-left: 5px;transform: translate(0px,1px) scale(0.8);"></i></a>
+
+            </div>
+            <div class="cust_column cust_right">
+
+                <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/#technology">Technology</a></div>
+                <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/pricing">Pricing</a></div>
+                <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/appstore">Appstore</a></div>
+                <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/blog">Blog</a></div>
+                <div class="cust_menu_inline"><a style="color: #bd99ff;">Docs</a></div>
+                <div class="cust_menu_inline"><a title="Download on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io">Download</a></div>
+
+            </div>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                {{> header}}
+
+                {{#if search_enabled}}
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
                 </div>
+                {{/if}}
 
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
 
-                <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+                <div id="content" class="content">
+                    <main>
+                        {{{ content }}}   
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        {{#previous}}
+                            <a rel="prev" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        {{/previous}}
+
+                        {{#next}}
+                            <a rel="next" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        {{/next}}
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                {{#previous}}
+                    <a rel="prev" href="{{ path_to_root }}{{link}}" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                {{/previous}}
+
+                {{#next}}
+                    <a rel="next" href="{{ path_to_root }}{{link}}" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                {{/next}}
             </nav>
 
-            <script src="https://kit.fontawesome.com/e122236495.js" crossorigin="anonymous"></script>
-
-            <div class="cust_menu_container">
-
-                <div class="cust_column cust_logo_container">
-                    <a href="https://docs.luos.io/"><img src="{{ path_to_root }}_assets/img/logo_luos_animated_white.gif" alt="Luos" id="logo" width="72px"></a>
+            <footer id="footer">
+                <div class="cust_edit_page">
+                    <a id="gh_link">Contribute to this page</a>&nbsp;|&nbsp;<a id="feedback" class="cust_red_link" onclick="openFeedback()">This page wasn't helpful? &#128078;</a>
                 </div>
-
-                <div class="cust_column cust_middle">
-
-                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar"><i class="fa fa-bars"></i>
-                    </button>
-                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                        <i class="fa fa-paint-brush"></i>
-                    </button>
-                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                        <li role="none"><button role="menuitem" class="theme" id="light">{{ theme_option "Light" }}</button></li>
-                        <li role="none"><button role="menuitem" class="theme" id="rust">{{ theme_option "Rust" }}</button></li>
-                        <li role="none"><button role="menuitem" class="theme" id="coal">{{ theme_option "Coal" }}</button></li>
-                        <li role="none"><button role="menuitem" class="theme" id="navy">{{ theme_option "Navy" }}</button></li>
-                        <li role="none"><button role="menuitem" class="theme" id="ayu">{{ theme_option "Ayu" }}</button></li>
-                    </ul>
-                    {{#if search_enabled}}
-                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                        <i class="fa fa-search"></i>
-                    </button>
-                    {{/if}}
-                    <a href="{{ path_to_root }}print.html" title="Print this documentation" aria-label="Print this book"><i id="print-button" class="fa fa-print" style="padding-left: 5px;transform: translate(0px,1px) scale(0.8);"></i></a>
-
+                <div align="right" style="float: right; height: 30px; width: 400px; position: relative; top: -13px;">
+                    <a class="github-button" href="https://github.com/Luos-io" data-show-count="true" aria-label="Follow @Luos-io on GitHub">Follow @Luos-io</a>&nbsp;<a class="github-button" href="https://github.com/Luos-io/Luos/subscription" data-icon="octicon-eye" data-show-count="true" aria-label="Watch Luos-io/Luos on GitHub">Watch</a>&nbsp;<a class="github-button" href="https://github.com/Luos-io/Luos" data-icon="octicon-star" data-show-count="true" aria-label="Star Luos-io/Luos on GitHub">Star</a>
                 </div>
-                <div class="cust_column cust_right">
-
-                    <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/#technology">Technology</a></div>
-                    <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/pricing">Pricing</a></div>
-                    <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/appstore">Appstore</a></div>
-                    <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/blog">Blog</a></div>
-                    <div class="cust_menu_inline"><a style="color: #bd99ff;">Docs</a></div>
-                    <div class="cust_menu_inline"><a title="Download on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io">Download</a></div>
-
-                </div>
-            </div>
-
-            <div id="page-wrapper" class="page-wrapper">
-
-                <div class="page">
-                    {{> header}}
-
-                    {{#if search_enabled}}
-                    <div id="search-wrapper" class="hidden">
-                        <form id="searchbar-outer" class="searchbar-outer">
-                            <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                        </form>
-                        <div id="searchresults-outer" class="searchresults-outer hidden">
-                            <div id="searchresults-header" class="searchresults-header"></div>
-                            <ul id="searchresults">
-                            </ul>
-                        </div>
-                    </div>
-                    {{/if}}
-
-                    <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                    <script type="text/javascript">
-                        document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                        document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                        Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                            link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                        });
-                    </script>
-
-                    <div id="content" class="content">
-                        <main>
-                            {{{ content }}}   
-                        </main>
-
-                        <nav class="nav-wrapper" aria-label="Page navigation">
-                            <!-- Mobile navigation buttons -->
-                            {{#previous}}
-                                <a rel="prev" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                    <i class="fa fa-angle-left"></i>
-                                </a>
-                            {{/previous}}
-
-                            {{#next}}
-                                <a rel="next" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            {{/next}}
-
-                            <div style="clear: both"></div>
-                        </nav>
-                    </div>
-                </div>
-
-                <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    {{#previous}}
-                        <a rel="prev" href="{{ path_to_root }}{{link}}" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                    {{/previous}}
-
-                    {{#next}}
-                        <a rel="next" href="{{ path_to_root }}{{link}}" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    {{/next}}
-                </nav>
-
-                <footer id="footer">
-                    <div class="cust_edit_page">
-                        <a id="gh_link">Contribute to this page</a>&nbsp;|&nbsp;<a id="feedback" class="cust_red_link" onclick="openFeedback()">This page wasn't helpful? &#128078;</a>
-                    </div>
-                    <div align="right" style="float: right; height: 30px; width: 400px; position: relative; top: -13px;">
-                        <a class="github-button" href="https://github.com/Luos-io" data-show-count="true" aria-label="Follow @Luos-io on GitHub">Follow @Luos-io</a>&nbsp;<a class="github-button" href="https://github.com/Luos-io/Luos/subscription" data-icon="octicon-eye" data-show-count="true" aria-label="Watch Luos-io/Luos on GitHub">Watch</a>&nbsp;<a class="github-button" href="https://github.com/Luos-io/Luos" data-icon="octicon-star" data-show-count="true" aria-label="Star Luos-io/Luos on GitHub">Star</a>
-                    </div>
+                
+                <script language="javascript">
+                    // Contribute to this page's href address
+                    var page = window.location.pathname.slice(0, -4)+'md';
+                    document.getElementById('gh_link').href = 'https://github.com/Luos-io/doc/tree/master/src'+page;
                     
-                    <script language="javascript">
-                        // Contribute to this page's href address
-                        var page = window.location.pathname.slice(0, -4)+'md';
-                        document.getElementById('gh_link').href = 'https://github.com/Luos-io/doc/tree/master/src'+page;
-                        
-                    </script>
+                </script>
 
-                    <script language="javascript">
-                        // Open the new window for feedback page
-                        function openFeedback() {
-                          var mywidth = 550;
-                          var myheight = 280;
-                          var myleft = (screen.width - mywidth) /2 ;
-                          var mytop = (screen.height - myheight) / 4;
-                          var myWindow = window.open("", "MsgWindow", "toolbar=yes,scrollbars=no,resizable=no,width="+mywidth+",height="+myheight+",left="+myleft+",top="+mytop);
-                          myWindow.document.write("<!DOCTYPE HTML><html><head><title>Luos documentation feedback</title><style>body{font-family: 'Roboto', sans-serif;} .zf-fmFooter .zf-submitColor{ font-size:14px; padding:4px 10px;}.zf-submitColor{ color: #fff; border:1px solid; border-color: #2F9EEC #1988D6 1988D6; background: #2596e6; background: -webkit-gradient(linear, left top, left bottom, from(#2f9eec), to(#1988d6)); background: moz-linear-gradienttop,  #2f9eec,  #1988d6); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f9eec', endColorstr='#1988d6'); moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); text-shadow:0 1px 0 rgba(0, 0, 0, 0.25);  } .zf-submitColor:hover{ background: #1988d6; background: -webkit-gradient(linear, left top, left bottom, from(#1988d6), to(#1988d6)); background: -moz-linear-gradient(top,  #1988d6,  #1988d6);   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1988d6', endColorstr='#1988d6'); }textarea#details_feedback{  width: 90%;  height: 100px;  padding: 12px 12px;  margin: 8px 0;  display: inline-block;  border: 1px solid #ccc;  border-radius: 4px;  box-sizing: border-box;}</style></head><body><div style=\"margin: 20px 0 20px 0; padding: 10px 20px 20px 20px; width: 90%; background-color: #efefef;\" id=\"feedback-block\"><form action=\'https://forms.zohopublic.eu/luosio/form/Thumbsurvey/formperma/BlTjwTQeX5v3FQDKFEHW5NNUgyllNOKxC-9a5miMlSw/htmlRecords/submit\' name=\'form\' method=\'POST\' onSubmit=\'javascript:document.charset=\"UTF-8\"; return zf_ValidateAndSubmit();\' accept-charset=\'UTF-8\' enctype=\'multipart/form-data\' id=\'form\'><input type=\"hidden\" name=\"zf_referrer_name\" value=\"\"><input type=\"hidden\" name=\"zf_redirect_url\" value=\"\"><input type=\"hidden\" name=\"zc_gad\" value=\"\"><div style=\"margin: 5px 5px 5px 0px; color: #333; font-size: 1.5em;\">Help us to improve our documentation.<\/div><div style=\"margin: 0 0 0 10px; padding: 0 0 0 15px; border-left: 2px solid #ccc\"<label style=\"color: #909090; font-size: 0.9em; font-style: italic;\">Add details to help us improve this page: <\/label><div><textarea id=\"details_feedback\" name=\"MultiLine\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine_error\" style=\"display:none;\">Invalid value<\/p><\/div><label style=\"display:none;\">window.location.href <\/label><div style=\"display:none;\"><textarea id=\"pageLocation\" name=\"MultiLine1\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine1_error\" class=\"zf-errorMessage\" style=\"display:none;\">Invalid value<\/p><\/div><button class=\"zf-submitColor\" style=\"margin-top: 12px;\">Submit<\/button><\/div><\/form><\/div><script type=\"text/javascript\">var zf_DateRegex = new RegExp(\"^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$\"); var zf_MandArray = []; var zf_FieldArray = [ \"MultiLine\", \"MultiLine1\"];var isSalesIQIntegrationEnabled = false; var salesIQFieldsArray = []; document.getElementById(\'pageLocation\').value = window.location.href;<\/script></body>");
-                        }
-                    </script>
-
-                    <br />
-
-                    <!-- newsletter subscription -->
-                    <iframe frameborder="0" style="height:110px;width:99%;border:none;" src='https://luos.maillist-manage.eu/ua/Optin?od=12ba7e1d8761&zx=14ac451cc1&lD=1b0211bfd6a6409&n=11699f74e8efc17&sD=1b0211bfd6dd285'></iframe>
-
-                    <div style="font-size: 10px; margin: auto; padding-bottom: 15px; width: 50%; text-align: center;" >©2018-2021 <a href="https://www.luos.io">Luos.io</a></div>
-                    </div>
-                </footer>
-
-            </div>
-
-            {{#if livereload}}
-            <!-- Livereload script (if served using the cli tool) -->
-            <script type="text/javascript">
-                var socket = new WebSocket("{{{livereload}}}");
-                socket.onmessage = function (event) {
-                    if (event.data === "reload") {
-                        socket.close();
-                        location.reload();
+                <script language="javascript">
+                    // Open the new window for feedback page
+                    function openFeedback() {
+                      var mywidth = 550;
+                      var myheight = 280;
+                      var myleft = (screen.width - mywidth) /2 ;
+                      var mytop = (screen.height - myheight) / 4;
+                      var myWindow = window.open("", "MsgWindow", "toolbar=yes,scrollbars=no,resizable=no,width="+mywidth+",height="+myheight+",left="+myleft+",top="+mytop);
+                      myWindow.document.write("<!DOCTYPE HTML><html><head><title>Luos documentation feedback</title><style>body{font-family: 'Roboto', sans-serif;} .zf-fmFooter .zf-submitColor{ font-size:14px; padding:4px 10px;}.zf-submitColor{ color: #fff; border:1px solid; border-color: #2F9EEC #1988D6 1988D6; background: #2596e6; background: -webkit-gradient(linear, left top, left bottom, from(#2f9eec), to(#1988d6)); background: moz-linear-gradienttop,  #2f9eec,  #1988d6); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f9eec', endColorstr='#1988d6'); moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); box-shadow:0 1px 2px rgba(0, 0, 0, 0.15); text-shadow:0 1px 0 rgba(0, 0, 0, 0.25);  } .zf-submitColor:hover{ background: #1988d6; background: -webkit-gradient(linear, left top, left bottom, from(#1988d6), to(#1988d6)); background: -moz-linear-gradient(top,  #1988d6,  #1988d6);   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1988d6', endColorstr='#1988d6'); }textarea#details_feedback{  width: 90%;  height: 100px;  padding: 12px 12px;  margin: 8px 0;  display: inline-block;  border: 1px solid #ccc;  border-radius: 4px;  box-sizing: border-box;}</style></head><body><div style=\"margin: 20px 0 20px 0; padding: 10px 20px 20px 20px; width: 90%; background-color: #efefef;\" id=\"feedback-block\"><form action=\'https://forms.zohopublic.eu/luosio/form/Thumbsurvey/formperma/BlTjwTQeX5v3FQDKFEHW5NNUgyllNOKxC-9a5miMlSw/htmlRecords/submit\' name=\'form\' method=\'POST\' onSubmit=\'javascript:document.charset=\"UTF-8\"; return zf_ValidateAndSubmit();\' accept-charset=\'UTF-8\' enctype=\'multipart/form-data\' id=\'form\'><input type=\"hidden\" name=\"zf_referrer_name\" value=\"\"><input type=\"hidden\" name=\"zf_redirect_url\" value=\"\"><input type=\"hidden\" name=\"zc_gad\" value=\"\"><div style=\"margin: 5px 5px 5px 0px; color: #333; font-size: 1.5em;\">Help us to improve our documentation.<\/div><div style=\"margin: 0 0 0 10px; padding: 0 0 0 15px; border-left: 2px solid #ccc\"<label style=\"color: #909090; font-size: 0.9em; font-style: italic;\">Add details to help us improve this page: <\/label><div><textarea id=\"details_feedback\" name=\"MultiLine\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine_error\" style=\"display:none;\">Invalid value<\/p><\/div><label style=\"display:none;\">window.location.href <\/label><div style=\"display:none;\"><textarea id=\"pageLocation\" name=\"MultiLine1\" checktype=\"c1\" maxlength=\"65535\"><\/textarea><p id=\"MultiLine1_error\" class=\"zf-errorMessage\" style=\"display:none;\">Invalid value<\/p><\/div><button class=\"zf-submitColor\" style=\"margin-top: 12px;\">Submit<\/button><\/div><\/form><\/div><script type=\"text/javascript\">var zf_DateRegex = new RegExp(\"^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$\"); var zf_MandArray = []; var zf_FieldArray = [ \"MultiLine\", \"MultiLine1\"];var isSalesIQIntegrationEnabled = false; var salesIQFieldsArray = []; document.getElementById(\'pageLocation\').value = window.location.href;<\/script></body>");
                     }
-                };
+                </script>
 
-                window.onbeforeunload = function() {
+                <br />
+
+                <!-- newsletter subscription -->
+                <iframe frameborder="0" style="height:110px;width:99%;border:none;" src='https://luos.maillist-manage.eu/ua/Optin?od=12ba7e1d8761&zx=14ac451cc1&lD=1b0211bfd6a6409&n=11699f74e8efc17&sD=1b0211bfd6dd285'></iframe>
+
+                <div style="font-size: 10px; margin: auto; padding-bottom: 15px; width: 50%; text-align: center;" >©2018-2021 <a href="https://www.luos.io">Luos.io</a></div>
+                </div>
+            </footer>
+
+        </div>
+
+        {{#if livereload}}
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("{{{livereload}}}");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
                     socket.close();
+                    location.reload();
                 }
-            </script>
-            {{/if}}
+            };
 
-            {{#if google_analytics}}
-            <!-- Google Analytics Tag -->
-            <script type="text/javascript">
-                var localAddrs = ["localhost", "127.0.0.1", ""];
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        {{/if}}
 
-                // make sure we don't activate google analytics if the developer is
-                // inspecting the book locally...
-                if (localAddrs.indexOf(document.location.hostname) === -1) {
-                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        {{#if google_analytics}}
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
 
-                    ga('create', '{{google_analytics}}', 'auto');
-                    ga('send', 'pageview');
-                }
-            </script>
-            {{/if}}
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-            {{#if playpen_line_numbers}}
-            <script type="text/javascript">
-                window.playpen_line_numbers = true;
-            </script>
-            {{/if}}
-            
-            {{#if playpen_copyable}}
-            <script type="text/javascript">
-                window.playpen_copyable = true;
-            </script>
-            {{/if}}
+                ga('create', '{{google_analytics}}', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        {{/if}}
 
-            {{#if playpen_js}}
-            <script src="{{ path_to_root }}ace.js" type="text/javascript" charset="utf-8"></script>
-            <script src="{{ path_to_root }}editor.js" type="text/javascript" charset="utf-8"></script>
-            <script src="{{ path_to_root }}mode-rust.js" type="text/javascript" charset="utf-8"></script>
-            <script src="{{ path_to_root }}theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-            <script src="{{ path_to_root }}theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
-            {{/if}}
+        {{#if playpen_line_numbers}}
+        <script type="text/javascript">
+            window.playpen_line_numbers = true;
+        </script>
+        {{/if}}
+        
+        {{#if playpen_copyable}}
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        {{/if}}
 
-            {{#if search_js}}
-            <script src="{{ path_to_root }}elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-            <script src="{{ path_to_root }}mark.min.js" type="text/javascript" charset="utf-8"></script>
-            <script src="{{ path_to_root }}searcher.js" type="text/javascript" charset="utf-8"></script>
-            {{/if}}
+        {{#if playpen_js}}
+        <script src="{{ path_to_root }}ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ path_to_root }}editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ path_to_root }}mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ path_to_root }}theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ path_to_root }}theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        {{/if}}
 
-            <script src="{{ path_to_root }}clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-            <script src="{{ path_to_root }}highlight.js" type="text/javascript" charset="utf-8"></script>
-            <script src="{{ path_to_root }}book.js" type="text/javascript" charset="utf-8"></script>
+        {{#if search_js}}
+        <script src="{{ path_to_root }}elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ path_to_root }}mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ path_to_root }}searcher.js" type="text/javascript" charset="utf-8"></script>
+        {{/if}}
 
-            <!-- Custom JS scripts -->
-            {{#each additional_js}}
-            <script type="text/javascript" src="{{ ../path_to_root }}{{this}}"></script>
-            {{/each}}
+        <script src="{{ path_to_root }}clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ path_to_root }}highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ path_to_root }}book.js" type="text/javascript" charset="utf-8"></script>
 
-            {{#if is_print}}
-            {{#if mathjax_support}}
-            <script type="text/javascript">
-            window.addEventListener('load', function() {
-                MathJax.Hub.Register.StartupHook('End', function() {
-                    window.setTimeout(window.print, 100);
-                });
-            });
-            </script>
-            {{else}}
-            <script type="text/javascript">
-            window.addEventListener('load', function() {
+        <!-- Custom JS scripts -->
+        {{#each additional_js}}
+        <script type="text/javascript" src="{{ ../path_to_root }}{{this}}"></script>
+        {{/each}}
+
+        {{#if is_print}}
+        {{#if mathjax_support}}
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
                 window.setTimeout(window.print, 100);
             });
-            </script>
-            {{/if}}
-            {{/if}}
+        });
+        </script>
+        {{else}}
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        {{/if}}
+        {{/if}}
 
 
     </body>
