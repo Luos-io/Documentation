@@ -36,7 +36,7 @@ We started designing Luos with the conviction that building electronic systems s
                 		<li class="wf_li"><span><a href="./pages/low/containers.md">Read about <b>containers</b> and how they work
 </a></span>
                 			<ul class="wf_ul">
-                				<li class="wf_li"><span><a href="./pages/low/containers/create-project.md">Create a <b>project</b></a><br /> and <br /><a href="./pages/low/containers/create-containers.md">start creating <b>containers</b></a></span>
+                				<li class="wf_li"><span><a href="./pages/low/containers/create-project.md">Create a <b>project</b></a><br /> then <br /><a href="./pages/low/containers/create-containers.md">start creating <b>containers</b></a> and <a href="./pages/low/containers/use-profiles.md"><b>profiles</b></a></span>
                 					<ul class="wf_ul">
                 						<li class="wf_li"><span>Learn more about the tools and configurations available with Luos:<br /> 
 											&#8594; <a href="./pages/low/containers/od.md"><b>Object dictionary</b></a><br />

@@ -13,6 +13,7 @@
 	- [Containers](./pages/low/containers.md)
 	    - [Create Luos projects](./pages/low/containers/create-project.md)
 	    - [Create Luos containers](./pages/low/containers/create-containers.md)
+	    - [Use Luos profiles](./pages/low/containers/use-profiles.md)
 	    - [Object dictionary](./pages/low/containers/od.md)
 	    - [Messages handling](./pages/low/containers/msg-handling.md)
 	    - [Routing table](./pages/low/containers/routing-table.md)
