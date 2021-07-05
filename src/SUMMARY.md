@@ -20,6 +20,7 @@
 	    - [Self-healing](./pages/low/containers/self-healing.md)
 	    - [Streaming](./pages/low/containers/streaming.md)
 		- [Codes Examples](./pages/low/containers/examples.md)
+	- [Tools](./pages/low/tools.md)
 - [High level](./pages/high/high-level.md)
     - [JSON API](./pages/high/json-api.md)
     - [Pyluos](./pages/high/pyluos.md)
