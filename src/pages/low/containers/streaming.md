@@ -102,5 +102,3 @@ void Motor_MsgHandler(container_t *container, msg_t *msg) {
 }
 ```
 The `Luos_SendStreaming` function sends available data on your streaming channel. You can continue to feed your channel with samples at the same time.
-
-> **Warning:** This example doesn't work if your container is configured as real-time. Please read [Message Handling configuration page](./rt-config.md) for more informations.

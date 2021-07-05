@@ -57,7 +57,7 @@ To send a message you have to:
  6) Set your data
  7) Send it.
 
-Below is a basic reply example that you can find in a container reception callback. For more information on handling a message received, see [Real-time configuration](./rt-config.md) page.
+Below is a basic reply example that you can find in a container reception callback. For more information on handling a message received, see [message handling configuration](./handling-config.md) page.
 ```c
 void containers_MsgHandler(container_t *container, msg_t *msg) {
     if (msg->header.cmd == ASK_PUB_CMD) {

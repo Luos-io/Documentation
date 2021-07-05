@@ -18,7 +18,7 @@
 	    - [Messages handling](./pages/low/containers/msg-handling.md)
 	    - [Self-healing](./pages/low/containers/self-healing.md)
 	    - [Streaming](./pages/low/containers/streaming.md)
-	    - [Real-time configuration](./pages/low/containers/rt-config.md)
+	    - [Message Handling configurations](./pages/low/containers/handling-config.md)
 		- [Codes Examples](./pages/low/containers/examples.md)
 - [High level](./pages/high/high-level.md)
     - [JSON API](./pages/high/json-api.md)

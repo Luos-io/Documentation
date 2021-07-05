@@ -1,4 +1,4 @@
-# Message Handling configuration
+# Message Handling configurations
 
 > **Warning:** Make sure to read and understand how to [Create Luos containers](./create-containers.md) before reading this page.
 
