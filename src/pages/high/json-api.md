@@ -5,10 +5,6 @@
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
 To do that, you must add a specific app container called a [Gate](./containers_list/gate.md) on your device.
 
-The [Gate container](./containers_list/gate.md) is an app that converts Luos messages from a device's network into JSON data format, and the other way from JSON to Luos messages.<br/>
-The Gate container can be hosted into different kinds of <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
-
-> **Warning:** The Gate container refreshes sensors information as fast as it can, so that can be intensive to Luos bandwidth.
 
 ## How to start using the JSON API
 Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate container.<br/>
