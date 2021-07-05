@@ -1,7 +1,7 @@
 # Controller-motor board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> controller_moto</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../high/containers_list/controller-motor.md">Controller motor</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../software/containers_list/controller-motor.md">Controller motor</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/controller-motor-container.png"></p>
@@ -40,6 +40,6 @@ This board is able to control DC motors with a reduction and a sensor (usually c
 
 The Controller-motor board provides a PID control on the output position, and PID control on the output speed, taking into account the reducer and the encoder.
 
-You can find basic information about PID control here: <a href="https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661" target="_blank">**An introduction to PID control with DC motor**</a> and a example code to tune your PID on the [Controller motor container](../../high/containers_list/controller-motor.md) page of this documentation.
+You can find basic information about PID control here: <a href="https://medium.com/luosrobotics/an-introduction-to-pid-control-with-dc-motor-1fa3b26ec661" target="_blank">**An introduction to PID control with DC motor**</a> and a example code to tune your PID on the [Controller motor container](../../software/containers_list/controller-motor.md) page of this documentation.
 
 

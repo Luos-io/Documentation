@@ -93,7 +93,7 @@ Specific values taken by `port_table`:
  - **0**: this port is waiting to discover who is connected with. You should never see this value.
  - **0x0FFF**: this port is not connected to any other Node.
 
-> **Note:** Routing tables can be easily displayed using [Pyluos](../../high/pyluos.md) through a [USB gate](../../high/containers_list/gate.md). Please refer to the [Pyluos routing table section](../../high/pyluos.md#routing-table-display) for more information.
+> **Note:** Routing tables can be easily displayed using [Pyluos](../../software/pyluos.md) through a [USB gate](../../software/containers_list/gate.md). Please refer to the [Pyluos routing table section](../../software/pyluos.md#routing-table-display) for more information.
 
 ## Search tools
 The routing table library provides the following search tools to find containers and nodes' information into a Luos network:

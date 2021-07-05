@@ -131,7 +131,7 @@ Only once the connection is set it is possible to start programming behaviors.
 
 ### Routing table display
 
-[Routing table](../low/containers/routing-table.md) can be easily displayed using Pyluos.
+[Routing table](../embedded/containers/routing-table.md) can be easily displayed using Pyluos.
 
 Pyluos can displays a list of all the containers by filtering the routing table, and their associated characteristics (type, alias and ID).
 To display it, use the following command:
@@ -205,7 +205,7 @@ device.container_alias.type
 ```
 `container_alias` being the alias you got from the previous listing.
 
-> **Note:** *Unknown* container types are defaulty set for custom container types such as some [Luos apps](../low/containers/create-containers.md).
+> **Note:** *Unknown* container types are defaulty set for custom container types such as some [Luos apps](../embedded/containers/create-containers.md).
 
 ### Get and set containers informations
 Once you have detected your containers, you can use these information like variables.

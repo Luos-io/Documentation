@@ -1,7 +1,7 @@
 # GPIO board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> analog_read_P1, analog_read_P7, analog_read_P8, analog_read_P9, digit_read_P5, digit_read_P6, digit_write_P2, digit_write_P3, digit_write_P4</p>
-<p class="cust_sheet-title" markdown="1"><strong>Types:</strong> <a href="../../high/containers_list/state.md">State</a>, <a href="../../high/containers_list/voltage.md">Voltage</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Types:</strong> <a href="../../software/containers_list/state.md">State</a>, <a href="../../software/containers_list/voltage.md">Voltage</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 9</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/gpio-container.png"></p>

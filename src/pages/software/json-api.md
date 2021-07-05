@@ -16,7 +16,7 @@ Then you can start the Gate by sending:
 This command asks the Gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
 
 ## Routing table messages
-> **Warning:** Make sure to read and understand how [routing table](../low/containers/routing-table.md) works before reading this part.
+> **Warning:** Make sure to read and understand how [routing table](../embedded/containers/routing-table.md) works before reading this part.
 
 After the Gate starts, the first message you receive is a routing table.<br/>
 This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
@@ -60,7 +60,7 @@ Each listed node of the network has basic node information and a list of hosted 
    ]
 }
 ```
-> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](../low/containers/routing-table.md).
+> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](../embedded/containers/routing-table.md).
 
 #### Containers
 Each listed container of a node has basic containers information:
@@ -72,7 +72,7 @@ Each listed container of a node has basic containers information:
    "alias":"Alias"
 }
 ```
-> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [container page](../low/containers.html).
+> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [container page](../embedded/containers.html).
 
 #### Full routing table example
 
@@ -289,13 +289,13 @@ Other specific messages:
 |delay|reduce containers refresh rate|[Gate](./containers_list/gate.md)|
 
 ### Containers exclusion messages
-Containers can be excluded from the network if a problem occurs (see [self-healing](../low/containers/self-healing.md#container-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this container is no longer available:
+Containers can be excluded from the network if a problem occurs (see [self-healing](../embedded/containers/self-healing.md#container-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this container is no longer available:
 ```JSON
 {"dead_container": "container_alias"}
 ```
 
 ### Node assert messages
-Nodes can assert if a critical issue occurs (see [self-healing](../low/containers/self-healing.html#assert) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](../embedded/containers/self-healing.html#assert) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 ```JSON
 {
    "assert":{

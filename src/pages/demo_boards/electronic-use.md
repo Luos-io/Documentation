@@ -61,12 +61,12 @@ The "gate" container's task is to stream the Luos network activity into a standa
 
 This way, it’s **easy to use** your favorite device and language to interact and control your device.
 
-We created an open-source **Python library** managing this JSON API called [*Pyluos*](../high/pyluos.md). Feel free to use it, copy it, and convert it into your favorite language. We are open to contribution for any programing languages. You can suggest any change or new API on the <a href="https://community.luos.io/" target="_blank">Luos' forum</a>.
+We created an open-source **Python library** managing this JSON API called [*Pyluos*](../software/pyluos.md). Feel free to use it, copy it, and convert it into your favorite language. We are open to contribution for any programing languages. You can suggest any change or new API on the <a href="https://community.luos.io/" target="_blank">Luos' forum</a>.
 
 Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">Pyluos on github</a>.
 
 ## Update Luos, Robus and board's firmware
-[Instal PlatformIO](../low/dev-env.html) if you don't have it yet and clone the [Examples](https://github.com/Luos-io/Examples) repository.
+[Instal PlatformIO](../embedded/dev-env.html) if you don't have it yet and clone the [Examples](https://github.com/Luos-io/Examples) repository.
 
 To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your containers' code, you must open the librairies tab ![](../../_assets/img/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
 

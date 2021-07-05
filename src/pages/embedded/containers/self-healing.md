@@ -53,6 +53,6 @@ for example:
 ```
 In this case, if `arg_ptr` is not initialized, Luos will crash the entire node and send a message to all other containers with the file and line were the crash occured. All other nodes will remove all the containers from the crashed node from the routing table.
 
-> **Note:** Gates containers can [report assert of other nodes trough Json](../../high/json-api.md#node-assert-messages).
+> **Note:** Gates containers can [report assert of other nodes trough Json](../../software/json-api.md#node-assert-messages).
 
 > **Note:** Pyluos can display assert trough Gates.
