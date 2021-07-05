@@ -35,15 +35,18 @@ Following the [project rules](./create-project.html#basic-containers-functions),
 revision_t ButtonRevision = {.unmap = {0,0,7}};
 container_t* container_btn;
 
-static void Button_MsgHandler(container_t *container, msg_t *msg){
+static void Button_MsgHandler(container_t *container, msg_t *msg)
+{
     // Manage received messages
 }
 
-void Button_Init(void) {
-    container_t* container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_MOD, "button_mod", ButtonRevision);
+void Button_Init(void)
+{
+    container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_MOD, "button_mod", ButtonRevision);
 }
 
-void Button_Loop(void) {
+void Button_Loop(void)
+{
 }
 ```
 
