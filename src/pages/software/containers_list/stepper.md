@@ -1,4 +1,4 @@
-# Stepper container type
+# Stepper API
 
 This container type allows to control a stepper motor. It computes micro-stepping and motion planning.
 

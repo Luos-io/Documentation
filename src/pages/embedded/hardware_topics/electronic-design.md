@@ -21,8 +21,11 @@ Luos' RS485 official connector is: <a href="https://octopart.com/df11-8dp-2ds%28
 
 ## Compatible MCUs
 Luos can manage any type of microcontrollers as long as they are first added to the library manually. If your microcontroller is not supported yet, please contact us:
+
  - by mail: <a href="mailto:hello@luos.io">hello@luos.io</a>
  - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
+
+Check the list of MCU family Luos cover :<a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
 
 ## PTP
 Peer-to-peer connection between nodes for topology detection.

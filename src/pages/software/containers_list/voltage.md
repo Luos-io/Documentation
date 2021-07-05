@@ -1,4 +1,4 @@
-# Voltage container type
+# Voltage API
 
 The Voltage container handles a sensor measuring voltage.
 

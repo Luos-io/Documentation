@@ -1,4 +1,4 @@
-# Distance container type
+# Distance API
 
 The Distance container handles a sensor measuring a distance in mm.
 

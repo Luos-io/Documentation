@@ -1,4 +1,4 @@
-# State container type
+# State API
 
 The State container can handles a sensor (Button board for example), or an actuator (Power Switch board for example). Generally, this type of containers allows to manage bi-state elements such as on/off, pushed/release, 0/1, ...
 

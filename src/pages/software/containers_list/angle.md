@@ -1,4 +1,4 @@
-# Angle container type
+# Angle API
 
 The Angle container handles a rotation position value in degree.
 

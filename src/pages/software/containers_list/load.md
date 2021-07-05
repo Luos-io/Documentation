@@ -1,4 +1,4 @@
-# Load container type
+# Load API
 
 The Load container handles a sensor measuring a force (Newton).
 

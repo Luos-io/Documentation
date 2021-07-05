@@ -1,4 +1,4 @@
-# Controller-motor container type
+# Controller-motor API
 
 This container type allows to control a motor with a reduction and a sensor (usually called motor-reducer or speed-reducer).
 This container computes PID for speed, position and motion planning.

@@ -1,4 +1,4 @@
-# Dynamixel container type
+# Dynamixel API
 
 The Dynamixel container allows to control Dynamixel motors.
 

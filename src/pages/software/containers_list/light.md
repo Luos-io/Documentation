@@ -1,4 +1,4 @@
-# Light container type
+# Light API
 
 The Light container handles a sensor measuring a light intensity in lux.
 

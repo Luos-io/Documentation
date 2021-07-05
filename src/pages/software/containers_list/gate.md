@@ -1,4 +1,4 @@
-# Gate container type
+# Gate API
 
 The Gate container allows to translate Json to Luos and Luos to Json constantly. This container continuously pulls data from the sensors detected on the network and streams it into a Json format. Also, it can receive Json data and convert it into a container command.
 

@@ -1,4 +1,4 @@
-# Servo container type
+# Servo API
 
 The Servo container allows to drive RC elements like servomotor
 

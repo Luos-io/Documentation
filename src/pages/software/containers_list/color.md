@@ -1,4 +1,4 @@
-# Color container type
+# Color API
 
 The Color container handles an RGB color data.
 

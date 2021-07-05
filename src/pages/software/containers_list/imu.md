@@ -1,5 +1,5 @@
 
-# Imu container type
+# Imu API
 
 The Imu container handles an inertial sensor.
 

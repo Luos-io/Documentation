@@ -1,4 +1,4 @@
-# DC-motor container type
+# DC-motor API
 
 The DC-motor container allows to drive a DC motor using only power mode.
 
