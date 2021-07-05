@@ -3,8 +3,8 @@
 
 ## Luos library, Robus communication protocol, and physical bus
 
-Luos can work on a single node or it can create a network for communication between containers located on different nodes. This communication should be defined and hardware-configured to fit with the chosen MCU. The files luos_hal.c and luos_hal.h define all the functions needed by the Luos library to send messages through the bus and create the initialization of all hardware MCU components.
-The file luos_hal_config.h file contains a default config for an MCU family and can be redefined in your project to fit with your design.
+Luos can work on a single node or it can create a network for communication between containers located on different nodes. This communication should be defined and hardware-configured to fit with the chosen MCU. The files luos_hal.c and luos_hal.h define all the functions needed by the Luos library to send messages through the bus and create the initialization of all MCU peripherials.
+The file luos_hal_config.h file contains a default config for an MCU family and can be redefined in a config file to fit with your design.
 
 ## Luos HAL
 Lists of all the functions using hardware components relative to protocol communication and physical bus:
@@ -20,25 +20,13 @@ Lists of all the functions using hardware components relative to protocol commun
 `luos_hal_config.h` defines a default configuration pinout, serial bus for a MCU Family.
 
 Luos covers many <a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>, so you can choose the right one for your MCU.
-To match pinout and fonctionality with your design, you can create a file `hardware_config.h` in `main.c`, for example, and include the file in your project before `including luos.h`:
-```C
-#include "hardware_config.h"
-#include "luos.h"
+To match pinout and fonctionality with your design, you can create or use the file `node_config.h` (see Luos example)
+Base on the default configuration define in luos_hal_config.h,  you can define in the file `node_config.h`, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer etc.
 
-int main(void)
-{
-    Luos_Init();
-    Container_Init();
-    while(1)
-    {
-        Luos_Loop();
-        Container_Loop();
-    }
-    return 0;
-}
+This way you are able to change default hardware configuration so it need to be call in the preprossessor variable section of your IDE to be taken into consideration for your project
 
-```
-This way you are able to predefine hardware configuration for Luos in the file `hardware_config.h`.
+> **FYI:** Every example provide by luos has a node_config.h files and includes by the file platformio.ini
+
 For example, using USART3 in your design instead of USART1 defined by `luos_hal_config.h` is defined as followed:
 ```C
 #define COM_TX_PIN                  10
