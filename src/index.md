@@ -43,8 +43,7 @@ We started designing Luos with the conviction that building electronic systems s
 											&#8594; <a href="./pages/low/containers/routing-table.md"><b>Routing table</b></a><br />
 											&#8594; <a href="./pages/low/containers/msg-handling.md"><b>Messages handling</b></a><br />
 											&#8594; <a href="./pages/low/containers/self-healing.md"><b>Self-healing</b></a><br />
-											&#8594; <a href="./pages/low/containers/streaming.md"><b>Streaming</b></a><br />
-											&#8594; <a href="./pages/low/containers/rt-config.md"><b>Real-time</b> configuration</a></span>
+											&#8594; <a href="./pages/low/containers/streaming.md"><b>Streaming</b></a></span>
                 							<ul class="wf_ul">
                 								<li class="wf_li"><span><a href="./pages/low/containers/examples.md">Read the Codes Examples</a> and <a href="https://community.luos.io/t/a-new-way-to-design-embedded-app-using-luos-intro/277">follow the bike alarm tutorial</a>
 												</span>

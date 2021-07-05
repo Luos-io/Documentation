@@ -57,7 +57,7 @@ To send a message you have to:
  6) Set your data
  7) Send it.
 
-Below is a basic reply example that you can find in a container reception callback. For more information on handling a message received, see [message handling configuration](./handling-config.md) page.
+Below is a basic reply example that you can find in a container reception callback. For more information on handling a message received, see [message handling configuration](./msg-handling.html#message-handling-configurations) page.
 ```c
 void containers_MsgHandler(container_t *container, msg_t *msg) {
     if (msg->header.cmd == ASK_PUB_CMD) {
@@ -130,3 +130,79 @@ Luos_SendMsg(app, &msg);
 > **Info:** containers can handle only one time-triggered target, 2 containers of the same network can't ask a time-triggered value from the same container.
 
 > **Warning:** To prevent any ID movement, auto-update configuration is reset on all containers on each detection (see [Routing table page](./routing-table.md) for more information).
+
+# Message Handling configurations
+
+Message callbacks of containers can be really difficult to use when a project has high real-time constraints.<br/>
+Luos provides two different configurations allowing you to choose the best way for you to deal with messages.
+The message handling configuration is set during the [initialization of a container](./create-containers.md).
+
+|Configuration|execution type|
+|:---:|:---:|
+|[Callback (default)](#Callback-configuration)|runtime callback|
+|[Polling](#polling-configuration)|no callback|
+
+The following sections detail how the different configurations work.
+
+## Callback configuration
+This configuration is the default and most common setup. In this configuration, Luos directly calls the container callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `luos_loop()` function execution frequency.<br/>
+With this configuration, you have no real constraints on the callback's time of execution, you can reply to a message directly on the callback.
+
+To setup this configuration you have to simply setup the callback at container creation.
+
+Here is a code example with a button:
+```c
+void Button_MsgHandler(container_t *container, msg_t *msg) {
+    if (msg->header.cmd == ASK_PUB_CMD) {
+        // The message is filled with global variable with proper data
+        msg_t pub_msg;
+        pub_msg.header.cmd = IO_STATE;
+        pub_msg.header.target_mode = ID;
+        pub_msg.header.target = msg->header.source;
+        pub_msg.header.size = sizeof(char);
+        pub_msg.data[0] = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
+        // Sending the message
+        Luos_SendMsg(container, &pub_msg);
+        return;
+    }
+}
+
+void Button_Init(void) {
+    // container creation: (callback, container type, Default alias)
+    container_t* container = Luos_CreateContainer(Button_MsgHandler, STATE_MOD, "button_mod");
+}
+
+void Button_Loop(void) {
+}
+```
+
+## Polling configuration
+This configuration is often used in Arduino libraries to receive information in a basic way. This method allows you handle messages only when the user wants to do it in the loop of the container.
+
+To setup this configuration, you have to create your container without any callbacks.
+
+See the following code as an example, with a button:
+
+```c
+container_t* container;
+void Button_Init(void) {
+    container = Luos_CreateContainer(0, STATE_MOD, "button_mod");
+}
+
+void Button_Loop(void) {
+    if (Luos_NbrAvailableMsg()) {
+        msg_t *msg = Luos_ReadMsg(container);
+        if (msg->header.cmd == ASK_PUB_CMD) {
+            // The message is filled with global variable with proper data
+            msg_t pub_msg;
+            pub_msg.header.cmd = IO_STATE;
+            pub_msg.header.target_mode = ID;
+            pub_msg.header.target = msg->header.source;
+            pub_msg.header.size = sizeof(char);
+            pub_msg.data[0] = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
+            // Sending the message
+            Luos_SendMsg(container, &pub_msg);
+        }
+    }
+}
+```

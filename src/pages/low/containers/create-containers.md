@@ -13,7 +13,7 @@ container_t* Luos_CreateContainer(void* callback, container_type_t type, char* d
 
 The returned `container_t*` is a container structure pointer that will be useful to make your container act in the network after this initialization.
 
- **callback** is a pointer to a callback function called by Luos when your container receive messages from other containers (see [Message Handling configuration page](./handling-config.md) for more details).
+ **callback** is a pointer to a callback function called by Luos when your container receive messages from other containers (see [Message Handling configuration section](./msg-handling.html#message-handling-configurations) for more details).
  This function needs to have a specific format:
 
  ```c

@@ -19,7 +19,6 @@
 	    - [Routing table](./pages/low/containers/routing-table.md)
 	    - [Self-healing](./pages/low/containers/self-healing.md)
 	    - [Streaming](./pages/low/containers/streaming.md)
-	    - [Message Handling configurations](./pages/low/containers/handling-config.md)
 		- [Codes Examples](./pages/low/containers/examples.md)
 - [High level](./pages/high/high-level.md)
     - [JSON API](./pages/high/json-api.md)
