@@ -138,42 +138,39 @@
 
         <script src="https://kit.fontawesome.com/e122236495.js" crossorigin="anonymous"></script>
 
-        <div class="cust_menu_container">
+        <div id="top_menu">
+            <div id="top_menu_logo" class="top_menu_items"><a href="https://docs.luos.io/"><img src="{{ path_to_root }}_assets/img/logo_luos_animated_white.gif" alt="Luos" id="logo" width="72px"></a></div>
 
-            <div class="cust_column cust_logo_container">
-                <a href="https://docs.luos.io/"><img src="{{ path_to_root }}_assets/img/logo_luos_animated_white.gif" alt="Luos" id="logo" width="72px"></a>
-            </div>
+            <div id="top_menu_links" class="top_menu_items">
+                <div id="top_menu_icons">
 
-            <div class="cust_column cust_middle">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar"><i class="fa fa-bars"></i></button>
 
-                <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar"><i class="fa fa-bars"></i>
-                </button>
-                <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                    <i class="fa fa-paint-brush"></i>
-                </button>
-                <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                    <li role="none"><button role="menuitem" class="theme" id="light">{{ theme_option "Light" }}</button></li>
-                    <li role="none"><button role="menuitem" class="theme" id="rust">{{ theme_option "Rust" }}</button></li>
-                    <li role="none"><button role="menuitem" class="theme" id="coal">{{ theme_option "Coal" }}</button></li>
-                    <li role="none"><button role="menuitem" class="theme" id="navy">{{ theme_option "Navy" }}</button></li>
-                    <li role="none"><button role="menuitem" class="theme" id="ayu">{{ theme_option "Ayu" }}</button></li>
-                </ul>
-                {{#if search_enabled}}
-                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                    <i class="fa fa-search"></i>
-                </button>
-                {{/if}}
-                <a href="{{ path_to_root }}print.html" title="Print this documentation" aria-label="Print this book"><i id="print-button" class="fa fa-print" style="padding-left: 5px;transform: translate(0px,1px) scale(0.8);"></i></a>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i></button>
 
-            </div>
-            <div class="cust_column cust_right">
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">{{ theme_option "Light" }}</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="rust">{{ theme_option "Rust" }}</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="coal">{{ theme_option "Coal" }}</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="navy">{{ theme_option "Navy" }}</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="ayu">{{ theme_option "Ayu" }}</button></li>
+                    </ul>
 
-                <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/#technology">Technology</a></div>
-                <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/pricing">Pricing</a></div>
-                <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/appstore">Appstore</a></div>
-                <div class="cust_menu_inline"><a title="" target="_blank" href="https://www.luos.io/blog">Blog</a></div>
-                <div class="cust_menu_inline"><a style="color: #bd99ff;">Docs</a></div>
-                <div class="cust_menu_inline"><a title="Download on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io">Download</a></div>
+                    {{#if search_enabled}}
+                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar"><i class="fa fa-search"></i></button>
+                    {{/if}}
+
+                    <a href="{{ path_to_root }}print.html" title="Print this documentation" aria-label="Print this book"><i id="print-button" class="fa fa-print" style="padding-left: 5px;transform: translate(0px,1px) scale(0.8); color: white"></i></a>
+                </div>
+
+                <div id="top_menu_separator"> | </div>
+                <div class="top_menu_links_div"><a title="" target="_blank" href="https://www.luos.io/#technology">Technology</a></div>
+                <div class="top_menu_links_div"><a title="" target="_blank" href="https://www.luos.io/pricing">Pricing</a></div>
+                <div class="top_menu_links_div"><a title="" target="_blank" href="https://www.luos.io/appstore">Appstore</a></div>
+                <div class="top_menu_links_div"><a title="" target="_blank" href="https://www.luos.io/blog">Blog</a></div>
+                <div class="top_menu_links_div"><a style="color: #bd99ff;">Docs</a></div>
+                <div class="top_menu_links_div"><a title="Download on Github" target="_blank" rel="noopener noreferrer" href="https://github.com/luos-io">Download</a></div>
 
             </div>
         </div>
