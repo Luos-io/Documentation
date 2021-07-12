@@ -40,7 +40,7 @@ Containers, much like their server-world counterparts, can be placed anywhere in
 
 For example, the [Dynamixel board](../demo_boards/boards_list/dxl.md) provided by Luos can dynamically create and manage Dynamixel containers depending on the number of Dynamixel motors linked to it. Any Dynamixel containers can get or set values to other Dynamixel containers on the same node or to any other containers in any other nodes in the network.
 
-[Go to Containers page](../low/containers.md).
+[Go to Containers page](../embedded/containers.md).
 
 ## App
 An App is a special type of container, one that does not provide any hardware operations, but will contain the intelligence of your product. This is where you will concentrate your code and development time.
@@ -50,7 +50,7 @@ While your app does not contain any hardware capabilites (sensors or actuators),
 ## Messages
 Communications between continers and apps is performed through Messages. A message contains information on the destination container(s), the type of operation to be performed (a read or write operation and the type of message) as well as any supplemental data. The message will be sent on the network, and will arrive at destination, no matter where the container is placed on the network.
 
-[Go to Messages handling page](../low/containers/msg-handling.md).
+[Go to Messages handling page](../embedded/containers/msg-handling.md).
 
 ## Container detection
 Containers on the network are automatically detected, and assigned IDs depending on their node's physical position in the network, and a routing table is generated.
@@ -59,10 +59,10 @@ IDs are assigned from the nearest to the furthest node branch by branch, from th
 
 > *Note:* Multiple detections by different containers at the same time is not allowed.
 
-It is possible to execute a detection on the network frequently in order to dynamically discover included or excluded containers while running, detecting if hardware has been added or removed. Go to [Routing table](../low/containers/routing-table.md) page for more information.
+It is possible to execute a detection on the network frequently in order to dynamically discover included or excluded containers while running, detecting if hardware has been added or removed. Go to [Routing table](../embedded/containers/routing-table.md) page for more information.
 
 ## Routing table
 A routing table is a "service" managed by the Luos network and available for any containers on any nodes. This service lists all the containers on the network and allows any containers to access and use basic information of any other containers. The routing table's data can be loaded or auto-generated during detection, and can be refreshed on demand.
 
-[Go to Routing table page](../low/containers/routing-table.md).
+[Go to Routing table page](../embedded/containers/routing-table.md).
 

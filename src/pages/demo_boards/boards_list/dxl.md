@@ -1,7 +1,7 @@
 # Dynamixel board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> dxl_*id*</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N x <a href="../../high/containers_list/dxl.md">Dynamixel motor</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N x <a href="../../software/containers_list/dxl.md">Dynamixel motor</a></p>
 <p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> N</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/dxl1-container.png"><img height="150" src="../../../_assets/img/dxl2-container.png"></p>
@@ -45,7 +45,7 @@ When your Dynamixel motors are properly configured, you can connect them to the 
 
 > **Note:** The blue LED is ON when the network is busy detecting Dynamixel motors.
 
-In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel container](../../high/containers_list/dxl.md).
+In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel container](../../software/containers_list/dxl.md).
 
 > **Warning:** Dynamixel boards don’t belong to the power category. Thus, do not power your motors on the Robotis side, you won’t be able to share this power with others boards.
 

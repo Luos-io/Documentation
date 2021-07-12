@@ -21,7 +21,7 @@ We started designing Luos with the conviction that building electronic systems s
           <ul class="wf_ul">
             <li class="wf_li"><span class="cust_choice"><strong class="cust_number">&#9312;</strong><br />Build a Luos-ready board</span>
               <ul class="wf_ul">
-                <li class="wf_li"><span><a href="./pages/low/hardware_topics/electronic-design.md">Read about the <b>electronic design rules</b></a></span>
+                <li class="wf_li"><span><a href="./pages/embedded/hardware_topics/electronic-design.md">Read about the <b>electronic design rules</b></a></span>
                 	<ul class="wf_ul">
                 		<li class="wf_li"><span><a href="#step2">Go to 2 <strong>&#8599;</strong></a></span>
                 		</li>
@@ -31,22 +31,21 @@ We started designing Luos with the conviction that building electronic systems s
             </li>
            <li class="wf_li"><span class="cust_choice"><strong class="cust_number">&#9313;</strong><br />Make <b>drivers</b> and <b>apps</b> for your hardware</span>
               <ul class="wf_ul">
-                <li class="wf_li"><span><a href="./pages/low/dev-env.md">Choose and configure your <b>development environment</b></a></span>
+                <li class="wf_li"><span><a href="./pages/embedded/dev-env.md">Choose and configure your <b>development environment</b></a></span>
                 	<ul class="wf_ul">
-                		<li class="wf_li"><span><a href="./pages/low/containers.md">Read about <b>containers</b> and how they work
+                		<li class="wf_li"><span><a href="./pages/embedded/containers.md">Read about <b>containers</b> and how they work
 </a></span>
                 			<ul class="wf_ul">
-                				<li class="wf_li"><span><a href="./pages/low/containers/create-project.md">Create a <b>project</b></a><br /> and <br /><a href="./pages/low/containers/create-containers.md">start creating <b>containers</b></a></span>
+                				<li class="wf_li"><span><a href="./pages/embedded/containers/create-project.md">Create a <b>project</b></a><br /> then <br /><a href="./pages/embedded/containers/create-containers.md">start creating <b>containers</b></a> and <a href="./pages/embedded/containers/use-profiles.md"><b>profiles</b></a></span>
                 					<ul class="wf_ul">
                 						<li class="wf_li"><span>Learn more about the tools and configurations available with Luos:<br /> 
-											&#8594; <a href="./pages/low/containers/od.md"><b>Object dictionary</b></a><br />
-											&#8594; <a href="./pages/low/containers/routing-table.md"><b>Routing table</b></a><br />
-											&#8594; <a href="./pages/low/containers/msg-handling.md"><b>Messages handling</b></a><br />
-											&#8594; <a href="./pages/low/containers/self-healing.md"><b>Self-healing</b></a><br />
-											&#8594; <a href="./pages/low/containers/streaming.md"><b>Streaming</b></a><br />
-											&#8594; <a href="./pages/low/containers/rt-config.md"><b>Real-time</b> configuration</a></span>
+											&#8594; <a href="./pages/embedded/containers/od.md"><b>Object dictionary</b></a><br />
+											&#8594; <a href="./pages/embedded/containers/routing-table.md"><b>Routing table</b></a><br />
+											&#8594; <a href="./pages/embedded/containers/msg-handling.md"><b>Messages handling</b></a><br />
+											&#8594; <a href="./pages/embedded/containers/self-healing.md"><b>Self-healing</b></a><br />
+											&#8594; <a href="./pages/embedded/containers/streaming.md"><b>Streaming</b></a></span>
                 							<ul class="wf_ul">
-                								<li class="wf_li"><span><a href="./pages/low/containers/examples.md">Read the Codes Examples</a> and <a href="https://community.luos.io/t/a-new-way-to-design-embedded-app-using-luos-intro/277">follow the bike alarm tutorial</a>
+                								<li class="wf_li"><span><a href="./pages/embedded/containers/examples.md">Read the Codes Examples</a> and <a href="https://community.luos.io/t/a-new-way-to-design-embedded-app-using-luos-intro/277">follow the bike alarm tutorial</a>
 												</span>
 													<ul class="wf_ul">
 								                		<li class="wf_li"><span><a href="#step3">Go to 3 <strong>&#8599;</strong></a></span>
@@ -65,11 +64,11 @@ We started designing Luos with the conviction that building electronic systems s
             </li>
             <li class="wf_li"><span class="cust_choice"><strong class="cust_number">&#9314;</strong><br />Use Luos-ready boards and containers</span>
                 <ul class="wf_ul">
-                	<li class="wf_li"><span><a href="./pages/high/json-api.md#"><img src="./_assets/img/json-logo.png" width="60px"><br />Learn how to use the <b>JSON API</b></a></span>
+                	<li class="wf_li"><span><a href="./pages/software/json-api.md#"><img src="./_assets/img/json-logo.png" width="60px"><br />Learn how to use the <b>JSON API</b></a></span>
                 		<ul class="wf_ul">
-                			<li class="wf_li"><span><a href="./pages/high/pyluos.md"><img src="./_assets/img/python-logo.png" width="60px"><br />Read about <b>Pyluos</b> and how to create behaviors</a></span>
+                			<li class="wf_li"><span><a href="./pages/software/pyluos.md"><img src="./_assets/img/python-logo.png" width="60px"><br />Read about <b>Pyluos</b> and how to create behaviors</a></span>
                         <ul class="wf_ul">
-                          <li class="wf_li"><span><a href="./pages/high/ros.md"><img src="./_assets/img/ros-logo.png" width="60px"><br />Read about <b>ROS</b> integration and how to use it with Luos</a></span>
+                          <li class="wf_li"><span><a href="./pages/software/ros.md"><img src="./_assets/img/ros-logo.png" width="60px"><br />Read about <b>ROS</b> integration and how to use it with Luos</a></span>
                           </li>
                         </ul>
                 			</li>

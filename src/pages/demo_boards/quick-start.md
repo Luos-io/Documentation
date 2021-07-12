@@ -16,9 +16,9 @@ In the following example, we will make a LED turn on and off by pushing and rele
 ### STEPS
 
 #### 1. Configure your computer
-The default tool we use to control a Luos network is a board hosting a [Gate](../high/containers_list/gate.md) container, with a Python lib called [Pyluos](../high/pyluos.md).
+The default tool we use to control a Luos network is a board hosting a [Gate](../software/containers_list/gate.md) container, with a Python lib called [Pyluos](../software/pyluos.md).
 
-To begin, you have to install Python and Pyluos library, following the [Pyluos documentation page](../high/pyluos.html).
+To begin, you have to install Python and Pyluos library, following the [Pyluos documentation page](../software/pyluos.html).
 
 #### 2. Plug the boards together
 Plug together all the boards with [cables](./boards_list/cables.md). You can plug them to any of the two connectors of each board, in any order.
@@ -39,7 +39,7 @@ Your device is now powered and connected. All the low-level code and electronics
 ![USB board](../../_assets/img/quickstart-2.png)<br />
 
 #### 4. Interact with the device
-*The USB node handle a specific container called "[Gate](../high/containers_list/gate.md)". There are other boards hosting "Gate" container and using different connection than USB. These particular containers convert Luos containers data into something easier to understand and manage, using [JSON API](../high/json-api.md).*
+*The USB node handle a specific container called "[Gate](../software/containers_list/gate.md)". There are other boards hosting "Gate" container and using different connection than USB. These particular containers convert Luos containers data into something easier to understand and manage, using [JSON API](../software/json-api.md).*
 
 Interacting with the Luos system and program behaviors will require to spot the USB connection on your computer. The following steps are explained on the [General board use page](./electronic-use.md) with more details. In the following example, the associated port is `COM13`.
 
