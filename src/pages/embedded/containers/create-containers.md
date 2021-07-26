@@ -32,7 +32,6 @@ The returned `container_t*` is a container structure pointer that will be useful
 Following the [project rules](./create-project.html#basic-containers-functions), here is a code example for a button container:
 
 ```c
-revision_t ButtonRevision = {.unmap = {0,0,7}};
 container_t* container_btn;
 
 static void Button_MsgHandler(container_t *container, msg_t *msg)
@@ -42,7 +41,9 @@ static void Button_MsgHandler(container_t *container, msg_t *msg)
 
 void Button_Init(void)
 {
-    container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_MOD, "button_mod", ButtonRevision);
+    revision_t ButtonRevision = {.major = 0, .minor = 0, .build = 7};
+
+    container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_TYPE, "button", ButtonRevision);
 }
 
 void Button_Loop(void)
