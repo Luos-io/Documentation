@@ -32,7 +32,6 @@ The returned `container_t*` is a container structure pointer that will be useful
 Following the [project rules](./create-project.html#basic-containers-functions), here is a code example for a button container:
 
 ```c
-revision_t ButtonRevision = {.unmap = {0,0,7}};
 container_t* container_btn;
 
 static void Button_MsgHandler(container_t *container, msg_t *msg)
@@ -42,7 +41,9 @@ static void Button_MsgHandler(container_t *container, msg_t *msg)
 
 void Button_Init(void)
 {
-    container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_MOD, "button_mod", ButtonRevision);
+    revision_t ButtonRevision = {.major = 0, .minor = 0, .build = 7};
+
+    container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_TYPE, "button", ButtonRevision);
 }
 
 void Button_Loop(void)
@@ -78,3 +79,31 @@ By designing an app, you have to keep the following rules in mind:
  - An app must use standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures. If the structures used are not standard, Gate containers could be completely unable to manage them.
 
 Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every containers in every nodes in your device and make it work properly. Go to the [Routing table](./routing-table.md) page for more information.
+
+## Containers accessibility
+Luos can define and manage the accessibility of containers.
+
+This accessibility allows you to specify the access the containers can deal with. For example, a STATE_TYPE container (which is a basic True/False state) can be used either for a button (read-only) or for a relay (write-only).
+
+By default, when you create a new container, it will be on **READ_WRITE_ACCESS**, telling any other containers that they can "send to" or "receive from" this new container. You can change this configuration if you want to.
+
+Containers can have the following accessibility:
+ - READ_WRITE_ACCESS
+ - READ_ONLY_ACCESS
+ - WRITE_ONLY_ACCESS
+ - NO_ACCESS
+
+For example, from the previous initialization example function of the button container, we should specify the accessibility of the container as **READ_ONLY_ACCESS**:
+```c
+container_t* container_btn;
+
+void Button_Init(void)
+{
+    revision_t ButtonRevision = {.major = 0, .minor = 0, .build = 7};
+
+    container_btn = Luos_CreateContainer(Button_MsgHandler, STATE_TYPE, "button", ButtonRevision);
+
+    container_btn->access = READ_ONLY_ACCESS;
+}
+```
+This doesn't change anything else on your container code, as it just allows external containers to know the accessibility of your container.
