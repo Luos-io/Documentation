@@ -16,7 +16,7 @@ You can use this table to find interesting project regarding specific features e
 </thead>
 <tbody>
 <tr>
-<td align="left"><a href="https://github.com/Luos-io/Examples/blob/master/Projects/l0/Gate" target="_blank">Gate</a></td>
+<td align="left"><a href="https://github.com/Luos-io/Examples/blob/master/Projects/l0/Gate_SerialCom" target="_blank">Gate</a></td>
 <td align="center"></td>
 <td style="background-color: rgba(143, 188, 143,0.2);" align="center"><strong>&#10003;</strong></td>
 <td align="center"></td>
