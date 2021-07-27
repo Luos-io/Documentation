@@ -41,6 +41,7 @@
     - [ROS](./pages/software/ros.md)
         - [ROS package example](./pages/software/ros/bike_alarm.md)
         - [Retrocompatibility with ROS 1](./pages/software/ros/ros1.md)
+    - [Bootloader](./pages/software/bootloader.md)
 - [Demonstration boards examples](./pages/demo_boards/demo-boards.md)
     - [Boards general use](./pages/demo_boards/electronic-use.md)
     - [Quick start](./pages/demo_boards/quick-start.md)
