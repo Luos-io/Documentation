@@ -1,6 +1,6 @@
 # Light API
 
-The Light container handles a sensor measuring a light intensity in lux.
+The Light service handles a sensor measuring a light intensity in lux.
 
 Its type has access to all common capabilities.
 

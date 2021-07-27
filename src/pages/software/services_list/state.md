@@ -1,6 +1,6 @@
 # State API
 
-The State container can handles a sensor (Button board for example), or an actuator (Power Switch board for example). Generally, this type of containers allows to manage bi-state elements such as on/off, pushed/release, 0/1, ...
+The State service can handles a sensor (Button board for example), or an actuator (Power Switch board for example). Generally, this type of services allows to manage bi-state elements such as on/off, pushed/release, 0/1, ...
 
 Its type has access to all common capabilities.
 
@@ -10,13 +10,13 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
-| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays service type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
 | **Variable name** | **Action** | **Type** |
 |:---:|:---:|:---:|
-| state | Sets or reads the container state | read / write: Boolean (True or False) |
+| state | Sets or reads the service state | read / write: Boolean (True or False) |
 
 ## Events
 

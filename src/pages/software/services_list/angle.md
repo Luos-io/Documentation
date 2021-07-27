@@ -1,6 +1,6 @@
 # Angle API
 
-The Angle container handles a rotation position value in degree.
+The Angle service handles a rotation position value in degree.
 
 Its type has access to all common capabilities.
 

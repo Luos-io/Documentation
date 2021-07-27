@@ -2,7 +2,7 @@
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> N/A</p>
 <p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N/A</p>
-<p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> N/A</p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of service(s):</strong> N/A</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
 <p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/cable-10cm.png"><img height="150" src="../../../_assets/img/cable-20cm.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>

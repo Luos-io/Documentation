@@ -7,7 +7,7 @@ Board examples and electronic sources are available <a href="https://github.com/
 You can find the schematic of a Luos-ready board called L0 <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">on Github<a> for a quick hardware example.
 
 A Luos-friendly electronic board must contain *at least* the following elements:
- - **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU**</a> (microcontroller unit): It hosts, as a node, the Luos firmware along with the different <span class="cust_tooltip">containers<span class="cust_tooltiptext">{{container_def}}</span></span> (drivers and apps).
+ - **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU**</a> (microcontroller unit): It hosts, as a node, the Luos firmware along with the different <span class="cust_tooltip">services<span class="cust_tooltiptext">{{service_def}}</span></span> (drivers and apps).
  - **At least 2 connectors**: They allow to link boards together into a Luos network as a daisy-chain. Through PTP pins, nodes know if there is another node connected to the connector. This is used when the user wants to make a topology detection of the system.
 
 

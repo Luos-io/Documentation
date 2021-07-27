@@ -1,10 +1,10 @@
 # Wifi-BLE board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> gate</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../software/containers_list/gate.md">Gate</a></p>
-<p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../software/services_list/gate.md">Gate</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of service(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><!--<img height="150" src="../../../_assets/img/power-switch-container.png">-->N/A</p>
+<p class="cust_indent" markdown="1"><!--<img height="150" src="../../../_assets/img/power-switch-service.png">-->N/A</p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="../../../_assets/img/sticker-communication.png" title="Communication">

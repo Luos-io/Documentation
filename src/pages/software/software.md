@@ -6,4 +6,4 @@ Luos provides a Python library, [**Pyluos**](./pyluos.md) and also works with [*
 
 ## Device interface
 
-Before using your device, you have to be connected to a [Gate container](../embedded/tools/gate.md) trough the pipe of your choice.
+Before using your device, you have to be connected to a [Gate service](../embedded/tools/gate.md) trough the pipe of your choice.

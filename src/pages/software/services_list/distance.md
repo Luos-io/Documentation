@@ -1,6 +1,6 @@
 # Distance API
 
-The Distance container handles a sensor measuring a distance in mm.
+The Distance service handles a sensor measuring a distance in mm.
 
 Its type has access to all common capabilities.
 

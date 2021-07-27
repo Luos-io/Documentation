@@ -1,11 +1,11 @@
 
 # Imu API
 
-The Imu container handles an inertial sensor.
+The Imu service handles an inertial sensor.
 
 Its type has access to all common capabilities.
 
-Imu containers can measure:
+Imu services can measure:
 
 * Compass – Magnetic field data in micro-tesla on each axis
 * Gyro – X, Y, Z axis rotational acceleration data in degrees per second
@@ -19,7 +19,7 @@ Imu containers can measure:
 * Pedometer – Step number
 * walk time – Duration (second) of the walk
 
-By default, the container will send only quaternions to keep a low number of data and avoid bus congestion. Retrieving any other types of measures requires to enable them first.
+By default, the service will send only quaternions to keep a low number of data and avoid bus congestion. Retrieving any other types of measures requires to enable them first.
 
 The easiest way to enable a measure is by using it, as Pyluos automatically enables a called measure. For example, to retrieve the linear acceleration value when it’s disabled, you can execute:
 
@@ -39,7 +39,7 @@ device.Imu_mod.linear_acceleration = False
 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
-| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays service type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
@@ -84,7 +84,7 @@ device.Imu_mod.linear_acceleration = False
 | /Imu_mod/compass | sensor_msgs/msg/MagneticField
 
 
-## Example of use of your IMU container using Jupyter notebook
+## Example of use of your IMU service using Jupyter notebook
 
 In this example, we will display in 3D the rotation sensor by using quaternions. In order to do that, we will use the *pythreejs* lib and *jupyter notebook*.
 
@@ -141,7 +141,7 @@ renderer.shadowMap.enabled = True
 renderer.shadowMap.type = 'PCFSoftShadowMap'
 display(renderer)
 
-# Connect your Luos network (here using an USB container)
+# Connect your Luos network (here using an USB service)
 r = Device('/dev/cu.usbserial-DN38OIYT')
 
 # Control the rotation of the cube with the rotation of the Imu sensor

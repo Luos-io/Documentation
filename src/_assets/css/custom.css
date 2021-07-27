@@ -257,12 +257,12 @@ a.cust_red_link {
 
 /*************************************/
 
-.cust_container {
+.cust_service {
 	margin: 10px auto;
 	max-width: 600px;
 	text-align: center;
 }
-.cust_container > h1 {
+.cust_service > h1 {
 	margin: 30px 0;
 	font-size: 4em;
 	line-height: 1;
@@ -439,7 +439,7 @@ table#cust_table caption {
 
 */
 
-#container1 {
+#service1 {
     width:600px;
     font-family:verdana,arial,helvetica,sans-serif;
     font-size:11px;

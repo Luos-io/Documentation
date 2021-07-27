@@ -1,8 +1,8 @@
 # Gate API
 
-The Gate container allows to translate Json to Luos and Luos to Json constantly. This container continuously pulls data from the sensors detected on the network and streams it into a Json format. Also, it can receive Json data and convert it into a container command.
+The Gate service allows to translate Json to Luos and Luos to Json constantly. This service continuously pulls data from the sensors detected on the network and streams it into a Json format. Also, it can receive Json data and convert it into a service command.
 
-You need to have at least one of these containers in one of your nodes to use the Luos network with a computer using Pyluos or any other lib.
+You need to have at least one of these services in one of your nodes to use the Luos network with a computer using Pyluos or any other lib.
 
 Json is a really mainstream standard allowing you to use your favorite language easily trough a Json library.
 
@@ -14,7 +14,7 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
-| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays service type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
@@ -24,7 +24,7 @@ Its type has access to all common capabilities.
 
 ## ROS topics
 
-The gate has no topic but all topics names of all containers are prefixed with the name given to the broker associated to this gate at runtime.
+The gate has no topic but all topics names of all services are prefixed with the name given to the broker associated to this gate at runtime.
 Default is `luos_broker` but can be changed by passing an argument to the launchfile, e.g.: `ros2 launch luos_interface broker.launch.py name:=luos_broker_2`. This name must be unique to prevent conflicts.
 
 

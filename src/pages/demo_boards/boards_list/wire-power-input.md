@@ -2,9 +2,9 @@
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> N/A</p>
 <p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N/A</p>
-<p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 0</p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of service(s):</strong> 0</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/wire-power-input-container.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/wire-power-input-service.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="../../../_assets/img/sticker-power.png" title="Power">

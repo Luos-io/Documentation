@@ -1,10 +1,10 @@
 # USB board
 <div class="cust_sheet" markdown="1">
 <p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> gate</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../software/containers_list/gate.md">Gate</a></p>
-<p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../software/services_list/gate.md">Gate</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of service(s):</strong> 1</p>
 <p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/usb-container.png"></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/usb-service.png"></p>
 <p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p class="cust_indent" markdown="1">
 <img height="50" src="../../../_assets/img/sticker-communication.png" title="Communication">
@@ -38,7 +38,7 @@ To control your device, you have to get and set Json data into the serial port o
 ```python
 from pyluos import Device
 device = Device('COM13')
-device.containers
+device.services
 ```
 
 ### On Windows

@@ -1,6 +1,6 @@
 # Servo API
 
-The Servo container allows to drive RC elements like servomotor
+The Servo service allows to drive RC elements like servomotor
 
 Its type has access to all common capabilities.
 
@@ -10,7 +10,7 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
-| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays service type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 

@@ -1,6 +1,6 @@
 # Load API
 
-The Load container handles a sensor measuring a force (Newton).
+The Load service handles a sensor measuring a force (Newton).
 
 Its type has access to all common capabilities.
 
@@ -9,7 +9,7 @@ Its type has access to all common capabilities.
 
 | **Function name and parameters** | **Action** | **Comment** |
 | :---: | :---: | :---: |
-| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays service type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 

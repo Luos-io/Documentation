@@ -36,7 +36,7 @@ Luos boards examples are organized in 6 categories. Each board belongs to at lea
 
 <a name="plug"></a>
 ## Plugging boards together
-Luos boards have at least 2 connection ports in their design. All connectors are the same, so that any board can be connected to another one using any of these ports. Just avoid to make a loop circuit, otherwise you will inhibit communication between containers.
+Luos boards have at least 2 connection ports in their design. All connectors are the same, so that any board can be connected to another one using any of these ports. Just avoid to make a loop circuit, otherwise you will inhibit communication between services.
 
 There is a correct side to plug a cable’s connector to a board. The small tab on the connector must face upward to plug correctly, as shown on the following pictures:
 
@@ -55,9 +55,9 @@ For example, for a device using a 12V motor and an USB board: The USB board belo
 Some components needs a specific voltage to work properly. For example, in order to use standard servomotor, you have to feed the Luos network with 5V or 7V. If you need to combine 7V and 12V motors in a system, for example, you can manage multiple voltages on the same network using a [power isolator board](./boards_list/power-isolator.md).
 
 ## External communication management
-The boards from the Communication category allow you to easily control a Luos network. These boards host a container called "gate", they can communicate using different kinds of technologies and reach devices outside the device.<br/>To start using Luos technology, you have to use at least one of these gates to be able to program your machine's behaviors.
+The boards from the Communication category allow you to easily control a Luos network. These boards host a service called "gate", they can communicate using different kinds of technologies and reach devices outside the device.<br/>To start using Luos technology, you have to use at least one of these gates to be able to program your machine's behaviors.
 
-The "gate" container's task is to stream the Luos network activity into a standard JSON format file, and on the oposite to allow an external device to easily interact with any device in the network.
+The "gate" service's task is to stream the Luos network activity into a standard JSON format file, and on the oposite to allow an external device to easily interact with any device in the network.
 
 This way, it’s **easy to use** your favorite device and language to interact and control your device.
 
@@ -68,14 +68,14 @@ Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">Pyluos on github
 ## Update Luos, Robus and board's firmware
 [Instal PlatformIO](../embedded/dev-env.html) if you don't have it yet and clone the [Examples](https://github.com/Luos-io/Examples) repository.
 
-To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your containers' code, you must open the librairies tab ![](../../_assets/img/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
+To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your services' code, you must open the librairies tab ![](../../_assets/img/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
 
-![](../../_assets/img/Update_Luos_Robus_Containers.png)
+![](../../_assets/img/Update_Luos_Robus_Services.png)
 
 To update the board's firmware you need to follow 3 steps:
 
-### 1. Open the container folder that you want to update in Visual Studio Code
-To do this, you must go to *File* -> *Open the folder* and go to the folder of the container you want from [Examples/Projects](https://github.com/Luos-io/Examples/tree/master/Projects).
+### 1. Open the service folder that you want to update in Visual Studio Code
+To do this, you must go to *File* -> *Open the folder* and go to the folder of the service you want from [Examples/Projects](https://github.com/Luos-io/Examples/tree/master/Projects).
 
 ### 2. Compile it to ensure there is no error
 To compile your code, you must click on the *Compile* button ![](../../_assets/img/compile-button.png) at the bottom of your window:

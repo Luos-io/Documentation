@@ -1,6 +1,6 @@
 # Dynamixel API
 
-The Dynamixel container allows to control Dynamixel motors.
+The Dynamixel service allows to control Dynamixel motors.
 
 Its type has access to all common capabilities.
 
@@ -13,7 +13,7 @@ Its type has access to all common capabilities.
 | set_id(self, id) | Changes motor ID | This new Id will be saved by the Dynamixel motor. You have to detect motors again to make it work after this change. |
 | detect(self) | Launches a motor detection | You have to run a luos detection to include or exclude new motors. |
 | register(self, register, val) | Sets a Dynamixel register value. | This register only manage *word* size register. Use it only if you know what you do. |
-| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays service type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 

@@ -3,11 +3,11 @@
 <h1><a href="#json-api" class="header" id="json-api"><img src="../../_assets/img/json-logo.png" width="80px"> / JSON API</a></h1>
 
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
-To do that, you must add a specific app container called a [Gate](./containers_list/gate.md) on your device.
+To do that, you must add a specific app service called a [Gate](./services_list/gate.md) on your device.
 
 
 ## How to start using the JSON API
-Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate container.<br/>
+Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate service.<br/>
 Then you can start the Gate by sending:
 ```JSON
 {"detection": {}}\r
@@ -16,7 +16,7 @@ Then you can start the Gate by sending:
 This command asks the Gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
 
 ## Routing table messages
-> **Warning:** Make sure to read and understand how [routing table](../embedded/containers/routing-table.md) works before reading this part.
+> **Warning:** Make sure to read and understand how [routing table](../embedded/services/routing-table.md) works before reading this part.
 
 After the Gate starts, the first message you receive is a routing table.<br/>
 This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
@@ -42,37 +42,37 @@ A routing table in JSON consists in a list of the nodes present in the Luos netw
 ```
 
 #### Nodes information
-Each listed node of the network has basic node information and a list of hosted containers:
+Each listed node of the network has basic node information and a list of hosted services:
 
 ```JSON
 { // node 1
    "node_id":1,
    "certified":true,
    "port_table":[1, 2],
-   "containers":[
+   "services":[
       {
-         // container 1
+         // service 1
       },
       {
-         // container 2
+         // service 2
       }
       // ...
    ]
 }
 ```
-> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](../embedded/containers/routing-table.md).
+> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](../embedded/services/routing-table.md).
 
-#### Containers
-Each listed container of a node has basic containers information:
+#### Services
+Each listed service of a node has basic services information:
 
 ```JSON
-{ // container 1
+{ // service 1
    "type":"Type",
    "id":1,
    "alias":"Alias"
 }
 ```
-> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [container page](../embedded/containers.html).
+> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [service page](../embedded/services.html).
 
 #### Full routing table example
 
@@ -83,7 +83,7 @@ Each listed container of a node has basic containers information:
          "node_id":1,
          "certified":true,
          "port_table":[2, 65535],
-         "containers":[
+         "services":[
             {
                "type":"Gate",
                "id":1,
@@ -95,7 +95,7 @@ Each listed container of a node has basic containers information:
          "node_id":2,
          "certified":true,
          "port_table":[4, 1],
-         "containers":[
+         "services":[
             {
                "type":"State",
                "id":2,
@@ -112,7 +112,7 @@ Each listed container of a node has basic containers information:
          "node_id":3,
          "certified":true,
          "port_table":[5, 3],
-         "containers":[
+         "services":[
             {
                "type":"Imu",
                "id":4,
@@ -124,7 +124,7 @@ Each listed container of a node has basic containers information:
          "node_id":4,
          "certified":true,
          "port_table":[65535, 4],
-         "containers":[
+         "services":[
             {
                "type":"Color",
                "id":5,
@@ -146,17 +146,17 @@ Below is a visual representation of this routing table:
 ![](../../_assets/img/luos-network-ex.png)
 
 
-### Container's information messages
-When the JSON routing table is transmitted, the Gate starts to update and stream your network data with **containers information**.
+### Service's information messages
+When the JSON routing table is transmitted, the Gate starts to update and stream your network data with **services information**.
 
-This JSON is a "container" object listing all the containers by their alias and the values they send:
+This JSON is a "service" object listing all the services by their alias and the values they send:
 ```JSON
 {
-   "containers":{
-      "container_alias1":{
+   "services":{
+      "service_alias1":{
          "value1":12.5
       },
-      "container_alias2":{
+      "service_alias2":{
          "value1":13.6,
          "value2":[1, 2, 3, 4]
       }
@@ -164,9 +164,9 @@ This JSON is a "container" object listing all the containers by their alias and 
 }
 ```
 
-You can use the exact same JSON object structure to send data to containers.
+You can use the exact same JSON object structure to send data to services.
 
-Here is the list of all values that can be used by containers:
+Here is the list of all values that can be used by services:
 
 |Value name|Definition|
 |:---:|:---:|
@@ -192,7 +192,7 @@ Here is the list of all values that can be used by containers:
 |control|Control command (play, pause, stop, rec)|
 |color|Color value|
 |io_state|IO state|
-|uuid|Container's uuid|
+|uuid|Service's uuid|
 |rename|Renaming an alias|
 |revision|Firmware revision|
 |trans_position|Translation position value|
@@ -219,10 +219,10 @@ Here is the list of all values that can be used by containers:
 |luos_statistics|Luos's memory usage statistics \[Rx stack, Luos stack, Tx stack, Dropped messages, Loop delay, Send retry max number\]|
 
 
-Here is an exemple of a message sent by a Potentiometer container about the rotation angle of the associated potentiometer:
+Here is an exemple of a message sent by a Potentiometer service about the rotation angle of the associated potentiometer:
 ```JSON
 {
-   "containers":{
+   "services":{
       "potentiometer_m":{
          "rot_position":12.5
       }
@@ -230,11 +230,11 @@ Here is an exemple of a message sent by a Potentiometer container about the rota
 }
 ```
 
-Here is an exemple of a message sent by a gate container about Luos statistic:
+Here is an exemple of a message sent by a gate service about Luos statistic:
 
 ```JSON
 {
-   "containers":{
+   "services":{
       "gate":{
          "luos_statistics":{
             "msg_stack":60,
@@ -252,10 +252,10 @@ Here is an exemple of a message sent by a gate container about Luos statistic:
 #### Custom parameters and specific messages
 Some messages are specifically handled:
 
-<!-- - If the type is `VOID_MOD`, the container is empty and no message is converted.-->
+<!-- - If the type is `VOID_MOD`, the service is empty and no message is converted.-->
 
-Custom parameters can be defined and sent to containers through the JSON API, either with Python (Pyluos) or any other programming language on a computer side.
-Here is an example of a C function that can be implemented in order to send commands to containers in a Luos Network, through a gate:
+Custom parameters can be defined and sent to services through the JSON API, either with Python (Pyluos) or any other programming language on a computer side.
+Here is an example of a C function that can be implemented in order to send commands to services in a Luos Network, through a gate:
 ```C
 def sendCmd(s, cmd, sleep_time=0.5):
     cmd = cmd + '\r'
@@ -266,36 +266,36 @@ s = serial.Serial(sys.argv[1], 1000000)
 # detect Luos network
 sendCmd(s, '{"detection": {}}')
 # set speed mode and compliant mode
-sendCmd(s, '{"containers": {"controller_moto": {"parameters": 2441}}}')
+sendCmd(s, '{"services": {"controller_moto": {"parameters": 2441}}}')
 # set pid parameters
-sendCmd(s, '{"containers": {"controller_moto": { "pid": [20, 0.02, 90]}}}')
+sendCmd(s, '{"services": {"controller_moto": { "pid": [20, 0.02, 90]}}}')
 # set speed mode and non compliant mode
-sendCmd(s, '{"containers": {"controller_moto": {"parameters": 2440}}}')
+sendCmd(s, '{"services": {"controller_moto": {"parameters": 2440}}}')
 ```
 Parameters are defined by a 16-bit bitfield.
 
-|Object|Definition|Structure|Container(s)|
+|Object|Definition|Structure|Service(s)|
 |:---:|:---:|:---:|:---:|
-|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31)|[Stepper](./containers_list/stepper.md), [Controller-motor](./containers_list/controller-motor.md), [Servo](./containers_list/servo.md)|
-|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)|[Imu](./containers_list/imu.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31)|[Stepper](./services_list/stepper.md), [Controller-motor](./services_list/controller-motor.md), [Servo](./services_list/servo.md)|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)|[Imu](./services_list/imu.md)|
 
 Other specific messages:
 
-|Object|Definition|Container(s)|
+|Object|Definition|Service(s)|
 |:---:|:---:|:---:|
-|register|Motor memory register filed with \[register_number, value\]|[Dynamixel](./containers_list/dxl.md), void|
-|set_id|A set id command|[Dynamixel](./containers_list/dxl.md), void|
-|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|[Dynamixel](./containers_list/dxl.md), void|
-|delay|reduce containers refresh rate|[Gate](./containers_list/gate.md)|
+|register|Motor memory register filed with \[register_number, value\]|[Dynamixel](./services_list/dxl.md), void|
+|set_id|A set id command|[Dynamixel](./services_list/dxl.md), void|
+|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|[Dynamixel](./services_list/dxl.md), void|
+|delay|reduce services refresh rate|[Gate](./services_list/gate.md)|
 
-### Containers exclusion messages
-Containers can be excluded from the network if a problem occurs (see [self-healing](../embedded/containers/self-healing.md#container-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this container is no longer available:
+### Services exclusion messages
+Services can be excluded from the network if a problem occurs (see [self-healing](../embedded/services/self-healing.md#service-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this service is no longer available:
 ```JSON
-{"dead_container": "container_alias"}
+{"dead_service": "service_alias"}
 ```
 
 ### Node assert messages
-Nodes can assert if a critical issue occurs (see [self-healing](../embedded/containers/self-healing.html#assert) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](../embedded/services/self-healing.html#assert) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 ```JSON
 {
    "assert":{
@@ -309,15 +309,15 @@ Nodes can assert if a critical issue occurs (see [self-healing](../embedded/cont
 ## Sending large binary data
 Binary data such as, for example, a motor tarjectory can't be included into a JSON file if it is too large. In order to allow this type of transmission, the size of the binary data is sent through the JSON, then followed by the actual data in binary format.
 
- - If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [Container's information messages section](#containers-information-messages)), or as a table of several values (for example a motor trajectory).
+ - If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [Service's information messages section](#services-information-messages)), or as a table of several values (for example a motor trajectory).
 
  - If the data is large, the defined value must be a **table of one element**, containing only the size of the binary data to be transfered, in bytes.
 
 The following example shows a transfert of a binary data of 1024 bytes.
 ```JSON
 {
-   "containers":{
-      "container_alias1":{
+   "services":{
+      "service_alias1":{
          "rot_position":[1024]
       }
    }

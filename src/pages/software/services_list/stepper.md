@@ -1,12 +1,12 @@
 # Stepper API
 
-This container type allows to control a stepper motor. It computes micro-stepping and motion planning.
+This service type allows to control a stepper motor. It computes micro-stepping and motion planning.
 
 Its type has access to all common capabilities.
 
-### containers’s type settings:
+### services’s type settings:
 
-> **Warning:** This container doesn't save any of the following parameters, they must be set each time your container reboots.
+> **Warning:** This service doesn't save any of the following parameters, they must be set each time your service reboots.
 
 The number of steps per turn must be defined, as well as the wheel diameter at the output of the motor if you wahnt to use translation. These specs may figure in your motor’s datasheet.
 
@@ -17,7 +17,7 @@ The number of steps per turn must be defined, as well as the wheel diameter at t
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
 | setToZero(self) | Resets current position of the motor to 0 | You can use it to initialize the position of the motor |
-| control(self) | Displays container type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays service type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 
