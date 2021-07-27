@@ -13,13 +13,13 @@ https://raw.githubusercontent.com/Luos-io/Arduino_core/main/package_luos_index.j
 
  3. Install the Luos adapted Arduino SAMD Library in *Boards > "Add board definition" > Search for "Luos" > Install "Luos adapted Arduino SAMD (32-bits ARM Cortex-M0+) Boards"*
 
- 4. Install the Arduino SAMD Library in *Boards > "Add board definition" > Search for "SAMD" > Install Arduino SAMD Library*:
+ 4. Install the official Arduino SAMD Library in *Boards > "Add board definition" > Search for "SAMD" > Install Arduino SAMD Library*:
 
  ![](../../../_assets/img/arduino_Luos_board.png)
 
- 5. Download Luos Library <a href="https://github.com/Luos-io/Luos/releases/tag/1.1.1" target="_blank">on GitHub &#8599;</a>. 
+ 5. Download Luos Library for Arduino environment with example <a href="https://github.com/Luos-io/Luos/releases" target="_blank">on GitHub &#8599;</a>. 
 
- 6.	Include Luos Library to your IDE:
+ 6.	Include Luos Library for Arduino to your Arduino IDE:
 
  ![](../../../_assets/img/arduino_include_library.png)
 
