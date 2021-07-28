@@ -27,7 +27,7 @@ Sometimes, multiple services in the network can have the same alias, which is no
 As explained in [this page](../../overview/general-basics.md#what-is-a-node), <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple services. To get the topology of your device, the routing table references physical connexions between your nodes and lists all the services in each one of them.
 
 The routing table is a table of a `routing_table_t` structure containing nodes or services information.
-The maximum number of services and nodes are managed by the precompilation constant `MAX_serviceS_NUMBER` (set to 40 by default).
+The maximum number of services and nodes are managed by the precompilation constant `MAX_SERVICES_NUMBER` (set to 40 by default).
 
 ```c
 routing_table_t routing_table[MAX_SERVICES_NUMBER];
