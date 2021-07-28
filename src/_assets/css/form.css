@@ -306,17 +306,17 @@ input, input[type="text"], input[type="search"], isindex, textarea, button {
 	width:100%;
 	}
 	
-.zf-signService{
+.zf-signContainer{
 	margin:0; 
 	padding:0; 
 	width:100%;
 	}
-.zf-signService canvas{
+.zf-signContainer canvas{
 	cursor:crosshair;
 	border:1px solid #ccc; 
 	background:#fff;
 	}
-.zf-signService a{
+.zf-signContainer a{
     font-size: 11px;
     text-decoration: underline;
 	}	
@@ -637,13 +637,13 @@ input, input[type="text"], input[type="search"], isindex, textarea, button {
 	width:100%;
 	}
 
-.zf-signSmall .zf-tempContDiv .zf-signService .zf-signArea {
+.zf-signSmall .zf-tempContDiv .zf-signContainer .zf-signArea {
 	width:49%;
 	}
-.zf-signMedium .zf-tempContDiv .zf-signService .zf-signArea {
+.zf-signMedium .zf-tempContDiv .zf-signContainer .zf-signArea {
 	width:60%;
 	}
-.zf-signLarge .zf-tempContDiv .zf-signService .zf-signArea {
+.zf-signLarge .zf-tempContDiv .zf-signContainer .zf-signArea {
 	width:74%;
 	}	
 
@@ -706,8 +706,8 @@ input, input[type="text"], input[type="search"], isindex, textarea, button {
 
 /****************Form Top Align Starts Here****************/	
 
-.zf-termsService{ margin:0; padding:0;}
-.zf-termsService .zf-termsMsg {border: 1px solid #E1E1E1;max-height: 250px; min-height:70px; overflow-y:scroll; padding:10px;  margin-bottom:6px;}
+.zf-termsContainer{ margin:0; padding:0;}
+.zf-termsContainer .zf-termsMsg {border: 1px solid #E1E1E1;max-height: 250px; min-height:70px; overflow-y:scroll; padding:10px;  margin-bottom:6px;}
 
 .zf-termsAccept{ margin-top:2px !important;}
 .zf-termsAccept input[type="checkbox"]{ margin-top:2px !important; float:left;}
