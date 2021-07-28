@@ -23,9 +23,9 @@ The returned `service_t*` is a service structure pointer that will be useful to 
  - **service** is the service pointer of the service receiving the data (basically, it is your service).
  - **msg** is the message your service received.
 
- **type** is the type of the your new service represented by a number. Some basic types (e.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `service_type_t` enum structure of Luos. You can also create your own on top of the Luos one.
+ **type** is the type of the your new service represented by a number. Some basic types (E.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `service_type_t` enum structure of Luos. You can also create your own on top of the Luos one.
 
- **default alias** is the alias by default for your new service. e.g. `Myservice02`. This alias is the one your service will use if no other alias is set by the user of your functionality hosted in your service. Aliases have a maximum size of 16 characters.
+ **default alias** is the alias by default for your new service. E.g. `Myservice02`. This alias is the one your service will use if no other alias is set by the user of your functionality hosted in your service. Aliases have a maximum size of 16 characters.
 
 **revision** is the revision number of the service you are creating and which will be accessible via Pyluos.
 

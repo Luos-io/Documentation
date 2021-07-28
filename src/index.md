@@ -4,9 +4,9 @@
 
 ## Introduction
 
-We started designing Luos with the conviction that building electronic systems should be made easier than it is today. Most of the time should be spent on designing the applications and behaviors instead of on complex and time-and-money-eating technicalities. To give a simple example, adding a new sensor &mdash;for instance a distance sensor&mdash; to an electronic device in conception should not take more than a few minutes. So you can try, test and iterate fast on a project to truly design what users want.
+We started designing Luos with the conviction that building electronic systems should be made easier than it is today. Most of the time should be spent developing the applications and behaviors instead of on complex and time-and-money-eating technicalities. To give a simple example, adding a new sensor &mdash;for instance, a distance sensor&mdash; to an electronic device in conception should not take more than a few minutes. So you can try, test, and iterate fast on a project to truly design what users want.
 
-**Luos works like a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices architecture</a> in the software world, and a containerization platform: it encapsulates any software or hardware function to make it communicate and work with any other encapsulated service, however it was developed, either on bare metal or on top of an embedded OS.**
+**Luos works like a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices architecture</a> in the software world and a containerization platform. It encapsulates any software or hardware functions to make them communicate and work with any other encapsulated service, no matter how they were developed, either on bare metal or on top of an embedded OS.**
 
 ### You are not familiar with Luos operations? Follow this flowchart:
 

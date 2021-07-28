@@ -28,7 +28,7 @@ Now that everything is configured, you can enable the control modes you want to 
 | **Function name and parameters** | **Action** | **Comment** |
 |:---:|:---:|:---:|
 | setToZero(self) | Resets current position of the motor to 0 | You can use it to initialize the position of the motor |
-| control(self) | Displays service type graphical interface | Only available using Jupyter notebook |
+| control(self) | Displays service's type graphical interface | Only available using Jupyter notebook |
 
 ## Variables
 

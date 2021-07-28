@@ -10,7 +10,7 @@
         - [Minimum Requirements](./pages/embedded/hardware_topics/minimal-requirements.md)
         - [Electronic design](./pages/embedded/hardware_topics/electronic-design.md)
         - [Use of Luos HAL](./pages/embedded/hardware_topics/luos-hal.md)
-    - [services](./pages/embedded/services.md)
+    - [Services](./pages/embedded/services.md)
         - [Create Luos projects](./pages/embedded/services/create-project.md)
         - [Create Luos services](./pages/embedded/services/create-services.md)
         - [Use Luos profiles](./pages/embedded/services/use-profiles.md)

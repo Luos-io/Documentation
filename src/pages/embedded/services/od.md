@@ -4,7 +4,7 @@ To keep interoperability between <span class="cust_tooltip">services<span class=
 ## What is OD?
 An Object Dictionary (OD) allows different developers of different services to make them interoperate regardless of the unit they use on the service.
 
-Let's take an example: If service1 uses an angle as radians and service2 uses degrees, what is the unit they should use to share the angle information?
+Example: If my_service1 uses an angle in radians and my_service2 uses degrees, what is the unit they should use to share the angle information?
 
 An Object Dictionary defines a set of typical objects that can be transmitted through Luos messages. It allows to send these objects with a predefined type and to use it in the units the user want.
 

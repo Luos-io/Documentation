@@ -15,7 +15,7 @@ typedef struct{
 }msg_t;
 ```
 
-All messages have a header. A header is a 7-byte field containing all information allowing services to understand messages context. All services on the network catch and decode the header of each sent and received message.
+All messages have a header. A header is a 7-byte field containing all information allowing services to understand the messages' context. All services in the network catch and decode the header of each sent and received message.
 
 `data` is a table containing data.
 

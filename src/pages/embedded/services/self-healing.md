@@ -2,7 +2,7 @@
 # Luos self-healing capabilities
 > **Warning:** Make sure to read and understand how to [create Luos services](./create-project.md) before reading this page.
 
-As a developer, you will have bugs. 😲
+As a developer, you will encounter bugs. 😲
 
 Finding, understanding, and managing bugs on multiple boards running multiple services can be really hard. To make your life easier, Luos allows you to get some basic information about any problems in your system allowing you to adapt to them.
 
