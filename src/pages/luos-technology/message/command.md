@@ -1,6 +1,37 @@
 # Command and Object dictionnary
 
-To keep interoperability between <span class="cust_tooltip">services<span class="cust_tooltiptext">{{service_def}}</span></span>, Luos provides an Object Dictionary (OD).
+Each message which follows the Robus communication protocol, includes a command value that defines the type of the contents of the data of a message. 
+
+An other feature included in Luos technology is the Object Dictionary (OD), that aims to maintain the interoperability between <span class="cust_tooltip">services<span class="cust_tooltiptext">{{service_def}}</span></span>.
+
+## Commands
+
+There are three general categories of commands, that are separated regarding the level of handling the messages received from a node. These messages are either handled in Luos level, in Robus level or in service level.
+
+### Commands handled in Robus level
+| Command | Function |
+| :---: | :---: |
+| WRITE_NODE_ID | Set a new ID to the node |
+| RESET_DETECTION | Reset detection process - Reinitialize IDs to 0 |
+| SET_BAUDRATE | Set Robus Baudrate |
+| ASSERT | Node Assert message  |
+
+### Commands handled in Luos level
+| Command | Function |
+| :---: | :---: |
+| RTB_CMD | Ask, generate or share the routing table |
+| WRITE_ALIAS | Get and save a new given alias |
+| UPDATE_PUB | Ask to update a sensor value each time duration to the sender |
+| NODE_UUID | luos_uuid_t |
+| REVISION | Service sends its firmware revision |
+| LUOS_REVISION | Service sends its luos revision |
+| LUOS_STATISTICS | Service sends its luos revision |
+
+### Service commands
+
+This last category, includes all the specific commands that are treated by each service. Each one refers to different kind of services, like for example, the command IO_STATE is send from services of type STATE, and it shows if the actual state of the service is true or false.
+
+If you want to create new functionalities for your custom services, you can create and add your own commands. See how (tutorial???).
 
 ## What is OD?
 An Object Dictionary (OD) allows different developers of different services to make them interoperate regardless of the unit they use on the service.
