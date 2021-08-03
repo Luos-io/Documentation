@@ -1,8 +1,6 @@
 # Summary
 [Home](./index.md)
-- [Getting Started](./pages/get-started/getting-started.md)
-    - [Setup your environment](./pages/get-started/dev-env.md)
-    - [Run your first app](./pages/get-started/first-app.md)
+- [Getting Started](./pages/get_started/getting_started.md)
 - [Luos Technology](./pages/luos-technology/luos_tech.md)
     - [Basics](./pages/luos-technology/basics/basics.md)
         - [Concept](./pages/luos-technology/basics/concept.md)
