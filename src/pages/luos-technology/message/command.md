@@ -31,7 +31,7 @@ There are three general categories of commands, that are separated regarding the
 
 This last category, includes all the specific commands that are treated by each service. Each one refers to different kind of services, like for example, the command IO_STATE is send from services of type STATE, and it shows if the actual state of the service is true or false.
 
-If you want to create new functionalities for your custom services, you can create and add your own commands. See how (tutorial???).
+If you want to create new functionalities for your custom services, you can create and add your own commands. [See how](../../tutorials/tutorials.md).
 
 ## What is OD?
 An Object Dictionary (OD) allows different developers of different services to make them interoperate regardless of the unit they use on the service.

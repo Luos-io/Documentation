@@ -43,4 +43,4 @@ Into Luos embedded code, you are given the opportunity to obtain important infor
 
 The statistics of a node can be occupied from any other node of the system, giving you the chance to explore the behavior of all your mcus by having direct access to any of them.
 
-More detals of how to access the statistics are given in the Monitoring tools page.(link)
+More detals of how to access the statistics are given in the [Monitoring tools page](../../tools/monitoring.md).

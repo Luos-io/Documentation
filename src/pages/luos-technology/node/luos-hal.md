@@ -1,7 +1,8 @@
 # Luos Hardware Abstraction Layer
 
 Luos can work on a single node or it can create a network for communication between services located on different nodes. This communication should be defined and hardware-configured to fit with the chosen MCU. The files luos_hal.c and luos_hal.h define all the functions needed by the Luos library to send messages through the bus and create the initialization of all MCU peripherials.
-The file luos_hal_config.h file contains a default configuration for an MCU family and can be redefined in a configuration file to fit with your design. The configuration of Luos HAL is described in the devoted page.
+
+The file luos_hal_config.h file contains a default configuration for an MCU family and can be redefined in a configuration file to fit your design. The configuration of Luos HAL is described [here](../hardware-consideration/mcu.md).
 
 ## Luos HAL
 Lists of all the functions using hardware components relative to protocol communication and physical bus:

@@ -17,7 +17,7 @@ When each node in the network has an attributed ID, the detection algorithm proc
 > **Warning:** Pay attention to the fact that during a detection, a node can change ID depending on the node ID that initialized the detection process. Do not consider your ID as fixed. Also, be aware that the nodes remove their auto-update configuration during the detection, to prevent any ID movement.
 
 ## Modes
-As explained in [this page](../basics/basics.md), <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple services. To get the topology of your device, the routing table references physical connections between your nodes and lists all the services in each one of them.
+As explained in this [page](../basics/basics.md), <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple services. To get the topology of your device, the routing table references physical connections between your nodes and lists all the services in each one of them.
 
 The routing table is a table of a `routing_table_t` structure containing nodes or services information.
 The maximum number of services and nodes are managed by the precompilation constant `MAX_SERVICES_NUMBER` (set to 40 by default).
@@ -78,7 +78,7 @@ Specific values taken by `port_table`:
  - **0**: this port is waiting to discover who is connected with. You should never see this value.
  - **0x0FFF**: this port is not connected to any other Node.
 
-> **Note:** Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a [USB gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
+> **Note:** Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a USB [gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
 
 
 ### Service entry mode

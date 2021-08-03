@@ -10,7 +10,7 @@ In order to help you in your development journey, Luos provides monitoring and d
 Finding, understanding, and managing bugs on multiple boards running multiple services can be really hard. To make your life easier, Luos allows you to get some basic information about any problems in your system allowing you to adapt to them.
 
 ## Service exclusion
-Luos includes an [acknowledgement management using the **ID_ACK** target_mode(./msg-handling.md). This mode guaranties the proper reception of critical messages.
+Luos includes an acknowledgement management using the **ID_ACK** target_mode. This mode guaranties the proper reception of critical messages.
 
 If Luos fails to reach its target using ID_ACK, it will retry 10 times. If the acknowledgement still fails, the targeted service is declared excluded. Excluded services are removed from the routing table to avoid any messaging from any services, preserving bandwidth for the rest of the system.
 
@@ -56,7 +56,7 @@ for example:
 ```
 In this case, if `arg_ptr` is not initialized, Luos will crash the entire node and send a message to all other services with the file and line were the crash occured. All other nodes will remove all the services from the crashed node from the routing table.
 
-> **Note:** Gates services can [report assert of other nodes trough Json(../../software/json-api.md#node-assert-messages).
+> **Note:** Gates services can [report assert of other nodes through Json](../api/api.md).
 
 > **Note:** Pyluos can display assert through Gates.
 
