@@ -1,4 +1,5 @@
 # Dynamixel board
+<<<<<<< HEAD:docs/demo_boards/boards_list/dxl.md
 
 <div className="cust_sheet" markdown="1">
 <p className="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> dxl_*id*</p>
@@ -10,6 +11,18 @@
 <p className="cust_indent" markdown="1">
 <img height="50" src="/img/sticker-interface.png" title="Interface" alt="" />
 <img height="50" src="/img/sticker-sensor.png" title="Sensor" alt="" />
+=======
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> dxl_*id*</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> N x <a href="../../software/services_list/dxl.md">Dynamixel motor</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of service(s):</strong> N</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/dxl1-service.png"><img height="150" src="../../../_assets/img/dxl2-service.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
+<p class="cust_indent" markdown="1">
+<img height="50" src="../../../_assets/img/sticker-interface.png" title="Interface">
+<img height="50" src="../../../_assets/img/sticker-sensor.png" title="Sensor">
+>>>>>>> rc-2.0.0:src/pages/demo_boards/boards_list/dxl.md
 </p>
 <p className="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a className="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/blob/master/Projects/l0/Dxl" target="_blank">Dxl</a>
@@ -27,13 +40,13 @@ Except for this connection, both versions work exactly the same way.
 
 ![Dynamixel](/img/dxl-mod-1.jpg)
 
-The Dynamixel board is special because it has a dynamic number of visible containers, depending on the number of motors plugged to it. If you have 5 motors on your board, you will see 5 DynamixelMotor containers.
+The Dynamixel board is special because it has a dynamic number of visible services, depending on the number of motors plugged to it. If you have 5 motors on your board, you will see 5 DynamixelMotor services.
 
-> **Note:** If you don’t plug any motor to the board, it will create a special container called `void_dxl`.
+> **Note:** If you don’t plug any motor to the board, it will create a special service called `void_dxl`.
 
-This board creates containers dynamically upon motor detection. So in order to create containers, this board has to detect motors, and to detect them each motor needs to have a proper power supply.
+This board creates services dynamically upon motor detection. So in order to create services, this board has to detect motors, and to detect them each motor needs to have a proper power supply.
 
-Indeed, if you power the Luos network with an unadapted voltage, the motors won’t reply to the board requests and you won’t be able to see any Dynamixel container on your network.
+Indeed, if you power the Luos network with an unadapted voltage, the motors won’t reply to the board requests and you won’t be able to see any Dynamixel service on your network.
 
 To be detected, the Dynamixel motors need to use a baudrate of 1 000 000 `baud` and to have an ID between 1 and 30.
 
@@ -46,6 +59,6 @@ When your Dynamixel motors are properly configured, you can connect them to the 
 
 > **Note:** The blue LED is ON when the network is busy detecting Dynamixel motors.
 
-In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel container](../../software/containers_list/dxl.md).
+In order to begin using this board, you must disable the compliant mode, and you can then use the functions and variables of the [Dynamixel service](../../software/services_list/dxl.md).
 
 > **Warning:** Dynamixel boards don’t belong to the power category. Thus, do not power your motors on the Robotis side, you won’t be able to share this power with others boards.

@@ -1,4 +1,5 @@
 # Stepper board
+<<<<<<< HEAD:docs/demo_boards/boards_list/stepper.md
 
 <div className="cust_sheet" markdown="1">
 <p className="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> stepper_mod</p>
@@ -9,6 +10,17 @@
 <p className="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
 <p className="cust_indent" markdown="1">
 <img height="50" src="/img/sticker-actuation.png" title="Actuation" alt="" />
+=======
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> stepper_mod</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../software/services_list/stepper.md">Stepper</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of service(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/stepper-service.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
+<p class="cust_indent" markdown="1">
+<img height="50" src="../../../_assets/img/sticker-actuation.png" title="Actuation">
+>>>>>>> rc-2.0.0:src/pages/demo_boards/boards_list/stepper.md
 </p>
 <p className="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a className="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/blob/master/Projects/l0/Stepper" target="_blank">Stepper</a>

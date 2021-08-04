@@ -1,6 +1,12 @@
 <h1><a href="#pyluos" className="header" id="pyluos"><img src="/img/python-logo.png" width="80px" alt="" /> / A Pyluos guide</a></h1>
 
+<<<<<<< HEAD:docs/software/pyluos.md
 Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a [_gate_](./containers_list/gate.md) container.
+=======
+<h1><a href="#pyluos" class="header" id="pyluos"><img src="../../_assets/img/python-logo.png" width="80px"> / A Pyluos guide</a></h1>
+
+Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](./services_list/gate.md) service.
+>>>>>>> rc-2.0.0:src/pages/software/pyluos.md
 
 ## Installation
 
@@ -134,19 +140,23 @@ Only once the connection is set it is possible to start programming behaviors.
 
 ### Routing table display
 
-[Routing table](../embedded/containers/routing-table.md) can be easily displayed using Pyluos.
+[Routing table](../embedded/services/routing-table.md) can be easily displayed using Pyluos.
 
-Pyluos can displays a list of all the containers by filtering the routing table, and their associated characteristics (type, alias and ID).
+Pyluos can displays a list of all the services by filtering the routing table, and their associated characteristics (type, alias and ID).
 To display it, use the following command:
 
 ```python
-device.containers
+device.services
 ```
 
 > **Note:** `device` is the name of the network.
 
+<<<<<<< HEAD:docs/software/pyluos.md
 Pyluos will give you a list of all containers without any topological informations :
 
+=======
+Pyluos will give you a list of all services without any topological informations :
+>>>>>>> rc-2.0.0:src/pages/software/pyluos.md
 ```AsciiDoc
 -------------------------------------------------
 Type                Alias               ID
@@ -172,8 +182,12 @@ device.nodes
 
 > **Note:** `device` is the name of the network.
 
+<<<<<<< HEAD:docs/software/pyluos.md
 Based on the previous example Pyluos will give you all informations about containers and topological informations :
 
+=======
+Based on the previous example Pyluos will give you all informations about services and topological informations :
+>>>>>>> rc-2.0.0:src/pages/software/pyluos.md
 ```AsciiDoc
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
   ┃  ╭node 1                Certified            ┃
@@ -199,18 +213,24 @@ Based on the previous example Pyluos will give you all informations about contai
           ┃  ╰> Angle               potentiometer_m 11   ┃
          >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
+<<<<<<< HEAD:docs/software/pyluos.md
 
 In this example, 3 nodes (MCU) and their associated UUID are listed, along with their containers and associated characteristics (type, alias and ID).
 The characters after each set of node's containers and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from its second connector (1) to the first connector (0) of the next node.
+=======
+In this example, 3 nodes (MCU) and their associated UUID are listed, along with their services and associated characteristics (type, alias and ID).
+The characters after each set of node's services and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from its second connector (1) to the first connector (0) of the next node.
+>>>>>>> rc-2.0.0:src/pages/software/pyluos.md
 
-### Container type
+### Service type
 
-Each container has a type (eg. `Button`, `Led`, ...).
-You can either retrieve your container's type from the previous code, or with the following line:
+Each service has a type (eg. `Button`, `Led`, ...).
+You can either retrieve your service's type from the previous code, or with the following line:
 
 ```python
-device.container_alias.type
+device.service_alias.type
 ```
+<<<<<<< HEAD:docs/software/pyluos.md
 
 `container_alias` being the alias you got from the previous listing.
 
@@ -219,21 +239,29 @@ device.container_alias.type
 ### Get and set containers informations
 
 Once you have detected your containers, you can use these information like variables.
+=======
+`service_alias` being the alias you got from the previous listing.
+
+> **Note:** *Unknown* service types are defaulty set for custom service types such as some [Luos apps](../embedded/services/create-services.md).
+
+### Get and set services informations
+Once you have detected your services, you can use these information like variables.
+>>>>>>> rc-2.0.0:src/pages/software/pyluos.md
 
 To access values you have to address them in the device object following this rules :
 
 ```python
-device.container_alias.variable
+device.service_alias.variable
 ```
 
 For example :
 
 ```python
-device.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" container
+device.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" service
 
 device.button_mod.state # Returns the status of the push button
 
-device.button_mod.type # Returns the container type of the container "button_mod"
+device.button_mod.type # Returns the service type of the service "button_mod"
 
 device.button_mod.luos_revision # Returns the version of luos
 
@@ -244,12 +272,17 @@ If you use _ipython_ or _Jupyter Notebook_, you can use auto-completion using th
 
 ![Auto-completion](/img/pyluos-3.png)
 
+<<<<<<< HEAD:docs/software/pyluos.md
 ### Change a container name
 
 The name of any container can be changed by using this code:
+=======
+### Change a service name
+The name of any service can be changed by using this code: 
+>>>>>>> rc-2.0.0:src/pages/software/pyluos.md
 
 ```python
-device.container_alias.rename("new_name")
+device.service_alias.rename("new_name")
 ```
 
 For example:
@@ -260,7 +293,7 @@ device.rgb_led_mod.rename("myLED")
 
 > **Note:** You should restart your device and reconnect to it after this operation.
 
-> **Note:** To get back to the container default name, set a void name (`""`).
+> **Note:** To get back to the service default name, set a void name (`""`).
 
 ### Get a node statistics
 
@@ -268,7 +301,7 @@ Nodes are able to send back some values representing the sanity of a node. You c
 The RAM usage of Luos depends on the number of messages the node has to treat and the max Luos loop delay.
 
 ```python
-device.container_alias.luos_statistics
+device.service_alias.luos_statistics
 ```
 
 For example:
@@ -288,12 +321,20 @@ gate statistics :
 .Nak msg max number             = 1
 .Collision msg max number       = 5
 ```
+<<<<<<< HEAD:docs/software/pyluos.md
+=======
+ - **luos allocated RAM occupation** represents the global Luos RAM usage based on **Message stack** and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_SERVICE_NUMBER` where MAX_SERVICE_NUMBER = 5 by default ).
+>>>>>>> rc-2.0.0:src/pages/software/pyluos.md
 
 - **luos allocated RAM occupation** represents the global Luos RAM usage based on **Message stack** and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_CONTAINER_NUMBER` where MAX_CONTAINER_NUMBER = 5 by default ).
 
 - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default. sizeof(msg_t) -> 7 bytes Header + 128 bytes data).
 
+<<<<<<< HEAD:docs/software/pyluos.md
 - Contrary to **Message stack**, **Luos stack**, **Max luos loop delay** which are Node relatif statistics, **Msg fail ratio** and **NAK msg max number** are container's statistic. **Msg fail ratio** give a ratio of msg send fail base a all the msg that the container has sent. **NAK msg max number** give the max number of NAK receive when a message has been sent.
+=======
+- Contrary to **Message stack**,  **Luos stack**, **Max luos loop delay** which are Node relatif statistics, **Msg fail ratio** and **NAK msg max number** are service's statistic. **Msg fail ratio** give a ratio of msg send fail base a all the msg that the service has sent. **NAK msg max number** give the max number of NAK receive when a message has been sent.
+>>>>>>> rc-2.0.0:src/pages/software/pyluos.md
 
 - The RAM occupation and message drop number is also related to **Max luos loop delay**. If **Max luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. So you can reduce the RAM consumption and messages dropping by reducing the **Max luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
 
@@ -303,7 +344,7 @@ gate statistics :
 from pyluos import Device
 device = Device('address of the device')
 
-device.containers
+device.services
 
 device.rgb_led_mod.color = [50,80,5]
 device.button_mod.state

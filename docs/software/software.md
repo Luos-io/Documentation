@@ -7,3 +7,7 @@ Luos provides a Python library, [**Pyluos**](./pyluos.md) and also works with [*
 ## Device interface
 
 Before using your device, you have to be connected to a [Gate container](../embedded/tools/gate.md) trough the pipe of your choice.
+
+## Bootloader
+
+A section is dedicated to the use of the [bootloader](./bootloader.md) to flash or update luos nodes.

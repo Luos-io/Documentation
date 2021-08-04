@@ -1,4 +1,5 @@
 # Power Pi board
+<<<<<<< HEAD:docs/demo_boards/boards_list/powerpi.md
 
 <div className="cust_sheet" markdown="1">
 <p className="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> gate</p>
@@ -11,14 +12,31 @@
 <img height="50" src="/img/sticker-communication.png" title="Comunication" alt="" />
 <img height="50" src="/img/sticker-power.png" title="Power" alt="" />
 <img height="50" src="/img/sticker-cognition.png" title="Cognition" alt="" />
+=======
+<div class="cust_sheet" markdown="1">
+<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> gate</p>
+<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../software/services_list/gate.md">Gate</a></p>
+<p class="cust_sheet-title" markdown="1"><strong>Number of service(s):</strong> 1</p>
+<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p class="cust_indent" markdown="1"><img height="150" src="../../../_assets/img/power-pi-service.png"></p>
+<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
+<p class="cust_indent" markdown="1">
+<img height="50" src="../../../_assets/img/sticker-communication.png" title="Comunication">
+<img height="50" src="../../../_assets/img/sticker-power.png" title="Power">
+<img height="50" src="../../../_assets/img/sticker-cognition.png" title="Cognition">
+>>>>>>> rc-2.0.0:src/pages/demo_boards/boards_list/powerpi.md
 </p>
 <p className="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
 <a className="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/blob/master/Projects/l0/Gate" target="_blank">Gate</a>
 </div>
 
 ## Power Pi board
+<<<<<<< HEAD:docs/demo_boards/boards_list/powerpi.md
 
 The Power Pi board links any Raspberry Pi-like board to a Luos network. This board allows you to convert the Luos network power into 5V and up to 2A in order to power your Raspberry Pi or Odroid without any other power source. This board hosts a Gate container allowing to your Raspberry Pi to control your entire Luos network using Pyluos or any other language as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image</a>.
+=======
+The Power Pi board links any Raspberry Pi-like board to a Luos network. This board allows you to convert the Luos network power into 5V and up to 2A in order to power your Raspberry Pi or Odroid without any other power source. This board hosts a Gate service allowing to your Raspberry Pi to control your entire Luos network using Pyluos or any other language as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image</a>.
+>>>>>>> rc-2.0.0:src/pages/demo_boards/boards_list/powerpi.md
 The Power Pi board supports 5V to 24V DC input.
 
 ## Connection of Power Pi board to a Raspberry Pi
@@ -36,7 +54,7 @@ _On the left, a Power Pi board connected to an ODrive board; on the right, a Pow
 ## How to easily start to create your code using this board
 
 Coding on a Raspberry Pi in a device can be quite boring. Generally, you can't connect any screen and keyboard to work properly.
-That's why we created a small piece of code allowing to convert the Gate container stream into Web Socket messages.
+That's why we created a small piece of code allowing to convert the Gate service stream into Web Socket messages.
 By using this Web Socket, you can connect Pyluos or any other lib you created to your Raspberry Pi. This way you can create and execute your device's behaviors directly on your computer.
 When your behavior is complete and tested on your device, you just have to copy it into your Raspberry Pi to obtain an autonomous device.
 
@@ -151,12 +169,12 @@ This way, you can control your device from your computer even if it is moving or
 ```python
 from pyluos import Device
 device = Device("raspberrypi.local")
-device.containers
+device.services
 ```
 
 In this example, you can replace `raspberrypi.local` by your Raspberry Pi’s IP or hostname.
 
-You should see the list of containers connected to the Power Pi board.
+You should see the list of services connected to the Power Pi board.
 
 ### Cognition mode
 

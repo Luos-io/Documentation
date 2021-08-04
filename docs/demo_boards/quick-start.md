@@ -18,8 +18,12 @@ In the following example, we will make a LED turn on and off by pushing and rele
 ### STEPS
 
 #### 1. Configure your computer
+<<<<<<< HEAD:docs/demo_boards/quick-start.md
 
 The default tool we use to control a Luos network is a board hosting a [Gate](../software/containers_list/gate.md) container, with a Python lib called [Pyluos](../software/pyluos.md).
+=======
+The default tool we use to control a Luos network is a board hosting a [Gate](../software/services_list/gate.md) service, with a Python lib called [Pyluos](../software/pyluos.md).
+>>>>>>> rc-2.0.0:src/pages/demo_boards/quick-start.md
 
 To begin, you have to install Python and Pyluos library, following the [Pyluos documentation page](../software/pyluos.html).
 
@@ -43,8 +47,12 @@ Your device is now powered and connected. All the low-level code and electronics
 ![USB board](/img/quickstart-2.png)<br />
 
 #### 4. Interact with the device
+<<<<<<< HEAD:docs/demo_boards/quick-start.md
 
 _The USB node handle a specific container called "[Gate](../software/containers_list/gate.md)". There are other boards hosting "Gate" container and using different connection than USB. These particular containers convert Luos containers data into something easier to understand and manage, using [JSON API](../software/json-api.md)._
+=======
+*The USB node handle a specific service called "[Gate](../software/services_list/gate.md)". There are other boards hosting "Gate" service and using different connection than USB. These particular services convert Luos services data into something easier to understand and manage, using [JSON API](../software/json-api.md).*
+>>>>>>> rc-2.0.0:src/pages/demo_boards/quick-start.md
 
 Interacting with the Luos system and program behaviors will require to spot the USB connection on your computer. The following steps are explained on the [General board use page](./electronic-use.md) with more details. In the following example, the associated port is `COM13`.
 
@@ -55,13 +63,17 @@ import pyluos
 from pyluos import Device
 device = Device('COM13')
 ```
+<<<<<<< HEAD:docs/demo_boards/quick-start.md
 
 When Pyluos establishes the connection with a Gate container, it asks to run a network detection. This detection allows to discover all boards wired together on the network.
+=======
+When Pyluos establishes the connection with a Gate service, it asks to run a network detection. This detection allows to discover all boards wired together on the network.
+>>>>>>> rc-2.0.0:src/pages/demo_boards/quick-start.md
 
 To list the discovered boards you can run:
 
 ```python
-print(device.containers)
+print(device.services)
 ```
 
 In this tutorial, Python should find three boards, the Gate (USB), the LED, and the Button boards. You can check that all are detected:
