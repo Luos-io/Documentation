@@ -2,7 +2,7 @@
 
 <h1><a href="#pyluos" class="header" id="pyluos"><img src="../../_assets/img/python-logo.png" width="80px"> / A Pyluos guide</a></h1>
 
-Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](./services_list/gate.md) service.
+Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](./gate.md) service.
 
 ## Installation
 
@@ -86,11 +86,11 @@ This line is always used while programming behaviors and should be called before
 
 ### Device connection
 
-Connect your device to your computer through a [Gate](../demo_boards/boards_list/usb.html) with a USB cable.
+Connect your device to your computer through a [Gate](./gate.md) with a USB cable.
 
 #### Configuring USB transfer sizes and latency timer
 
-Some devices may not work properly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device properly while connected to your computer from a [Gate](../demo_boards/boards_list/usb.html).
+Some devices may not work properly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device properly while connected to your computer from a [Gate](./gate.md).
 
 **USB Transfer Sizes**: Default value is 4096 Bytes, however if you have issues to use your connected device, you should try the minimum possible values both for `Receive` and `Transmit`.
 
@@ -132,7 +132,7 @@ Only once the connection is set it is possible to start programming behaviors.
 
 ### Routing table display
 
-[Routing table](../embedded/services/routing-table.md) can be easily displayed using Pyluos.
+[Routing table](../luos-technology/node/topology.md) can be easily displayed using Pyluos.
 
 Pyluos can displays a list of all the services by filtering the routing table, and their associated characteristics (type, alias and ID).
 To display it, use the following command:
@@ -206,7 +206,7 @@ device.service_alias.type
 ```
 `service_alias` being the alias you got from the previous listing.
 
-> **Note:** *Unknown* service types are defaulty set for custom service types such as some [Luos apps](../embedded/services/create-services.md).
+> **Note:** *Unknown* service types are defaulty set for custom service types such as some [Luos apps](../luos-technology/services/service_type.md).
 
 ### Get and set services informations
 Once you have detected your services, you can use these information like variables.

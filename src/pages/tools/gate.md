@@ -1,10 +1,10 @@
 # Gate
 
-The Gate is a major tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([Json](../../software/json-api.md) most of the time) and to stream and receive those formated informations into any kind of communication way such as serial interface, wifi, bluetooth, Lora, ...
+The Gate is a major tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([Json](../api/api.md) most of the time) and to stream and receive those formated informations into any kind of communication way such as serial interface, wifi, bluetooth, Lora, ...
 
-You can use it to take control of any embedded service with [any languages](../../software/json-api.md) on any machine. For example we use it in [Pyluos](../../software/pyluos.md) or [ROS](../../software/ros.md)!
+You can use it to take control of any embedded service with [any languages](../api/api.md) on any machine. For example we use it in [Pyluos](./pyluos.md) or [ROS](./ros.md)!
 
-Gate is a simple embedded [App service](../services/create-services.html#apps-guidelines), so it can work on any MCU running Luos without any modification.
+Gate is a simple embedded [App service](../luos-technology/services/services.md), so it can work on any MCU running Luos without any modification.
 
 The Gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
 
@@ -47,18 +47,18 @@ int main(void)
 }
 ```
 
-![](../../../_assets/img/gate_pipe.png)
+![](../../_assets/img/gate_pipe.png)
 
 In that configuration formated messages don't pass through the Luos network and stay in localhost.
 
 ## A Gate and a Pipe on separate node
 
 When the Gate and the Pipe are on separate nodes, formated messages transit into the network and use even more bandwidth on the network and add latency.
-![](../../../_assets/img/gate_pipe_separate.png)
+![](../../_assets/img/gate_pipe_separate.png)
 
 ## The Gate configurations
 
-The default process described above can be changed using different configurations that you can use on [your node_config.h](../dev_env/general-integration-consideration.html#configuration).
+The default process described above can be changed using different configurations that you can use on [your node_config.h](../hardware-consideration/mcu.md).
 
 You could need to change it if you have Apps on you Luos embedded system.
 

@@ -4,7 +4,7 @@ Luos comes with a package for the <a href="https://www.ros.org/" target="_blank"
 
 ROS 2 is the default version but backward compatibility with ROS 1 is ensured via the official ROS 1 bridge. You can get an example of an application using Luos services in ROS 2 with the <a href="https://github.com/aubrune/luos_bike_alarm_example" target="_blank">bike sharing example</a>.
 
-In this tutorial, we will assume you're using ROS 2. If you want to communicate with a ROS 1 ecosystem, begin with this quickstart since ROS 2 needs to be installed, and then refer to the [Retrocompatibility with ROS 1](./ros/ros1.md) page.
+In this tutorial, we will assume you're using ROS 2. If you want to communicate with a ROS 1 ecosystem, begin with this quickstart since ROS 2 needs to be installed, and then refer to the [Retrocompatibility with ROS 1 tutorial](../tutorials/tutorials.md).
 
 ## Basics: a few ROS-applied-to-Luos concepts
 
@@ -132,6 +132,6 @@ These command lines will create a new package `my_luos_ros2_package` relying on 
 cd ~/ros2_ws/src
 ros2 pkg create my_luos_ros2_package --build-type ament_python --dependencies luos_interface
 ```
-You can then add your ROS Python scripts, by taking example on the [bike sharing example](./ros/bike_alarm.md) page.
+You can then add your ROS Python scripts, by taking example on the [bike sharing example](../tutorials/tutorials.md) page.
 
 
