@@ -8,7 +8,7 @@ The demonstration boards are a set of small electronic boards examples, each one
 
 ## Boards general specifications
 
-Almost every demonstration board in the provided examples is composed of a motherboard and a shield board. The motherboard, called L0, has a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> that hosts Luos. The shield board is added to a L0 to type it with an electronic function.
+Almost every demonstration board in the provided examples is composed of a motherboard and a shield board. The motherboard, called L0, has a <span className="cust_tooltip">node<span className="cust_tooltiptext">{{node_def}}</span></span> that hosts Luos. The shield board is added to a L0 to type it with an electronic function.
 
 <img src="/img/assembly.png" height="200px" />
 
@@ -31,10 +31,10 @@ Luos boards examples are organized in 6 categories. Each board belongs to at lea
 | <img src="/img/sticker-sensor.png" height="80" />     | <img src="/img/sticker-actuation.png" height="80" />    | <img src="/img/sticker-communication.png" height="80" />                                                                                              |
 | Sensor boards are able to measure the physical world. | Actuation boards are able to act on the physical world. | Communication boards (also called gates) are able to share your system’s inputs, outputs and configurations outside of your device, using a JSON API. |
 
-| Cognition                                                            | Interface                                                        | Power                                                                                                                                                                                  |
-| :------------------------------------------------------------------- | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="/img/sticker-cognition.png" height="80" />                 | <img src="/img/sticker-interface.png" height="80" />             | <img src="/img/sticker-power.png" height="80" />                                                                                                                                       |
-| Cognition are boards dedicated to execute your code or host your AI. | These boards are built to interact with the user of the machine. | Power boards are able to share their input power source into the <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> wire to feed other boards. |
+| Cognition                                                            | Interface                                                        | Power                                                                                                                                                                                          |
+| :------------------------------------------------------------------- | :--------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="/img/sticker-cognition.png" height="80" />                 | <img src="/img/sticker-interface.png" height="80" />             | <img src="/img/sticker-power.png" height="80" />                                                                                                                                               |
+| Cognition are boards dedicated to execute your code or host your AI. | These boards are built to interact with the user of the machine. | Power boards are able to share their input power source into the <span className="cust_tooltip">Robus<span className="cust_tooltiptext">{{robus_def}}</span></span> wire to feed other boards. |
 
 <a name="plug"></a>
 
@@ -75,7 +75,7 @@ Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">Pyluos on github
 
 [Instal PlatformIO](../embedded/dev-env.html) if you don't have it yet and clone the [Examples](https://github.com/Luos-io/Examples) repository.
 
-To update Luos, <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span> or your containers' code, you must open the librairies tab ![](/img/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
+To update Luos, <span className="cust_tooltip">Robus<span className="cust_tooltiptext">{{robus_def}}</span></span> or your containers' code, you must open the librairies tab ![](/img/vscode-lib-button.png) on PlatformIO in Visual Studio Code:
 
 ![](/img/Update_Luos_Robus_Containers.png)
 

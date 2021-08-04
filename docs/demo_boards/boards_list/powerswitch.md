@@ -1,17 +1,17 @@
 # Power-switch board
 
-<div class="cust_sheet" markdown="1">
-<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> switch_mod</p>
-<p class="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../software/containers_list/state.md">State</a></p>
-<p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
-<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="/img/power-switch-container.png" alt="" /></p>
-<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
-<p class="cust_indent" markdown="1">
+<div className="cust_sheet" markdown="1">
+<p className="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> switch_mod</p>
+<p className="cust_sheet-title" markdown="1"><strong>Type:</strong> <a href="../../software/containers_list/state.md">State</a></p>
+<p className="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 1</p>
+<p className="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p className="cust_indent" markdown="1"><img height="150" src="/img/power-switch-container.png" alt="" /></p>
+<p className="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
+<p className="cust_indent" markdown="1">
 <img height="50" src="/img/sticker-actuation.png" title="Actuation" alt="" />
 </p>
-<p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/l0/Power_switch" target="_blank">Power switch</a>
+<p className="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
+<a className="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/tree/master/Projects/l0/Power_switch" target="_blank">Power switch</a>
 </div>
 
 ## Board function

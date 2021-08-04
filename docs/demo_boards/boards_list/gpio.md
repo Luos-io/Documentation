@@ -1,18 +1,18 @@
 # GPIO board
 
-<div class="cust_sheet" markdown="1">
-<p class="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> analog_read_P1, analog_read_P7, analog_read_P8, analog_read_P9, digit_read_P5, digit_read_P6, digit_write_P2, digit_write_P3, digit_write_P4</p>
-<p class="cust_sheet-title" markdown="1"><strong>Types:</strong> <a href="../../software/containers_list/state.md">State</a>, <a href="../../software/containers_list/voltage.md">Voltage</a></p>
-<p class="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 9</p>
-<p class="cust_sheet-title" markdown="1"><strong>Image</strong></p>
-<p class="cust_indent" markdown="1"><img height="150" src="/img/gpio-container.png" alt="" /></p>
-<p class="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
-<p class="cust_indent" markdown="1">
+<div className="cust_sheet" markdown="1">
+<p className="cust_sheet-title" markdown="1"><strong>Default Alias:</strong> analog_read_P1, analog_read_P7, analog_read_P8, analog_read_P9, digit_read_P5, digit_read_P6, digit_write_P2, digit_write_P3, digit_write_P4</p>
+<p className="cust_sheet-title" markdown="1"><strong>Types:</strong> <a href="../../software/containers_list/state.md">State</a>, <a href="../../software/containers_list/voltage.md">Voltage</a></p>
+<p className="cust_sheet-title" markdown="1"><strong>Number of container(s):</strong> 9</p>
+<p className="cust_sheet-title" markdown="1"><strong>Image</strong></p>
+<p className="cust_indent" markdown="1"><img height="150" src="/img/gpio-container.png" alt="" /></p>
+<p className="cust_sheet-title" markdown="1"><strong>Category(-ies)</strong></p>
+<p className="cust_indent" markdown="1">
 <img height="50" src="/img/sticker-interface.png" title="Interface" alt="" />
 <img height="50" src="/img/sticker-sensor.png" title="Sensor" alt="" />
 </p>
-<p class="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
-<a class="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/blob/master/Projects/l0/Gpio" target="_blank">Gpio</a>
+<p className="cust_sheet-title" markdown="1"><strong>Project source </strong></p>
+<a className="github-button" data-size="large" aria-label="Star Luos-io/Luos on GitHub" href="https://github.com/Luos-io/Examples/blob/master/Projects/l0/Gpio" target="_blank">Gpio</a>
 </div>
 
 ## GPIO pinout and power consideration

@@ -1,4 +1,4 @@
-<h1><a href="#ros" class="header" id="ros"><img src="../../_assets/img/ros-logo.png" width="80px" alt="" /> / Using Luos with ROS1 and ROS2</a></h1>
+<h1><a href="#ros" className="header" id="ros"><img src="../../_assets/img/ros-logo.png" width="80px" alt="" /> / Using Luos with ROS1 and ROS2</a></h1>
 
 Luos comes with a package for the <a href="https://www.ros.org/" target="_blank">Robot Operating System</a>.
 
