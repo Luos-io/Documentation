@@ -11,32 +11,32 @@ Check the list of MCU family Luos cover :<a href="https://github.com/Luos-io/Luo
 
 ## Default Configuration
 
-Luos libraries is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low level part, Luos compagny provide, for many MCU family, a default configuration that can be follow to plug and play luos library with the chosen MCU family. The peripheral configuration is describe in files luos_hal_config.h in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>, and can be redefined in the node_config.h file to fit with your design.
+Luos libraries is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low-level part, Luos company provides, for many MCU family, a default configuration that can lead to plug and play luos library with the chosen MCU family. The peripheral configuration is described in files luos_hal_config.h in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>, and can be redefined in the node_config.h file to fit with your design.
 
 ## Luos HAL configuration
 
-To match pinout and fonctionality with your design, you can create or use the file `node_config.h` (see Luos example)
-Base on the default configuration define in luos_hal_config.h,  you can define in the file `node_config.h`, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer etc.
+To match the pinout and functionality with your design, you can create or use the file `node_config.h` (see Luos example)
+As you can see on the default configuration, defined in luos_hal_config.h, you are able to define in the file `node_config.h`, in the section "LUOS HAL LIBRARY DEFINITION", parameters like pinout, usart, timer, etc.
 
-This way you are able to change default hardware configuration so it need to be call in the preprossessor variable section of your IDE to be taken into consideration for your project
+In this way you will be able to change the default hardware configuration, and use it by calling it in the preprossessor variable section of your IDE, so as to be taken into consideration for your project.
 
-> **FYI:** Every example provide by luos has a node_config.h files and includes by the file platformio.ini
+> **FYI:** Every example provided by luos has a node_config.h file, which is included by the platformio project's initialization file, called platformio.ini.
 
-For example, redefine PTPA to fit with your design
+Example of PTPA redefinition:
 
-in`luos_hal_config.h` this is defined as followed:
+In `luos_hal_config.h` this is defined as followed:
 ```C
 #ifndef PTPA_PIN
 #define PTPA_PIN                    GPIO_PIN_8
 #endif
 ```
 
-in`node_config.h` this should be redefined as followed:
+In `node_config.h` this should be redefined as followed:
 ```C
 #define PTPA_PIN                    GPIO_PIN_11
 ```
 
-There are many possible configurations that you can change, not all of them being necessary for your design:
+There are many possible configurations that you can change, but it is possible that not all of them are necessary for your design:
 
 ### Pinout
 | Function | Description | Comments |

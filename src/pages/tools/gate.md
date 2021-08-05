@@ -1,16 +1,16 @@
 # Gate
 
-The Gate is a major tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([Json](../api/api.md) most of the time) and to stream and receive those formated informations into any kind of communication way such as serial interface, wifi, bluetooth, Lora, ...
+The Gate is a main tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([Json](../api/api.md) most of the time) and to stream and receive those formated informations using any means of communication, such as serial interface, wifi, bluetooth, Lora, ...
 
 You can use it to take control of any embedded service with [any languages](../api/api.md) on any machine. For example we use it in [Pyluos](./pyluos.md) or [ROS](./ros.md)!
 
 Gate is a simple embedded [App service](../luos-technology/services/services.md), so it can work on any MCU running Luos without any modification.
 
-The Gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
+The Gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.).
 
 ## Default Gate Process
 
-The default behavior of the Gate is optimized for system that only have drivers and control the entire behavior trough a distant machine.
+The default behavior of the Gate is optimized for system that only have drivers and control the entire behavior through a distant machine.
 
  1. At power up, the Gate make a network detection to find a pipe service. *(Optional)*
  2. The Gate wait to receive a detection message from a pipe.

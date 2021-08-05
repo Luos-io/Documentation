@@ -1,11 +1,11 @@
 # Tools
 
-Luos provide many tools to interface control or monitor a product made with Luos technology.
+Luos provide many tools to interface control or monitor a product developed with Luos technology.
 
 | Tools | Description |
 | :---: | :---: |
-| Gate | entry point of high level to low level. this is a Luos App this can be place on any MCU |
-| Pyluos | Python library using JSON API to communicate with gate |
-| BootLoder | Update node through Luos Network |
-| Monitoring | all the utils that allow you to monitor a Luos network|
+| Gate | Entry point of high level to low level. This is a Luos App that can be placed on any MCU |
+| Pyluos | Python library using JSON API to communicate with the gate |
+| BootLoder | Update a node through Luos Network |
+| Monitoring | All the tools that allow you to monitor a Luos network |
 
