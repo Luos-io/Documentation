@@ -8,6 +8,8 @@ An other feature included in Luos technology is the Object Dictionary (OD), that
 
 There are three general categories of commands, that are separated regarding the level of handling the messages received from a node. These messages are either handled in Luos level, in Robus level or in service level.
 
+You can find the full list of commands <a href="https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h" target = "_blank"> here </a>.
+
 ### Commands handled in Robus level
 | Command | Function |
 | :---: | :---: |
