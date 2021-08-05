@@ -18,7 +18,8 @@ In the following example, we will make a LED turn on and off by pushing and rele
 #### 1. Configure your computer
 The default tool we use to control a Luos network is a board hosting a [Gate](../../tools/gate.md) service, with a Python lib called [Pyluos](../../tools/pyluos.md).
 
-To begin, you have to install Python and Pyluos library, following the Pyluos documentation page.
+
+To begin, you have to install Python and Pyluos library, following the [Pyluos documentation page](../../tools/pyluos.md).
 
 #### 2. Plug the boards together
 Plug together all the boards with cables. You can plug them to any of the two connectors of each board, in any order.
@@ -39,7 +40,8 @@ Your device is now powered and connected. All the low-level code and electronics
 ![USB board](../../../_assets/img/quickstart-2.png)<br />
 
 #### 4. Interact with the device
-*The USB node handle a specific service called "[Gate]((../../tools/gate.md)". There are other boards hosting "Gate" service and using different connection than USB. These particular services convert Luos services data into something easier to understand and manage, using [JSON API](../../api/api.md).*
+
+*The USB node handle a specific service called "[Gate](../../tools/gate.md)". There are other boards hosting "Gate" service and using different connection than USB. These particular services convert Luos services data into something easier to understand and manage, using [JSON API](../../api/api.md).*
 
 Interacting with the Luos system and program behaviors will require to spot the USB connection on your computer. In the following example, the associated port is `COM13`.
 

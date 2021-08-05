@@ -24,13 +24,13 @@ You can use Luos as a **bare metal** lib or as a driver into your **embedded OS*
 
 Luos is composed as well of **code subdivisions** called <span class="cust_tooltip">[**services**](#service)<span class="cust_tooltiptext">{{service_def}}</span></span>. Services are distributed into every nodes in a network.
 
-<a href="../../_assets/img/feature-service-node-board.jpg" target="_blank"><img src="../../_assets/img/feature-service-node-board.jpg" width="800px" /></a>
+<a href="../../../_assets/img/feature-service-node-board.jpg" target="_blank"><img src="../../../_assets/img/feature-service-node-board.jpg" width="800px" /></a>
 
 ## What is a Node?
 A node is a physical component (hardware) running Luos and hosting one or several services. In a Luos network, nodes are all connected together using <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span>, the Luos communication technology.<br/>In other words, **a node is a microcontroler** connected to other microcontrolers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (services) allowing it to manage its boards and features.
 
-<img src="../../_assets/img/MCU-luos.png" height="100px" />
+<img src="../../../_assets/img/MCU-luos.png" height="100px" />
 
 Nodes can have capacities such as measuring the core temperature, sending the processor's unique ID or input voltage. A node's capacities are commonly shared by all the services hosted into it and are accessible through each of them.
 
@@ -43,9 +43,9 @@ Services, much like their server-world counterparts, can be placed anywhere in y
 
 **Each service is hosted in a single node**, but a node can handle several services at the same time and manage communication between them and between other services hosted in other nodes, using the same interface.
 
-For example, the [Dynamixel board] provided by Luos can dynamically create and manage Dynamixel services depending on the number of Dynamixel motors linked to it. Any Dynamixel services can get or set values to other Dynamixel services on the same node or to any other services in any other nodes in the network.
+For example, the Dynamixel board provided by Luos can dynamically create and manage Dynamixel services depending on the number of Dynamixel motors linked to it. Any Dynamixel services can get or set values to other Dynamixel services on the same node or to any other services in any other nodes in the network.
 
-[Go to Services page].
+[Go to Services page](../services/services.md).
 
 ## App
 An App is a special type of service, one that does not provide any hardware operations, but will contain the intelligence of your product. This is where you will concentrate your code and development time.
@@ -55,7 +55,7 @@ While your app does not contain any hardware capabilites (sensors or actuators) 
 ## Messages
 Communications between continers and apps is performed through Messages. A message contains information on the destination service(s), the type of operation to be performed (a read or write operation and the type of message) as well as any supplemental data. The message will be sent on the network, and will arrive at destination, no matter where the service is placed on the network.
 
-[Go to Messages handling page].
+[Go to Messages handling page](../message/handling-message.md).
 
 ## Service detection
 Services on the network are automatically detected, and assigned IDs depending on their node's physical position in the network, and a routing table is generated.
@@ -64,9 +64,9 @@ IDs are assigned from the nearest to the furthest node branch by branch, from th
 
 > *Note:* Multiple detections by different services at the same time is not allowed.
 
-It is possible to execute a detection on the network frequently in order to dynamically discover included or excluded services while running, detecting if hardware has been added or removed. Go to [Routing table] page for more information.
+It is possible to execute a detection on the network frequently in order to dynamically discover included or excluded services while running, detecting if hardware has been added or removed. Go to [Routing table](../services/routing_table.md) page for more information.
 
 ## Routing table
 A routing table is a "service" managed by the Luos network and available for any services on any nodes. This service lists all the services on the network and allows any services to access and use basic information of any other services. The routing table's data can be loaded or auto-generated during detection, and can be refreshed on demand.
 
-[Go to Routing table page].
+[Go to Routing table page](../services/routing_table.md).

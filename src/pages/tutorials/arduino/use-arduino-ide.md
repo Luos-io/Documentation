@@ -1,7 +1,7 @@
 # Setup a Luos Arduino project
 <a href="https://www.arduino.cc/" target="_blank">Arduino</a> is an open-source electronic platform based on easy-to-use hardware and software. The Luos library can be used in Arduino IDE and examples are provided to quickly test it on Arduino hardware. For now, only Arduino SAM Board 32-bits ARM cortex-M0+ are compatible with Luos Library (Arduino Zero, Arduino MKR Wifi, Arduino MKR FOX, Arduino MKR WAN, Arduino MKR GSM, Arduino NB, etc).
 
-Creating a Luos Network with an Arduino board is very easy. Use D0 and D1 for Tx and Rx, D2 and D3 for Rx_En and Tx_En (RS485 configuration), D5 and D6 for PTPA and PTPB. See the [hardware consideration](./../../hardware-consideration/hardware-consideration.md) page for more information.
+Creating a Luos Network with an Arduino board is very easy. Use D0 and D1 for Tx and Rx, D2 and D3 for Rx_En and Tx_En (RS485 configuration), D5 and D6 for PTPA and PTPB. See the [hardware topics](../../hardware-consideration/hardware-consideration.md) page for more information.
 
 ## Getting Started
  1. Install Ardiuno IDE from <a href="https://www.arduino.cc/" target="_blank">Arduino</a> website.
