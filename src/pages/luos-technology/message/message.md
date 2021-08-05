@@ -38,9 +38,12 @@ typedef struct{
 - **Target (12 bits)**: This field contains the target address. Make sure to understand the real destination of this field, you have to know the addressing mode contained on the *Target_mode* field.
 - **Target_mode (4 bits)**: This field indicates the addressing mode and how to understand the *Target* field. It can take different values:
   - **ID**: This mode allows to communicate with a unique service using its ID **without** acknowledgment return.
-  - **ID_ACK**: This mode allows to communicate with a unique service using its ID **with** acknowledgment return.
-  - **Multicast/Broadcast**: This mode allows multiple services to catch a message. In this case, the message contains a type of data used by multiple services.
+  - **IDACK**: This mode allows to communicate with a unique service using its ID **with** acknowledgment return.
   - **Type**: This mode sends a message to all services with a given type, for example all "Sharp digital distance sensor".
+  - **Multicast/Broadcast**: This mode allows multiple services to catch a message. In this case, the message contains a type of data used by multiple services.
+  - **NODEID**: This mode allows to send a message to the all the services of a specific node **without** acknowledgment return.
+  - **NODEIDACK**: This mode allows to send a message to the all the services of a specific node **with** acknowledgment return.
 - **Source (12 bits)**: The unique ID of the transmitter service.
 - **CMD (8 bits)**: The command defines the transmitted data's type.
 - **Size (16 bits)**: Size of the incoming data.
+- **ACK (8 bits)**: [Acknowledgment](../../tools/monitoring.md) signal demanded in target modes **IDACK** and **NODEIDACK**, after the good reception of the message.
