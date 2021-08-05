@@ -1,6 +1,6 @@
 # Luos
 
-The embedded part of a node is separated to the Luos embedded API and to the node's different functionalities. Luos is responsible for the creation of each node's identity, the integration of the node to a Luos network by locating it among the other nodes, the communication with each other and the management of all their different functionalities.
+The embedded part of a node is separated to the Luos embedded code and to the node's different functionalities. Luos is responsible for the creation of each node's identity, the integration of the node to a Luos network by locating it among the other nodes, the communication with each other and the management of all their different functionalities.
 
 ## Luos Integration
 
@@ -54,20 +54,22 @@ In the main Luos embedded technology, we added the following tools, in order to 
 | Send data stored in a streaming channel | `Luos_SendStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `void` |
 | Receive data from a streaming channel | `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `error_return_t` |
 | Share network's baudrate| `Luos_SendBaudrate(service_t *service, uint32_t baudrate);` | `void` |
-| Set the ID of a container through the network | `Luos_SetExternId(container_t *container, target_mode_t target_mode, uint16_t target, uint16_t newid);` | `uint16_t` |
-| Get the number of the non treated messages left | `Luos_NbrAvailableMsg(void);` | `uint16_t` |
 | Get the total tick number from the initialization of Luos | `Luos_GetSystick(void);` | `uint32_t` |
-| Return true if all the messages are completed | `Luos_TxComplete(void);` | `error_return_t` |
-| Flush the entire Luos message buffer | `Luos_Flush(void);` | `void` |
 
 
 ## Robus
 
 As already mentioned, the nodes have the capability to communicate with each other thanks to a specific part of Luos, Robus.
 
-Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like the communication initialization between the different nodes, the messages' management (message format control, TX, and RX), the memory allocation, the topology detection and for the attribution of messages to the suitable handling level. 
+Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like the communication initialization between the different nodes, the messages' management ([message format control](../message/message.md), TX, and RX), the memory allocation, the topology [detection](../services/routing_table.md) and for the attribution of messages to the suitable handling level. 
 
 These functionalities are analyzed in the next pages.
+
+### How the communication works?
+
+In the level of a node, the communication is achieved by receiving and sending [messages](../message/message.md) with the other components of a Luos network. These messages, after a format control executed by Robus, they are stored in the memory of the MCU. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos, or they are sent to one or more [Services](../services/services.md).
+
+<img src="../../../_assets/img/NodeFlow.png" height="400px" />
 
 ## Luos Statistics
 
