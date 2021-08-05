@@ -19,9 +19,9 @@ A luos [node](../node/node.md) can host multiple packages, and a package has to 
 When designing projects at Luos we always use the same way to organize our code: we put packages into a `packages` folder:
 
 ```AsciiDoc
- Project
+ Node
     │
-    ├─── Packages
+    ├─── Lib
     │    ├─── package_1
     │    │    ├─── package_1.c
     │    │    └─── package_1.h
@@ -64,8 +64,3 @@ int main(void)
 ```
 
 This way, it is easy to manage all of your services and to add as many of them as you want in to `main()`.
-
-### How to use Luos hardware abstraction layer
-
-To ease the use of Luos Library on a specific target, Luos provides `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` from the LuosHAL folder for a lot of different MCU families. The purpose of these files is to make Luos communications work directly on the chosen MCU. However, this default configuration for a MCU Family should be adapted to fit your design. See how to do it on the [Luos HAL](../node/luos-hal.md) page.
-
