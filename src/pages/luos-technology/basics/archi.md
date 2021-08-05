@@ -40,21 +40,21 @@
        ├─── Main.c
        ├─── Main.h
        ├─── container 4
-       │     ├─── container_3.c
-       │     └─── container_3.h
-       ├─── container 4
-       │     ├─── container_3.c
-       │     └─── container_3.h
-       └─── container 5
-             ├─── container_2.c
-             └─── container_2.h
+       │     ├─── container_4.c
+       │     └─── container_4.h
+       ├─── container 5
+       │     ├─── container_5.c
+       │     └─── container_5.h
+       └─── container 6
+             ├─── container_6.c
+             └─── container_6.h
 
 ```
 
 
 - **Product level**
 
-    **Product_config.h**: this file describes the general configuration for the product such as  Baudrate, timeout duration, etc. It also regroups the list of custom `service_profiles` and custom command that allow services to communicate together
+    **Product_config.h**: this file describes the general configuration for the product such as  Baudrate, timeout duration, etc. It also regroups the list of custom type, custom profile and custom command that allow services to communicate together. this folder is the same for all node of a same product and should be include at node level.
 
 - **Node level**
 

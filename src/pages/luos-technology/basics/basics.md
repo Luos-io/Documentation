@@ -34,7 +34,7 @@ In the Luos philosophy, each node has to carry the necessary programs (services)
 
 Nodes can have capacities such as measuring the core temperature, sending the processor's unique ID or input voltage. A node's capacities are commonly shared by all the services hosted into it and are accessible through each of them.
 
-## Package notion
+## Package
 At Luos, a package is a folder of code files that execute features in your project. Luos library execute this package that expose all the service present in your product. A package can be compose by one or several services.
 
 ## Service

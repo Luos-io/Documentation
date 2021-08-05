@@ -8,7 +8,7 @@ Luos is an open source light library that can be put on any MCU to freely and fa
 
 ## The most for the community
 
-Most of embedded development are build from scratch, using Luos will allow you to capitalize on development all ready done by you compagny or Luos community. re using feature encapsulated with luos will accelerate your time to market and be reassure on robustness and universality of application. You will find a lot new idea and support of the community with Luos package find on our market place.
+Most of embedded development are build from scratch, using Luos will allow you to capitalize on development all ready done by you, your compagny or Luos community. re using feature encapsulated with luos will accelerate your time to market and be reassure on robustness and universality of application. You will find a lot new idea and support of the community with Luos package find on our market place.
 
 
 ## Good practice with Luos

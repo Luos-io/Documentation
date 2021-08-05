@@ -105,7 +105,7 @@ These command lines will create a new package `my_luos_ros2_package` relying on 
 cd ~/ros2_ws/src
 ros2 pkg create my_luos_ros2_package --build-type ament_python --dependencies luos_interface
 ```
-You can then add your ROS Python scripts, by taking example on the [bike sharing example](../tutorials/tutorials.md) page.
+You can then add your ROS Python scripts, by taking example on the [bike sharing example](../../tutorials/tutorials.md) page.
 
 
 ## Retro-compatibility ROS1
@@ -117,7 +117,7 @@ This procedure has been tested with ROS 1 Noetic + ROS 2 Foxy and Python 3.8.2 i
 
 ## 1. Install ROS 2 and Luos
 
-Make sure you have first [installed ROS 2](../ros.md) and managed to run the broker in ROS 2 with the command `ros2 launch luos_interface broker.launch.py`.
+Make sure you have first installed ROS 2 and managed to run the broker in ROS 2 with the command `ros2 launch luos_interface broker.launch.py`.
 We assume your ROS 2 workspace is `~/ros2_ws`.
 
 ## 2. Install ROS 1 and the ROS 1 bridge

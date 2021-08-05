@@ -2,44 +2,31 @@
 
 This page provides quick and easy tutorials to get started with Luos demonstration boards.
 
-## Boards general specifications
-Almost every demonstration board in the provided examples is composed of a motherboard and a shield board. The motherboard, called L0, has a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> that hosts Luos. The shield board is added to a L0 to type it with an electronic function.
-
-<img src="../../../_assets/img/assembly.png" height="200px" />
-
-> Note: Power category boards don't include L0 motherboard as they provide only with power functions and don't need communication. However. he communication data pass through their connectors to other communicating boards.
-
-Here are the specifications of this motherboard:
-
-{{ #include ./../../../_includes/specs.md }}
-
-see <a href="https://github.com/Luos-io/Examples/tree/master/Hardware" target="_blank">Example demonstration board</a>.
-
 ## Tutorial \#1
-On the following steps, you will learn how to make a simple behavior with a [RGB LED](./boards_list/rgbled.md) board and a [Button](./boards_list/button.md) board step-by-step.
+On the following steps, you will learn how to make a simple behavior with a RGB LED board and a Button board step-by-step.
 
 ### What you will need
 In the following example, we will make a LED turn on and off by pushing and releasing a button. You will need the following boards and accessories:
 
-* 1x Luos [LED board](./boards_list/rgbled.md)
-* 1x Luos [Button board](./boards_list/button.md)
-* 1x Luos [USB board](./boards_list/usb.md) and an USB cable
-* 2x Luos [cables](./boards_list/cables.md)
+* 1x Luos LED board
+* 1x Luos Button board
+* 1x Luos USB board and an USB cable
+* 2x Luos cables
 
 ### STEPS
 
 #### 1. Configure your computer
-The default tool we use to control a Luos network is a board hosting a [Gate](../software/services_list/gate.md) service, with a Python lib called [Pyluos](../software/pyluos.md).
+The default tool we use to control a Luos network is a board hosting a [Gate](../../tools/gate.md) service, with a Python lib called [Pyluos](../../tools/pyluos.md).
 
-To begin, you have to install Python and Pyluos library, following the [Pyluos documentation page](../software/pyluos.html).
+To begin, you have to install Python and Pyluos library, following the Pyluos documentation page.
 
 #### 2. Plug the boards together
-Plug together all the boards with [cables](./boards_list/cables.md). You can plug them to any of the two connectors of each board, in any order.
+Plug together all the boards with cables. You can plug them to any of the two connectors of each board, in any order.
 
 > **Warning:** Don't close a loop with the boards at each extremity.
 
 
-![Boards](../../_assets/img/quickstart-1.png)<br />
+![Boards](../../../_assets/img/quickstart-1.png)<br />
 *From left to right: LED, Button, and USB . The plug order doesn’t matter.*
 
 #### 3. Connect the device to a computer
@@ -49,12 +36,12 @@ Plug the USB board to a computer with micro-USB to USB cable.
 
 Your device is now powered and connected. All the low-level code and electronics is ready to use to help you program your own behaviors.
 
-![USB board](../../_assets/img/quickstart-2.png)<br />
+![USB board](../../../_assets/img/quickstart-2.png)<br />
 
 #### 4. Interact with the device
-*The USB node handle a specific service called "[Gate](../software/services_list/gate.md)". There are other boards hosting "Gate" service and using different connection than USB. These particular services convert Luos services data into something easier to understand and manage, using [JSON API](../software/json-api.md).*
+*The USB node handle a specific service called "[Gate]((../../tools/gate.md)". There are other boards hosting "Gate" service and using different connection than USB. These particular services convert Luos services data into something easier to understand and manage, using [JSON API](../../api/api.md).*
 
-Interacting with the Luos system and program behaviors will require to spot the USB connection on your computer. The following steps are explained on the [General board use page](./electronic-use.md) with more details. In the following example, the associated port is `COM13`.
+Interacting with the Luos system and program behaviors will require to spot the USB connection on your computer. In the following example, the associated port is `COM13`.
 
 Once you know the port, you can connect using:
 
@@ -123,7 +110,7 @@ while 1:
 
 Test your behavior by executing the code.
 
-![LED board](../../_assets/img/quickstart-3.png)
+![LED board](../../../_assets/img/quickstart-3.png)
 
 ---
 ## Tutorial \#2

@@ -16,3 +16,6 @@ Luos' One-wire official connector is: <a href="https://octopart.com/df11-4dp-2ds
 ![](../../_assets/img/Luos_Network_Interface_485.png)
 Luos' RS485 official connector is: <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">*DF11-8DP-2DS*</a>.
 
+
+See default pinout configuration in <a href="https://github.com/Luos-io/LuosHAL" target="_blank">luos_hal_config.h</a> files for the MCU family chosen.
+

@@ -14,7 +14,7 @@ It relies on the 3D vizualizer embedded in ROS 2, named `RViz 2`:
 
 ## Test the example
 
-This example package relies on `luos_interface`, make sure you first installed it by following [its own procedure](../ros.md).
+This example package relies on `luos_interface`, make sure you first installed it by following its own procedure.
 
 Then, download the example package and build your workspace with `colcon`:
 ```bash

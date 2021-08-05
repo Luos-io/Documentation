@@ -35,7 +35,7 @@
 - [Tutorials](./pages/tutorials/tutorials.md)
     - [Arduino](./pages/tutorials/arduino/arduino.md)
         - [Use Luos with Arduino IDE](./pages/tutorials/arduino/use-arduino-ide.md)
-    - [Luos Demo](./pages/tutorials/luos-demo/demo.md)
+    - [Luos Board Demo](./pages/tutorials/luos-demo/demo.md)
         - [Simple Button LED](./pages/tutorials/luos-demo/simple.md)
     - [Bootloader](./pages/tutorials/bootloader/bootloader.md)
     - [ROS](./pages/tutorials/ros/ros.md)
