@@ -3,7 +3,9 @@
 This tutorial shows you how to quicly upload a luos app on a MCU developpement kit.
 
 Supported boards are listed below:
+- Arduino zero
 - STM32F072RB Discovery
+- STM32L432KC Nucleo
 
 ## Setup development environment
 
@@ -49,7 +51,8 @@ git clone https://github.com/ncros3/getting_started.git
 
 ## Flash your board
 
-Open VScode then click on **Open Folder** in the project explorer on the left, select **F072RB_Disco** in the folder explorer then click on **ADD**:
+Open VScode then click on **Open Folder** in the project explorer on the left, select a project depending on the board you have chosen. For example, for the STM32F072RB discovery, open **F072RB_Disco** in the folder explorer then click on **ADD**:
+
 <p align="center">
   <img src="../../_assets/img/01_getting_started/Open_project.png">
 </p>
@@ -60,9 +63,9 @@ The project folder is opened in the explorer. You can now flash your board: make
   <img src="../../_assets/img/01_getting_started/Flash_board.png">
 </p>
 
-PlatformIO will build the firmware and flash it. If you have any trouble with your USB driver, please follow steps described above. If all steps passed, you should see the **LED3** blinks on your board.
+PlatformIO will build the firmware and flash it. If you have any trouble with your USB driver, please follow steps described above. If all steps passed, you should see the **LED** blinking on your board.
 
-Congratulations, your first luos app is running on your board !
+Congratulations, your first luos app is running !
 
 ## Going further
 
