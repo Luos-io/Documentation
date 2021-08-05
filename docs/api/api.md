@@ -18,7 +18,7 @@ This command asks the Gate to start a topological detection, create a routing ta
 
 ## Routing table messages
 
-> **Warning:** Make sure to read and understand how [routing table](../embedded/services/routing-table.md) works before reading this part.
+> **Warning:** Make sure to read and understand how [routing table](/embedded/services/routing-table.md) works before reading this part.
 
 After the Gate starts, the first message you receive is a routing table.<br/>
 This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
@@ -65,7 +65,7 @@ Each listed node of the network has basic node information and a list of hosted 
 }
 ```
 
-> **Note:** To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](../embedded/services/routing-table.md).
+> **Note:** To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](/embedded/services/routing-table.md).
 
 #### Services
 
@@ -79,7 +79,7 @@ Each listed service of a node has basic services information:
 }
 ```
 
-> **Note:** To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](../embedded/services.html).
+> **Note:** To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](/embedded/services.html).
 
 #### Full routing table example
 
@@ -302,7 +302,7 @@ Other specific messages:
 
 ### Services exclusion messages
 
-Services can be excluded from the network if a problem occurs (see [self-healing](../embedded/services/self-healing.md#service-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this service is no longer available:
+Services can be excluded from the network if a problem occurs (see [self-healing](/embedded/services/self-healing.md#service-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this service is no longer available:
 
 ```JSON
 {"dead_service": "service_alias"}
@@ -310,7 +310,7 @@ Services can be excluded from the network if a problem occurs (see [self-healing
 
 ### Node assert messages
 
-Nodes can assert if a critical issue occurs (see [self-healing](../embedded/services/self-healing.html#assert) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](/embedded/services/self-healing.html#assert) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 
 ```JSON
 {

@@ -2,7 +2,7 @@
 
 **As a developer you will always develop your functionalities into services and never into the `main()` program.**
 
-> **Warning:** Make sure to read and understand the [package](../package/package.md) section before reading this page.
+> **Warning:** Make sure to read and understand the [package](/luos-technology/package/package.md) section before reading this page.
 
 ## How to create and initialize a service
 
@@ -14,7 +14,7 @@ service_t* Luos_CreateService(void* callback, service_type_t type, char* default
 
 The returned `service_t*` is a service structure pointer that will be useful to make your service act in the network after this initialization.
 
-**callback** is a pointer to a callback function called by Luos when your service receive messages from other services (see [messages](../message/message.md) for more details).
+**callback** is a pointer to a callback function called by Luos when your service receive messages from other services (see [messages](/luos-technology/message/message.md) for more details).
 This function needs to have a specific format:
 
 ```c
@@ -30,7 +30,7 @@ void Service_MsgHandler(service_t *service, msg_t *msg)
 
 **revision** is the revision number of the service you are creating and which will be accessible via Pyluos.
 
-Following the [packages rules](../package/package.md), here is a code example for a button service:
+Following the [packages rules](/luos-technology/package/package.md), here is a code example for a button service:
 
 ```c
 service_t* service_btn;
@@ -74,7 +74,7 @@ You can have multiple driver services on the same <span className="cust_tooltip"
 ## Apps guidelines
 
 An application or app is a type of service that only manages software items such as functions or algorithms. Apps use other services to make your device act, operate, and behave.
-Apps can be placed in any <span className="cust_tooltip">[nodes](../node/node.md)<span className="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
+Apps can be placed in any <span className="cust_tooltip">[nodes](/luos-technology/node/node.md)<span className="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact global performances of the system.
 
 By designing an app, you have to keep the following rules in mind:
 
@@ -82,7 +82,7 @@ By designing an app, you have to keep the following rules in mind:
 - An app can use custom service types.
 - An app must use standard <span className="cust_tooltip">object dictionary<span className="cust_tooltiptext">{{od_def}}</span></span> structures. If the structures used are not standard, Gate services could be completely unable to manage them.
 
-Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every services in every nodes in your device and make it work properly. Go to the [Routing table](./routing-table.md) page for more information.
+Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every services in every nodes in your device and make it work properly. Go to the [Routing table](/embedded/services/routing-table.md) page for more information.
 
 ## Services accessibility
 
@@ -118,4 +118,4 @@ This doesn't change anything else on your service code, as it just allows extern
 
 ## Messages
 
-The core of luos technology enables to send and receive messages from services with a very simple API. More informations about [messages](../message/basic-message.md) can be found in the dedicated section.
+The core of luos technology enables to send and receive messages from services with a very simple API. More informations about [messages](/luos-technology/message/basic-message.md) can be found in the dedicated section.

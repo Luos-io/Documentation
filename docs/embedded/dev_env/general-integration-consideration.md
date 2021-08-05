@@ -16,7 +16,7 @@ To make it work in your environment, you have to:
 
 ## Configuration
 
-Luos allow you to configure some parameters allowing to optimize the memory usage to your needs. To make it we advise to use a configuration file call node_config.h. Put the file at the root folder of your project and add it in the compiling variables section of your IDE using a _-include node_config.h_.
+Luos allow you to configure some parameters allowing to optimize the memory usage to your needs. To make it we advise to use a configuration file call node*config.h. Put the file at the root folder of your project and add it in the compiling variables section of your IDE using a *-include node*config.h*.
 
 You can use it to set all your custom configuration:
 
@@ -24,13 +24,13 @@ You can use it to set all your custom configuration:
 - for Luos library of your node
 - to modify Luos HAL config to make it fit with your design
 
-|     Parameters     |    Defaults value     |                                                Description                                                 |
-| :----------------: | :-------------------: | :--------------------------------------------------------------------------------------------------------: |
-|   NBR_NAK_RETRY    |          10           |                              Number of retries to send after a received NAK.                               |
-| MAX_SERVICE_NUMBER |           5           |                           Number of services in the node (memory optimisation).                            |
-|  MSG_BUFFER_SIZE   |      3\*size_msg      |     Message buffer size. Max size of a message (3 \* (7 bytes header + 128 bytes data + 2 bytes CRC)).     |
-|     MAX_MSG_NB     | 2\*MAX_SERVICE_NUMBER |                        Max number of messages for a service that can be referenced.                        |
-|      NBR_PORT      |           2           | Number of PTP on the node ( max 8). See [electronic design](../hardware_topics/electronic-design.md) page. |
+|     Parameters     |    Defaults value     |                                                    Description                                                    |
+| :----------------: | :-------------------: | :---------------------------------------------------------------------------------------------------------------: |
+|   NBR_NAK_RETRY    |          10           |                                  Number of retries to send after a received NAK.                                  |
+| MAX_SERVICE_NUMBER |           5           |                               Number of services in the node (memory optimisation).                               |
+|  MSG_BUFFER_SIZE   |      3\*size_msg      |        Message buffer size. Max size of a message (3 \* (7 bytes header + 128 bytes data + 2 bytes CRC)).         |
+|     MAX_MSG_NB     | 2\*MAX_SERVICE_NUMBER |                           Max number of messages for a service that can be referenced.                            |
+|      NBR_PORT      |           2           | Number of PTP on the node ( max 8). See [electronic design](/embedded/hardware_topics/electronic-design.md) page. |
 
 You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h</a>,
 

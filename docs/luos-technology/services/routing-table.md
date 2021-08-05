@@ -1,6 +1,6 @@
 # Routing Table
 
-> **Warning:** Make sure to read and understand the [network topoly](../node/topology.md) section before reading this page.
+> **Warning:** Make sure to read and understand the [network topoly](/luos-technology/node/topology.md) section before reading this page.
 
 The routing table is a feature of Luos allowing every <span className="cust_tooltip">[service](./services.md)<span className="cust_tooltiptext">{{ service_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows services to know their physical position and to search and interact with other services easily.<br/>
 This feature is particularly used by apps services to find other services they need to interact with. The routing table is shared by the service which launches the detection to other services.

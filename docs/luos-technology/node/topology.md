@@ -1,10 +1,10 @@
 # Network topology
 
-As mentioned in the previous paragraphs, thanks to [Robus](../node/luos.md), the nodes have the capabilty to communicate with each other. However, Robus is not the only necessity to achieve using this characteristic. The nodes can have at any time, knowledge about the position of every other node in the network, by accessing a specific structure, called Routing Table. The routing table, is constructed and shared among the nodes, after the execution of a devoted process called detection.
+As mentioned in the previous paragraphs, thanks to [Robus](/luos-technology/node/luos.md), the nodes have the capabilty to communicate with each other. However, Robus is not the only necessity to achieve using this characteristic. The nodes can have at any time, knowledge about the position of every other node in the network, by accessing a specific structure, called Routing Table. The routing table, is constructed and shared among the nodes, after the execution of a devoted process called detection.
 
 ## Routing Table
 
-The routing table is a feature of Luos allowing every <span className="cust_tooltip">[node](./node.md)<span className="cust_tooltiptext">{{ node_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows nodes to know their physical position, and their different functionalities, as well as to search and interact with the other nodes easily.<br/>
+The routing table is a feature of Luos allowing every <span className="cust_tooltip">[node](/luos-technology/node/node.md)<span className="cust_tooltiptext">{{ node_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows nodes to know their physical position, and their different functionalities, as well as to search and interact with the other nodes easily.<br/>
 
 ## Detection
 
@@ -19,7 +19,7 @@ When each node in the network has an attributed ID, the detection algorithm proc
 
 ## Modes
 
-As explained in this [page](../basics/basics.md), <span className="cust_tooltip">nodes<span className="cust_tooltiptext">{{ node_def }}</span></span> can host multiple services. To get the topology of your device, the routing table references physical connections between your nodes and lists all the services in each one of them.
+As explained in this [page](/luos-technology/basics/basics.md), <span className="cust_tooltip">nodes<span className="cust_tooltiptext">{{ node_def }}</span></span> can host multiple services. To get the topology of your device, the routing table references physical connections between your nodes and lists all the services in each one of them.
 
 The routing table is a table of a `routing_table_t` structure containing nodes or services information.
 The maximum number of services and nodes are managed by the precompilation constant `MAX_SERVICES_NUMBER` (set to 40 by default).
@@ -91,4 +91,4 @@ Except from the node entry mode, there is a second mode, the service entry mode,
 - type: service's type
 - alias: service's alias
 
-More information about what the services are and how they are used, are given in the following [pages](../services/services.md).
+More information about what the services are and how they are used, are given in the following [pages](/luos-technology/services/services.md).

@@ -7,11 +7,11 @@ You can use this table to find interesting project regarding specific features e
 <thead>
 <tr>
 <th align="left"><small>Projects</small></th>
-<th align="center"><small><a href="../services.md">Dynamic services allocation</a></small></th>
-<th align="center"><small><a href="./msg-handling.md">Large data</a></small></th>
-<th align="center"><small><a href="./streaming.md">Streaming</a></small></th>
-<th align="left"><small><a href="./od.md">Object Dictionnary</a></small></th>
-<th align="center"><small><a href="./routing-table.md">Routing table</a></small></th>
+<th align="center"><small><a href="/embedded/services/services.md">Dynamic services allocation</a></small></th>
+<th align="center"><small><a href="/embedded/services/msg-handling.md">Large data</a></small></th>
+<th align="center"><small><a href="/embedded/services/streaming.md">Streaming</a></small></th>
+<th align="left"><small><a href="/embedded/services/od.md">Object Dictionnary</a></small></th>
+<th align="center"><small><a href="/embedded/services/routing-table.md">Routing table</a></small></th>
 </tr>
 </thead>
 <tbody>

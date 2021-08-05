@@ -14,40 +14,42 @@ Thanks to profiles, your service code will be clean and simple, you will **just 
 Profiles are really convenient to make your code simple and clean, to comply your developpement into a standard API, or to share your service type to the community.
 Luos provide some common profile models that you can use, feel free to contribute and to add your own to the standard profile bank by Pull Request on our Github ;) .
 
-Luos allows you to create a service based on a specific profile. We call it a **service template** : 
+Luos allows you to create a service based on a specific profile. We call it a **service template** :
 
 > **service** + **profile** = **template**
 
 ## How to create and initialize a service template
 
 To create a template, you have to import the profile corresponding to your needs and to instanciate a template profile structure:
+
 ```c
 #include "template_servo_motor.h"
 
 template_servo_motor_t servo_motor_template;                        // Create the template
 profile_servo_motor_t *servo_motor = &servo_motor_template.profile; // Get a pointer to the actual profile
 ```
+
 As you can see in this example you have to create a template structure containing a profile. You will need to give this template structure to the Luos template creation function, but in your service code you will only need to deal with the profile structure, so you can just create a pointer on the profile and use it it like that on your code.
 
 To actually create the service template on the Luos network you have to call the creation function specific to your template
+
 ```c
 service_t *TemplateServoMotor_CreateService(CONT_CB callback, template_servo_motor_t *var, const char *default_alias, revision_t revision);
 ```
 
 The returned `service_t*` is a service structure pointer that will be useful to make your service act in the network after this initialization.
 
- **callback** is a pointer to the same callback function described on [the service management section](./service_api.html#how-to-create-and-initialize-a-service).
- The big difference between template services and custom services is that you don't need to manage any message in this callback, because the profile handles it for you.
- You can use this callback to make your code react to an event or to manage custom messages on top of the profile.
+**callback** is a pointer to the same callback function described on [the service management section](./service_api.html#how-to-create-and-initialize-a-service).
+The big difference between template services and custom services is that you don't need to manage any message in this callback, because the profile handles it for you.
+You can use this callback to make your code react to an event or to manage custom messages on top of the profile.
 
+**var** is the template structure pointer you just createed.
 
- **var** is the template structure pointer you just createed.
-
- **default alias** is the alias by default for your new service. e.g. `Mytemplate02`. This alias is the one your service will use if no other alias is set by the user of your functionality hosted in your service. Aliases have a maximum size of 16 characters.
+**default alias** is the alias by default for your new service. e.g. `Mytemplate02`. This alias is the one your service will use if no other alias is set by the user of your functionality hosted in your service. Aliases have a maximum size of 16 characters.
 
 **revision** is the revision number of the service you are creating.
 
-Following the [packages rules](../package/package.html#basic-services-functions), here is a code example for a button template service:
+Following the [packages rules](/package/package.html#basic-services-functions), here is a code example for a button template service:
 
 ```c
 #include "template_state.h"

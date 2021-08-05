@@ -52,7 +52,7 @@ Luos_SendMsg(app, &msg);
 
 > **Info:** services can handle only one time-triggered target, 2 services of the same network can't ask a time-triggered value from the same service.
 
-> **Warning:** To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](../node/topology.md) for more information).
+> **Warning:** To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](/luos-technology/node/topology.md) for more information).
 
 ## Streaming
 
@@ -100,7 +100,7 @@ Following our example, if we want to send trajectory to the motor, we will have 
 
 ## How to use it
 
-**A streaming channel is always created by the strict real-time service.** The other service (the non-real-time one) will just send or receive its data chunks using [large data messages](./advanced-message.html#large-data).
+**A streaming channel is always created by the strict real-time service.** The other service (the non-real-time one) will just send or receive its data chunks using [large data messages](/luos-technology/message/advanced-message.html#large-data).
 
 ### Streaming channel creation
 
