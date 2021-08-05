@@ -4,17 +4,8 @@ As mentioned in the previous paragraphs, thanks to [Robus](../node/luos.md), the
 
 ## Routing Table
 
-The routing table is a feature of Luos allowing every <span class="cust_tooltip">[node](./node.md)<span class="cust_tooltiptext">{{ node_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows nodes to know their physical position, and their different functionalities, as well as to search and interact with the other nodes easily.<br/>
+The routing table is a feature of Luos allowing every <span class="cust_tooltip">[node](./node.md)<span class="cust_tooltiptext">{{ node_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows nodes to know their physical position, and their different functionalities, as well as to search and interact with the other nodes easily.<br/> The routing table is constructed and shared among all the nodes, after a process that is called [Detection](../services/routing_table.md).
 
-## Detection
-The routing table is automatically generated when a network detection is initiated by a node. It is then shared with other services at the end of the detection. A detection can be initiated by any service, but driver services should not be able to run it; this kind of features should be only used with app services by including routingTable.h and using this routing table API.
-
-A non-detected node (not in the routing table) has a specific ID of `0`. At the beginning of the detection, Luos erases each node's ID in the network, so all of them will have the ID `0` during this operation.
-
-Then, when the detection is launched by a specific node, IDs are added sequentially to the different nodes, depending on their position from the detector that started the detection process. The ID attribution begins first to the PTPA port, then PTPB, etc.
-When each node in the network has an attributed ID, the detection algorithm proceeds to the creation of the routing table and shares it with all the nodes.
-
-> **Warning:** Pay attention to the fact that during a detection, a node can change ID depending on the node ID that initialized the detection process. Do not consider your ID as fixed. Also, be aware that the nodes remove their auto-update configuration during the detection, to prevent any ID movement.
 
 ## Modes
 As explained in this [page](../basics/basics.md), <span class="cust_tooltip">nodes<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple services. To get the topology of your device, the routing table references physical connections between your nodes and lists all the services in each one of them.
@@ -88,3 +79,15 @@ Except from the node entry mode, there is a second mode, the service entry mode,
  - alias: service's alias
 
 More information about what the services are and how they are used, are given in the following [pages](../services/services.md).
+
+
+## PTP
+Peer-to-peer connection between nodes for topology detection.
+
+### Daisy-chain
+With 2 PTP pins per board, you must chained you device as below:
+![](../../../_assets/img/daisy_chain.png)
+
+### Star Mounting
+With at least 3 PTP pins per board, you can create a star mounting configuration:
+![](../../../_assets/img/star_mounting.png)
