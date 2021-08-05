@@ -3,30 +3,42 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Luos',
+  tagline:
+    'Open source and real-time orchestrator for distributed architectures',
+  url: 'https://luos.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Luos-io', // Usually your GitHub org/user name.
+  projectName: 'Documentation', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Luos Logo',
+        src: 'img/logo-luos.png',
       },
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          label: 'Documentation',
+          docId: 'get-started/getting-started',
           position: 'left',
-          label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'doc',
+          label: 'Tutorials',
+          docId: 'tutorials/tutorials',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          label: 'FAQ',
+          docId: 'faq/faq',
+          position: 'left',
+        },
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -41,8 +53,8 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Documentation',
+              to: '/docs/summary',
             },
           ],
         },
