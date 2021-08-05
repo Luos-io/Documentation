@@ -2,9 +2,21 @@
 
 The embedded part of a node is separated to the Luos embedded API and to the node's different functionalities. Luos is responsible for the creation of each node's identity, the integration of the node to a Luos network by locating it among the other nodes, the communication with each other and the management of all their different functionalities.
 
-The Luos functions need to be called only in one place for each node, but it should be run constantly.
+## Luos Integration
 
-### Luos Integration
+Luos works as a code library running on nodes. To match Luos library with your hardware, Luos offers a *Hardware Abstraction Layer* for various devices in <span class="cust_tooltip">LuosHAL<span class="cust_tooltiptext">{{luoshal_def}}</span></span>.
+
+ - <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>: This repository provides a list of family devices covered to match the Luos library with your hardware.
+ - <a href="https://github.com/Luos-io/Luos" target="_blank">Luos</a>: This is the main library you will be working with.
+
+To make it work in your environment, you have to:
+
+ - Include the Luos lib folders in your project compilation;
+ - Select the right LuosHAL for your device family in LuosHAL folder, and include `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` in your project;
+ - Change, if necessary, `luos_hal_config.h` for your project. The default configuration created by Luos is an example for a MCU family that can be modify to fit with your design (eg: match pins with your design);
+ - Include `luos.h` on your source file.
+ 
+The Luos functions need to be called only in one place for each node, but it should be run constantly.
 
 Luos is like a task that has to be run regularly. The primary Luos functions that should be called in order to integrate Luos into the embedded code of a node, are `luos_init()` and `luos_loop()` that should be added in the `main()` of your program.<br/>
 
@@ -28,6 +40,26 @@ Putting this code into a <span class="cust_tooltip">node<span class="cust_toolti
 **As a developer you will always develop your functionalities into services and never into the `main()` program.**
 
 > **Note:** The only information that should be put on the `main()` code are MCU setup parameters and services' run functions.
+
+## Luos APIs
+
+In the main Luos embedded technology, we added the following tools, in order to integrate more capabilities and functionalities in your design.
+
+| Description | Function | Return |
+| :---: | :---: | :---: |
+| Send a Luos message | `Luos_SendMsg(service_t *service, msg_t *msg);` | `error_return_t` |
+| Read a Luos message | `Luos_ReadMsg(service_t *service, msg_t **returned_msg);` | `error_return_t` |
+| Send the remaining data in case of long messages| `Luos_SendData(service_t *service, msg_t *msg, void *bin_data, uint16_t size);` | `void` |
+| Receive the remaining data  in case of long messages| `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);` | `error_return_t` |
+| Send data stored in a streaming channel | `Luos_SendStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `void` |
+| Receive data from a streaming channel | `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `error_return_t` |
+| Share network's baudrate| `Luos_SendBaudrate(service_t *service, uint32_t baudrate);` | `void` |
+| Set the ID of a container through the network | `Luos_SetExternId(container_t *container, target_mode_t target_mode, uint16_t target, uint16_t newid);` | `uint16_t` |
+| Get the number of the non treated messages left | `Luos_NbrAvailableMsg(void);` | `uint16_t` |
+| Get the total tick number from the initialization of Luos | `Luos_GetSystick(void);` | `uint32_t` |
+| Return true if all the messages are completed | `Luos_TxComplete(void);` | `error_return_t` |
+| Flush the entire Luos message buffer | `Luos_Flush(void);` | `void` |
+
 
 ## Robus
 
