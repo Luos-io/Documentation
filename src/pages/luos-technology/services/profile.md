@@ -69,4 +69,4 @@ void Button_Loop(void) {
 }
 ```
 
-You can notice that you don't send any luos message to share the button state: if an application wants to access to this information, the state profile will share it for you. You just have to update the button state value in your code.
+You can notice that you don't send any luos message to share the button state: if an application wants to access to this information, the state profile will share it for you. You just have to update the button state value in your code. Supported profiles are available in this [repository](https://github.com/Luos-io/Luos/tree/master/Templates).

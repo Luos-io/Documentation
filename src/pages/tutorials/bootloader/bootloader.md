@@ -26,8 +26,8 @@ mkdir bootloader
 cd bootloader/
 
 git clone https://github.com/Luos-io/Examples.git
-git clone https://github.com/ncros3/Luos_bootloader.git
-git clone https://github.com/ncros3/luos_bootloader_app.git
+git clone https://github.com/Luos-io/Luos_bootloader.git
+git clone https://github.com/Luos-io/luos_bootloader_app.git
 ```
 
 Your folder should then look like this:
