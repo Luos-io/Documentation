@@ -116,7 +116,7 @@ cd luos_bootloader_app/luos_bootloader_application_f072rb/.pio/build/l0
 pyluos-bootloader flash COM6 -t 2 -b firmware.bin
 ```
 
-> For further information on options used with the CLI, please read the dedicated documentation [link to the doc] or type the following command:
+> For further information on options used with the CLI, please read the dedicated [documentation page](../../tools/boot.md) or type the following command:
 
 ```bash
 pyluos-bootloader --help
@@ -128,7 +128,7 @@ The following lines should appear after typing the command:
   <img src="../../../_assets/img/tutorials/bootloader/application_load.png">
 </p>
 
-> If any problem appears during the loading process, please reboot your system and retry to type the command (you can also find informations in [link to the doc]).
+> If any problem appears during the loading process, please reboot your system and retry to type the command (you can also find information [here](../../tools/boot.md)).
 
 Then relaunch a detection (as done in **Step 3**): 
 
@@ -160,4 +160,4 @@ You should see your updated service running in your node:
   <img src="../../../_assets/img/tutorials/bootloader/detect_new_app.png">
 </p>
 
-You have reached the end of this tutorial. You're now able to use the bootloader feature included in **Luos**. You have the basics but you can find some useful informations in the dedicated documentation [link to the doc].
+You have reached the end of this tutorial. You're now able to use the bootloader feature included in **Luos**. You have the basics but you can find some useful informations in the dedicated [documentation page](../../tools/boot.md).

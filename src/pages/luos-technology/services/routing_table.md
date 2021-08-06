@@ -64,6 +64,14 @@ typedef struct __attribute__((__packed__))
 } routing_table_t;
 ```
 
+### Service entry mode
+Except from the node entry mode, there is a second mode, the service entry mode, that allows the `routing_table` to contain information about the smallest entity contained in a node, which is called a service. As a node can host one or more services, the routing table is able to obtain the specific information of each one:
+ - id: service's unique id
+ - type: service's type
+ - alias: service's alias
+
+For more information about what the services are and how they are used, you can check this [page](../services/services.md).
+
 ### Node entry mode
 This mode gives physical information of your devices.
 
@@ -84,16 +92,8 @@ Specific values taken by `port_table`:
  - **0**: this port is waiting to discover who is connected with. You should never see this value.
  - **0x0FFF**: this port is not connected to any other Node.
 
-> **Note:** Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a USB [gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
+> **Note:** Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a [USB gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
 
-
-### Service entry mode
-Except from the node entry mode, there is a second mode, the service entry mode, that allows the `routing_table` to contain information about the smallest entity contained in a node, which is called a service. As a node can host one or more services, the routing table is able to obtain the specific information of each one:
- - id: service's unique id
- - type: service's type
- - alias: service's alias
-
-More information about what the services are and how they are used, are given in the following [pages](../services/services.md).
 
 ## Search tools
 The routing table library provides the following search tools to find services and nodes' information into a Luos network:
