@@ -22,7 +22,7 @@ The returned `service_t*` is a service structure pointer that will be useful to 
  - **service** is the service pointer of the service receiving the data (basically, it is your service).
  - **msg** is the message your service received.
 
- **type** is the type of the your new service represented by a number. Some basic types (E.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `service_type_t` enum structure of Luos. You can also create your own on top of the Luos one.
+ **type** is the type of the your new service represented by a number. Some basic types (E.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `service_type_t` enum structure of Luos. You can also add your own and use them with Luos.
 
  **default alias** is the alias by default for your new service. E.g. `Myservice02`. This alias is the one your service will use if no other alias is set by the user of your functionality hosted in your service. Aliases have a maximum size of 16 characters.
 
@@ -75,7 +75,7 @@ By designing an app, you have to keep the following rules in mind:
 
  - An app can't have hardware dependencies.
  - An app can use custom service types.
- - An app must use standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures. If the structures used are not standard, Gate services could be completely unable to manage them.
+ - An app must use standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures. If the structures used are not standard, [Gate](../../tools/gate.md) services could be completely unable to manage them.
 
 Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every services in every nodes in your device and make it work properly. Go to the [Routing table](./routing_table.md) page for more information.
 

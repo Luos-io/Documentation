@@ -18,7 +18,7 @@ Install <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>. Onc
 Then install <a href="https://platformio.org/platformio-ide" target="_blank">PlatformIO</a> plugin and relaunch VSCODE, the PIO extension icon should appear on the left: 
 
 <p align="center">
-  <img src="../../_assets/img/01_getting_started/install_PIO.png">
+  <img src="../../_assets/img/01_getting_started/Install_PIO.png">
 </p>
 
 ## Update your USB driver
@@ -46,7 +46,7 @@ brew install libusb
 Clone *getting started* reposetory on your machine: 
 
 ```bash
-git clone https://github.com/ncros3/getting_started.git
+git clone https://github.com/Luos-io/getting_started.git
 ```
 
 ## Flash your board
@@ -54,16 +54,16 @@ git clone https://github.com/ncros3/getting_started.git
 Open VScode then click on **Open Folder** in the project explorer on the left, select a project depending on the board you have chosen. For example, for the STM32F072RB discovery, open **F072RB_Disco** in the folder explorer then click on **ADD**:
 
 <p align="center">
-  <img src="../../_assets/img/01_getting_started/Open_project.png">
+  <img src="../../_assets/img/01_getting_started/Open_project2.png">
 </p>
 
 The project folder is opened in the explorer. You can now flash your board: make sure it's connected to your PC with a USB cable and click on **upload** on the bottom left of the VSCode window:
 
 <p align="center">
-  <img src="../../_assets/img/01_getting_started/Flash_board.png">
+  <img src="../../_assets/img/01_getting_started/Flash_board2.png">
 </p>
 
-PlatformIO will build the firmware and flash it. If you have any trouble with your USB driver, please follow steps described above. If all steps passed, you should see the **LED** blinking on your board.
+PlatformIO will build the firmware and flash it. Take a look at the terminal, you can see each step platformIO follows and a **success** message at the end. If you have any trouble with your USB driver, please follow steps described above. Once the board is programmed, you should see the **LED** blinking on your board.
 
 Congratulations, your first luos app is running !
 
@@ -76,7 +76,7 @@ Now you would like to know how this system works. Without diving into too much d
 Let's modify this period, open **blinker.c** and change BLINKTIME from 500 to 1000:
 
 <p align="center">
-  <img src="../../_assets/img/01_getting_started/blinktime.png">
+  <img src="../../_assets/img/01_getting_started/blinktime2.png">
 </p>
 
 The led now blinks two times slower.
