@@ -1,4 +1,5 @@
 # Tutorials
 
-Luos provide many project with example on driver service and application service ready to be upload on many boards
-see <a href="https://github.com/Luos-io/Examples/tree/master/Projects" target="_blank">Project example</a>.
+You can find in this section step-by-steps to help you understand how to use luos features.
+
+You can also find project examples to help you start your own project on the dedicated GitHub [page](https://github.com/Luos-io/Examples).
