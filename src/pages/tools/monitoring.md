@@ -79,4 +79,6 @@ and send the command:
  sniffer.start
 ```
 
-> **Note:** Do you need more information on how to debug your application using a sniffer? Contact us.
+> **Note:** Do you need more information on how to debug your application using a sniffer? 
+
+> Contact us at <a href="mailto:hello@luos.io">  hello@luos.io</a>.
