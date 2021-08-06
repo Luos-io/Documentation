@@ -4,6 +4,8 @@ Luos can work on a single node or it can create a network for communication betw
 
 The file luos_hal_config.h file contains a default configuration for an MCU family and can be redefined in a configuration file to fit your design. The configuration of Luos HAL is described [here](../../hardware-consideration/mcu.md).
 
+You are also able to configure your hardware parameters in node level, if you want that a specific node has a specific driver, that is applied to meet the needs of the node's functionalities. This configuration part should take place in the node_config.h file, described in the previous [page](./luos.md).
+
 ## Luos HAL
 Lists of all the functions using hardware components relative to protocol communication and physical bus:
 

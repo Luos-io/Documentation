@@ -71,17 +71,11 @@ In the level of a node, the communication is achieved by receiving and sending [
 
 <img src="../../../_assets/img/NodeFlow.png" height="400px" />
 
-## Luos Statistics
-
-Into Luos embedded code, you are given the opportunity to obtain important information about different factors of the functioning of each node, as you can find stored several statistical values in the specific field of the structure that describes each node, like for example the mcus memory utilization, or timing information.
-
-The statistics of a node can be occupied from any other node of the system, giving you the chance to explore the behavior of all your mcus by having direct access to any of them.
-
-More detals of how to access the statistics are given in the [Monitoring tools page](../../tools/monitoring.md).
-
 ## Node Parameters Configuration 
 
-Luos allow you to configure some parameters allowing to optimize the memory usage to your needs. To make it we advise to use a configuration file call node_config.h. Put the file at the root folder of your project and add it in the compiling variables section of your IDE using a *-include node_config.h*.
+Luos allow you to configure some parameters allowing to optimize the memory usage and adapt it to fit your needs. To make it we advise to use a configuration file call node_config.h. Put the file at the root folder of your project and add it in the compiling variables section of your IDE adding the line:
+
+ `#include node_config.h`
 
 You can use it to set all your custom configuration:
  - for the services of your node
@@ -98,7 +92,15 @@ You can use it to set all your custom configuration:
 
 You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h</a>,
 
-Check the Luos_hal_config.h of your MCU family to see parameter that can be change to fit your design.
+Check the Luos_hal_config.h of your MCU family to see parameters that can be changed to fit your design.
 
 > **FYI:** [Every examples](https://github.com/Luos-io/Examples) provided by luos have a node_config.h files that can be use as base to fit your project needs.
 
+
+## Luos Statistics
+
+Into Luos embedded code, you are given the opportunity to obtain important information about different factors of the functioning of each node, as you can find stored several statistical values in the specific field of the structure that describes each node, like for example the mcus memory utilization, or timing information.
+
+The statistics of a node can be occupied from any other node of the system, giving you the chance to explore the behavior of all your mcus by having direct access to any of them.
+
+More detals of how to access the statistics are given in the [Monitoring tools page](../../tools/monitoring.md).
