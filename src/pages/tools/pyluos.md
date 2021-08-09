@@ -148,16 +148,17 @@ Pyluos will give you a list of all services without any topological informations
 Type                Alias               ID
 -------------------------------------------------
 Gate                gate                1
-Voltage             analog_read_P1      2
-Voltage             analog_read_P7      3
-Voltage             analog_read_P8      4
-Voltage             analog_read_P9      5
-State               digit_read_P5       6
-State               digit_read_P6       7
-State               digit_write_P2      8
-State               digit_write_P3      9
-State               digit_write_P4      10
-Angle               potentiometer_m     11
+Pipe                pipe                2
+Voltage             analog_read_P1      3
+Voltage             analog_read_P7      4
+Voltage             analog_read_P8      5
+Voltage             analog_read_P9      6
+State               digit_read_P5       7
+State               digit_read_P6       8
+State               digit_write_P2      9
+State               digit_write_P3      10
+State               digit_write_P4      11
+Angle               potentiometer_m     12
 ```
 
 Pyluos also can interpreate routing_table and transform it into a tree. This way we can display a lot more complete information usinig the following command :
@@ -172,25 +173,26 @@ Based on the previous example Pyluos will give you all informations about servic
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
   ┃  ╭node 1                Certified            ┃
   ┃  │  Type                Alias           ID   ┃
-  ┃  ╰> Gate                gate            1    ┃
+  ┃  ├> Gate                gate            1    ┃
+  ┃  ╰> Pipe                pipe            2    ┃
 ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ╚══ 0>┃1 ╭node 2                Certified            ┃
       ┃  │  Type                Alias           ID   ┃
-      ┃  ├> Voltage             analog_read_P1  2    ┃
-      ┃  ├> Voltage             analog_read_P7  3    ┃
-      ┃  ├> Voltage             analog_read_P8  4    ┃
-      ┃  ├> Voltage             analog_read_P9  5    ┃
-      ┃  ├> State               digit_read_P5   6    ┃
-      ┃  ├> State               digit_read_P6   7    ┃
-      ┃  ├> State               digit_write_P2  8    ┃
-      ┃  ├> State               digit_write_P3  9    ┃
-      ┃  ╰> State               digit_write_P4  10   ┃
+      ┃  ├> Voltage             analog_read_P1  3    ┃
+      ┃  ├> Voltage             analog_read_P7  4    ┃
+      ┃  ├> Voltage             analog_read_P8  5    ┃
+      ┃  ├> Voltage             analog_read_P9  6    ┃
+      ┃  ├> State               digit_read_P5   7    ┃
+      ┃  ├> State               digit_read_P6   8    ┃
+      ┃  ├> State               digit_write_P2  9    ┃
+      ┃  ├> State               digit_write_P3  10   ┃
+      ┃  ╰> State               digit_write_P4  11   ┃
     ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
     ╚══ 0>┃1 ╭node 3                Certified            ┃
           ┃  │  Type                Alias           ID   ┃
-          ┃  ╰> Angle               potentiometer_m 11   ┃
+          ┃  ╰> Angle               potentiometer_m 12   ┃
          >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 In this example, 3 nodes (MCU) and their associated UUID are listed, along with their services and associated characteristics (type, alias and ID).

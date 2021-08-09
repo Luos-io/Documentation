@@ -3,14 +3,17 @@
 # General guide to Luos technology
 
 Take most embedded systems, and you will find the same architecture. The dictatorship of electronics; one central microcontroller that has direct control over all components. Sensors, actuators, all of them will be controlled by one chip, and ultimately, one program.
-Sometimes, a design will have more than one microcontroller, but will ultimately be controlled by one central device. It will be up to the designers to implement an inter-device communication protocol, using any bus available, including instructions and messaging, but also error handling. A significant portion of time is spent on software development.
-Other times, hardware constraints will force you to separate your electronics on to several boards, potentially making interconnection troublesome.
+Sometimes, a design will have more than one microcontroller, but will ultimately be controlled by one central device. It will be up to the designers to implement an inter-device communication protocol, using any bus available, including instructions and messaging, but also error handling.
+A significant portion of time is spent on software development. Other times, hardware constraints will force you to separate your electronics on to several boards, potentially making interconnection troublesome.
 
 ## Introduction to embedded serviceized platforms
 
-Luos aims to change the way you develop by serviceizing services on your devices. A microcontroller can host a series of services, like data acquisition from sensors to actuators like motors and relays. These services are placed inside **Services**. Prepare your services, and deploy them anywhere on a Luos network, and you will be able to communicate directly with your services, no matter where they are on the network. Services can be dynamically connected and disconnected, and can be detected by your application.
-Imagine an industrial device. We will build a system with multiple sensors to monitor the device. It might contain several temperature sensors that will monitor specific parts of the system, and our system will need to know exactly what they monitor. When we read the temperature of the industrial motor, we need to get the information from the motor, not from the power supply. These sensors are placed into services, and clearly state which components they monitor.
-If the device encounters a problem, we need to notify anyone around of an incident. This could be a flashing light, a siren, or any other way of notifying people. In this case, it doesn't matter where the peripherals are placed, or even how many there are, Luos can notify all services that identify as an alarm to activate. Alarms can even be added to the Luos network while it is operating, and they will be recognized and used.
+Luos aims to change the way you develop by serviceizing services on your devices. A microcontroller can host a series of services, like data acquisition from sensors to actuators like motors and relays. These features are placed inside **Services**. Prepare your services, and deploy them anywhere on a Luos network, and you will be able to communicate directly with your services, no matter where they are on the network. Services can be dynamically connected and disconnected, and can be detected by your application.
+
+
+Imagine an industrial device. We will build a system with multiple sensors to monitor the device. It might contain several temperature sensors that will monitor specific parts of the system, and our system will need to know exactly what they monitor. When we read the temperature of the industrial motor, we need to get the information from the motor, not from the power supply. These sensors are placed into services, and clearly state which components they monitor. If the device encounters a problem, we need to notify anyone around of an incident. This could be a flashing light, a siren, or any other way of notifying people. In this case, it doesn't matter where the peripherals are placed, or even how many there are, Luos can notify all services that identify as an alarm to activate. Alarms can even be added to the Luos network while it is operating, and they will be recognized and used.
+
+
 Finally, it doesn't matter where on the Luos network sensors or actuators are placed. You can wire the different elements together as you want, each element will be detected, and you will be able to use all of your services, wherever they are.
 
 ## Introduction to Luos
@@ -53,7 +56,7 @@ An App is a special type of service, one that does not provide any hardware oper
 While your app does not contain any hardware capabilites (sensors or actuators) as opposed to driver services, an App can talk to your services to receive information, or to give orders. For example, an App will not have direct access to sensors or to digital outputs, but will be able to communicate with services that do offer hardware capabilities.
 
 ## Messages
-Communications between continers and apps is performed through Messages. A message contains information on the destination service(s), the type of operation to be performed (a read or write operation and the type of message) as well as any supplemental data. The message will be sent on the network, and will arrive at destination, no matter where the service is placed on the network.
+Communications between services and apps is performed through Messages. A message contains information on the destination service(s), the type of operation to be performed (a read or write operation and the type of message) as well as any supplemental data. The message will be sent on the network, and will arrive at destination, no matter where the service is placed on the network.
 
 [Go to Messages handling page](../message/handling-message.md).
 
