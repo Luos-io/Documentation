@@ -42,3 +42,5 @@
         - [Install ROS](./pages/tutorials/ros/install-ros.md)
         - [Package example](./pages/tutorials/ros/package-example.md)
 - [FAQ](./pages/faq/faq.md)
+    - [Detection reconfiguration](./pages/faq/001.detection-reconfig.md)
+    - [Add an issue](./pages/faq/999.add-issue.md)
