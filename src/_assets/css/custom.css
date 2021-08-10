@@ -174,6 +174,71 @@ html {
 
 /***************** END-HEADER ********************/
 
+/***************** SQUARES ***********************/
+
+#footer {
+	vertical-align: bottom;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto; 
+	width: 65%;
+}
+
+.cust_square_wrapper{
+	margin: auto;
+	width: 100%;
+	border: 0px solid;
+	padding: 0px;
+	padding-top: 30px;
+	text-align: center;
+}
+
+.cust_square {
+	display: inline-block;
+	vertical-align: bottom;
+	min-height: 150px;
+	width: 180px;
+	margin: 10px;
+	padding: 20px;
+	background-color: #fafaff;
+	border: solid 0px #eee;
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px #ddd;
+	text-align: left;
+	filter: grayscale(100%) opacity(80%);
+}
+
+.cust_square:hover { 
+	filter: grayscale(0%) opacity(100%);
+}
+
+.cust_square:hover {
+	box-shadow: 1px 1px 5px #ccc;
+}
+
+.cust_landing_title {
+	color: #161616;
+	font-size: 18px;
+	font-weight: 900;
+	padding-bottom: 5px;
+}
+
+.cust_landing_text {
+	color: grey;
+	font-size: 12px;
+}
+
+.cust_landing_img { 
+	height: 50px; 
+	padding-bottom: 20px;
+}
+
+
+/********************************************/
+
+
 #page-wrapper {
 	position: relative;
 	min-height: 100vh;
@@ -196,6 +261,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Mono',sans-serif;
+	text-align: center;
 }
 
 

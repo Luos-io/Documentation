@@ -2,6 +2,24 @@
 
 <small><a href="https://github.com/Luos-io/Luos" target="blank">Luos revision: {{last_version_luos}}</a></small>
 
+<div class="cust_square_wrapper">
+  <div class="cust_square">
+    <img class="cust_landing_img" src="./_assets/img/icon-hat_school.png" />
+    <div class="cust_landing_title">Get started</div>
+    <div class="cust_landing_text">Learn the first step to use Luos.</div>  
+  </div>
+  <a href="./docs/html/index.html"><div class="cust_square">
+    <img class="cust_landing_img" src="./_assets/img/icon-docs2.png" />
+    <div class="cust_landing_title">Documentation</div>
+    <div class="cust_landing_text">Browse through Documentation to learn more about Luos technology.</div>  
+  </div></a>
+  <a href="./help/html/index.html"><div class="cust_square">
+    <img class="cust_landing_img" src="./_assets/img/icon-help.png" />
+    <div class="cust_landing_title">Help</div>
+    <div class="cust_landing_text">Consult Help pages to find how to resolve your issue.</div>  
+  </div></a>
+</div>
+
 ## Introduction
 
 We started designing Luos with the conviction that building electronic systems should be made easier than it is today. Most of the time should be spent developing the applications and behaviors instead of on complex and time-and-money-eating technicalities. To give a simple example, adding a new sensor &mdash;for instance, a distance sensor&mdash; to an electronic device in conception should not take more than a few minutes. So you can try, test, and iterate fast on a project to truly design what users want.
