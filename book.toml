@@ -20,7 +20,7 @@ enable = true
 
 [preprocessor.variables.variables]
 node_def = "Hardware element (MCU) hosting and running Luos and hosting one or several services."
-service_def = "Software element run by Luos that can communicate with other services. It can be a driver or an app. (Initially called a module)"
+service_def = "Software element run by Luos that can communicate with other services. It can be a driver or an app."
 od_def = "Set of objects based on SI metric system that can be transmitted through Luos messages. Any object can easily be converted in other units."
 microservices_def = "Microservices are a software development technique that arranges an application as a collection of loosely coupled services."
 robus_def = "Bus communication protocol used by Luos."
