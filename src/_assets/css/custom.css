@@ -176,17 +176,14 @@ html {
 
 /***************** SQUARES ***********************/
 
-#footer {
-	vertical-align: bottom;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto; 
-	width: 65%;
-}
-
 .cust_square_wrapper{
+	display: flex;
+    flex-direction: row;
+    flex-wrap:  wrap;
+    justify-content: center;
+	text-decoration: none
+
+
 	margin: auto;
 	width: 100%;
 	border: 0px solid;
@@ -195,11 +192,13 @@ html {
 	text-align: center;
 }
 
+.cust_square_wrapper a:hover{
+	text-decoration: none;
+}
+
 .cust_square {
-	display: inline-block;
-	vertical-align: bottom;
-	min-height: 150px;
-	width: 180px;
+	min-height: 200px;
+	width: 200px;
 	margin: 10px;
 	padding: 20px;
 	background-color: #fafaff;
@@ -207,14 +206,12 @@ html {
 	border-radius: 5px;
 	box-shadow: 1px 1px 5px #ddd;
 	text-align: left;
-	filter: grayscale(100%) opacity(80%);
+	filter: grayscale(100%) opacity(70%);
+
 }
 
 .cust_square:hover { 
 	filter: grayscale(0%) opacity(100%);
-}
-
-.cust_square:hover {
 	box-shadow: 1px 1px 5px #ccc;
 }
 
@@ -231,10 +228,17 @@ html {
 }
 
 .cust_landing_img { 
-	height: 50px; 
 	padding-bottom: 20px;
 }
 
+.cust_landing_img img { 
+	height: 60px; 
+}
+
+.cust_img_rot { 
+	transform: translate(15px) rotate(35deg); 
+	height:80px
+}
 
 /********************************************/
 
@@ -251,11 +255,11 @@ html {
 #footer {
 	vertical-align: bottom;
 	position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto; 
-    width: 65%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto; 
+	width: 65%;
 }
 
 
@@ -409,8 +413,6 @@ table#cust_table caption {
 /*************************************/
 
 
-
-
 #cust_separator {
 	color: #aaa;
 	position: inline-block;
@@ -433,8 +435,9 @@ table#cust_table caption {
 /*************************************/
 
 .cust_video{
-	width: 800px;
-	height: 450px
+	margin: 50px;
+	width: 500px;
+	height: 281px
 }
 
 @media screen and (max-width: 800px) {
