@@ -327,12 +327,12 @@ a.cust_red_link {
 
 /*************************************/
 
-.cust_service {
+.cust_container {
 	margin: 10px auto;
 	max-width: 600px;
 	text-align: center;
 }
-.cust_service > h1 {
+.cust_container > h1 {
 	margin: 30px 0;
 	font-size: 4em;
 	line-height: 1;
