@@ -271,6 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar-scrollbox{
 	font-family: 'Roboto Mono',sans-serif;
+	margin-bottom: 80px;
 }
 
 .content main {
