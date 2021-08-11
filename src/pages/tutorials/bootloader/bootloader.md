@@ -14,7 +14,7 @@ We will use one of these nodes as a [gate](../../tools/gate.md), and the other a
 
 ### Step 1: Setup development environment
 
-First thing to do is to install [pyluos](../../tools/pyluos.md) and [PlatformIO](../../get_started/getting_started.md) if not already done.
+First thing to do is to install [pyluos](../../tools/pyluos.md) and [PlatformIO](../../get_started/get_started.md) if not already done.
 
 Then we will create a working folder on our desktop machine and clone three repositories containing respectively: a gate project, the bootloader and an application example using the bootloader.
 

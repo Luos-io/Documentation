@@ -1,6 +1,6 @@
 # Summary
 [Home](./index.md)
-- [Getting Started](./pages/get_started/getting_started.md)
+- [Get Started](./pages/get_started/get_started.md)
 - [Luos Technology](./pages/luos-technology/luos_tech.md)
     - [Basics](./pages/luos-technology/basics/basics.md)
         - [Concept](./pages/luos-technology/basics/concept.md)
