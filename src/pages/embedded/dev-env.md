@@ -1,3 +1,0 @@
-# Setup your development environment
-Before starting developing with Luos, you need to have an operational development environment.
-At Luos, we use <a href="https://platformio.org/platformio-ide" target="_blank">PlatformIO</a> to share all our examples and to make our lib integration easy, but of course you can use your favorite IDE (like <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse</a>, <a href="https://www.st.com/en/development-tools/stm32cubeide.html" target="_blank">STM32CudeIDE</a> or <a href="https://www.arduino.cc/en/software" target="_blank">Arduino IDE</a>) and integrate our libs by yourself.
