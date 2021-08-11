@@ -282,9 +282,9 @@ gate statistics :
 
  - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default. sizeof(msg_t) -> 7 bytes Header + 128 bytes data).
 
-- Contrary to **Message stack**,  **Luos stack**, **Max luos loop delay** which are Node relatif statistics, **Msg fail ratio** and **NAK msg max number** are service's statistic. **Msg fail ratio** give a ratio of msg send fail base a all the msg that the service has sent. **NAK msg max number** give the max number of NAK receive when a message has been sent.
+- Unlike **Message stack**,  **Luos stack**, and **Max luos loop delay** which are nodes' relative statistics, **Msg fail ratio** and **NAK msg max number** are services' statistics. **Msg fail ratio** gives a ratio of the failed sent messages based on all the messages that the service has sent. **NAK msg max number** gives the maximum number of NAK received when a message has been sent.
 
- - The RAM occupation and message drop number is also related to **Max luos loop delay**. If **Max luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. So you can reduce the RAM consumption and messages dropping by reducing the **Max luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
+ - The RAM occupation and message drop number are also related to **Max luos loop delay**. If **Max luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. You can reduce the RAM consumption and messages dropping by reducing the **Max luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
 
 ### Full script
 

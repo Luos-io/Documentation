@@ -65,12 +65,14 @@ typedef struct __attribute__((__packed__))
 ```
 
 ### Service entry mode
-Except from the node entry mode, there is a second mode, the service entry mode, that allows the `routing_table` to contain information about the smallest entity contained in a node, which is called a service. As a node can host one or more services, the routing table is able to obtain the specific information of each one:
+
+Except from the node entry mode, there is a second mode called service entry mode that allows the `routing_table` to contain information about the smallest entity contained in a node, which is called a service. As a node can host one or more services, the routing table is able to obtain the specific information for each one of them:
+
  - id: service's unique id
  - type: service's type
  - alias: service's alias
 
-For more information about what the services are and how they are used, you can check this [page](../services/services.md).
+For more information about what the services are and how they are used, you can check the page [Services](../services/services.md).
 
 ### Node entry mode
 This mode gives physical information of your devices.
