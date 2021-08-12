@@ -1,30 +1,25 @@
 # Luos documentation and help
 
 <div class="cust_square_wrapper">
-  <div class="cust_square">
+  <a href="/pages/get_started/get_started.html"><div class="cust_square">
     <div class=""><img class="cust_img_rot" style="" src="./_assets/img/landing/icon-rocket.png" /></div>
     <div class="cust_landing_title">Get started</div>
-    <div class="cust_landing_text">Learn the first step to use Luos.</div>  
-  </div>
-  <a href="./docs/html/index.html"><div class="cust_square">
+    <div class="cust_landing_text">First steps on using Luos.</div>  
+  </div></a>
+  <a href="/pages/luos-technology/luos_tech.html"><div class="cust_square">
     <div class="cust_landing_img"><img src="./_assets/img/landing/icon-docs.png" /></div>
     <div class="cust_landing_title">Documentation</div>
-    <div class="cust_landing_text">Browse the documentation to learn more about Luos technology.</div>  
+    <div class="cust_landing_text">How Luos technology works.</div>  
   </div></a>
-  <a href="./docs/html/index.html"><div class="cust_square">
-    <div class="cust_landing_img"><img src="./_assets/img/landing/icon-api.png" /></div>
-    <div class="cust_landing_title">API</div>
-    <div class="cust_landing_text">Browse the API documentation.</div>  
-  </div></a>
-  <a href="./help/html/index.html"><div class="cust_square">
+  <a href="/pages/tutorials/tutorials.html"><div class="cust_square">
     <div class="cust_landing_img"><img src="./_assets/img/landing/icon-hat_school.png" /></div>
-    <div class="cust_landing_title">Tutorial</div>
-    <div class="cust_landing_text">Access to tutorials on Luos use.</div>  
+    <div class="cust_landing_title">Tutorials</div>
+    <div class="cust_landing_text">Follow tutorials on Luos' use.</div>  
   </div></a>
-  <a href="./help/html/index.html"><div class="cust_square">
+  <a href="/pages/faq/faq.html"><div class="cust_square">
     <div class="cust_landing_img"><img src="./_assets/img/landing/icon-help.png" /></div>
     <div class="cust_landing_title">FAQ</div>
-    <div class="cust_landing_text">Consult FAQ page to find how to resolve your issue.</div>  
+    <div class="cust_landing_text">Find how to resolve your issue.</div>  
   </div></a>
 </div>
 
