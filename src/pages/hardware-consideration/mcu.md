@@ -1,26 +1,25 @@
 # MCU with Luos
 
 ## Compatible MCUs
-Luos can manage any type of microcontrollers as long as they are first added to the library manually. If your microcontroller is not supported yet, please contact us:
+Luos can manage any microcontrollers as long as they are first manually added to the library. If your microcontroller is not supported yet, please contact us:
 
- - by mail: <a href="mailto:hello@luos.io">hello@luos.io</a>
- - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
+ - by mail: <a href="mailto:hello@luos.io">hello@luos.io</a>.
+ - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>.
 
-Check the list of MCU family Luos cover :<a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
-
+Check the list of the MCU families Luos covers:<a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
 
 ## Default Configuration
 
-Luos libraries is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low-level part, Luos company provides, for many MCU family, a default configuration that can lead to plug and play Luos library with the chosen MCU family. The peripheral configuration is described in files luos_hal_config.h in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>, and can be redefined in the node_config.h file to fit with your design.
+Luos libraries are made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low-level part, Luos provides for many MCU families a default configuration that can lead to plug-and-play Luos library with the chosen MCU family. The peripheral configuration is described in files *luos_hal_config.h* in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>, and can be redefined in the *node_config.h* file to fit with your design.
 
 ## Luos HAL configuration
 
-To match the pinout and functionality with your design, you can create or use the file `node_config.h` (see Luos example)
-As you can see on the default configuration, defined in luos_hal_config.h, you are able to define in the file `node_config.h`, in the section "LUOS HAL LIBRARY DEFINITION", parameters like pinout, usart, timer, etc.
+To match the pinout and functionality with your design, you can create or use the file *node_config.h* (see Luos example)
+As you can see on the default configuration, defined in *luos_hal_config.h*, you are able to define in the file *node_config.h*, in the section "LUOS HAL LIBRARY DEFINITION", parameters like pinout, usart, timer, etc.
 
-In this way you will be able to change the default hardware configuration, and use it by calling it in the preprossessor variable section of your IDE, so as to be taken into consideration for your project.
+In this way, you will be able to change the default hardware configuration and use it by calling it in the preprossessor variable section of your IDE, so that it is taken into consideration for your project.
 
-> **FYI:** Every example provided by Luos has a node_config.h file, which is included by the platformio project's initialization file, called platformio.ini.
+> **Note:** Every example provided by Luos has a *node_config.h* file, which is included by the PlatformIO project's initialization file, called *platformio.ini*.
 
 Example of PTPA redefinition:
 
@@ -36,7 +35,7 @@ In `node_config.h` this should be redefined as followed:
 #define PTPA_PIN                    GPIO_PIN_11
 ```
 
-There are many possible configurations that you can change, but it is possible that not all of them are necessary for your design:
+There are many possible configurations that you can change, but not all of them may be necessary for your design:
 
 ### Pinout
 | Function | Description | Comments |

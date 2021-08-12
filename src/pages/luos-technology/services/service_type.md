@@ -1,6 +1,6 @@
-# Use type in services
+# Using types in services
 
-In the previous sections, thebasics of service creation and initialization were explained. Still, an argument of the **Luos_CreateService** function was used without further information: this section aims to give more details about the **type** feature.
+In the previous sections, the basics of service creation and initialization were explained. Still, an argument of the **Luos_CreateService** function was used without further information: this section aims to give more details about the **type** feature.
 
 ## Standard interface between services
 

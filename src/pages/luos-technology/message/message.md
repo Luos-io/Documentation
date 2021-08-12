@@ -1,4 +1,4 @@
-# Message
+# Messages
 
 As a developer, you will have to create and use Luos messages to exchange information between <span class="cust_tooltip">services<span class="cust_tooltiptext">{{service_def}}</span></span>. In order to do that, you have to understand how messages work.
 
@@ -34,15 +34,15 @@ typedef struct{
 }header_t;
 ```
 
-- **Protocol (4 bits)**: This field provides the protocol revision. This field is automatically filled, you don't have to deal with it.
-- **Target (12 bits)**: This field contains the target address. Make sure to understand the real destination of this field, you have to know the addressing mode contained on the *Target_mode* field.
+- **Protocol (4 bits)**: This field provides the protocol revision. This field is automatically filled; you don't have to deal with it.
+- **Target (12 bits)**: This field contains the target address. To understand the real destination of this field, you have to know the addressing mode contained on the *Target_mode* field.
 - **Target_mode (4 bits)**: This field indicates the addressing mode and how to understand the *Target* field. It can take different values:
   - **ID**: This mode allows to communicate with a unique service using its ID **without** acknowledgment return.
   - **IDACK**: This mode allows to communicate with a unique service using its ID **with** acknowledgment return.
-  - **Type**: This mode sends a message to all services with a given type, for example all "Sharp digital distance sensor".
+  - **Type**: This mode sends a message to all services with a given type, e.g. all "Sharp digital distance sensor".
   - **Multicast/Broadcast**: This mode allows multiple services to catch a message. In this case, the message contains a type of data used by multiple services.
-  - **NODEID**: This mode allows to send a message to the all the services of a specific node **without** acknowledgment return.
-  - **NODEIDACK**: This mode allows to send a message to the all the services of a specific node **with** acknowledgment return.
+  - **NODEID**: This mode allows to send a message to all the services of a specific node **without** acknowledgment return.
+  - **NODEIDACK**: This mode allows to send a message to all the services of a specific node **with** acknowledgment return.
 - **Source (12 bits)**: The unique ID of the transmitter service.
 - **CMD (8 bits)**: The command defines the transmitted data's type.
 - **Size (16 bits)**: Size of the incoming data.

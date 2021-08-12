@@ -1,16 +1,17 @@
 # Command and object dictionary
 
-Each message which follows the Robus communication protocol, includes a command value that defines the type of the contents of the data of a message. 
+Each message that follows the Robus communication protocol includes a command value that defines the type of the contents of the message's data.
 
-An other feature included in Luos technology is the Object Dictionary (OD), that aims to maintain the interoperability between <span class="cust_tooltip">services<span class="cust_tooltiptext">{{service_def}}</span></span>.
+Another feature included in Luos technology is the Object Dictionary (OD), which aims to maintain interoperability between <span class="cust_tooltip">services<span class="cust_tooltiptext">{{service_def}}</span></span>.
 
 ## Commands
 
-There are three general categories of commands, that are separated regarding the level of handling the messages received from a node. These messages are either handled in Luos level, in Robus level or in service level.
+There are three general categories of commands that are separated regarding the handling level of the messages received from a node. These messages are either handled at Luos level, at Robus level, or at service level.
 
-You can find the full list of commands <a href="https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h" target = "_blank"> here </a>.
+You can find the complete list of commands <a href="https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h" target = "_blank">here</a>.
 
-### Commands handled in Robus level
+### Commands handled at Robus level
+
 | Command | Function |
 | :---: | :---: |
 | WRITE_NODE_ID | Set a new ID to the node |
@@ -18,7 +19,8 @@ You can find the full list of commands <a href="https://github.com/Luos-io/Luos/
 | SET_BAUDRATE | Set Robus Baudrate |
 | ASSERT | Node Assert message  |
 
-### Commands handled in Luos level
+### Commands handled at Luos level
+
 | Command | Function |
 | :---: | :---: |
 | RTB_CMD | Ask, generate or share the routing table |
@@ -31,21 +33,24 @@ You can find the full list of commands <a href="https://github.com/Luos-io/Luos/
 
 ### Service commands
 
-This last category, includes all the specific commands that are treated by each service. Each one refers to different kind of services, like for example, the command IO_STATE is send from services of type STATE, and it shows if the actual state of the service is true or false.
+This last category includes all the specific commands that are treated by each service. Each one refers to different kinds of services. For example, the command IO_STATE is sent from services of type STATE, and it shows if the actual state of the service is true or false.
 
 If you want to create new functionalities for your custom services, you can create and add your own commands. [See how](../../tutorials/tutorials.md).
 
-## What is OD?
-An Object Dictionary (OD) allows different developers of different services to make them interoperate regardless of the unit they use on the service.
+## What is an object dictionary?
 
-Example: If my_service1 uses an angle in radians and my_service2 uses degrees, what is the unit they should use to share the angle information?
+An object dictionary (OD) allows different developers of different services to make them interoperate regardless of the unit they use on the service.
 
-An Object Dictionary defines a set of typical objects that can be transmitted through Luos messages. It allows to send these objects with a predefined type and to use it in the units the user want.
+> Example: If *my_service1* uses an angle in radians and *my_service2* uses degrees, what is the unit they should use to share the angle information?
+ 
+An object dictionary defines a set of typical objects that can be transmitted through Luos messages. It allows to send these objects with a predefined type and to use it in the units the user want.
 
 ## How is it managed in Luos?
+
 Luos defines objects based on physical values following the SI standard.
 
 ### Object and types
+
 Each object in the Object Dictionary has a specific Type. For example:
 ```c
 // Define object angular_position as an angular_position_t type
@@ -62,10 +67,12 @@ Following this rule, everybody will be able to use your values.
 All the types are listed in the [table summary](#types-and-units-table-summary) at the end of this page.
 
 ## Conversions
-As many units exist, many conversion functions are available. As a result, they follow a **logic naming rules** in order to easily find a desired function without having to search for it.
+
+As many units exist, many conversion functions are available. As a result, they follow **logic naming rules** in order to quickly find the desired function without having to search for it.
 
 ### Unit conversions
-There are two types of unit conversion: in one way (OD type from desired unit), and in the other way (OD type to desired unit):
+
+There are two types of unit conversion: in one way (OD type from the desired unit), and in the other way (OD type to the desired unit):
 
  - **`from` conversion:** Converts a value with a defined unit into a desired OD type. Format:  `[type_var] = [type]From_[unit]([value])`
 ```c
@@ -80,7 +87,8 @@ float LinearOD_PositionTo_mm(linear_position_t linear_position);
 ```
 
 ### Messages conversions
-In the same way, both conversion are available for messages (OD type from message and OD type to message):
+
+In the same way, both conversions are available for messages (OD type **from** message and OD type **to** message):
 
  - **`from` conversion:** Gets a type from a message. Format: `[type]FromMsg([type_var], msg)`
 ```C
@@ -95,6 +103,7 @@ void LinearOD_PositionToMsg(linear_position_t* linear_position, msg_t* msg);
 ```
 
 ## Types and units table summary
+
 Here are listed the existing types:
 
 | Type | Available prefix and other units |
@@ -106,7 +115,7 @@ Here are listed the existing types:
 | force | N, kgf, ozf, lbf |
 | moment | N.mm, N.cm, N.m, kgf.mm, kgf.cm, kgf.m, ozf.in, lbf.in |
 | voltage | mV, V |
-| current |  mA, A |
+| current | mA, A |
 | power | mW, W |
 | ratio | percentage |
 | temperature | deg_c, deg_f, deg_k |
@@ -115,6 +124,3 @@ Here are listed the existing types:
 > **Note:** to find out a conversion function, replace the characters `/` or `.` in the units by the character `_`. The character `µ` is replaced by `u`, and `revolution` is replaced by `rev`.
 >
 > Examples: convert a linear speed to mm/s: `LinearOD_SpeedTo_mm_s()`; convert a value in &mu;m to a linear position: `LinearOD_PositionFrom_um()`; convert a value in revolutions/s to an angular speed: `AngularOD_SpeedFrom_rev_s()`;
-
-
-

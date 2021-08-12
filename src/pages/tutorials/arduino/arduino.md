@@ -1,6 +1,6 @@
 # Arduino
 
-The Luos library can be used with platformio, which is the IDE Luos compagny use, but you can also use Arduino IDE.
+The Luos library can be used with PlatformIO, which is the IDE Luos compagny use, but you can also use Arduino IDE.
 
 For now, only Arduino SAM Board 32-bits ARM cortex-M0+ are compatible with Luos Library.
 

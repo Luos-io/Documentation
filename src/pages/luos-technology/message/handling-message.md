@@ -1,6 +1,7 @@
 # Message Handling configurations
 
-Message callbacks of services can be really difficult to use when a project has high real-time constraints.<br/>
+Message callbacks of services can be difficult to use when a project has high real-time constraints.
+
 Luos provides two different configurations allowing you to choose the best way for you to deal with messages.
 The message handling configuration is set during the [initialization of a service](../services/service_api.md).
 
@@ -12,10 +13,12 @@ The message handling configuration is set during the [initialization of a servic
 The following sections detail how the different configurations work.
 
 ## Callback configuration
-This configuration is the default and most common setup. In this configuration, Luos directly calls the service callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `luos_loop()` function execution frequency.<br/>
-With this configuration, you have no real constraints on the callback's time of execution, you can reply to a message directly on the callback.
 
-To setup this configuration you have to simply setup the callback at service creation.
+This configuration is the default and most common setup. In this configuration, Luos directly calls the service callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `luos_loop()` function execution frequency.
+
+With this configuration you have no real constraints on the callback's time of execution, you can then reply to a message directly on the callback.
+
+To setup this configuration, you have to simply setup the callback at service creation.
 
 Here is a code example with a button:
 ```c
@@ -44,9 +47,9 @@ void Button_Loop(void) {
 ```
 
 ## Polling configuration
-This configuration is often used in Arduino libraries to receive information in a basic way. This method allows you handle messages only when the user wants to do it in the loop of the service.
+This configuration is often used in Arduino libraries to receive information in a basic way. This method allows you to handle messages only when the user wants to do it in the loop of the service.
 
-To setup this configuration, you have to create your service without any callbacks.
+To set up this configuration, you have to create your service without any callbacks.
 
 See the following code as an example, with a button:
 

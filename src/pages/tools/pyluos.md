@@ -2,11 +2,12 @@
 
 <h1><a href="#pyluos" class="header" id="pyluos"><img src="../../_assets/img/python-logo.png" width="80px"> / A Pyluos guide</a></h1>
 
-Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer, through a  [_gate_](./gate.md) service.
+Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer through a [gate](./gate.md) service.
 
 ## Installation
 
 ### Required: Installing Python and Pip
+
 > **Warning:** In order to use Pyluos library, Python and the Pip package manager must be installed on your computer.
 
 _« Python is a programming language that lets you work more quickly and integrate your systems more effectively. » (<small><a href="https://python.org" target="_blank">Source</a></small>)_
@@ -23,9 +24,10 @@ python get-pip.py
 ```
 
 ### Installing Jupyter Notebook
-The tool _Jupyter Notebook_ is needed for this tutorial. Jupyter Notebook will allow you to type Python commands in an internet browser to communicate with a Luos system, via Pyluos.
 
-_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source</a></small>)_
+The tool *Jupyter Notebook* is needed for this tutorial. Jupyter Notebook will allow you to type Python commands in an internet browser to communicate with a Luos system, via Pyluos.
+
+*« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source</a></small>)*
 
 Type the following command in the console to install Jupyter:
 
@@ -36,6 +38,7 @@ pip install jupyter
 > **Note:** Feel free to consult <a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank">_Jupyter Notebook_'s</a> documentation.
 
 ### Installing or updating Pyluos library
+
 You are now ready to install Pyluos. **The last Pyluos version is `{{last_version_pyluos}}`.**
 
 In a console, the following command will install the *Pyluos* library using the *Pip package manager*:
@@ -50,14 +53,15 @@ If Pyluos is already installed, it may only need to be updated:
 pip install --upgrade pyluos
 ```
 
-Pyluos also provides auto generated pre-releases for advanced developers user. You can get it using:
+Pyluos also provides auto-generated pre-releases for advanced developers. You can get it using:
+
 ```bash
 pip install --pre pyluos
 ```
 
 ## Start using Jupyter Notebook and Pyluos
 
-_Jupyter Notebook_ can be launched through a console:
+*Jupyter Notebook* can be launched through a console:
 
 ```bash
 jupyter notebook
@@ -67,15 +71,16 @@ In the browser page that opened, the `New` button creates a new Python file:
 
 ![python](../../_assets/img/pyluos-1.png)
 
-> **Note:** In the previous picture, *Jupyter* use *Python 3* but you also can use *Python 2.7* depending on your computer configuration.
+> **Note:** In the previous picture, *Jupyter* uses *Python 3*, but you also can use *Python 2.7* depending on your computer configuration.
 
 ![Jupyter](../../_assets/img/pyluos-2.png)
 
-The Jupyter work-space looks like the following image. On the keyboard,  `Shift+Enter` executes any selected part of code.
+The Jupyter work space looks like the following image. On the keyboard, `Shift+Enter` executes any selected part of the code.
 
 Now you are ready to code using Python.
 
 ### Import Pyluos
+
 The first thing to do is to call the Pyluos library along with the `Device` tool inside that library:
 
 ```python
@@ -90,13 +95,13 @@ Connect your device to your computer through a [Gate](./gate.md) with a USB cabl
 
 #### Configuring USB transfer sizes and latency timer
 
-Some devices may not work properly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device properly while connected to your computer from a [Gate](./gate.md).
+Some devices may not work correctly with the default USB transfer sizes and latency timer for COM ports on Windows. These parameters can be set to lower values in order to use your device correctly while connected to your computer from a [gate](./gate.md).
 
-**USB Transfer Sizes**: Default value is 4096 Bytes, however if you have issues to use your connected device, you should try the minimum possible values both for `Receive` and `Transmit`.
+**USB Transfer Sizes**: The default value is 4096 Bytes; however if you have issues using your connected device, you should try the minimum possible values both for `Receive` and `Transmit`.
 
-**Latency Timer**: Default value is 16 msec, but you can rise lower it to the minimal value of 1 msec.
+**Latency Timer**: The default value is 16 msec, but you can rise lower it to the minimal value of 1 msec.
 
-To access to these parameters, open the Device Manager in Windows, and right-click on the *USB Serial Port (COMX)* where your device is connected, then click on *Properties*.
+To access to these parameters, open the Device Manager in Windows, right-click on the *USB Serial Port (COMX)* where your device is connected, and click on *Properties*.
 
 ![](../../_assets/img/device-manager.png)
 
@@ -114,7 +119,7 @@ These values can give you better results, for example if your device has motors 
 
 Now you should be ready to use the Pyluos library and connect to your device. To do that, you have to create a device object with your device address as an argument.
 
-Your device address can be an IP address (`192.168.0.6` or `my_device.local` for example) or a serial port (`COM13` on Windows or `/dev/cu.usbserial-DN2YEFLN` on Mac).
+Your device address can be an IP address (`192.168.0.6` or `my_device.local`, for example) or a serial port (`COM13` on Windows or `/dev/cu.usbserial-DN2YEFLN` on Mac).
 
 ```python
 device = Device('address of the device')
@@ -127,15 +132,16 @@ This line makes the connexion between the computer and the device. Python should
 `Waiting for first state...`<br />
 `Device setup.`
 
-Only once the connection is set it is possible to start programming behaviors.
+Only once the connection is set is it possible to start programming behaviors.
 
 
 ### Routing table display
 
-[Routing table](../luos-technology/node/topology.md) can be easily displayed using Pyluos.
+[Routing table](../luos-technology/node/topology.md) can be readily displayed using Pyluos.
 
-Pyluos can displays a list of all the services by filtering the routing table, and their associated characteristics (type, alias and ID).
+Pyluos can display a list of all the services and their associated characteristics (type, alias, and ID) by filtering the routing table.
 To display it, use the following command:
+
 ```python
 device.services
 ```
@@ -143,6 +149,7 @@ device.services
 > **Note:** `device` is the name of the network.
 
 Pyluos will give you a list of all services without any topological information:
+
 ```AsciiDoc
 -------------------------------------------------
 Type                Alias               ID
@@ -161,14 +168,16 @@ State               digit_write_P4      11
 Angle               potentiometer_m     12
 ```
 
-Pyluos also can interpreate routing_table and transform it into a tree. This way we can display a lot more complete information usinig the following command:
+Pyluos also can interpret the routing table and transform it into a tree. This way, we can display a lot more complete information using the following command:
+
 ```python
 device.nodes
 ```
 
 > **Note:** `device` is the name of the network.
 
-Based on the previous example Pyluos will give you all information about services and topological information:
+Based on the previous example, Pyluos will give you all information about services and topological information:
+
 ```AsciiDoc
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
   ┃  ╭node 1                Certified            ┃
@@ -195,25 +204,28 @@ Based on the previous example Pyluos will give you all information about service
           ┃  ╰> Angle               potentiometer_m 12   ┃
          >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
-In this example, 3 nodes (MCU) and their associated UUID are listed, along with their services and associated characteristics (type, alias and ID).
+
+In this example, three nodes (MCUs) and their associated UUID are listed, along with their services and related characteristics (type, alias, and ID).
 The characters after each set of node's services and before the UUID's next node specify which connector is used. For example, `1<=>0` means the first node is connected from its second connector (1) to the first connector (0) of the next node.
 
 ### Service type
 
-Each service has a type (eg. `Button`, `Led`, ...).
-You can either retrieve your service's type from the previous code, or with the following line:
+Each service has a type (e.g. `Button`, `Led`, etc.).
+You can either retrieve the service's type from the previous code or with the following line:
 
 ```python
 device.service_alias.type
 ```
-`service_alias` being the alias you got from the previous listing.
+
+`service_alias` is the alias you got from the previous listing.
 
 > **Note:** *Unknown* service types are defaulty set for custom service types such as some [Luos apps](../luos-technology/services/service_type.md).
 
 ### Get and set services information
-Once you have detected your services, you can use these information like variables.
 
-To access values you have to address them in the device object following this rules:
+Once you have detected your services, you can use this information like variables.
+
+To access values, you have to address them in the device object following these rules:
 
 ```python
 device.service_alias.variable
@@ -222,22 +234,23 @@ device.service_alias.variable
 For example:
 
 ```python
-device.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" service
+device.rgb_led_mod.color = [50,80,5] # Changes the color of the LED in the "rgb_led_mod" service
 
-device.button_mod.state # Returns the status of the push button
+device.button_mod.state # Returns the status of the push-button
 
 device.button_mod.type # Returns the service type of the service "button_mod"
 
-device.button_mod.luos_revision # Returns the version of luos
+device.button_mod.luos_revision # Returns the version of Luos
 
-device.button_mod.robus_revision # Returns the version of robus
+device.button_mod.robus_revision # Returns the version of Robus
 ```
 
-If you use *ipython* or *Jupyter Notebook*, you can use auto-completion using the `Tab` key to find every available objects and variables.
+If you use *ipython* or *Jupyter Notebook*, you can use auto-completion using the `Tab` key to find every available object and variable.
 
 ![Auto-completion](../../_assets/img/pyluos-3.png)
 
 ### Change a service name
+
 The name of any service can be changed by using this code:
 
 ```python
@@ -254,8 +267,9 @@ device.rgb_led_mod.rename("myLED")
 
 > **Note:** To get back to the service default name, set a void name (`""`).
 
-### Get a node statistics
-Nodes are able to send back some values representing the sanity of a node. You can use it to evaluate the Luos needs depending on your particular configuration.
+### Get a node's statistics
+
+Nodes can send back some values representing the sanity of a node. You can use it to evaluate the Luos needs depending on your particular configuration.
 The RAM usage of Luos depends on the number of messages the node has to treat and the max Luos loop delay.
 
 ```python
@@ -282,7 +296,7 @@ gate statistics :
 
  - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default. sizeof(msg_t) -> 7 bytes Header + 128 bytes data).
 
-- Unlike **Message stack**,  **Luos stack**, and **Max Luos loop delay** which are nodes' relative statistics, **Msg fail ratio** and **NAK msg max number** are services' statistics. **Msg fail ratio** gives a ratio of the failed sent messages based on all the messages that the service has sent. **NAK msg max number** gives the maximum number of NAK received when a message has been sent.
+- Unlike **Message stack**, **Luos stack**, and **Max Luos loop delay** which are all nodes' relative statistics, **Msg fail ratio** and **NAK msg max number** are services' statistics. **Msg fail ratio** gives a ratio of the failed sent messages based on all the messages that the service has sent. **NAK msg max number** gives the maximum number of NAK received when a message has been sent.
 
  - The RAM occupation and message drop number are also related to **Max Luos loop delay**. If **Max Luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. You can reduce the RAM consumption and messages dropping by reducing the **Max Luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
 

@@ -1,8 +1,8 @@
 # Bootloader
 
-The bootloader feature allows updating the firmware of any node in a Luos network. It's useful for quickly upgrading your application software without using specific programming tools and without physically accessing your boards.
+The bootloader feature allows updating the firmware of any node in a Luos network. It's useful for quickly upgrading your application software without using specific programming tools or physically accessing your boards.
 
-This page first explains how the bootloader works from a high-level perspective, then how to use it on already supported targets (STM32 L4/F4/G4/F0, ATSAMD21).
+This page first explains how the bootloader works from a high-level perspective, and how to use it on already supported targets (STM32 L4/F4/G4/F0, ATSAMD21).
 
 A third section details the requested changes to make a Luos application compatible with this bootloader.
 
@@ -18,7 +18,7 @@ The bootloader feature consists of three elements:
 
 When you want to update the firmware of *node 2* (for example), the CLI tool sends commands through JSON files to the gate, which converts them into Luos commands. During the update, if the node needs to send information to the CLI tool, it sends information to the gate, converting it into JSON files.
 
-The feature has been designed to be as simple as possible, and the process can be described by only four steps:
+The feature has been designed to be as simple as possible, and only four steps can describe the process:
 
 1. The CLI reboots the entire Luos network (except the gate) on bootloader mode, so that all nodes are ready to receive and save a new firmware.
 2. The CLI sends binary files to the nodes you want to update.
@@ -50,7 +50,7 @@ We can see two nodes in the network:
 - *node 1* containing the gate app
 - *node 2* containing one service
 
-Your goal is to update the **button_old** service. To do that, you need to flash a new firmware in ***node 2*** (we suppose it is called **firmware_new.bin** and that it has been saved in a known location on the user's computer). You can then call the following command:
+Your goal is to update the **button_old** service. To do that, you need to flash a new firmware in ***node 2*** (we suppose it is called **firmware_new.bin** and has been saved in a known location on the user's computer). You can then call the following command:
 
 ```c
 pyluos-bootloader flash <SERIAL_PORT> -t <target1 target2 ...> -b <file.bin>
@@ -91,11 +91,11 @@ You can program more than one node by giving an ID list with the option -t:
 pyluos-bootloader flash COM3 -t 2 3 4 -b firmware_new.bin
 ```
 
-In this example, we programmed nodes with ID's numbers 2, 3, and 4.
+In this example, we programmed nodes with ID numbers 2, 3, and 4.
 
 ## Troubleshooting
 
-If the connection with the network or with a node is lost during the update, the bootloader allows you to re-run the process without the need to use specific programming tools (such as a JTAG debugger). The following image shows what happens in case of loss connection during the update:
+If the connection with the network or with a node is lost during the update, the bootloader allows you to re-run the process without the need to use specific programming tools (such as a JTAG debugger). The following image shows what happens in case of a loss of connection during the update:
 
 <img src="../../_assets/img/flash_error.png" />
 
@@ -103,13 +103,13 @@ The CLI tells you that you have lost the connection. Now by powering off and on 
 
 <img src="../../_assets/img/detect_boot_service.png" />
 
-The **boot_service** tells the node is in bootloader mode. You just have to re-run the flashing process with the CLI:
+The **boot_service** tells the node is in bootloader mode. You have to re-run the flashing process with the CLI:
 
 ```bash
 pyluos-bootloader flash COM3 -b firmware_new.bin
 ```
 
-> **Note:** No matter what problem you encounter during the loading process, you must power-off and power back on your network to see all the nodes running in bootloader mode. Once it is done, you have to use **pyluos-bootloader detect** / **flash** tools to load the applications and make it work again.
+> **Note:** No matter what problem you encounter during the loading process, you must power off and power back on your network to see all the nodes running in bootloader mode. Once it is done, you have to use **pyluos-bootloader detect** / **flash** tools to load the applications and make it work again.
 
 ## How to add the bootloader feature in your project
 
@@ -132,7 +132,7 @@ The Luos bootloader is available for the following targets:
 - STM32 F0 / F4 / G4 / L4 families
 - Microchip ATSAMD21J18
 
-Several projects for each of these targets can be found in this repository: [https://github.com/ncros3/Luos_bootloader.git](https://github.com/ncros3/Luos_bootloader.git). You can clone this repository and use the projects for your application, or use them as examples to build your own bootloader for your specific target.
+Several projects for each of these targets can be found in this repository: [https://github.com/ncros3/Luos_bootloader.git](https://github.com/ncros3/Luos_bootloader.git). You can clone this repository and use the projects for your application or use them as examples to build your own bootloader for your specific target.
 
 > **Note:** Examples are available for several IDEs: L4 / F4 / F0 use platformIO, G4 uses SW4STM32 (an Eclipse-based IDE) and SAMD21 uses MPLAB.
 
@@ -154,7 +154,7 @@ This figure shows a third section called **shared_flash**, which exchanges infor
 
 ### Applications
 
-As for the bootloader, you have to modify the linker file in the application if you want to make it compatible with this feature. Now that we defined the memory layout, the modification is straightforward:
+As for the bootloader, you have to modify the linker file in the application to make it compatible with this feature. Now that we defined the memory layout, the modification is straightforward:
 
 <img src="../../_assets/img/linker_app.png" />
 
