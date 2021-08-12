@@ -62,11 +62,11 @@ In this case, if `arg_ptr` is not initialized, Luos will crash the entire node a
 
 ## Sniffer
 
-An additional monitoring mechanism provided by Luos is the integration of a sniffer mcu into the network. The sniffer is responsible of gathering all the messages that are transfered into a Luos network, transmitting them serially to your computer, and displaying them in a logger, giving you the opportunity to examine the behavior of your nodes and services.
+An additional monitoring mechanism provided by Luos is the integration of a sniffer MCU into the network. The sniffer is responsible of gathering all the messages that are transfered into a Luos network, transmitting them serially to your computer, and displaying them in a logger, giving you the opportunity to examine the behavior of your nodes and services.
 
-The sniffer, which consists of an application and a driver, can be easily ported on a simple mcu in the same way as a serial gate and it can be connected to your network as any other node. The reception of the messages from the computer is being achieved by transmitting the messages serially using a USB cable, while these messages handled by pyluos (link).
+The sniffer, which consists of an application and a driver, can be easily ported on a simple MCU in the same way as a serial gate and it can be connected to your network as any other node. The reception of the messages from the computer is being achieved by transmitting the messages serially using a USB cable, while these messages handled by pyluos (link).
 
-All you have to do is to connect the sniffer to your mcu network and to the computer, initialize the connection using pyluos, after you spot the name of the usb port that the sniffer is connected (for example COM13) 
+All you have to do is to connect the sniffer to your MCU network and to the computer, initialize the connection using pyluos, after you spot the name of the usb port that the sniffer is connected (for example COM13) 
 
 ```python
 import pyluos

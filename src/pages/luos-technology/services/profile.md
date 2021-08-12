@@ -5,16 +5,16 @@
 Now than you understand what is a service, a service type and how to create one, you can start thinking about profiles.
 
 A **service profile** is a pre-made API management for a specific service type.
-Basicaly, a profile give to your service a **data structure** with all the variables you need with the service type you choose to exchange information with others. The profile code know how to deal with those variables and take care of **sharing your service informations** with any other.
+Basicaly, a profile give to your service a **data structure** with all the variables you need with the service type you choose to exchange information with others. The profile code know how to deal with those variables and take care of **sharing your service information** with any other.
 
 Thanks to profiles, your service code will be clean and simple, you will **just need to use variables**, and you don't need to deal with Luos messages and message handling anymore.
 
 > **Example:** If you want to make a servo-motor service you just have to select the servo-motor profile for your service and use variables of the profile structure to set the rotor current position measurement or to get the current motor target in your code.
 
-Profiles are really convenient to make your code simple and clean, to comply your developpement into a standard API, or to share your service type to the community.
+Profiles are really convenient to make your code simple and clean, to comply your development into a standard API, or to share your service type to the community.
 Luos provide some common profile models that you can use, feel free to contribute and to add your own to the standard profile bank by Pull Request on our Github ;) .
 
-Luos allows you to create a service based on a specific profile. We call it a **service template** : 
+Luos allows you to create a service based on a specific profile. We call it a **service template**: 
 
 > **service** + **profile** = **template**
 
@@ -69,4 +69,4 @@ void Button_Loop(void) {
 }
 ```
 
-You can notice that you don't send any luos message to share the button state: if an application wants to access to this information, the state profile will share it for you. You just have to update the button state value in your code. Supported profiles are available in this [repository](https://github.com/Luos-io/Luos/tree/master/Templates).
+You can notice that you don't send any Luos message to share the button state: if an application wants to access to this information, the state profile will share it for you. You just have to update the button state value in your code. Supported profiles are available in this [repository](https://github.com/Luos-io/Luos/tree/master/Templates).

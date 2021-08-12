@@ -28,7 +28,7 @@
 
 Luos is designed with the conviction that the development of electronic systems should be made easier than it is today. Indeed, most of the time should be spent developing applications and behaviors rather than consuming time and money on over-complex boards' technicalities and communication. 
 
-> **For example**, adding a new sensor &mdash;for instance, a distance sensor&mdash; to a system you are conceiving should not take more than a few minutes, even on a fully developped and complex ready-to-produce electronic device. 
+> **For example**, adding a new sensor &mdash;for instance, a distance sensor&mdash; to a system you are conceiving should not take more than a few minutes, even on a fully developed and complex ready-to-produce electronic device. 
 
 Luos allows you to try, test, and iterate faster on any project to design what users really want.
 

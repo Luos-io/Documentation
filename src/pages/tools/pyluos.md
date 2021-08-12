@@ -142,7 +142,7 @@ device.services
 
 > **Note:** `device` is the name of the network.
 
-Pyluos will give you a list of all services without any topological informations :
+Pyluos will give you a list of all services without any topological information:
 ```AsciiDoc
 -------------------------------------------------
 Type                Alias               ID
@@ -161,14 +161,14 @@ State               digit_write_P4      11
 Angle               potentiometer_m     12
 ```
 
-Pyluos also can interpreate routing_table and transform it into a tree. This way we can display a lot more complete information usinig the following command :
+Pyluos also can interpreate routing_table and transform it into a tree. This way we can display a lot more complete information usinig the following command:
 ```python
 device.nodes
 ```
 
 > **Note:** `device` is the name of the network.
 
-Based on the previous example Pyluos will give you all informations about services and topological informations :
+Based on the previous example Pyluos will give you all information about services and topological information:
 ```AsciiDoc
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
   ┃  ╭node 1                Certified            ┃
@@ -210,16 +210,16 @@ device.service_alias.type
 
 > **Note:** *Unknown* service types are defaulty set for custom service types such as some [Luos apps](../luos-technology/services/service_type.md).
 
-### Get and set services informations
+### Get and set services information
 Once you have detected your services, you can use these information like variables.
 
-To access values you have to address them in the device object following this rules :
+To access values you have to address them in the device object following this rules:
 
 ```python
 device.service_alias.variable
 ```
 
-For example :
+For example:
 
 ```python
 device.rgb_led_mod.color = [50,80,5] # Change the color of the LED in "rgb_led_mod" service
@@ -273,7 +273,7 @@ gate statistics :
   .Message stack                = 50%
   .Luos stack                   = 53%
 .Dropped messages number        = 0
-.Max luos loop delay            = 16ms
+.Max Luos loop delay            = 16ms
 .Msg fail ratio                 = 0%
 .Nak msg max number             = 1
 .Collision msg max number       = 5
@@ -282,9 +282,9 @@ gate statistics :
 
  - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default. sizeof(msg_t) -> 7 bytes Header + 128 bytes data).
 
-- Unlike **Message stack**,  **Luos stack**, and **Max luos loop delay** which are nodes' relative statistics, **Msg fail ratio** and **NAK msg max number** are services' statistics. **Msg fail ratio** gives a ratio of the failed sent messages based on all the messages that the service has sent. **NAK msg max number** gives the maximum number of NAK received when a message has been sent.
+- Unlike **Message stack**,  **Luos stack**, and **Max Luos loop delay** which are nodes' relative statistics, **Msg fail ratio** and **NAK msg max number** are services' statistics. **Msg fail ratio** gives a ratio of the failed sent messages based on all the messages that the service has sent. **NAK msg max number** gives the maximum number of NAK received when a message has been sent.
 
- - The RAM occupation and message drop number are also related to **Max luos loop delay**. If **Max luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. You can reduce the RAM consumption and messages dropping by reducing the **Max luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
+ - The RAM occupation and message drop number are also related to **Max Luos loop delay**. If **Max Luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. You can reduce the RAM consumption and messages dropping by reducing the **Max Luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
 
 ### Full script
 

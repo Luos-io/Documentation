@@ -1,4 +1,4 @@
-# Command and Object dictionnary
+# Command and object dictionary
 
 Each message which follows the Robus communication protocol, includes a command value that defines the type of the contents of the data of a message. 
 
@@ -26,8 +26,8 @@ You can find the full list of commands <a href="https://github.com/Luos-io/Luos/
 | UPDATE_PUB | Ask to update a sensor value each time duration to the sender |
 | NODE_UUID | luos_uuid_t |
 | REVISION | Service sends its firmware revision |
-| LUOS_REVISION | Service sends its luos revision |
-| LUOS_STATISTICS | Service sends its luos revision |
+| LUOS_REVISION | Service sends its Luos revision |
+| LUOS_STATISTICS | Service sends its Luos revision |
 
 ### Service commands
 

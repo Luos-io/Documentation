@@ -1,26 +1,26 @@
 # Luos
 
-The embedded part of a node is separated to the Luos embedded code and to the node's different functionalities. Luos is responsible for the creation of each node's identity, the integration of the node to a Luos network by locating it among the other nodes, the communication with each other and the management of all their different functionalities.
+The embedded part of a node is separated to the Luos embedded code and the node's various functionalities. Luos is responsible for creating each node's identity, integrating the node to a Luos network by locating it among the other nodes, communicating with each other, managing all their functionalities.
 
 ## Luos Integration
 
-Luos works as a code library running on nodes. To match Luos library with your hardware, Luos offers a *Hardware Abstraction Layer* for various devices in <span class="cust_tooltip">LuosHAL<span class="cust_tooltiptext">{{luoshal_def}}</span></span>.
+Luos works as a code library running on nodes. To match the Luos library with your hardware, Luos offers a *Hardware Abstraction Layer* for various devices in <span class="cust_tooltip">LuosHAL<span class="cust_tooltiptext">{{luoshal_def}}</span></span>.
 
  - <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>: This repository provides a list of family devices covered to match the Luos library with your hardware.
- - <a href="https://github.com/Luos-io/Luos" target="_blank">Luos</a>: This is the main library you will be working with.
+ - <a href="https://github.com/Luos-io/Luos" target="_blank">Luos</a>: The main library you will be working with.
 
 To make it work in your environment, you have to:
 
  - Include the Luos lib folders in your project compilation;
  - Select the right LuosHAL for your device family in LuosHAL folder, and include `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` in your project;
- - Change, if necessary, `luos_hal_config.h` for your project. The default configuration created by Luos is an example for a MCU family that can be modify to fit with your design (eg: match pins with your design);
+ - Change, if necessary, `luos_hal_config.h` for your project. The default configuration created by Luos is an example of an MCU family that can be modified to fit with your design (e.g. match pins with your design);
  - Include `luos.h` on your source file.
  
 The Luos functions need to be called only in one place for each node, but it should be run constantly.
 
-Luos is like a task that has to be run regularly. The primary Luos functions that should be called in order to integrate Luos into the embedded code of a node, are `luos_init()` and `luos_loop()` that should be added in the `main()` of your program.<br/>
+Luos is like a task that has to be run regularly. The primary Luos functions that should be called to integrate Luos into the embedded code of a node are `luos_init()` and `luos_loop()`. They should be added in the `main()` of your program.
 
-Basically, your `main()` will look like this:
+Basically, your `main()` function will look like this:
 
 ```C
 #include "luos.h"
@@ -37,13 +37,13 @@ int main(void)
 ```
 Putting this code into a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> makes it able to react to a Luos network. It's now ready to host your services.
 
-**As a developer you will always develop your functionalities into services and never into the `main()` program.**
+**As a developer, you will always develop your functionalities into services and never into the `main()` program.**
 
 > **Note:** The only information that should be put on the `main()` code are MCU setup parameters and services' run functions.
 
 ## Luos APIs
 
-In the main Luos embedded technology, we added the following tools, in order to integrate more capabilities and functionalities in your design.
+The main Luos embedded technology includes the following tools to integrate more capabilities and functionalities in your design:
 
 | Description | Function | Return |
 | :---: | :---: | :---: |
@@ -59,25 +59,25 @@ In the main Luos embedded technology, we added the following tools, in order to 
 
 ## Robus
 
-As already mentioned, the nodes have the capability to communicate with each other thanks to a specific part of Luos, Robus.
+As already mentioned, the nodes can communicate with each other thanks to a specific part of Luos, Robus.
 
-Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like the communication initialization between the different nodes, the messages' management ([message format control](../message/message.md), TX, and RX), the memory allocation, the topology [detection](../services/routing_table.md) and for the attribution of messages to the suitable handling level. 
+Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like the communication initialization between the different nodes, the messages' management ([message format control](../message/message.md), TX, and RX), memory allocation, topology [detection](../services/routing_table.md), and attribution of messages to the suitable handling level. 
 
-These functionalities are analyzed in the next pages.
+These functionalities are described in the following pages.
 
-### How the communication works?
+### How does communication work?
 
-In the level of a node, the communication is achieved by receiving and sending [messages](../message/message.md) with the other components of a Luos network. These messages, after a format control executed by Robus, they are stored in the memory of the MCU. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos, or they are sent to one or more [Services](../services/services.md).
+At the node level, communication is achieved by receiving and sending [messages](../message/message.md) with the other components of a Luos network. After Robus executes a format control, these messages are stored in the memory of the MCU. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos or sent to one or several [services](../services/services.md).
 
 <img src="../../../_assets/img/NodeFlow.png" height="400px" />
 
 ## Node Parameters Configuration 
 
-Luos allow you to configure some parameters allowing to optimize the memory usage and adapt it to fit your needs. To make it we advise to use a configuration file call node_config.h. Put the file at the root folder of your project and add it in the compiling variables section of your IDE adding the line:
+Luos allows you to configure some parameters to optimize the memory usage and adapt it to fit your needs. To make it, we advise using a configuration file called *node_config.h*. Put the file at the root folder of your project and add it in the compiling variables section of your IDE by adding the following line:
 
  `#include node_config.h`
 
-You can use it to set all your custom configuration:
+You can use it to set all your custom configurations:
  - for the services of your node
  - for Luos library of your node
  - to modify Luos HAL config to make it fit with your design
@@ -85,7 +85,7 @@ You can use it to set all your custom configuration:
 | Parameters | Defaults value | Description |
 | :---: | :---: | :---: |
 | NBR_NAK_RETRY | 10 | Number of retries to send after a received NAK. |
-| MAX_SERVICE_NUMBER | 5 | Number of services in the node (memory optimisation). |
+| MAX_SERVICE_NUMBER | 5 | Number of services in the node (memory optimization). |
 | MSG_BUFFER_SIZE | 3*size_msg | Message buffer size. Max size of a message (3 * (7 bytes header + 128 bytes data + 2 bytes CRC)). |
 | MAX_MSG_NB | 2*MAX_SERVICE_NUMBER | Max number of messages for a service that can be referenced. |
 | NBR_PORT | 2 | Number of PTP on the node ( max 8). See [electronic design](../../hardware-consideration/electronics.md) page.|
@@ -94,13 +94,13 @@ You will find the default configuration for Luos Library in the file <a href="ht
 
 Check the Luos_hal_config.h of your MCU family to see parameters that can be changed to fit your design.
 
-> **FYI:** [Every examples](https://github.com/Luos-io/Examples) provided by luos have a node_config.h files that can be use as base to fit your project needs.
+> **Note:** [Every example](https://github.com/Luos-io/Examples) provided by Luos has a *node_config.h* file that can be used as a base to fit your project's needs.
 
 
 ## Luos Statistics
 
-Into Luos embedded code, you are given the opportunity to obtain important information about different factors of the functioning of each node, as you can find stored several statistical values in the specific field of the structure that describes each node, like for example the mcus memory utilization, or timing information.
+Into Luos embedded code, you are given the opportunity to obtain important information about different factors of the functioning of each node, as you can find stored several statistical values in the specific field of the structure that describes each node, like for example, the MCUs memory utilization, or timing information.
 
-The statistics of a node can be occupied from any other node of the system, giving you the chance to explore the behavior of all your mcus by having direct access to any of them.
+The statistics of a node can be occupied from any other node of the system, giving you the chance to explore the behavior of all your MCUs by having direct access to any of them.
 
-More detals of how to access the statistics are given in the [Monitoring tools page](../../tools/monitoring.md).
+More details of how to access the statistics are given in the [Monitoring tools page](../../tools/monitoring.md).

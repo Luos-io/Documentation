@@ -99,7 +99,7 @@ You can now write a simple behavior that makes the LED to turn on when pushing t
 ```python
 # Import libraries
 from pyluos import Device
-# Establish connection with the luos network
+# Establish connection with the Luos network
 device = Device('COM13')
 
 # Use an infinite loop to put the behavior inside

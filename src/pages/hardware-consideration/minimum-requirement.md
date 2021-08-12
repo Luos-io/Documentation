@@ -9,7 +9,7 @@ Luos Library uses hardware and software MCU ressources. Here are the minimum req
 | Stack | 512 B |
 | Heap | 0 needed |
 | GPIO | 4 in one wire / 5 in RS485  |
-| Ressources | 1 USART, 1 Timer (option : DMA and CRC)|
+| Ressources | 1 USART, 1 Timer (option: DMA and CRC)|
 
 ## Network consideration
 | MCU frequency | Bus frequency |

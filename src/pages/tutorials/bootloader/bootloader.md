@@ -2,7 +2,7 @@
 
 In this tutorial, you will learn to use the bootloader feature offered by Luos technology. 
 
-The setup is simple and is composed of two l0 boards (see [boards](../luos-demo/demo.md) for further informations on boards we are using). These boards are chained following rules described in [hardware considerations](../../hardware-consideration/electronics.md).
+The setup is simple and is composed of two l0 boards (see [boards](../luos-demo/demo.md) for further information on boards we are using). These boards are chained following rules described in [hardware considerations](../../hardware-consideration/electronics.md).
 
 We will use one of these nodes as a [gate](../../tools/gate.md), and the other as an application node. The second node will host a bootloader and you will be able to update its firmware through the gate. You need a USB shield to connect on the the first node to complete this tutorial.
 
@@ -64,7 +64,7 @@ If not, please verify you're connected on the right port of the device.
 
 ### Step 3: Detect gate node with the CLI
 
-You can now detect your luos node with the CLI: connect your USB cable on the USB shield port instead of the dfu port and type the following command in a terminal:
+You can now detect your Luos node with the CLI: connect your USB cable on the USB shield port instead of the dfu port and type the following command in a terminal:
 
 ```bash
 pyluos-bootloader detect COM6
@@ -90,7 +90,7 @@ Connect the second node with the **dfu** port and click on **Upload**, you shoul
 
 ### Step 5: Detection
 
-Connect your two nodes through the luos network and connect your USB shield to your PC. Type the same command used on **Step 3** and you should see the following: 
+Connect your two nodes through the Luos network and connect your USB shield to your PC. Type the same command used on **Step 3** and you should see the following: 
 
 <p align="center">
   <img src="../../../_assets/img/tutorials/bootloader/detect_bootloader.png">
@@ -160,4 +160,4 @@ You should see your updated service running in your node:
   <img src="../../../_assets/img/tutorials/bootloader/detect_new_app.png">
 </p>
 
-You have reached the end of this tutorial. You're now able to use the bootloader feature included in **Luos**. You have the basics but you can find some useful informations in the dedicated [documentation page](../../tools/boot.md).
+You have reached the end of this tutorial. You're now able to use the bootloader feature included in **Luos**. You have the basics but you can find some useful information in the dedicated [documentation page](../../tools/boot.md).

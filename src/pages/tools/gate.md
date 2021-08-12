@@ -1,6 +1,6 @@
 # Gate
 
-The Gate is a main tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([Json](../api/api.md) most of the time) and to stream and receive those formated informations using any means of communication, such as serial interface, wifi, bluetooth, Lora, ...
+The Gate is a main tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([Json](../api/api.md) most of the time) and to stream and receive those formated information using any means of communication, such as serial interface, wifi, bluetooth, Lora, ...
 
 You can use it to take control of any embedded service with [any languages](../api/api.md) on any machine. For example we use it in [Pyluos](./pyluos.md) or [ROS](./ros.md)!
 
@@ -19,7 +19,7 @@ The default behavior of the Gate is optimized for system that only have drivers 
  5. the Gate setup all the network service to send back their values at the optimal frequency. *(Optional)*
  6. At this optimal frequency the Gate generate formated data and send commands comming from a pipe.
 
-> **Warning:** The Gate service refreshes sensors informations as fast as it can, so that can be intensive to Luos bandwidth.
+> **Warning:** The Gate service refreshes sensors information as fast as it can, so that can be intensive to Luos bandwidth.
 
 The Gate and the pipe are two separate services, they can be put on the same node or on separate node.
 

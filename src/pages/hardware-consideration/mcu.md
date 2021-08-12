@@ -11,7 +11,7 @@ Check the list of MCU family Luos cover :<a href="https://github.com/Luos-io/Luo
 
 ## Default Configuration
 
-Luos libraries is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low-level part, Luos company provides, for many MCU family, a default configuration that can lead to plug and play luos library with the chosen MCU family. The peripheral configuration is described in files luos_hal_config.h in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>, and can be redefined in the node_config.h file to fit with your design.
+Luos libraries is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low-level part, Luos company provides, for many MCU family, a default configuration that can lead to plug and play Luos library with the chosen MCU family. The peripheral configuration is described in files luos_hal_config.h in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>, and can be redefined in the node_config.h file to fit with your design.
 
 ## Luos HAL configuration
 
@@ -20,7 +20,7 @@ As you can see on the default configuration, defined in luos_hal_config.h, you a
 
 In this way you will be able to change the default hardware configuration, and use it by calling it in the preprossessor variable section of your IDE, so as to be taken into consideration for your project.
 
-> **FYI:** Every example provided by luos has a node_config.h file, which is included by the platformio project's initialization file, called platformio.ini.
+> **FYI:** Every example provided by Luos has a node_config.h file, which is included by the platformio project's initialization file, called platformio.ini.
 
 Example of PTPA redefinition:
 

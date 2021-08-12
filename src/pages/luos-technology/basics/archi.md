@@ -4,10 +4,10 @@
 
 | Level | Description |
 | :---: | :---: |
-| Product | A node or a set of nodes that communicates with each other through Luos and form a complete product. |
+| Product | A node or a set of nodes that communicate with each other through Luos and form a complete product. |
 | Node | MCUs executing one or more packages' code. |
 | Package | A sharable folder containing cross-platform code files managing one or more services. |
-| Service | Luos services can be Driver or Apps. Each service can follow Luos template and Luos list of commands but it can be custom too. |
+| Service | Luos services can be Drivers or Apps. Each service can follow Luos template and Luos list of commands but it can be custom too. |
 
 ![](../../../_assets/img/architecture.png)
 
@@ -54,19 +54,19 @@
 
 - **Product level**
 
-    **Product_config.h**: this file describes the general configuration for the product such as  Baudrate, timeout duration, etc. It also groups the list of custom type, custom profile and custom command that allow services to communicate together. This folder is the same for all the nodes of the same product and should be included at the node level.
+    **Product_config.h**: this file describes the general configuration for the product, such as Baudrate, timeout duration, etc. It also groups the list of custom types, profiles, and commands that allow services to communicate together. This folder is the same for all the nodes of the same product and should be included at the node level.
 
 - **Node level**
 
     **Node_config.h**: this file describes the configuration of the board Pinout, USART for communication, Timer, and DMA. It also configures the buffer size for Luos communication and the number of tasks.
-    **Main.c/.h** : The main files for the node that call luos.h, initialize and call the package (all the different Service_Init, Server_Loop)
+    **Main.c/.h**: The main files for the node that call luos.h, initialize and call the package (all the different Service_Init, Server_Loop).
 
 - **Package level**
 
-    **Package.c/.h**: Contains the Service_Init, Service_Loop, and Service_Msg_Handler. In these files, you can create, with luos API, services dedicated to your function
+    **Package.c/.h**: Contains the Service_Init, Service_Loop, and Service_Msg_Handler. In these files, you can create, with Luos API, services dedicated to your function.
 
 - **Service level**
-    Use luos API and Service Profile to create a standard or a custom service that can be used by anybody
+    Use Luos API and Service Profile to create a standard or a custom service that anybody can use.
 
 ### Where is Luos?
 
