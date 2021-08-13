@@ -2,21 +2,21 @@
 
 In this tutorial, you will learn to use the bootloader feature offered by Luos technology. 
 
-The setup is simple and is composed of two l0 boards (see [boards](../luos-demo/demo.md) for further information on boards we are using). These boards are chained following rules described in [hardware considerations](../../hardware-consideration/electronics.md).
+The setup is simple and is composed of two l0 boards (see [boards](../demo-boards/luos-demo-boards.md) for further information on boards we are using). These boards are chained following rules described in [hardware considerations](../../hardware-consideration/electronics.md).
 
-We will use one of these nodes as a [gate](../../tools/gate.md), and the other as an application node. The second node will host a bootloader and you will be able to update its firmware through the gate. You need a USB shield to connect on the the first node to complete this tutorial.
+We will use one of these nodes as a [gate](../../tools/gate.md) and the other as an application node. The second node will host a bootloader, and you will be able to update its firmware through the gate. You need an USB shield to connect to the first node to complete this tutorial.
 
 <p align="center">
   <img src="../../../_assets/img/tutorials/bootloader/tutorial_setup.png">
 </p>
 
-> **Nota**: it's not possible to update firmware on a gate node.
+> **Note**: Tt is not possible to update the firmware on a gate node.
 
 ### Step 1: Setup development environment
 
-First thing to do is to install [pyluos](../../tools/pyluos.md) and [PlatformIO](../../get_started/get_started.md) if not already done.
+The first thing to do is to install [pyluos](../../tools/pyluos.md) and [PlatformIO](../../get_started/get_started.md) if not already done.
 
-Then we will create a working folder on our desktop machine and clone three repositories containing respectively: a gate project, the bootloader and an application example using the bootloader.
+Then we will create a working folder on our desktop machine and clone three repositories containing: a gate project, the bootloader, and an application example using the bootloader.
 
 ```bash
 cd home/workspace/ 
@@ -46,21 +46,21 @@ Open Visual Studio Code. On the top left corner, in the **Explorer** section, cl
   <img src="../../../_assets/img/tutorials/bootloader/find_project.png">
 </p>
 
-Click on **Add** and the folder should appear in the explorer section: 
+Click on **Add**, and the folder should appear in the explorer section: 
 
 <p align="center">
   <img src="../../../_assets/img/tutorials/bootloader/Gate_project.png">
 </p>
 
-Now take your first node with the USB shield and connect a USB cable from your PC to the port used for **dfu** programming (the USB port on the l0 board). 
+Take your first node with the USB shield and connect a USB cable from your PC to the port used for **dfu** programming (the USB port on the l0 board). 
 
-Click on **Upload** on bottom left corner of the IDE. Wait for the compilation and flashing to be completed. If success, you should see the following: 
+Click on **Upload** on the bottom left corner of the IDE. Wait for the compilation and flashing to be completed. If successful, you should see the following: 
 
 <p align="center">
   <img src="../../../_assets/img/tutorials/bootloader/load_gate.png">
 </p>
 
-If not, please verify you're connected on the right port of the device.
+If not, please verify you are properly connected to the correct port of the device.
 
 ### Step 3: Detect gate node with the CLI
 
@@ -74,15 +74,15 @@ pyluos-bootloader detect COM6
   <img src="../../../_assets/img/tutorials/bootloader/gate_detect.png">
 </p>
 
-> COM6 is the identifier of the serial port used to communicate with your node. It's unique for each shield, you can check yours with the **Device Manager** in Windows or **ls -l /dev/ | grep ttyUSB** on linux
+> COM6 is the identifier of the serial port used to communicate with your node. It is unique for each shield; you can check yours with the **Device Manager** in Windows or **ls -l /dev/ | grep ttyUSB** on Linux.
 
 If the command is not recognized by the PC, verify your pyluos installation (see **Step 1**). After execution, you should see the following:
 
 ### Step 4: Load the bootloader
 
-Now, you will load the bootloader in the second node. Follow the same process as described in **Step 2** but open **Luos_bootloader/luos_bootloader_f072RB** project.
+Now, you will load the bootloader in the second node. Follow the same process as described in **Step 2**, but this time open **Luos_bootloader/luos_bootloader_f072RB** project.
 
-Connect the second node with the **dfu** port and click on **Upload**, you should see the following:
+Connect the second node with the **dfu** port and click on **Upload**; you should see the following:
 
 <p align="center">
   <img src="../../../_assets/img/tutorials/bootloader/load_bootloader.png">
@@ -90,7 +90,7 @@ Connect the second node with the **dfu** port and click on **Upload**, you shoul
 
 ### Step 5: Detection
 
-Connect your two nodes through the Luos network and connect your USB shield to your PC. Type the same command used on **Step 3** and you should see the following: 
+Connect your two nodes through the Luos network and connect your USB shield to your PC. Type the same command used on **Step 3**, and you should see the following: 
 
 <p align="center">
   <img src="../../../_assets/img/tutorials/bootloader/detect_bootloader.png">
@@ -100,7 +100,7 @@ Connect your two nodes through the Luos network and connect your USB shield to y
 
 ### Step 6: Compile an app compatible with the bootloader
 
-Some applications examples are available with the bootloader feature and they can be used as template for your custom application. They can be found in **luos_bootloader_app/.** As we are using l0 boards, open **luos_bootloader_app/luos_bootloader_application_f072RB** in VSCode.
+Some applications examples are available with the bootloader feature, and they can be used as a template for your custom application. They can be found in **luos_bootloader_app/.** As we are using l0 boards, open **luos_bootloader_app/luos_bootloader_application_f072RB** in VSCode.
 
 This time, click on **Build** instead of **Upload** as you don't want to download it to the node: the bootloader will do it for you. 
 
@@ -128,7 +128,7 @@ The following lines should appear after typing the command:
   <img src="../../../_assets/img/tutorials/bootloader/application_load.png">
 </p>
 
-> If any problem appears during the loading process, please reboot your system and retry to type the command (you can also find information [here](../../tools/boot.md)).
+> If any problem occurs during the loading process, please reboot your system and retry to type the command (you can also find information [here](../../tools/boot.md)).
 
 Then relaunch a detection (as done in **Step 3**): 
 
@@ -136,7 +136,7 @@ Then relaunch a detection (as done in **Step 3**):
   <img src="../../../_assets/img/tutorials/bootloader/detect_old_app.png">
 </p>
 
-You can see that **boot_service** has been replaced by **button_old** which is the name of the service running in your app: the bootloader switched to application mode and launched your app.
+You can see that **boot_service** has been replaced by **button_old**, which is the name of the service running in your app: the bootloader switched to application mode and launched your app.
 
 ### Step 7: Update your app
 
@@ -160,4 +160,4 @@ You should see your updated service running in your node:
   <img src="../../../_assets/img/tutorials/bootloader/detect_new_app.png">
 </p>
 
-You have reached the end of this tutorial. You're now able to use the bootloader feature included in **Luos**. You have the basics but you can find some useful information in the dedicated [documentation page](../../tools/boot.md).
+You have reached the end of this tutorial. You are now able to use the bootloader feature included in Luos. You know the basics, but you can find some helpful information on the dedicated [documentation page](../../tools/boot.md).
