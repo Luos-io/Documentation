@@ -9,4 +9,4 @@ The nodes are described by a set of unique characteristics that have the opportu
  - **port_table**: physical port connections.
 
 
-Each node hosts the embedded Luos API, which allows to communicate with all the nodes of the network. The Luos communication protocol is called [Robus](./luos.html#Robus.md). Nodes also use specific message-handling mechanisms, such as the Luos HAL ([Hardware Abstraction Layer](./luos-hal.md)) for the MCU configuration, or the embedded code of the specific node's functionalities ([services](../services/services.md)).
+Each node hosts the embedded Luos API, which allows to communicate with all the nodes of the network. The Luos communication protocol is called [Robus](./luos.html#robus). Nodes also use specific message-handling mechanisms, such as the Luos HAL ([Hardware Abstraction Layer](./luos-hal.md)) for the MCU configuration, or the embedded code of the specific node's functionalities ([services](../services/services.md)).

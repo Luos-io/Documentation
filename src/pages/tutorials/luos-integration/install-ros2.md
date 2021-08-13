@@ -1,8 +1,8 @@
-# Install ROS 2
+# Install ROS 2 tutorial
 
 ## Install ROS 2 and Luos
 
-First, install <a href="https://index.ros.org/doc/ros2/Installation/Foxy/" target="_blank">ROS 2 Foxy</a> for your OS with FastRTPS. Also, install <a href="https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon" target="_blank">`colcon`</a> as advised in the guidelines. If you are not familiar with ROS, you should go on with a couple of ROS 2 tutorials to get started.
+First, install <a href="https://index.ros.org/doc/ros2/Installation/Foxy/" target="_blank">ROS 2 Foxy &#8599;</a> for your OS with FastRTPS. Also, install <a href="https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon" target="_blank">`colcon` &#8599;</a> as advised in the guidelines. If you are not familiar with ROS, you should go on with a couple of ROS 2 tutorials to get started.
 
 Then clone `luos_ros2` to your workspace and compile it with colcon:
 
@@ -111,4 +111,4 @@ cd ~/ros2_ws/src
 ros2 pkg create my_luos_ros2_package --build-type ament_python --dependencies luos_interface
 ```
 
-You can then add your ROS Python scripts by taking examples on the [shared-bike example](../tutorials.md) page.
+You can then add your ROS Python scripts by taking examples on the [shared-bike example](./ros2-package-example.md) page.
