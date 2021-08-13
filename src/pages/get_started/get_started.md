@@ -14,13 +14,13 @@ Supported boards are listed below:
 Install the free coding editor <a href="https://code.visualstudio.com/" target="_blank">Microsoft Visual Studio Code</a> (VSCode). Once done, open it, you should see the following screen: 
 
 <p align="center">
-  <img src="../../_assets/img/01_getting_started/install_VSCODE.png" />
+  <img src="../../_assets/img/get-started/install_VSCODE.png" />
 </p>
 
 Then install  <a href="https://platformio.org/platformio-ide" target="_blank">PlatformIO</a> plugin in VSCode and relaunch it, the PIO extension icon should appear on the left: 
 
 <p align="center">
-  <img src="../../_assets/img/01_getting_started/Install_PIO.png" />
+  <img src="../../_assets/img/get-started/Install_PIO.png" />
 </p>
 
 ## Clone the project
@@ -38,13 +38,13 @@ If you are not familiar with Git, you can consult <a href="https://git-scm.com/d
 Open VSCode and click on **Open Folder** in the project explorer on the left, then select a project depending on the board you have chosen. For example, for the STM32F072RB discovery, open **F072RB_Disco** in the folder explorer then click on **ADD**:
 
 <p align="center">
-  <img src="../../_assets/img/01_getting_started/Open_project2.png" />
+  <img src="../../_assets/img/get-started/Open_project2.png" />
 </p>
 
 The project folder is opened in the explorer. You can now flash your board: make sure it's connected to your PC with a USB cable and click on **Upload** on the bottom left of the VSCode window:
 
 <p align="center">
-  <img src="../../_assets/img/01_getting_started/Flash_board2.png" />
+  <img src="../../_assets/img/get-started/Flash_board2.png" />
 </p>
 
 PlatformIO will build the firmware and flash it. Take a look at the terminal, you can see each step platformIO follows and a **Success** message at the end. If you have any trouble with your USB driver, you can consult [this FAQ page](/pages/faq/002.dfu.md). Once the board is programmed, you should see the **LED** blinking on your board.
@@ -60,7 +60,7 @@ Now you can learn more about how this system works. Without diving into too much
 Let's modify this duration: open **blinker.c** and change the `BLINKTIME` value from 500 to 1000:
 
 <p align="center">
-  <img src="../../_assets/img/01_getting_started/blinktime2.png" />
+  <img src="../../_assets/img/get-started/blinktime2.png" />
 </p>
 
 The LED now blinks two times slower.
