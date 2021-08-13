@@ -119,4 +119,4 @@ Test your behavior by executing the code.
 
 ---
 
-Don't hesitate to share your projects with the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos community</a>.
+Don't hesitate to share your projects with the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos community &#8599;</a>.

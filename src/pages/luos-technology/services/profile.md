@@ -12,7 +12,7 @@ Thanks to profiles, your service code will be clean and straightforward, you wil
 > **Example:** If you want to make a servo-motor service, you have to select the servo-motor profile for your service and use variables of the profile structure to set the rotor current position measurement, or to get the current motor target in your code.
 
 Profiles are convenient for making your code clean and straightforward, complying with your development into a standard API, or sharing your service type with the community.
-Luos provides some common profile models that you can use; feel free to contribute and to add your own to the standard profile bank with a pull request on <a href="https://github.com/Luos-io" target="_blank">Luos' GitHub page</a>.
+Luos provides some common profile models that you can use; feel free to contribute and to add your own to the standard profile bank with a pull request on <a href="https://github.com/Luos-io" target="_blank">Luos' GitHub page &#8599;</a>.
 
 Luos allows to create a service based on a specific profile. We call it a **service template**: 
 

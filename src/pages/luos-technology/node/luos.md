@@ -6,8 +6,8 @@ The embedded part of a node is separated to the Luos embedded code and the node'
 
 Luos works as a code library running on nodes. To match the Luos library with your hardware, Luos offers a *Hardware Abstraction Layer* for various devices in <span class="cust_tooltip">LuosHAL<span class="cust_tooltiptext">{{luoshal_def}}</span></span>.
 
- - <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>: This repository provides a list of family devices covered to match the Luos library with your hardware.
- - <a href="https://github.com/Luos-io/Luos" target="_blank">Luos</a>: The main library you will be working with.
+ - <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL &#8599;</a>: This repository provides a list of family devices covered to match the Luos library with your hardware.
+ - <a href="https://github.com/Luos-io/Luos" target="_blank">Luos &#8599;</a>: The main library you will be working with.
 
 To make it work in your environment, you have to:
 
@@ -90,7 +90,7 @@ You can use it to set all your custom configurations:
 | MAX_MSG_NB | 2*MAX_SERVICE_NUMBER | Max number of messages for a service that can be referenced. |
 | NBR_PORT | 2 | Number of PTP on the node ( max 8). See [electronic design](../../hardware-consideration/electronics.md) page.|
 
-You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h</a>,
+You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h &#8599;</a>,
 
 Check the Luos_hal_config.h of your MCU family to see parameters that can be changed to fit your design.
 

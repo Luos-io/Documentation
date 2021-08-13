@@ -6,4 +6,4 @@ The following video shows a basic tutorial explaining how to make a LED and a se
 
 ---
 
-Don't hesitate to share your projects with the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos community</a>.
+Don't hesitate to share your projects with the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos community &#8599;</a>.

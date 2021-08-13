@@ -11,13 +11,13 @@ Supported boards are listed below:
 
 ## Setup development environment
 
-Install the free coding editor <a href="https://code.visualstudio.com/" target="_blank">Microsoft Visual Studio Code</a> (VSCode). Once done, open it, you should see the following screen: 
+Install the free coding editor <a href="https://code.visualstudio.com/" target="_blank">Microsoft Visual Studio Code &#8599;</a> (VSCode). Once done, open it, you should see the following screen: 
 
 <p align="center">
   <img src="../../_assets/img/get-started/install_VSCODE.png" />
 </p>
 
-Then install  <a href="https://platformio.org/platformio-ide" target="_blank">PlatformIO</a> plugin in VSCode and relaunch it, the PIO extension icon should appear on the left: 
+Then install  <a href="https://platformio.org/platformio-ide" target="_blank">PlatformIO &#8599;</a> plugin in VSCode and relaunch it, the PIO extension icon should appear on the left: 
 
 <p align="center">
   <img src="../../_assets/img/get-started/Install_PIO.png" />
@@ -31,7 +31,7 @@ Clone the *getting started* repository on your computer:
 git clone https://github.com/Luos-io/getting_started.git
 ```
 
-If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc" target="_blank">their documentation</a>.
+If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc" target="_blank">their documentation &#8599;</a>.
 
 ## Flash your board depending on which one you have
 
@@ -47,13 +47,13 @@ The project folder is opened in the explorer. You can now flash your board: make
   <img src="../../_assets/img/get-started/Flash_board2.png" />
 </p>
 
-PlatformIO will build the firmware and flash it. Take a look at the terminal, you can see each step platformIO follows and a **Success** message at the end. If you have any trouble with your USB driver, you can consult [this FAQ page](/pages/faq/002.dfu.md). Once the board is programmed, you should see the **LED** blinking on your board.
+PlatformIO will build the firmware and flash it. Take a look at the terminal, you can see each step platformIO follows and a **Success** message at the end. If you have any trouble with your USB driver, you can consult [this FAQ page](../faq/002.dfu.md). Once the board is programmed, you should see the **LED** blinking on your board.
 
 Congratulations, your first Luos app is running !
 
 ## Going further
 
-Now you can learn more about how this system works. Without diving into too much details, we will slightly modify our app and see what happens: open the **lib** folder in your project explorer. You should see two folders: *Led* and *Blinker*. They represent two [**services**](/pages/luos-technology/services/services.md) which are currently running on your board:
+Now you can learn more about how this system works. Without diving into too much details, we will slightly modify our app and see what happens: open the **lib** folder in your project explorer. You should see two folders: *Led* and *Blinker*. They represent two [**services**](../luos-technology/services/services.md) which are currently running on your board:
 - *Blinker* sends a message at a fixed duration
 - *Led* receives this message and makes the LED blink
 

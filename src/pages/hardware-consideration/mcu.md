@@ -4,13 +4,13 @@
 Luos can manage any microcontrollers as long as they are first manually added to the library. If your microcontroller is not supported yet, please contact us:
 
  - by mail: <a href="mailto:hello@luos.io">hello@luos.io</a>.
- - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>.
+ - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub &#8599;</a>.
 
-Check the list of the MCU families Luos covers:<a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
+Check the list of the MCU families Luos covers:<a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families &#8599;</a>,
 
 ## Default Configuration
 
-Luos libraries are made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low-level part, Luos provides for many MCU families a default configuration that can lead to plug-and-play Luos library with the chosen MCU family. The peripheral configuration is described in files *luos_hal_config.h* in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>, and can be redefined in the *node_config.h* file to fit with your design.
+Luos libraries are made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low-level part, Luos provides for many MCU families a default configuration that can lead to plug-and-play Luos library with the chosen MCU family. The peripheral configuration is described in files *luos_hal_config.h* in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">Luos HAL &#8599;</a>, and can be redefined in the *node_config.h* file to fit with your design.
 
 ## Luos HAL configuration
 

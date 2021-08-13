@@ -19,7 +19,7 @@ Here are the specifications of this motherboard:
 {{ #include ./../../../_includes/specs.md }}
 
 
-see <a href="https://github.com/Luos-io/Examples/tree/master/Hardware" target="_blank">Example demonstration board</a>.
+see <a href="https://github.com/Luos-io/Examples/tree/master/Hardware" target="_blank">Example demonstration board &#8599;</a>.
 
 ## Plugging boards together
 
@@ -52,6 +52,6 @@ The "gate" service's task is to stream the Luos network activity into a standard
 
 This way, it is **easy to use** your favorite device and language to interact and control your device.
 
-We created an open-source **Python library** managing this JSON API called Pyluos. Feel free to use it, copy it, and convert it into your favorite language. We are open to review your contributions in any programming languages. You can suggest any change or new API on the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos' community on Reddit</a>.
+We created an open-source **Python library** managing this JSON API called Pyluos. Feel free to use it, copy it, and convert it into your favorite language. We are open to review your contributions in any programming languages. You can suggest any change or new API on the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos' community on Reddit &#8599;</a>.
 
-Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">Pyluos on GitHub</a>.
+Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">Pyluos on GitHub &#8599;</a>.

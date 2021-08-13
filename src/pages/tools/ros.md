@@ -1,10 +1,10 @@
 <h1><a href="#ros" class="header" id="ros"><img src="../../_assets/img/ros-logo.png" width="80px"> / Using Luos with ROS1 and ROS2</a></h1>
 
-Luos comes with a package for the <a href="https://www.ros.org/" target="_blank">Robot Operating System</a>.
+Luos comes with a package for the <a href="https://www.ros.org/" target="_blank">Robot Operating System &#8599;</a>.
 
-ROS 2 is the default version, but backward compatibility with ROS 1 is ensured via the official ROS 1 bridge. You can get an example of an application using Luos services in ROS 2 with the <a href="https://github.com/aubrune/luos_bike_alarm_example" target="_blank">bike shared example</a>.
+ROS 2 is the default version, but backward compatibility with ROS 1 is ensured via the official ROS 1 bridge. You can get an example of an application using Luos services in ROS 2 with the <a href="https://github.com/aubrune/luos_bike_alarm_example" target="_blank">shared-bike example &#8599;</a>.
 
-In this tutorial, we will assume you're using ROS 2. If you want to communicate with a ROS 1 ecosystem, begin with this quickstart since ROS 2 needs to be installed, and then refer to the [Retrocompatibility with ROS 1 tutorial](../tutorials/tutorials.md).
+In this tutorial, we will assume you're using ROS 2. If you want to communicate with a ROS 1 ecosystem, begin with this quickstart since ROS 2 needs to be installed, and then refer to the [retro-compatibility with ROS 1 tutorial](../tutorials/luos-integration/ros1-retrocompatibility.md).
 
 ## Basics: a few ROS-applied-to-Luos concepts
 

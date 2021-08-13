@@ -16,7 +16,7 @@ Finally, it doesn't matter where on the Luos network sensors or actuators are pl
 
 ## Introduction to Luos
 
-Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices</a> architecture for electronics. It's a powerful modularity tool to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image</a>.
+Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices &#8599;</a> architecture for electronics. It's a powerful modularity tool to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image &#8599;</a>.
 
 This guide contains all the basic notions you will need to use, create and understand Luos technology.
 
@@ -25,7 +25,7 @@ You can use Luos as a **bare metal** lib or as a driver into your **embedded OS*
 
 Luos is composed as well of **code subdivisions** called <span class="cust_tooltip">[**services**](#service)<span class="cust_tooltiptext">{{service_def}}</span></span>. Services are distributed into every node in a network.
 
-<a href="../../../_assets/img/feature-service-node-board.jpg" target="_blank"><img src="../../../_assets/img/feature-service-node-board.jpg" width="800px" /></a>
+<img src="../../../_assets/img/feature-service-node-board.jpg" width="800px" />
 
 ## What is a Node?
 A node is a physical component (hardware) running Luos and hosting one or several services. In a Luos network, nodes are all connected together using <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span>, the Luos communication technology.<br/>In other words, **a node is a microcontroller** connected to other microcontrollers running Luos.

@@ -1,4 +1,4 @@
-# ROS 2 package example: Shared-bike example
+# ROS 2 package example: Shared-bike example tutorial
 
 This is a Luos example using ROS 2, the shared-bike application, that works this way:
 
@@ -24,7 +24,7 @@ Then, download the example package and build your workspace with `colcon`:
 ~/ros2_ws/$ source ~/.bashrc                  # Source all new launches messages and resources
 ```
 
-Plug at least a Luos Imu node and a Gate to your computer, as well as optional RGB and State services. The expected Luos services' aliases are the default. If they are not, update the <a href="https://github.com/aubrune/luos_bike_alarm_example/blob/master/luos_bike_alarm_example/bike_alarm.py#L12-L15" target="_blank">topic names</a> with your custom aliases.
+Plug at least a Luos Imu node and a Gate to your computer, as well as optional RGB and State services. The expected Luos services' aliases are the default. If they are not, update the <a href="https://github.com/aubrune/luos_bike_alarm_example/blob/master/luos_bike_alarm_example/bike_alarm.py#L12-L15" target="_blank">topic names &#8599;</a> with your custom aliases.
 
 Then, start the bike example from its launchfile:
 ```bash
