@@ -18,7 +18,7 @@ If Luos fails to reach its target using ID_ACK, it will retry 10 times. If the a
 
 > **Note:** Gates services can report service exclusion through JSON.
 
-> **Note:** Pyluos can report service exclusion through Gates.
+> **Note:** Pyluos can report service exclusion through gates.
 
 ## Luos statistics
 
@@ -26,7 +26,7 @@ Luos monitors some values representing the sanity of your nodes and services.
 
 > **Note:** Gates services can report statistics through JSON.
 
-> **Note:** Pyluos can display statistics through Gates.
+> **Note:** Pyluos can display statistics through gates.
 
 ### Node statistics
 
@@ -64,9 +64,9 @@ for example:
 
 In this case, if `arg_ptr` is not initialized, Luos will crash the entire node and send a message to all other services with the file and line where the crash occurred. All other nodes will remove all the services from the crashed node from the routing table.
 
-> **Note:** Gates services can [report asserting of other nodes through Json](../api/api.md).
+> **Note:** Gates services can [report asserting of other nodes through JSON](../api/api.md).
 
-> **Note:** Pyluos can display assert through Gates.
+> **Note:** Pyluos can display assert through gates.
 
 ## Sniffer
 
