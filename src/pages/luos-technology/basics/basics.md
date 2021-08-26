@@ -1,18 +1,12 @@
-# Basics
+# Luos end the dictatorship of electronics
 
-# General guide to Luos technology
+Take most embedded systems software, and you will find the same hardware oriented organization —**the dictatorship of electronics 😈** .
 
-Take most embedded systems, and you will find the same architecture —the dictatorship of electronics, one central microcontroller with direct control over all components. Sensors, actuators, all of them will be controlled by one chip, and ultimately, one program. Sometimes, a design will have more than one microcontroller but will eventually be controlled by one central device. It will be up to the designers to implement an inter-device communication protocol, using any bus available, including instructions and messaging, but also error handling. A significant portion of time is spent on software development. Other times, hardware constraints will force you to separate your electronics onto several boards, potentially making interconnection troublesome. 
+Sensors, actuators, and other hardware ressources will be mixed into the application managing the behavior of the product into a really unique and monolithic software. Modifying, add, or reuse something on such an architecture ask you to rethink the entire project!
 
-## Introduction to embedded containerized platforms
+Sometimes, a design will have more than one microcontroller. In this case you will need to implement an inter-device communication protocol, using any bus available, and you will need to deal with instructions, messaging, error handling, collision, priority, latency, ... . In this case the product will be even more difficult to maintain due to a significant portion of time spent on the network software development across all the boards.
 
-Luos aims to change the way you develop by containerizing services on your devices. A microcontroller can host a series of services, like data acquisition from sensors to actuators like motors and relays. These features are placed inside <span class="cust_tooltip">[**services**](#service)<span class="cust_tooltiptext">{{service_def}}</span></span>. Prepare your services, and deploy them anywhere on a Luos network, and you will be able to communicate directly with your services, no matter where they are on the network. Services can be dynamically connected and disconnected and can be detected by your application.
-
-
-Imagine an industrial device. We will build a system with multiple sensors to monitor the device. It might contain several temperature sensors that will monitor specific parts of the system, and our system will need to know exactly what they monitor. When we read the temperature of the industrial motor, we need to get the information from the motor, not from the power supply. These sensors are placed into services and clearly state which components they monitor. If the device encounters a problem, we need to notify anyone around of an incident. This could be a flashing light, a siren, or any other way of notifying people. In this case, it doesn't matter where the peripherals are placed or even how many there are, Luos can notify all services that identify as an alarm to activate. Alarms can even be added to the Luos network while operating, and they will be recognized and used.
-
-
-Finally, it doesn't matter where on the Luos network sensors or actuators are placed. You can wire the different elements together as you want, each element will be detected, and you will be able to use all of your services, wherever they are.
+😇 Luos is here to back you up and keep your project clean and smooth to develop, modify and reuse.
 
 ## Introduction to Luos
 
@@ -27,47 +21,12 @@ Luos is composed as well of **code subdivisions** called <span class="cust_toolt
 
 <img src="../../../_assets/img/feature-service-node-board.jpg" width="800px" />
 
-## What is a Node?
-A node is a physical component (hardware) running Luos and hosting one or several services. In a Luos network, nodes are all connected together using <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span>, the Luos communication technology.<br/>In other words, **a node is a microcontroller** connected to other microcontrollers running Luos.
-In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.
+## Introduction to embedded containerized platforms
 
-<img src="../../../_assets/img/MCU-luos.png" height="100px" />
+Luos aims to change the way you develop by containerizing your embedded features into services on your devices. A microcontroller can host a series of services, like data acquisition from sensors, actuators, or piece of behavior of your machines. These features are placed inside <span class="cust_tooltip">[**services**](#service)<span class="cust_tooltiptext">{{service_def}}</span></span>. Prepare your services, and deploy them anywhere on a Luos network, and you will be able to access it directly with your services, no matter where they are on the network. Services can be dynamically connected and disconnected and can be detected and find by your application.
 
-Nodes can have capacities such as measuring the core temperature, sending the processor's unique ID, or input voltage. A node's capacities are commonly shared by all the services hosted into it and are accessible through each of them.
 
-## Package
-At Luos, a package is a folder of code files that execute features in your project. Luos library executes this package that exposes all the services present in your product. A package can be composed of one or several services.
+Imagine an industrial device. It might contain several temperature sensors that will monitor specific parts of the system, and our system will need to know exactly what they monitor. When we read the temperature of the industrial motor, it's more convenient to get the information from the motor. These sensors are placed into services and clearly state which components they monitor. If the device encounters a problem, we need to notify anyone around of an incident. This could be a flashing light, a siren, or any other way of notifying people. In this case, it doesn't matter where the alarm peripherals are placed or even how many there are, Luos can notify all services that identify as an alarm to activate. Alarms can even be added to the Luos network while operating, and they will be recognized and used. Alarms also can be hosted or controled by computers or cloud applications.
 
-## Service
-A service is a code hosted on a node. It can provide both inputs and outputs. An input could be a temperature sensor, a push-button, an I2C sensor, or any other information that you would usually use on your microcontroller design. An output could be an I2C device, a DAC, GPIO line, PWM or timer output, or any output that you are used to using in your design.
-Services, much like their server-world counterparts, can be placed anywhere in your infrastructure. Services will be placed on the Luos network, and you do not need to know where in the network your service is located: it will be automatically detected on bootup and accessible. The network can physically change, and your services will still be available.
 
-**Each service is hosted in a single node**, but a node can handle several services at the same time and manage communication between them and between other services hosted in other nodes, using the same interface.
-
-For example, the Dynamixel board provided by Luos can dynamically create and manage Dynamixel services depending on the number of Dynamixel motors linked to it. Any Dynamixel services can get or set values to other Dynamixel services on the same node or to any other services in any other nodes in the network.
-
-[Go to the Services page](../services/services.md).
-
-## App
-An App is a special type of service, one that does not provide any hardware operations but will contain the intelligence of your product. This is where you will concentrate your code and development time.
-
-While your app does not contain any hardware capabilities (sensors or actuators) as opposed to driver services, an app can talk to your services to receive information or to give orders. For example, an App will not have direct access to sensors or to digital outputs but will be able to communicate with services that do offer hardware capabilities.
-
-## Messages
-Communication between services and apps is performed through Messages. A message contains information on the destination service(s), the type of operation to be performed (a read or write operation and the type of message), as well as any supplemental data. The message will be sent on the network and will arrive at the destination, no matter where the service is placed on the network.
-
-[Go to the Messages handling page](../message/handling-message.md).
-
-## Service detection
-Services on the network are automatically detected and assigned IDs depending on their node's physical position in the network, and a routing table is generated.
-
-IDs are assigned from the nearest to the furthest node branch by branch, from the point of view of the service running the detection. Following this logic, the service running the detection will have ID 1, the next one will have ID 2, etc.
-
-> *Note:* Multiple detections by different services at the same time is not allowed.
-
-It is possible to execute a detection on the network frequently in order to dynamically discover included or excluded services while running, detecting if hardware has been added or removed. Read the [Routing table](#routing-table) section for more information.
-
-## Routing table
-A routing table is a "service" managed by the Luos network and available for any services on any nodes. This service lists all the services on the network and allows any services to access and use basic information of any other services. The routing table's data can be loaded or auto-generated during detection, and can be refreshed on demand.
-
-[Go to the Routing table page](../services/routing_table.md).
+Finally, it doesn't matter where on the Luos network sensors or actuators are placed. You can wire the different elements together as you want, each element will be detected, and you will be able to use all of your services, wherever they are.
