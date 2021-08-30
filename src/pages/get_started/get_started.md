@@ -11,7 +11,7 @@ This Getting started is separated in 2 parts :
 This tutorial shows you how to quickly upload a Luos application on an MCU development kit.
 
 Supported boards are listed below:
-- Arduino zero
+- Arduino zero, MKRzero, MKR1000, or any SAMD21 based Arduino board
 - STM32L432KC Nucleo
 
 > **Note:** This list will grow larger with time
@@ -49,7 +49,11 @@ Open VSCode and click on **Open Folder** in the project explorer on the left, th
   <img src="../../_assets/img/get-started/Open_project2.png" />
 </p>
 
-The project folder is opened in the explorer. You can now flash your board: make sure it's connected to your PC with a USB cable and click on **Upload** on the bottom left of the VSCode window:
+The project folder is opened in the explorer.
+
+> **Note:** For arduino users you can select your board on the `platformio.ini` file by modifying the `board = zero` line.
+
+You can now flash your board: make sure it's connected to your PC with a USB cable and click on **Upload** on the bottom left of the VSCode window:
 
 <p align="center">
   <img src="../../_assets/img/get-started/Flash_board2.png" />
