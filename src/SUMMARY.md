@@ -4,7 +4,7 @@
 - [Luos Technology](./pages/luos-technology/luos_tech.md)
     - [Basics](./pages/luos-technology/basics/basics.md)
         - [Concept](./pages/luos-technology/basics/concept.md)
-        - [Architecture](./pages/luos-technology/basics/archi.md)
+        - [Code organization](./pages/luos-technology/basics/archi.md)
     - [Node](./pages/luos-technology/node/node.md)
         - [Luos](./pages/luos-technology/node/luos.md)
         - [Luos HAL](./pages/luos-technology/node/luos-hal.md)
