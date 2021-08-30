@@ -1,29 +1,37 @@
-# Run your first App
+# Getting started
 
-This tutorial shows you how to quicly upload a Luos application on an MCU development kit.
+This page allow you to build flash run and control your very first luos code.
+
+This Getting started is separated in 2 parts :
+ - **The embedded part** : By following this part you will have all the tools you need to easily develop using Luos in your embedded target.
+ - **The remote control part** : By following this part you will have all the tools you need to take control and easily test any Luos device.
+
+## The embedded part : Run your first Embedded App!
+
+This tutorial shows you how to quickly upload a Luos application on an MCU development kit.
 
 Supported boards are listed below:
 - Arduino zero
-- STM32F072RB Discovery
 - STM32L432KC Nucleo
 
 > **Note:** This list will grow larger with time
 
-## Setup development environment
+### Setup development environment
 
-Install the free coding editor <a href="https://code.visualstudio.com/" target="_blank">Microsoft Visual Studio Code &#8599;</a> (VSCode). Once done, open it, you should see the following screen: 
+We will use <a href="https://platformio.org/platformio-ide" target="_blank">PlatformIO &#8599;</a> as development environment.
+
+First install the free coding editor <a href="https://code.visualstudio.com/" target="_blank">Microsoft Visual Studio Code &#8599;</a> (VSCode), PlatformIO IDE is built on top of it.
+
+Then :
+ 1. Open VSCode Extension Manager
+ 2. Search for official [PlatformIO IDE](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) extension
+ 3. Install PlatformIO IDE.
 
 <p align="center">
   <img src="../../_assets/img/get-started/install_VSCODE.png" />
 </p>
 
-Then install  <a href="https://platformio.org/platformio-ide" target="_blank">PlatformIO &#8599;</a> plugin in VSCode and relaunch it, the PIO extension icon should appear on the left: 
-
-<p align="center">
-  <img src="../../_assets/img/get-started/Install_PIO.png" />
-</p>
-
-## Clone the project
+### Clone the project
 
 Clone the *getting started* repository on your computer: 
 
@@ -33,9 +41,9 @@ git clone https://github.com/Luos-io/getting_started.git
 
 If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc" target="_blank">their documentation &#8599;</a>.
 
-## Flash your board depending on which one you have
+### Flash your board depending on which one you have
 
-Open VSCode and click on **Open Folder** in the project explorer on the left, then select a project depending on the board you have chosen. For example, for the STM32F072RB discovery, open **F072RB_Disco** in the folder explorer then click on **ADD**:
+Open VSCode and click on **Open Folder** in the project explorer on the left, then select a project depending on the board you have chosen. For example, for the STM32L432KC Nucleo, open **L432KC_Nucleo** in the folder explorer then click on **ADD**:
 
 <p align="center">
   <img src="../../_assets/img/get-started/Open_project2.png" />
@@ -51,19 +59,70 @@ PlatformIO will build the firmware and flash it. Take a look at the terminal, yo
 
 Congratulations, your first Luos app is running !
 
-## Going further
+### What is going on
 
-Now you can learn more about how this system works. Without diving into too much details, we will slightly modify our app and see what happens: open the **lib** folder in your project explorer. You should see two folders: *Led* and *Blinker*. They represent two [**services**](../luos-technology/services/services.md) which are currently running on your board:
-- *Blinker* sends a message at a fixed duration
-- *Led* receives this message and makes the LED blink
+There is two [**services**](../luos-technology/services/services.md) loaded in your board allowing to blink the led.
 
-Let's modify this duration: open **blinker.c** and change the `BLINKTIME` value from 500 to 1000:
+- **Blinker** sends a message at a fixed duration</br> ╰ located at the root of the *getting_started* repository (because the same app can run on any board)
+- **Led** receives this message and makes the LED blink</br> ╰ located on the lib folder of your project (because it's a driver specific to your board)
 
-<p align="center">
-  <img src="../../_assets/img/get-started/blinktime2.png" />
-</p>
+On top of it we also add 2 other services allowing you to take control of your board :
 
-The LED now blinks two times slower.
+- **Pipe** managing a serial interface</br> ╰ located on the lib folder of your project (because it's a driver specific to your board)
+- **Gate** an app that translate Luos to Json and send it trough *Pipe*</br> ╰ located on the cloud, (because it's a common cross platform Luos app) Platformio just downloaded it for you.
+
+## The remote control part : 💊 You can control the Matrix.
+
+The gate running on your board allow you to take control of any service loaded on your device.
+
+### Setup development environment
+
+We will use python with the default library of Luos called pyluos.
+To install it run :
+```bash
+pip install pyluos
+```
+
+### Connect and control your device
+
+You board should give you access to a serial port (`COM*` on windows, `/dev/tty*` on linux, `/dev/cu.*` on mac). When you get it run
+
+```bash
+pyluos-shell --port SERIAL_PORT
+```
+
+For example :
+
+```bash
+$ pyluos-shell --port /dev/cu.usbmodem13102
+
+Connected to "/dev/cu.usbmodem13102".
+Sending detection signal.
+Waiting for routing table...
+Device setup.
+
+ Hit Ctrl-D to exit this interpreter.
+
+Your luos device have been successfully mounted into a "device" object:
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> State               led                 2    ┃
+  ┃  ├> Pipe                Pipe                3    ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> Unknown             blinker             4    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+```
+Now you are on an Ipython command line, you can run python script in it.
+The `device` object is your real device and you can interact with it for example try to execute those lines one by one :
+
+
+In [1]: `device.blinker.time=0.25`</br>
+In [2]: `device.blinker.pause()`</br>
+In [3]: `device.led.state=True`</br>
+In [4]: `device.led.state=False`</br>
+In [5]: `device.blinker.play()`
 
 ## Next steps
 
