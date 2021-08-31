@@ -1,6 +1,6 @@
 # Luos
 
-The embedded part of a node is separated to the Luos embedded code and the node's various functionalities. Luos is responsible for creating each node's identity, integrating the node to a Luos network by locating it among the other nodes, communicating with each other, managing all their functionalities.
+The embedded code of a node host the Luos embedded code and the node's various functionalities stored on services. Luos is responsible for creating each node's identity, integrating the node to a Luos network, locating it among the other nodes, communicating with each other, and managing all their services.
 
 ## Luos Integration
 
@@ -13,8 +13,8 @@ To make it work in your environment, you have to:
 
  - Include the Luos lib folders in your project compilation;
  - Select the right LuosHAL for your device family in LuosHAL folder, and include `luos_hal.c`, `luos_hal.h` and `luos_hal_config.h` in your project;
- - Change, if necessary, `luos_hal_config.h` for your project. The default configuration created by Luos is an example of an MCU family that can be modified to fit with your design (e.g. match pins with your design);
- - Include `luos.h` on your source file.
+ - If necessary, overload `luos_hal_config.h` with a `node_config.h` file describing specificities of your node. The default configuration created by Luos is an example of an MCU family that can be modified to fit with your design (e.g. match pins with your design);
+ - Include `luos.h` on your main file.
  
 The Luos functions need to be called only in one place for each node, but it should be run constantly.
 
@@ -35,45 +35,25 @@ int main(void)
     return 0;
 }
 ```
-Putting this code into a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> makes it able to react to a Luos network. It's now ready to host your services.
+Putting this code into a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> makes it able to react to a Luos network. It's now ready to host your services by [running packages](../package/package.md) on your main.
 
 **As a developer, you will always develop your functionalities into services and never into the `main()` program.**
 
-> **Note:** The only information that should be put on the `main()` code are MCU setup parameters and services' run functions.
+> **Note:** The only information that should be put on the `main()` code are MCU setup parameters and services run functions.
 
-## Luos APIs
+## A complete software node view
 
-The main Luos embedded technology includes the following tools to integrate more capabilities and functionalities in your design:
+At the node level, communication is achieved by receiving and sending [messages](../message/message.md) with the other components of a Luos network. The nodes can communicate with each other thanks to a specific part of Luos, Robus.
 
-| Description | Function | Return |
-| :---: | :---: | :---: |
-| Send a Luos message | `Luos_SendMsg(service_t *service, msg_t *msg);` | `error_return_t` |
-| Read a Luos message | `Luos_ReadMsg(service_t *service, msg_t **returned_msg);` | `error_return_t` |
-| Send the remaining data in case of long messages| `Luos_SendData(service_t *service, msg_t *msg, void *bin_data, uint16_t size);` | `void` |
-| Receive the remaining data  in case of long messages| `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);` | `error_return_t` |
-| Send data stored in a streaming channel | `Luos_SendStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `void` |
-| Receive data from a streaming channel | `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `error_return_t` |
-| Share network's baudrate| `Luos_SendBaudrate(service_t *service, uint32_t baudrate);` | `void` |
-| Get the total tick number from the initialization of Luos | `Luos_GetSystick(void);` | `uint32_t` |
+Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like the communication initialization between the different nodes, the messages' management ([message format control](../message/message.md), TX, and RX), memory allocation, topology [detection](../services/routing_table.md), and attribution of messages to the suitable handling level.
 
-
-## Robus
-
-As already mentioned, the nodes can communicate with each other thanks to a specific part of Luos, Robus.
-
-Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like the communication initialization between the different nodes, the messages' management ([message format control](../message/message.md), TX, and RX), memory allocation, topology [detection](../services/routing_table.md), and attribution of messages to the suitable handling level. 
-
-These functionalities are described in the following pages.
-
-### How does communication work?
-
-At the node level, communication is achieved by receiving and sending [messages](../message/message.md) with the other components of a Luos network. After Robus executes a format control, these messages are stored in the memory of the MCU. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos or sent to one or several [services](../services/services.md).
+Robus executes a format control, and store messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos or sent to one or several [services](../services/services.md).
 
 <img src="../../../_assets/img/NodeFlow.png" height="400px" />
 
 ## Node Parameters Configuration 
 
-Luos allows you to configure some parameters to optimize the memory usage and adapt it to fit your needs. To make it, we advise using a configuration file called *node_config.h*. Put the file at the root folder of your project and add it in the compiling variables section of your IDE by adding the following line:
+Luos allows you to configure some parameters to optimize the memory usage and adapt it to fit your needs. To make it, we advise using a configuration file called *node_config.h*. Put the file at the root folder of your node project and add it in the compiling variables section of your IDE by adding the following line:
 
  `#include node_config.h`
 
@@ -87,8 +67,8 @@ You can use it to set all your custom configurations:
 | NBR_NAK_RETRY | 10 | Number of retries to send after a received NAK. |
 | MAX_SERVICE_NUMBER | 5 | Number of services in the node (memory optimization). |
 | MSG_BUFFER_SIZE | 3*size_msg | Message buffer size. Max size of a message (3 * (7 bytes header + 128 bytes data + 2 bytes CRC)). |
-| MAX_MSG_NB | 2*MAX_SERVICE_NUMBER | Max number of messages for a service that can be referenced. |
-| NBR_PORT | 2 | Number of PTP on the node ( max 8). See [electronic design](../../hardware-consideration/electronics.md) page.|
+| MAX_MSG_NB | 2*MAX_SERVICE_NUMBER | Max number of messages that can be referenced by Luos. |
+| NBR_PORT | 2 | Number of PTP (port) on the node ( max 8). See [electronic design](../../hardware-consideration/electronics.md) page.|
 
 You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h &#8599;</a>,
 
