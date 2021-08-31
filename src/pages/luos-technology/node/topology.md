@@ -1,6 +1,8 @@
 # Network topology
 
-As mentioned in the previous paragraphs, thanks to [Robus](../node/luos.md), the nodes have the capability to communicate with each other. However, Robus is not the only necessity to achieve using this characteristic. The nodes can access at any time to the position of every other node in the network by accessing a specific structure called routing table. The routing table is designed and shared among the nodes after the execution of a devoted process called detection.
+The nodes can access at any time to the position of every other node in the network by accessing a specific structure called routing table. The routing table is designed and shared among the nodes after the execution of a devoted process called detection.
+
+This routing table allow any service to find, locate, and use any other service on the entire network.
 
 ## Routing Table
 
@@ -9,7 +11,7 @@ The routing table is a feature of Luos allowing every <span class="cust_tooltip"
 The routing table is designed and shared among all the nodes after a process that is called [detection](../services/routing_table.md).
 
 ## PTP
-PTP is the peer-to-peer connection between nodes used for topology detection.
+PTP is the peer-to-peer connection between nodes used for topology detection. Every node should have between 2 to 8 PTP connection representing ports. At this time those wire are mandatory.
 
 ### Daisy-chain
 With 2 PTP pins per board, you must chained your device as below:
