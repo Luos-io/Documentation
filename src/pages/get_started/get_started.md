@@ -122,11 +122,11 @@ Now you are on an Ipython command line, you can run python script in it.
 The `device` object is your real device and you can interact with it for example try to execute those lines one by one :
 
 
-In [1]: `device.blinker.time=0.25`</br>
-In [2]: `device.blinker.pause()`</br>
-In [3]: `device.led.state=True`</br>
-In [4]: `device.led.state=False`</br>
-In [5]: `device.blinker.play()`
+In \[1\]: `device.blinker.time=0.25`</br>
+In \[2\]: `device.blinker.pause()`</br>
+In \[3\]: `device.led.state=True`</br>
+In \[4\]: `device.led.state=False`</br>
+In \[5\]: `device.blinker.play()`
 
 ## Next steps
 
