@@ -89,17 +89,21 @@ pip install pyluos
 
 ### Connect and control your device
 
-You board should give you access to a serial port (`COM*` on windows, `/dev/tty*` on linux, `/dev/cu.*` on mac). When you get it run
+Pyluos provide you a set of tools, To control you device, run
 
 ```bash
-pyluos-shell --port SERIAL_PORT
+pyluos-shell
 ```
+
+This command will find the serial port of your device and mount it into a "device" object.
 
 For example :
 
 ```bash
-$ pyluos-shell --port /dev/cu.usbmodem13102
-
+$ pyluos-shell
+Searching for a gate available
+Testing /dev/cu.usbserial-D308N885
+Testing /dev/cu.usbmodem13102
 Connected to "/dev/cu.usbmodem13102".
 Sending detection signal.
 Waiting for routing table...
