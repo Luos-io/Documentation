@@ -59,7 +59,7 @@ When the gate and the pipe are on separate nodes, formatted messages transit int
 
 ## The gate configurations
 
-The default process described above can be changed using different configurations that you can use on [your node_config.h](../hardware-consideration/mcu.md).
+The default process described above can be changed using different configurations that you can use on your [node_config.h](../luos-technology/basics/archi.md).
 
 You may need to change it if you have apps on your Luos embedded systems.
 

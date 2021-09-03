@@ -4,8 +4,8 @@ Luos provides several tools to interface control or monitor a product developed 
 
 | Tools | Description |
 | :---: | :---: |
-| Gate | Entry point of high level to the low level. This is a Luos App that can be placed on any MCU |
-| Pyluos | Python library using JSON API to communicate with the gate |
+| Gate | The entry point between your device and any cellphone, computer, or cloud application. This is a Luos App that can be placed on any MCU |
+| Pyluos | A python library using JSON API to communicate with the gate |
 | BootLoder | Update a node through Luos Network |
 | Monitoring | All the tools that allow you to monitor a Luos network |
 

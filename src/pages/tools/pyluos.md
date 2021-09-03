@@ -179,13 +179,13 @@ device.nodes
 Based on the previous example, Pyluos will give you all information about services and topological information:
 
 ```AsciiDoc
-  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
   ┃  ╭node 1                Certified            ┃
   ┃  │  Type                Alias           ID   ┃
   ┃  ├> Gate                gate            1    ┃
   ┃  ╰> Pipe                pipe            2    ┃
-╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ╚══ 0>┃1 ╭node 2                Certified            ┃
       ┃  │  Type                Alias           ID   ┃
       ┃  ├> Voltage             analog_read_P1  3    ┃
@@ -197,12 +197,12 @@ Based on the previous example, Pyluos will give you all information about servic
       ┃  ├> State               digit_write_P2  9    ┃
       ┃  ├> State               digit_write_P3  10   ┃
       ┃  ╰> State               digit_write_P4  11   ┃
-    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-    ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
     ╚══ 0>┃1 ╭node 3                Certified            ┃
           ┃  │  Type                Alias           ID   ┃
           ┃  ╰> Angle               potentiometer_m 12   ┃
-         >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+         >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
 In this example, three nodes (MCUs) and their associated UUID are listed, along with their services and related characteristics (type, alias, and ID).
