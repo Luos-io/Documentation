@@ -17,7 +17,7 @@ All messages have a header. A header is a 7-byte field containing all informatio
 
 `data` is a table containing data.
 
-> **Info:** MAX_DATA_MSG_SIZE represenst the maximum size of messages (default value is 128 bytes);
+> **Info:** MAX_DATA_MSG_SIZE represents the maximum size of messages (default value is 128 bytes);
 
 ## Header
 To send data to any services you want, you will have to first fill out some information on the header.
