@@ -8,7 +8,7 @@ Luos Library uses hardware and software MCU resources. Here are the minimum requ
 | RAM | Luos Library uses at least 2 kB of RAM for Library usage and protocol message buffering |
 | Stack | 512 B |
 | Heap | 0 needed |
-| GPIO | 4 in one wire / 5 in RS485  |
+| GPIO | 4 in one wire with 2 ports / 5 in RS485 with 2 ports |
 | Resources | 1 USART, 1 Timer (option: DMA and CRC)|
 
 ## Network consideration
