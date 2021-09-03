@@ -1,4 +1,4 @@
-# Message Handling configurations
+# How to handle and receive messages
 
 Message callbacks of services can be difficult to use when a project has high real-time constraints.
 
@@ -22,27 +22,31 @@ To setup this configuration, you have to simply setup the callback at service cr
 
 Here is a code example with a button:
 ```c
-void Button_MsgHandler(service_t *service, msg_t *msg) {
-    if (msg->header.cmd == ASK_PUB_CMD) {
+void Button_MsgHandler(service_t *service, msg_t *msg)
+{
+    if (msg->header.cmd == ASK_PUB_CMD)
+    {
         // The message is filled with global variable with proper data
         msg_t pub_msg;
-        pub_msg.header.cmd = IO_STATE;
+        pub_msg.header.cmd         = IO_STATE;
         pub_msg.header.target_mode = ID;
-        pub_msg.header.target = msg->header.source;
-        pub_msg.header.size = sizeof(char);
-        pub_msg.data[0] = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
+        pub_msg.header.target      = msg->header.source;
+        pub_msg.header.size        = sizeof(char);
+        pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
         // Sending the message
         Luos_SendMsg(service, &pub_msg);
         return;
     }
 }
 
-void Button_Init(void) {
+void Button_Init(void)
+{
     // service creation: (callback, service type, Default alias)
-    service_t* service = Luos_CreateService(Button_MsgHandler, STATE_MOD, "button_mod");
+    service_t* service = Luos_CreateService(Button_MsgHandler, STATE_TYPE, "button");
 }
 
-void Button_Loop(void) {
+void Button_Loop(void)
+{
 }
 ```
 
@@ -55,21 +59,25 @@ See the following code as an example, with a button:
 
 ```c
 service_t* service;
-void Button_Init(void) {
-    service = Luos_CreateService(0, STATE_MOD, "button_mod");
+void Button_Init(void)
+{
+    service = Luos_CreateService(0, STATE_TYPE, "button");
 }
 
-void Button_Loop(void) {
-    if (Luos_NbrAvailableMsg()) {
+void Button_Loop(void)
+{
+    if (Luos_NbrAvailableMsg())
+    {
         msg_t *msg = Luos_ReadMsg(service);
-        if (msg->header.cmd == ASK_PUB_CMD) {
+        if (msg->header.cmd == ASK_PUB_CMD)
+        {
             // The message is filled with global variable with proper data
             msg_t pub_msg;
-            pub_msg.header.cmd = IO_STATE;
+            pub_msg.header.cmd         = IO_STATE;
             pub_msg.header.target_mode = ID;
-            pub_msg.header.target = msg->header.source;
-            pub_msg.header.size = sizeof(char);
-            pub_msg.data[0] = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
+            pub_msg.header.target      = msg->header.source;
+            pub_msg.header.size        = sizeof(char);
+            pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
             // Sending the message
             Luos_SendMsg(service, &pub_msg);
         }
