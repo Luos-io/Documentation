@@ -1,6 +1,6 @@
 # Receive and Send Advanced messages
 
-Some types of messages do not follow the format of the basic messages of Luos. For this reason, Luos provides sending and receiving mechanisms for the kinds of complex messages analyzed below.
+Luos provides advanced sending and receiving mechanisms allowing you to deal with various data transmission needs or stategy.
 
 ## Large data
 
@@ -25,17 +25,22 @@ In the reception callback, here is the code for retrieve the message with the re
 color_t picture[300*300];
 void services_MsgHandler(service_t *service, msg_t *msg) {
     if (msg->header.cmd == COLOR) {
-        Luos_ReceiveData(service, msg, (void*)picture);
+        if (Luos_ReceiveData(service, msg, (void*)picture) == SUCCEED)
+        {
+            // Your picture is completely received, you can enjoy your favorite cat picture!
+        }
     }
 }
 ```
 
-> **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page](./advanced-message.html#streaming.md).
+> **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming section](./advanced-message.html#streaming.md).
 
 ## Time-triggered update messages
 
 Luos provides a standard command to ask a service to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors. Still, the act of repeatedly retrieving a value using the `ASK_PUB_CMD` command may result in the use of a lot of bandwidth and take up valuable resources.
-**You can use the time-triggered auto-update features available from any Luos service** in this kind of polling situation. This feature allows to ask a service to send an update of any value each X milliseconds.
+
+**You can use the time-triggered auto-update features available from any Luos service** in this kind of polling situation. This feature allows to ask a service to send an update of the `ASK_PUB_CMD` command each X milliseconds.
+
 To use it, you have to set up targeted service with a message containing a standard time <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> but with a specific command.
 
 For example, to update a service each 10 ms:
@@ -46,7 +51,7 @@ msg_t msg;
 msg.header.target = id;
 msg.header.target_mode = IDACK;
 TimeOD_TimeToMsg(&time, &msg);
-msg.header.cmd = UPDATE_PUB;
+msg.header.cmd = UPDATE_PUB; // Overload the TIME command defined by TimeOD
 Luos_SendMsg(app, &msg);
 ```
 
