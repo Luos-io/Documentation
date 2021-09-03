@@ -1,5 +1,5 @@
 # Create Luos services
-**As a developer, you will always develop your functionalities into services and never into the `main()` program.**
+**As a developer, you will always develop your functionalities as services into packages and never into the `main()` program.**
 
 > **Warning:** Make sure to read and understand the [package](../package/package.md) section  before reading this page.
 
@@ -24,7 +24,7 @@ The returned `service_t*` is a service structure pointer that will be useful to 
 
  **type** is the type of the new service represented by a number. Some basic types (E.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `service_type_t` enum structure of Luos. You can also add your own and use them with Luos.
 
- **default alias** is the alias by default for your new service. E.g. `Myservice02`. This alias is the one your service will use if no other alias is set by the user of your functionality hosted in your service. Aliases have a maximum size of 16 characters.
+ **default alias** is the alias by default for your new service. E.g. `Myservice02`. This alias is the one your service will use if no other service have the same and if no other alias is set by the user. Aliases have a maximum size of 16 characters.
 
 **revision** is the revision number of the service you are creating and which will be accessible via Pyluos.
 
@@ -60,7 +60,7 @@ A driver is a type of service that handles hardware. Motors, distance sensors, L
 
 By designing a driver, you have to keep the following rules in mind:
 
- - A driver service always uses a standard Luos type to be usable by any other services.
+ - A driver service always uses a standard Luos type to be usable by any other services called a [profile](./profile.md).
  - A driver service always uses standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures to be usable by any other services.
  - A driver service never depends on or uses any other services (driver or app).
  - A driver service is "dumb", as it can't do anything else than manage its hardware feature (but it does it very well).
@@ -74,8 +74,8 @@ Apps can be placed in any <span class="cust_tooltip">[nodes](../node/node.md)<sp
 By designing an app, you have to keep the following rules in mind:
 
  - An app can't have hardware dependencies.
- - An app can use custom service types.
- - An app must use standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures. If the structures used are not standard, [Gate](../../tools/gate.md) services could be completely unable to manage them.
+ - An app can use custom service types (you can cerate your own [profiles](./profile.md) for that).
+ - An app must use standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> data structures (you can create your own object dictionary for that). Watch out, if the data structures used are not standard, [Gate](../../tools/gate.md) services could be completely unable to manage them.
 
 Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every service in every node in your device and make it work properly. Go to the [Routing table](./routing_table.md) page for more information.
 
