@@ -23,7 +23,7 @@ User command start at `LUOS_LAST_RESERVED_CMD`.
 | COLOR| color_t (R, G, B)|
 | IO_STATE| char (True/False)|
 | RATIO| ratio_t (percentage %)|
-| PEDOMETER| long[2] (step number and step time millisecond)|
+| PEDOMETER| long\[2\] (step number and step time millisecond)|
 | ILLUMINANCE| illuminance_t (lx)|
 | VOLTAGE| voltage_t (Volt)|
 | CURRENT| current_t (Ampere)|
@@ -37,9 +37,9 @@ User command start at `LUOS_LAST_RESERVED_CMD`.
 ### Configuration commands
 | Command | Function |
 | :---: | :---: |
-| REGISTER | a register data [reg_add, data[]] |
+| REGISTER | a register data \[reg_add, data\] |
 | REINIT | char (True/False) |
-| PID | pid_t float[3] = {p, i, d} |
+| PID | pid_t float\[3\] = {p, i, d} |
 | RESOLUTION | resolution parameter for a sensor float |
 | REDUCTION | reduction factor (mechanical for example) float |
 | DIMENSION | dimention of an element m linear_position_t |
@@ -53,14 +53,14 @@ User command start at `LUOS_LAST_RESERVED_CMD`.
 | ANGULAR_SPEED | angular_speed_t (deg/s) |
 | LINEAR_POSITION | linear_position_t (m) |
 | LINEAR_SPEED | linear_speed_t (m/s) |
-| ACCEL_3D | long[3](X, Y, Z axis linear acceleration data in Gees) |
-| GYRO_3D | long[3](X, Y, Z axis rotational acceleration data in degrees per second) |
-| QUATERNION | long[4] (sensor fused w, x, y, z rotational angles) |
-| COMPASS_3D | long[3](magnetic field data in micro tesla on each axis) |
-| EULER_3D | long[3](Pitch, roll, yaw based in degrees with frame reference) |
-| ROT_MAT | short[9] (linear math 9 element matrix representation) |
-| LINEAR_ACCEL | float[3] (linear acceleration in body frame coordinates) |
-| GRAVITY_VECTOR | float[3] (Which access gravity effects) |
+| ACCEL_3D | long\[3\](X, Y, Z axis linear acceleration data in Gees) |
+| GYRO_3D | long\[3\](X, Y, Z axis rotational acceleration data in degrees per second) |
+| QUATERNION | long\[4\] (sensor fused w, x, y, z rotational angles) |
+| COMPASS_3D | long\[3\](magnetic field data in micro tesla on each axis) |
+| EULER_3D | long\[3\](Pitch, roll, yaw based in degrees with frame reference) |
+| ROT_MAT | short\[9\] (linear math 9 element matrix representation) |
+| LINEAR_ACCEL | float\[3\] (linear acceleration in body frame coordinates) |
+| GRAVITY_VECTOR | float\[3\] (Which access gravity effects) |
 | HEADING | long (360 degrees from North with Y+ axis as the pointer) |
 
 ### Space positioning limits
