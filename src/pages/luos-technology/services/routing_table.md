@@ -30,7 +30,7 @@ Sometimes, multiple services in the network can have the same alias, which is no
 
 ## Modes
 
-<span class="cust_tooltip">Nodes<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple services. To get the topology of your device, the routing table references physical connections between your nodes, and lists all the services in each one of them.
+<span class="cust_tooltip">Nodes<span class="cust_tooltiptext">{{ node_def }}</span></span> can host multiple services. To get the topology of your device, the routing table references physical connections between the nodes and lists all the services in each one of them.
 
 The routing table is a table of a `routing_table_t` structure containing nodes or services information.
 The precompilation constant MAX_SERVICES_NUMBER manages the maximum number of services  (set to 40 by default).
@@ -73,7 +73,7 @@ typedef struct __attribute__((__packed__))
 
 ### Service entry mode
 
-Service entry mode allows the routing table to contain information about a service. As a node can host one or more services, the routing table is able to obtain the specific information for each one of them:
+Service entry mode allows the routing table to include information about a service. As a node can host one or more services, the routing table is able to obtain the specific information for each one of them:
 
  - id: service's unique id
  - type: service's type

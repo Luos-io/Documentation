@@ -1,14 +1,14 @@
-# What is an object dictionary?
+# Object dictionary
 
-An object dictionary (OD) allows different developers of different services to make them interoperate regardless of the unit they use on their code.
+An object dictionary (OD) allows various developers of different services to make them interoperate regardless of the units they use on their code.
 
 > Example: If *my_service1* uses an angle in radians and *my_service2* uses degrees, what is the unit they should use to share the angle information?
  
-An object dictionary defines a set of typical objects that can be transmitted through Luos messages. It allows to send these objects with an unit and to use it in any other units in other services.
+An object dictionary defines a set of typical objects that can be transmitted through Luos messages. It allows to send these objects with a unit and to use it in any other units, in other services.
 
 Luos defines objects based on physical values following the SI standard.
 
-## Object and types
+## Objects and types
 
 Each object in the Object Dictionary has a specific Type. For example:
 ```c
@@ -95,6 +95,9 @@ Here are listed the existing types:
 | control | control_t (play, pause, stop, record) |
 | pid | asserv_pid_t float \[3\] {proportional, integral, derivative} |
 
-> **Note:** to find out a conversion function, replace the characters `/` or `.` in the units by the character `_`. The character `µ` is replaced by `u`, and `revolution` is replaced by `rev`.
+> **Note:** To find out what conversion function to use if you don't know it, replace the characters `/` or `.` in the units by the character `_`. The character `µ` is replaced by `u`, and `revolution` is replaced by `rev`.
 >
-> Examples: convert a linear speed to mm/s: `LinearOD_SpeedTo_mm_s()`; convert a value in &mu;m to a linear position: `LinearOD_PositionFrom_um()`; convert a value in revolutions/s to an angular speed: `AngularOD_SpeedFrom_rev_s()`;
+> Examples: 
+> convert a linear speed to mm/s: `LinearOD_SpeedTo_mm_s()`; 
+> convert a value in &mu;m to a linear position: `LinearOD_PositionFrom_um()`; 
+> convert a value in revolutions/s to an angular speed: `AngularOD_SpeedFrom_rev_s()`;

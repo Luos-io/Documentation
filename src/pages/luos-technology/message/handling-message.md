@@ -26,7 +26,7 @@ void Button_MsgHandler(service_t *service, msg_t *msg)
 {
     if (msg->header.cmd == ASK_PUB_CMD)
     {
-        // The message is filled with global variable with proper data
+        // The message is filled with global variables with proper data
         msg_t pub_msg;
         pub_msg.header.cmd         = IO_STATE;
         pub_msg.header.target_mode = ID;
@@ -71,7 +71,7 @@ void Button_Loop(void)
         msg_t *msg = Luos_ReadMsg(service);
         if (msg->header.cmd == ASK_PUB_CMD)
         {
-            // The message is filled with global variable with proper data
+            // The message is filled with global variables with proper data
             msg_t pub_msg;
             pub_msg.header.cmd         = IO_STATE;
             pub_msg.header.target_mode = ID;

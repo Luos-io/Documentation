@@ -1,29 +1,30 @@
 # Command and object dictionary
 
-Each message includes a command value that defines the type of the contents of the message's data.
+Each message includes a command value that defines the content's type of the message's data.
 
-Another feature included in Luos technology is the [Object Dictionary (OD)](./command.md), which aims to maintain interoperability of data format and command type between <span class="cust_tooltip">services<span class="cust_tooltiptext">{{service_def}}</span></span>.
+Another feature included in Luos technology is the [Object Dictionary (OD)](./od.md), which aims to maintain interoperability of data format and command's type between <span class="cust_tooltip">services<span class="cust_tooltiptext">{{service_def}}</span></span>.
 
 ## Commands
 
 Commands is a simple enum list from 0 to N allowing you to choose the data format you want to use on your message.
-Internally Luos also use some messages to manage and detect your system, so Luos have some reserved commands at the begining of this list.
-User command start at `LUOS_LAST_RESERVED_CMD`.
+Internally, Luos also uses some messages to manage and detect your system That's why Luos has some reserved commands at the begining of this list.
+User's commands start at `LUOS_LAST_RESERVED_CMD`.
 
-### Common register for all services
+### Common registers for all services
 
 | Command | Function |
 | :---: | :---: |
 | GET_CMD | asks a service to publish its data |
-| SET_CMD | set some undefined data |
+| SET_CMD | sets some undefined data |
 
 ### Generic data
+
 | Command | Function |
 | :---: | :---: |
 | COLOR| color_t (R, G, B)|
 | IO_STATE| char (True/False)|
 | RATIO| ratio_t (percentage %)|
-| PEDOMETER| long\[2\] (step number and step time millisecond)|
+| PEDOMETER| long\[2\] (step number, step time millisecond)|
 | ILLUMINANCE| illuminance_t (lx)|
 | VOLTAGE| voltage_t (Volt)|
 | CURRENT| current_t (Ampere)|
@@ -35,18 +36,20 @@ User command start at `LUOS_LAST_RESERVED_CMD`.
 | CONTROL| control_mode (control_mode_t)|
 
 ### Configuration commands
+
 | Command | Function |
 | :---: | :---: |
-| REGISTER | a register data \[reg_add, data\] |
+| REGISTER | a registered data \[reg_add, data\] |
 | REINIT | char (True/False) |
 | PID | pid_t float\[3\] = {p, i, d} |
 | RESOLUTION | resolution parameter for a sensor float |
-| REDUCTION | reduction factor (mechanical for example) float |
-| DIMENSION | dimention of an element m linear_position_t |
+| REDUCTION | reduction factor float (e.g. mechanical) |
+| DIMENSION | dimension of an element m linear_position_t |
 | OFFSET | decay float |
-| SETID | Set Dynamixel ID |
+| SETID | sets Dynamixel ID |
 
 ### Space positioning
+
 | Command | Function |
 | :---: | :---: |
 | ANGULAR_POSITION | angular_position_t (deg) |
@@ -64,6 +67,7 @@ User command start at `LUOS_LAST_RESERVED_CMD`.
 | HEADING | long (360 degrees from North with Y+ axis as the pointer) |
 
 ### Space positioning limits
+
 | Command | Function |
 | :---: | :---: |
 | ANGULAR_POSITION_LIMIT | min angular_position_t (deg), max angular_position_t (deg) |
@@ -73,16 +77,17 @@ User command start at `LUOS_LAST_RESERVED_CMD`.
 | ANGULAR_SPEED_LIMIT | min angular_speed_t (deg/s), max angular_speed_t (deg/s) |
 | LINEAR_SPEED_LIMIT | min linear_speed_t (m/s), max linear_speed_t (m/s) |
 | TORQUE_LIMIT | max moment_t (Nm) |
-| TEMPERATURE_LIMIT | Max temperature_t (°C) |
+| TEMPERATURE_LIMIT | max temperature_t (°C) |
 
 ### Specific register
+
 | Command | Function |
 | :---: | :---: |
-| PARAMETERS | depend on the service, can be : servo_parameters_t, imu_report_t, motor_mode_t|
+| PARAMETERS | depends on the service. It can be: servo_parameters_t, imu_report_t, motor_mode_t |
 | ERROR_CMD | |
 
 
-You can find the complete list of commands <a href="https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h" target = "_blank">here</a>.
+You can find the complete list of commands <a href="https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h" target = "_blank">here &#8599;</a>.
 
 If you want to create new commands for your custom services, you can create and add your own starting at `LUOS_LAST_STD_CMD`. [See how](../../tutorials/tutorials.md).
 

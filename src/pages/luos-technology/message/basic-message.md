@@ -22,6 +22,6 @@ pub_msg.data[0]            = 0x01;
 Luos_SendMsg(service, &pub_msg);
 ```
 
-> **Note:** the function *Luos_SendMsg* returns an error_status that informs the user whether the message was stored in a buffer and is ready to be sent. User can monitor the return to be sure that the message will be sent.
+> **Note:** the function *Luos_SendMsg* returns an error_status that informs the user whether the message was stored in a buffer and is ready to be sent. User can monitor the returned value to be sure that the message will be sent.
 
-> **Note:** the *Luos_SendMsg* function is non blocking. This function just load the message into a Luos memory and (leaded by your hardware) luos will send it as soon as possible.
+> **Note:** the *Luos_SendMsg* function is non blocking. This function loads the message into a Luos memory and Luos, leaded by your hardware, will send it as soon as possible.

@@ -1,6 +1,6 @@
 # Receive and Send Advanced messages
 
-Luos provides advanced sending and receiving mechanisms allowing you to deal with various data transmission needs or stategy.
+Luos provides advanced sending and receiving mechanisms allowing to deal with various data transmission needs or stategies.
 
 ## Large data
 
@@ -27,7 +27,7 @@ void services_MsgHandler(service_t *service, msg_t *msg) {
     if (msg->header.cmd == COLOR) {
         if (Luos_ReceiveData(service, msg, (void*)picture) == SUCCEED)
         {
-            // Your picture is completely received, you can enjoy your favorite cat picture!
+            // The picture is completely received, you can enjoy your favorite cat picture!
         }
     }
 }
@@ -39,7 +39,7 @@ void services_MsgHandler(service_t *service, msg_t *msg) {
 
 Luos provides a standard command to ask a service to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors. Still, the act of repeatedly retrieving a value using the `ASK_PUB_CMD` command may result in the use of a lot of bandwidth and take up valuable resources.
 
-**You can use the time-triggered auto-update features available from any Luos service** in this kind of polling situation. This feature allows to ask a service to send an update of the `ASK_PUB_CMD` command each X milliseconds.
+**You can use the time-triggered auto-update features available from any Luos service** in this kind of polling situation. This feature allows to ask a service to send an update of the `ASK_PUB_CMD` command each chosen amount of milliseconds.
 
 To use it, you have to set up targeted service with a message containing a standard time <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> but with a specific command.
 

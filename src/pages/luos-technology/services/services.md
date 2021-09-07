@@ -1,10 +1,10 @@
 # Services
 
-A service is a feature API that will provide a functionality. Services can communicate with any other services present in the Luos network.
+A service is a feature API that provides a functionality. Services can communicate with any other services present in the Luos network.
 
 A service can be an [application](./service_api.html#apps-guidelines) or a [driver](./service_api.html#drivers-guidelines).
 
-Each service provides a particular set of tasks such as managing a motor, handling a laser range finder, or more complex operations like computing inverse-kinematics. Services are stored into [packages](../package/package.md)
+Each service provides a particular set of tasks such as managing a motor, handling a laser range finder, or more complex operations like computing inverse-kinematics. Services are stored into [packages](../package/package.md).
 
 Each service is hosted in a single <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> (MCU). Still, a node can handle several services simultaneously and manage communication between them and other services hosted in different nodes, using the same network interface.
 

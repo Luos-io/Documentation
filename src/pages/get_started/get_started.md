@@ -75,21 +75,22 @@ On top of it we also add 2 other services allowing you to take control of your b
 - **Pipe** managing a serial interface</br> ╰ located on the lib folder of your project (because it's a driver specific to your board)
 - **Gate** an app that translate Luos to Json and send it trough *Pipe*</br> ╰ located on the cloud, (because it's a common cross platform Luos app) Platformio just downloaded it for you.
 
-## The remote control part : 💊 You can control the Matrix.
+## The remote control part: 💊 You can control the Matrix.
 
 The gate running on your board allow you to take control of any service loaded on your device.
 
 ### Setup development environment
 
 We will use python with the default library of Luos called pyluos.
-To install it run :
+To install it, run:
+
 ```bash
 pip install pyluos
 ```
 
 ### Connect and control your device
 
-Pyluos provide you a set of tools, To control you device, run
+Pyluos provides a set of tools. To control you device, run:
 
 ```bash
 pyluos-shell
@@ -97,7 +98,7 @@ pyluos-shell
 
 This command will find the serial port of your device and mount it into a "device" object.
 
-For example :
+For example:
 
 ```bash
 $ pyluos-shell
@@ -123,8 +124,7 @@ Your luos device have been successfully mounted into a "device" object:
 
 ```
 Now you are on an Ipython command line, you can run python script in it.
-The `device` object is your real device and you can interact with it for example try to execute those lines one by one :
-
+The `device` object is your real device and you can interact with it for example try to execute those lines one by one:
 
 In \[1\]: `device.blinker.time=0.25`</br>
 In \[2\]: `device.blinker.pause()`</br>

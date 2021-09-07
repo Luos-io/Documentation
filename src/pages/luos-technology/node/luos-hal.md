@@ -1,11 +1,12 @@
 # Luos Hardware Abstraction Layer
 
-Luos can work on a single node (localhost), or create a network for communication between services located on different nodes. This communication should be defined and hardware-configured to fit with the chosen MCU. The files *luos_hal.c* and *luos_hal.h* define all the functions needed by the Luos library to send/receive messages through the bus and initialize of all MCU peripherals.
+Luos can work on a single node (localhost), or create a network to enable communication between services located on different nodes. This communication should be defined and hardware-configured to fit the chosen MCU. The files *luos_hal.c* and *luos_hal.h* define all the functions needed by the Luos library to send/receive messages through the bus and initialize all the MCU peripherals.
 
-The file luos_hal_config.h file contains a default configuration for an MCU family and can be redefined in a `node_config.h` configuration file to fit your design. The configuration of Luos HAL is described [here](../../hardware-consideration/mcu.md).
+The file *luos_hal_config.h* file contains a default configuration for a MCU family and can be redefined in a `node_config.h` configuration file to fit your design. The configuration of Luos HAL is described [here](../../hardware-consideration/mcu.md).
 
 ## Luos HAL
-Here is all the hardware functions relative to protocol communication and physical bus of Luos:
+
+Here are the hardware functions relative to protocol communication and physical bus in Luos:
 
 - **PORT**: Defines necessary pins, PTP lines, Rx/Tx, enable/disable.
 - **TIMER**: Defines timeouts for communication.
