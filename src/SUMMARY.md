@@ -48,6 +48,6 @@
 - [FAQ](./pages/faq/faq.md)
     - [Detection reconfiguration](./pages/faq/001.detection-reconfig.md)
     - [USB drivers issue (DFU)](./pages/faq/002.dfu.md)
-    - [Building Luos default examples](./pages/faq/003.Application-compile.md)
-    - [Default IRQ handler)](./pages/faq/004.Application-defaut-handler.md)
+    - [Building Luos default examples](./pages/faq/003.application-compile.md)
+    - [Default IRQ handler)](./pages/faq/004.application-defaut-handler.md)
     - [Add an issue](./pages/faq/999.add-issue.md)

@@ -4,7 +4,7 @@ Here is a list of the issues our users sometimes encountered while using Luos an
 
 ## What is your issue?
 
- - [My application doesn't retrieve driver's data after plugging in a Gate to my system.](./001.detection-reconfig.md)
+ - [My application doesn't retrieve driver's data after plugging in a gate to my system.](./001.detection-reconfig.md)
  - [I can't connect my system to the computer (DFU error).](./002.dfu.md)
 
 ---
