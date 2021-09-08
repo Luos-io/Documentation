@@ -69,6 +69,6 @@ You may need to change it if you have apps on your Luos embedded systems.
 | GATE_POLLING | NOT DEFINED | No autorefresh always ask data (more intensive to Luos bandwidth.) |
 | NODETECTION | NOT DEFINED | The gate do not make detection a power up |
 
-If you have an App service on your device managing detections, you should define **NODETECTION** avoiding useless detection from the gate at boot.
+If you have an app service on your device managing detections, you should define **NODETECTION** avoiding useless detection from the gate at boot.
 
-If you have an App service on your device using auto-update, you should define **GATE_POLLING** avoiding the gate to take the lead on the services your App is using.
+If you have an app service on your device using auto-update, you should define **GATE_POLLING** avoiding the gate to take the lead on the services your app is using.

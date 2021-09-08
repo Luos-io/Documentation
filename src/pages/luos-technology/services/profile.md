@@ -23,7 +23,7 @@ To use this feature, you have to include the profile corresponding to your needs
 profile_servo_motor_t servo_motor; // create a motor profile structure
 ```
 
-Now taht your structure exists, you can access all variables it embeds. Still, it won't be updated by luos as described above, for this one step remains: you have to create a service and tell Luos that you're using a profile, and that you want the platform to handle it for you.
+Now taht your structure exists, you can access all variables it embeds. Still, it won't be updated by Luos as described above, for this one step remains: you have to create a service and tell Luos that you're using a profile, and that you want the platform to handle it for you.
 
 So far you learned how to create a bare service with the **luos_CreateService()** call, but not how to give information about the profile you instantiated to the platform. To do so, every profile comes with a **Profile_CreateService()** function that will make it for you. This function is very similar to the **luos_CreateService()** routine, except for the `type` field replaced by the profile you previously created.
 
@@ -36,7 +36,7 @@ service_t *ProfileServo_CreateService(SERVICE_CB callback, profile_servo_motor_t
 The returned `service_t*` is a service structure pointer that will be useful to make your service act in the network.
 
 - **callback** is a pointer to the same callback function described in [the service management section](./service_api.html#how-to-create-and-initialize-a-service). The main difference between profile services and custom services is that you don't need to manage any message in this callback, because the profile handles it for you.
- You can use this callback to make your code react to an event or manage custom messages on top of the profile.
+You can use this callback to make your code react to an event or manage custom messages on top of the profile.
 - **profile_servo_motor** is the profile structure pointer you just created with a type depending on the profile you are using.
 - **alias** is the alias by default for your new service, e.g. `Myprofile02`. This alias is the one your service will use if no other alias is set by the user of the functionalities hosted in your service. Aliases have a maximum size of 16 characters.
 - **revision** is the revision number of the service you are creating.

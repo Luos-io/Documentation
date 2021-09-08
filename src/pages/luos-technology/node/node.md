@@ -8,4 +8,4 @@ The nodes are described by a set of unique characteristics:
  - **port_table**: physical port connections.
 
 
-Each node hosts the embedded Luos API, which allows services to communicate with others on the network. Nodes have specific network hardware access that have to be defined in the [Luos's Hardware Abstraction Layer (HAL)](./luos-hal.md). They can [host, manage, and run services](./luos.md).
+Each node hosts the embedded Luos API, which allows services to communicate with others in the network. Nodes have specific network hardware access that have to be defined in the [Luos's Hardware Abstraction Layer (HAL)](./luos-hal.md). They can [host, manage, and run services](./luos.md).

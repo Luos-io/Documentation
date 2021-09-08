@@ -124,7 +124,7 @@ Your luos device have been successfully mounted into a "device" object:
 
 ```
 
-Now that you are on an Ipython command line, you can run Python scripts in it.
+Now that you are on an IPython command line, you can run Python scripts in it.
 The `device` object is your real device and you can interact with it. For example, try to execute these lines one by one:
 
 In \[1\]: `device.blinker.time=0.25`

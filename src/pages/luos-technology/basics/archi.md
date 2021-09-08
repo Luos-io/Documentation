@@ -9,7 +9,7 @@ Different levels on the embedded code are defined, corresponding to the differen
 | Level | Description |
 | :---: | :---: |
 | Product | A node or a set of nodes that communicate with each other. This is the place were you will have the configurations and information intended for all your boards. |
-| Node | This is the board's code. This is your actual Eclipse, Platformio, IAR, or any other project. |
+| Node | This is the board's code. This is your actual Eclipse, PlatformIO, IAR, or any other project. |
 | Package | A sharable folder containing code files managing one or more services. |
 | Service | Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can be custom too. |
 

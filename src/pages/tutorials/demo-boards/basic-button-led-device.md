@@ -43,7 +43,7 @@ Your device is now powered and connected. All the low-level code and electronics
 
 ### 4. Interact with the device
 
-*The USB node handles a specific service called "[Gate](../../tools/gate.md)". Other boards are hosting a "gate" service and using a different connection than USB. These particular services convert Luos services data into something easier to understand and manage, using [JSON API](../../api/api.md).*
+*The USB node handles a specific service called "[gate](../../tools/gate.md)". Other boards are hosting a "gate" service and using a different connection than USB. These particular services convert Luos services data into something easier to understand and manage, using [JSON API](../../api/api.md).*
 
 Interacting with the Luos system and program behaviors will require spotting the USB connection on your computer. In the following example, the associated port is `COM13`.
 
@@ -54,7 +54,7 @@ import pyluos
 from pyluos import Device
 device = Device('COM13')
 ```
-When Pyluos establishes the connection with a Gate service, it asks to run a network detection. This detection allows discovering all boards wired together on the network.
+When Pyluos establishes the connection with a gate service, it asks to run a network detection. This detection allows discovering all boards wired together in the network.
 
 To list the discovered boards, you can run:
 
@@ -62,7 +62,7 @@ To list the discovered boards, you can run:
 print(device.services)
 ```
 
-In this tutorial, Python should find three boards, the Gate (USB), the LED, and the Button boards. You can check that all are detected:
+In this tutorial, Python should find three boards, the gate (USB), the LED, and the Button boards. You can check that all are detected:
 
 ```AsciiDoc
 -------------------------------------------------
@@ -83,7 +83,7 @@ print(device.button_mod.pressed)
 Python will answer `True` if you execute this line by pressing the button and `False` if you don't.
 
 In the same way, you can control a board by setting variables.
-In the following example, we can control the led color using RGB values. Type and execute the following line:
+In the following example, we can control the LED color using RGB values. Type and execute the following line:
 
 ```python
 device.rgb_led_mod.color = [50,80,5]

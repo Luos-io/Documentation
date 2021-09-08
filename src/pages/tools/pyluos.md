@@ -245,7 +245,7 @@ device.button_mod.luos_revision # Returns the version of Luos
 device.button_mod.robus_revision # Returns the version of Robus
 ```
 
-If you use *ipython* or *Jupyter Notebook*, you can use auto-completion using the `Tab` key to find every available object and variable.
+If you use *IPython* or *Jupyter Notebook*, you can use auto-completion using the `Tab` key to find every available object and variable.
 
 ![Auto-completion](../../_assets/img/pyluos-3.png)
 
