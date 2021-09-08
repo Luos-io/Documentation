@@ -100,6 +100,7 @@ Services can have the following accessibility:
  - NO_ACCESS
 
 For example, from the previous initialization example function of the button service, we should specify the accessibility of the service as **READ_ONLY_ACCESS**:
+
 ```c
 service_t* service_btn;
 
@@ -116,8 +117,7 @@ This doesn't change anything else on your service code as it allows external ser
 
 ## Messages
 
-The core of Luos technology enables to send and receive messages from services with a straightforward API. More information about [messages](../message/basic-message.md) can be found in the dedicated section.
-
+The core of Luos technology enables sending and receiving messages from services with a straightforward API. More information about messages can be found in the [dedicated page](../message/basic-message.md).
 
 ## Luos APIs
 
@@ -128,9 +128,9 @@ The main Luos embedded technology includes the following tools to integrate more
 | Send a Luos message | `Luos_SendMsg(service_t *service, msg_t *msg);` | `error_return_t` |
 | Read a Luos message | `Luos_ReadMsg(service_t *service, msg_t **returned_msg);` | `error_return_t` |
 | Send the remaining data in case of long messages| `Luos_SendData(service_t *service, msg_t *msg, void *bin_data, uint16_t size);` | `void` |
-| Receive the remaining data  in case of long messages| `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);` | `error_return_t` |
+| Receive the remaining data in case of long messages| `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);` | `error_return_t` |
 | Send data stored in a streaming channel | `Luos_SendStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `void` |
 | Receive data from a streaming channel | `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `error_return_t` |
 | Share network's baudrate| `Luos_SendBaudrate(service_t *service, uint32_t baudrate);` | `void` |
-| Get the total tick number from the initialization of Luos | `Luos_GetSystick(void);` | `uint32_t` |
+| Get the total ticks number from the initialization of Luos | `Luos_GetSystick(void);` | `uint32_t` |
 

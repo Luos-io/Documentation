@@ -1,6 +1,6 @@
 # Luos
 
-The embedded code of a node host the Luos embedded code and the node's various functionalities stored on services. Luos is responsible for creating each node's identity, integrating the node to a Luos network, locating it among the other nodes, communicating with each other, and managing all their services.
+The node's embedded code hosts the Luos's embedded code and the node's various functionalities, stored in services. Luos is responsible for creating each node's identity, integrating the node to a Luos network, locating it among the other nodes, communicating with each other, and managing all their services.
 
 ## Luos Integration
 
@@ -35,17 +35,18 @@ int main(void)
     return 0;
 }
 ```
-Putting this code into a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> makes it able to react to a Luos network. It's now ready to host your services by [running packages](../package/package.md) on your main.
+
+Adding this code to a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> makes it able to react to a Luos network. It is now ready to host your services by [running packages](../package/package.md) on your main.
 
 **As a developer, you will always develop your functionalities into services and never into the `main()` program.**
 
-> **Note:** The only information that should be put on the `main()` code are MCU setup parameters and services run functions.
+> **Note:** The only information that should be put on the `main()` code are MCU's setup parameters and services' run functions.
 
 ## A complete software node view
 
-At the node level, communication is achieved by receiving and sending [messages](../message/message.md) with the other components of a Luos network. The nodes can communicate with each other thanks to a specific part of Luos, Robus.
+At the node level, communication is achieved by receiving and sending [messages](../message/message.md) with the other components of a Luos network. The nodes can communicate with each other thanks to a specific part of Luos, called Robus.
 
-Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like the communication initialization between the different nodes, the messages' management ([message format control](../message/message.md), TX, and RX), memory allocation, topology [detection](../services/routing_table.md), and attribution of messages to the suitable handling level.
+Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like communication initialization between different nodes, messages' management ([message format control](../message/message.md), TX, and RX), memory allocation, topology [detection](../services/routing_table.md), and attribution of messages to the suitable handling level.
 
 Robus executes a format control, and store messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos or sent to one or several [services](../services/services.md).
 

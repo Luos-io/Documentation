@@ -75,9 +75,9 @@ typedef struct __attribute__((__packed__))
 
 Service entry mode allows the routing table to include information about a service. As a node can host one or more services, the routing table is able to obtain the specific information for each one of them:
 
- - id: service's unique id
- - type: service's type
- - alias: service's alias
+ - **id**: service's unique id
+ - **type**: service's type
+ - **alias**: service's alias
 
 You can read the [services page](../services/services.md) for more information about what services are and how they are used.
 
