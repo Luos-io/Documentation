@@ -19,7 +19,7 @@ You can use Luos as a **bare metal** library, or as a driver into your **embedde
 
 Luos is composed as well of **code subdivisions** called <span class="cust_tooltip">[**services**](#service)<span class="cust_tooltiptext">{{service_def}}</span></span>. Services are distributed into every node in a network.
 
-<img src="../../../_assets/img/feature-service-node-board.jpg" width="800px" />
+<img src="../../../_assets/img/feature-service-package-node-board.png" />
 
 ## Introduction to embedded containerized platforms
 
