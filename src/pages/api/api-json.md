@@ -150,7 +150,9 @@ Each listed service of a node has basic services information:
 
 Below is a visual representation of this routing table:
 
-![](../../_assets/img/luos-network-ex.png)
+<p align="center">
+    <img src="../../_assets/img/luos-network-ex.png" />
+</p>
 
 
 ### Service's information messages

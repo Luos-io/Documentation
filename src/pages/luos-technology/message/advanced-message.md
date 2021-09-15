@@ -87,10 +87,14 @@ Based on those numbers, your data chunk size will be:
 chunk_size = chunk_time(s) x sampling_frequency(Hz)
 chunk_size = 1 x 200 = 200 samples
  ```
- In our configuration, data chunk needs to be 200 position samples each second, allowing to feed the streaming channel.
 
- Following our example, if we want to send trajectory to the motor, we will have a *ring buffer* in the motor side managed by the *streaming channel*. Here are the different states of this ring_buffer:
+In our configuration, data chunk needs to be 200 position samples each second, allowing to feed the streaming channel.
+
+Following our example, if we want to send trajectory to the motor, we will have a *ring buffer* in the motor side managed by the *streaming channel*. Here are the different states of this ring_buffer:
+
+<p align="center">
 <img src="../../../_assets/img/streaming.png" />
+</p>
 
  1. The service that sends the trajectory must ensure that the motor service always has data to consume. To do that, you have to bootstrap your streaming flux by sending 2 data chunks to start and then send a new data chunk each *chunk_time*.
  This way, the receiver always has at least one data chunk (1s in this example) ready to be consumed.

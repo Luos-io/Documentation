@@ -93,7 +93,9 @@ The **port_table** allows sharing of topological information of your network. Ea
 
 Here is an example:
 
+<p align="center">
 <img src="../../../_assets/img/routing-table.png" title="Routing table">
+</p>
 
 As shown on this image, elements of the `port_table` indicate the first or last service id of the connected node through a given port.
 

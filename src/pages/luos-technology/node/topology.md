@@ -12,14 +12,20 @@ The routing table is designed and shared among all the nodes after a process tha
 
 ## PTP
 
-PTP is the peer-to-peer connection between nodes used for topology detection. Every node should have between 2 to 8 PTP connections representing ports. At this time, these wires are mandatory.
+PTP is the point-to-point connection between nodes used for topology detection. Every node should have between 2 to 8 PTP connections representing ports. At this time, these wires are mandatory.
 
 ### Daisy-chain
 
-With 2 PTP pins per board, you must chained your device as below:
-![](../../../_assets/img/daisy_chain.png)
+With two PTP pins per board, you must chained your device as below:
+
+<p align="center">
+	<img src="../../../_assets/img/daisy_chain.png" />
+</p>
 
 ### Star Mounting
 
-With at least 3 PTP pins per board, you can create a star mounting configuration:
-![](../../../_assets/img/star_mounting.png)
+With at least three PTP pins per board, you can create a star mounting configuration:
+
+<p align="center">
+	<img src="../../../_assets/img/star_mounting.png" />
+</p>

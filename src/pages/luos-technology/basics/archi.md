@@ -13,7 +13,9 @@ Different levels on the embedded code are defined, corresponding to the differen
 | Package | A sharable folder containing code files managing one or more services. |
 | Service | Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can be custom too. |
 
-![](../../../_assets/img/architecture.png)
+<p align="center">
+    <img src="../../../_assets/img/architecture.png" />
+</p>
 
 ### Product code organization with Luos
 
@@ -76,4 +78,6 @@ Different levels on the embedded code are defined, corresponding to the differen
 
 Luos Library is used at the node level. You will need to initialize Luos and call a loop function on your main program to be able to use the Luos API on your packages.
 
-![](../../../_assets/img/luos_mcu_platform.png)
+<p align="center">
+    <img src="../../../_assets/img/luos_mcu_platform.png" />
+</p>

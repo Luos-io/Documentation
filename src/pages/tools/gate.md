@@ -47,7 +47,9 @@ int main(void)
 }
 ```
 
-![](../../_assets/img/gate_pipe.png)
+<p align="center">
+    <img src="../../_assets/img/gate_pipe.png" />
+</p>
 
 In that configuration formatted messages don't pass through the Luos network and stay in localhost.
 
@@ -55,7 +57,9 @@ In that configuration formatted messages don't pass through the Luos network and
 
 When the gate and the pipe are on separate nodes, formatted messages transit into the network using even more bandwidth and adding latency.
 
-![](../../_assets/img/gate_pipe_separate.png)
+<p align="center">
+    <img src="../../_assets/img/gate_pipe_separate.png" />
+</p>
 
 ## The gate configurations
 

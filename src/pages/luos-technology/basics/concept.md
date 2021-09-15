@@ -7,7 +7,9 @@ A node is a physical component (hardware) running Luos and hosting one or severa
 In other words, **a node is a microcontroller** connected to other microcontrollers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.
 
+<p align="center">
 <img src="../../../_assets/img/MCU-luos.png" height="100px" />
+</p>
 
 ## Package
 
