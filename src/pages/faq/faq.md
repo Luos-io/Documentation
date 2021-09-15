@@ -6,6 +6,9 @@ Here is a list of the issues our users sometimes encountered while using Luos an
 
  - [My application doesn't retrieve driver's data after plugging in a gate to my system.](./001.detection-reconfig.md)
  - [I can't connect my system to the computer (DFU error).](./002.dfu.md)
+ - [The default Luos example does not compile](./003.application-compile.md)
+ - [The application is blocked in an infinite loop (default handler)](./004.application-default-handler.md)
+
 
 ---
 
