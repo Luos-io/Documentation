@@ -174,6 +174,75 @@ html {
 
 /***************** END-HEADER ********************/
 
+/***************** SQUARES ***********************/
+
+.cust_square_wrapper{
+	display: flex;
+    flex-direction: row;
+    flex-wrap:  wrap;
+    justify-content: center;
+	text-decoration: none
+
+
+	margin: auto;
+	width: 100%;
+	border: 0px solid;
+	padding: 0px;
+	padding-top: 30px;
+	text-align: center;
+}
+
+.cust_square_wrapper a:hover{
+	text-decoration: none;
+}
+
+.cust_square {
+	min-height: 200px;
+	width: 200px;
+	margin: 10px;
+	padding: 20px;
+	background-color: #fafaff;
+	border: solid 0px #eee;
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px #ddd;
+	text-align: left;
+	filter: grayscale(100%) opacity(70%);
+
+}
+
+.cust_square:hover { 
+	filter: grayscale(0%) opacity(100%);
+	box-shadow: 1px 1px 5px #ccc;
+}
+
+.cust_landing_title {
+	color: #161616;
+	font-size: 18px;
+	font-weight: 900;
+	padding-bottom: 5px;
+}
+
+.cust_landing_text {
+	color: grey;
+	font-size: 12px;
+}
+
+.cust_landing_img { 
+	padding-bottom: 20px;
+}
+
+.cust_landing_img img { 
+	height: 60px; 
+}
+
+.cust_img_rot { 
+	transform: translate(15px) rotate(35deg); 
+	height:80px
+}
+
+/********************************************/
+
+
 #page-wrapper {
 	position: relative;
 	min-height: 100vh;
@@ -186,21 +255,23 @@ html {
 #footer {
 	vertical-align: bottom;
 	position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto; 
-    width: 65%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto; 
+	width: 65%;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Mono',sans-serif;
+	text-align: center;
 }
 
 
 .sidebar-scrollbox{
 	font-family: 'Roboto Mono',sans-serif;
+	margin-bottom: 80px;
 }
 
 .content main {
@@ -343,8 +414,6 @@ table#cust_table caption {
 /*************************************/
 
 
-
-
 #cust_separator {
 	color: #aaa;
 	position: inline-block;
@@ -367,8 +436,9 @@ table#cust_table caption {
 /*************************************/
 
 .cust_video{
-	width: 800px;
-	height: 450px
+	margin: 50px;
+	width: 500px;
+	height: 281px
 }
 
 @media screen and (max-width: 800px) {
@@ -387,59 +457,8 @@ table#cust_table caption {
 	margin: auto;
 }
 
-/*
-.cust_banner{
-	visibility: visible;
-	width: 100%;
-	height: 40px;
-	position: fixed;
-	background-color: #ffe6b3;
-	top: 0;
-	left: 0;
-	z-index: 999;
-	line-height: 40px;
-	padding-left: 40px;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 15px;
-	text-decoration: none;
 
-}
-
-#cust_close {
-    float: right;
-   	cursor: pointer;
-   	font-family: 'Roboto', sans-serif;
-	font-size: 15px;
-	margin-right: 50px;
-	text-align: center;
-	background-color: #aaa;
-	padding-right: 8px;
-	padding-left: 8px;
-}
-
-#cust_close:hover {
-	background-color: #ccc;
-}
-
-
-.cust_bottom_banner{
-	position: absolute;
-	bottom: 10px;
-	left: 10px;
-	width: 80%;
-	background-color: #ffe6b3;
-	z-index: 999;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 15px;
-	text-decoration: none;
-	box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
-	line-height: 20px;
-	padding: 8px 5px 8px 5px ;
-}
-
-*/
-
-#container1 {
+#service1 {
     width:600px;
     font-family:verdana,arial,helvetica,sans-serif;
     font-size:11px;
@@ -506,7 +525,7 @@ vertical-align: top;
     background-color:#fff;
 }
 .tree span:hover {
-	background-color:#75dbc7;
+	background-color:#f8f8f8;
 }
 .tree span.cust_basics {
 	border: dashed 1px;

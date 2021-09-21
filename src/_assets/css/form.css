@@ -306,12 +306,12 @@ input, input[type="text"], input[type="search"], isindex, textarea, button {
 	width:100%;
 	}
 	
-.zf-signContainer{ 
+.zf-signContainer{
 	margin:0; 
 	padding:0; 
 	width:100%;
 	}
-.zf-signContainer canvas{ 
+.zf-signContainer canvas{
 	cursor:crosshair;
 	border:1px solid #ccc; 
 	background:#fff;
@@ -637,13 +637,13 @@ input, input[type="text"], input[type="search"], isindex, textarea, button {
 	width:100%;
 	}
 
-.zf-signSmall .zf-tempContDiv .zf-signContainer .zf-signArea {	
+.zf-signSmall .zf-tempContDiv .zf-signContainer .zf-signArea {
 	width:49%;
 	}
 .zf-signMedium .zf-tempContDiv .zf-signContainer .zf-signArea {
 	width:60%;
 	}
-.zf-signLarge .zf-tempContDiv .zf-signContainer .zf-signArea {	
+.zf-signLarge .zf-tempContDiv .zf-signContainer .zf-signArea {
 	width:74%;
 	}	
 
