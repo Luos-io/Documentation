@@ -93,8 +93,6 @@ The LED turns on.
 
 Changing to the value `[0, 0, 0]` will turn it off.
 
-More details are provided on the page <a href="./electronic-use.md">Luos boards general use</a>.
-
 ### 5. Write a simple beahvior
 
 You can now write a simple behavior that makes the LED turn on when pushing the button and turn off when releasing it.
