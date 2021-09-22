@@ -127,11 +127,11 @@ Your luos device have been successfully mounted into a "device" object:
 Now that you are on an IPython command line, you can run Python scripts in it.
 The `device` object is your real device and you can interact with it. For example, try to execute these lines one by one:
 
-In \[1\]: `device.blinker.time=0.25`
-In \[2\]: `device.blinker.pause()`
-In \[3\]: `device.led.state=True`
-In \[4\]: `device.led.state=False`
-In \[5\]: `device.blinker.play()`
+In \[1\]: `device.blinker.time=0.25`  
+In \[2\]: `device.blinker.pause()`  
+In \[3\]: `device.led.state=True`  
+In \[4\]: `device.led.state=False`  
+In \[5\]: `device.blinker.play()`  
 
 ## Next steps
 
