@@ -69,8 +69,8 @@ In this tutorial, Python should find three boards, the gate (USB), the LED, and 
 Type                Alias               ID
 -------------------------------------------------
 Gate                gate                1
-Button              button_mod          2
-Led                 rgb_led_mod         3
+State               button              2
+Color               rgb_led             3
 ```
 
 Knowing the alias of the boards, you can use them in your code.
@@ -93,8 +93,6 @@ The LED turns on.
 
 Changing to the value `[0, 0, 0]` will turn it off.
 
-More details are provided on the page <a href="./electronic-use.md">Luos boards general use</a>.
-
 ### 5. Write a simple beahvior
 
 You can now write a simple behavior that makes the LED turn on when pushing the button and turn off when releasing it.
@@ -107,10 +105,10 @@ device = Device('COM13')
 
 # Use an infinite loop to put the behavior inside
 while 1:
-    if (device.button_mod.pressed == True): # if the button is pushed
-        device.rgb_led_mod.color = [0,15,15] # Assigns a color to the LED
+    if (device.button.state == True): # if the button is pushed
+        device.rgb_led.color = [0,15,15] # Assigns a color to the LED
     else: # If the button is released or idle
-        device.rgb_led_mod.color = [0,0,0] # Turns the LED off
+        device.rgb_led.color = [0,0,0] # Turns the LED off
 ```
 
 Test your behavior by executing the code.
