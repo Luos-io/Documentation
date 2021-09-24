@@ -1,4 +1,4 @@
-# Run your first App
+# Getting started
 
 This tutorial shows you how to quicly upload a luos app on a MCU developpement kit.
 

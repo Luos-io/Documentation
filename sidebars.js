@@ -29,8 +29,8 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Architecture',
-                  id: 'luos-technology/basics/archi',
+                  label: 'Code organization',
+                  id: 'luos-technology/basics/orga',
                 },
               ],
             },
@@ -55,7 +55,7 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Topology',
+                  label: 'Network topology',
                   id: 'luos-technology/node/topology',
                 },
               ],
@@ -107,23 +107,28 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Handling Message',
+                  label: 'Send Message',
+                  id: 'luos-technology/message/basic-message',
+                },
+                {
+                  type: 'doc',
+                  label: 'Receive Message',
                   id: 'luos-technology/message/handling-message',
                 },
                 {
                   type: 'doc',
-                  label: 'Basic Message',
-                  id: 'luos-technology/message/basic-message',
+                  label: 'Commands',
+                  id: 'luos-technology/message/command',
+                },
+                {
+                  type: 'doc',
+                  label: 'Object dictionnary',
+                  id: 'luos-technology/message/object-dictionary',
                 },
                 {
                   type: 'doc',
                   label: 'Advanced message',
                   id: 'luos-technology/message/advanced-message',
-                },
-                {
-                  type: 'doc',
-                  label: 'Command and Object dictionnaryTable',
-                  id: 'luos-technology/message/command',
                 },
               ],
             },
@@ -135,7 +140,7 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Hardware Consideration',
+              label: 'Definition',
               id: 'hardware-consideration/hardware-consideration',
             },
             {
@@ -176,7 +181,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Boot',
+              label: 'Bootloader',
               id: 'tools/boot',
             },
             {
@@ -192,9 +197,99 @@ module.exports = {
           ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'API',
-          id: 'api/api',
+          items: [
+            {
+              type: 'doc',
+              label: 'List',
+              id: 'api/list',
+            },
+            {
+              type: 'doc',
+              label: 'JSON API',
+              id: 'api/api-json',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            {
+              type: 'category',
+              label: 'Luos and tools',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'List',
+                  id: 'tutorials/luos-and-tools/list',
+                },
+                {
+                  type: 'doc',
+                  label: 'Bootloader',
+                  id: 'tutorials/luos-and-tools/bootloader',
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Demo boards',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'List',
+                  id: 'tutorials/demo-boards/list',
+                },
+                {
+                  type: 'doc',
+                  label: 'Luos demo boards',
+                  id: 'tutorials/demo-boards/luos-demo-boards',
+                },
+                {
+                  type: 'doc',
+                  label: 'Basic button-LED device',
+                  id: 'tutorials/demo-boards/button-led',
+                },
+                {
+                  type: 'doc',
+                  label: 'Basic servomotor-LED device (video)',
+                  id: 'tutorials/demo-boards/servomotor',
+                },
+                {
+                  type: 'doc',
+                  label: 'Use Luos with Arduino IDE',
+                  id: 'tutorials/demo-boards/arduino',
+                },
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Luos integration',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'List',
+                  id : 'tutorials/luos-integration/list',
+                },
+                {
+                  type: 'doc',
+                  label: 'Install ROS 2',
+                  id : 'tutorials/luos-integration/install-ros2',
+                },
+                {
+                  type: 'doc',
+                  label: 'ROS 2 package example',
+                  id : 'tutorials/luos-integration/ros2-package-example',
+                },
+                {
+                  type: 'doc',
+                  label: 'ROS 1 retro-compatibility with Luos',
+                  id : 'tutorials/luos-integration/ros1-retrocompatibility',
+                },
+              ]
+            }
+          ],
         },
       ],
     },
