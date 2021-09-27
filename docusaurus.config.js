@@ -35,7 +35,7 @@ module.exports = {
         {
           type: 'doc',
           label: 'FAQ',
-          docId: 'faq/faq',
+          docId: 'faq/list',
           position: 'left',
         },
         { to: '/blog', label: 'Blog', position: 'left' },

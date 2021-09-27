@@ -288,9 +288,50 @@ module.exports = {
                   id : 'tutorials/luos-integration/ros1-retrocompatibility',
                 },
               ]
-            }
+            },
           ],
         },
+        {
+          type: 'category',
+          label: 'FAQ',
+          items: [
+            {
+              type: 'doc',
+              label: 'List',
+              id : 'faq/list',
+            },
+            {
+              type: 'doc',
+              label: 'Detection reconfiguration',
+              id : 'faq/detection-reconfig',
+            },
+            {
+              type: 'doc',
+              label: 'USB drivers issue (DFU)',
+              id : 'faq/dfu'
+            },
+            {
+              type: 'doc',
+              label: 'Building Luos default examples',
+              id : 'faq/application-compile'
+            },
+            {
+              type: 'doc',
+              label: 'Default IRQ handler',
+              id : 'faq/application-default-handler'
+            },
+            {
+              type: 'doc',
+              label: 'Add an issue',
+              id : 'faq/add-issue'
+            }
+          ]
+        },
+        {
+          type: 'link',
+          label: 'Go to Luos.io',
+          href: 'https://www.luos.io/'
+        }
       ],
     },
   ],

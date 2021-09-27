@@ -31,3 +31,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 h2, h3 {
   text-align: center;
 }
+
+.player_iframe {
+  width: 500px;
+  height: 280px; 
+  left: 0px; 
+  top: 0px;
+}

@@ -1,3 +1,7 @@
+---
+title: Pyluos
+---
+
 #
 
 <h1><a href="#pyluos" class="header" id="pyluos"><img src="/img/python-logo.png" width="80px"/> / A Pyluos guide</a></h1>

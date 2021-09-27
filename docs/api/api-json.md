@@ -1,4 +1,8 @@
-# API
+---
+title: JSON API
+---
+
+#
 
 <h1><a href="#json-api" className="header" id="json-api"><img src="/img/json-logo.png" width="80px"/> / JSON API</a></h1>
 
