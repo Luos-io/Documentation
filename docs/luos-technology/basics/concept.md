@@ -54,4 +54,4 @@ A routing table is a data structure managed by the Luos network and available fo
 
 Communication between services and apps is performed through messages. A message contains information on the destination service(s), the type of operation to be performed (a read or write operation and the type of message), as well as any additional data. The message will be sent in the network and will arrive at the destination, no matter where the service is placed in the network.
 
-[Go to the Messages handling page](../message/handling-message.md) for more information.
+[Go to the Messages handling page](/luos-technology/message/handling-message.md) for more information.
