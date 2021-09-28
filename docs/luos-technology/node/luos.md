@@ -46,7 +46,7 @@ Adding this code to a <span class="cust_tooltip">node<span class="cust_tooltipte
 
 At the node level, communication is achieved by receiving and sending [messages](../message/message.md) with the other components of a Luos network. The nodes can communicate with each other thanks to a specific part of Luos, called Robus.
 
-Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like communication initialization between different nodes, messages' management ([message format control](../message/message.md), TX, and RX), memory allocation, topology [detection](/embedded/services/routing-table.md), and attribution of messages to the suitable handling level.
+Robus is the communication protocol provided by Luos and the low layer of Luos technology. It is responsible for functionalities like communication initialization between different nodes, messages' management ([message format control](../message/message.md), TX, and RX), memory allocation, topology [detection](/docs/luos-technology/services/routing-table), and attribution of messages to the suitable handling level.
 
 Robus executes a format control, and store messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos or sent to one or several [services](../services/services.md).
 

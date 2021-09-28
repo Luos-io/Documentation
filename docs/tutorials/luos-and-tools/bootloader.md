@@ -2,7 +2,7 @@
 
 In this tutorial, you will learn to use the bootloader feature offered by Luos technology. 
 
-The setup is simple and is composed of two l0 boards (see [boards](docs/tutorials/demo-boards/luos-demo-boards) for further information on boards we are using). These boards are chained following rules described in [hardware considerations](../../hardware-consideration/electronics.md).
+The setup is simple and is composed of two l0 boards (see [boards](/docs/tutorials/demo-boards/luos-demo-boards) for further information on boards we are using). These boards are chained following rules described in [hardware considerations](../../hardware-consideration/electronics.md).
 
 We will use one of these nodes as a [gate](../../tools/gate.md) and the other as an application node. The second node will host a bootloader, and you will be able to update its firmware through the gate. You need an USB shield to connect to the first node to complete this tutorial.
 

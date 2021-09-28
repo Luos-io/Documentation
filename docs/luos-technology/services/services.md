@@ -2,7 +2,7 @@
 
 A service is a block of code which will provide functionality. Services are able to communicate with any other services present in the Luos network.
 
-A service can be an [application](./service_api.html#apps-guidelines) or a [driver](./service_api.html#drivers-guidelines).
+A service can be an [application](/luos-technology/services/service-api.md#apps-guidelines) or a [driver](/luos-technology/services/service-api.md#drivers-guidelines).
 
 Each service provides a particular set of tasks such as managing a motor, handling a laser range finder, or more complex operations like computing an inverse-kinematics.
 

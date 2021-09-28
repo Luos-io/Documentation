@@ -12,7 +12,7 @@ A Luos-friendly electronic board must contain *at least* the following elements:
 ## One-wire reference design
 
 <p align="center">
-    <img src="img/Luos_Network_Interface_OW.png" />
+    <img src="/img/Luos_Network_Interface_OW.png" />
 </p>
 
 Luos' One-wire official connector is <a href="https://octopart.com/df11-4dp-2ds%2852%29-hirose-261749" target="_blank">*DF11-4DP-2DS &#8599;*</a>.

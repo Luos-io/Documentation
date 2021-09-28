@@ -59,13 +59,13 @@ You can now flash your board: make sure it's connected to your PC with a USB cab
   <img src="/img/get-started/Flash_board2.png" />
 </p>
 
-PlatformIO will build the firmware and flash it. Take a look at the terminal to watch each step platformIO follows and a **Success** message at the end. If you have any trouble with your USB driver, you can consult [this FAQ page](docs/faq/002.dfu). Once the board is programmed, you should see the **LED** blinking on your board.
+PlatformIO will build the firmware and flash it. Take a look at the terminal to watch each step platformIO follows and a **Success** message at the end. If you have any trouble with your USB driver, you can consult [this FAQ page](/faq/002.dfu.md). Once the board is programmed, you should see the **LED** blinking on your board.
 
 Congratulations, your first Luos app is running!
 
 ### What is going on
 
-There are two [**services**](docs/luos-technology/services/services) loaded in your board allowing to blink the LED.
+There are two [**services**](/luos-technology/services/services.md) loaded in your board allowing to blink the LED.
 
 - **Blinker** sends a message at a fixed duration<br/> ╰ located at the root of the *getting_started* repository (because the same app can run on any board)
 - **Led** receives this message and makes the LED blink<br/> ╰ located on the *lib* folder of your project (because it is a driver which is specific to your board)
@@ -135,4 +135,4 @@ In \[5\]: `device.blinker.play()`
 
 ## Next steps
 
-Your development environment is now installed and you have a Luos app running on your MCU. Check the [tutorials](.docs/tutorials/tutorials) to learn how to use each feature of Luos technology. You can also read the [Luos documentation](docs/luos-technology/luos_tech) to learn more about the core technology.
+Your development environment is now installed and you have a Luos app running on your MCU. Check the [tutorials](/tutorials/tutorials.md) to learn how to use each feature of Luos technology. You can also read the [Luos documentation](/luos-technology/luos_tech.md) to learn more about the core technology.

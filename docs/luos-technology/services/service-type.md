@@ -1,6 +1,6 @@
 # Types of services
 
-As explained in the [service page](./service_api.html#messages), Luos enables message exchanges between services in a straightforward way for developers. Still, to easily use a service you need to know their interfaces or how to interact with them.
+As explained in the [service page](/luos-technology/services/service-api.md#messages), Luos enables message exchanges between services in a straightforward way for developers. Still, to easily use a service you need to know their interfaces or how to interact with them.
 
 In your code, in order to know what are the capabilities and the purpose of any services of your product, you need to know their types.
 

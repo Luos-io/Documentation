@@ -8,7 +8,7 @@ This routing table allows any service to find, locate, and use any other service
 
 The routing table is a feature of Luos allowing every <span class="cust_tooltip">[node](./node.md)<span class="cust_tooltiptext">{{ node_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map allows nodes to know their physical position and different functionalities, as well as to easily search and interact with the other nodes.
 
-The routing table is designed and shared among all the nodes after a process that is called [detection](/embedded/services/routing-table.md).
+The routing table is designed and shared among all the nodes after a process that is called [detection](/docs/luos-technology/services/routing-table).
 
 ## PTP
 

@@ -14,6 +14,11 @@ module.exports = {
           label: 'Luos Technology',
           items: [
             {
+              type: 'doc',
+              label: 'Definition',
+              id: 'luos-technology/luos_tech',
+            },
+            {
               type: 'category',
               label: 'Basics',
               items: [
@@ -67,7 +72,7 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Service',
+              label: 'Services',
               items: [
                 {
                   type: 'doc',
@@ -216,6 +221,11 @@ module.exports = {
           type: 'category',
           label: 'Tutorials',
           items: [
+            {
+              type: 'doc',
+              label: 'tutorials',
+              id: 'tutorials/tutorials',
+            },
             {
               type: 'category',
               label: 'Luos and tools',

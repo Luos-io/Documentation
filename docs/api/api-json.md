@@ -1,35 +1,38 @@
 ---
-title: JSON API
+title: API JSON
 ---
 
 #
+<h1><a href="#json-api" class="header" id="json-api"><img src="/img/json-logo.png" width="80px" /> / JSON API</a></h1>
 
-<h1><a href="#json-api" className="header" id="json-api"><img src="/img/json-logo.png" width="80px"/> / JSON API</a></h1>
+The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formatted data</a> is common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with your device easily.
 
-The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
-To do that, you must add a specific app service called a [Gate] on your device.
+To do that, you must add a specific app service called a [gate](../tools/gate.md) on your device.
+
 
 ## How to start using the JSON API
 
-Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate service.<br/>
-Then you can start the Gate by sending:
+Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your gate service.
+
+Then you can start the gate by sending:
 
 ```JSON
 {"detection": {}}\r
 ```
 
-This command asks the Gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
+This command asks the gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
 
 ## Routing table messages
 
-> **Warning:** Make sure to read and understand how [routing table](/embedded/services/routing-table.md) works before reading this part.
+> **Warning:** Make sure to read and understand how the [routing table](../luos-technology/node/topology.md) works before reading this part.
 
-After the Gate starts, the first message you receive is a routing table.<br/>
-This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
+After the gate starts, the first message you receive is a routing table.
+
+This first message is essential because it contains all the information allowing you to create a code object for your device, including all its features.
 
 ### Routing table structure
 
-A routing table in JSON consists in a list of the nodes present in the Luos network:
+A routing table in JSON consists of a list of the nodes present in the Luos network:
 
 ```JSON
 {
@@ -68,8 +71,7 @@ Each listed node of the network has basic node information and a list of hosted 
    ]
 }
 ```
-
-> **Note:** To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](/embedded/services/routing-table.md).
+> **Note:** To understand the meanings of *uuid* and *port_table*, please refer to the [routing table page](../luos-technology/node/topology.md).
 
 #### Services
 
@@ -82,8 +84,7 @@ Each listed service of a node has basic services information:
    "alias":"Alias"
 }
 ```
-
-> **Note:** To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](/embedded/services.html).
+> **Note:** To understand the meanings of *type*, *id* and *alias*, please refer to the [service page](../luos-technology/services/services.md).
 
 #### Full routing table example
 
@@ -154,14 +155,16 @@ Each listed service of a node has basic services information:
 
 Below is a visual representation of this routing table:
 
-![](/img/luos-network-ex.png)
+<p align="center">
+    <img src="/img/luos-network-ex.png" />
+</p>
+
 
 ### Service's information messages
 
-When the JSON routing table is transmitted, the Gate starts to update and stream your network data with **services information**.
+When the JSON routing table is transmitted, the gate updates and streams your network data with **services information**.
 
 This JSON is a "service" object listing all the services by their alias and the values they send:
-
 ```JSON
 {
    "services":{
@@ -176,62 +179,62 @@ This JSON is a "service" object listing all the services by their alias and the 
 }
 ```
 
-You can use the exact same JSON object structure to send data to services.
+You can use the same JSON object structure to send data to services.
 
-Here is the list of all values that can be used by services:
+Here is the list of all values that services can use:
 
-|      Value name       |                                                       Definition                                                       |
-| :-------------------: | :--------------------------------------------------------------------------------------------------------------------: |
-|      power_ratio      |                                   Percentage of power of an actuator (-100% to 100%)                                   |
-|  target_rot_position  |                            Actuator's target angular position (can be a number or an array)                            |
-|  limit_rot_position   |                                           Actuator's limit angular position                                            |
-| limit_trans_position  |                                           Actuator's limit angular position                                            |
-|      limit_power      |                                         Limit ratio of an actuator's reduction                                         |
-|     limit_current     |                                                  Limit current value                                                   |
-|   target_rot_speed    |                                            Actuator's target rotation speed                                            |
-| target_trans_position |                            Actuator's target linear position (can be a number or an array)                             |
-|  target_trans_speed   |                                             Actuator's target linear speed                                             |
-|         time          |                                                       Time value                                                       |
-|       compliant       |                                              Actuator's compliance status                                              |
-|          pid          |                                Set of PID values (proportionnal, integral, derivative)                                 |
-|      resolution       |                                               Sensor's resolution value                                                |
-|        offset         |                                                      Offset value                                                      |
-|       reduction       |                                            Ratio of an actuator's reduction                                            |
-|       dimension       |                                                    Dimension value                                                     |
-|         volt          |                                                     Voltage value                                                      |
-|        current        |                                                 Electric current value                                                 |
-|        reinit         |                                                Reinitialisation command                                                |
-|        control        |                                        Control command (play, pause, stop, rec)                                        |
-|         color         |                                                      Color value                                                       |
-|       io_state        |                                                        IO state                                                        |
-|         uuid          |                                                     Service's uuid                                                     |
-|        rename         |                                                   Renaming an alias                                                    |
-|       revision        |                                                   Firmware revision                                                    |
-|    trans_position     |                                               Translation position value                                               |
-|      trans_speed      |                                                Translation speed value                                                 |
-|     rot_position      |                                                Rotation position value                                                 |
-|       rot_speed       |                                                  Rotation speed value                                                  |
-|          lux          |                                              Lux (light intensity) value                                               |
-|      temperature      |                                                   Temperature value                                                    |
-|         force         |                                                      Force value                                                       |
-|        moment         |                                                      Torque value                                                      |
-|         power         |                                                      Power value                                                       |
-|     linear_accel      |                                               Linear acceleration value                                                |
-|    gravity_vector     |                                                  Gravity vector value                                                  |
-|        compass        |                                                     Compass value                                                      |
-|         gyro          |                                                    Gyroscope value                                                     |
-|         accel         |                                                   Acceleration value                                                   |
-|         euler         |                                                   Euler angle value                                                    |
-|      quaternion       |                                                   Quaternion values                                                    |
-|   rotational_matrix   |                                                Rotational matrix values                                                |
-|        heading        |                                                        Heading                                                         |
-|       pedometer       |                                                   Steps number value                                                   |
-|       walk_time       |                                                    Walk time value                                                     |
-|     luos_revision     |                                                     Luos's version                                                     |
-|    luos_statistics    | Luos's memory usage statistics \[Rx stack, Luos stack, Tx stack, Dropped messages, Loop delay, Send retry max number\] |
+|Value name|Definition|
+|:---:|:---:|
+|power_ratio|Percentage of power of an actuator (-100% to 100%)|
+|target_rot_position|Actuator's target angular position (can be a number or an array)|
+|limit_rot_position|Actuator's limit angular position|
+|limit_trans_position|Actuator's limit angular position|
+|limit_power|Limit ratio of an actuator's reduction|
+|limit_current|Limit current value|
+|target_rot_speed|Actuator's target rotation speed|
+|target_trans_position|Actuator's target linear position (can be a number or an array)|
+|target_trans_speed|Actuator's target linear speed|
+|time|Time value|
+|compliant|Actuator's compliance status|
+|pid|Set of PID values (proportional, integral, derivative)|
+|resolution|Sensor's resolution value|
+|offset|Offset value|
+|reduction|Ratio of an actuator's reduction|
+|dimension|Dimension value|
+|volt|Voltage value|
+|current|Electric current value|
+|reinit|Reinitialisation command|
+|control|Control command (play, pause, stop, rec)|
+|color|Color value|
+|io_state|IO state|
+|uuid|Service's uuid|
+|rename|Renaming an alias|
+|revision|Firmware revision|
+|trans_position|Translation position value|
+|trans_speed|Translation speed value|
+|rot_position|Rotation position value|
+|rot_speed|Rotation speed value|
+|lux|Lux (light intensity) value|
+|temperature|Temperature value|
+|force|Force value|
+|moment|Torque value|
+|power|Power value|
+|linear_accel|Linear acceleration value|
+|gravity_vector|Gravity vector value|
+|compass|Compass value|
+|gyro|Gyroscope value|
+|accel|Acceleration value|
+|euler|Euler angle value|
+|quaternion|Quaternion values|
+|rotational_matrix|Rotational matrix values|
+|heading|Heading|
+|pedometer|Steps number value|
+|walk_time|Walk time value|
+|luos_revision|Luos's version|
+|luos_statistics|Luos's memory usage statistics \[Rx stack, Luos stack, Tx stack, Dropped messages, Loop delay, Send retry max number\]|
 
-Here is an exemple of a message sent by a Potentiometer service about the rotation angle of the associated potentiometer:
 
+Here is an example of a message sent by a potentiometer service containing the rotation angle of the associated potentiometer:
 ```JSON
 {
    "services":{
@@ -242,7 +245,7 @@ Here is an exemple of a message sent by a Potentiometer service about the rotati
 }
 ```
 
-Here is an exemple of a message sent by a gate service about Luos statistic:
+Here is an example of a message sent by a gate service about Luos statistics:
 
 ```JSON
 {
@@ -290,23 +293,23 @@ sendCmd(s, '{"services": {"controller_moto": {"parameters": 2440}}}')
 
 Parameters are defined by a 16-bit bitfield.
 
-|   Object   |               Definition               |                                                                         Structure                                                                         |                                                                        Service(s)                                                                         |
-| :--------: | :------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| parameters | enabling or disabling some measurement | [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31) | [Stepper](/software/services_list/stepper.md), [Controller-motor](/software/services_list/controller-motor.md), [Servo](/software/services_list/servo.md) |
-| parameters | enabling or disabling some measurement |             [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)             |                                                           [Imu](/software/services_list/imu.md)                                                           |
+|Object|Definition|Structure|Service(s)|
+|:---:|:---:|:---:|:---:|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31)|Stepper, Controller-motor, Servo|
+|parameters|enabling or disabling some measurement|[Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)|Imu|
 
 Other specific messages:
 
-|   Object   |                            Definition                            |                    Service(s)                     |
-| :--------: | :--------------------------------------------------------------: | :-----------------------------------------------: |
-|  register  |   Motor memory register filed with \[register_number, value\]    | [Dynamixel](/software/services_list/dxl.md), void |
-|   set_id   |                         A set id command                         | [Dynamixel](/software/services_list/dxl.md), void |
-| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False | [Dynamixel](/software/services_list/dxl.md), void |
-|   delay    |                   reduce services refresh rate                   |      [Gate](/software/services_list/gate.md)      |
+|Object|Definition|Service(s)|
+|:---:|:---:|:---:|
+|register|Motor memory register filed with \[register_number, value\]|Dynamixel, void|
+|set_id|A set id command|Dynamixel, void|
+|wheel_mode|The wheel mode parameter for Dynamixel servomotors True or False|Dynamixel, void|
+|delay|reduce services refresh rate|[Gate](../tools/gate.md)|
 
 ### Services exclusion messages
 
-Services can be excluded from the network if a problem occurs (see [self-healing](/embedded/services/self-healing.md#service-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this service is no longer available:
+Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring.md) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
 
 ```JSON
 {"dead_service": "service_alias"}
@@ -314,7 +317,7 @@ Services can be excluded from the network if a problem occurs (see [self-healing
 
 ### Node assert messages
 
-Nodes can assert if a critical issue occurs (see [self-healing](/embedded/services/self-healing.html#assert) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring.md) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 
 ```JSON
 {
@@ -328,13 +331,13 @@ Nodes can assert if a critical issue occurs (see [self-healing](/embedded/servic
 
 ## Sending large binary data
 
-Binary data such as, for example, a motor tarjectory can't be included into a JSON file if it is too large. In order to allow this type of transmission, the size of the binary data is sent through the JSON, then followed by the actual data in binary format.
+Binary data such as, for example, a motor trajectory can't be included in a JSON file if it is too large. In order to allow this type of transmission, the size of the binary data is sent through the JSON, followed by the actual data in binary format.
 
-- If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [Service's information messages section](#services-information-messages)), or as a table of several values (for example a motor trajectory).
+ - If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [service's information messages section](#services-information-messages)), or as a table of several values (for example a motor trajectory).
 
-- If the data is large, the defined value must be a **table of one element**, containing only the size of the binary data to be transfered, in bytes.
+ - If the data is large, the defined value must be a **table of one element**, containing only the size of the binary data to be transfered in bytes.
 
-The following example shows a transfert of a binary data of 1024 bytes.
+The following example shows a transfer of binary data of 1024 bytes.
 
 ```JSON
 {

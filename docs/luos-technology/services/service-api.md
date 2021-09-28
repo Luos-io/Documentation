@@ -83,7 +83,7 @@ By designing an app, you have to keep the following rules in mind:
 
  > **Warning:** Iff the data structures used are not standard, the [gate](../../tools/gate.md) services could be completely unable to manage them.
 
-Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every service in every node in your device and make it work properly. Go to the [Routing table](/embedded/services/routing-table.md) page for more information.
+Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every service in every node in your device and make it work properly. Go to the [Routing table](/docs/luos-technology/services/routing-table) page for more information.
 
 ## Services accessibility
 

@@ -2,7 +2,7 @@
 
 ## What are packages used for
 
-As explained in the [architecture page](/luos-technology/basics/orga), Luos is a platform that handles packages execution.
+As explained in the [architecture page](/luos-technology/basics/orga.md), Luos is a platform that handles packages execution.
 
 The traditional way of writing code is still "monolithic": all functionalities are used in one big `main()` function and are tightly dependent with each other. This leads to complex development, debug, and maintainability needs when the code base grows bigger. It also leads to complex collaboration with other developers. Luos tries to separate this monolithic architecture into independant and <a href="https://en.wikipedia.org/wiki/Loose_coupling" target="_blank">weak-coupled &#8599;</a> blocks of code. It does so by giving to developers high-level APIs to create these blocks and make them communicate with each other.
 
@@ -18,7 +18,7 @@ From a logical view, a package handles one or a group of functionalities, indepe
 
 ### How to add packages in your project
 
-A Luos [node](/luos-technology/node/node) can host multiple packages, and a package has to be as portable as possible. In order to do that, packages have to be independent code folders that can be easily copied and pasted in another project.
+A Luos [node](/luos-technology/node/node.md) can host multiple packages, and a package has to be as portable as possible. In order to do that, packages have to be independent code folders that can be easily copied and pasted in another project.
 
 When designing projects at Luos, we always use the same way to organize our code: we put packages into a `lib` folder on a node project, and every packages have their own `package` folder allowing them to be easily copied and pasted into any other node project:
 

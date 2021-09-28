@@ -100,7 +100,7 @@ Following our example, if we want to send trajectory to the motor, we will have 
 
 ## How to use it
 
-**A streaming channel is always created by the strict real-time service.** The other service (the non-real-time one) will just send or receive its data chunks using [large data messages](/luos-technology/message/advanced-message.html#large-data).
+**A streaming channel is always created by the strict real-time service.** The other service (the non-real-time one) will just send or receive its data chunks using [large data messages](/docs/luos-technology/message/advanced-message#large-data).
 
 ### Streaming channel creation
 

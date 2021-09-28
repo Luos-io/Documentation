@@ -2,9 +2,9 @@
 
 The Gate is a major tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([Json] most of the time) and to stream and receive those formated informations into any kind of communication way such as serial interface, wifi, bluetooth, Lora, ...
 
-You can use it to take control of any embedded service with [any languages] on any machine. For example we use it in [Pyluos] or [ROS]!
+You can use it to take control of any embedded service with [any languages](/docs/api/list) on any machine. For example we use it in [Pyluos](/docs/tools/pyluos) or [ROS](/docs/tools/ros)!
 
-Gate is a simple embedded [App service](/services/create-services.html#apps-guidelines), so it can work on any MCU running Luos without any modification.
+Gate is a simple embedded [App service](/docs/luos-technology/services/services#apps-guidelines), so it can work on any MCU running Luos without any modification.
 
 The Gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <span className="cust_tooltip">nodes<span className="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
 
@@ -58,7 +58,7 @@ When the Gate and the Pipe are on separate nodes, formated messages transit into
 
 ## The Gate configurations
 
-The default process described above can be changed using different configurations that you can use on [your node_config.h](/dev_env/general-integration-consideration.html#configuration).
+The default process described above can be changed using different configurations that you can use on [your node_config.h](/docs/luos-technology/basics/orga#configuration).
 
 You could need to change it if you have Apps on you Luos embedded system.
 
