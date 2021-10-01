@@ -89,5 +89,5 @@ User's commands start at `LUOS_LAST_RESERVED_CMD`.
 
 You can find the complete list of commands <a href="https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h" target = "_blank">here &#8599;</a>.
 
-If you want to create new commands for your custom services, you can create and add your own starting at `LUOS_LAST_STD_CMD`. [See how](../../tutorials/tutorials.md).
+If you want to create new commands for your custom services, you can create and add your own starting at `LUOS_LAST_STD_CMD`. [See how](/tutorials/tutorials).
 
