@@ -6,15 +6,28 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #bd99ff;
+  --ifm-color-primary-dark: #a370ff;
+  --ifm-color-primary-darker: #955cff;
+  --ifm-color-primary-darkest: #6e1fff;
+  --ifm-color-primary-light: #d7c2ff;
+  --ifm-color-primary-lighter: #e5d6ff;
+  --ifm-color-primary-lightest: #ffffff;
   --ifm-code-font-size: 95%;
+}
+
+html[data-theme="dark"] {
+  --ifm-background-color: hsl(226, 23%, 11%);
+  --ifm-navbar-background-color: black;
+  --ifm-menu-background-color: white;
+}
+
+html[data-theme="dark"] .menu {
+  background-color: #282d3f;
 }
 
 .docusaurus-highlight-code-line {
@@ -24,83 +37,143 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Roboto Mono',sans-serif;
-	text-align: center;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Mono", sans-serif;
+  text-align: center;
 }
 
+.function {
+  color: #bd99ff !important;
+}
+
+.navbar__items,
+.menu__list-item {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
 
 .player_iframe {
   width: 500px;
-  height: 280px; 
-  left: 0px; 
+  height: 280px;
+  left: 0px;
   top: 0px;
+  border: none;
 }
 
-.cust_square_wrapper{
-	display: flex;
-    flex-direction: row;
-    flex-wrap:  wrap;
-    justify-content: center;
-	text-decoration: none;
-
-
-	margin: auto;
-	width: 100%;
-	border: 0px solid;
-	padding: 0px;
-	padding-top: 30px;
-	text-align: center;
+.cust_video {
+  margin: 50px;
+  width: 500px;
+  height: 281px;
 }
 
-.cust_square_wrapper a:hover{
-	text-decoration: none;
+@media screen and (max-width: 800px) {
+  .cust_video {
+    width: 90%;
+  }
+}
+
+.cust_square_wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-decoration: none;
+
+  margin: auto;
+  width: 100%;
+  border: 0px solid;
+  padding: 0px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.cust_square_wrapper a:hover {
+  text-decoration: none;
 }
 
 .cust_square {
-	min-height: 240px;
-	width: 200px;
-	margin: 10px;
-	padding: 20px;
-	background-color: #fafaff;
-	border: solid 0px #eee;
-	border-radius: 5px;
-	box-shadow: 1px 1px 5px #ddd;
-	text-align: left;
-	filter: grayscale(100%) opacity(70%);
-
+  min-height: 240px;
+  width: 200px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #fafaff;
+  border: solid 0px #eee;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #ddd;
+  text-align: left;
+  filter: grayscale(100%) opacity(70%);
 }
 
-.cust_square:hover { 
-	filter: grayscale(0%) opacity(100%);
-	box-shadow: 1px 1px 5px #ccc;
+.cust_square:hover {
+  filter: grayscale(0%) opacity(100%);
+  box-shadow: 1px 1px 5px #ccc;
 }
 
 .cust_landing_title {
-	color: #161616;
-	font-size: 18px;
-	font-weight: 900;
-	padding-bottom: 5px;
+  color: #161616;
+  font-size: 18px;
+  font-weight: 900;
+  padding-bottom: 5px;
 }
 
 .cust_landing_text {
-	color: grey;
-	font-size: 12px;
+  color: grey;
+  font-size: 12px;
 }
 
-.cust_landing_img { 
-	padding-bottom: 20px;
+.cust_landing_img {
+  padding-bottom: 20px;
 }
 
-.cust_landing_img img { 
-	height: 60px; 
+.cust_landing_img img {
+  height: 60px;
 }
 
-.cust_img_rot { 
-	transform: translate(15px) rotate(35deg); 
-	height:80px
+.cust_img_rot {
+  transform: translate(15px) rotate(35deg);
+  height: 80px;
+}
+
+.cust_tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px dotted #aaa;
+  font-weight: bold;
+}
+.cust_tooltip .cust_tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #fff;
+  color: #555;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 0.875em;
+  font-weight: normal;
+}
+
+.cust_tooltip:hover .cust_tooltiptext {
+  visibility: visible;
+}
+
+.row .col {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75% !important;
 }

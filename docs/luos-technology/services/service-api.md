@@ -1,3 +1,6 @@
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "/src/components/Tooltip.js";
+
 # Create Luos services
 
 **As a developer, you will always develop your functionalities as services into packages and never into the `main()` program.**
@@ -7,25 +10,26 @@
 ## How to create and initialize a service
 
 To create a service, you have to call this function:
+
 ```c
 service_t* Luos_CreateService(void* callback, service_type_t type, char* default_alias, revision_t revision);
 ```
 
 The returned `service_t*` is a service structure pointer that will be useful to make your service act in the network after this initialization.
 
- **callback** is a pointer to a callback function called by Luos when a service receives messages from other services (see [messages](../message/message.md) for more details).
- This function needs to have a specific format:
+**callback** is a pointer to a callback function called by Luos when a service receives messages from other services (see [messages](../message/message.md) for more details).
+This function needs to have a specific format:
 
- ```c
- void Service_MsgHandler(service_t *service, msg_t *msg)
- ```
+```c
+void Service_MsgHandler(service_t *service, msg_t *msg)
+```
 
- - **service** is the service pointer of the service receiving the data (basically, it is your service).
- - **msg** is the message your service received.
+- **service** is the service pointer of the service receiving the data (basically, it is your service).
+- **msg** is the message your service received.
 
- **type** is the type of the new service represented by a number. Some basic types (e.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `service_type_t` enum structure of Luos. You can also add your own and use them with Luos.
+**type** is the type of the new service represented by a number. Some basic types (e.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `service_type_t` enum structure of Luos. You can also add your own and use them with Luos.
 
- **default alias** is the alias by default for your new service (e.g. `Myservice02`). This alias is the one your service will use if no other service have the same and if no other alias is set by the user. Aliases have a maximum size of 16 characters.
+**default alias** is the alias by default for your new service (e.g. `Myservice02`). This alias is the one your service will use if no other service have the same and if no other alias is set by the user. Aliases have a maximum size of 16 characters.
 
 **revision** is the revision number of the service you are creating and which will be accessible via Pyluos.
 
@@ -63,25 +67,25 @@ A driver is a type of service that handles hardware. Motors, distance sensors, L
 
 By designing a driver, you have to keep the following rules in mind:
 
- - A driver service always uses a standard Luos type to be usable by any other services called [profiles](./profile.md).
- - A driver service always uses standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> structures to be usable by any other services.
- - A driver service never depends on or uses any other services (driver or app).
- - A driver service is "dumb", as it can't do anything else than manage its hardware feature (but it does it very well).
+- A driver service always uses a standard Luos type to be usable by any other services called [profiles](./profile.md).
+- A driver service always uses standard <Tooltip def={customFields.od_def}>object dictionary</Tooltip> structures to be usable by any other services.
+- A driver service never depends on or uses any other services (driver or app).
+- A driver service is "dumb", as it can't do anything else than manage its hardware feature (but it does it very well).
 
- You can have multiple driver services on the same <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> managing different hardware functionalities of your board. It is up to you to sort them depending on your design.
+You can have multiple driver services on the same <Tooltip def={customFields.node_def}>node</Tooltip> managing different hardware functionalities of your board. It is up to you to sort them depending on your design.
 
 ## Apps guidelines
 
 An application or app is a type of service that only manages software items such as functions or algorithms. Apps use other services to make your device act, operate, and behave.
-Apps can be placed in any <span class="cust_tooltip">[nodes](../node/node.md)<span class="cust_tooltiptext">{{node_def}}</span></span> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact the global performance of the system.
+Apps can be placed in any <Tooltip def={customFields.node_def}>node</Tooltip> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact the global performance of the system.
 
 By designing an app, you have to keep the following rules in mind:
 
- - An app can't have hardware dependencies.
- - An app can use custom service types (you can create your own [profiles](./profile.md) for that).
- - An app must use standard <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> data structures (you can create your own object dictionary for that). 
+- An app can't have hardware dependencies.
+- An app can use custom service types (you can create your own [profiles](./profile.md) for that).
+- An app must use standard <Tooltip def={customFields.od_def}>object dictionary</Tooltip> data structures (you can create your own object dictionary for that).
 
- > **Warning:** Iff the data structures used are not standard, the [gate](../../tools/gate.md) services could be completely unable to manage them.
+> **Warning:** Iff the data structures used are not standard, the [gate](../../tools/gate.md) services could be completely unable to manage them.
 
 Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every service in every node in your device and make it work properly. Go to the [Routing table](/docs/luos-technology/services/routing-table) page for more information.
 
@@ -94,10 +98,11 @@ This accessibility allows you to specify the access the services can deal with. 
 By default, when you create a new service, it will be on **READ_WRITE_ACCESS**, telling any other services that they can "send to" or "receive from" this new service. You can change this configuration if you want to.
 
 Services can have the following accessibility:
- - READ_WRITE_ACCESS
- - READ_ONLY_ACCESS
- - WRITE_ONLY_ACCESS
- - NO_ACCESS
+
+- READ_WRITE_ACCESS
+- READ_ONLY_ACCESS
+- WRITE_ONLY_ACCESS
+- NO_ACCESS
 
 For example, from the previous initialization example function of the button service, we should specify the accessibility of the service as **READ_ONLY_ACCESS**:
 
@@ -113,6 +118,7 @@ void Button_Init(void)
     service_btn->access = READ_ONLY_ACCESS;
 }
 ```
+
 This doesn't change anything else on your service code as it allows external services to know the accessibility of your service.
 
 ## Messages
@@ -123,14 +129,13 @@ The core of Luos technology enables sending and receiving messages from services
 
 The main Luos embedded technology includes the following tools to integrate more capabilities and functionalities to manage your messages:
 
-| Description | Function | Return |
-| :---: | :---: | :---: |
-| Send a Luos message | `Luos_SendMsg(service_t *service, msg_t *msg);` | `error_return_t` |
-| Read a Luos message | `Luos_ReadMsg(service_t *service, msg_t **returned_msg);` | `error_return_t` |
-| Send the remaining data in case of long messages| `Luos_SendData(service_t *service, msg_t *msg, void *bin_data, uint16_t size);` | `void` |
-| Receive the remaining data in case of long messages| `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);` | `error_return_t` |
-| Send data stored in a streaming channel | `Luos_SendStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `void` |
-| Receive data from a streaming channel | `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `error_return_t` |
-| Share network's baudrate| `Luos_SendBaudrate(service_t *service, uint32_t baudrate);` | `void` |
-| Get the total ticks number from the initialization of Luos | `Luos_GetSystick(void);` | `uint32_t` |
-
+|                        Description                         |                                       Function                                        |      Return      |
+| :--------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :--------------: |
+|                    Send a Luos message                     |                    `Luos_SendMsg(service_t *service, msg_t *msg);`                    | `error_return_t` |
+|                    Read a Luos message                     |               `Luos_ReadMsg(service_t *service, msg_t **returned_msg);`               | `error_return_t` |
+|      Send the remaining data in case of long messages      |    `Luos_SendData(service_t *service, msg_t *msg, void *bin_data, uint16_t size);`    |      `void`      |
+|    Receive the remaining data in case of long messages     |          `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);`          | `error_return_t` |
+|          Send data stored in a streaming channel           |  `Luos_SendStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);`   |      `void`      |
+|           Receive data from a streaming channel            | `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` | `error_return_t` |
+|                  Share network's baudrate                  |              `Luos_SendBaudrate(service_t *service, uint32_t baudrate);`              |      `void`      |
+| Get the total ticks number from the initialization of Luos |                               `Luos_GetSystick(void);`                                |    `uint32_t`    |

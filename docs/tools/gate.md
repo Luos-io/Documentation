@@ -1,3 +1,6 @@
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "/src/components/Tooltip.js";
+
 # Gate
 
 The Gate is a major tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([Json] most of the time) and to stream and receive those formated informations into any kind of communication way such as serial interface, wifi, bluetooth, Lora, ...
@@ -6,7 +9,7 @@ You can use it to take control of any embedded service with [any languages](/doc
 
 Gate is a simple embedded [App service](/docs/luos-technology/services/services#apps-guidelines), so it can work on any MCU running Luos without any modification.
 
-The Gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <span className="cust_tooltip">nodes<span className="cust_tooltiptext">{{node_def}}</span></span> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
+The Gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <Tooltip def={customFields.node_def}>node</Tooltip> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
 
 ## Default Gate Process
 

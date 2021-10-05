@@ -10,38 +10,56 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
+  customFields: {
+    node_def: "Hardware element (MCU) hosting and running Luos and hosting one or several services.",
+    service_def: "Software element run by Luos that can communicate with other services. It can be a driver or an app.",
+    od_def: "Set of objects based on SI metric system that can be transmitted through Luos messages. Any object can easily be converted in other units.",
+    microservices_def: "Microservices are a software development technique that arranges an application as a collection of loosely coupled services.",
+    robus_def: "Bus communication protocol used by Luos.",
+    luoshal_def: "Hardware Abstraction Layer used to fit Luos with various hardware designs.",
+    last_version_pyluos: "2.0.0",
+    last_version_luos: "2.0.0",
+    gh_path: "github.com/Luos-io/doc/tree/master/src",
+  },
   themeConfig: {
     navbar: {
       logo: {
         alt: 'Luos Logo',
-        src: 'img/logo-luos.png',
+        src: 'img/logo_luos_animated_black.gif',
+        srcDark: 'img/logo_luos_animated_white.gif',
       },
       items: [
+        {
+          href: 'https://www.luos.io/#technology',
+          label: 'Technology',
+          position: 'right',
+        },
+        {
+          href: 'https://www.luos.io/support',
+          label: 'Pricing',
+          position: 'right',
+        },
+        {
+          href: 'https://www.luos.io/appstore',
+          label: 'Appstore',
+          position: 'right',
+        },
+        { to: '/blog', label: 'Blog', position: 'right' },
         {
           type: 'doc',
           label: 'Documentation',
           docId: 'get-started/getting-started',
-          position: 'left',
+          position: 'right',
         },
+        { to: '/tutorials/tutorials', label: 'Tutorials', position: 'right' },
+        { to: '/faq/list', label: 'FAQ', position: 'right' },
+
         {
-          type: 'doc',
-          label: 'Tutorials',
-          docId: 'tutorials/tutorials',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          label: 'FAQ',
-          docId: 'faq/list',
-          position: 'left',
-        },
-        { to: '/blog', label: 'Blog', position: 'left' },
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://github.com/luos-io',
+          label: 'Download',
           position: 'right',
         },
       ],
@@ -54,7 +72,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/docs/summary',
+              to: '/docs/get-started/getting-started',
             },
           ],
         },
@@ -62,16 +80,16 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Reddit',
+              href: 'https://www.reddit.com/r/Luos/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Linkedin',
+              href: 'https://www.linkedin.com/company/luos',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/Luos_io',
             },
           ],
         },
@@ -79,17 +97,21 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'GitHub',
+              href: 'https://github.com/luos-io',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Youtube',
+              to: 'https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Luos, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
@@ -101,7 +123,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
@@ -115,6 +137,28 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+      },
+    ],
+  ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorials',
+        path: 'tutorials',
+        routeBasePath: 'tutorials',
+        sidebarPath: require.resolve('./sidebarsTutorials.js'),
+        // ... autres options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'faq',
+        path: 'faq',
+        routeBasePath: 'faq',
+        sidebarPath: require.resolve('./sidebarsFaq.js'),
+        // ... autres options
       },
     ],
   ],

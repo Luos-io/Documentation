@@ -2,9 +2,9 @@
 
 In this tutorial, you will learn to use the bootloader feature offered by Luos technology. 
 
-The setup is simple and is composed of two l0 boards (see [boards](/docs/tutorials/demo-boards/luos-demo-boards) for further information on boards we are using). These boards are chained following rules described in [hardware considerations](../../hardware-consideration/electronics.md).
+The setup is simple and is composed of two l0 boards (see [boards](/docs/tutorials/demo-boards/luos-demo-boards) for further information on boards we are using). These boards are chained following rules described in [hardware considerations](/docs/hardware-consideration/hardware-consideration).
 
-We will use one of these nodes as a [gate](../../tools/gate.md) and the other as an application node. The second node will host a bootloader, and you will be able to update its firmware through the gate. You need an USB shield to connect to the first node to complete this tutorial.
+We will use one of these nodes as a [gate](/docs/tools/gate) and the other as an application node. The second node will host a bootloader, and you will be able to update its firmware through the gate. You need an USB shield to connect to the first node to complete this tutorial.
 
 <p align="center">
   <img src="/img/tutorials/bootloader/tutorial_setup.png" />
@@ -14,7 +14,7 @@ We will use one of these nodes as a [gate](../../tools/gate.md) and the other as
 
 ### Step 1: Setup development environment
 
-The first thing to do is to install [pyluos](../../tools/pyluos.md) and [PlatformIO](/docs/get-started/getting-started) if not already done.
+The first thing to do is to install [pyluos](/docs/tools/pyluos) and [PlatformIO](/docs/get-started/getting-started) if not already done.
 
 Then we will create a working folder on our desktop machine and clone three repositories containing: a gate project, the bootloader, and an application example using the bootloader.
 
@@ -116,7 +116,7 @@ cd luos_bootloader_app/luos_bootloader_application_f072rb/.pio/build/l0
 pyluos-bootloader flash COM6 -t 2 -b firmware.bin
 ```
 
-> For further information on options used with the CLI, please read the dedicated [documentation page](../../tools/boot.md) or type the following command:
+> For further information on options used with the CLI, please read the dedicated [documentation page](/docs/tools/boot) or type the following command:
 
 ```bash
 pyluos-bootloader --help
@@ -128,7 +128,7 @@ The following lines should appear after typing the command:
   <img src="/img/tutorials/bootloader/application_load.png"/>
 </p>
 
-> If any problem occurs during the loading process, please reboot your system and retry to type the command (you can also find information [here](../../tools/boot.md)).
+> If any problem occurs during the loading process, please reboot your system and retry to type the command (you can also find information [here](/docs/tools/boot)).
 
 Then relaunch a detection (as done in **Step 3**): 
 
@@ -160,4 +160,4 @@ You should see your updated service running in your node:
   <img src="/img/tutorials/bootloader/detect_new_app.png"/>
 </p>
 
-You have reached the end of this tutorial. You are now able to use the bootloader feature included in Luos. You know the basics, but you can find some helpful information on the dedicated [documentation page](../../tools/boot.md).
+You have reached the end of this tutorial. You are now able to use the bootloader feature included in Luos. You know the basics, but you can find some helpful information on the dedicated [documentation page](/docs/tools/boot).

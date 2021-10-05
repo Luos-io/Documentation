@@ -1,6 +1,9 @@
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "/src/components/Tooltip.js";
+
 # Messages
 
-As a developer, you will have to create and use Luos messages to exchange information between <span class="cust_tooltip">services<span class="cust_tooltiptext">{{service_def}}</span></span>. In order to do that, you have to understand how messages work.
+As a developer, you will have to create and use Luos messages to exchange information between <Tooltip def={customFields.service_def}>services</Tooltip>. In order to do that, you have to understand how messages work.
 
 ## Message structure
 
@@ -20,9 +23,11 @@ All messages have a header. A header is a 7-byte field containing all informatio
 > **Info:** MAX_DATA_MSG_SIZE represents the maximum size of messages (default value is 128 bytes);
 
 ## Header
+
 To send data to any services you want, you will have to first fill out some information on the header.
 
 here is the `header_t` structure:
+
 ```C
 typedef struct{
     uint16_t protocol : 4;    /*!< Protocol version. */
@@ -35,8 +40,8 @@ typedef struct{
 ```
 
 - **Protocol (4 bits)**: This field provides the protocol revision. This field is automatically filled; you don't have to deal with it.
-- **Target (12 bits)**: This field contains the target address. To understand the real destination of this field, you have to know the addressing mode contained on the *Target_mode* field.
-- **Target_mode (4 bits)**: This field indicates the addressing mode and how to understand the *Target* field. It can take different values:
+- **Target (12 bits)**: This field contains the target address. To understand the real destination of this field, you have to know the addressing mode contained on the _Target_mode_ field.
+- **Target_mode (4 bits)**: This field indicates the addressing mode and how to understand the _Target_ field. It can take different values:
   - **ID**: This mode allows to communicate with a unique service using its ID **without** acknowledgment return.
   - **IDACK**: This mode allows to communicate with a unique service using its ID **with** acknowledgment return.
   - **Type**: This mode sends a message to all services with a given type, e.g. all "Sharp digital distance sensor".
