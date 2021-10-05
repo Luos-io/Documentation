@@ -6,15 +6,28 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #bd99ff;
+  --ifm-color-primary-dark: #a370ff;
+  --ifm-color-primary-darker: #955cff;
+  --ifm-color-primary-darkest: #6e1fff;
+  --ifm-color-primary-light: #d7c2ff;
+  --ifm-color-primary-lighter: #e5d6ff;
+  --ifm-color-primary-lightest: #ffffff;
   --ifm-code-font-size: 95%;
+}
+
+html[data-theme="dark"] {
+  --ifm-background-color: hsl(226, 23%, 11%);
+  --ifm-navbar-background-color: black;
+  --ifm-menu-background-color: white;
+}
+
+html[data-theme="dark"] .menu {
+  background-color: #282d3f;
 }
 
 .docusaurus-highlight-code-line {
@@ -38,11 +51,36 @@ h6 {
   text-align: center;
 }
 
+.function {
+  color: #bd99ff !important;
+}
+
+.navbar__items,
+.menu__list-item {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
 .player_iframe {
   width: 500px;
   height: 280px;
   left: 0px;
   top: 0px;
+  border: none;
+}
+
+.cust_video {
+  margin: 50px;
+  width: 500px;
+  height: 281px;
+}
+
+@media screen and (max-width: 800px) {
+  .cust_video {
+    width: 90%;
+  }
 }
 
 .cust_square_wrapper {
@@ -111,6 +149,7 @@ h6 {
   position: relative;
   display: inline-block;
   border-bottom: 2px dotted #aaa;
+  font-weight: bold;
 }
 .cust_tooltip .cust_tooltiptext {
   visibility: hidden;
@@ -126,8 +165,15 @@ h6 {
   left: 50%;
   margin-left: -60px;
   font-size: 0.875em;
+  font-weight: normal;
 }
 
 .cust_tooltip:hover .cust_tooltiptext {
   visibility: visible;
+}
+
+.row .col {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75% !important;
 }

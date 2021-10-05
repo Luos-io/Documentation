@@ -1,8 +1,11 @@
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "/src/components/Tooltip.js";
+
 # Concept
 
 ## What is a Node?
 
-A node is a physical component (hardware) running Luos and hosting one or several services. In a Luos network, nodes are all connected together using <span class="cust_tooltip">Robus<span class="cust_tooltiptext">{{robus_def}}</span></span>, the Luos network manager compatible with most of the existing communication bus.
+A node is a physical component (hardware) running Luos and hosting one or several services. In a Luos network, nodes are all connected together using <Tooltip def={customFields.robus_def}>Robus</Tooltip>, the Luos network manager compatible with most of the existing communication bus.
 
 In other words, **a node is a microcontroller** connected to other microcontrollers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.
@@ -27,8 +30,8 @@ For example, the Dynamixel example (available in the [GitHub example repository]
 
 There are two categories of services, [drivers](/luos-technology/services/service-api.md#drivers-guidelines) or [applications](/luos-technology/services/service-api.md#apps-guidelines).
 
- - **Drivers** are services giving advanced access to a physical resource. Drivers cannot rely on any other services; they are independent. Drivers should comply to the adapted service profile provided by Luos and the community, allowing an universal access to any physical resource.
- - **Applications** are the behaviors of your product and don't rely on any hardware. Application services search for the driver services they need and use them to physically control the device.
+- **Drivers** are services giving advanced access to a physical resource. Drivers cannot rely on any other services; they are independent. Drivers should comply to the adapted service profile provided by Luos and the community, allowing an universal access to any physical resource.
+- **Applications** are the behaviors of your product and don't rely on any hardware. Application services search for the driver services they need and use them to physically control the device.
 
 Following the rules of these categories will help you to improve the maintainability and the re-usability of all your developments.
 
@@ -40,7 +43,7 @@ Services in the network are automatically detected and being assigned IDs depend
 
 IDs are assigned from the nearest to the furthest node branch by branch, from the point of view of the service running the detection. Following this logic, the service running the detection will have ID 1, the next one will have ID 2, etc.
 
-> *Note:* Multiple detections by different services at the same time is not allowed.
+> _Note:_ Multiple detections by different services at the same time is not allowed.
 
 It is possible to execute a detection in the network frequently in order to dynamically discover included or excluded services while running. This allows to detect if hardware has been added or removed. Read the [Routing table](#routing-table) section for more information.
 

@@ -1,3 +1,10 @@
+---
+hide_table_of_contents: true
+---
+
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "/src/components/Tooltip.js";
+
 # Services
 
 A service is a block of code which will provide functionality. Services are able to communicate with any other services present in the Luos network.
@@ -6,7 +13,7 @@ A service can be an [application](/luos-technology/services/service-api.md#apps-
 
 Each service provides a particular set of tasks such as managing a motor, handling a laser range finder, or more complex operations like computing an inverse-kinematics.
 
-Each service is hosted in a single <span className="cust_tooltip">node<span className="cust_tooltiptext">{{node_def}}</span></span> (MCU), but a node can handle several services at the same time and manage communication between them and between other services hosted in other nodes, using the same network interface.
+Each service is hosted in a single <Tooltip def={customFields.node_def}>node</Tooltip> (MCU), but a node can handle several services at the same time and manage communication between them and between other services hosted in other nodes, using the same network interface.
 
 **As a developer you will always develop your functionalities into services, and never into the `main()` program.** The only information that should be put on the `main()` code are MCU setup parameters and services' run functions.
 

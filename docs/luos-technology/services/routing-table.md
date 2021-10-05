@@ -1,8 +1,13 @@
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "/src/components/Tooltip.js";
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Routing Table
 
 > **Warning:** Make sure you have read and understood the [network topoly section](../node/topology.md) before reading this page.
 
-The routing table is a feature of Luos allowing every <span class="cust_tooltip">service<span class="cust_tooltiptext">{{ service_def }}</span></span> to own a "map" (or topology) of the entire network of your device. This map enables services to know their physical position and to search and interact with other services quickly.
+The routing table is a feature of Luos allowing every <Tooltip def={customFields.service_def}>services</Tooltip> to own a "map" (or topology) of the entire network of your device. This map enables services to know their physical position and to search and interact with other services quickly.
 
 This feature is particularly used by app services to find other services they need to interact with. The routing table is shared by the service that launches the detection to other services.
 
@@ -11,9 +16,11 @@ This feature is particularly used by app services to find other services they ne
 The routing table is automatically generated when a service initiates a network detection. It is then shared with other services at the end of the detection. Any service can initiate a detection, but driver services should not run it; this features should be only used with app services by including routingTable.h and using this routing table API.
 
 To run a detection, type:
+
 ```C
 RoutingTB_DetectServices(app);
 ```
+
 where `app` is the `service_t` pointer running the detection.
 
 A non-detected service (not in the routing table) has a specific ID of `0`. At the beginning of the detection, Luos erases each service's ID in the network, so all of them will have ID `0` during this operation. You can use it on your services code to act consequently to this detection if you need it (for example, a service can monitor its ID to detect if a detection has been made and if it has to reconfigure its auto-update).
@@ -23,7 +30,8 @@ When each service in the network has an attributed ID, the detection algorithm p
 
 Sometimes, multiple services in the network can have the same alias, which is not allowed to prevent service confusion. In this case, the detection algorithm will add a number after each alias instance on the routing table.
 
-> **Warnings:** 
+> **Warnings:**
+>
 > 1. Be careful that a service can change ID during a detection depending on the service running this detection.
 > 2. Do not consider your service's ID fixed.
 > 3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
@@ -33,13 +41,13 @@ Sometimes, multiple services in the network can have the same alias, which is no
 Nodes can host multiple services. To get the topology of your device, the routing table references physical connections between the nodes and lists all the services in each one of them.
 
 The routing table is a table of a `routing_table_t` structure containing nodes or services information.
-The precompilation constant MAX_SERVICES_NUMBER manages the maximum number of services  (set to 40 by default).
+The precompilation constant MAX_SERVICES_NUMBER manages the maximum number of services (set to 40 by default).
 
 ```c
 routing_table_t routing_table[MAX_SERVICES_NUMBER];
 ```
 
-The routing table structure has two modes: *service entry mode* and *node entry mode*.
+The routing table structure has two modes: _service entry mode_ and _node entry mode_.
 
 ```c
 typedef struct __attribute__((__packed__))
@@ -48,13 +56,13 @@ typedef struct __attribute__((__packed__))
     union
     {
         struct __attribute__((__packed__))// SERVICE mode entry
-        {                               
+        {
             uint16_t id;                // Service ID.
             uint16_t type;              // Service type.
             char alias[MAX_ALIAS_SIZE]; // Service alias.
         };
         struct __attribute__((__packed__))// NODE mode entry
-        { 
+        {
             // Watch out, this structure has a lot of similarities with the node_t struct.
             // It is similar to allow copy of a node_t struct directly in this one
             // but there is potentially a port_table size difference so
@@ -75,9 +83,9 @@ typedef struct __attribute__((__packed__))
 
 Service entry mode allows the routing table to include information about a service. As a node can host one or more services, the routing table is able to obtain the specific information for each one of them:
 
- - **id**: service's unique id
- - **type**: service's type
- - **alias**: service's alias
+- **id**: service's unique id
+- **type**: service's type
+- **alias**: service's alias
 
 You can read the [services page](../services/services.md) for more information about what services are and how they are used.
 
@@ -94,48 +102,53 @@ The **port_table** allows sharing of topological information of your network. Ea
 Here is an example:
 
 <p align="center">
-<img src="/img/routing-table.png" title="Routing table" />
+<ThemedImage
+sources={{
+    light: useBaseUrl('/img/routing-table.png'),
+    dark: useBaseUrl('/img/routing-table-white.png'),
+  }}
+/>
 </p>
 
 As shown on this image, elements of the `port_table` indicate the first or last service id of the connected node through a given port.
 
 Specific values can be taken by `port_table`:
 
- - **0**: this port is waiting to discover which is connected with. You should never see this value.
- - **0x0FFF**: this port is not connected to any other node.
+- **0**: this port is waiting to discover which is connected with. You should never see this value.
+- **0x0FFF**: this port is not connected to any other node.
 
 > **Note:** Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a [USB gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
 
-
 ## Search tools
+
 The routing table library provides the following search tools to find services and nodes' information into a Luos network:
 
-| Description | Function | Return |
-| :---: | :---: | :---: |
-| Find a service's id from its alias | `RoutingTB_IDFromAlias(char* alias);` | `uint16_t` |
-| Find a service's id from its type (return the first of the list) | `RoutingTB_IDFromType(luos_type_t type);` | `uint16_t` |
-| Find a service's id from a service | `RoutingTB_IDFromService(service_t *service);` | `uint16_t` |
-| Find a service's alias from its id (return the first of the list) | `RoutingTB_AliasFromId(uint16_t id);` | `char*` |
-| Find a service's type from its id | `RoutingTB_TypeFromID(uint16_t id);` | `service_type_t` |
-| Find a service's type from its alias | `RoutingTB_TypeFromAlias(char* alias);` | `service_type_t` |
-| Find a service's string from its type (return the first of the list) | `RoutingTB_StringFromType(luos_type_t type);` | `char*` |
-| Test if a service's type is a sensor | `RoutingTB_ServiceIsSensor(service_type_t type);` | `uint8_t` |
-| Get the number of nodes in a Luos network | `RoutingTB_GetNodeNB(void);` | `uint16_t` |
-| Get a node's id | `RoutingTB_GetNodeID(unsigned short index);` | `uint16_t` |
-
+|                             Description                              |                     Function                      |      Return      |
+| :------------------------------------------------------------------: | :-----------------------------------------------: | :--------------: |
+|                  Find a service's id from its alias                  |       `RoutingTB_IDFromAlias(char* alias);`       |    `uint16_t`    |
+|   Find a service's id from its type (return the first of the list)   |     `RoutingTB_IDFromType(luos_type_t type);`     |    `uint16_t`    |
+|                  Find a service's id from a service                  |  `RoutingTB_IDFromService(service_t *service);`   |    `uint16_t`    |
+|  Find a service's alias from its id (return the first of the list)   |       `RoutingTB_AliasFromId(uint16_t id);`       |     `char*`      |
+|                  Find a service's type from its id                   |       `RoutingTB_TypeFromID(uint16_t id);`        | `service_type_t` |
+|                 Find a service's type from its alias                 |      `RoutingTB_TypeFromAlias(char* alias);`      | `service_type_t` |
+| Find a service's string from its type (return the first of the list) |   `RoutingTB_StringFromType(luos_type_t type);`   |     `char*`      |
+|                 Test if a service's type is a sensor                 | `RoutingTB_ServiceIsSensor(service_type_t type);` |    `uint8_t`     |
+|              Get the number of nodes in a Luos network               |           `RoutingTB_GetNodeNB(void);`            |    `uint16_t`    |
+|                           Get a node's id                            |   `RoutingTB_GetNodeID(unsigned short index);`    |    `uint16_t`    |
 
 ## Management tools
+
 Here are the management tools provided by the routing table library:
 
-| Description | Function | Return |
-| :---: | :---: | :---: |
-| Compute the routing table | `RoutingTB_ComputeRoutingTableEntryNB(void);` | `void` |
-| Detect the services in a Luos network | `RoutingTB_DetectServices(service_t* service);` | `void` |
-| Convert a node to a routing table entry | `RoutingTB_ConvertNodeToRoutingTable(routing_table_t *entry, node_t *node);` | `void` |
-| Convert a service to a routing table entry | `RoutingTB_ConvertServiceToRoutingTable(routing_table_t* entry, service_t* service);` | `void` |
-| Remove an entry in the routing table (by id) | `RoutingTB_RemoveOnRoutingTable(uint16_t id);` | `void` |
-| Erase routing table | `RoutingTB_Erase(void);` | `void` |
-| Get the routing table | `RoutingTB_Get(void);` | `routing_table_t*` |
-| Get the last service in a Luos network | `RoutingTB_GetLastService(void);` | `uint16_t` |
-| Get the last entry in a Luos network | `RoutingTB_GetLastEntry(void);` | `uint16_t` |
-| Get the last node in a Luos network | `RoutingTB_GetLastNode(void);` | `uint16_t*` |
+|                 Description                  |                                       Function                                        |       Return       |
+| :------------------------------------------: | :-----------------------------------------------------------------------------------: | :----------------: |
+|          Compute the routing table           |                     `RoutingTB_ComputeRoutingTableEntryNB(void);`                     |       `void`       |
+|    Detect the services in a Luos network     |                    `RoutingTB_DetectServices(service_t* service);`                    |       `void`       |
+|   Convert a node to a routing table entry    |     `RoutingTB_ConvertNodeToRoutingTable(routing_table_t *entry, node_t *node);`      |       `void`       |
+|  Convert a service to a routing table entry  | `RoutingTB_ConvertServiceToRoutingTable(routing_table_t* entry, service_t* service);` |       `void`       |
+| Remove an entry in the routing table (by id) |                    `RoutingTB_RemoveOnRoutingTable(uint16_t id);`                     |       `void`       |
+|             Erase routing table              |                               `RoutingTB_Erase(void);`                                |       `void`       |
+|            Get the routing table             |                                `RoutingTB_Get(void);`                                 | `routing_table_t*` |
+|    Get the last service in a Luos network    |                           `RoutingTB_GetLastService(void);`                           |     `uint16_t`     |
+|     Get the last entry in a Luos network     |                            `RoutingTB_GetLastEntry(void);`                            |     `uint16_t`     |
+|     Get the last node in a Luos network      |                            `RoutingTB_GetLastNode(void);`                             |    `uint16_t*`     |

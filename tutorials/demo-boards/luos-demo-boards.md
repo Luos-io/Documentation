@@ -1,3 +1,8 @@
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "/src/components/Tooltip.js";
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # A general guide to Luos electronic boards
 
 Luos library has been designed to run on low-cost hardware. It works with all Arm microcontrollers, starting with the smallest and cheapest one: the Cortex-M0.
@@ -8,18 +13,34 @@ Luos provides simple electronic boards examples to build in order to demonstrate
 
 ## Boards general specifications
 
-Almost every demonstration board in the provided examples is composed of a motherboard and a shield board. The motherboard, called L0, has a <span class="cust_tooltip">node<span class="cust_tooltiptext">{{node_def}}</span></span> that hosts Luos. The shield board is added to an L0 to type it with an electronic function.
+Almost every demonstration board in the provided examples is composed of a motherboard and a shield board. The motherboard, called L0, has a <Tooltip def={customFields.node_def}>node</Tooltip> that hosts Luos. The shield board is added to an L0 to type it with an electronic function.
 
 <p align="center">
-	<img src="/img/assembly.png" height="200px" />
+	<ThemedImage
+		sources={{
+		light: useBaseUrl('/img/l0-shield-black.png'),
+		dark: useBaseUrl('/img/l0-shield-white.png'),
+  	}}
+	/>
 </p>
 
 > Note: Power category boards don't include an L0 motherboard as they provide only power functions and don't need communication. However. The communication data passes through their connectors to other communicating boards.
 
 Here are the specifications of this motherboard:
 
-{{ #include ./../../../_includes/specs.md }}
+---
 
+- Board name: L0
+- MCU: STM32f0
+- Dimensions: 20 x 26 mm
+- Supply Voltage: 5 V to 24 V
+- Output Voltage: 5 V
+- Connectors: 2x Robus connectors (<a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">_DF11-8DP-2DS(24) &#8599;_</a>)
+- Sockets: 2x 6 connectors (<a href="https://octopart.com/826926-3-te+connectivity-40939547" target="_blank">_826926-3 &#8599;_</a>)
+- Other Output: 1x micro-USB
+- USB Serial Speed: 1 Mbaud/s
+
+---
 
 see <a href="https://github.com/Luos-io/Examples/tree/master/Hardware" target="_blank">Example demonstration board &#8599;</a>.
 
@@ -29,9 +50,9 @@ Luos boards have at least two connection ports in their design. All connectors a
 
 There is a right side to plug a cable's connector to a board. The small tab on the connector must face upward to plug correctly, as shown on the following pictures:
 
-|![Wrong side img](/img/plug-no.png)|![Right side img](/img/plug-yes.png)|
-|:-|:-|
-|Wrong side, the upper surface is flat|Right side, the tab is visible on the upper surface|
+| ![Wrong side img](/img/plug-no.png)   | ![Right side img](/img/plug-yes.png)                |
+| :------------------------------------ | :-------------------------------------------------- |
+| Wrong side, the upper surface is flat | Right side, the tab is visible on the upper surface |
 
 ## Power management
 
