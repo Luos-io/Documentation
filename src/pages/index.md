@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Luos documentation and help
 
 import siteConfig from '/docusaurus.config.js';
