@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # Node
 
 A Luos node is the term that corresponds to each hardware component connected to a Luos network. In other words, each MCU connected into the system, is called a node. The node contains a package and one or more services, concepts that are going to be analyzed in the following pages.

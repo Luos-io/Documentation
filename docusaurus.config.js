@@ -25,6 +25,7 @@ module.exports = {
     gh_path: "github.com/Luos-io/doc/tree/master/src",
   },
   themeConfig: {
+    hideableSidebar: true,
     navbar: {
       logo: {
         alt: 'Luos Logo',
@@ -73,6 +74,10 @@ module.exports = {
             {
               label: 'Documentation',
               to: '/docs/get-started/getting-started',
+            },
+            {
+              label: 'Contact us',
+              to: '/feedbacks/send',
             },
           ],
         },
@@ -148,7 +153,6 @@ module.exports = {
         path: 'tutorials',
         routeBasePath: 'tutorials',
         sidebarPath: require.resolve('./sidebarsTutorials.js'),
-        // ... autres options
       },
     ],
     [
@@ -158,7 +162,14 @@ module.exports = {
         path: 'faq',
         routeBasePath: 'faq',
         sidebarPath: require.resolve('./sidebarsFaq.js'),
-        // ... autres options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'feedbacks',
+        path: 'feedbacks',
+        routeBasePath: 'feedbacks',
       },
     ],
   ],

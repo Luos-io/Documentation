@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # Basic button-LED device tutorial
 
 In the following steps, you will learn to make a simple behavior with a Luos RGB LED demo board and a Luos button demo board step-by-step.
@@ -6,17 +10,16 @@ In the following steps, you will learn to make a simple behavior with a Luos RGB
 
 In the following example, we will make a LED turn on and off by pushing and releasing a button. You will need the following boards and accessories:
 
-* 1x Luos LED board
-* 1x Luos Button board
-* 1x Luos USB board and a USB cable
-* 2x Luos cables
+- 1x Luos LED board
+- 1x Luos Button board
+- 1x Luos USB board and a USB cable
+- 2x Luos cables
 
 ## STEPS
 
 ### 1. Configure your computer
 
 The default tool we use to control a Luos network is a board hosting a [Gate](/docs/tools/gate) service with a Python lib called [Pyluos](/docs/tools/pyluos).
-
 
 To begin, you have to install Python and Pyluos library, following the [Pyluos documentation page](/docs/tools/pyluos).
 
@@ -26,16 +29,15 @@ Plug together all the boards with cables. You can plug them into any of the two 
 
 > **Warning:** Don't close a loop with the boards at each extremity.
 
-
 ![Boards](/img/quickstart-1.png)
 
-*From left to right: LED, Button, and USB. The plug order doesn't matter.*
+_From left to right: LED, Button, and USB. The plug order doesn't matter._
 
 ### 3. Connect the device to a computer
 
 Plug the USB board to a computer with micro-USB to USB cable.
 
-*In this particular example, there is no high consumption component, so we can use the power given by USB.*
+_In this particular example, there is no high consumption component, so we can use the power given by USB._
 
 Your device is now powered and connected. All the low-level code and electronics are ready to use to help you program your behaviors.
 
@@ -43,7 +45,7 @@ Your device is now powered and connected. All the low-level code and electronics
 
 ### 4. Interact with the device
 
-*The USB node handles a specific service called "[gate](/docs/tools/gate)". Other boards are hosting a "gate" service and using a different connection than USB. These particular services convert Luos services data into something easier to understand and manage, using [JSON API](/docs/api/api-json).*
+_The USB node handles a specific service called "[gate](/docs/tools/gate)". Other boards are hosting a "gate" service and using a different connection than USB. These particular services convert Luos services data into something easier to understand and manage, using [JSON API](/docs/api/api-json)._
 
 Interacting with the Luos system and program behaviors will require spotting the USB connection on your computer. In the following example, the associated port is `COM13`.
 
@@ -54,6 +56,7 @@ import pyluos
 from pyluos import Device
 device = Device('COM13')
 ```
+
 When Pyluos establishes the connection with a gate service, it asks to run a network detection. This detection allows discovering all boards wired together in the network.
 
 To list the discovered boards, you can run:

@@ -10,7 +10,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
 
 :root {
-  --ifm-color-primary: #bd99ff;
+  --ifm-color-primary: #75dbc7;
   --ifm-color-primary-dark: #a370ff;
   --ifm-color-primary-darker: #955cff;
   --ifm-color-primary-darkest: #6e1fff;
@@ -24,10 +24,12 @@ html[data-theme="dark"] {
   --ifm-background-color: hsl(226, 23%, 11%);
   --ifm-navbar-background-color: black;
   --ifm-menu-background-color: white;
+  --ifm-color-primary: #bd99ff;
 }
 
 html[data-theme="dark"] .menu {
   background-color: #282d3f;
+  margin-bottom: 0;
 }
 
 .docusaurus-highlight-code-line {
@@ -39,6 +41,167 @@ html[data-theme="dark"] .menu {
 
 html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.footer__links {
+  text-align: center;
+}
+
+.feedbackForm {
+  text-align: center;
+}
+
+.feedbackForm__response {
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 5px;
+  display: none;
+  color: white;
+}
+
+.success {
+  display: block;
+  background-color: #31bba0;
+}
+
+.error {
+  display: block;
+  background-color: #e64900;
+}
+
+.feedbackForm__field label {
+  float: left;
+}
+
+.container-feedback {
+  font-family: "Roboto Mono", sans-serif;
+  min-height: 500px;
+  box-shadow: 5px 3px 10px rgb(0 0 0 / 20%);
+}
+
+.col-info {
+  width: 50%;
+  background-color: #282d3f;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.col-info__title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px !important;
+  color: white;
+}
+
+.col-info__p {
+  color: white;
+  padding: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.col-info__img__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.col-info__img {
+  width: 40%;
+}
+
+.col-form {
+  width: 50%;
+  background-color: #90e2d2;
+  color: black;
+  border-radius: 0px 5px 5px 0px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-form form {
+  padding: 10px 20px 50px 20px;
+}
+
+.col-form input[type="text"],
+input[type="email"],
+textarea {
+  font-family: "Roboto Mono", sans-serif;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 25px;
+  resize: vertical;
+  background-color: white;
+  color: black;
+}
+
+html[data-theme="dark"] .container-feedback {
+  box-shadow: 0 -2px 10px rgb(0 0 0);
+}
+
+html[data-theme="dark"] .col-form input[type="text"] {
+  background-color: #282d3f;
+  color: white;
+}
+
+html[data-theme="dark"] .col-form input[type="email"] {
+  background-color: #282d3f;
+  color: white;
+}
+
+html[data-theme="dark"] .col-form textarea {
+  background-color: #282d3f;
+  color: white;
+}
+
+html[data-theme="dark"] .col-form ::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.col-form label {
+  font-weight: bold;
+}
+
+.col-form ::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+.col-form input:focus::placeholder {
+  color: transparent;
+}
+.col-form textarea:focus::placeholder {
+  color: transparent;
+}
+
+.col-form input[type="submit"] {
+  font-family: "Roboto Mono", sans-serif;
+  margin-top: -5px;
+  background-color: #5ad4bc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.col-form input[type="submit"]:hover {
+  background-color: #31bba0;
+}
+
+.contactUs {
+  float: right;
+}
+
+.docusaurus-mt-lg {
+  margin-top: 1rem !important;
 }
 
 h1,
@@ -128,7 +291,6 @@ h6 {
 }
 
 .cust_landing_text {
-  color: grey;
   font-size: 12px;
 }
 

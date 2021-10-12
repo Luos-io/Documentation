@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # ROS 1 retro-compatibility with Luos tutorial
 
 ## Luos with ROS 1
@@ -19,6 +23,7 @@ We assume your ROS 1 workspace is `~/ros_ws`.
 ### 3. Initialize the bridge
 
 The bridge has its own workspace that is to be compiled with colcon (ROS 2):
+
 ```bash
 mkdir -p ~/ros1_bridge_ws/src
 cd ~/ros1_bridge_ws/src
@@ -30,13 +35,16 @@ colcon build --packages-select ros1_bridge --cmake-force-configure --cmake-args 
 ```
 
 ### 4. Start Luos in ROS 1
+
 **In terminal 1: ROS Core in workspace `~/ros_ws`**
+
 ```bash
 source ~/ros_ws/devel/setup.bash
 roscore
 ```
 
 **In terminal 2: ROS 1 Bridge in workspace `~/ros1_bridge_ws`**
+
 ```bash
 source ~/ros1_bridge_ws/install/setup.bash
 ros2 run ros1_bridge dynamic_bridge --bridge-all-2to1-topics
@@ -44,6 +52,7 @@ ros2 run ros1_bridge dynamic_bridge --bridge-all-2to1-topics
 
 **In terminal 3: Luos broker in workspace `~/ros2_ws`**
 Plug some Luos services before starting the broker.
+
 ```bash
 source ~/ros2_ws/install/setup.bash
 ros2 launch luos_interface broker.launch.py
@@ -51,8 +60,10 @@ ros2 launch luos_interface broker.launch.py
 
 **In terminal 1: Your ROS 1 app in workspace `~/ros_ws`**
 Let us consider that `rostopic` is the ROS 1 app you want to run with Luos services.
+
 ```bash
 source ~/ros_ws/devel/setup.bash
 rostopic list
 ```
+
 You can then publish and subscribe to the available topics in ROS 1.

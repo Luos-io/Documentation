@@ -1,6 +1,10 @@
+---
+custom_edit_url: null
+---
+
 # Bootloader
 
-In this tutorial, you will learn to use the bootloader feature offered by Luos technology. 
+In this tutorial, you will learn to use the bootloader feature offered by Luos technology.
 
 The setup is simple and is composed of two l0 boards (see [boards](/docs/tutorials/demo-boards/luos-demo-boards) for further information on boards we are using). These boards are chained following rules described in [hardware considerations](/docs/hardware-consideration/hardware-consideration).
 
@@ -19,7 +23,7 @@ The first thing to do is to install [pyluos](/docs/tools/pyluos) and [PlatformIO
 Then we will create a working folder on our desktop machine and clone three repositories containing: a gate project, the bootloader, and an application example using the bootloader.
 
 ```bash
-cd home/workspace/ 
+cd home/workspace/
 mkdir tutorial
 cd tutorial/
 mkdir bootloader
@@ -46,15 +50,15 @@ Open Visual Studio Code. On the top left corner, in the **Explorer** section, cl
   <img src="/img/tutorials/bootloader/find_project.png"/>
 </p>
 
-Click on **Add**, and the folder should appear in the explorer section: 
+Click on **Add**, and the folder should appear in the explorer section:
 
 <p align="center">
   <img src="/img/tutorials/bootloader/Gate_project.png"/>
 </p>
 
-Take your first node with the USB shield and connect a USB cable from your PC to the port used for **dfu** programming (the USB port on the l0 board). 
+Take your first node with the USB shield and connect a USB cable from your PC to the port used for **dfu** programming (the USB port on the l0 board).
 
-Click on **Upload** on the bottom left corner of the IDE. Wait for the compilation and flashing to be completed. If successful, you should see the following: 
+Click on **Upload** on the bottom left corner of the IDE. Wait for the compilation and flashing to be completed. If successful, you should see the following:
 
 <p align="center">
   <img src="/img/tutorials/bootloader/load_gate.png"/>
@@ -90,7 +94,7 @@ Connect the second node with the **dfu** port and click on **Upload**; you shoul
 
 ### Step 5: Detection
 
-Connect your two nodes through the Luos network and connect your USB shield to your PC. Type the same command used on **Step 3**, and you should see the following: 
+Connect your two nodes through the Luos network and connect your USB shield to your PC. Type the same command used on **Step 3**, and you should see the following:
 
 <p align="center">
   <img src="/img/tutorials/bootloader/detect_bootloader.png"/>
@@ -102,13 +106,13 @@ Connect your two nodes through the Luos network and connect your USB shield to y
 
 Some applications examples are available with the bootloader feature, and they can be used as a template for your custom application. They can be found in **luos_bootloader_app/.** As we are using l0 boards, open **luos_bootloader_app/luos_bootloader_application_f072RB** in VSCode.
 
-This time, click on **Build** instead of **Upload** as you don't want to download it to the node: the bootloader will do it for you. 
+This time, click on **Build** instead of **Upload** as you don't want to download it to the node: the bootloader will do it for you.
 
 <p align="center">
   <img src="/img/tutorials/bootloader/application_build.png"/>
 </p>
 
-The generated binary file can be found in **luos_bootloader_app/luos_bootloader_application_f072rb/.pio/build/l0,** its name is **firmware.bin.** You can use the bootloader to load it: 
+The generated binary file can be found in **luos_bootloader_app/luos_bootloader_application_f072rb/.pio/build/l0,** its name is **firmware.bin.** You can use the bootloader to load it:
 
 ```bash
 cd luos_bootloader_app/luos_bootloader_application_f072rb/.pio/build/l0
@@ -122,7 +126,7 @@ pyluos-bootloader flash COM6 -t 2 -b firmware.bin
 pyluos-bootloader --help
 ```
 
-The following lines should appear after typing the command: 
+The following lines should appear after typing the command:
 
 <p align="center">
   <img src="/img/tutorials/bootloader/application_load.png"/>
@@ -130,7 +134,7 @@ The following lines should appear after typing the command:
 
 > If any problem occurs during the loading process, please reboot your system and retry to type the command (you can also find information [here](/docs/tools/boot)).
 
-Then relaunch a detection (as done in **Step 3**): 
+Then relaunch a detection (as done in **Step 3**):
 
 <p align="center">
   <img src="/img/tutorials/bootloader/detect_old_app.png"/>

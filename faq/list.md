@@ -1,11 +1,12 @@
 ---
 title: Technical FAQ
 hide_table_of_contents: true
+custom_edit_url: null
 ---
 
 #
 
-<h1 class="no-break"><a href="#welcome" class="header" id="welcome">Technical FAQ</a></h1>
+<h1 className="no-break"><a href="#welcome" className="header" id="welcome">Technical FAQ</a></h1>
 
 Here is a list of the issues our users sometimes encountered while using Luos and how to solve them.
 

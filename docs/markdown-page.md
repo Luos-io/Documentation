@@ -1,5 +1,6 @@
 ---
 title: Markdown page example
+custom_edit_url: null
 ---
 
 # Markdown page example

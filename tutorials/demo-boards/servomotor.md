@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # Servomotor-LED-potentiometer device video tutorial
 
 The following video shows a basic tutorial explaining how to make a LED and a servomotor responsive to a potentiometer.

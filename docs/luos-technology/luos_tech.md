@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # Luos Technology
 
 ## The most for the developer

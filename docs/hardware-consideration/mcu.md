@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # MCU with Luos
 
 ## Compatible MCUs

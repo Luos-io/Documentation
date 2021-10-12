@@ -1,10 +1,11 @@
 ---
 title: Pyluos
+custom_edit_url: null
 ---
 
 #
 
-<h1><a href="#pyluos" class="header" id="pyluos"><img src="/img/python-logo.png" width="80px"/> / A Pyluos guide</a></h1>
+<h1><a href="#pyluos" className="header" id="pyluos"><img src="/img/python-logo.png" width="80px"/> / A Pyluos guide</a></h1>
 
 Pyluos is the standard Python library to manage a Luos system with a computer. In this tutorial, you will learn how to install Pyluos in order to use Luos with Python on a computer through a [gate](./gate.md) service.
 
@@ -29,9 +30,9 @@ python get-pip.py
 
 ### Installing Jupyter Notebook
 
-The tool *Jupyter Notebook* is needed for this tutorial. Jupyter Notebook will allow you to type Python commands in an internet browser to communicate with a Luos system, via Pyluos.
+The tool _Jupyter Notebook_ is needed for this tutorial. Jupyter Notebook will allow you to type Python commands in an internet browser to communicate with a Luos system, via Pyluos.
 
-*« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source &#8599;</a></small>)*
+_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source &#8599;</a></small>)_
 
 Type the following command in the console to install Jupyter:
 
@@ -45,7 +46,7 @@ pip install jupyter
 
 You are now ready to install Pyluos. **The last Pyluos version is `{{last_version_pyluos}}`.**
 
-In a console, the following command will install the *Pyluos* library using the *Pip package manager*:
+In a console, the following command will install the _Pyluos_ library using the _Pip package manager_:
 
 ```bash
 pip install pyluos
@@ -65,7 +66,7 @@ pip install --pre pyluos
 
 ## Start using Jupyter Notebook and Pyluos
 
-*Jupyter Notebook* can be launched through a console:
+_Jupyter Notebook_ can be launched through a console:
 
 ```bash
 jupyter notebook
@@ -77,7 +78,7 @@ In the browser page that opened, the `New` button creates a new Python file:
     <img src="/img/pyluos-1.png"/>
 </p>
 
-> **Note:** In the previous picture, *Jupyter* uses *Python 3*, but you also can use *Python 2.7* depending on your computer configuration.
+> **Note:** In the previous picture, _Jupyter_ uses _Python 3_, but you also can use _Python 2.7_ depending on your computer configuration.
 
 <p align="center">
     <img src="/img/pyluos-2.png"/>
@@ -109,13 +110,13 @@ Some devices may not work correctly with the default USB transfer sizes and late
 
 **Latency Timer**: The default value is 16 msec, but you can rise lower it to the minimal value of 1 msec.
 
-To access to these parameters, open the Device Manager in Windows, right-click on the *USB Serial Port (COMX)* where your device is connected, and click on *Properties*.
+To access to these parameters, open the Device Manager in Windows, right-click on the _USB Serial Port (COMX)_ where your device is connected, and click on _Properties_.
 
 <p align="center">
     <img src="/img/device-manager.png"/>
 </p>
 
-Click on *Port Settings* tab and click on *Advanced...* button.
+Click on _Port Settings_ tab and click on _Advanced..._ button.
 
 <p align="center">
     <img src="/img/serial-properties.png"/>
@@ -147,7 +148,6 @@ This line makes the connexion between the computer and the device. Python should
 `Device setup.`
 
 Only once the connection is set is it possible to start programming behaviors.
-
 
 ### Routing table display
 
@@ -233,7 +233,7 @@ device.service_alias.type
 
 `service_alias` is the alias you got from the previous listing.
 
-> **Note:** *Unknown* service types are defaulty set for custom service types such as some [Luos apps](/luos-technology/services/service-type.md).
+> **Note:** _Unknown_ service types are defaulty set for custom service types such as some [Luos apps](/luos-technology/services/service-type.md).
 
 ### Get and set services information
 
@@ -259,7 +259,7 @@ device.button_mod.luos_revision # Returns the version of Luos
 device.button_mod.robus_revision # Returns the version of Robus
 ```
 
-If you use *IPython* or *Jupyter Notebook*, you can use auto-completion using the `Tab` key to find every available object and variable.
+If you use _IPython_ or _Jupyter Notebook_, you can use auto-completion using the `Tab` key to find every available object and variable.
 
 <p align="center">
     <img src="/img/pyluos-3.png"/>
@@ -297,6 +297,7 @@ For example:
 ```python
 device.gate.luos_statistics
 ```
+
 ```AsciiDoc
 gate statistics :
 .luos allocated RAM occupation  = 53%
@@ -308,13 +309,14 @@ gate statistics :
 .Nak msg max number             = 1
 .Collision msg max number       = 5
 ```
- - **luos allocated RAM occupation** represents the global Luos RAM usage based on **Message stack** and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_SERVICE_NUMBER` where MAX_SERVICE_NUMBER = 5 by default ).
 
- - **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default. sizeof(msg_t) -> 7 bytes Header + 128 bytes data).
+- **luos allocated RAM occupation** represents the global Luos RAM usage based on **Message stack** and **Luos stack**. You can use this value to know if you need to expand or reduce the amount of RAM dedicated to Luos through the `MAX_MSG_NB` configuration flag (equals to `2 * MAX_SERVICE_NUMBER` where MAX_SERVICE_NUMBER = 5 by default ).
+
+- **Dropped messages number** represents the number of messages dropped by Luos. Luos is able to drop messages if they are too old and consume too much memory. If you experience message drops, you should increase the `MSG_BUFFER_SIZE` configuration flag (equals to `3 * sizeof(msg_t)` by default. sizeof(msg_t) -> 7 bytes Header + 128 bytes data).
 
 - Unlike **Message stack**, **Luos stack**, and **Max Luos loop delay** which are all nodes' related statistics, **Msg fail ratio** and **NAK msg max number** are services' statistics. **Msg fail ratio** gives a ratio of the failed sent messages based on all the messages that the service has sent. **NAK msg max number** gives the maximum number of NAK received when a message has been sent.
 
- - The RAM occupation and message drop number are also related to **Max Luos loop delay**. If **Max Luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. You can reduce the RAM consumption and messages dropping by reducing the **Max Luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
+- The RAM occupation and message drop number are also related to **Max Luos loop delay**. If **Max Luos loop delay** is too big, Luos has to buffer more messages between loop executions and consumes more RAM. You can reduce the RAM consumption and messages dropping by reducing the **Max Luos loop delay**. To do that, you have to call the `Luos_Loop()` function more frequently.
 
 ### Full script
 

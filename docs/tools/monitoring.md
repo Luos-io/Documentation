@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # Monitoring
 
 As a developer, you will encounter bugs. 😲
@@ -33,13 +37,13 @@ Luos monitors some values representing the sanity of your nodes and services.
 Inside any service, you can access the host node's statistics values using the `luos_stats_t` structure.
 This structure gives you access to several values:
 
- - **memory**: Memory statisctics information.
-     - **rx_msg_stack_ratio**: Percentage of memory occupation of Rx message management tasks.
-     - **luos_stack_ratio**: Percentage of memory occupation of Luos tasks.
-     - **tx_msg_stack_ratio**: Percentage of memory occupation of Tx message management tasks.
-     - **buffer_occupation_ratio**: Percentage of memory occupation of the message buffer.
-     - **msg_drop_number**: Number of messages dropped due to a lack of memory (older messages are dropped to be replaced by new ones).
- - **max_loop_time_ms**: Maximum time in ms between luos_loop executions.
+- **memory**: Memory statisctics information.
+  - **rx_msg_stack_ratio**: Percentage of memory occupation of Rx message management tasks.
+  - **luos_stack_ratio**: Percentage of memory occupation of Luos tasks.
+  - **tx_msg_stack_ratio**: Percentage of memory occupation of Tx message management tasks.
+  - **buffer_occupation_ratio**: Percentage of memory occupation of the message buffer.
+  - **msg_drop_number**: Number of messages dropped due to a lack of memory (older messages are dropped to be replaced by new ones).
+- **max_loop_time_ms**: Maximum time in ms between luos_loop executions.
 
 You can access to node statistics by using `service.node_statistics`.
 
@@ -48,7 +52,7 @@ You can access to node statistics by using `service.node_statistics`.
 In any service, you have access to statistics values using the `service_stats_t` structure.
 This structure gives you access to a specific service's statistic value:
 
- - **max_retry**: Maximum number of sent retries due to a NAK or collision with another service.
+- **max_retry**: Maximum number of sent retries due to a NAK or collision with another service.
 
 You can access node statistics by using `service.statistics`.
 
@@ -58,7 +62,7 @@ Luos allows you to declare to an entire network a critical failure on a service.
 To handle it, Luos exposes a `LUOS_ASSERT` macro that will enable you to test some conditions on it to prevent wrong values.
 for example:
 
-``` C
+```C
  LUOS_ASSERT(arg_ptr != NULL);
 ```
 
@@ -70,22 +74,23 @@ In this case, if `arg_ptr` is not initialized, Luos will crash the entire node a
 
 ## Sniffer
 
-An additional monitoring mechanism provided by Luos is the integration of a sniffer MCU into the network. The sniffer is responsible for gathering all the messages that are transferred into a Luos network, transmitting them serially to your computer, and displaying them in a logger,  allowing you to examine the behavior of your nodes and services.
+An additional monitoring mechanism provided by Luos is the integration of a sniffer MCU into the network. The sniffer is responsible for gathering all the messages that are transferred into a Luos network, transmitting them serially to your computer, and displaying them in a logger, allowing you to examine the behavior of your nodes and services.
 
 The sniffer, which consists of an application and a driver, can be easily ported on a simple MCU in the same way as a serial gate, and it can be connected to your network as any other node. The reception of the messages from the computer is achieved by transmitting the messages serially using a USB cable, while these messages are handled by pyluos (link).
 
-All you have to do is to connect the sniffer to your MCU network and to the computer, initialize the connection using Pyluos after you spot the name of the USB port that the sniffer is connected (for example, COM13) 
+All you have to do is to connect the sniffer to your MCU network and to the computer, initialize the connection using Pyluos after you spot the name of the USB port that the sniffer is connected (for example, COM13)
 
 ```python
 import pyluos
 from pyluos import Sniffer
 sniffer = Sniffer('COM13')
 ```
+
 and send the command:
 
 ```python
  sniffer.start
 ```
 
-> **Note:** Do you need more information on how to debug your application using a sniffer? 
+> **Note:** Do you need more information on how to debug your application using a sniffer?
 > Contact us at <a href="mailto:hello@luos.io">hello@luos.io</a>.
