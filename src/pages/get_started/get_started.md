@@ -36,7 +36,7 @@ Then, in PlatformIO:
 Clone the *getting started* repository on your computer: 
 
 ```bash
-git clone https://github.com/Luos-io/getting_started.git
+git clone https://github.com/Luos-io/Get_started.git
 ```
 
 If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc" target="_blank">their documentation &#8599;</a>.
