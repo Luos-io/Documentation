@@ -1,12 +1,12 @@
 <h1 class="no-break"><a href="#welcome" class="header" id="welcome">Technical FAQ</a></h1>
 
-Here is a list of common question or problems our users encountered while using Luos.
+Here is a list of common questions or issues our users may encounter while using Luos.
 
- - [Using a Gate on my device seems to stop my normal behavior.](./001.detection-reconfig.md)
- - [If I start a detection on runtime my device seems to stop.](./001.detection-reconfig.md)
+ - [Using a gate on my device seems to stop the normal behavior.](./001.detection-reconfig.md)
+ - [Starting a detection on runtime seems to make my device to stop.](./001.detection-reconfig.md)
  - [I can't flash my board using DFU.](./002.dfu.md)
  - [The default Luos example does not compile.](./003.application-compile.md)
- - [My board crash when a detection occure.](./004.application-default-handler.md)
+ - [My board crashes when a detection occurs.](./004.application-default-handler.md)
 
 
 ---
