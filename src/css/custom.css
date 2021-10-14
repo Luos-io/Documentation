@@ -339,3 +339,11 @@ h6 {
   margin-right: auto;
   max-width: 75% !important;
 }
+
+.typeform-sidetab-button-icon {
+  display: none !important;
+}
+
+.zsiq_floatmain {
+  margin-bottom: 50px;
+}

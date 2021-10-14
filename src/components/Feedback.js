@@ -4,7 +4,6 @@ import emailjs from 'emailjs-com';
 export default function ContactUs (props) {
   const form = useRef();
   let sourcePage = localStorage.getItem('prevPageContactUs');
-  console.log(sourcePage);
   let element = document.getElementById('response');
   let elementContainer = document.getElementsByClassName('feedbackForm__response');
 
@@ -14,7 +13,7 @@ export default function ContactUs (props) {
     element.innerText = "Your feedback has been sent.";
     console.log(form.current)
    
-    emailjs.sendForm('service_qn8n7j6', 'template_gfbvg8r', form.current, 'user_k5CBCBc8BH5d5jsoNZ8bH')
+    emailjs.sendForm(process.env.REACT_APP_EMAIL_JS_SERVICE_ID, process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_JS_USER_ID)
       .then((result) => {
           elementContainer[0].classList.add('success');
           element.innerText = "Your feedback has been sent.";

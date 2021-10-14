@@ -18,6 +18,8 @@ import EditThisPage from '@theme/EditThisPage';
 import {MainHeading} from '@theme/Heading';
 import styles from './styles.module.css';
 import ContactUs from "/src/components/ContactUs.js";
+import { Sidetab  } from 'react-typeform-embed';
+import { customFields } from "/docusaurus.config.js";
 
 function DocItem(props) {
   const {content: DocContent, versionMetadata} = props;
@@ -54,6 +56,13 @@ function DocItem(props) {
     !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
   const renderTocDesktop =
     canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
+  
+  let node = document.createElement('script');
+  node.src = '/src/components/Chat.js';
+  node.type = 'text/javascript';
+  node.async = true;
+  document.getElementsByTagName('head')[0].appendChild(node);
+
   return (
     <>
       <Seo
@@ -96,6 +105,7 @@ function DocItem(props) {
 
                 <DocContent />
                 <ContactUs pageName={window.location}/>
+                <Sidetab id={customFields.typeform_id} buttonText="Is Luos for me? 🤔"/>
               </div>
 
               {(editUrl || lastUpdatedAt || lastUpdatedBy) && (

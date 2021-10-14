@@ -23,8 +23,12 @@ module.exports = {
     last_version_pyluos: "2.0.0",
     last_version_luos: "2.0.0",
     gh_path: "github.com/Luos-io/doc/tree/master/src",
+    typeform_id: process.env.REACT_APP_TYPEFORM_ID
   },
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-153509818-3',
+    },
     hideableSidebar: true,
     navbar: {
       logo: {
@@ -146,6 +150,19 @@ module.exports = {
     ],
   ],
   plugins: [
+    '@docusaurus/plugin-google-analytics',
+    [
+      'docusaurus2-dotenv',
+      {
+        systemvars: true, // Set to true if you would rather load all system variables as well (useful for CI purposes)
+      }
+    ],
+    [
+      require.resolve('docusaurus-gtm-plugin'),
+      {
+        id: 'GTM-M73ZRR4', // GTM Container ID
+      }
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
