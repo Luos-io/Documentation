@@ -29,6 +29,9 @@ module.exports = {
     googleAnalytics: {
       trackingID: 'UA-153509818-3',
     },
+    gtag: {
+      trackingID: 'GTM-M73ZRR4',
+    },
     hideableSidebar: true,
     navbar: {
       logo: {
@@ -151,16 +154,11 @@ module.exports = {
   ],
   plugins: [
     '@docusaurus/plugin-google-analytics',
+    '@docusaurus/plugin-google-gtag',
     [
       'docusaurus2-dotenv',
       {
         systemvars: true, // Set to true if you would rather load all system variables as well (useful for CI purposes)
-      }
-    ],
-    [
-      require.resolve('docusaurus-gtm-plugin'),
-      {
-        id: 'GTM-M73ZRR4', // GTM Container ID
       }
     ],
     [
