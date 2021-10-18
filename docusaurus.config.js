@@ -50,11 +50,6 @@ module.exports = {
           label: 'Pricing',
           position: 'right',
         },
-        {
-          href: 'https://www.luos.io/appstore',
-          label: 'Appstore',
-          position: 'right',
-        },
         { to: '/blog', label: 'Blog', position: 'right' },
         {
           type: 'doc',
