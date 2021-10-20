@@ -60,11 +60,13 @@ Your goal is to update the **button_old** service. To do that, you need to flash
 pyluos-bootloader flash <SERIAL_PORT> -t <target1 target2 ...> -b <file.bin>
 ```
 
-We use the port COM3, our target has the ID's number 2, and our binary file is called *firmware_new.bin*:
+We use the port COM3, our target node has the ID's number 2, and our binary file is called *firmware_new.bin*:
 
 ```bash
 pyluos-bootloader flash COM3 -t 2 -b firmware_new.bin
 ```
+
+> **Warning:** In the example above, `2` is the node's ID of *node 2*, not to be confused with the service *Pipe_mod*'s ID. The target must always be a node.
 
 Type this command to see the following text on your screen:
 
