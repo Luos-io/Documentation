@@ -6,7 +6,7 @@ This Get started is separated in 2 parts:
  1. **The embedded part**: By following this part you will have all the tools you need to easily develop using Luos in your embedded target.
  2. **The remote control part**: By following this part you will have all the tools you need to take control and easily test any Luos device.
 
- In order to complete this tutorial you will need to install dependancies such as <a href="https://www.python.org" target="_blank">Python &#8599;</a>, <a href="https://git-scm.com/" target="_blank">GIT &#8599;</a>, the USB driver compatible with your board and <a href="https://ipython.org/" target="_blank">Ipython &#8599;</a>. How to install and use those dependancies is not our purpose here, however we will provide you with links to help you along the process.
+ In order to complete this tutorial you will need to install dependancies such as <a href="https://www.python.org" target="_blank">Python &#8599;</a>, <a href="https://git-scm.com/" target="_blank">GIT &#8599;</a>, the USB driver compatible with your board and <a href="https://ipython.org/" target="_blank">Ipython &#8599;</a>. Although the purpose of this tutorial is not to guide you through the installation of these dependancies, we'll recommand some links to help you along the process. 
 
 ## 1. The embedded part: Run your first embedded app!
 
@@ -36,13 +36,13 @@ Then, in VSCode:
 
 ### Clone the project
 
-There is two ways to clone the *getting started* repository on your computer: 
+There is two ways to clone the *get started* repository on your computer: 
 
 - via terminal, using this command line (in this case you will need to have <a href="https://git-scm.com/downloads" target="_blank">GIT &#8599;</a> previewsly installed on your computer)
 ```bash
 git clone https://github.com/Luos-io/Get_started.git
 ```
-- by downloading and unziping the <a href="https://git-scm.com/downloads" target="_blank">Get Started repository &#8599;</a> in your chosen directory
+- by downloading and unziping the <a href="https://github.com/Luos-io/Get_started/archive/refs/heads/master.zip" target="_blank">Get Started repository &#8599;</a> in your chosen directory
 
 If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc" target="_blank">their documentation &#8599;</a>.
 
@@ -50,7 +50,7 @@ If you are not familiar with Git, you can consult <a href="https://git-scm.com/d
 
 Open VSCode and click on **Open Folder** in the project explorer on the left, then select a project depending on the board you have chosen. For example, for the STM32L432KC Nucleo, open **L432KC_Nucleo** in the folder explorer then click on **ADD**. 
 
-If VSCode outputs the following message "Do you trust the authors of the files in the folder?", check the option "Trust the authors of all files in the parent folder" so it won't popup anymore and click the "Yes, I trust the authors" button.
+If VSCode outputs the following message "Do you trust the authors of the files in the folder?" : you can trust us :wink: and check the option "Trust the authors of all files in the parent folder" so it won't popup anymore and click the "Yes, I trust the authors" button.
 
 <p align="center">
   <img src="../../_assets/img/get-started/Open_project2.png" />
@@ -74,7 +74,7 @@ Congratulations, your first Luos app is running!
 
 There are two [services](../luos-technology/services/services.md) loaded in your board allowing to blink the LED.
 
-- **Blinker** sends a message at a fixed duration</br> ╰ located at the root of the *getting_started* repository (because the same app can run on any board)
+- **Blinker** sends a message at a fixed duration</br> ╰ located at the root of the *get_started* repository (because the same app can run on any board)
 - **Led** receives this message and makes the LED blink</br> ╰ located on the *lib* folder of your project (because it is a driver which is specific to your board)
 
 On top of it, we also added two other services allowing you to take control of your board:
@@ -95,7 +95,7 @@ To install it, run:
 pip install pyluos
 ```
 
-This step need you to have <a href="IPython" target="_blank">IPython &#8599;</a> installed beforehand on your computer.
+This step needs you to have <a href="IPython" target="_blank">IPython &#8599;</a> previously installed on your computer.
 
 ### Connect and control your device
 
