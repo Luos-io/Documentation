@@ -6,7 +6,7 @@ This Get started is separated in 2 parts:
  1. **The embedded part**: By following this part you will have all the tools you need to easily develop using Luos in your embedded target.
  2. **The remote control part**: By following this part you will have all the tools you need to take control and easily test any Luos device.
 
- In order to complete this tutorial you will need to install dependancies such as <a href="https://www.python.org" target="_blank">Python &#8599;</a>, <a href="https://git-scm.com/" target="_blank">GIT &#8599;</a>, the USB driver compatible with your board and <a href="https://ipython.org/" target="_blank">Ipython &#8599;</a>. Although the purpose of this tutorial is not to guide you through the installation of these dependancies, we'll recommand some links to help you along the process. 
+ In order to complete this tutorial you will need to install dependancies such as <a href="https://www.python.org" target="_blank">Python &#8599;</a>, <a href="https://git-scm.com/" target="_blank">GIT &#8599;</a>, the USB driver compatible with your board and <a href="https://ipython.org/" target="_blank">Ipython &#8599;</a>. Although the purpose of this tutorial is not to guide you through the installation of these dependancies, we will recommand some links to help you along the process. 
 
 ## 1. The embedded part: Run your first embedded app!
 
@@ -27,7 +27,7 @@ First, download and install the free coding editor <a href="https://code.visuals
 Then, in VSCode:
 
 <p align="center">
-  <img src="../../_assets/img/get-started/install_VSCODE.png" />
+  <img src="../../_assets/img/get-started/gs_install_vscode.png" />
 </p>
 
  1. Open VSCode Extension Manager.
@@ -36,9 +36,9 @@ Then, in VSCode:
 
 ### Clone the project
 
-There is two ways to clone the *get started* repository on your computer: 
+There are two ways to clone the *get started* repository on your computer: 
 
-- via terminal, using this command line (in this case you will need to have <a href="https://git-scm.com/downloads" target="_blank">GIT &#8599;</a> previewsly installed on your computer)
+- via the terminal, using the following command line (in this case you will need to have <a href="https://git-scm.com/downloads" target="_blank">GIT &#8599;</a> previously installed on your computer)
 ```bash
 git clone https://github.com/Luos-io/Get_started.git
 ```
@@ -50,20 +50,20 @@ If you are not familiar with Git, you can consult <a href="https://git-scm.com/d
 
 Open VSCode and click on **Open Folder** in the project explorer on the left, then select a project depending on the board you have chosen. For example, for the STM32L432KC Nucleo, open **L432KC_Nucleo** in the folder explorer then click on **ADD**. 
 
-If VSCode outputs the following message "Do you trust the authors of the files in the folder?" : you can trust us :wink: and check the option "Trust the authors of all files in the parent folder" so it won't popup anymore and click the "Yes, I trust the authors" button.
+If VSCode outputs the following message "Do you trust the authors of the files in the folder?": you can trust us 😉 and check the option "Trust the authors of all files in the parent folder" so it won't popup anymore, and click the "Yes, I trust the authors" button.
 
 <p align="center">
-  <img src="../../_assets/img/get-started/Open_project2.png" />
+  <img src="../../_assets/img/get-started/gs_open_project2.png" />
 </p>
 
 The project folder is opened in the explorer.
 
 > **Note:** Arduino users can select their board on the `platformio.ini` file by modifying the `board = zero` line.
 
-You can now flash your board: make sure it's connected to your PC with a USB cable and click on **Upload** on the bottom left of the VSCode window. In order this step works you will need the USB driver related to your board. As an example, here is the <a href="https://www.st.com/en/development-tools/stsw-link009.html" target="_blank">STM32L432K drivers &#8599;</a> on the constructor website. If you have any trouble with your USB driver, you can also consult [our FAQ page](../faq/002.dfu.md) on this topic. 
+You can now flash your board: make sure it's connected to your PC with a USB cable and click on **Upload** on the bottom left of the VSCode window. In order this step to work, you will need the USB driver related to your board. As an example, here is the <a href="https://www.st.com/en/development-tools/stsw-link009.html" target="_blank">STM32L432K drivers &#8599;</a> on the constructor website. If you have any trouble with your USB driver, you can also consult [our FAQ page](../faq/002.dfu.md) on this topic. 
 
 <p align="center">
-  <img src="../../_assets/img/get-started/Flash_board2.png" />
+  <img src="../../_assets/img/get-started/gs_flash_board2.png" />
 </p>
 
 PlatformIO will build the firmware and flash it. Take a look at the terminal to watch each step platformIO follows and a **Success** message at the end. Once the board is programmed, you should see the **LED** blinking on your board.
@@ -80,7 +80,7 @@ There are two [services](../luos-technology/services/services.md) loaded in your
 On top of it, we also added two other services allowing you to take control of your board:
 
 - **Pipe**, managing a serial interface</br> ╰ located on the *lib* folder of your project (because it is a driver which is specific to your board)
-- **Gate**, an app that translates Luos to JSON and sends it through *Pipe*</br> ╰ located in the cloud, (because it is a common cross-platform's Luos app) PlatformIO just downloaded it for you.
+- **Gate**, an app that translates Luos to JSON and sends it through *Pipe*</br> ╰ located in the cloud (because it is a common cross-platform's Luos app), PlatformIO just downloaded it for you.
 
 ## 2. The remote control part: 💊 You can control the Matrix.
 
