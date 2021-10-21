@@ -153,7 +153,6 @@ module.exports = {
     ],
   ],
   plugins: [
-    '@docusaurus/plugin-google-gtag',
     [
       'docusaurus2-dotenv',
       {
