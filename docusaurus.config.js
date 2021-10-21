@@ -23,8 +23,16 @@ module.exports = {
     last_version_pyluos: "2.0.0",
     last_version_luos: "2.0.0",
     gh_path: "github.com/Luos-io/doc/tree/master/src",
+    typeform_id: process.env.REACT_APP_TYPEFORM_ID
   },
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-153509818-3',
+    },
+    gtag: {
+      trackingID: 'GTM-M73ZRR4',
+    },
+    hideableSidebar: true,
     navbar: {
       logo: {
         alt: 'Luos Logo',
@@ -40,11 +48,6 @@ module.exports = {
         {
           href: 'https://www.luos.io/support',
           label: 'Pricing',
-          position: 'right',
-        },
-        {
-          href: 'https://www.luos.io/appstore',
-          label: 'Appstore',
           position: 'right',
         },
         { to: '/blog', label: 'Blog', position: 'right' },
@@ -73,6 +76,10 @@ module.exports = {
             {
               label: 'Documentation',
               to: '/docs/get-started/getting-started',
+            },
+            {
+              label: 'Contact us',
+              to: '/feedbacks/send',
             },
           ],
         },
@@ -141,6 +148,14 @@ module.exports = {
     ],
   ],
   plugins: [
+    '@docusaurus/plugin-google-analytics',
+    '@docusaurus/plugin-google-gtag',
+    [
+      'docusaurus2-dotenv',
+      {
+        systemvars: true, // Set to true if you would rather load all system variables as well (useful for CI purposes)
+      }
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -148,7 +163,6 @@ module.exports = {
         path: 'tutorials',
         routeBasePath: 'tutorials',
         sidebarPath: require.resolve('./sidebarsTutorials.js'),
-        // ... autres options
       },
     ],
     [
@@ -158,7 +172,14 @@ module.exports = {
         path: 'faq',
         routeBasePath: 'faq',
         sidebarPath: require.resolve('./sidebarsFaq.js'),
-        // ... autres options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'feedbacks',
+        path: 'feedbacks',
+        routeBasePath: 'feedbacks',
       },
     ],
   ],

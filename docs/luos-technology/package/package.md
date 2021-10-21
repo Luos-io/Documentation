@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # Packages
 
 ## What are packages used for
@@ -10,7 +14,7 @@ The traditional way of writing code is still "monolithic": all functionalities a
 
 ## Relation with services
 
-From a logical view, a package handles one or a group of functionalities, independent from the rest of the system. Still, we don't have any information on how thess functionalities should be executed: it can be run either as a single task or as smaller tasks talking to each other. **Services**, however, give this control level: a package can initialize as much services as it needs to run its functionalities. 
+From a logical view, a package handles one or a group of functionalities, independent from the rest of the system. Still, we don't have any information on how thess functionalities should be executed: it can be run either as a single task or as smaller tasks talking to each other. **Services**, however, give this control level: a package can initialize as much services as it needs to run its functionalities.
 
 > **Note:** Each package has to run at least one service.
 

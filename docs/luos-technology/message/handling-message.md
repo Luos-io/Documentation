@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # How to handle and receive messages
 
 Message callbacks of services can be difficult to use when a project has high real-time constraints.
@@ -5,10 +9,10 @@ Message callbacks of services can be difficult to use when a project has high re
 Luos provides two different configurations allowing you to choose the best way for you to deal with messages.
 The message handling configuration is set during the [initialization of a service](/luos-technology/services/service-api.md).
 
-|Configuration|execution type|
-|:---:|:---:|
-|[Callback (default)](#Callback-configuration)|runtime callback|
-|[Polling](#polling-configuration)|no callback|
+|                 Configuration                 |  execution type  |
+| :-------------------------------------------: | :--------------: |
+| [Callback (default)](#Callback-configuration) | runtime callback |
+|       [Polling](#polling-configuration)       |   no callback    |
 
 The following sections detail how the different configurations work.
 
@@ -21,6 +25,7 @@ With this configuration you have no real constraints on the callback's time of e
 To setup this configuration, you have to simply setup the callback at service creation.
 
 Here is a code example with a button:
+
 ```c
 void Button_MsgHandler(service_t *service, msg_t *msg)
 {
@@ -51,6 +56,7 @@ void Button_Loop(void)
 ```
 
 ## Polling configuration
+
 This configuration is often used in Arduino libraries to receive information in a basic way. This method allows you to handle messages only when the user wants to do it in the loop of the service.
 
 To set up this configuration, you have to create your service without any callbacks.

@@ -1,12 +1,16 @@
+---
+custom_edit_url: null
+---
+
 # ROS 2 package example: Shared-bike example tutorial
 
 This is a Luos example using ROS 2, the shared-bike application, that works this way:
 
-* The bike's LED pops up in steady green when it is idle.
-* Shake the IMU while it is idle, meaning the bike is being stolen; the RGB alarm then flashes in red.
-* Press the state button to acknowledge the alarm.
-* Press again to start riding the bike, the bike's LED slightly blinks in green.
-* Press again when you stopped riding the bike, it becomes idle again.
+- The bike's LED pops up in steady green when it is idle.
+- Shake the IMU while it is idle, meaning the bike is being stolen; the RGB alarm then flashes in red.
+- Press the state button to acknowledge the alarm.
+- Press again to start riding the bike, the bike's LED slightly blinks in green.
+- Press again when you stopped riding the bike, it becomes idle again.
 
 It relies on the 3D visualizer embedded in ROS 2, named `RViz 2`:
 
@@ -17,6 +21,7 @@ It relies on the 3D visualizer embedded in ROS 2, named `RViz 2`:
 This example package relies on `luos_interface`. Make sure you first installed it by following its own procedure.
 
 Then, download the example package and build your workspace with `colcon`:
+
 ```bash
 ~/ros2_ws/src/$ git clone https://github.com/aubrune/luos_bike_alarm_example.git
 
@@ -27,6 +32,7 @@ Then, download the example package and build your workspace with `colcon`:
 Plug at least a Luos Imu node and a gate to your computer, as well as optional RGB and State services. The expected Luos services' aliases are the default. If they are not, update the <a href="https://github.com/aubrune/luos_bike_alarm_example/blob/master/luos_bike_alarm_example/bike_alarm.py#L12-L15" target="_blank">topic names &#8599;</a> with your custom aliases.
 
 Then, start the bike example from its launchfile:
+
 ```bash
 ~/ros2_ws/$ ros2 launch luos_bike_alarm_example example.launch.py
 ```

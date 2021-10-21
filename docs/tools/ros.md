@@ -1,11 +1,12 @@
 ---
 title: ROS
 hide_table_of_contents: true
+custom_edit_url: null
 ---
 
 #
 
-<h1><a href="#ros" class="header" id="ros"><img src="/img/ros-logo.png" width="80px"/> / Using Luos with ROS1 and ROS2</a></h1>
+<h1><a href="#ros" className="header" id="ros"><img src="/img/ros-logo.png" width="80px"/> / Using Luos with ROS1 and ROS2</a></h1>
 
 Luos comes with a package for the <a href="https://www.ros.org/" target="_blank">Robot Operating System &#8599;</a>.
 

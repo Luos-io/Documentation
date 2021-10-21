@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # A Luos bootloader guide
 
 The bootloader feature allows updating the firmware of any node in a Luos network. It's useful for quickly upgrading your application software without using specific programming tools and without physically accessing your boards.

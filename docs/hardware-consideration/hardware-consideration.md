@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # Hardware consideration
 
 When creating a Luos network, if you have a product with several nodes, it is mandatory to configure your MCU, to create the physical layer. In <a href="https://github.com/Luos-io/Examples/" target="_blank">Luos's examples on GitHub &#8599;</a>, Luos uses RS485 with a driver or one-wire communication for this physical layer ([see Electronic design](./electronics.md) page), but other communication ways are possible.

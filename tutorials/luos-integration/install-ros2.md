@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # Install ROS 2 tutorial
 
 ## Install ROS 2 and Luos
@@ -33,6 +37,7 @@ Color               rgb_led_mod         5
 ```
 
 > **Note:** If you have several Luos gates, you need several brokers. Specify a port and a **unique** name for each of them:
+>
 > ```bash
 > ros2 launch luos_interface broker.launch.py device:=/dev/ttyUSB1 name:=brokerUSB1
 > ```

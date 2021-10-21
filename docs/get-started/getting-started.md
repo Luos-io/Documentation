@@ -1,16 +1,20 @@
-# Get started
+---
+custom_edit_url: null
+---
 
 This page allows you to build, flash, run, and control your very first Luos code.
 
 This Getting started is separated in 2 parts:
- - **The embedded part**: By following this part you will have all the tools you need to easily develop using Luos in your embedded target.
- - **The remote control part**: By following this part you will have all the tools you need to take control and easily test any Luos device.
+
+- **The embedded part**: By following this part you will have all the tools you need to easily develop using Luos in your embedded target.
+- **The remote control part**: By following this part you will have all the tools you need to take control and easily test any Luos device.
 
 ## The embedded part: Run your first embedded app!
 
 This tutorial shows you how to quickly upload a Luos application on an MCU development kit.
 
 Supported boards are listed below:
+
 - Arduino zero, MKRzero, MKR1000, or any SAMD21-based Arduino board
 - STM32L432KC Nucleo
 
@@ -23,9 +27,10 @@ We will use <a href="https://platformio.org/platformio-ide" target="_blank">Plat
 First, install the free coding editor <a href="https://code.visualstudio.com/" target="_blank">Microsoft Visual Studio Code &#8599;</a> (VSCode). PlatformIO's IDE is built on top of it.
 
 Then, in PlatformIO:
- 1. Open VSCode Extension Manager.
- 2. Search for the official [PlatformIO IDE](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) extension.
- 3. Install PlatformIO IDE.
+
+1.  Open VSCode Extension Manager.
+2.  Search for the official [PlatformIO IDE](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) extension.
+3.  Install PlatformIO IDE.
 
 <p align="center">
   <img src="/img/get-started/install_VSCODE.png" />
@@ -33,7 +38,7 @@ Then, in PlatformIO:
 
 ### Clone the project
 
-Clone the *getting started* repository on your computer: 
+Clone the _getting started_ repository on your computer:
 
 ```bash
 git clone https://github.com/Luos-io/getting_started.git
@@ -67,13 +72,13 @@ Congratulations, your first Luos app is running!
 
 There are two [**services**](/luos-technology/services/services.md) loaded in your board allowing to blink the LED.
 
-- **Blinker** sends a message at a fixed duration<br/> ╰ located at the root of the *getting_started* repository (because the same app can run on any board)
-- **Led** receives this message and makes the LED blink<br/> ╰ located on the *lib* folder of your project (because it is a driver which is specific to your board)
+- **Blinker** sends a message at a fixed duration<br/> ╰ located at the root of the _getting_started_ repository (because the same app can run on any board)
+- **Led** receives this message and makes the LED blink<br/> ╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
 
 On top of it, we also added two other services allowing you to take control of your board:
 
-- **Pipe**, managing a serial interface<br/>╰ located on the *lib* folder of your project (because it is a driver which is specific to your board)
-- **Gate**, an app that translates Luos to JSON and sends it through *Pipe*<br/> ╰ located in the cloud, (because it is a common cross-platform's Luos app) PlatformIO just downloaded it for you.
+- **Pipe**, managing a serial interface<br/>╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
+- **Gate**, an app that translates Luos to JSON and sends it through _Pipe_<br/> ╰ located in the cloud, (because it is a common cross-platform's Luos app) PlatformIO just downloaded it for you.
 
 ## The remote control part: 💊 You can control the Matrix.
 
@@ -131,7 +136,7 @@ In \[1\]: `device.blinker.time=0.25`
 In \[2\]: `device.blinker.pause()`  
 In \[3\]: `device.led.state=True`  
 In \[4\]: `device.led.state=False`  
-In \[5\]: `device.blinker.play()`  
+In \[5\]: `device.blinker.play()`
 
 ## Next steps
 

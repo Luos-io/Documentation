@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 <h1><a href="#json-api" className="header" id="json-api"><img src="/img/json-logo.png" width="80px"/> / JSON API</a></h1>
 
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>

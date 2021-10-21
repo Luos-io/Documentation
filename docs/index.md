@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 <h1 className="no-break"><a href="#welcome" className="header" id="welcome">Welcome to Luos documentation</a></h1>
 
 <small><a href="https://github.com/Luos-io/Luos" target="blank">Luos revision: {{last_version_luos}}</a></small>
