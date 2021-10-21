@@ -6,7 +6,8 @@
  */
 import React from 'react';
 import clsx from 'clsx';
-import {useActivePlugin, useVersions} from '@theme/hooks/useDocs';
+import useIsBrowser from '@docusaurus/useIsBrowser';
+import { useActivePlugin, useVersions } from '@theme/hooks/useDocs';
 import useWindowSize from '@theme/hooks/useWindowSize';
 import DocPaginator from '@theme/DocPaginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
@@ -15,15 +16,15 @@ import LastUpdated from '@theme/LastUpdated';
 import TOC from '@theme/TOC';
 import TOCCollapsible from '@theme/TOCCollapsible';
 import EditThisPage from '@theme/EditThisPage';
-import {MainHeading} from '@theme/Heading';
+import { MainHeading } from '@theme/Heading';
 import styles from './styles.module.css';
-import ContactUs from "/src/components/ContactUs.js";
-import { Sidetab  } from 'react-typeform-embed';
-import { customFields } from "/docusaurus.config.js";
+import ContactUs from '/src/components/ContactUs.js';
+import { Sidetab } from 'react-typeform-embed';
+import { customFields } from '/docusaurus.config.js';
 
 function DocItem(props) {
-  const {content: DocContent, versionMetadata} = props;
-  const {metadata, frontMatter} = DocContent;
+  const { content: DocContent, versionMetadata } = props;
+  const { metadata, frontMatter } = DocContent;
   const {
     image,
     keywords,
@@ -38,7 +39,7 @@ function DocItem(props) {
     formattedLastUpdatedAt,
     lastUpdatedBy,
   } = metadata;
-  const {pluginId} = useActivePlugin({
+  const { pluginId } = useActivePlugin({
     failfast: true,
   });
   const versions = useVersions(pluginId); // If site is not versioned or only one version is included
@@ -49,19 +50,24 @@ function DocItem(props) {
   // - user asks to hide it with frontmatter
   // - the markdown content does not already contain a top-level h1 heading
 
-  const shouldAddTitle =
-    !hideTitle && typeof DocContent.contentTitle === 'undefined';
-  const windowSize = useWindowSize();
-  const canRenderTOC =
-    !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
-  const renderTocDesktop =
-    canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
-  
-  let node = document.createElement('script');
-  node.src = '/src/components/Chat.js';
-  node.type = 'text/javascript';
-  node.async = true;
-  document.getElementsByTagName('head')[0].appendChild(node);
+  const isBrowser = useIsBrowser();
+
+  let shouldAddTitle, canRenderTOC, renderTocDesktop;
+  if (isBrowser) {
+    shouldAddTitle =
+      !hideTitle && typeof DocContent.contentTitle === 'undefined';
+    canRenderTOC =
+      !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
+    const windowSize = useWindowSize();
+    renderTocDesktop =
+      canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
+
+    let node = document.createElement('script');
+    node.src = '/src/components/Chat.js';
+    node.type = 'text/javascript';
+    node.async = true;
+    document.getElementsByTagName('head')[0].appendChild(node);
+  }
 
   return (
     <>
@@ -78,7 +84,8 @@ function DocItem(props) {
         <div
           className={clsx('col', {
             [styles.docItemCol]: !hideTableOfContents,
-          })}>
+          })}
+        >
           <DocVersionBanner versionMetadata={versionMetadata} />
           <div className={styles.docItemContainer}>
             <article>
@@ -103,9 +110,16 @@ function DocItem(props) {
                 */}
                 {shouldAddTitle && <MainHeading>{title}</MainHeading>}
 
-                <DocContent />
-                <ContactUs pageName={window.location}/>
-                <Sidetab id={customFields.typeform_id} buttonText="Is Luos for me? 🤔"/>
+                {isBrowser ? (
+                  <>
+                    <DocContent />
+                    <ContactUs pageName={window.location} />
+                    <Sidetab
+                      id={customFields.typeform_id}
+                      buttonText="Is Luos for me? 🤔"
+                    />
+                  </>
+                ) : null}
               </div>
 
               {(editUrl || lastUpdatedAt || lastUpdatedBy) && (
