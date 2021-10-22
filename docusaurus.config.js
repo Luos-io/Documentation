@@ -31,6 +31,9 @@ module.exports = {
     typeform_id: process.env.REACT_APP_TYPEFORM_ID,
   },
   themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     googleAnalytics: {
       trackingID: 'UA-153509818-3',
     },
