@@ -8,14 +8,15 @@ custom_edit_url: null
 
 <h1 className="no-break"><a href="#welcome" className="header" id="welcome">Technical FAQ</a></h1>
 
-Here is a list of the issues our users sometimes encountered while using Luos and how to solve them.
+Here is a list of common questions or issues our users may encounter while using Luos.
 
 ## What is your issue?
 
-- [My application doesn't retrieve driver's data after plugging in a gate to my system.](/faq/detection-reconfig)
-- [I can't connect my system to the computer (DFU error).](/faq/dfu)
-- [The default Luos example does not compile](/faq/application-compile)
-- [The application is blocked in an infinite loop (default handler)](/faq/application-default-handler)
+- [Using a gate on my device seems to stop the normal behavior.](/faq/detection-reconfig)
+- [Starting a detection on runtime seems to make my device to stop.](/faq/detection-reconfig)
+- [I can't flash my board using DFU.](/faq/dfu)
+- [The default Luos example does not compile.](/faq/application-compile)
+- [My board crashes when a detection occurs.](/faq/application-default-handler)
 
 ---
 
