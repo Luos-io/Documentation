@@ -1,3 +1,7 @@
+---
+custom_edit_url: null
+---
+
 # How to use Luos services profiles
 
 ## What is a service profile
@@ -39,7 +43,7 @@ service_t *TemplateServoMotor_CreateService(CONT_CB callback, template_servo_mot
 
 The returned `service_t*` is a service structure pointer that will be useful to make your service act in the network after this initialization.
 
-**callback** is a pointer to the same callback function described on [the service management section](./service_api.html#how-to-create-and-initialize-a-service).
+**callback** is a pointer to the same callback function described on [the service management section](/luos-technology/services/service-api.md#how-to-create-and-initialize-a-service).
 The big difference between template services and custom services is that you don't need to manage any message in this callback, because the profile handles it for you.
 You can use this callback to make your code react to an event or to manage custom messages on top of the profile.
 
@@ -49,7 +53,7 @@ You can use this callback to make your code react to an event or to manage custo
 
 **revision** is the revision number of the service you are creating.
 
-Following the [packages rules](/package/package.html#basic-services-functions), here is a code example for a button template service:
+Following the [packages rules](/docs/luos-technology/package/package#basic-services-functions), here is a code example for a button template service:
 
 ```c
 #include "template_state.h"

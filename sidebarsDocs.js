@@ -14,6 +14,11 @@ module.exports = {
           label: 'Luos Technology',
           items: [
             {
+              type: 'doc',
+              label: 'Definition',
+              id: 'luos-technology/luos_tech',
+            },
+            {
               type: 'category',
               label: 'Basics',
               items: [
@@ -29,8 +34,8 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Architecture',
-                  id: 'luos-technology/basics/archi',
+                  label: 'Code organization',
+                  id: 'luos-technology/basics/orga',
                 },
               ],
             },
@@ -55,7 +60,7 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Topology',
+                  label: 'Network topology',
                   id: 'luos-technology/node/topology',
                 },
               ],
@@ -67,7 +72,7 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Service',
+              label: 'Services',
               items: [
                 {
                   type: 'doc',
@@ -107,23 +112,28 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Handling Message',
+                  label: 'Send Message',
+                  id: 'luos-technology/message/basic-message',
+                },
+                {
+                  type: 'doc',
+                  label: 'Receive Message',
                   id: 'luos-technology/message/handling-message',
                 },
                 {
                   type: 'doc',
-                  label: 'Basic Message',
-                  id: 'luos-technology/message/basic-message',
+                  label: 'Commands',
+                  id: 'luos-technology/message/command',
+                },
+                {
+                  type: 'doc',
+                  label: 'Object dictionnary',
+                  id: 'luos-technology/message/object-dictionary',
                 },
                 {
                   type: 'doc',
                   label: 'Advanced message',
                   id: 'luos-technology/message/advanced-message',
-                },
-                {
-                  type: 'doc',
-                  label: 'Command and Object dictionnaryTable',
-                  id: 'luos-technology/message/command',
                 },
               ],
             },
@@ -135,7 +145,7 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Hardware Consideration',
+              label: 'Definition',
               id: 'hardware-consideration/hardware-consideration',
             },
             {
@@ -176,7 +186,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Boot',
+              label: 'Bootloader',
               id: 'tools/boot',
             },
             {
@@ -192,10 +202,26 @@ module.exports = {
           ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'API',
-          id: 'api/api',
+          items: [
+            {
+              type: 'doc',
+              label: 'List',
+              id: 'api/list',
+            },
+            {
+              type: 'doc',
+              label: 'JSON API',
+              id: 'api/api-json',
+            },
+          ],
         },
+        {
+          type: 'link',
+          label: 'Go to Luos.io',
+          href: 'https://www.luos.io/'
+        }
       ],
     },
   ],

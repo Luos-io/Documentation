@@ -1,3 +1,10 @@
+---
+custom_edit_url: null
+---
+
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "/src/components/Tooltip.js";
+
 # Receive and Send Advanced messages
 
 There are some types of messages, that do not follow the basic messages format of Luos. For this reason Luos provides sending and receiving mechanisms for the types of complex messages, analyzed below.
@@ -36,7 +43,7 @@ void services_MsgHandler(service_t *service, msg_t *msg) {
 
 Luos provides a standard command to ask a service to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take up valuable resources.
 In this kind of polling situation, **you can use the time-triggered auto-update features available from any Luos service**. This feature allows you to ask a service to send you an update of any value each X milliseconds.
-To use it, you have to setup targeted service with a message containing a standard time <span className="cust_tooltip">object dictionary<span className="cust_tooltiptext">{{od_def}}</span></span>, but with a specific command associated to it.
+To use it, you have to setup targeted service with a message containing a standard time <Tooltip def={customFields.od_def}>object dictionary</Tooltip>, but with a specific command associated to it.
 
 For example, to update a service each 10 ms:
 
@@ -100,7 +107,7 @@ Following our example, if we want to send trajectory to the motor, we will have 
 
 ## How to use it
 
-**A streaming channel is always created by the strict real-time service.** The other service (the non-real-time one) will just send or receive its data chunks using [large data messages](/luos-technology/message/advanced-message.html#large-data).
+**A streaming channel is always created by the strict real-time service.** The other service (the non-real-time one) will just send or receive its data chunks using [large data messages](/docs/luos-technology/message/advanced-message#large-data).
 
 ### Streaming channel creation
 

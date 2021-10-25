@@ -1,131 +1,98 @@
-# Command and Object dictionnary
+---
+custom_edit_url: null
+---
 
-Each message which follows the Robus communication protocol, includes a command value that defines the type of the contents of the data of a message.
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "/src/components/Tooltip.js";
 
-An other feature included in Luos technology is the Object Dictionary (OD), that aims to maintain the interoperability between <span className="cust_tooltip">services<span className="cust_tooltiptext">{{service_def}}</span></span>.
+# Command and object dictionary
+
+Each message includes a command value that defines the content's type of the message's data.
+
+Another feature included in Luos technology is the [Object Dictionary (OD)](/docs/luos-technology/message/object-dictionary), which aims to maintain interoperability of data format and command's type between <Tooltip def={customFields.service_def}>services</Tooltip>.
 
 ## Commands
 
-There are three general categories of commands, that are separated regarding the level of handling the messages received from a node. These messages are either handled in Luos level, in Robus level or in service level.
+Commands is a simple enum list from 0 to N allowing you to choose the data format you want to use on your message.
+Internally, Luos also uses some messages to manage and detect your system That's why Luos has some reserved commands at the begining of this list.
+User's commands start at `LUOS_LAST_RESERVED_CMD`.
 
-### Commands handled in Robus level
+### Common registers for all services
 
-|     Command     |                    Function                     |
-| :-------------: | :---------------------------------------------: |
-|  WRITE_NODE_ID  |            Set a new ID to the node             |
-| RESET_DETECTION | Reset detection process - Reinitialize IDs to 0 |
-|  SET_BAUDRATE   |               Set Robus Baudrate                |
-|     ASSERT      |               Node Assert message               |
+| Command |              Function              |
+| :-----: | :--------------------------------: |
+| GET_CMD | asks a service to publish its data |
+| SET_CMD |      sets some undefined data      |
 
-### Commands handled in Luos level
+### Generic data
 
-|     Command     |                           Function                            |
-| :-------------: | :-----------------------------------------------------------: |
-|     RTB_CMD     |           Ask, generate or share the routing table            |
-|   WRITE_ALIAS   |                Get and save a new given alias                 |
-|   UPDATE_PUB    | Ask to update a sensor value each time duration to the sender |
-|    NODE_UUID    |                          luos_uuid_t                          |
-|    REVISION     |              Service sends its firmware revision              |
-|  LUOS_REVISION  |                Service sends its luos revision                |
-| LUOS_STATISTICS |                Service sends its luos revision                |
+|   Command   |                    Function                    |
+| :---------: | :--------------------------------------------: |
+|    COLOR    |               color_t (R, G, B)                |
+|  IO_STATE   |               char (True/False)                |
+|    RATIO    |             ratio_t (percentage %)             |
+|  PEDOMETER  | long\[2\] (step number, step time millisecond) |
+| ILLUMINANCE |               illuminance_t (lx)               |
+|   VOLTAGE   |                voltage_t (Volt)                |
+|   CURRENT   |               current_t (Ampere)               |
+|    POWER    |                 power_t (Watt)                 |
+| TEMPERATURE |               temperature_t (°C)               |
+|    TIME     |              time Second (float)               |
+|    FORCE    |               force_t (Newton N)               |
+|   MOMENT    |          moment_t (Newton meter N.m)           |
+|   CONTROL   |         control_mode (control_mode_t)          |
 
-### Service commands
+### Configuration commands
 
-This last category, includes all the specific commands that are treated by each service. Each one refers to different kind of services, like for example, the command IO_STATE is send from services of type STATE, and it shows if the actual state of the service is true or false.
+|  Command   |                  Function                   |
+| :--------: | :-----------------------------------------: |
+|  REGISTER  |     a registered data \[reg_add, data\]     |
+|   REINIT   |              char (True/False)              |
+|    PID     |        pid_t float\[3\] = {p, i, d}         |
+| RESOLUTION |   resolution parameter for a sensor float   |
+| REDUCTION  |  reduction factor float (e.g. mechanical)   |
+| DIMENSION  | dimension of an element m linear_position_t |
+|   OFFSET   |                 decay float                 |
+|   SETID    |              sets Dynamixel ID              |
 
-If you want to create new functionalities for your custom services, you can create and add your own commands. [See how](/tutorials/tutorials.md).
+### Space positioning
 
-## What is OD?
+|     Command      |                                  Function                                  |
+| :--------------: | :------------------------------------------------------------------------: |
+| ANGULAR_POSITION |                          angular_position_t (deg)                          |
+|  ANGULAR_SPEED   |                          angular_speed_t (deg/s)                           |
+| LINEAR_POSITION  |                           linear_position_t (m)                            |
+|   LINEAR_SPEED   |                            linear_speed_t (m/s)                            |
+|     ACCEL_3D     |          long\[3\](X, Y, Z axis linear acceleration data in Gees)          |
+|     GYRO_3D      | long\[3\](X, Y, Z axis rotational acceleration data in degrees per second) |
+|    QUATERNION    |           long\[4\] (sensor fused w, x, y, z rotational angles)            |
+|    COMPASS_3D    |         long\[3\](magnetic field data in micro tesla on each axis)         |
+|     EULER_3D     |     long\[3\](Pitch, roll, yaw based in degrees with frame reference)      |
+|     ROT_MAT      |          short\[9\] (linear math 9 element matrix representation)          |
+|   LINEAR_ACCEL   |         float\[3\] (linear acceleration in body frame coordinates)         |
+|  GRAVITY_VECTOR  |                 float\[3\] (Which access gravity effects)                  |
+|     HEADING      |         long (360 degrees from North with Y+ axis as the pointer)          |
 
-An Object Dictionary (OD) allows different developers of different services to make them interoperate regardless of the unit they use on the service.
+### Space positioning limits
 
-Example: If my_service1 uses an angle in radians and my_service2 uses degrees, what is the unit they should use to share the angle information?
+|        Command         |                          Function                          |
+| :--------------------: | :--------------------------------------------------------: |
+| ANGULAR_POSITION_LIMIT | min angular_position_t (deg), max angular_position_t (deg) |
+| LINEAR_POSITION_LIMIT  |    min linear_position_t (m), max linear_position_t (m)    |
+|      RATIO_LIMIT       |                          float(%)                          |
+|     CURRENT_LIMIT      |                          float(A)                          |
+|  ANGULAR_SPEED_LIMIT   |  min angular_speed_t (deg/s), max angular_speed_t (deg/s)  |
+|   LINEAR_SPEED_LIMIT   |     min linear_speed_t (m/s), max linear_speed_t (m/s)     |
+|      TORQUE_LIMIT      |                     max moment_t (Nm)                      |
+|   TEMPERATURE_LIMIT    |                   max temperature_t (°C)                   |
 
-An Object Dictionary defines a set of typical objects that can be transmitted through Luos messages. It allows to send these objects with a predefined type and to use it in the units the user want.
+### Specific register
 
-## How is it managed in Luos?
+|  Command   |                                     Function                                      |
+| :--------: | :-------------------------------------------------------------------------------: |
+| PARAMETERS | depends on the service. It can be: servo_parameters_t, imu_report_t, motor_mode_t |
+| ERROR_CMD  |                                                                                   |
 
-Luos defines objects based on physical values following the SI standard.
+You can find the complete list of commands <a href="https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h" target = "_blank">here &#8599;</a>.
 
-### Object and types
-
-Each object in the Object Dictionary has a specific Type. For example:
-
-```c
-// Define object angular_position as an angular_position_t type
-angular_position_t angular_position;
-```
-
-You can create your variables using these objects but **never set OD variables directly with a value**. Instead, you have to use functions available on the Luos OD:
-
-```c
-// Set object angular_position
-angular_position_t angular_position = AngularOD_PositionTo_deg (12.0);
-```
-
-Following this rule, everybody will be able to use your values.
-
-All the types are listed in the [table summary](#types-and-units-table-summary) at the end of this page.
-
-## Conversions
-
-As many units exist, many conversion functions are available. As a result, they follow a **logic naming rules** in order to easily find a desired function without having to search for it.
-
-### Unit conversions
-
-There are two types of unit conversion: in one way (OD type from desired unit), and in the other way (OD type to desired unit):
-
-- **`from` conversion:** Converts a value with a defined unit into a desired OD type. Format: `[type_var] = [type]From_[unit]([value])`
-
-```c
-// save a linear_position from a mm value
-linear_position_t LinearOD_PositionFrom_mm(float mm);
-```
-
-- **`to` conversion:** Converts a type to a unit. Format: `[value] = [type]To_[unit]([type_var])`
-
-```c
-// convert the variable linear_position into a mm
-float LinearOD_PositionTo_mm(linear_position_t linear_position);
-```
-
-### Messages conversions
-
-In the same way, both conversion are available for messages (OD type from message and OD type to message):
-
-- **`from` conversion:** Gets a type from a message. Format: `[type]FromMsg([type_var], msg)`
-
-```C
-// get the linear_position from the message msg
-void LinearOD_PositionFromMsg(linear_position_t* linear_position, msg_t* msg);
-```
-
-- **`to` conversion:** Inserts a desired type into a message. Format: `[type]ToMsg(type_var], msg)`
-
-```c
-// insert the linear_position into the message msg
-void LinearOD_PositionToMsg(linear_position_t* linear_position, msg_t* msg);
-```
-
-## Types and units table summary
-
-Here are listed the existing types:
-
-|       Type       |            Available prefix and other units            |
-| :--------------: | :----------------------------------------------------: |
-| linear_position  |          nm, &mu;m, mm, cm, m, km, in, ft, mi          |
-|   linear_speed   |              mm/s, m/s, km/h, in/s, mi/h               |
-| angular_position |                  deg, revolution, rad                  |
-|  angular_speed   |       deg/s, revolution/s, revolution/min, rad/s       |
-|      force       |                    N, kgf, ozf, lbf                    |
-|      moment      | N.mm, N.cm, N.m, kgf.mm, kgf.cm, kgf.m, ozf.in, lbf.in |
-|     voltage      |                         mV, V                          |
-|     current      |                         mA, A                          |
-|      power       |                         mW, W                          |
-|      ratio       |                       percentage                       |
-|   temperature    |                  deg_c, deg_f, deg_k                   |
-|      color       |              8bit_RGB unsigned char \[3\]              |
-
-> **Note:** to find out a conversion function, replace the characters `/` or `.` in the units by the character `_`. The character `µ` is replaced by `u`, and `revolution` is replaced by `rev`.
->
-> Examples: convert a linear speed to mm/s: `LinearOD_SpeedTo_mm_s()`; convert a value in &mu;m to a linear position: `LinearOD_PositionFrom_um()`; convert a value in revolutions/s to an angular speed: `AngularOD_SpeedFrom_rev_s()`;
+If you want to create new commands for your custom services, you can create and add your own starting at `LUOS_LAST_STD_CMD`. [See how](/tutorials/tutorials).

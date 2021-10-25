@@ -6,15 +6,30 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #75dbc7;
+  --ifm-color-primary-dark: #a370ff;
+  --ifm-color-primary-darker: #955cff;
+  --ifm-color-primary-darkest: #6e1fff;
+  --ifm-color-primary-light: #d7c2ff;
+  --ifm-color-primary-lighter: #e5d6ff;
+  --ifm-color-primary-lightest: #ffffff;
   --ifm-code-font-size: 95%;
+}
+
+html[data-theme="dark"] {
+  --ifm-background-color: hsl(226, 23%, 11%);
+  --ifm-navbar-background-color: black;
+  --ifm-menu-background-color: white;
+  --ifm-color-primary: #bd99ff;
+}
+
+html[data-theme="dark"] .menu {
+  background-color: #282d3f;
+  margin-bottom: 0;
 }
 
 .docusaurus-highlight-code-line {
@@ -24,6 +39,311 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.footer__links {
+  text-align: center;
+}
+
+.feedbackForm {
+  text-align: center;
+}
+
+.feedbackForm__response {
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 5px;
+  display: none;
+  color: white;
+}
+
+.success {
+  display: block;
+  background-color: #31bba0;
+}
+
+.error {
+  display: block;
+  background-color: #e64900;
+}
+
+.feedbackForm__field label {
+  float: left;
+}
+
+.container-feedback {
+  font-family: "Roboto Mono", sans-serif;
+  min-height: 500px;
+  box-shadow: 5px 3px 10px rgb(0 0 0 / 20%);
+}
+
+.col-info {
+  width: 50%;
+  background-color: #282d3f;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.col-info__title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px !important;
+  color: white;
+}
+
+.col-info__p {
+  color: white;
+  padding: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.col-info__img__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.col-info__img {
+  width: 40%;
+}
+
+.col-form {
+  width: 50%;
+  background-color: #90e2d2;
+  color: black;
+  border-radius: 0px 5px 5px 0px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-form form {
+  padding: 10px 20px 50px 20px;
+}
+
+.col-form input[type="text"],
+input[type="email"],
+textarea {
+  font-family: "Roboto Mono", sans-serif;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 25px;
+  resize: vertical;
+  background-color: white;
+  color: black;
+}
+
+html[data-theme="dark"] .container-feedback {
+  box-shadow: 0 -2px 10px rgb(0 0 0);
+}
+
+html[data-theme="dark"] .col-form input[type="text"] {
+  background-color: #282d3f;
+  color: white;
+}
+
+html[data-theme="dark"] .col-form input[type="email"] {
+  background-color: #282d3f;
+  color: white;
+}
+
+html[data-theme="dark"] .col-form textarea {
+  background-color: #282d3f;
+  color: white;
+}
+
+html[data-theme="dark"] .col-form ::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.col-form label {
+  font-weight: bold;
+}
+
+.col-form ::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+.col-form input:focus::placeholder {
+  color: transparent;
+}
+.col-form textarea:focus::placeholder {
+  color: transparent;
+}
+
+.col-form input[type="submit"] {
+  font-family: "Roboto Mono", sans-serif;
+  margin-top: -5px;
+  background-color: #5ad4bc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.col-form input[type="submit"]:hover {
+  background-color: #31bba0;
+}
+
+.contactUs {
+  float: right;
+}
+
+.docusaurus-mt-lg {
+  margin-top: 1rem !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Mono", sans-serif;
+  text-align: center;
+}
+
+.function {
+  color: #bd99ff !important;
+}
+
+.navbar__items,
+.menu__list-item {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.player_iframe {
+  width: 500px;
+  height: 280px;
+  left: 0px;
+  top: 0px;
+  border: none;
+}
+
+.cust_video {
+  margin: 50px;
+  width: 500px;
+  height: 281px;
+}
+
+@media screen and (max-width: 800px) {
+  .cust_video {
+    width: 90%;
+  }
+}
+
+.cust_square_wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-decoration: none;
+
+  margin: auto;
+  width: 100%;
+  border: 0px solid;
+  padding: 0px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.cust_square_wrapper a:hover {
+  text-decoration: none;
+}
+
+.cust_square {
+  min-height: 240px;
+  width: 200px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #fafaff;
+  border: solid 0px #eee;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #ddd;
+  text-align: left;
+  filter: grayscale(100%) opacity(70%);
+}
+
+.cust_square:hover {
+  filter: grayscale(0%) opacity(100%);
+  box-shadow: 1px 1px 5px #ccc;
+}
+
+.cust_landing_title {
+  color: #161616;
+  font-size: 18px;
+  font-weight: 900;
+  padding-bottom: 5px;
+}
+
+.cust_landing_text {
+  font-size: 12px;
+}
+
+.cust_landing_img {
+  padding-bottom: 20px;
+}
+
+.cust_landing_img img {
+  height: 60px;
+}
+
+.cust_img_rot {
+  transform: translate(15px) rotate(35deg);
+  height: 80px;
+}
+
+.cust_tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px dotted #aaa;
+  font-weight: bold;
+}
+.cust_tooltip .cust_tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #fff;
+  color: #555;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 0.875em;
+  font-weight: normal;
+}
+
+.cust_tooltip:hover .cust_tooltiptext {
+  visibility: visible;
+}
+
+.row .col {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75% !important;
+}
+
+.typeform-sidetab-button-icon {
+  display: none !important;
+}
+
+.zsiq_floatmain {
+  margin-bottom: 50px;
 }
