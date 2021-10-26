@@ -6,8 +6,8 @@
  */
 
 /* You can override the default Infima variables here. */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 :root {
   --ifm-color-primary: #75dbc7;
@@ -20,14 +20,14 @@
   --ifm-code-font-size: 95%;
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --ifm-background-color: hsl(226, 23%, 11%);
   --ifm-navbar-background-color: black;
   --ifm-menu-background-color: white;
   --ifm-color-primary: #bd99ff;
 }
 
-html[data-theme="dark"] .menu {
+html[data-theme='dark'] .menu {
   background-color: #282d3f;
   margin-bottom: 0;
 }
@@ -39,7 +39,7 @@ html[data-theme="dark"] .menu {
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme="dark"] .docusaurus-highlight-code-line {
+html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -74,7 +74,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 
 .container-feedback {
-  font-family: "Roboto Mono", sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   min-height: 500px;
   box-shadow: 5px 3px 10px rgb(0 0 0 / 20%);
 }
@@ -124,10 +124,10 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   padding: 10px 20px 50px 20px;
 }
 
-.col-form input[type="text"],
-input[type="email"],
+.col-form input[type='text'],
+input[type='email'],
 textarea {
-  font-family: "Roboto Mono", sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -140,26 +140,26 @@ textarea {
   color: black;
 }
 
-html[data-theme="dark"] .container-feedback {
+html[data-theme='dark'] .container-feedback {
   box-shadow: 0 -2px 10px rgb(0 0 0);
 }
 
-html[data-theme="dark"] .col-form input[type="text"] {
+html[data-theme='dark'] .col-form input[type='text'] {
   background-color: #282d3f;
   color: white;
 }
 
-html[data-theme="dark"] .col-form input[type="email"] {
+html[data-theme='dark'] .col-form input[type='email'] {
   background-color: #282d3f;
   color: white;
 }
 
-html[data-theme="dark"] .col-form textarea {
+html[data-theme='dark'] .col-form textarea {
   background-color: #282d3f;
   color: white;
 }
 
-html[data-theme="dark"] .col-form ::placeholder {
+html[data-theme='dark'] .col-form ::placeholder {
   color: white;
   opacity: 1;
 }
@@ -180,8 +180,8 @@ html[data-theme="dark"] .col-form ::placeholder {
   color: transparent;
 }
 
-.col-form input[type="submit"] {
-  font-family: "Roboto Mono", sans-serif;
+.col-form input[type='submit'] {
+  font-family: 'Roboto Mono', sans-serif;
   margin-top: -5px;
   background-color: #5ad4bc;
   color: white;
@@ -192,7 +192,7 @@ html[data-theme="dark"] .col-form ::placeholder {
   float: right;
 }
 
-.col-form input[type="submit"]:hover {
+.col-form input[type='submit']:hover {
   background-color: #31bba0;
 }
 
@@ -210,7 +210,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto Mono", sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   text-align: center;
 }
 
@@ -220,7 +220,7 @@ h6 {
 
 .navbar__items,
 .menu__list-item {
-  font-family: "Roboto Mono", sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   font-size: 16px;
   font-weight: 400;
   text-decoration: none;
@@ -252,13 +252,12 @@ h6 {
   flex-wrap: wrap;
   justify-content: center;
   text-decoration: none;
-
-  margin: auto;
   width: 100%;
   border: 0px solid;
   padding: 0px;
   padding-top: 30px;
   text-align: center;
+  margin-bottom: 50px !important;
 }
 
 .cust_square_wrapper a:hover {
@@ -346,4 +345,19 @@ h6 {
 
 .zsiq_floatmain {
   margin-bottom: 50px;
+}
+
+#link__header__luos,
+#link__header__faq {
+  border-right: 1px solid white;
+}
+
+#link__header__luos,
+#link__header__faq:hover {
+  border-right: 1px solid white;
+}
+
+html[data-theme='light'] #link__header__luos,
+#link__header__faq:hover {
+  border-right: 1px solid black;
 }

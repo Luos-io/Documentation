@@ -48,16 +48,11 @@ module.exports = {
       },
       items: [
         {
-          href: 'https://www.luos.io/#technology',
-          label: 'Technology',
+          href: 'https://www.luos.io',
+          label: 'Luos.io',
           position: 'right',
+          id: 'link__header__luos',
         },
-        {
-          href: 'https://www.luos.io/support',
-          label: 'Pricing',
-          position: 'right',
-        },
-        { to: '/blog', label: 'Blog', position: 'right' },
         {
           type: 'doc',
           label: 'Documentation',
@@ -65,7 +60,12 @@ module.exports = {
           position: 'right',
         },
         { to: '/tutorials/tutorials', label: 'Tutorials', position: 'right' },
-        { to: '/faq/list', label: 'FAQ', position: 'right' },
+        {
+          to: '/faq/list',
+          label: 'FAQ',
+          position: 'right',
+          id: 'link__header__faq',
+        },
 
         {
           href: 'https://github.com/luos-io',
