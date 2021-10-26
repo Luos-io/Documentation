@@ -8,7 +8,7 @@ custom_edit_url: null
 import siteConfig from '/docusaurus.config.js';
 
 <div className="cust_square_wrapper">
-  <a href="/docs/get-started/getting-started"><div className="cust_square">
+  <a href="/docs/get-started/get-started"><div className="cust_square">
     <div className=""><img className="cust_img_rot" src="/img/landing/icon-rocket.png" /></div>
     <div className="cust_landing_title">Get started</div>
     <div className="cust_landing_text">First steps on using Luos.</div>  
