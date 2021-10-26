@@ -1,29 +1,28 @@
-# Part 3 Unleash your code
+---
+custom_edit_url: null
+---
 
-## The network part: Create your first Luos network.
+# Part 3: Unleash your code
 
-> **Warning:** This tutorial will assume that you had followed the [Get started tutorial](/docs/get-started/get-started). Make sure to read and follow it before reading this page.
+## The network part: Create your first Luos network
 
-In this part we will learn how to configure Luos to access to your physical network between boards of your system allowing you to deal with a multiple board system. Then we will try to run our first example into multiple boards.
+> **Warning:** In this last part, we assume that you had followed the first two parts of the [Get started tutorial](/docs/get-started/get-started). Make sure to read and follow them before reading this page.
 
-We will use the same boards than the 2 first part, but **you need to have 2 of them to create a network**.
+In this part, we will learn how to configure Luos to access to your physical network between boards of your system, allowing you to deal with a multiple-boards system. Then we will try to run our first example into multiple boards.
 
-Supported boards are listed below:
+We will use the same boards than in the two first parts, but **you need to have two of them to create a network**.
 
-- Arduino zero, MKRzero, MKR1000, or any SAMD21-based Arduino board
-- STM32L432KC Nucleo
-
-> **Note:** This list will grow longer with time.
+Supported boards are listed below [here](/docs/get-started/get-started1#setup-development-environment).
 
 ### Create a physical network
 
-In this first tutorial we will use the default wiring defined by Luos. We will see how to customize your physical interface in another tutorial.
-Default hardware interface used by Luos is defined on the [LuosHAL](https://github.com/Luos-io/LuosHAL) folder corresponding to your device.
+In this tutorial, we will use the default wiring defined by Luos. The customization of your physical interface will be addressed in another tutorial.
+The default hardware interface used by Luos is defined on the [LuosHAL](https://github.com/Luos-io/LuosHAL) folder corresponding to your device.
 
-Luos need a broadcast communication, in this example we will create a OneWire network limiting the circuit to simple wires.
-Luos also need a Point To Point (PTP) connection allowing to define the physical position of your boards. In this example we will have 2 PTP lines per boards.
+Luos needs a broadcast communication; in this example, we will create a OneWire network limiting the circuit to simple wires.
+Luos also needs a Point To Point (PTP) connection allowing to define the physical position of your boards. In this example, we will have two PTP lines per board.
 
-To create your network you have to identify pins used to perform Luos communication :
+To create your network, you have to identify the pins used to perform Luos communication:
 
 | Function name | Arduino pin | STM32L432KC pin |
 | ------------- | ----------- | --------------- |
@@ -32,7 +31,7 @@ To create your network you have to identify pins used to perform Luos communicat
 | PTPA          | Pin 6       | PA5             |
 | PTPB          | Pin 7       | PB4             |
 
-Now you can link your 2 boards following this wiring :
+Now you can link both boards following this wiring :
 
 <p align="center">
       <img src="/img/Get_started_board_connection.png" />
@@ -40,18 +39,18 @@ Now you can link your 2 boards following this wiring :
 
 > **Note:** You can have any PTP* connected to any another PTP* of another board. But you need only one PTP connection between boards!
 
-> **Note 2:** Obviously you will have to power up both of your board. In the next step of this tutorial we will plug board 1 to the USB, so eventually you can use the power pins of _board 1_ to power _board 2_.
+> **Note 2:** Obviously, you will have to power up both of your board. In the next step of this tutorial, we will plug the board 1 to the USB, so you can optionally use the power pins of _board 1_ to power _board 2_.
 
 ### Use this network!
 
-From the [first tutorial](/docs/get-started/get-started) you should have a get_started repository on your computer. We will use this code to demonstrate how Luos work using a network.
+From the [first _Get started_ tutorial](/docs/get-started/get-started), you should have a *get_started* repository on your computer. We will use this code to demonstrate how Luos works using a network.
 
-To make it we will move the blinker app service into _board 2_ and see what is happening.
+To make it, we will move the blinker app service into _board 2_ and see what is happening.
 
-Open the Get_started project corresponding to your first board then open the src/main.c or src/Arduino.ino file.
+Open the Get_started project corresponding to your first board, then open *the src/main.c* or *src/Arduino.ino* file.
 
-In this file there is some setup function with the naming `packageName_Init()` and `packageName_Loop()`. These line reprensent the init and loop execution of all the packages of your project.
-We want to move the blinker from _board 1_ to _board 2_. To make it we have to remove it from _board 1_ :
+In this file, there is some setup function with the naming `packageName_Init()` and `packageName_Loop()`. These lines reprensent the init and loop execution of all the packages of your project.
+We want to move the blinker from _board 1_ to _board 2_. To make it, we have to remove it from _board 1_:
 
 ```c
 ...
@@ -70,8 +69,8 @@ We want to move the blinker from _board 1_ to _board 2_. To make it we have to r
 
 Now flash _board 1_.
 
-Then open the corresponding project for the second board you have. If you have twice the same board, just keep the same one...
-In _board 2_ we only want to have the blinker app service, so in the src/main.c or src/Arduino.ino file we just can make it like that:
+Then open the corresponding project for the second board you have. If you have twice the same board, just keep the same one.
+In _board 2_ we only want to have the blinker app service, so we can write the following code in the *src/main.c* or *src/Arduino.ino* files:
 
 ```c
 ...
@@ -88,12 +87,13 @@ In _board 2_ we only want to have the blinker app service, so in the src/main.c 
     Blinker_Loop();
 ```
 
-Now flash _board 2_ and it's done!
+Now flash _board 2_, and it's done!
 
-To check if everything is OK, plug an USB cable into _board 1_. The _board 1_ led should blink thank to the _board 2_ app!
-**Congratulation you just create your first Luos distributed system!**
+To check if everything is OK, plug a USB cable into _board 1_. The _board 1_ LED should blink thanks to the _board 2_ app.
 
-Now you can try to use pyluos-shell :
+**Congratulation, you just create your first Luos distributed system!**
+
+Now you can try to use pyluos-shell:
 
 ```bash
 $ pyluos-shell
@@ -136,4 +136,4 @@ In [5]: device.blinker.play()
 
 ## Next steps
 
-Congratulation, you have plugged and use your firts Luos network ! You can check our [tutorials](/tutorials/tutorials) to learn how to use the features of Luos technology. We also invite you to check our [documentation](/docs/luos-technology/luos_tech) if you want to learn more about the core concepts of Luos.
+Congratulation, you have plugged and use your firts Luos network! You can check out our [tutorials](/tutorials/tutorials) to learn how to use the features of Luos technology. We also invite you to check out our [documentation](/docs/luos-technology/luos_tech) if you want to learn more about the core concepts of Luos.
