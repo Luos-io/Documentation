@@ -7,15 +7,11 @@ import Tooltip from "/src/components/Tooltip.js";
 
 # Receive and Send Advanced messages
 
-Luos provides advanced sending and receiving mechanisms allowing to deal with various data transmission needs or stategies.
+There are some types of messages, that do not follow the basic messages format of Luos. For this reason Luos provides sending and receiving mechanisms for the types of complex messages, analyzed below.
 
 ## Large data
 
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
-You will sometimes have to deal with extensive data that could be larger than the maximum 128-byte data on a Luos message. Fortunately, Luos can automatically fragment and de-fragment the data above this side. To do that, you will have to use another send function that will set the messages' size and the data fields.
-=======
 You will sometimes have to deal with large data that could be larger than the maximum 128-byte data on a Luos message. Fortunately, Luos is able to automatically fragment and de-fragment the data above this side. To do that, you will have to use another send function that will take care of setting the messages' size, and the data fields.
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
 For example, here is how to send a picture:
 
@@ -36,25 +32,11 @@ In the reception callback, here is the code for retrieve the message with the re
 color_t picture[300*300];
 void services_MsgHandler(service_t *service, msg_t *msg) {
     if (msg->header.cmd == COLOR) {
-        if (Luos_ReceiveData(service, msg, (void*)picture) == SUCCEED)
-        {
-            // The picture is completely received, you can enjoy your favorite cat picture!
-        }
+        Luos_ReceiveData(service, msg, (void*)picture);
     }
 }
 ```
 
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
-> **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming section](./advanced-message.html#streaming.md).
-
-## Time-triggered update messages
-
-Luos provides a standard command to ask a service to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors. Still, the act of repeatedly retrieving a value using the `ASK_PUB_CMD` command may result in the use of a lot of bandwidth and take up valuable resources.
-
-**You can use the time-triggered auto-update features available from any Luos service** in this kind of polling situation. This feature allows to ask a service to send an update of the `ASK_PUB_CMD` command each chosen amount of milliseconds.
-
-To use it, you have to set up targeted service with a message containing a standard time <span class="cust_tooltip">object dictionary<span class="cust_tooltiptext">{{od_def}}</span></span> but with a specific command.
-=======
 > **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page].
 
 ## Time-triggered update messages
@@ -62,7 +44,6 @@ To use it, you have to set up targeted service with a message containing a stand
 Luos provides a standard command to ask a service to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take up valuable resources.
 In this kind of polling situation, **you can use the time-triggered auto-update features available from any Luos service**. This feature allows you to ask a service to send you an update of any value each X milliseconds.
 To use it, you have to setup targeted service with a message containing a standard time <Tooltip def={customFields.od_def}>object dictionary</Tooltip>, but with a specific command associated to it.
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
 For example, to update a service each 10 ms:
 
@@ -72,39 +53,22 @@ msg_t msg;
 msg.header.target = id;
 msg.header.target_mode = IDACK;
 TimeOD_TimeToMsg(&time, &msg);
-msg.header.cmd = UPDATE_PUB; // Overload the TIME command defined by TimeOD
+msg.header.cmd = UPDATE_PUB;
 Luos_SendMsg(app, &msg);
 ```
 
-> **Info:** services can handle only one time-triggered target, two services of the same network can't ask for a time-triggered value from the same service.
+> **Info:** services can handle only one time-triggered target, 2 services of the same network can't ask a time-triggered value from the same service.
 
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
-> **Warning:** To prevent any ID movement, auto-update configuration is reset on all services on each detection (see the [routing table page](../node/topology.md) for more information).
-
-## Streaming
-=======
 > **Warning:** To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](/luos-technology/node/topology.md) for more information).
 
 ## Streaming
 
 On occasion, you will have to deal with high-frequency small data with strong time constraints.
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
-On occasion, you will have to deal with small high-frequency data with strong time constraints.
-
-To make it easy, Luos manages streaming channels through ring buffers.
+To make it easy, Luos manages streaming channels trough ring buffers.
 
 A streaming channel allows you to drastically reduce the time constraints of your Luos network thanks to 2 factors:
 
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
-1. The first factor is a method that allows to have a *no-real-time* service dealing with a strict-real-time one. Both sides have their own loop frequency and time precision.
-    - The real-time one is the service opening the streaming channel. It has a high-frequency function called at a precise **sampling frequency**.
-    - The non-real-time one has a slower and unprecise timed function which is called at each **chunk_time**.
-
-2. By using streaming channels, you will be able to use big data chunks at low frequencies to optimize the data rate efficiency of the bus. The idea is to exchange big chunks of data between services instead of large amounts of time-constrained small messages flooding all services.
-
-## Example
-=======
 1.  The first factor is a method which allows you to have a _no-real-time_ service dealing with a strict-real-time one. Both sides have their own loop frequency and time precision.
 
     - The real-time one is the service opening the streaming channel. It has a high-frequency function called at a precise **sampling frequency**.
@@ -116,38 +80,14 @@ A streaming channel allows you to drastically reduce the time constraints of you
 
 A motor-driver service has strict real-time constraints. If you want to have a smooth positioning movement or measurement you have to update the motor position at high-frequency (**sampling frequency**).<br/>
 First, you have to define the **sampling frequency** allowing you to have a smooth movement or measurement on the motor. Let's take 200Hz in this example.
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
-A motor-driver service has strict real-time constraints. If you want to have a smooth positioning movement or measurement, you must update the motor position at a high-frequency (**sampling frequency**).
-
-First, you have to define the **sampling frequency** allowing to have a smooth movement or measurement on the motor. Let's take 200 Hz in this example.
-
-On the non-real-time side (the service commanding the motor), you can't have a 200 Hz loop because it probably has other things to do and perhaps doesn't have sufficient time precision. To simplify it, you will have to send trajectory chunks regularly (**chunk time**), let's say approximately every 1 second.
+In the non-real-time side (the service commanding the motor), you can't have a 200Hz loop because it probably has other things to do and perhaps doesn't have a sufficient time precision. To simplify it you will have to send trajectory chunks regularly (**chunk time**), let's say approximately every 1 second.
 
 Based on those numbers, your data chunk size will be:
 
 ```AsciiDoc
 chunk_size = chunk_time(s) x sampling_frequency(Hz)
 chunk_size = 1 x 200 = 200 samples
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
- ```
-
-In our configuration, data chunk needs to be 200 position samples each second, allowing to feed the streaming channel.
-
-Following our example, if we want to send trajectory to the motor, we will have a *ring buffer* in the motor side managed by the *streaming channel*. Here are the different states of this ring_buffer:
-
-<p align="center">
-<img src="../../../_assets/img/streaming.png" />
-</p>
-
- 1. The service that sends the trajectory must ensure that the motor service always has data to consume. To do that, you have to bootstrap your streaming flux by sending 2 data chunks to start and then send a new data chunk each *chunk_time*.
- This way, the receiver always has at least one data chunk (1s in this example) ready to be consumed.
- 2. When data chunks are received, the receiver can start consuming data at its *sampling frequency*.
- 3. One data chunk later (1s in our example), the receiver has consumed the first data chunk, and the sender can start to compute the next one.
- 4. At the end of the data chunk computation, the sender sends the chunk. Luos adds it to the ring buffer.
- 5. The sender sends the next data chunk at each second, and Luos adds it to the ring buffer. At the end of the buffer, Luos puts extra data at the beginning. The consumer pointer also goes back to the beginning of the buffer when it reaches the end. This way, we have infinite data stream without any discontinuity.
- 6. You can continue to do this indefinitely.
-=======
 ```
 
 In our configuration, data chunk needs to be 200 position samples each second, allowing to feed the streaming channel.
@@ -162,17 +102,12 @@ Following our example, if we want to send trajectory to the motor, we will have 
 4.  At the end of the data chunk computation, the sender sends the chunk. Luos adds it to the ring buffer.
 5.  At each second, the sender sends the next data chunk and Luos adds it to the ring buffer. At the end of the buffer, Luos puts extra data at the begining. The consumer pointer also goes back to the begining of the buffer when it reaches the end. This way we have infinite data stream without any discontinuity.
 6.  You can continue to do this indefinitely.
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
 > **Note:** You can play, pause, stop or record a stream flux with the standard **CONTROL** command using the **control_type_t** structure.
 
 ## How to use it
 
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
-**A streaming channel is always created by the strict real-time service.** The other service (the non-real-time one) will send or receive its data chunks using [large data messages](./advanced-message.html#large-data).
-=======
 **A streaming channel is always created by the strict real-time service.** The other service (the non-real-time one) will just send or receive its data chunks using [large data messages](/docs/luos-technology/message/advanced-message#large-data).
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
 ### Streaming channel creation
 
@@ -191,16 +126,6 @@ void Motor_Init(void) {
 
 Now you can use this channel to receive or transmit a streaming flux:
 
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
- - **Reception** is suited to make our motor move smoothly. A non-real-time service will send us parts of trajectory approximately each second, and our motor will consume angular position at 200 Hz.
- - **Transmission** is suited to measure precisely the movements of the motor. We can use it to send in a non-real-time way real-time data. In our motor it could be angular position measurement at 200 Hz, for example.
-
-### Streaming reception
-
-The streaming reception is used to make a motor move.
-
-When the streaming channel has been created, you can feed it with received messages on the reception callback:
-=======
 - **reception** is suited to make our motor move smoothly. A no-real-time service will send us parts of trajectory approximately each second and our motor will consume angular position at 200Hz.
 - **transmission** is suited to measure precisely the movements of the motor. We can use it to send in a non-real-time way real-time data. In our motor it could be angular position measurement at 200Hz for example.
 
@@ -208,7 +133,6 @@ When the streaming channel has been created, you can feed it with received messa
 
 This is used to make the motor move.<br/>
 When your streaming channel has been created, you can feed it with received messages on your reception callback:
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
 ```C
 void Motor_MsgHandler(service_t *service, msg_t *msg) {
@@ -220,11 +144,7 @@ void Motor_MsgHandler(service_t *service, msg_t *msg) {
 }
 ```
 
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
-Now your service is able to receive trajectory chunks. For the next step, you need to have a real-time callback (using a timer, for example) which can manage the consumption of this trajectory at 200 Hz:
-=======
 Now your service is able to receive trajectory chunks. For the next step, you need to have a real-time callback (using a timer for example) which is able to manage the consumption of this trajectory at 200hz:
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
 ```C
 void 200hz_callback(void) {
@@ -234,16 +154,9 @@ void 200hz_callback(void) {
 
 ### Streaming transmission
 
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
-The streaming transmission is used to measure the motor movements.
-
-To go the other way and send a sampled signal such as a position measurement, you have to use your streaming channel in reception.
-First, you have to put values into your streaming channel at 200 Hz:
-=======
 This is used to measure the motor movements.<br/>
 To go the other way and send a sampled signal such as a position measurement, you have to use your streaming channel in reception.
 First you have to put values into your streaming channel at 200Hz:
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
 ```C
 void 200hz_callback(void) {
@@ -251,11 +164,7 @@ void 200hz_callback(void) {
 }
 ```
 
-<<<<<<< HEAD:src/pages/luos-technology/message/advanced-message.md
-This way, samples are buffered into your ring buffer, and then you can send this real-time information as you want:
-=======
 This way, samples are buffered into your ring buffer, and you can send this real-time information as you want:
->>>>>>> docusaurus:docs/luos-technology/message/advanced-message.md
 
 ```C
 void Motor_MsgHandler(service_t *service, msg_t *msg) {

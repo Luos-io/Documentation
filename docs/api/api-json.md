@@ -1,9 +1,3 @@
-<<<<<<< HEAD:src/pages/api/api-json.md
-<h1><a href="#json-api" class="header" id="json-api"><img src="../../_assets/img/json-logo.png" width="80px"> / JSON API</a></h1>
-
-The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formatted data</a> is common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with your device easily.
-
-=======
 ---
 title: API JSON
 custom_edit_url: null
@@ -14,7 +8,6 @@ custom_edit_url: null
 
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formatted data</a> is common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with your device easily.
 
->>>>>>> docusaurus:docs/api/api-json.md
 To do that, you must add a specific app service called a [gate](../tools/gate.md) on your device.
 
 
@@ -164,11 +157,7 @@ Each listed service of a node has basic services information:
 Below is a visual representation of this routing table:
 
 <p align="center">
-<<<<<<< HEAD:src/pages/api/api-json.md
-    <img src="../../_assets/img/luos-network-ex.png" />
-=======
     <img src="/img/luos-network-ex.png" />
->>>>>>> docusaurus:docs/api/api-json.md
 </p>
 
 

@@ -1,9 +1,3 @@
-<<<<<<< HEAD:src/pages/tutorials/luos-integration/ros1-retrocompatibility.md
-# ROS 1 retro-compatibility with Luos tutorial
-
-## Luos with ROS 1
-
-=======
 ---
 custom_edit_url: null
 ---
@@ -12,7 +6,6 @@ custom_edit_url: null
 
 ## Luos with ROS 1
 
->>>>>>> docusaurus:tutorials/luos-integration/ros1-retrocompatibility.md
 The `ROS 1 Bridge` allows ROS 2 packages such as `luos_ros2` to communicate with a ROS 1 ecosystem. However, both ROS 1 and 2 need to be installed, and the bridge takes care of the translation.
 This procedure has been tested with ROS 1 Noetic + ROS 2 Foxy and Python 3.8.2 in Ubuntu. It might work with older distributions, although it has not been tested.
 
@@ -42,23 +35,16 @@ colcon build --packages-select ros1_bridge --cmake-force-configure --cmake-args 
 ```
 
 ### 4. Start Luos in ROS 1
-<<<<<<< HEAD:src/pages/tutorials/luos-integration/ros1-retrocompatibility.md
-**In terminal 1: ROS Core in workspace `~/ros_ws`**
-=======
 
 **In terminal 1: ROS Core in workspace `~/ros_ws`**
 
->>>>>>> docusaurus:tutorials/luos-integration/ros1-retrocompatibility.md
 ```bash
 source ~/ros_ws/devel/setup.bash
 roscore
 ```
 
 **In terminal 2: ROS 1 Bridge in workspace `~/ros1_bridge_ws`**
-<<<<<<< HEAD:src/pages/tutorials/luos-integration/ros1-retrocompatibility.md
-=======
 
->>>>>>> docusaurus:tutorials/luos-integration/ros1-retrocompatibility.md
 ```bash
 source ~/ros1_bridge_ws/install/setup.bash
 ros2 run ros1_bridge dynamic_bridge --bridge-all-2to1-topics
@@ -74,10 +60,7 @@ ros2 launch luos_interface broker.launch.py
 
 **In terminal 1: Your ROS 1 app in workspace `~/ros_ws`**
 Let us consider that `rostopic` is the ROS 1 app you want to run with Luos services.
-<<<<<<< HEAD:src/pages/tutorials/luos-integration/ros1-retrocompatibility.md
-=======
 
->>>>>>> docusaurus:tutorials/luos-integration/ros1-retrocompatibility.md
 ```bash
 source ~/ros_ws/devel/setup.bash
 rostopic list
