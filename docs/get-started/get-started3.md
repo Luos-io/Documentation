@@ -2,7 +2,7 @@
 
 ## The network part: Create your first Luos network.
 
-> **Warning:** This tutorial will assume that you had followed the [Get started tutorial](/docs/get-started/getting-started). Make sure to read and follow it before reading this page.
+> **Warning:** This tutorial will assume that you had followed the [Get started tutorial](/docs/get-started/get-started). Make sure to read and follow it before reading this page.
 
 In this part we will learn how to configure Luos to access to your physical network between boards of your system allowing you to deal with a multiple board system. Then we will try to run our first example into multiple boards.
 
@@ -44,11 +44,11 @@ Now you can link your 2 boards following this wiring :
 
 ### Use this network!
 
-From the [first tutorial](/docs/get-started/getting-started) you should have a getting_started repository on your computer. We will use this code to demonstrate how Luos work using a network.
+From the [first tutorial](/docs/get-started/get-started) you should have a get_started repository on your computer. We will use this code to demonstrate how Luos work using a network.
 
 To make it we will move the blinker app service into _board 2_ and see what is happening.
 
-Open the Getting_started project corresponding to your first board then open the src/main.c or src/Arduino.ino file.
+Open the Get_started project corresponding to your first board then open the src/main.c or src/Arduino.ino file.
 
 In this file there is some setup function with the naming `packageName_Init()` and `packageName_Loop()`. These line reprensent the init and loop execution of all the packages of your project.
 We want to move the blinker from _board 1_ to _board 2_. To make it we have to remove it from _board 1_ :

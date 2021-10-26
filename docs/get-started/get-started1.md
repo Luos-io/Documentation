@@ -83,4 +83,4 @@ On top of it, we also added two other services allowing you to take control of y
 
 ## Next steps
 
-Your development environment is set up and the project is installed in a local folder. The [next part](/docs/get-started/getting-started2) of this get started will learn you how to run Luos on your MCU.
+Your development environment is set up and the project is installed in a local folder. The [next part](/docs/get-started/get-started2) of this get started will learn you how to run Luos on your MCU.

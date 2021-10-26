@@ -12,22 +12,22 @@ module.exports = {
             {
               type : 'doc',
               label : 'Get Started',
-              id : 'get-started/getting-started',
+              id : 'get-started/get-started',
             },
             {
               type : 'doc',
               label : 'Part 1: Your fist Luos service',
-              id : 'get-started/getting-started1',
+              id : 'get-started/get-started1',
             },
             {
               type : 'doc',
               label : 'Part 2: Take the control',
-              id : 'get-started/getting-started2',
+              id : 'get-started/get-started2',
             },
             {
               type : 'doc',
               label : 'Part 3: Unleash your code',
-              id : 'get-started/getting-started3',
+              id : 'get-started/get-started3',
             },
           ],
         },

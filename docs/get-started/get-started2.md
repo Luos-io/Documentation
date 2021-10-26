@@ -64,4 +64,4 @@ In \[5\]: `device.blinker.play()`
 
 ## Next steps
 
-Your development environment is now installed and you have a Luos app running on your MCU. The [next part](/docs/get-started/getting-started3) of this get started that deals with creating your first Luos network.
+Your development environment is now installed and you have a Luos app running on your MCU. The [next part](/docs/get-started/get-started3) of this get started that deals with creating your first Luos network.
