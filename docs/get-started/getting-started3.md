@@ -9,6 +9,7 @@ In this part we will learn how to configure Luos to access to your physical netw
 We will use the same boards than the 2 first part, but **you need to have 2 of them to create a network**.
 
 Supported boards are listed below:
+
 - Arduino zero, MKRzero, MKR1000, or any SAMD21-based Arduino board
 - STM32L432KC Nucleo
 
@@ -25,11 +26,11 @@ Luos also need a Point To Point (PTP) connection allowing to define the physical
 To create your network you have to identify pins used to perform Luos communication :
 
 | Function name | Arduino pin | STM32L432KC pin |
-|--|--|--|
-| TX | Pin 0 | PA9 |
-| RX | Pin 1 | PA10 |
-| PTPA | Pin 6 | PA5 |
-| PTPB | Pin 7 | PB4 |
+| ------------- | ----------- | --------------- |
+| TX            | Pin 0       | PA9             |
+| RX            | Pin 1       | PA10            |
+| PTPA          | Pin 6       | PA5             |
+| PTPB          | Pin 7       | PB4             |
 
 Now you can link your 2 boards following this wiring :
 
@@ -39,18 +40,18 @@ Now you can link your 2 boards following this wiring :
 
 > **Note:** You can have any PTP* connected to any another PTP* of another board. But you need only one PTP connection between boards!
 
-> **Note 2:** Obviously you will have to power up both of your board. In the next step of this tutorial we will plug board 1 to the USB, so eventually you can use the power pins of *board 1* to power *board 2*.
+> **Note 2:** Obviously you will have to power up both of your board. In the next step of this tutorial we will plug board 1 to the USB, so eventually you can use the power pins of _board 1_ to power _board 2_.
 
 ### Use this network!
 
 From the [first tutorial](/docs/get-started/getting-started) you should have a getting_started repository on your computer. We will use this code to demonstrate how Luos work using a network.
 
-To make it we will move the blinker app service into *board 2* and see what is happening.
+To make it we will move the blinker app service into _board 2_ and see what is happening.
 
 Open the Getting_started project corresponding to your first board then open the src/main.c or src/Arduino.ino file.
 
 In this file there is some setup function with the naming `packageName_Init()` and `packageName_Loop()`. These line reprensent the init and loop execution of all the packages of your project.
-We want to move the blinker from *board 1* to *board 2*. To make it we have to remove it from *board 1* :
+We want to move the blinker from _board 1_ to _board 2_. To make it we have to remove it from _board 1_ :
 
 ```c
 ...
@@ -66,10 +67,11 @@ We want to move the blinker from *board 1* to *board 2*. To make it we have to r
     Gate_Loop();
     //Blinker_Loop(); <== comment this line
 ```
-Now flash *board 1*.
+
+Now flash _board 1_.
 
 Then open the corresponding project for the second board you have. If you have twice the same board, just keep the same one...
-In *board 2* we only want to have the blinker app service, so in the src/main.c or src/Arduino.ino file we just can make it like that:
+In _board 2_ we only want to have the blinker app service, so in the src/main.c or src/Arduino.ino file we just can make it like that:
 
 ```c
 ...
@@ -85,9 +87,10 @@ In *board 2* we only want to have the blinker app service, so in the src/main.c 
     //Gate_Loop(); <== comment this line
     Blinker_Loop();
 ```
-Now flash *board 2* and it's done!
 
-To check if everything is OK, plug an USB cable into *board 1*. The *board 1* led should blink thank to the *board 2* app!
+Now flash _board 2_ and it's done!
+
+To check if everything is OK, plug an USB cable into _board 1_. The _board 1_ led should blink thank to the _board 2_ app!
 **Congratulation you just create your first Luos distributed system!**
 
 Now you can try to use pyluos-shell :
@@ -130,3 +133,7 @@ In [4]: device.led.state=False
 In [5]: device.blinker.play()
 
 ```
+
+## Next steps
+
+Congratulation, you have plugged and use your firts Luos network ! You can check our [tutorials](/tutorials/tutorials) to learn how to use the features of Luos technology. We also invite you to check our [documentation](/docs/luos-technology/luos_tech) if you want to learn more about the core concepts of Luos.

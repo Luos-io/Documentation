@@ -3,22 +3,17 @@ hide_table_of_contents: true
 custom_edit_url: null
 ---
 
-This page allows you to build, flash, run, and control your very first Luos code and Luos network.
+# Get started
 
-This Getting started is separated in 3 parts:
- - **The embedded part**: By following this part you will have all the tools you need to easily develop using Luos in your embedded target.
- - **The remote control part**: By following this part you will have all the tools you need to take control and easily test any Luos device.
- - **The network part**: By following this part you will have your very first Luos network.
+This page allows you to build, flash, run, and control your very first Luos code.
 
-## The embedded part: Run your first embedded app!
+This Get started is separated in 2 parts:
 
-This tutorial shows you how to quickly upload a Luos application on an MCU development kit.
+1.  **The embedded part**: By following this part you will have all the tools you need to easily develop using Luos in your embedded target.
+2.  **The remote control part**: By following this part you will have all the tools you need to take control and easily test any Luos device.
 
-Supported boards are listed below:
+In order to complete this tutorial you will need to install dependancies such as <a href="https://www.python.org" target="_blank">Python &#8599;</a>, <a href="https://git-scm.com/" target="_blank">GIT &#8599;</a>, the USB driver compatible with your board and <a href="https://ipython.org/" target="_blank">Ipython &#8599;</a>. Although the purpose of this tutorial is not to guide you through the installation of these dependancies, we will recommand some links to help you along the process.
 
-- Arduino zero, MKRzero, MKR1000, or any SAMD21-based Arduino board
-- STM32L432KC Nucleo
-
-> **Note:** This list will grow longer with time.
-
-Let's do this!
+- [Part 1: Your first Luos service](/docs/get-started/getting-started1)
+- [Part 2: Take the control](/docs/get-started/getting-started2)
+- [Part 3 Unleash your code](/docs/get-started/getting-started3)

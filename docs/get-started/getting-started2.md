@@ -1,6 +1,8 @@
-# Part 2: Take the control
+---
+custom_edit_url: null
+---
 
-## The remote control part: 💊 You can control the Matrix.
+# The remote control part: 💊 You can control the Matrix.
 
 The gate running on your board allows you to take control of any service loaded on your device.
 
@@ -12,6 +14,8 @@ To install it, run:
 ```bash
 pip install pyluos
 ```
+
+This step needs you to have <a href="IPython" target="_blank">IPython &#8599;</a> previously installed on your computer.
 
 ### Connect and control your device
 
@@ -56,7 +60,8 @@ In \[1\]: `device.blinker.time=0.25`
 In \[2\]: `device.blinker.pause()`  
 In \[3\]: `device.led.state=True`  
 In \[4\]: `device.led.state=False`  
-In \[5\]: `device.blinker.play()`  
+In \[5\]: `device.blinker.play()`
 
+## Next steps
 
-Your development environment is now completely installed and you can remote control your device! Well done.
+Your development environment is now installed and you have a Luos app running on your MCU. The [next part](/docs/get-started/getting-started3) of this get started that deals with creating your first Luos network.
