@@ -4,7 +4,7 @@ custom_edit_url: null
 
 # Part 1: Your first Luos service
 
-## 1. The embedded part: Run your first embedded app!
+## The embedded part: Run your first embedded app!
 
 This tutorial shows you how to quickly upload a Luos application on a Microcontroller Unit (MCU) development kit.
 
@@ -23,13 +23,13 @@ First, download and install the free coding editor <a href="https://code.visuals
 
 Then, in VSCode:
 
-<p align="center">
-  <img src="/img/get-started/install_VSCODE.png" />
-</p>
-
 1.  Open VSCode Extension Manager.
 2.  Search for the official <a href="https://platformio.org/install/ide?install=vscode" target="_blank">PlatformIO IDE &#8599;</a> extension.
 3.  Install PlatformIO IDE.
+
+<p align="center">
+  <img src="/img/get-started/install_VSCODE.png" />
+</p>
 
 ### Clone the project
 
@@ -49,7 +49,7 @@ If you are not familiar with Git, you can consult <a href="https://git-scm.com/d
 
 Open VSCode and click on **Open Folder** in the project explorer on the left, then select a project depending on the board you have chosen. For example, for the STM32L432KC Nucleo, open **L432KC_Nucleo** in the folder explorer then click on **ADD**.
 
-If VSCode outputs the following message "Do you trust the authors of the files in the folder?": you can trust us 😉 and check the option "Trust the authors of all files in the parent folder" so it won't popup anymore, and click the "Yes, I trust the authors" button.
+If VSCode outputs the following message "Do you trust the authors of the files in the folder?": you can trust us 😉 and check the option "Trust the authors of all files in the parent folder" so it won't popup anymore. Then click the "Yes, I trust the authors" button.
 
 <p align="center">
   <img src="/img/get-started/Open_project2.png" />
@@ -59,7 +59,7 @@ The project folder is opened in the explorer.
 
 > **Note:** Arduino users can select their board on the `platformio.ini` file by modifying the `board = zero` line.
 
-You can now flash your board: make sure it's connected to your PC with a USB cable and click on **Upload** on the bottom left of the VSCode window. In order this step to work, you will need the USB driver related to your board. As an example, here is the <a href="https://www.st.com/en/development-tools/stsw-link009.html" target="_blank">STM32L432K drivers &#8599;</a> on the constructor website. If you have any trouble with your USB driver, you can also consult [our FAQ page](/faq/dfu) on this topic.
+You can now flash your board: make sure it is connected to your PC with a USB cable, and click on **Upload** on the bottom left in the VSCode window. In order for this step to work, you will need the USB driver related to your board. As an example, here is the <a href="https://www.st.com/en/development-tools/stsw-link009.html" target="_blank">STM32L432K drivers &#8599;</a> on the constructor website. If you have any trouble with your USB driver, you can also consult [our FAQ page](/faq/dfu) on this topic.
 
 <p align="center">
   <img src="/img/get-started/Flash_board2.png" />
@@ -83,4 +83,4 @@ On top of it, we also added two other services allowing you to take control of y
 
 ## Next steps
 
-Your development environment is set up and the project is installed in a local folder. The [next part](/docs/get-started/getting-started2) of this get started will learn you how to run Luos on your MCU.
+Your development environment is set up and the project is installed in a local folder. The [next part](/docs/get-started/get-started2) of this section will teach you how to run Luos on your MCU.

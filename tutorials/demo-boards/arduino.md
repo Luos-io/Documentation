@@ -16,7 +16,7 @@ You can download Arduino IDE compatible example and Luos Library with <a href="h
 
 Creating a Luos Network with an Arduino board is very easy. Use D0 and D1 for Tx and Rx, D2 and D3 for Rx_En and Tx_En (RS485 configuration), D5 and D6 for PTPA and PTPB. See the [hardware topics](/docs/hardware-consideration/hardware-consideration) page for more information.
 
-## Getting Started
+## Get Started
 
 1.  Install the Ardiuno IDE from the <a href="https://www.arduino.cc/" target="_blank">Arduino &#8599;</a> website.
 2.  Copy and paste the following URL into the _File > Preferences > "Additional Boards Manager"_ textbox.

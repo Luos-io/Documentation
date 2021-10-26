@@ -61,7 +61,7 @@ module.exports = {
         {
           type: 'doc',
           label: 'Documentation',
-          docId: 'get-started/getting-started',
+          docId: 'get-started/get-started',
           position: 'right',
         },
         { to: '/tutorials/tutorials', label: 'Tutorials', position: 'right' },
@@ -82,7 +82,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/docs/get-started/getting-started',
+              to: '/docs/get-started/get-started',
             },
             {
               label: 'Contact us',

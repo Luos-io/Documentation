@@ -2,7 +2,9 @@
 custom_edit_url: null
 ---
 
-# The remote control part: 💊 You can control the Matrix.
+# Part 2: Take the control
+
+## The remote control part: you can control the Matrix 💊
 
 The gate running on your board allows you to take control of any service loaded on your device.
 
@@ -56,12 +58,12 @@ Your luos device have been successfully mounted into a "device" object:
 Now that you are on an IPython command line, you can run Python scripts in it.
 The `device` object is your real device and you can interact with it. For example, try to execute these lines one by one:
 
-In \[1\]: `device.blinker.time=0.25`  
-In \[2\]: `device.blinker.pause()`  
-In \[3\]: `device.led.state=True`  
-In \[4\]: `device.led.state=False`  
-In \[5\]: `device.blinker.play()`
+`device.blinker.time=0.25`  
+`device.blinker.pause()`  
+`device.led.state=True`  
+`device.led.state=False`  
+`device.blinker.play()`
 
 ## Next steps
 
-Your development environment is now installed and you have a Luos app running on your MCU. The [next part](/docs/get-started/getting-started3) of this get started that deals with creating your first Luos network.
+Your development environment is now installed and you have a Luos app running on your MCU. The [next part](/docs/get-started/get-started3) of this section deals with creating your first Luos network.
