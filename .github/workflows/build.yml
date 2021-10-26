@@ -7,32 +7,35 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Cache mdbook
-      id: cache-mdbook
-      uses: actions/cache@v1
-      with:
-        path: ~/.cargo
-        key: ${{ runner.os }}-mdbook
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-    - name: rust install
-      if: steps.cache-mdbook.outputs.cache-hit != 'true'
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
-    - name: install
-      if: steps.cache-mdbook.outputs.cache-hit != 'true'
-      run: |
-        cargo install mdbook
-        cargo install -f mdbook-variables
-        cargo install mdbook-linkcheck
-        # change rust folder permission avoiding Cache init fail. C.F. https://github.com/actions/cache/issues/133
-        sudo chown -R $(whoami):$(id -ng) ~/.cargo/
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-    - name: build
-      run: mdbook build
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install
 
-    - name: test
-      run: mdbook test
+      - name: build
+        run: yarn build
+        env:
+          REACT_APP_EMAIL_JS_SERVICE_ID: ${{ secrets.REACT_APP_EMAIL_JS_SERVICE_ID }}
+          REACT_APP_EMAIL_JS_TEMPLATE_ID: ${{ secrets.REACT_APP_EMAIL_JS_TEMPLATE_ID }}
+          REACT_APP_EMAIL_JS_USER_ID: ${{ secrets.REACT_APP_EMAIL_JS_USER_ID }}
+          REACT_APP_TYPEFORM_ID: ${{ secrets.REACT_APP_TYPEFORM_ID }}

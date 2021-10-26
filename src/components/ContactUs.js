@@ -1,0 +1,14 @@
+import React from 'react';
+import useIsBrowser from '@docusaurus/useIsBrowser';
+
+export default function ContactUs(props) {
+  const isBrowser = useIsBrowser();
+  if (isBrowser) {
+    localStorage.setItem('prevPageContactUs', props.pageName);
+  }
+  return (
+    <div className="contactUs">
+      <a href="/feedbacks/send">You can't find what your're looking for ? »</a>
+    </div>
+  );
+}

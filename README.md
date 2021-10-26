@@ -17,7 +17,7 @@ This repository contains the Luos library that you will need to include in your 
 
 Watch this video for additional details:
 
-<a href="https://youtu.be/xQe3z0M_FE8"><img border="0" alt="Luos video" src="https://uploads-ssl.webflow.com/601a78a2b5d030260a40b7ad/6035128c3e63c132f1743d13_youtube.jpeg" width="640" height="360"></a>
+<a href="https://youtu.be/xQe3z0M_FE8"><img border="0" alt="Luos video" src="https://uploads-ssl.webflow.com/601a78a2b5d030260a40b7ad/6035128c3e63c132f1743d13_youtube.jpeg" width="640" height="360"/></a>
 
 ## Unfamiliar with Luos?
 
