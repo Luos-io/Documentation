@@ -10,12 +10,12 @@ Because Luos allows you to manage your features as sharable blocks of code, we o
 
 Different levels on the embedded code are defined, corresponding to the different levels of information needed across your entire product.
 
-|  Level  |                                                                           Description                                                                            |
-| :-----: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Product | A node or a set of nodes that communicate with each other. This is the place were you will have the configurations and information intended for all your boards. |
-|  Node   |                                  This is the board's code. This is your actual Eclipse, PlatformIO, IAR, or any other project.                                   |
-| Package |                                              A sharable folder containing code files managing one or more services.                                              |
-| Service |                      Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can be custom too.                       |
+|  Level  |                                                                            Description                                                                            |
+| :-----: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Product | A node or a set of nodes that communicate with each other. This is the place where you will have the configurations and information intended for all your boards. |
+|  Node   |                                   This is the board's code. This is your actual Eclipse, PlatformIO, IAR, or any other project.                                   |
+| Package |                                              A sharable folder containing code files managing one or more services.                                               |
+| Service |                       Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can be custom too.                       |
 
 <p align="center">
     <img src="/img/architecture.png" />

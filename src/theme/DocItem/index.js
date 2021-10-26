@@ -115,7 +115,7 @@ function DocItem(props) {
                     <DocContent />
                     <ContactUs pageName={window.location} />
                     <Sidetab
-                      id={customFields.typeform_id}
+                      id={process.env.REACT_APP_TYPEFORM_ID}
                       buttonText="Is Luos for me? 🤔"
                     />
                   </>
