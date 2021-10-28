@@ -19,7 +19,8 @@ export default function ContactUs(props) {
       e.preventDefault();
       elementContainer[0].classList.add('success');
       element.innerText = 'Your feedback has been sent.';
-
+      let form = document.getElementById('feedbackForm');
+      form.reset();
       emailjs
         .sendForm(
           process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
@@ -47,7 +48,7 @@ export default function ContactUs(props) {
         <div className="row">
           <h1 className="col-info__title">Feedback and concerns</h1>
           <p className="col-info__p">
-            You didn't find our docs useful ? Give us your feedback so we can
+            You didn't find our docs useful? Give us your feedback so we can
             help you.
           </p>
         </div>
@@ -56,7 +57,12 @@ export default function ContactUs(props) {
         </div>
       </div>
       <div className="col-form">
-        <form className="feedbackForm" ref={form} onSubmit={sendEmail}>
+        <form
+          className="feedbackForm"
+          id="feedbackForm"
+          ref={form}
+          onSubmit={sendEmail}
+        >
           <input name="user_page" type="hidden" value={sourcePage} />
           <div className="feedbackForm__field">
             <label htmlFor="user_object">What's your headache? *</label>

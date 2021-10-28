@@ -48,15 +48,14 @@ module.exports = {
       },
       items: [
         {
-          href: 'https://www.luos.io',
-          label: 'Luos.io',
+          to: '/get-started/get-started',
+          label: 'Get Started',
           position: 'right',
-          id: 'link__header__luos',
         },
         {
           type: 'doc',
           label: 'Documentation',
-          docId: 'get-started/get-started',
+          docId: 'luos-technology/luos_tech',
           position: 'right',
         },
         { to: '/tutorials/tutorials', label: 'Tutorials', position: 'right' },
@@ -66,10 +65,14 @@ module.exports = {
           position: 'right',
           id: 'link__header__faq',
         },
-
+        {
+          href: 'https://www.luos.io',
+          label: 'Luos.io',
+          position: 'right',
+        },
         {
           href: 'https://github.com/luos-io',
-          label: 'Download',
+          label: 'Download Luos',
           position: 'right',
         },
       ],
@@ -125,7 +128,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Luos, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Luos Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
@@ -160,6 +163,15 @@ module.exports = {
       {
         systemvars: true, // Set to true if you would rather load all system variables as well (useful for CI purposes)
         safe: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'get-started',
+        path: 'get-started',
+        routeBasePath: 'get-started',
+        sidebarPath: require.resolve('./sidebarsGetStarted.js'),
       },
     ],
     [

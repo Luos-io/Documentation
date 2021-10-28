@@ -2,17 +2,20 @@
 custom_edit_url: null
 ---
 
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Part 3: Unleash your code
 
 ## The network part: Create your first Luos network
 
-> **Warning:** In this last part, we assume that you had followed the first two parts of the [Get started tutorial](/docs/get-started/get-started). Make sure to read and follow them before reading this page.
+> **Warning:** In this last part, we assume that you had followed the first two parts of the [Get started tutorial](/get-started/get-started). Make sure to read and follow them before reading this page.
 
 In this part, we will learn how to configure Luos to access to your physical network between boards of your system, allowing you to deal with a multiple-boards system. Then we will try to run our first example into multiple boards.
 
 We will use the same boards than in the two first parts, but **you need to have two of them to create a network**.
 
-Supported boards are listed below [here](/docs/get-started/get-started1#setup-development-environment).
+Supported boards are listed below [here](/get-started/get-started1#setup-development-environment).
 
 ### Create a physical network
 
@@ -34,7 +37,12 @@ To create your network, you have to identify the pins used to perform Luos commu
 Now you can link both boards following this wiring :
 
 <p align="center">
-      <img src="/img/Get_started_board_connection.png" />
+    <ThemedImage
+sources={{
+    light: useBaseUrl('/img/Get_started_board_connection_black.png'),
+    dark: useBaseUrl('/img/Get_started_board_connection_white.png'),
+  }}
+/>
 </p>
 
 > **Note:** You can have any PTP* connected to any another PTP* of another board. But you need only one PTP connection between boards!
@@ -43,11 +51,11 @@ Now you can link both boards following this wiring :
 
 ### Use this network!
 
-From the [first _Get started_ tutorial](/docs/get-started/get-started), you should have a *get_started* repository on your computer. We will use this code to demonstrate how Luos works using a network.
+From the [first _Get started_ tutorial](/get-started/get-started), you should have a _get_started_ repository on your computer. We will use this code to demonstrate how Luos works using a network.
 
 To make it, we will move the blinker app service into _board 2_ and see what is happening.
 
-Open the Get_started project corresponding to your first board, then open *the src/main.c* or *src/Arduino.ino* file.
+Open the Get*started project corresponding to your first board, then open \_the src/main.c* or _src/Arduino.ino_ file.
 
 In this file, there is some setup function with the naming `packageName_Init()` and `packageName_Loop()`. These lines reprensent the init and loop execution of all the packages of your project.
 We want to move the blinker from _board 1_ to _board 2_. To make it, we have to remove it from _board 1_:
@@ -70,7 +78,7 @@ We want to move the blinker from _board 1_ to _board 2_. To make it, we have to 
 Now flash _board 1_.
 
 Then open the corresponding project for the second board you have. If you have twice the same board, just keep the same one.
-In _board 2_ we only want to have the blinker app service, so we can write the following code in the *src/main.c* or *src/Arduino.ino* files:
+In _board 2_ we only want to have the blinker app service, so we can write the following code in the _src/main.c_ or _src/Arduino.ino_ files:
 
 ```c
 ...

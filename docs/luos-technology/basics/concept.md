@@ -15,7 +15,7 @@ In other words, **a node is a microcontroller** connected to other microcontroll
 In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.
 
 <p align="center">
-<img src="/img/MCU-luos.png" height="100px" />
+<img src="/img/MCU-luos.png" height="150px" />
 </p>
 
 ## Package

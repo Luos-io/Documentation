@@ -115,7 +115,7 @@ function DocItem(props) {
                     <DocContent />
                     <ContactUs pageName={window.location} />
                     <Sidetab
-                      id={process.env.REACT_APP_TYPEFORM_ID}
+                      id={customFields.typeform_id}
                       buttonText="Is Luos for me? 🤔"
                     />
                   </>
@@ -140,7 +140,6 @@ function DocItem(props) {
                 </footer>
               )}
             </article>
-
             <DocPaginator metadata={metadata} />
           </div>
         </div>

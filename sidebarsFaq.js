@@ -7,39 +7,35 @@ module.exports = {
         {
           type: 'doc',
           label: 'List',
-          id : 'list',
+          id: 'list',
         },
         {
           type: 'doc',
           label: 'Detection reconfiguration',
-          id : 'detection-reconfig',
+          id: 'detection-reconfig',
         },
         {
           type: 'doc',
           label: 'USB drivers issue (DFU)',
-          id : 'dfu'
+          id: 'dfu',
         },
         {
           type: 'doc',
           label: 'Building Luos default examples',
-          id : 'application-compile'
+          id: 'application-compile',
         },
         {
           type: 'doc',
           label: 'Default IRQ handler',
-          id : 'application-default-handler'
+          id: 'application-default-handler',
         },
         {
           type: 'doc',
           label: 'Add an issue',
-          id : 'add-issue'
+          id: 'add-issue',
         },
-        {
-          type: 'link',
-          label: 'Go to Luos.io',
-          href: 'https://www.luos.io/'
-        }
       ],
     },
-  ]
-}
+    { type: 'link', label: 'Go to Luos.io', href: 'https://www.luos.io/' },
+  ],
+};

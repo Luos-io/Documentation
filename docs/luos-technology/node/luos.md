@@ -29,7 +29,7 @@ Luos is like a task that has to be run regularly. The primary Luos functions tha
 
 Basically, your `main()` function will look like this:
 
-```C
+```c
 #include "luos.h"
 
 int main(void)

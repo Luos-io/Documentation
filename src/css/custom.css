@@ -27,6 +27,10 @@ html[data-theme='dark'] {
   --ifm-color-primary: #bd99ff;
 }
 
+html[data-theme='light'] a:hover {
+  color: #2aa089;
+}
+
 html[data-theme='dark'] .menu {
   background-color: #282d3f;
   margin-bottom: 0;
@@ -329,6 +333,23 @@ h6 {
   font-weight: normal;
 }
 
+html[data-theme='dark'] .cust_tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #282d3f;
+  color: white;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 0.875em;
+  font-weight: normal;
+}
+
 .cust_tooltip:hover .cust_tooltiptext {
   visibility: visible;
 }
@@ -347,17 +368,16 @@ h6 {
   margin-bottom: 50px;
 }
 
-#link__header__luos,
 #link__header__faq {
-  border-right: 1px solid white;
+  border-right: 1px solid white !important;
+}
+#link__header__faq:hover {
+  border-right: 1px solid white !important;
+}
+html[data-theme='light'] #link__header__faq:hover {
+  border-right: 1px solid black !important;
 }
 
-#link__header__luos,
-#link__header__faq:hover {
-  border-right: 1px solid white;
-}
-
-html[data-theme='light'] #link__header__luos,
-#link__header__faq:hover {
-  border-right: 1px solid black;
+html[data-theme='light'] #link__header__faq {
+  border-right: 1px solid black !important;
 }
