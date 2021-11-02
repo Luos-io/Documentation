@@ -264,7 +264,7 @@ Here is an exemple of a message sent by a gate service about Luos statistic:
 
 Some messages are specifically handled:
 
-<!-- - If the type is `VOID_MOD`, the service is empty and no message is converted.-->
+<!-- - If the type is `VOID_TYPE`, the service is empty and no message is converted.-->
 
 Custom parameters can be defined and sent to services through the JSON API, either with Python (Pyluos) or any other programming language on a computer side.
 Here is an example of a C function that can be implemented in order to send commands to services in a Luos Network, through a gate:

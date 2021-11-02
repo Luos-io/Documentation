@@ -244,7 +244,7 @@ void Button_MsgHandler(service_t *service, msg_t *msg) {
 
 void Button_Init(void) {
     // service creation: (callback, service type, Default alias)
-    service_t* service = Luos_CreateService(Button_MsgHandler, STATE_MOD, "button_mod");
+    service_t* service = Luos_CreateService(Button_MsgHandler, STATE_TYPE, "button_mod");
 }
 
 void Button_Loop(void) {
@@ -268,7 +268,7 @@ See the following code as an example, with a button:
 ```c
 service_t* service;
 void Button_Init(void) {
-    service = Luos_CreateService(0, STATE_MOD, "button_mod");
+    service = Luos_CreateService(0, STATE_TYPE, "button_mod");
 }
 
 void Button_Loop(void) {

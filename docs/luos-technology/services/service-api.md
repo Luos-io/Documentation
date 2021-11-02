@@ -31,7 +31,7 @@ void Service_MsgHandler(service_t *service, msg_t *msg)
 - **service** is the service pointer of the service receiving the data (basically, it is your service).
 - **msg** is the message your service received.
 
-**type** is the type of the new service represented by a number. Some basic types (e.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `service_type_t` enum structure of Luos. You can also add your own and use them with Luos.
+**type** is the type of the new service represented by a number. Some basic types (e.g. `DISTANCE_TYPE`, `VOLTAGE_TYPE`, etc.) are already available in the `service_type_t` enum structure of Luos. You can also add your own and use them with Luos.
 
 **default alias** is the alias by default for your new service (e.g. `Myservice02`). This alias is the one your service will use if no other service have the same and if no other alias is set by the user. Aliases have a maximum size of 16 characters.
 
