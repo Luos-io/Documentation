@@ -28,7 +28,7 @@ sources={{
 
 ## Package
 
-A package is a folder of code containing a pack of features in your project. A package can be composed of one or several services, but services in the same package share the same physical resources. For example, a dual DCmotor driver is developed into one package but exposes two services (one for each motor). The purpose of this package is to be simply copied and pasted across projects or shared as readyo-to-use apps.
+A package is a folder of code containing a pack of features in your project. A package can be composed of one or several services, but services in the same package share the same physical resources. For example, a dual DCmotor driver is developed into one package but exposes two services (one for each motor). The purpose of this package is to be simply copied and pasted across projects or shared as ready-to-use apps.
 
 ## Service
 

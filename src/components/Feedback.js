@@ -85,7 +85,7 @@ export default function ContactUs(props) {
               className="inputForm"
               rows="9"
               name="message"
-              placeholder="How should I configure my services in order to get my rocket off the ground ?"
+              placeholder="How should I configure my services in order to get my rocket off the ground?"
             />
           </div>
           <div className="feedbackForm__field">

@@ -76,7 +76,7 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Initilization',
+                  label: 'Initialization',
                   id: 'luos-technology/services/service-api',
                 },
                 {
