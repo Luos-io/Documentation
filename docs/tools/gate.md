@@ -34,7 +34,7 @@ The Gate and the pipe are two separate services, they can be put on the same nod
 
 In that configuration you put 2 services in the node like below.
 
-```C
+```c
 #include "luos.h"
 #include "pipe.h"
 #include "gate.h"

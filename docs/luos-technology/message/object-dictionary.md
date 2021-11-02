@@ -67,7 +67,7 @@ In the same way, both conversions are available for messages (OD type **from** m
 
 Format: `[type]FromMsg([type_var], msg)`
 
-```C
+```c
 // get the linear_position from the message msg
 void LinearOD_PositionFromMsg(linear_position_t* linear_position, msg_t* msg);
 ```

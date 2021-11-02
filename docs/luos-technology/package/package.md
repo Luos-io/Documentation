@@ -51,7 +51,7 @@ We choose to put the public functions of our services in the `package.h` file. A
 
 Then packages are initialized and run in the `main()` function:
 
-```C
+```c
 #include "luos.h"
 #include "package1.h"
 #include "package2.h"

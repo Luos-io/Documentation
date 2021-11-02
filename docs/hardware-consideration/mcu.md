@@ -30,7 +30,7 @@ For example, redefine PTPA to fit with your design
 
 in`luos_hal_config.h` this is defined as followed:
 
-```C
+```c
 #ifndef PTPA_PIN
 #define PTPA_PIN                    GPIO_PIN_8
 #endif
@@ -38,7 +38,7 @@ in`luos_hal_config.h` this is defined as followed:
 
 in`node_config.h` this should be redefined as followed:
 
-```C
+```c
 #define PTPA_PIN                    GPIO_PIN_11
 ```
 

@@ -72,7 +72,8 @@ module.exports = {
         },
         {
           href: 'https://github.com/luos-io',
-          label: 'Download Luos',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
           position: 'right',
         },
       ],
@@ -121,14 +122,10 @@ module.exports = {
               label: 'Youtube',
               to: 'https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA',
             },
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Luos Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Luos, Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,

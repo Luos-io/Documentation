@@ -82,9 +82,13 @@ function DocItem(props) {
 
       <div className="row">
         <div
-          className={clsx('col', {
-            [styles.docItemCol]: !hideTableOfContents,
-          })}
+          className={clsx(
+            'col',
+            {
+              [styles.docItemCol]: !hideTableOfContents,
+            },
+            'custom_mobile_col',
+          )}
         >
           <DocVersionBanner versionMetadata={versionMetadata} />
           <div className={styles.docItemContainer}>
@@ -115,6 +119,7 @@ function DocItem(props) {
                     <DocContent />
                     <ContactUs pageName={window.location} />
                     <Sidetab
+                      className="test"
                       id={customFields.typeform_id}
                       buttonText="Is Luos for me? 🤔"
                     />

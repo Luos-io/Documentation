@@ -11,21 +11,25 @@ import siteConfig from '/docusaurus.config.js';
   <a href="/get-started/get-started"><div className="cust_square">
     <div className=""><img className="cust_img_rot" src="/img/landing/icon-rocket.png" /></div>
     <div className="cust_landing_title">Get started</div>
+    <div className="cust_landing_seperator"></div>
     <div className="cust_landing_text">First steps on using Luos.</div>  
   </div></a>
   <a href="/docs/luos-technology/luos_tech"><div className="cust_square">
     <div  className="cust_landing_img"><img src="/img/landing/icon-docs.png" /></div>
     <div className="cust_landing_title">Documentation</div>
+    <div className="cust_landing_seperator"></div>
     <div className="cust_landing_text">How Luos technology works.</div>  
   </div></a>
   <a href="/tutorials/tutorials"><div className="cust_square">
     <div className="cust_landing_img"><img src="/img/landing/icon-hat_school.png" /></div>
     <div className="cust_landing_title">Tutorials</div>
+    <div className="cust_landing_seperator"></div>
     <div className="cust_landing_text">Follow tutorials on Luos' use.</div>  
   </div></a>
   <a href="/faq/list"><div className="cust_square">
     <div className="cust_landing_img"><img src="/img/landing/icon-help.png" /></div>
     <div className="cust_landing_title">FAQ</div>
+    <div className="cust_landing_seperator"></div>
     <div className="cust_landing_text">Find how to resolve your issue.</div>  
   </div></a>
 </div>

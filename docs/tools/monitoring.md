@@ -62,7 +62,7 @@ Luos allows you to declare to an entire network a critical failure on a service.
 To handle it, Luos exposes a `LUOS_ASSERT` macro that will enable you to test some conditions on it to prevent wrong values.
 for example:
 
-```C
+```c
  LUOS_ASSERT(arg_ptr != NULL);
 ```
 

@@ -21,7 +21,7 @@ Creating a Luos Network with an Arduino board is very easy. Use D0 and D1 for Tx
 1.  Install the Ardiuno IDE from the <a href="https://www.arduino.cc/" target="_blank">Arduino &#8599;</a> website.
 2.  Copy and paste the following URL into the _File > Preferences > "Additional Boards Manager"_ textbox.
 
-```Json
+```json
 https://raw.githubusercontent.com/Luos-io/Arduino_core/main/package_luos_index.json
 ```
 

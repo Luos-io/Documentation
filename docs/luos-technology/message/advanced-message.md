@@ -47,7 +47,7 @@ To use it, you have to setup targeted service with a message containing a standa
 
 For example, to update a service each 10 ms:
 
-```C
+```c
 time_luos_t time = TimeOD_TimeFrom_ms(10);
 msg_t msg;
 msg.header.target = id;
@@ -134,7 +134,7 @@ Now you can use this channel to receive or transmit a streaming flux:
 This is used to make the motor move.<br/>
 When your streaming channel has been created, you can feed it with received messages on your reception callback:
 
-```C
+```c
 void Motor_MsgHandler(service_t *service, msg_t *msg) {
    // check message command
    if (msg->header.cmd == ANGULAR_POSITION) {
@@ -146,7 +146,7 @@ void Motor_MsgHandler(service_t *service, msg_t *msg) {
 
 Now your service is able to receive trajectory chunks. For the next step, you need to have a real-time callback (using a timer for example) which is able to manage the consumption of this trajectory at 200hz:
 
-```C
+```c
 void 200hz_callback(void) {
     Stream_GetSample(&trajectory, &motor.target_angular_position);
 }
@@ -158,7 +158,7 @@ This is used to measure the motor movements.<br/>
 To go the other way and send a sampled signal such as a position measurement, you have to use your streaming channel in reception.
 First you have to put values into your streaming channel at 200Hz:
 
-```C
+```c
 void 200hz_callback(void) {
     Stream_PutSample(&trajectory, &motor.angular_position);
 }
@@ -166,7 +166,7 @@ void 200hz_callback(void) {
 
 This way, samples are buffered into your ring buffer, and you can send this real-time information as you want:
 
-```C
+```c
 void Motor_MsgHandler(service_t *service, msg_t *msg) {
    msg_t pub_msg;
    // check message command

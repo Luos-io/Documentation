@@ -35,20 +35,20 @@ This first message is essential because it contains all the information allowing
 
 A routing table in JSON consists of a list of the nodes present in the Luos network:
 
-```JSON
+```json
 {
-   "routing_table":[
-      {
-         // node 1
-      },
-      {
-         // node 2
-      },
-      {
-         // node 3
-      }
-      // ...
-   ]
+  "routing_table": [
+    {
+      // node 1
+    },
+    {
+      // node 2
+    },
+    {
+      // node 3
+    }
+    // ...
+  ]
 }
 ```
 
@@ -56,20 +56,21 @@ A routing table in JSON consists of a list of the nodes present in the Luos netw
 
 Each listed node of the network has basic node information and a list of hosted services:
 
-```JSON
-{ // node 1
-   "node_id":1,
-   "certified":true,
-   "port_table":[1, 2],
-   "services":[
-      {
-         // service 1
-      },
-      {
-         // service 2
-      }
-      // ...
-   ]
+```json
+{
+  // node 1
+  "node_id": 1,
+  "certified": true,
+  "port_table": [1, 2],
+  "services": [
+    {
+      // service 1
+    },
+    {
+      // service 2
+    }
+    // ...
+  ]
 }
 ```
 
@@ -79,11 +80,12 @@ Each listed node of the network has basic node information and a list of hosted 
 
 Each listed service of a node has basic services information:
 
-```JSON
-{ // service 1
-   "type":"Type",
-   "id":1,
-   "alias":"Alias"
+```json
+{
+  // service 1
+  "type": "Type",
+  "id": 1,
+  "alias": "Alias"
 }
 ```
 
@@ -91,68 +93,68 @@ Each listed service of a node has basic services information:
 
 #### Full routing table example
 
-```JSON
+```json
 {
-   "routing_table":[
-      {
-         "node_id":1,
-         "certified":true,
-         "port_table":[2, 65535],
-         "services":[
-            {
-               "type":"Gate",
-               "id":1,
-               "alias":"r_right_arm"
-            }
-         ]
-      },
-      {
-         "node_id":2,
-         "certified":true,
-         "port_table":[4, 1],
-         "services":[
-            {
-               "type":"State",
-               "id":2,
-               "alias":"lock"
-            },
-            {
-               "type":"Unknown",
-               "id":3,
-               "alias":"start_control"
-            }
-         ]
-      },
-      {
-         "node_id":3,
-         "certified":true,
-         "port_table":[5, 3],
-         "services":[
-            {
-               "type":"Imu",
-               "id":4,
-               "alias":"gps"
-            }
-         ]
-      },
-      {
-         "node_id":4,
-         "certified":true,
-         "port_table":[65535, 4],
-         "services":[
-            {
-               "type":"Color",
-               "id":5,
-               "alias":"alarm"
-            },
-            {
-               "type":"Unknown",
-               "id":6,
-               "alias":"alarm_control"
-            }
-         ]
-      }
-   ]
+  "routing_table": [
+    {
+      "node_id": 1,
+      "certified": true,
+      "port_table": [2, 65535],
+      "services": [
+        {
+          "type": "Gate",
+          "id": 1,
+          "alias": "r_right_arm"
+        }
+      ]
+    },
+    {
+      "node_id": 2,
+      "certified": true,
+      "port_table": [4, 1],
+      "services": [
+        {
+          "type": "State",
+          "id": 2,
+          "alias": "lock"
+        },
+        {
+          "type": "Unknown",
+          "id": 3,
+          "alias": "start_control"
+        }
+      ]
+    },
+    {
+      "node_id": 3,
+      "certified": true,
+      "port_table": [5, 3],
+      "services": [
+        {
+          "type": "Imu",
+          "id": 4,
+          "alias": "gps"
+        }
+      ]
+    },
+    {
+      "node_id": 4,
+      "certified": true,
+      "port_table": [65535, 4],
+      "services": [
+        {
+          "type": "Color",
+          "id": 5,
+          "alias": "alarm"
+        },
+        {
+          "type": "Unknown",
+          "id": 6,
+          "alias": "alarm_control"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -168,17 +170,17 @@ When the JSON routing table is transmitted, the gate updates and streams your ne
 
 This JSON is a "service" object listing all the services by their alias and the values they send:
 
-```JSON
+```json
 {
-   "services":{
-      "service_alias1":{
-         "value1":12.5
-      },
-      "service_alias2":{
-         "value1":13.6,
-         "value2":[1, 2, 3, 4]
-      }
-   }
+  "services": {
+    "service_alias1": {
+      "value1": 12.5
+    },
+    "service_alias2": {
+      "value1": 13.6,
+      "value2": [1, 2, 3, 4]
+    }
+  }
 }
 ```
 
@@ -238,33 +240,33 @@ Here is the list of all values that services can use:
 
 Here is an example of a message sent by a potentiometer service containing the rotation angle of the associated potentiometer:
 
-```JSON
+```json
 {
-   "services":{
-      "potentiometer_m":{
-         "rot_position":12.5
-      }
-   }
+  "services": {
+    "potentiometer_m": {
+      "rot_position": 12.5
+    }
+  }
 }
 ```
 
 Here is an example of a message sent by a gate service about Luos statistics:
 
-```JSON
+```json
 {
-   "services":{
-      "gate":{
-         "luos_statistics":{
-            "msg_stack":60,
-            "luos_stack":53,
-            "msg_drop":0,
-            "loop_ms":16,
-            "fail_ratio":0,
-            "nak_max":1,
-            "collision_max":5,
-         }
+  "services": {
+    "gate": {
+      "luos_statistics": {
+        "msg_stack": 60,
+        "luos_stack": 53,
+        "msg_drop": 0,
+        "loop_ms": 16,
+        "fail_ratio": 0,
+        "nak_max": 1,
+        "collision_max": 5
       }
-   }
+    }
+  }
 }
 ```
 
@@ -277,7 +279,7 @@ Some messages are specifically handled:
 Custom parameters can be defined and sent to services through the JSON API, either with Python (Pyluos) or any other programming language on a computer side.
 Here is an example of a C function that can be implemented in order to send commands to services in a Luos Network, through a gate:
 
-```C
+```c
 def sendCmd(s, cmd, sleep_time=0.5):
     cmd = cmd + '\r'
     print(cmd)
@@ -314,21 +316,21 @@ Other specific messages:
 
 Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring.md) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
 
-```JSON
-{"dead_service": "service_alias"}
+```json
+{ "dead_service": "service_alias" }
 ```
 
 ### Node assert messages
 
 Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring.md) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 
-```JSON
+```json
 {
-   "assert":{
-      "node_id":3,
-      "file":"/Users/foo/luos/Examples/Drivers/Button/button.c",
-      "line":75
-   }
+  "assert": {
+    "node_id": 3,
+    "file": "/Users/foo/luos/Examples/Drivers/Button/button.c",
+    "line": 75
+  }
 }
 ```
 
@@ -342,7 +344,7 @@ Binary data such as, for example, a motor trajectory can't be included in a JSON
 
 The following example shows a transfer of binary data of 1024 bytes.
 
-```JSON
+```json
 {
    "services":{
       "service_alias1":{

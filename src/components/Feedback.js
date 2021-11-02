@@ -63,10 +63,16 @@ export default function ContactUs(props) {
           ref={form}
           onSubmit={sendEmail}
         >
-          <input name="user_page" type="hidden" value={sourcePage} />
+          <input
+            name="user_page"
+            className="inputForm"
+            type="hidden"
+            value={sourcePage}
+          />
           <div className="feedbackForm__field">
             <label htmlFor="user_object">What's your headache? *</label>
             <input
+              className="inputForm"
               type="text"
               required
               placeholder="I miss information about Luos services..."
@@ -76,6 +82,7 @@ export default function ContactUs(props) {
           <div className="feedbackForm__field">
             <label htmlFor="message">In more details</label>
             <textarea
+              className="inputForm"
               rows="9"
               name="message"
               placeholder="How should I configure my services in order to get my rocket off the ground ?"
@@ -83,13 +90,19 @@ export default function ContactUs(props) {
           </div>
           <div className="feedbackForm__field">
             <label htmlFor="user_name">Your Full Name</label>
-            <input type="text" placeholder="John Doe" name="user_name" />
+            <input
+              type="text"
+              className="inputForm"
+              placeholder="John Doe"
+              name="user_name"
+            />
           </div>
           <div className="feedbackForm__field">
             <label htmlFor="user_email">
               Your Email * (to reach you with a solution)
             </label>
             <input
+              className="inputForm"
               required
               type="email"
               placeholder="john@luos.io"

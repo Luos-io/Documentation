@@ -6,9 +6,7 @@ custom_edit_url: null
 
 #
 
-<h1 className="no-break"><a href="#welcome" className="header" id="welcome">Technical FAQ</a></h1>
-
-Here is a list of common questions or issues our users may encounter while using Luos.
+<h1 className="no-break">Technical FAQ</h1>
 
 ## What is your issue?
 

@@ -21,7 +21,7 @@ The routing table is automatically generated when a service initiates a network 
 
 To run a detection, type:
 
-```C
+```c
 RoutingTB_DetectServices(app);
 ```
 
