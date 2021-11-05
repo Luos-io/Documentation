@@ -27,7 +27,9 @@ To begin, you have to install Python and Pyluos library, following the [Pyluos d
 
 Plug together all the boards with cables. You can plug them into any of the two connectors of each board, in any order.
 
-> **Warning:** Don't close a loop with the boards at each extremity.
+:::caution
+Don't close a loop with the boards at each extremity.
+:::
 
 ![Boards](/img/quickstart-1.png)
 

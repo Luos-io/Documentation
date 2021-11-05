@@ -86,7 +86,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/get-started/get-started',
+              to: '/docs/luos-technology/luos_tech',
             },
             {
               label: 'Contact us',

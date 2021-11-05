@@ -102,9 +102,11 @@ Here are listed the existing types:
 |     control      |             control_t (play, pause, stop, record)             |
 |       pid        | asserv_pid_t float \[3\] {proportional, integral, derivative} |
 
-> **Note:** To find out what conversion function to use if you don't know it, replace the characters `/` or `.` in the units by the character `_`. The character `µ` is replaced by `u`, and `revolution` is replaced by `rev`.
->
-> Examples:
-> convert a linear speed to mm/s: `LinearOD_SpeedTo_mm_s()`;
-> convert a value in &mu;m to a linear position: `LinearOD_PositionFrom_um()`;
-> convert a value in revolutions/s to an angular speed: `AngularOD_SpeedFrom_rev_s()`;
+:::tip
+To find out what conversion function to use if you don't know it, replace the characters `/` or `.` in the units by the character `_`. The character `µ` is replaced by `u`, and `revolution` is replaced by `rev`.
+
+Examples:<br/>
+convert a linear speed to mm/s: `LinearOD_SpeedTo_mm_s()`;<br/>
+convert a value in &mu;m to a linear position: `LinearOD_PositionFrom_um()`;<br/>
+convert a value in revolutions/s to an angular speed: `AngularOD_SpeedFrom_rev_s()`;<br/>
+:::

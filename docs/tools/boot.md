@@ -70,7 +70,9 @@ We use the port COM3, our target node has the ID n°2, and our binary file is ca
 pyluos-bootloader flash COM3 -t 2 -b firmware_new.bin
 ```
 
-> **Warning:** In the example above, `2` is the node's ID of _node 2_, not to be confused with the service _Pipe_mod_'s ID. The target must always be a node.
+:::caution
+In the example above, `2` is the node's ID of _node 2_, not to be confused with the service _Pipe_mod_'s ID. The target must always be a node.
+:::
 
 Let's type this command, then you should see the following text on your screen:
 
@@ -84,13 +86,16 @@ You can see the four steps described in the previous section, plus a few log inf
 - The binary file used to program nodes
 - The port on which the gate is connected to the user computer
 
-> **Note**: there is a default parameter for the target list: if nothing is set, the node with the id n°2 (first node after the gate) is flashed.
+:::info
 
-> **Note**: If you need help to use the tool, you can type the following command:
+- There is a default parameter for the target list: if nothing is set, the node with the id n°2 (first node after the gate) is flashed.<br/><br/>
+- If you need help to use the tool, you can type the following command:
 
 ```bash
 pyluos-bootloader flash --help
 ```
+
+:::
 
 After the CLI launches the programming process, you can notice that the CLI checks if the node is ready (or alive) before programming it. Once the process is finished, you can re-run the network detection and see the following:
 
@@ -126,7 +131,9 @@ The **boot_service** tells the node is in bootloader mode. You just have to re-r
 pyluos-bootloader flash COM3 -b firmware_new.bin
 ```
 
-> **Note**: no matter what problem you encounter during the loading process, you have to power-off / power-on your network to see all the nodes running in bootloader mode. Once you get there, you have to use **pyluos-bootloader detect** / **flash** tools to load applications and make it work fine.
+:::tip
+No matter what problem you encounter during the loading process, you have to power-off / power-on your network to see all the nodes running in bootloader mode. Once you get there, you have to use **pyluos-bootloader detect** / **flash** tools to load applications and make it work fine.
+:::
 
 ## How to add the bootloader feature in your project
 
@@ -151,7 +158,9 @@ The Luos bootloader is available for the following targets:
 
 Projects for each of these targets can be found in this repo: [https://github.com/ncros3/Luos_bootloader.git](https://github.com/ncros3/Luos_bootloader.git). You can clone this repo and use projects for your application, or use them as examples to build your own bootloader for your specific target.
 
-> **Note**: Examples are available for several IDEs: L4 / F4 / F0 uses platformIO, G4 uses SW4STM32 (an Eclipse-based IDE) and SAMD21 uses MPLAB.
+:::info
+Examples are available for several IDEs: L4 / F4 / F0 uses platformIO, G4 uses SW4STM32 (an Eclipse-based IDE) and SAMD21 uses MPLAB.
+:::
 
 #### Luos does not yet support your target:
 
@@ -196,7 +205,9 @@ void SystemInit(void)
 }
 ```
 
-> **Note**: You can find application examples in [https://github.com/ncros3/luos_bootloader_app.git](https://github.com/ncros3/luos_bootloader_app.git).
+:::info
+You can find application examples in [https://github.com/ncros3/luos_bootloader_app.git](https://github.com/ncros3/luos_bootloader_app.git).
+:::
 
 ### How to deal with no VTOR
 

@@ -13,7 +13,9 @@ Pyluos is the standard Python library to manage a Luos system with a computer. I
 
 ### Required: Installing Python and Pip
 
-> **Warning:** In order to use Pyluos library, Python and the Pip package manager must be installed on your computer.
+:::caution
+In order to use Pyluos library, Python and the Pip package manager must be installed on your computer.
+:::
 
 _« Python is a programming language that lets you work more quickly and integrate your systems more effectively. » (<small><a href="https://python.org" target="_blank">Source &#8599;</a></small>)_
 
@@ -40,7 +42,9 @@ Type the following command in the console to install Jupyter:
 pip install jupyter
 ```
 
-> **Note:** Feel free to consult <a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank">_Jupyter Notebook_'s &#8599;</a> documentation.
+:::note
+Feel free to consult <a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank">_Jupyter Notebook_'s &#8599;</a> documentation.
+:::
 
 ### Installing or updating Pyluos library
 
@@ -78,7 +82,9 @@ In the browser page that opened, the `New` button creates a new Python file:
     <img src="/img/pyluos-1.png"/>
 </p>
 
-> **Note:** In the previous picture, _Jupyter_ uses _Python 3_, but you also can use _Python 2.7_ depending on your computer configuration.
+:::info
+In the previous picture, _Jupyter_ uses _Python 3_, but you also can use _Python 2.7_ depending on your computer configuration.
+:::
 
 <p align="center">
     <img src="/img/pyluos-2.png"/>
@@ -160,7 +166,9 @@ To display it, use the following command:
 device.services
 ```
 
-> **Note:** `device` is the name of the network.
+:::note
+`device` is the name of the network.
+:::
 
 Pyluos will give you a list of all services without any topological information:
 
@@ -188,7 +196,9 @@ Pyluos also can interpret the routing table and transform it into a tree. This w
 device.nodes
 ```
 
-> **Note:** `device` is the name of the network.
+:::note
+`device` is the name of the network.
+:::
 
 Based on the previous example, Pyluos will give you all information about services and topological information:
 
@@ -233,7 +243,9 @@ device.service_alias.type
 
 `service_alias` is the alias you got from the previous listing.
 
-> **Note:** _Unknown_ service types are defaulty set for custom service types such as some [Luos apps](/luos-technology/services/service-type.md).
+:::info
+_Unknown_ service types are defaulty set for custom service types such as some [Luos apps](/luos-technology/services/service-type.md).
+:::
 
 ### Get and set services information
 
@@ -279,9 +291,12 @@ For example:
 device.rgb_led_mod.rename("myLED")
 ```
 
-> **Note:** You should restart your device and reconnect to it after this operation.
+:::note
 
-> **Note:** To get back to the service default name, set a void name (`""`).
+- You should restart your device and reconnect to it after this operation.
+- To get back to the service default name, set a void name (`""`).
+
+:::
 
 ### Get a node's statistics
 

@@ -14,7 +14,9 @@ We will use one of these nodes as a [gate](/docs/tools/gate) and the other as an
   <img src="/img/tutorials/bootloader/tutorial_setup.png" />
 </p>
 
-> **Note**: Tt is not possible to update the firmware on a gate node.
+:::caution
+It is not possible to update the firmware on a gate node.
+:::
 
 ### Step 1: Setup development environment
 

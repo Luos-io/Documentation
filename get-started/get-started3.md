@@ -9,7 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## The network part: Create your first Luos network
 
-> **Warning:** In this last part, we assume that you had followed the first two parts of the [Get started tutorial](/get-started/get-started). Make sure to read and follow them before reading this page.
+:::caution Warning
+In this last part, we assume that you had followed the first two parts of the [Get started tutorial](/get-started/get-started). Make sure to read and follow them before reading this page.
+:::
 
 In this part, we will learn how to configure Luos to access to your physical network between boards of your system, allowing you to deal with a multiple-boards system. Then we will try to run our first example into multiple boards.
 
@@ -45,9 +47,13 @@ sources={{
 />
 </p>
 
-> **Note:** You can have any PTP* connected to any another PTP* of another board. But you need only one PTP connection between boards!
+:::tip
+You can have any PTP* connected to any another PTP* of another board. But you need only one PTP connection between boards!
+:::
 
-> **Note 2:** Obviously, you will have to power up both of your board. In the next step of this tutorial, we will plug the board 1 to the USB, so you can optionally use the power pins of _board 1_ to power _board 2_.
+:::note
+Obviously, you will have to power up both of your board. In the next step of this tutorial, we will plug the board 1 to the USB, so you can optionally use the power pins of _board 1_ to power _board 2_.
+:::
 
 ### Use this network!
 

@@ -7,7 +7,7 @@ custom_edit_url: null
 
 This page allows you to build, flash, run, and control your very first Luos code.
 
-This section is separated in 2 parts:
+This section is separated in 3 parts:
 
 1.  [**Part 1: Your first Luos service**](/get-started/get-started1): the embedded part, where you will have all the tools you need to easily develop using Luos in your embedded target.
 2.  [**Part 2: Take the control**](/get-started/get-started2): the remote control part, where you will have all the tools you need to take control and easily test any Luos device.

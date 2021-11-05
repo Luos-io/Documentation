@@ -28,7 +28,9 @@ Almost every demonstration board in the provided examples is composed of a mothe
 	/>
 </p>
 
-> Note: Power category boards don't include an L0 motherboard as they provide only power functions and don't need communication. However. The communication data passes through their connectors to other communicating boards.
+:::caution
+Power category boards don't include an L0 motherboard as they provide only power functions and don't need communication. However. The communication data passes through their connectors to other communicating boards.
+:::
 
 Here are the specifications of this motherboard:
 

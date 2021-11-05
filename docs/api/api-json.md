@@ -3,6 +3,8 @@ title: API JSON
 custom_edit_url: null
 ---
 
+import Image from '/src/components/Images.js';
+
 #
 
 <h1><a href="#json-api" className="header" id="json-api"><img src="/img/json-logo.png" width="80px" /> / JSON API</a></h1>
@@ -25,7 +27,9 @@ This command asks the gate to start a topological detection, create a routing ta
 
 ## Routing table messages
 
-> **Warning:** Make sure to read and understand how the [routing table](../luos-technology/node/topology.md) works before reading this part.
+:::caution
+Make sure to read and understand how the [routing table](../luos-technology/node/topology.md) works before reading this part.
+:::
 
 After the gate starts, the first message you receive is a routing table.
 
@@ -74,7 +78,9 @@ Each listed node of the network has basic node information and a list of hosted 
 }
 ```
 
-> **Note:** To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](../luos-technology/node/topology.md).
+:::tip
+To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](../luos-technology/node/topology.md).
+:::
 
 #### Services
 
@@ -89,7 +95,9 @@ Each listed service of a node has basic services information:
 }
 ```
 
-> **Note:** To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](../luos-technology/services/services.md).
+:::tip
+To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](../luos-technology/services/services.md).
+:::
 
 #### Full routing table example
 

@@ -36,11 +36,14 @@ State               button_mod          3
 Color               rgb_led_mod         5
 ```
 
-> **Note:** If you have several Luos gates, you need several brokers. Specify a port and a **unique** name for each of them:
->
-> ```bash
-> ros2 launch luos_interface broker.launch.py device:=/dev/ttyUSB1 name:=brokerUSB1
-> ```
+:::tip
+If you have several Luos gates, you need several brokers. Specify a port and a **unique** name for each of them:
+
+```bash
+ros2 launch luos_interface broker.launch.py device:=/dev/ttyUSB1 name:=brokerUSB1
+```
+
+:::
 
 According to the services you have plugged-in, the broker will automatically publish the relevant topics in the namespace of your services' aliases.
 Here we have plugged a `State` service (alias `button_mod`), a `Imu` service (alias `Imu_mod`) and a `Color` service (alias `rgb_led_mod`) to the gate; thus the broker publishes the following topics:

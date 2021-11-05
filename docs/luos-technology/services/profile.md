@@ -13,7 +13,9 @@ Basicaly, a profile give to your service a **data structure** with all the varia
 
 Thanks to profiles, your service code will be clean and simple, you will **just need to use variables**, and you don't need to deal with Luos messages and message handling anymore.
 
-> **Example:** If you want to make a servo-motor service you just have to select the servo-motor profile for your service and use variables of the profile structure to set the rotor current position measurement or to get the current motor target in your code.
+:::tip Example
+If you want to make a servo-motor service you just have to select the servo-motor profile for your service and use variables of the profile structure to set the rotor current position measurement or to get the current motor target in your code.
+:::
 
 Profiles are really convenient to make your code simple and clean, to comply your developpement into a standard API, or to share your service type to the community.
 Luos provide some common profile models that you can use, feel free to contribute and to add your own to the standard profile bank by Pull Request on our Github ;) .

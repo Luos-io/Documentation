@@ -37,7 +37,9 @@ void services_MsgHandler(service_t *service, msg_t *msg) {
 }
 ```
 
-> **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page].
+:::note
+If you have to deal with high-frequency real-time data, please read [the Streaming page].
+:::
 
 ## Time-triggered update messages
 
@@ -57,9 +59,13 @@ msg.header.cmd = UPDATE_PUB;
 Luos_SendMsg(app, &msg);
 ```
 
-> **Info:** services can handle only one time-triggered target, 2 services of the same network can't ask a time-triggered value from the same service.
+:::info
+Services can handle only one time-triggered target, 2 services of the same network can't ask a time-triggered value from the same service.
+:::
 
-> **Warning:** To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](/luos-technology/node/topology.md) for more information).
+:::caution
+To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](/luos-technology/node/topology.md) for more information).
+:::
 
 ## Streaming
 
@@ -103,7 +109,9 @@ Following our example, if we want to send trajectory to the motor, we will have 
 5.  At each second, the sender sends the next data chunk and Luos adds it to the ring buffer. At the end of the buffer, Luos puts extra data at the begining. The consumer pointer also goes back to the begining of the buffer when it reaches the end. This way we have infinite data stream without any discontinuity.
 6.  You can continue to do this indefinitely.
 
-> **Note:** You can play, pause, stop or record a stream flux with the standard **CONTROL** command using the **control_type_t** structure.
+:::note
+You can play, pause, stop or record a stream flux with the standard **CONTROL** command using the **control_type_t** structure.
+:::
 
 ## How to use it
 

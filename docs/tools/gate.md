@@ -26,7 +26,9 @@ The default behavior of the Gate is optimized for system that only have drivers 
 5.  the Gate setup all the network service to send back their values at the optimal frequency. _(Optional)_
 6.  At this optimal frequency the Gate generate formated data and send commands comming from a pipe.
 
-> **Warning:** The Gate service refreshes sensors informations as fast as it can, so that can be intensive to Luos bandwidth.
+:::caution
+The Gate service refreshes sensors informations as fast as it can, so that can be intensive to Luos bandwidth.
+:::
 
 The Gate and the pipe are two separate services, they can be put on the same node or on separate node.
 

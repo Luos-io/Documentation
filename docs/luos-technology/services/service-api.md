@@ -9,7 +9,9 @@ import Tooltip from "/src/components/Tooltip.js";
 
 **As a developer, you will always develop your functionalities as services into packages and never into the `main()` program.**
 
-> **Warning:** Make sure to read and understand the [package](../package/package.md) section before reading this page.
+:::caution
+Make sure to read and understand the [package](../package/package.md) section before reading this page.
+:::
 
 ## How to create and initialize a service
 
@@ -89,7 +91,9 @@ By designing an app, you have to keep the following rules in mind:
 - An app can use custom service types (you can create your own [profiles](./profile.md) for that).
 - An app must use standard <Tooltip def={customFields.od_def}>object dictionary</Tooltip> data structures (you can create your own object dictionary for that).
 
-> **Warning:** Iff the data structures used are not standard, the [gate](../../tools/gate.md) services could be completely unable to manage them.
+:::caution
+If the data structures used are not standard, the [gate](../../tools/gate.md) services could be completely unable to manage them.
+:::
 
 Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every service in every node in your device and make it work properly. Go to the [Routing table](/docs/luos-technology/services/routing-table) page for more information.
 

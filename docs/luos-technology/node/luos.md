@@ -47,7 +47,9 @@ Adding this code to a <Tooltip def={customFields.node_def}>node</Tooltip> makes 
 
 **As a developer, you will always develop your functionalities into services and never into the `main()` program.**
 
-> **Note:** The only information that should be put on the `main()` code are MCU's setup parameters and services' run functions.
+:::note
+The only information that should be put on the `main()` code are MCU's setup parameters and services' run functions.
+:::
 
 ## A complete software node view
 
