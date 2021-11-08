@@ -536,3 +536,7 @@ html[data-theme='dark'] .header-github-link:hover:before {
 .admonition-icon {
   line-height: normal !important;
 }
+
+.imgPreview {
+  cursor: pointer;
+}

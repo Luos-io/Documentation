@@ -16,11 +16,15 @@ export default class Image extends Component {
 
   render() {
     const { isOpen, src, darkSrc } = this.state;
-    const { isDarkTheme } = useThemeContext();
+    // const { isDarkTheme } = useThemeContext();
     // const source = isDarkTheme ? (darkSrc === '' ? src : srcdarkSrc) : src;
     return (
       <div>
-        <img src={src} onClick={() => this.setState({ isOpen: true })} />
+        <img
+          className="imgPreview"
+          src={src}
+          onClick={() => this.setState({ isOpen: true })}
+        />
         {isOpen && (
           <Lightbox
             mainSrc={src}

@@ -26,7 +26,7 @@ module.exports = {
     luoshal_def:
       'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
     last_version_pyluos: '2.0.0',
-    last_version_luos: '2.0.0',
+    last_version_luos: ' 2.0.0',
     gh_path: 'github.com/Luos-io/doc/tree/master/src',
   },
   themeConfig: {
@@ -98,16 +98,20 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Reddit',
+              label: 'Join the Slack',
+              href: 'http://bit.ly/JoinLuosSlack',
+            },
+            {
+              label: 'Join the Discord',
+              href: 'http://bit.ly/JoinLuosDiscord',
+            },
+            {
+              label: 'Join the Forum',
+              href: 'http://bit.ly/JoinLuosForum',
+            },
+            {
+              label: 'Join the Reddit',
               href: 'https://www.reddit.com/r/Luos/',
-            },
-            {
-              label: 'Linkedin',
-              href: 'https://www.linkedin.com/company/luos',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/Luos_io',
             },
           ],
         },
@@ -120,7 +124,15 @@ module.exports = {
             },
             {
               label: 'Youtube',
-              to: 'https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA',
+              href: 'https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA',
+            },
+            {
+              label: 'Linkedin',
+              href: 'https://www.linkedin.com/company/luos',
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/Luos_io',
             },
           ],
         },

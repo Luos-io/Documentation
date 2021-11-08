@@ -15,6 +15,8 @@ custom_edit_url: null
 - [I can't flash my board using DFU.](/faq/dfu)
 - [The default Luos example does not compile.](/faq/application-compile)
 - [My board crashes when a detection occurs.](/faq/application-default-handler)
+- [I am enable to update my board using ST-Link (drivers issue).](/faq/stlink)
+- [I need to install dependencies in order to complete the get started tutorial (Python, Pip, VSCode, PlateformIO).](/faq/install-development-environment)
 
 ---
 
