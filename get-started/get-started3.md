@@ -2,8 +2,7 @@
 custom_edit_url: null
 ---
 
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Image from '/src/components/Images.js';
 
 # Part 3: Unleash your code
 
@@ -39,12 +38,7 @@ To create your network, you have to identify the pins used to perform Luos commu
 Now you can link both boards following this wiring :
 
 <p align="center">
-    <ThemedImage
-sources={{
-    light: useBaseUrl('/img/Get_started_board_connection_black.png'),
-    dark: useBaseUrl('/img/Get_started_board_connection_white.png'),
-  }}
-/>
+  <Image src="/img/Get_started_board_connection_black.png" darkSrc="/img/Get_started_board_connection_white.png"/>
 </p>
 
 :::tip

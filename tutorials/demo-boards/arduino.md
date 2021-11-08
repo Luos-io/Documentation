@@ -2,6 +2,8 @@
 custom_edit_url: null
 ---
 
+import Image from '/src/components/Images.js';
+
 # Set up a Luos-Arduino project tutorial
 
 ## Introduction to Arduino
@@ -26,7 +28,7 @@ https://raw.githubusercontent.com/Luos-io/Arduino_core/main/package_luos_index.j
 ```
 
  <p align="center">
-    <img src="/img/arduino_board_luos_preferences.png" />
+    <Image src="/img/arduino_board_luos_preferences.png" />
 </p>
 
 3.  Install the Luos adapted Arduino SAMD Library in _Boards > "Add board definition" > Search for "Luos" > Install "Luos adapted Arduino SAMD (32-bits ARM Cortex-M0+) Boards"_
@@ -34,7 +36,7 @@ https://raw.githubusercontent.com/Luos-io/Arduino_core/main/package_luos_index.j
 4.  Install the official Arduino SAMD Library in _Boards > "Add board definition" > Search for "SAMD" > Install Arduino SAMD Library_:
 
  <p align="center">
-    <img src="/img/arduino_Luos_board.png" />
+    <Image src="/img/arduino_Luos_board.png" />
 </p>
 
 5.  Download Luos Library for Arduino environment with an example <a href="https://github.com/Luos-io/Luos/releases" target="_blank">on GitHub &#8599;</a>.
@@ -42,11 +44,11 @@ https://raw.githubusercontent.com/Luos-io/Arduino_core/main/package_luos_index.j
 6.  Include Luos Library for Arduino to your Arduino IDE:
 
  <p align="center">
-    <img src="/img/arduino_include_library.png" />
+    <Image src="/img/arduino_include_library.png" />
 </p>
 
 7.  Use provided Luos example, then compile and upload it to your Arduino board:
 
  <p align="center">
-    <img src="/img/arduino_Luos_example.png" />
+    <Image src="/img/arduino_Luos_example.png" />
 </p>

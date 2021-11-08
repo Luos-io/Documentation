@@ -4,8 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Image from '/src/components/Images.js';
 
 # Luos aims to end the dictatorship of electronics
 
@@ -28,12 +27,9 @@ You can use Luos as a **bare metal** library, or as a driver into your **embedde
 
 Luos is composed as well of **code subdivisions** called <Tooltip def={customFields.service_def}>services</Tooltip>. Services are distributed into every node in a network.
 
-<ThemedImage
-sources={{
-    light: useBaseUrl('/img/feature-service-package-node-board.png'),
-    dark: useBaseUrl('/img/luos-layers-white.png'),
-  }}
-/>
+<p align="center">
+  <Image src="/img/feature-service-package-node-board.png" darkSrc="/img/luos-layers-white.png"/>
+</p>
 
 ## Introduction to embedded containerized platforms
 

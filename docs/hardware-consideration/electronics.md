@@ -4,6 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
+import Image from '/src/components/Images.js';
 
 # Integrating Luos into an electronic board
 
@@ -19,7 +20,7 @@ A Luos-friendly electronic board must contain _at least_ the following elements:
 ## One-wire reference design
 
 <p align="center">
-    <img src="/img/Luos_Network_Interface_OW.png" />
+    <Image src="/img/Luos_Network_Interface_OW.png" />
 </p>
 
 Luos' One-wire official connector is <a href="https://octopart.com/df11-4dp-2ds%2852%29-hirose-261749" target="_blank">_DF11-4DP-2DS &#8599;_</a>.
@@ -27,7 +28,7 @@ Luos' One-wire official connector is <a href="https://octopart.com/df11-4dp-2ds%
 ## RS485 reference design
 
 <p align="center">
-    <img src="/img/Luos_Network_Interface_485.png" />
+    <Image src="/img/Luos_Network_Interface_485.png" />
 </p>
 
 Luos' RS485 official connector is <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">_DF11-8DP-2DS &#8599;_</a>.

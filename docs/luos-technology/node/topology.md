@@ -4,8 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Image from '/src/components/Images.js';
 
 # Network topology
 
@@ -28,12 +27,7 @@ PTP is the point-to-point connection between nodes used for topology detection. 
 With two PTP pins per board, you must chained your device as below:
 
 <p align="center">
-	<ThemedImage
-sources={{
-    light: useBaseUrl('/img/daisy_chain.svg'),
-    dark: useBaseUrl('/img/daisy_chain_white.svg'),
-  }}
-/>
+  <Image src="/img/daisy_chain.svg" darkSrc="/img/daisy_chain_white.svg"/>
 </p>
 
 ### Star Mounting
@@ -41,10 +35,5 @@ sources={{
 With at least three PTP pins per board, you can create a star mounting configuration:
 
 <p align="center">
-		<ThemedImage
-sources={{
-    light: useBaseUrl('/img/star_mounting.svg'),
-    dark: useBaseUrl('/img/star_mounting_white.svg'),
-  }}
-/>
+  <Image src="/img/star_mounting.svg" darkSrc="/img/star_mounting_white.svg"/>
 </p>

@@ -4,8 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Image from '/src/components/Images.js';
 
 # Concept
 
@@ -17,13 +16,7 @@ In other words, **a node is a microcontroller** connected to other microcontroll
 In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.
 
 <p align="center">
-<ThemedImage
- height="200px"
-sources={{
-    light: useBaseUrl('/img/MCU-luos.svg'),
-    dark: useBaseUrl('/img/MCU-luos-white.svg'),
-  }}
-/>
+  <Image src="/img/MCU-luos.svg" darkSrc="/img/MCU-luos-white.svg" height="200px"/>
 </p>
 
 ## Package

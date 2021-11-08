@@ -4,6 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
+import Image from '/src/components/Images.js';
 
 # Luos
 
@@ -60,7 +61,7 @@ Robus is the communication protocol provided by Luos and the low layer of Luos t
 Robus executes a format control, and store messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos or sent to one or several [services](../services/services.md).
 
 <p align="center">
-<img src="/img/NodeFlow.png" height="400px" />
+<Image src="/img/NodeFlow.png" />
 </p>
 
 ## Node Parameters Configuration

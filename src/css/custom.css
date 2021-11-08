@@ -540,3 +540,6 @@ html[data-theme='dark'] .header-github-link:hover:before {
 .imgPreview {
   cursor: pointer;
 }
+.navbar {
+  min-height: 70px !important;
+}

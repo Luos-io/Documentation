@@ -4,10 +4,9 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Image from '/src/components/Images.js';
 
 # Routing Table
 
@@ -112,12 +111,7 @@ The **port_table** allows sharing of topological information of your network. Ea
 Here is an example:
 
 <p align="center">
-<ThemedImage
-sources={{
-    light: useBaseUrl('/img/routing-table.png'),
-    dark: useBaseUrl('/img/routing-table-white.png'),
-  }}
-/>
+  <Image src="/img/routing-table.png" darkSrc="/img/routing-table-white.png"/>
 </p>
 
 As shown on this image, elements of the `port_table` indicate the first or last service id of the connected node through a given port.

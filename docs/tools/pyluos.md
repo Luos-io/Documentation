@@ -3,6 +3,8 @@ title: Pyluos
 custom_edit_url: null
 ---
 
+import Image from '/src/components/Images.js';
+
 #
 
 <h1><a href="#pyluos" className="header" id="pyluos"><img src="/img/python-logo.png" width="80px"/> / A Pyluos guide</a></h1>
@@ -79,7 +81,7 @@ jupyter notebook
 In the browser page that opened, the `New` button creates a new Python file:
 
 <p align="center">
-    <img src="/img/pyluos-1.png"/>
+    <Image src="/img/pyluos-1.png"/>
 </p>
 
 :::info
@@ -87,7 +89,7 @@ In the previous picture, _Jupyter_ uses _Python 3_, but you also can use _Python
 :::
 
 <p align="center">
-    <img src="/img/pyluos-2.png"/>
+    <Image src="/img/pyluos-2.png"/>
 </p>
 
 The Jupyter work space looks like the following image. On the keyboard, `Shift+Enter` executes any selected part of the code.
@@ -119,19 +121,19 @@ Some devices may not work correctly with the default USB transfer sizes and late
 To access to these parameters, open the Device Manager in Windows, right-click on the _USB Serial Port (COMX)_ where your device is connected, and click on _Properties_.
 
 <p align="center">
-    <img src="/img/device-manager.png"/>
+    <Image src="/img/device-manager.png"/>
 </p>
 
 Click on _Port Settings_ tab and click on _Advanced..._ button.
 
 <p align="center">
-    <img src="/img/serial-properties.png"/>
+    <Image src="/img/serial-properties.png"/>
 </p>
 
 Change the desired values.
 
 <p align="center">
-    <img src="/img/com-port-adv-settings.png"/>
+    <Image src="/img/com-port-adv-settings.png"/>
 </p>
 
 These values can give you better results, for example if your device has motors to control.
@@ -274,7 +276,7 @@ device.button_mod.robus_revision # Returns the version of Robus
 If you use _IPython_ or _Jupyter Notebook_, you can use auto-completion using the `Tab` key to find every available object and variable.
 
 <p align="center">
-    <img src="/img/pyluos-3.png"/>
+    <Image src="/img/pyluos-3.png"/>
 </p>
 
 ### Change a service name

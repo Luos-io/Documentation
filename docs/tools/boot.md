@@ -2,6 +2,8 @@
 custom_edit_url: null
 ---
 
+import Image from '/src/components/Images.js';
+
 # A Luos bootloader guide
 
 The bootloader feature allows updating the firmware of any node in a Luos network. It's useful for quickly upgrading your application software without using specific programming tools and without physically accessing your boards.
@@ -19,7 +21,7 @@ The bootloader feature consists of three elements:
 - A bootloader code, which is flashed in each node in the network
 
 <p align="center">
-  <img src="/img/bootloader_archi.png"/>
+  <Image src="/img/bootloader_archi.png"/>
 </p>
 
 When you want to update the firmware of node 2 (for example), the CLI tool sends commands through JSON files to the gate, which converts them into Luos commands. During the update, if the node needs to send information to the CLI tool, it sends information to the gate, converting it into JSON files.
@@ -50,7 +52,7 @@ pyluos-bootloader detect COM3
 This leads to the following result:
 
 <p align="center">
-  <img src="/img/boot_detect.png"/>
+  <Image src="/img/boot_detect.png"/>
 </p>
 
 We can see two nodes in our network:
@@ -77,7 +79,7 @@ In the example above, `2` is the node's ID of _node 2_, not to be confused with 
 Let's type this command, then you should see the following text on your screen:
 
 <p align="center">
-  <img src="/img/flash_new.png"/>
+  <Image src="/img/flash_new.png"/>
 </p>
 You can see the four steps described in the previous section, plus a few log information. First, the CLI prints the parameters used to program the network:
 
@@ -100,7 +102,7 @@ pyluos-bootloader flash --help
 After the CLI launches the programming process, you can notice that the CLI checks if the node is ready (or alive) before programming it. Once the process is finished, you can re-run the network detection and see the following:
 
 <p align="center">
-  <img src="/img/detect_new.png"/>
+  <Image src="/img/detect_new.png"/>
 </p>
 
 You can program more than one node by giving an ID list with the option -t :
@@ -116,13 +118,13 @@ Here we will program nodes with ID n°2, 3, 4.
 If, for some reason, you lost the connection with the network or a node during the update, the bootloader allows you to re-run the process without the need to use specific programming tools (such as a JTAG debugger). Let's see what happens if you lost the connection during the update:
 
 <p align="center">
-  <img src="/img/flash_error.png"/>
+  <Image src="/img/flash_error.png"/>
 </p>
 
 The CLI tells you that you have lost the connection. Now by powering off and on your network and re-running a detection, you should see the following:
 
 <p align="center">
-  <img src="/img/detect_boot_service.png"/>
+  <Image src="/img/detect_boot_service.png"/>
 </p>
 
 The **boot_service** tells the node is in bootloader mode. You just have to re-run the flashing process with the CLI:
@@ -167,7 +169,7 @@ Examples are available for several IDEs: L4 / F4 / F0 uses platformIO, G4 uses S
 First of all, you have to **enable the bootloader feature** in the Luos library. To do so, you have to add the **-D BOOTLOADER_CONFIG** parameter when you invoke your compiler. Then you have to run the library in your main() function as you would do for any project:
 
 <p align="center">
-  <img src="/img/main_bootloader.png"/>
+  <Image src="/img/main_bootloader.png"/>
 </p>
 
 > **Warning**: Luos will now run the bootloader application. Be careful not to initialize any package with the **ADD_PACKAGE()** macro. Luos can only run the bootloader app in bootloader mode, and your package will not be executed.
@@ -175,13 +177,13 @@ First of all, you have to **enable the bootloader feature** in the Luos library.
 Now you have to adjust your linker settings: your bootloader has to reserve a portion of the flash, and the remaining memory will be dedicated to the Luos application. You can find the memory layout of the flash resumed in the following picture:
 
 <p align="center">
-  <img src="/img/memory_layout.png"/>
+  <Image src="/img/memory_layout.png"/>
 </p>
 
 This figure shows a third section called **shared_flash**, which exchanges information between the bootloader and the application. When you want to port the bootloader on a specific target, you have to specify this layout (e.g. the amount of flash you reserve for the bootloader, the shared section, and the application). Here is an example for the STM32L432: We choose to dedicate 48 kB for the bootloader, 2 kB (one flash page) for the shared section, and all remaining memory for the application. The translation in the linker file can be seen here:
 
 <p align="center">
-  <img src="/img/linker_bootloader.png"/>
+  <Image src="/img/linker_bootloader.png"/>
 </p>
 
 ### Applications
@@ -189,7 +191,7 @@ This figure shows a third section called **shared_flash**, which exchanges infor
 As for the bootloader, you have to modify your linker file in the application if you want to make it compatible with this feature. Now that we defined the memory layout, the modification is straightforward:
 
 <p align="center">
-  <img src="/img/linker_app.png"/>
+  <Image src="/img/linker_app.png"/>
 </p>
 
 You also have to set up the **VTOR** register to the APP_ADDRESS. This feature exists in most modern ARM CPUs and allows to jump to applications saved at any address in flash. On STM32L4, this register is set in **SystemInit()** function:
@@ -216,11 +218,11 @@ Some CPUs don't have a VTOR register (such as all CPUs based on cortex-m0), so y
 To do so, we modify the application linker to add a dedicated section in RAM:
 
 <p align="center">
-  <img src="/img/linker_ram1.png"/>
+  <Image src="/img/linker_ram1.png"/>
 </p>
 
 <p align="center">
-  <img src="/img/linker_ram2.png"/>
+  <Image src="/img/linker_ram2.png"/>
 </p>
 
 Then, we initialize an empty vector table in this section:

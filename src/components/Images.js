@@ -1,37 +1,30 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import 'react-image-lightbox/style.css';
 
-export default class Image extends Component {
-  constructor(props) {
-    super(props);
+const Image = (props) => {
+  const [isOpen, setIsOpen] = useState();
+  const { isDarkTheme } = useThemeContext();
+  const source = isDarkTheme
+    ? props.darkSrc === undefined
+      ? props.src
+      : props.darkSrc
+    : props.src;
+  const height = props.height === undefined ? '100%' : props.height;
+  return (
+    <div>
+      <img
+        className="imgPreview"
+        src={source}
+        onClick={() => setIsOpen(true)}
+        height={height}
+      />
+      {isOpen && (
+        <Lightbox mainSrc={source} onCloseRequest={() => setIsOpen(false)} />
+      )}
+    </div>
+  );
+};
 
-    this.state = {
-      isOpen: false,
-      src: props.src,
-      darkSrc: props.darkSrc,
-    };
-  }
-
-  render() {
-    const { isOpen, src, darkSrc } = this.state;
-    // const { isDarkTheme } = useThemeContext();
-    // const source = isDarkTheme ? (darkSrc === '' ? src : srcdarkSrc) : src;
-    return (
-      <div>
-        <img
-          className="imgPreview"
-          src={src}
-          onClick={() => this.setState({ isOpen: true })}
-        />
-        {isOpen && (
-          <Lightbox
-            mainSrc={src}
-            onCloseRequest={() => this.setState({ isOpen: false })}
-          />
-        )}
-      </div>
-    );
-  }
-}
+export default Image;
