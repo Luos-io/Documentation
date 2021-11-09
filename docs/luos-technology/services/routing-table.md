@@ -110,9 +110,9 @@ The **port_table** allows sharing of topological information of your network. Ea
 
 Here is an example:
 
-<p align="center">
+<div align="center">
   <Image src="/img/routing-table.png" darkSrc="/img/routing-table-white.png"/>
-</p>
+</div>
 
 As shown on this image, elements of the `port_table` indicate the first or last service id of the connected node through a given port.
 
@@ -125,7 +125,7 @@ Specific values can be taken by `port_table`:
 Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a [USB gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
 :::
 
-<Tabs>
+<Tabs className="unique-tabs">
     <TabItem value="Search tools" label="Search tools">
     The routing table library provides the following search tools to find services and nodes' information into a Luos network:
 

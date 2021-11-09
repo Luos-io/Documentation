@@ -168,9 +168,9 @@ To understand the meanings of _type_, _id_ and _alias_, please refer to the [ser
 
 Below is a visual representation of this routing table:
 
-<p align="center">
+<div align="center">
     <Image src="/img/luos-network-ex.png" />
-</p>
+</div>
 
 ### Service's information messages
 

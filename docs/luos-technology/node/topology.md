@@ -26,14 +26,14 @@ PTP is the point-to-point connection between nodes used for topology detection. 
 
 With two PTP pins per board, you must chained your device as below:
 
-<p align="center">
+<div align="center">
   <Image src="/img/daisy_chain.svg" darkSrc="/img/daisy_chain_white.svg"/>
-</p>
+</div>
 
 ### Star Mounting
 
 With at least three PTP pins per board, you can create a star mounting configuration:
 
-<p align="center">
+<div align="center">
   <Image src="/img/star_mounting.svg" darkSrc="/img/star_mounting_white.svg"/>
-</p>
+</div>

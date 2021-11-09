@@ -19,14 +19,14 @@ Luos provides simple electronic boards examples to build in order to demonstrate
 
 Almost every demonstration board in the provided examples is composed of a motherboard and a shield board. The motherboard, called L0, has a <Tooltip def={customFields.node_def}>node</Tooltip> that hosts Luos. The shield board is added to an L0 to type it with an electronic function.
 
-<p align="center">
+<div align="center">
 	<ThemedImage
 		sources={{
 		light: useBaseUrl('/img/l0-shield-black.png'),
 		dark: useBaseUrl('/img/l0-shield-white.png'),
   	}}
 	/>
-</p>
+</div>
 
 :::caution
 Power category boards don't include an L0 motherboard as they provide only power functions and don't need communication. However. The communication data passes through their connectors to other communicating boards.

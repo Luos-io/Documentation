@@ -137,7 +137,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Luos, Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Luos, built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,

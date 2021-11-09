@@ -31,9 +31,9 @@ Then, in VSCode:
 2.  Search for the official <a href="https://platformio.org/install/ide?install=vscode" target="_blank">PlatformIO IDE &#8599;</a> extension.
 3.  Install PlatformIO IDE.
 
-<p align="center">
+<div align="center">
   <Image src="/img/get-started/install_VSCODE.png" darkSrc=''/>
-</p>
+</div>
 
 ### Clone the project
 
@@ -55,9 +55,9 @@ Open VSCode and click on **Open Folder** in the project explorer on the left, th
 
 If VSCode outputs the following message "Do you trust the authors of the files in the folder?": you can trust us 😉 and check the option "Trust the authors of all files in the parent folder" so it won't popup anymore. Then click the "Yes, I trust the authors" button.
 
-<p align="center">
+<div align="center">
   <Image src="/img/get-started/Open_project2.png" darkSrc=''/>
-</p>
+</div>
 
 The project folder is opened in the explorer.
 
@@ -67,9 +67,9 @@ Arduino users can select their board on the `platformio.ini` file by modifying t
 
 You can now flash your board: make sure it is connected to your PC with a USB cable, and click on **Upload** on the bottom left in the VSCode window. In order for this step to work, you will need the USB driver related to your board. As an example, here is the <a href="https://www.st.com/en/development-tools/stsw-link009.html" target="_blank">STM32L432K drivers &#8599;</a> on the constructor website. If you have any trouble with your USB driver, you can also consult [our FAQ page](/faq/dfu) on this topic.
 
-<p align="center">
+<div align="center">
   <Image src="/img/get-started/Flash_board2.png" darkSrc=''/>
-</p>
+</div>
 
 PlatformIO will build the firmware and flash it. Take a look at the terminal to watch each step platformIO follows and a **Success** message at the end. Once the board is programmed, you should see the **LED** blinking on your board.
 

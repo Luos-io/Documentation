@@ -37,9 +37,9 @@ To create your network, you have to identify the pins used to perform Luos commu
 
 Now you can link both boards following this wiring :
 
-<p align="center">
+<div align="center">
   <Image src="/img/Get_started_board_connection_black.png" darkSrc="/img/Get_started_board_connection_white.png"/>
-</p>
+</div>
 
 :::tip
 You can have any PTP* connected to any another PTP* of another board. But you need only one PTP connection between boards!

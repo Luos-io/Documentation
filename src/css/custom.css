@@ -362,11 +362,6 @@ html[data-theme='dark'] .cust_landing_text {
 }
 
 html[data-theme='dark'] .cust_landing_seperator {
-  border-top: 2px solid#485171;
-  margin: 9px 0px 5px 0px;
-}
-
-html[data-theme='dark'].cust_landing_seperator {
   border-top: 2px solid#3c435e;
   margin: 9px 0px 5px 0px;
 }
@@ -542,4 +537,20 @@ html[data-theme='dark'] .header-github-link:hover:before {
 }
 .navbar {
   min-height: 70px !important;
+}
+
+html[data-theme='dark'] thead {
+  background-color: hsl(226, 23%, 11%);
+}
+
+html[data-theme='dark'] table tbody tr {
+  background-color: #282d3f;
+}
+
+html[data-theme='dark'] table tbody tr:nth-child(2n) {
+  background-color: #1c1f2c;
+}
+
+.tabs {
+  border-bottom: 1px solid var(--ifm-tabs-color-active) !important;
 }

@@ -27,28 +27,28 @@ Creating a Luos Network with an Arduino board is very easy. Use D0 and D1 for Tx
 https://raw.githubusercontent.com/Luos-io/Arduino_core/main/package_luos_index.json
 ```
 
- <p align="center">
+ <div align="center">
     <Image src="/img/arduino_board_luos_preferences.png" />
-</p>
+</div>
 
 3.  Install the Luos adapted Arduino SAMD Library in _Boards > "Add board definition" > Search for "Luos" > Install "Luos adapted Arduino SAMD (32-bits ARM Cortex-M0+) Boards"_
 
 4.  Install the official Arduino SAMD Library in _Boards > "Add board definition" > Search for "SAMD" > Install Arduino SAMD Library_:
 
- <p align="center">
+ <div align="center">
     <Image src="/img/arduino_Luos_board.png" />
-</p>
+</div>
 
 5.  Download Luos Library for Arduino environment with an example <a href="https://github.com/Luos-io/Luos/releases" target="_blank">on GitHub &#8599;</a>.
 
 6.  Include Luos Library for Arduino to your Arduino IDE:
 
- <p align="center">
+ <div align="center">
     <Image src="/img/arduino_include_library.png" />
-</p>
+</div>
 
 7.  Use provided Luos example, then compile and upload it to your Arduino board:
 
- <p align="center">
+ <div align="center">
     <Image src="/img/arduino_Luos_example.png" />
-</p>
+</div>
