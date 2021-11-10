@@ -188,5 +188,11 @@ module.exports = {
         routeBasePath: 'feedbacks',
       },
     ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        fromExtensions: ['html'],
+      },
+    ],
   ],
 };
