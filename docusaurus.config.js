@@ -193,8 +193,8 @@ module.exports = {
       {
         fromExtensions: ['html'],
         createRedirects: function (existingPath) {
-          if (!existingPath) {
-            return '/';
+          if (existingPath.includes('/pages/')) {
+            return existingPath.replace('/pages/', '/docs/');
           }
         },
       },
