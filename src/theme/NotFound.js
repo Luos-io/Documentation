@@ -10,6 +10,10 @@ import { useLocation } from 'react-router-dom';
 
 function NotFound() {
   const location = useLocation();
+  if (location.pathname.includes('.html')) {
+    let newPathName = location.pathname.replace('.html', '');
+    return <Redirect to={newPathName} />;
+  }
   if (location.pathname.includes('/pages/')) {
     let newPathName = location.pathname.replace('/pages/', '/docs/');
     return <Redirect to={newPathName} />;
