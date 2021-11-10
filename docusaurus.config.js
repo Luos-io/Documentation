@@ -192,11 +192,6 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         fromExtensions: ['html'],
-        createRedirects: function (existingPath) {
-          if (existingPath.includes('/pages/')) {
-            return existingPath.replace('/pages/', '/docs/');
-          }
-        },
       },
     ],
   ],

@@ -8,9 +8,17 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Translate, { translate } from '@docusaurus/Translate';
 import { Redirect } from '@docusaurus/router';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useLocation } from 'react-router-dom';
 
 function NotFound() {
+  const location = useLocation();
+  console.log(location);
+  if (location.pathname.includes('/pages/')) {
+    let newPathName = location.pathname.replace('/pages/', '/docs/');
+    console.log(newPathName);
+    return <Redirect to={newPathName} />;
+  }
+
   return <Redirect to="/" />;
 }
 
