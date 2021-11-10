@@ -192,6 +192,11 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         fromExtensions: ['html'],
+        createRedirects: function (existingPath) {
+          if (!existingPath) {
+            return '/';
+          }
+        },
       },
     ],
   ],
