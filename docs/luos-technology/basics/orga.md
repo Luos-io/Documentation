@@ -20,7 +20,7 @@ Different levels on the embedded code are defined, corresponding to the differen
 | Service |                       Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can be custom too.                       |
 
 <div align="center">
-    <Image src="/img/architecture.png" />
+    <Image src="/img/architecture.svg" darkSrc="/img/architecture-dark.svg"/>
 </div>
 
 ### Product code organization with Luos
@@ -85,5 +85,5 @@ Different levels on the embedded code are defined, corresponding to the differen
 Luos Library is used at the node level. You will need to initialize Luos and call a loop function on your main program to be able to use the Luos API on your packages.
 
 <div align="center">
-    <Image src="/img/luos_mcu_platform.png" />
+    <Image src="/img/luos_mcu_platform.svg" darkSrc="/img/luos_mcu_platform-dark.svg"/>
 </div>
