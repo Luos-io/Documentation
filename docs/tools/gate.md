@@ -4,6 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
+import Image from '/src/components/Images.js';
 
 # Gate
 
@@ -56,14 +57,19 @@ int main(void)
 }
 ```
 
-![](/img/gate_pipe.png)
+<div align="center">
+    <Image src="/img/gate_pipe.svg" darkSrc="/img/gate_pipe_dark.svg"/>
+</div>
 
 In that configuration formated messages don't pass through the Luos network and stay in localhost.
 
 ## A Gate and a Pipe on separate node
 
 When the Gate and the Pipe are on separate nodes, formated messages transit into the network and use even more bandwidth on the network and add latency.
-![](/img/gate_pipe_separate.png)
+
+<div align="center">
+    <Image src="/img/gate_pipe_separate.svg" darkSrc="/img/gate_pipe_separate-dark.svg"/>
+</div>
 
 ## The Gate configurations
 

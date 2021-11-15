@@ -21,7 +21,7 @@ The bootloader feature consists of three elements:
 - A bootloader code, which is flashed in each node in the network
 
 <div align="center">
-  <Image src="/img/bootloader_archi.png"/>
+  <Image src="/img/bootloader_archi.svg" darkSrc="/img/bootloader_archi-dark.svg"/>
 </div>
 
 When you want to update the firmware of node 2 (for example), the CLI tool sends commands through JSON files to the gate, which converts them into Luos commands. During the update, if the node needs to send information to the CLI tool, it sends information to the gate, converting it into JSON files.
@@ -177,7 +177,7 @@ First of all, you have to **enable the bootloader feature** in the Luos library.
 Now you have to adjust your linker settings: your bootloader has to reserve a portion of the flash, and the remaining memory will be dedicated to the Luos application. You can find the memory layout of the flash resumed in the following picture:
 
 <div align="center">
-  <Image src="/img/memory_layout.png"/>
+  <Image src="/img/memory_layout.svg" darkSrc="/img/memory_layout-dark.svg"/>
 </div>
 
 This figure shows a third section called **shared_flash**, which exchanges information between the bootloader and the application. When you want to port the bootloader on a specific target, you have to specify this layout (e.g. the amount of flash you reserve for the bootloader, the shared section, and the application). Here is an example for the STM32L432: We choose to dedicate 48 kB for the bootloader, 2 kB (one flash page) for the shared section, and all remaining memory for the application. The translation in the linker file can be seen here:
