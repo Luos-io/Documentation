@@ -19,7 +19,6 @@ import EditThisPage from '@theme/EditThisPage';
 import { MainHeading } from '@theme/Heading';
 import styles from './styles.module.css';
 import ContactUs from '/src/components/ContactUs.js';
-import { Sidetab } from 'react-typeform-embed';
 import { customFields } from '/docusaurus.config.js';
 
 function DocItem(props) {
@@ -118,11 +117,6 @@ function DocItem(props) {
                   <>
                     <DocContent />
                     <ContactUs pageName={window.location} />
-                    <Sidetab
-                      className="test"
-                      id={customFields.typeform_id}
-                      buttonText="Is Luos for me? 🤔"
-                    />
                   </>
                 ) : null}
               </div>
