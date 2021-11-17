@@ -1,12 +1,12 @@
 ---
-title: Technical FAQ
+title: Troubleshooting
 hide_table_of_contents: true
 custom_edit_url: null
 ---
 
 #
 
-<h1 className="no-break">Technical FAQ</h1>
+<h1 className="no-break">Troubleshooting</h1>
 
 ## What is your issue?
 
@@ -15,8 +15,8 @@ custom_edit_url: null
 - [I can't flash my board using DFU.](/faq/dfu)
 - [The default Luos example does not compile.](/faq/application-compile)
 - [My board crashes when a detection occurs.](/faq/application-default-handler)
-- [I am enable to update my board using ST-Link (drivers issue).](/faq/stlink)
-- [I need to install dependencies in order to complete the get started tutorial (Python, Pip, VSCode, PlateformIO).](/faq/install-development-environment)
+- [I am enable to update my board using ST-Link.](/faq/stlink)
+- [I can't complete the get started tutorial because some dependencies are not installed.](/faq/install-development-environment)
 
 ---
 

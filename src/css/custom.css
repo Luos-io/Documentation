@@ -22,6 +22,13 @@
   --ifm-navbar-background-color: #f5f5f5;
 }
 
+@media screen and (max-width: 800px) {
+  #__docusaurus {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
 html[data-theme='dark'] {
   --ifm-background-color: hsl(226, 23%, 11%);
   --ifm-navbar-background-color: black;

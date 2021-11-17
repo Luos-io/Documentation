@@ -28,7 +28,7 @@ import siteConfig from '/docusaurus.config.js';
   </div></a>
   <a href="/faq/list"><div className="cust_square">
     <div className="cust_landing_img"><img src="/img/landing/icon-help.png" /></div>
-    <div className="cust_landing_title">FAQ</div>
+    <div className="cust_landing_title">Troubleshooting</div>
     <div className="cust_landing_seperator"></div>
     <div className="cust_landing_text">Find how to resolve your issue.</div>  
   </div></a>

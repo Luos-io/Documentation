@@ -61,7 +61,7 @@ module.exports = {
         { to: '/tutorials/tutorials', label: 'Tutorials', position: 'right' },
         {
           to: '/faq/list',
-          label: 'FAQ',
+          label: 'Troubleshooting',
           position: 'right',
           id: 'link__header__faq',
         },
