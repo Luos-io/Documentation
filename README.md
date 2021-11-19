@@ -7,129 +7,34 @@
 [![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Unleash%20electronic%20devices%20as%20microservices%20thanks%20to%20Luos&https://luos.io&via=Luos_io&hashtags=embeddedsystems,electronics,microservices,api)
 [![](https://img.shields.io/badge/LinkedIn-Share-0077B5?style=social&logo=linkedin)](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2Fluos-io)
 
-# What and why Luos? :bulb:
+# Luos Documentation
+## The most for the developer​
+Luos provides a simple way to think your hardware products as a group of independant features. You can easily manage and share your hardware products' features with your team, external developers, or with the community. Luos is an open-source lightweight library that can be used on any MCU, leading to free and fast multi-electronic-boards products development. Choosing Luos to design a product will help you to develop, debug, validate, monitor, and manage it from the cloud.
 
-We started designing Luos with the conviction that building electronic systems should be made easier than it is today. Most of the time should be spent on designing the applications and behaviors instead of on complex and time-and-money-eating technicalities. To give a simple example, adding a new sensor —for instance a distance sensor— to an electronic device in conception should not take more than a few minutes. So you can try, test and iterate fast on a project to truly design what users want.
+## The most for the community​
+Most of the embedded developments are made from scratch. By using Luos, you will be able to capitalize on the development you, your company, or the Luos community already did. The re-usability of features encapsulated in Luos services will fasten the time your products reach the market and reassure the robustness and the universality of your applications.
 
-Luos works like [microservices architecture](https://en.wikipedia.org/wiki/Microservices) in the software world, and a [distributed operating systems](https://en.wikipedia.org/wiki/Distributed_operating_system): it encapsulates any software or hardware function to make it communicate and work with any other encapsulated module, however it was developed, either on bare metal or on top of an embedded OS.
+* → Join the [Luos Slack Community](http://bit.ly/JoinLuosSlack)
+* → Join the [Luos Discord Community](http://bit.ly/JoinLuosDiscord)
+* → Join the [Luos Reddit Community](http://bit.ly/JoinLuosReddit)
+* → Join the [Luos Forum](http://bit.ly/JoinLuosForum)
 
-Watch this video for additional details:
+Need dedicated help with your project? Check out [Luos' support packages](https://www.luos.io/support).
 
-<a href="https://youtu.be/xQe3z0M_FE8"><img border="0" alt="Luos video" src="https://uploads-ssl.webflow.com/601a78a2b5d030260a40b7ad/6035128c3e63c132f1743d13_youtube.jpeg" width="640" height="360"/></a>
+## Good practices with Luos​
+Luos proposes organized and effective development practices, guaranteeing development flexibility and evolutivity of your hardware product, from the idea to the maintenance of the industrialized product fleet.
 
-## You are not familiar with Luos operations?
+## Let's do this​
+This section details the features of Luos technology as an embedded development platform, following these subjects:
 
-→ Start reading the [Basics](https://docs.luos.io/pages/overview/general-basics.html) page.
-
-## You want to make your own board with [Luos modules](https://docs.luos.io/pages/embedded/modules/create-modules.html)?
-
-→ Start reading how to integrate Luos in you [Development environment](https://docs.luos.io/pages/embedded/dev-env.html).
-
-→ Then learn how to [Create a luos project](https://docs.luos.io/pages/embedded/modules/create-project.html).
-
-## You want to shape your device behavior?
-
-→ Luos provides a sets of [Prototyping boards](https://docs.luos.io/pages/prototyping_boards/boards-list.html) you can use as example or to develop your project.
-
-→ You can make your own embedded [Luos apps](https://docs.luos.io/pages/embedded/modules/create-modules.html).
-
-→ You can control your devices through a [Gate](https://docs.luos.io/pages/software/modules_list/gate.html) module using [Pyluos](https://docs.luos.io/pages/software/pyluos.html).
-
-If you have questions about a specific topic, you can refer or ask it on the [Luos' Forum](https://community.luos.io/). And if you have suggestions about this documentation don't hesitate to create pull requests.
+* Let's test through the [Luos get started](https://docs.luos.io/docs/get-started/getting-started), to build, flash, run, and control your very first Luos code.
+* The [Basics of Luos](https://docs.luos.io/docs/luos-technology/basics/basics), explaining the general concepts and the project organization.
+* Definition of [Nodes](https://docs.luos.io/docs/luos-technology/node/node), and the relation between Luos and the physical world.
+* Definition of [Packages](https://docs.luos.io/docs/luos-technology/package/package), and how to make a portable and reusable development.
+* Definition of [Services](https://docs.luos.io/docs/luos-technology/services/services), how to create and declare features in your product.
+* Definition of [Messages](https://docs.luos.io/docs/luos-technology/message/message), when, why, and how to handle them, explaining the more advanced features of Luos.
 
 
-# Install/update Rust and mdBook
-
-The Luos's documentation is hosted on GitHub Pages and runs with mdBook:
-    - Docs is written in markdown
-    - Server is ran by Rust
-    - The sources are versioned with GitHub
-
-Follow these steps to modify the documentation:
-
-- Download and install Rust: [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) (at least 1.35) and Cargo [https://doc.rust-lang.org/cargo/commands/cargo-install.html](https://doc.rust-lang.org/cargo/commands/cargo-install.html)
-- For Windows, download and install [Visual Studio C++ Community](https://visualstudio.microsoft.com/fr/vs/features/cplusplus/)
-- In a Shell / terminal (in admin mode for Windows):
-
-```bash
-rustup update
-cargo install mdbook
-cargo install -f mdbook-variables
-cargo install mdbook-linkcheck
-```
-
-- Update PATH with a line “%USERPROFILE%\.cargo\bin”
-
-More information: <a href="https://rust-lang.github.io/mdBook/index.html" target="_blank">Official mdBook documentation</a>
-
-
-# Modify and view docs locally
-
-## Docs’s architecture
-
-Documentation’s source is organized as below. Most modification of docs’ content is made in pages folder.
-
-![Tree](./src/_assets/img/docs-tree.png)
-
-- **.github:** Contains workflow files for GitHub action (compiling the markdown sources into an HTML static website) and issue templates.
-- **book:** HTML static local website generated by mdbook serve. This folder is local only, and thus included in *.gitignore* file.
-- **src:** All the sources for the documentation.
-- **_assets:** Contains the custom CSS files and the images.
-- **pages:** Contains the pages in markdown. Each folder is a category for the left menu.
-- **theme:** Contains the original CSS and the file *index.hbs*. This file is the general template for every page in the documentation.
-- **index.md:** Index page of the documentation.
-- **SUMMARY.md:** Contains the tree for the left menu. Any modification here would reflect on this menu.
-- **book.toml:** Contains the parameters for the documentation. The *[preprocessor.variables.variables]* category contains the variables for the current pyluos and luos versions: *last_version_pyluos* and *last_version_luos*.
-
-## Git
-
-Git must be installed on your computer: [https://git-scm.com/downloads](https://git-scm.com/downloads)
-
-Clone and fetch the docs repository:
-
-```bash
-git clone https://github.com/Luos-io/Documentation.git
-git fetch --prune
-```
-
-You can then do the modification in the local files from no on, but...
-
-**⛔ ...never push your modification on the branches master or main.**
-
-## View modifications locally
-
-You can check how your modification displays on the docs thanks to a local rust server:
-
-```bash
-mdbook serve
-```
-
-![Shell](./src/_assets/img/terminal.png)
-
-This will generate a preview of the documentation on a localhost page. Open a browser and type the address:
-
-[http://localhost:3000/](http://localhost:3000/)
-
-Each modification of the local source will automatically update the page in the browser so that you can see how your changes will affect the website.
-
-# Publish modification
-
-Once your modifications have been made and visually checked on your browser with the local Rust server, you can commit them and push them in a new branch for review.
-
-**⛔ Never push your modification on the branches *master* or *main*.**
-
-- Fetch the repository
-- Commit your modification
-- Push them on a **new branch**
-- Create a pull request on [https://github.com/Luos-io/Documentation](https://github.com/Luos-io/Documentation) from this new branch.
-
-Once the pull request has been reviewed, you can merge it on *master* or *main*.
-
-GitHub actions have been set in order to compile the docs after it's been pushed to *master* or *main*. The resulting compiled documentation in HTML is deployed on an isolated branch called *gh-pages*. No modification should ever be pushed on this branch.   
-
----
-
-## Don't hesitate to read [our documentation](https://docs.luos.io), or to post your questions/issues on the [Luos' subreddit](https://www.reddit.com/r/Luos/). :books:
 
 [![](https://img.shields.io/reddit/subreddit-subscribers/Luos?style=social)](https://www.reddit.com/r/Luos)
 [![](https://img.shields.io/badge/Luos-Documentation-34A3B4)](https://docs.luos.io)
