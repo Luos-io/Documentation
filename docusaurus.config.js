@@ -98,20 +98,12 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Join the Slack',
-              href: 'http://bit.ly/JoinLuosSlack',
-            },
-            {
-              label: 'Join the Discord',
-              href: 'http://bit.ly/JoinLuosDiscord',
-            },
-            {
-              label: 'Join the Forum',
+              label: 'Forum',
               href: 'http://bit.ly/JoinLuosForum',
             },
             {
-              label: 'Join the Reddit',
-              href: 'https://www.reddit.com/r/Luos/',
+              label: 'Twitter',
+              href: 'https://twitter.com/Luos_io',
             },
           ],
         },
@@ -125,14 +117,6 @@ module.exports = {
             {
               label: 'Youtube',
               href: 'https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA',
-            },
-            {
-              label: 'Linkedin',
-              href: 'https://www.linkedin.com/company/luos',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/Luos_io',
             },
           ],
         },

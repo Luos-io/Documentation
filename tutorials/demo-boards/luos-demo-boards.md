@@ -6,6 +6,7 @@ import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import IconExternalLink from '@theme/IconExternalLink';
 
 # A general guide to Luos electronic boards
 
@@ -41,14 +42,14 @@ Here are the specifications of this motherboard:
 - Dimensions: 20 x 26 mm
 - Supply Voltage: 5 V to 24 V
 - Output Voltage: 5 V
-- Connectors: 2x Robus connectors (<a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">_DF11-8DP-2DS(24) &#8599;_</a>)
-- Sockets: 2x 6 connectors (<a href="https://octopart.com/826926-3-te+connectivity-40939547" target="_blank">_826926-3 &#8599;_</a>)
+- Connectors: 2x Robus connectors (<a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">_DF11-8DP-2DS(24)<IconExternalLink width="10" />_</a>)
+- Sockets: 2x 6 connectors (<a href="https://octopart.com/826926-3-te+connectivity-40939547" target="_blank">_826926-3<IconExternalLink width="10" />_</a>)
 - Other Output: 1x micro-USB
 - USB Serial Speed: 1 Mbaud/s
 
 ---
 
-see <a href="https://github.com/Luos-io/Examples/tree/master/Hardware" target="_blank">Example demonstration board &#8599;</a>.
+see <a href="https://github.com/Luos-io/Examples/tree/master/Hardware" target="_blank">Example demonstration board<IconExternalLink width="10" /></a>.
 
 ## Plugging boards together
 
@@ -81,6 +82,6 @@ The "gate" service's task is to stream the Luos network activity into a standard
 
 This way, it is **easy to use** your favorite device and language to interact and control your device.
 
-We created an open-source **Python library** managing this JSON API called Pyluos. Feel free to use it, copy it, and convert it into your favorite language. We are open to review your contributions in any programming languages. You can suggest any change or new API on the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos' community on Reddit &#8599;</a>.
+We created an open-source **Python library** managing this JSON API called Pyluos. Feel free to use it, copy it, and convert it into your favorite language. We are open to review your contributions in any programming languages. You can suggest any change or new API on the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos' community on Reddit<IconExternalLink width="10" /></a>.
 
-Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">Pyluos on GitHub &#8599;</a>.
+Get <a href="https://github.com/Luos-io/Pyluos" target="_blank">Pyluos on GitHub<IconExternalLink width="10" /></a>.

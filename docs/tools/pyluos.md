@@ -4,6 +4,7 @@ custom_edit_url: null
 ---
 
 import Image from '/src/components/Images.js';
+import IconExternalLink from '@theme/IconExternalLink';
 
 #
 
@@ -19,11 +20,11 @@ Pyluos is the standard Python library to manage a Luos system with a computer. I
 In order to use Pyluos library, Python and the Pip package manager must be installed on your computer.
 :::
 
-_« Python is a programming language that lets you work more quickly and integrate your systems more effectively. » (<small><a href="https://python.org" target="_blank">Source &#8599;</a></small>)_
+_« Python is a programming language that lets you work more quickly and integrate your systems more effectively. » (<small><a href="https://python.org" target="_blank">Source<IconExternalLink width="10" /></a></small>)_
 
-_« <a href="https://pip.pypa.io/en/stable/" target="_blank">Pip &#8599;</a> is the standard package manager for Python. It allows you to install and manage additional packages that are not part of the Python standard library. » (<small><a href="https://realpython.com/what-is-pip/#getting-started-with-pip" target="_blank">Source &#8599;</a></small>)_
+_« <a href="https://pip.pypa.io/en/stable/" target="_blank">Pip<IconExternalLink width="10" /></a> is the standard package manager for Python. It allows you to install and manage additional packages that are not part of the Python standard library. » (<small><a href="https://realpython.com/what-is-pip/#getting-started-with-pip" target="_blank">Source<IconExternalLink width="10" /></a></small>)_
 
-If Python is not installed on your computer, download and run the last release according to your computer's OS: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/ &#8599;</a>.
+If Python is not installed on your computer, download and run the last release according to your computer's OS: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/<IconExternalLink width="10" /></a>.
 
 To install Pip, type the following commands in a console:
 
@@ -36,7 +37,7 @@ python get-pip.py
 
 The tool _Jupyter Notebook_ is needed for this tutorial. Jupyter Notebook will allow you to type Python commands in an internet browser to communicate with a Luos system, via Pyluos.
 
-_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source &#8599;</a></small>)_
+_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source<IconExternalLink width="10" /></a></small>)_
 
 Type the following command in the console to install Jupyter:
 
@@ -45,7 +46,7 @@ pip install jupyter
 ```
 
 :::note
-Feel free to consult <a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank">_Jupyter Notebook_'s &#8599;</a> documentation.
+Feel free to consult <a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank">_Jupyter Notebook_'s<IconExternalLink width="10" /></a> documentation.
 :::
 
 ### Installing or updating Pyluos library

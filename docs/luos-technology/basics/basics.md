@@ -5,6 +5,7 @@ custom_edit_url: null
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
 import Image from '/src/components/Images.js';
+import IconExternalLink from '@theme/IconExternalLink';
 
 # Luos aims to end the dictatorship of electronics
 
@@ -18,7 +19,7 @@ Luos is here to back you up and keep your projects clean and smooth to develop, 
 
 ## Introduction to Luos
 
-**Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices &#8599;</a> architecture for electronics.** It is a powerful modularity tool to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image &#8599;</a>.
+**Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices<IconExternalLink width="10" /></a> architecture for electronics.** It is a powerful modularity tool to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image<IconExternalLink width="10" /></a>.
 
 This guide contains all the basic notions you will need to use, create and understand Luos technology.
 

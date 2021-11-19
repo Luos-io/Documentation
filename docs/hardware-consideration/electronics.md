@@ -5,6 +5,7 @@ custom_edit_url: null
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
 import Image from '/src/components/Images.js';
+import IconExternalLink from '@theme/IconExternalLink';
 
 # Integrating Luos into an electronic board
 
@@ -14,7 +15,7 @@ To create and match with a default reference design, electronic boards must resp
 
 A Luos-friendly electronic board must contain _at least_ the following elements:
 
-- **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU &#8599;**</a> (microcontroller unit): It hosts, as a node, the Luos firmware along with the different <Tooltip def={customFields.service_def} >services</Tooltip> (drivers and apps).
+- **1** <a href="https://en.wikipedia.org/wiki/Microcontroller" target="_blank">**MCU<IconExternalLink width="10" />**</a> (microcontroller unit): It hosts, as a node, the Luos firmware along with the different <Tooltip def={customFields.service_def} >services</Tooltip> (drivers and apps).
 - **At least two connectors**: They allow to link boards together into a Luos network and link them as a daisy-chain or star mounting. Through PTP pins, nodes know if there is another node connected to the connector. This is used when the user wants to make a topology detection of the system.
 
 ## One-wire reference design
@@ -23,7 +24,7 @@ A Luos-friendly electronic board must contain _at least_ the following elements:
     <Image src="/img/Luos_Network_Interface_OW.png" />
 </div>
 
-Luos' One-wire official connector is <a href="https://octopart.com/df11-4dp-2ds%2852%29-hirose-261749" target="_blank">_DF11-4DP-2DS &#8599;_</a>.
+Luos' One-wire official connector is <a href="https://octopart.com/df11-4dp-2ds%2852%29-hirose-261749" target="_blank">_DF11-4DP-2DS<IconExternalLink width="10" />_</a>.
 
 ## RS485 reference design
 
@@ -31,6 +32,6 @@ Luos' One-wire official connector is <a href="https://octopart.com/df11-4dp-2ds%
     <Image src="/img/Luos_Network_Interface_485.png" />
 </div>
 
-Luos' RS485 official connector is <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">_DF11-8DP-2DS &#8599;_</a>.
+Luos' RS485 official connector is <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">_DF11-8DP-2DS<IconExternalLink width="10" />_</a>.
 
-See the default pinout configuration in <a href="https://github.com/Luos-io/LuosHAL" target="_blank">_luos_hal_config.h &#8599;_</a> file for chosen the MCU family.
+See the default pinout configuration in <a href="https://github.com/Luos-io/LuosHAL" target="_blank">_luos_hal_config.h<IconExternalLink width="10" />_</a> file for chosen the MCU family.

@@ -35,7 +35,7 @@ function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
       {href && !isInternalUrl(href) ? (
         <span>
           {label}
-          <IconExternalLink />
+          <IconExternalLink width="10" />
         </span>
       ) : (
         label
@@ -67,12 +67,30 @@ function Footer() {
       })}
     >
       <div className="container">
+        <div className="joinUsContainer">
+          <h3>Join us on</h3>
+          <a href="http://bit.ly/JoinLuosDiscord">
+            <img src="/img/discord.png" className="rsLogo"></img>
+          </a>
+          <a href="http://bit.ly/JoinLuosSlack">
+            <img src="/img/slack.png" className="rsLogo"></img>
+          </a>
+          <a href="https://www.reddit.com/r/Luos/">
+            <img src="/img/reddit.png" className="rsLogo"></img>
+          </a>
+          <a href="https://www.linkedin.com/company/luos">
+            <img src="/img/linkedin.png" className="rsLogo"></img>
+          </a>
+        </div>
         {links && links.length > 0 && (
           <div className="row footer__links">
             {links.map((linkItem, i) => (
               <div key={i} className="custom_mobile_col col footer__col">
                 {linkItem.title != null ? (
-                  <div className="footer__title">{linkItem.title}</div>
+                  <div className="footer__title widget-title">
+                    <h4> {linkItem.title}</h4>
+                    <span></span>
+                  </div>
                 ) : null}
                 {linkItem.items != null &&
                 Array.isArray(linkItem.items) &&

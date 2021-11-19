@@ -5,6 +5,7 @@ custom_edit_url: null
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
 import Image from '/src/components/Images.js';
+import IconExternalLink from '@theme/IconExternalLink';
 
 # Luos
 
@@ -14,8 +15,8 @@ The node's embedded code hosts the Luos's embedded code and the node's various f
 
 Luos works as a code library running on nodes. To match the Luos library with your hardware, Luos offers a _Hardware Abstraction Layer_ for various devices in <Tooltip def={customFields.luoshal_def}>LuosHAL</Tooltip>.
 
-- <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL &#8599;</a>: This repository provides a list of family devices covered to match the Luos library with your hardware.
-- <a href="https://github.com/Luos-io/Luos" target="_blank">Luos &#8599;</a>: The main library you will be working with.
+- <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL<IconExternalLink width="10" /></a>: This repository provides a list of family devices covered to match the Luos library with your hardware.
+- <a href="https://github.com/Luos-io/Luos" target="_blank">Luos<IconExternalLink width="10" /></a>: The main library you will be working with.
 
 To make it work in your environment, you have to:
 
@@ -84,7 +85,7 @@ You can use it to set all your custom configurations:
 |     MAX_MSG_NB     | 2\*MAX_SERVICE_NUMBER |                                Max number of messages that can be referenced by Luos.                                 |
 |      NBR_PORT      |           2           | Number of PTP (port) on the node ( max 8). See [electronic design](../../hardware-consideration/electronics.md) page. |
 
-You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h &#8599;</a>,
+You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h<IconExternalLink width="10" /></a>,
 
 Check the Luos_hal_config.h of your MCU family to see parameters that can be changed to fit your design.
 

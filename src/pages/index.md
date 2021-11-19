@@ -6,6 +6,7 @@ custom_edit_url: null
 # Luos documentation and help
 
 import siteConfig from '/docusaurus.config.js';
+import IconExternalLink from '@theme/IconExternalLink';
 
 <div className="cust_square_wrapper">
   <a href="/get-started/get-started"><div className="cust_square">
@@ -42,11 +43,11 @@ Luos is designed with the conviction that the development of electronic systems 
 
 Luos allows you to try, test, and iterate faster on any project to design what users really want.
 
-**Luos works like a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices architecture &#8599;</a> designed for the software world, and a containerization platform. It encapsulates any software or hardware functions to make them communicate and work with any other encapsulated service, no matter how they were developed, either on bare metal or on top of an embedded OS.**
+**Luos works like a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices architecture<IconExternalLink width="10" /></a> designed for the software world, and a containerization platform. It encapsulates any software or hardware functions to make them communicate and work with any other encapsulated service, no matter how they were developed, either on bare metal or on top of an embedded OS.**
 
-If you have questions about a specific topic, you can check out and post messages in our <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos' community on Reddit &#8599;</a>. And if you have suggestions about this documentation, don't hesitate to create pull requests.
+If you have questions about a specific topic, you can check out and post messages in our <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos' community on Reddit<IconExternalLink width="10" /></a>. And if you have suggestions about this documentation, don't hesitate to create pull requests.
 
 <div align="center"><iframe className="cust_video player_iframe" src="https://www.youtube.com/embed/xQe3z0M_FE8?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe><br /></div>
 
 <small><a href="https://github.com/Luos-io/Luos" target="blank">Luos revision:{siteConfig.customFields.last_version_luos}</a><br />
-Luos is under <a href="https://github.com/Luos-io/Luos/blob/master/LICENSE" target="_blank">Apache 2.0 license &#8599;</a>.</small>
+Luos is under <a href="https://github.com/Luos-io/Luos/blob/master/LICENSE" target="_blank">Apache 2.0 license<IconExternalLink width="10" /></a>.</small>

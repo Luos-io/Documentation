@@ -98,6 +98,9 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .footer__links {
   text-align: center;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 25px 0px;
 }
 
 .feedbackForm {
@@ -560,4 +563,42 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 
 .tabs {
   border-bottom: 1px solid var(--ifm-tabs-color-active) !important;
+}
+
+.widget-title {
+  margin-bottom: 20px;
+}
+.widget-title span {
+  background: #839fad none repeat scroll 0 0;
+  display: block;
+  height: 1px;
+  margin-top: 25px;
+  position: relative;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.widget-title span::after {
+  background: inherit;
+  content: '';
+  height: inherit;
+  position: absolute;
+  top: -4px;
+  width: 50%;
+}
+
+.joinUsContainer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.rsLogo {
+  width: 32px;
+  margin: 15px 10px;
+}
+
+.footer {
+  padding: 20px;
 }

@@ -2,6 +2,8 @@
 custom_edit_url: null
 ---
 
+import IconExternalLink from '@theme/IconExternalLink';
+
 # ROS 1 retro-compatibility with Luos tutorial
 
 ## Luos with ROS 1
@@ -17,7 +19,7 @@ We assume your ROS 2 workspace is `~/ros2_ws`.
 
 ### 2. Install ROS 1 and the ROS 1 bridge
 
-Then install <a href="http://wiki.ros.org/noetic/Installation/Ubuntu" target="_blank">ROS 1 Noetic on Ubuntu 20.04 &#8599;</a>.
+Then install <a href="http://wiki.ros.org/noetic/Installation/Ubuntu" target="_blank">ROS 1 Noetic on Ubuntu 20.04<IconExternalLink width="10" /></a>.
 We assume your ROS 1 workspace is `~/ros_ws`.
 
 ### 3. Initialize the bridge

@@ -2,6 +2,8 @@
 custom_edit_url: null
 ---
 
+import IconExternalLink from '@theme/IconExternalLink';
+
 # Part 2: Take the control
 
 ## The remote control part: you can control the Matrix 💊
@@ -17,7 +19,7 @@ To install it, run:
 pip install pyluos
 ```
 
-This step needs you to have <a href="IPython" target="_blank">IPython &#8599;</a> previously installed on your computer.
+This step needs you to have <a href="IPython" target="_blank">IPython<IconExternalLink width="10" /></a> previously installed on your computer.
 
 ### Connect and control your device
 

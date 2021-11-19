@@ -2,11 +2,13 @@
 custom_edit_url: null
 ---
 
+import IconExternalLink from '@theme/IconExternalLink';
+
 # Install ROS 2 tutorial
 
 ## Install ROS 2 and Luos
 
-First, install <a href="https://index.ros.org/doc/ros2/Installation/Foxy/" target="_blank">ROS 2 Foxy &#8599;</a> for your OS with FastRTPS. Also, install <a href="https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon" target="_blank">`colcon` &#8599;</a> as advised in the guidelines. If you are not familiar with ROS, you should go on with a couple of ROS 2 tutorials to get started.
+First, install <a href="https://index.ros.org/doc/ros2/Installation/Foxy/" target="_blank">ROS 2 Foxy<IconExternalLink width="10" /></a> for your OS with FastRTPS. Also, install <a href="https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon" target="_blank">`colcon`<IconExternalLink width="10" /></a> as advised in the guidelines. If you are not familiar with ROS, you should go on with a couple of ROS 2 tutorials to get started.
 
 Then clone `luos_ros2` to your workspace and compile it with colcon:
 
