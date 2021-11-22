@@ -1,14 +1,12 @@
 ---
-title: Technical FAQ
+title: Troubleshooting
 hide_table_of_contents: true
 custom_edit_url: null
 ---
 
 #
 
-<h1 className="no-break"><a href="#welcome" className="header" id="welcome">Technical FAQ</a></h1>
-
-Here is a list of common questions or issues our users may encounter while using Luos.
+<h1 className="no-break">Troubleshooting</h1>
 
 ## What is your issue?
 
@@ -17,6 +15,8 @@ Here is a list of common questions or issues our users may encounter while using
 - [I can't flash my board using DFU.](/faq/dfu)
 - [The default Luos example does not compile.](/faq/application-compile)
 - [My board crashes when a detection occurs.](/faq/application-default-handler)
+- [I am enable to update my board using ST-Link.](/faq/stlink)
+- [I can't complete the get started tutorial because some dependencies are not installed.](/faq/install-development-environment)
 
 ---
 

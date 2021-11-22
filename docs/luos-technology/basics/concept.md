@@ -4,6 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
+import Image from '/src/components/Images.js';
 
 # Concept
 
@@ -14,13 +15,13 @@ A node is a physical component (hardware) running Luos and hosting one or severa
 In other words, **a node is a microcontroller** connected to other microcontrollers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.
 
-<p align="center">
-<img src="/img/MCU-luos.png" height="100px" />
-</p>
+<div align="center">
+  <Image src="/img/MCU-luos.svg" darkSrc="/img/MCU-luos-white.svg" height="200px"/>
+</div>
 
 ## Package
 
-A package is a folder of code containing a pack of features in your project. A package can be composed of one or several services, but services in the same package share the same physical resources. For example, a dual DCmotor driver is developed into one package but exposes two services (one for each motor). The purpose of this package is to be simply copied and pasted across projects or shared as readyo-to-use apps.
+A package is a folder of code containing a pack of features in your project. A package can be composed of one or several services, but services in the same package share the same physical resources. For example, a dual DCmotor driver is developed into one package but exposes two services (one for each motor). The purpose of this package is to be simply copied and pasted across projects or shared as ready-to-use apps.
 
 ## Service
 

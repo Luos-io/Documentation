@@ -2,6 +2,9 @@
 custom_edit_url: null
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # MCU with Luos
 
 ## Compatible MCUs
@@ -30,7 +33,7 @@ For example, redefine PTPA to fit with your design
 
 in`luos_hal_config.h` this is defined as followed:
 
-```C
+```c
 #ifndef PTPA_PIN
 #define PTPA_PIN                    GPIO_PIN_8
 #endif
@@ -38,13 +41,14 @@ in`luos_hal_config.h` this is defined as followed:
 
 in`node_config.h` this should be redefined as followed:
 
-```C
+```c
 #define PTPA_PIN                    GPIO_PIN_11
 ```
 
 There are many possible configurations that you can change, not all of them being necessary for your design:
 
-### Pinout
+<Tabs>
+    <TabItem value="Pinout" label="Pinout">
 
 |              Function               |                    Description                    |             Comments             |
 | :---------------------------------: | :-----------------------------------------------: | :------------------------------: |
@@ -53,7 +57,8 @@ There are many possible configurations that you can change, not all of them bein
 |        COM_TX_PIN/COM_RX_PIN        |          Chooses pinout for Rx/Tx comms           | Adapts to the chosen serial bus  |
 | PTPX_PIN/PTPX_IRQ/PINOUT_IRQHANDLER | Chooses pinout, IRQ and callback for the PTP line | Necessary for topology detection |
 
-### Communication
+</TabItem>
+<TabItem value="Communication" label="Communication">
 
 |                 Function                  |             Description              |            Comments             |
 | :---------------------------------------: | :----------------------------------: | :-----------------------------: |
@@ -62,15 +67,21 @@ There are many possible configurations that you can change, not all of them bein
 |           LUOS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for for Tx       |
 |             LUOS_DMA_CHANNEL              |           Chooses Channel            |             Send Tx             |
 
-### Timer
+</TabItem>
+<TabItem value="Timer" label="Timer">
 
 |                    Function                     |           Description           |       Comments        |
 | :---------------------------------------------: | :-----------------------------: | :-------------------: |
 |             LUOS_TIMER_CLOCK_ENABLE             |   Activates clock for Timeout   | Necessary for Timeout |
 | LUOS_TIMER/LUOS_TIMER_IRQ/LUOS_TIMER_IRQHANDLER | Chooses Timer, IRQ and callback | Necessary for Timeout |
 
-### Flash
+</TabItem>
+<TabItem value="Flash" label="Flash">
 
 |          Function          |           Description            |             Comments              |
 | :------------------------: | :------------------------------: | :-------------------------------: |
 | PAGE_SIZE/ADRESS_LAST_PAGE | Defines space in flash for alias | Necessary to rename service alias |
+
+</TabItem>
+
+</Tabs>

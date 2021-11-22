@@ -4,6 +4,8 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
+import Image from '/src/components/Images.js';
+import IconExternalLink from '@theme/IconExternalLink';
 
 # Luos
 
@@ -13,8 +15,8 @@ The node's embedded code hosts the Luos's embedded code and the node's various f
 
 Luos works as a code library running on nodes. To match the Luos library with your hardware, Luos offers a _Hardware Abstraction Layer_ for various devices in <Tooltip def={customFields.luoshal_def}>LuosHAL</Tooltip>.
 
-- <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL &#8599;</a>: This repository provides a list of family devices covered to match the Luos library with your hardware.
-- <a href="https://github.com/Luos-io/Luos" target="_blank">Luos &#8599;</a>: The main library you will be working with.
+- <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL<IconExternalLink width="10" /></a>: This repository provides a list of family devices covered to match the Luos library with your hardware.
+- <a href="https://github.com/Luos-io/Luos" target="_blank">Luos<IconExternalLink width="10" /></a>: The main library you will be working with.
 
 To make it work in your environment, you have to:
 
@@ -29,7 +31,7 @@ Luos is like a task that has to be run regularly. The primary Luos functions tha
 
 Basically, your `main()` function will look like this:
 
-```C
+```c
 #include "luos.h"
 
 int main(void)
@@ -47,7 +49,9 @@ Adding this code to a <Tooltip def={customFields.node_def}>node</Tooltip> makes 
 
 **As a developer, you will always develop your functionalities into services and never into the `main()` program.**
 
-> **Note:** The only information that should be put on the `main()` code are MCU's setup parameters and services' run functions.
+:::note
+The only information that should be put on the `main()` code are MCU's setup parameters and services' run functions.
+:::
 
 ## A complete software node view
 
@@ -57,9 +61,9 @@ Robus is the communication protocol provided by Luos and the low layer of Luos t
 
 Robus executes a format control, and store messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos or sent to one or several [services](../services/services.md).
 
-<p align="center">
-<img src="/img/NodeFlow.png" height="400px" />
-</p>
+<div align="center">
+<Image src="/img/NodeFlow.svg" darkSrc="/img/NodeFlow-dark.svg" />
+</div>
 
 ## Node Parameters Configuration
 
@@ -81,7 +85,7 @@ You can use it to set all your custom configurations:
 |     MAX_MSG_NB     | 2\*MAX_SERVICE_NUMBER |                                Max number of messages that can be referenced by Luos.                                 |
 |      NBR_PORT      |           2           | Number of PTP (port) on the node ( max 8). See [electronic design](../../hardware-consideration/electronics.md) page. |
 
-You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h &#8599;</a>,
+You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h<IconExternalLink width="10" /></a>,
 
 Check the Luos_hal_config.h of your MCU family to see parameters that can be changed to fit your design.
 

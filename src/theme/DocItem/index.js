@@ -19,7 +19,6 @@ import EditThisPage from '@theme/EditThisPage';
 import { MainHeading } from '@theme/Heading';
 import styles from './styles.module.css';
 import ContactUs from '/src/components/ContactUs.js';
-import { Sidetab } from 'react-typeform-embed';
 import { customFields } from '/docusaurus.config.js';
 
 function DocItem(props) {
@@ -82,9 +81,13 @@ function DocItem(props) {
 
       <div className="row">
         <div
-          className={clsx('col', {
-            [styles.docItemCol]: !hideTableOfContents,
-          })}
+          className={clsx(
+            'col',
+            {
+              [styles.docItemCol]: !hideTableOfContents,
+            },
+            'custom_mobile_col',
+          )}
         >
           <DocVersionBanner versionMetadata={versionMetadata} />
           <div className={styles.docItemContainer}>
@@ -114,10 +117,6 @@ function DocItem(props) {
                   <>
                     <DocContent />
                     <ContactUs pageName={window.location} />
-                    <Sidetab
-                      id={process.env.REACT_APP_TYPEFORM_ID}
-                      buttonText="Is Luos for me? 🤔"
-                    />
                   </>
                 ) : null}
               </div>
@@ -140,7 +139,6 @@ function DocItem(props) {
                 </footer>
               )}
             </article>
-
             <DocPaginator metadata={metadata} />
           </div>
         </div>

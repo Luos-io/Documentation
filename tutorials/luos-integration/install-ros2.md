@@ -2,11 +2,13 @@
 custom_edit_url: null
 ---
 
+import IconExternalLink from '@theme/IconExternalLink';
+
 # Install ROS 2 tutorial
 
 ## Install ROS 2 and Luos
 
-First, install <a href="https://index.ros.org/doc/ros2/Installation/Foxy/" target="_blank">ROS 2 Foxy &#8599;</a> for your OS with FastRTPS. Also, install <a href="https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon" target="_blank">`colcon` &#8599;</a> as advised in the guidelines. If you are not familiar with ROS, you should go on with a couple of ROS 2 tutorials to get started.
+First, install <a href="https://index.ros.org/doc/ros2/Installation/Foxy/" target="_blank">ROS 2 Foxy<IconExternalLink width="10" /></a> for your OS with FastRTPS. Also, install <a href="https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#install-colcon" target="_blank">`colcon`<IconExternalLink width="10" /></a> as advised in the guidelines. If you are not familiar with ROS, you should go on with a couple of ROS 2 tutorials to get started.
 
 Then clone `luos_ros2` to your workspace and compile it with colcon:
 
@@ -36,11 +38,14 @@ State               button_mod          3
 Color               rgb_led_mod         5
 ```
 
-> **Note:** If you have several Luos gates, you need several brokers. Specify a port and a **unique** name for each of them:
->
-> ```bash
-> ros2 launch luos_interface broker.launch.py device:=/dev/ttyUSB1 name:=brokerUSB1
-> ```
+:::tip
+If you have several Luos gates, you need several brokers. Specify a port and a **unique** name for each of them:
+
+```bash
+ros2 launch luos_interface broker.launch.py device:=/dev/ttyUSB1 name:=brokerUSB1
+```
+
+:::
 
 According to the services you have plugged-in, the broker will automatically publish the relevant topics in the namespace of your services' aliases.
 Here we have plugged a `State` service (alias `button_mod`), a `Imu` service (alias `Imu_mod`) and a `Color` service (alias `rgb_led_mod`) to the gate; thus the broker publishes the following topics:

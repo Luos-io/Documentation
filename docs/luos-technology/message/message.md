@@ -13,7 +13,7 @@ As a developer, you will have to create and use Luos messages to exchange inform
 
 Luos messages are managed by the `msg_t` structure:
 
-```C
+```c
 typedef struct{
     header_t header;
     uint8_t data[MAX_DATA_MSG_SIZE];
@@ -32,7 +32,7 @@ To send data to any services you want, you will have to first fill out some info
 
 here is the `header_t` structure:
 
-```C
+```c
 typedef struct{
     uint16_t protocol : 4;    /*!< Protocol version. */
     uint16_t target : 12;     /*!< Target address, it can be (ID, Multicast/Broadcast, Type). */

@@ -10,4 +10,6 @@ Luos can be integrated with other technologies and work along with them to expan
 - [ROS 2 package example](/docs/tutorials/luos-integration/ros2-package-example): Make a bike alarm project with ROS 2 and Luos.
 - [ROS 1 retro-compatibility with Luos](/docs/tutorials/luos-integration/ros1-retrocompatibility): Learn how to use ROS 1 with Luos.
 
-> More tutorials to come soon.
+:::info
+More tutorials to come soon.
+:::

@@ -2,6 +2,8 @@
 custom_edit_url: null
 ---
 
+import Image from '/src/components/Images.js';
+
 # Code organization
 
 Because Luos allows you to manage your features as sharable blocks of code, we organized code in a specific way allowing to easily integrate and share packages from your projects with as little friction as possible.
@@ -17,9 +19,9 @@ Different levels on the embedded code are defined, corresponding to the differen
 | Package |                                              A sharable folder containing code files managing one or more services.                                               |
 | Service |                       Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can be custom too.                       |
 
-<p align="center">
-    <img src="/img/architecture.png" />
-</p>
+<div align="center">
+    <Image src="/img/architecture.svg" darkSrc="/img/architecture-dark.svg"/>
+</div>
 
 ### Product code organization with Luos
 
@@ -82,6 +84,6 @@ Different levels on the embedded code are defined, corresponding to the differen
 
 Luos Library is used at the node level. You will need to initialize Luos and call a loop function on your main program to be able to use the Luos API on your packages.
 
-<p align="center">
-    <img src="/img/luos_mcu_platform.png" />
-</p>
+<div align="center">
+    <Image src="/img/luos_mcu_platform.svg" darkSrc="/img/luos_mcu_platform-dark.svg"/>
+</div>

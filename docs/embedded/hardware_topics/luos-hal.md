@@ -1,4 +1,3 @@
-
 # Luos Hardware Abstraction Layer
 
 ## Luos library, Robus communication protocol, and physical bus
@@ -7,6 +6,7 @@ Luos can work on a single node or it can create a network for communication betw
 The file luos_hal_config.h file contains a default config for an MCU family and can be redefined in a config file to fit with your design.
 
 ## Luos HAL
+
 Lists of all the functions using hardware components relative to protocol communication and physical bus:
 
 - **PORT**: Defines necessary pins, PTP lines, Rx/Tx, enable/disable
@@ -17,18 +17,20 @@ Lists of all the functions using hardware components relative to protocol commun
 - **FLASH**: Storing of services' aliases in the system
 
 ## Luos HAL configuration
+
 `luos_hal_config.h` defines a default configuration pinout, serial bus for a MCU Family.
 
 Luos covers many <a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>, so you can choose the right one for your MCU.
 To match pinout and fonctionality with your design, you can create or use the file `node_config.h` (see Luos example)
-Base on the default configuration define in luos_hal_config.h,  you can define in the file `node_config.h`, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer etc.
+Base on the default configuration define in luos_hal_config.h, you can define in the file `node_config.h`, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer etc.
 
 This way you are able to change default hardware configuration so it need to be call in the preprossessor variable section of your IDE to be taken into consideration for your project
 
 > **FYI:** Every example provide by luos has a node_config.h files and includes by the file platformio.ini
 
 For example, using USART3 in your design instead of USART1 defined by `luos_hal_config.h` is defined as followed:
-```C
+
+```c
 #define COM_TX_PIN                  10
 #define COM_TX_PORT                 GPIOA
 #define COM_TX_AF                   GPIO_AF1_USART3
@@ -48,30 +50,32 @@ For example, using USART3 in your design instead of USART1 defined by `luos_hal_
 There are many possible configurations that you can change, not all of them being necessary for your design:
 
 ### Pinout
-| Function | Description | Comments |
-| :---: | :---: | :---: |
-| PORT_CLOCK_ENABLE | Activates clock for GPIO | Depends on port |
-| RX_EN_PIN/TX_EN_PIN | Chooses pinout to activate Rx/Tx comms | Necessary for special comms |
-| COM_TX_PIN/COM_RX_PIN | Chooses pinout for Rx/Tx comms | Adapts to the chosen serial bus |
+
+|              Function               |                    Description                    |             Comments             |
+| :---------------------------------: | :-----------------------------------------------: | :------------------------------: |
+|          PORT_CLOCK_ENABLE          |             Activates clock for GPIO              |         Depends on port          |
+|         RX_EN_PIN/TX_EN_PIN         |      Chooses pinout to activate Rx/Tx comms       |   Necessary for special comms    |
+|        COM_TX_PIN/COM_RX_PIN        |          Chooses pinout for Rx/Tx comms           | Adapts to the chosen serial bus  |
 | PTPX_PIN/PTPX_IRQ/PINOUT_IRQHANDLER | Chooses pinout, IRQ and callback for the PTP line | Necessary for topology detection |
 
 ### Communication
-| Function | Description | Comments |
-| :---: | :---: | :---: |
-| LUOS_COM_CLOCK_ENABLE | Activates clock for serial | Depends on serial bus |
+
+|                 Function                  |             Description              |            Comments             |
+| :---------------------------------------: | :----------------------------------: | :-----------------------------: |
+|           LUOS_COM_CLOCK_ENABLE           |      Activates clock for serial      |      Depends on serial bus      |
 | LUOS_COM/LUOS_COM_IRQ/LUOS_COM_IRQHANDLER | Chooses serial bus, IRQ and callback | Adapts to the serial bus chosen |
-| LUOS_DMA_CLOCK_ENABLE | Activates clock for DMA | Necessary for for Tx |
-| LUOS_DMA_CHANNEL | Chooses Channel | Send Tx|
+|           LUOS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for for Tx       |
+|             LUOS_DMA_CHANNEL              |           Chooses Channel            |             Send Tx             |
 
 ### Timer
-| Function | Description | Comments |
-| :---: | :---: | :---: |
-| LUOS_TIMER_CLOCK_ENABLE | Activates clock for Timeout| Necessary for Timeout |
-| LUOS_TIMER/LUOS_TIMER_IRQ/LUOS_TIMER_IRQHANDLER | Chooses Timer, IRQ and callback| Necessary for Timeout |
+
+|                    Function                     |           Description           |       Comments        |
+| :---------------------------------------------: | :-----------------------------: | :-------------------: |
+|             LUOS_TIMER_CLOCK_ENABLE             |   Activates clock for Timeout   | Necessary for Timeout |
+| LUOS_TIMER/LUOS_TIMER_IRQ/LUOS_TIMER_IRQHANDLER | Chooses Timer, IRQ and callback | Necessary for Timeout |
 
 ### Flash
-| Function | Description | Comments |
-| :---: | :---: | :---: |
+
+|          Function          |           Description            |             Comments              |
+| :------------------------: | :------------------------------: | :-------------------------------: |
 | PAGE_SIZE/ADRESS_LAST_PAGE | Defines space in flash for alias | Necessary to rename service alias |
-
-

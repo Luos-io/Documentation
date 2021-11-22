@@ -2,6 +2,8 @@
 custom_edit_url: null
 ---
 
+import IconExternalLink from '@theme/IconExternalLink';
+
 # Basic button-LED device tutorial
 
 In the following steps, you will learn to make a simple behavior with a Luos RGB LED demo board and a Luos button demo board step-by-step.
@@ -27,7 +29,9 @@ To begin, you have to install Python and Pyluos library, following the [Pyluos d
 
 Plug together all the boards with cables. You can plug them into any of the two connectors of each board, in any order.
 
-> **Warning:** Don't close a loop with the boards at each extremity.
+:::caution
+Don't close a loop with the boards at each extremity.
+:::
 
 ![Boards](/img/quickstart-1.png)
 
@@ -120,4 +124,4 @@ Test your behavior by executing the code.
 
 ---
 
-Don't hesitate to share your projects with the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos community &#8599;</a>.
+Don't hesitate to share your projects with the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos community<IconExternalLink width="10" /></a>.

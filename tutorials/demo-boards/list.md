@@ -10,4 +10,6 @@ Luos can be quickly demonstrated using demonstration boards, such as Arduino boa
 - [Button-LED device](/docs/tutorials/demo-boards/button-led): Set up a basic button-LED device with Luos demo boards.
 - [Luos with Arduino IDE](/docs/tutorials/demo-boards/arduino): Set up an Arduino boards for a new Luos project.
 
-> More tutorials to come soon.
+:::info
+More tutorials to come soon.
+:::
