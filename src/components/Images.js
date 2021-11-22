@@ -21,7 +21,10 @@ const Image = (props) => {
         height={height}
       />
       {isOpen && (
-        <Lightbox mainSrc={source} onCloseRequest={() => setIsOpen(false)} />
+        <Lightbox
+          mainSrc={props.darkSrc ? props.darkSrc : source}
+          onCloseRequest={() => setIsOpen(false)}
+        />
       )}
     </div>
   );
