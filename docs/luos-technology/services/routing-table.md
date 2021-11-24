@@ -4,12 +4,15 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Image from '/src/components/Images.js';
 
 # Routing Table
 
-> **Warning:** Make sure you have read and understood the [network topoly section](../node/topology.md) before reading this page.
+:::caution
+Make sure you have read and understood the [network topoly section](../node/topology.md) before reading this page.
+:::
 
 The routing table is a feature of Luos allowing every <Tooltip def={customFields.service_def}>services</Tooltip> to own a "map" (or topology) of the entire network of your device. This map enables services to know their physical position and to search and interact with other services quickly.
 
@@ -21,7 +24,7 @@ The routing table is automatically generated when a service initiates a network 
 
 To run a detection, type:
 
-```C
+```c
 RoutingTB_DetectServices(app);
 ```
 
@@ -34,11 +37,13 @@ When each service in the network has an attributed ID, the detection algorithm p
 
 Sometimes, multiple services in the network can have the same alias, which is not allowed to prevent service confusion. In this case, the detection algorithm will add a number after each alias instance on the routing table.
 
-> **Warnings:**
->
-> 1. Be careful that a service can change ID during a detection depending on the service running this detection.
-> 2. Do not consider your service's ID fixed.
-> 3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
+:::caution Warnings
+
+1. Be careful that a service can change ID during a detection depending on the service running this detection.
+2. Do not consider your service's ID fixed.
+3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
+
+:::
 
 ## Modes
 
@@ -105,14 +110,9 @@ The **port_table** allows sharing of topological information of your network. Ea
 
 Here is an example:
 
-<p align="center">
-<ThemedImage
-sources={{
-    light: useBaseUrl('/img/routing-table.png'),
-    dark: useBaseUrl('/img/routing-table-white.png'),
-  }}
-/>
-</p>
+<div align="center">
+  <Image src="/img/routing-table.svg" darkSrc="/img/routing-table-dark.svg"/>
+</div>
 
 As shown on this image, elements of the `port_table` indicate the first or last service id of the connected node through a given port.
 
@@ -121,11 +121,13 @@ Specific values can be taken by `port_table`:
 - **0**: this port is waiting to discover which is connected with. You should never see this value.
 - **0x0FFF**: this port is not connected to any other node.
 
-> **Note:** Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a [USB gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
+:::info
+Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a [USB gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
+:::
 
-## Search tools
-
-The routing table library provides the following search tools to find services and nodes' information into a Luos network:
+<Tabs className="unique-tabs">
+    <TabItem value="Search tools" label="Search tools">
+    The routing table library provides the following search tools to find services and nodes' information into a Luos network:
 
 |                             Description                              |                     Function                      |      Return      |
 | :------------------------------------------------------------------: | :-----------------------------------------------: | :--------------: |
@@ -140,8 +142,9 @@ The routing table library provides the following search tools to find services a
 |              Get the number of nodes in a Luos network               |           `RoutingTB_GetNodeNB(void);`            |    `uint16_t`    |
 |                           Get a node's id                            |   `RoutingTB_GetNodeID(unsigned short index);`    |    `uint16_t`    |
 
-## Management tools
+</TabItem>
 
+<TabItem value="Management tools" label=" Management tools">
 Here are the management tools provided by the routing table library:
 
 |                 Description                  |                                       Function                                        |       Return       |
@@ -156,3 +159,7 @@ Here are the management tools provided by the routing table library:
 |    Get the last service in a Luos network    |                           `RoutingTB_GetLastService(void);`                           |     `uint16_t`     |
 |     Get the last entry in a Luos network     |                            `RoutingTB_GetLastEntry(void);`                            |     `uint16_t`     |
 |     Get the last node in a Luos network      |                            `RoutingTB_GetLastNode(void);`                             |    `uint16_t*`     |
+
+</TabItem>
+
+</Tabs>

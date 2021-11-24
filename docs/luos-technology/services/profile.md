@@ -4,7 +4,9 @@
 
 Now that you understand what a service and a service type are, and how to create them, we can address the subject of profiles.
 
+:::tip Example
 A **service profile** is pre-made API management for a specific **service type**. Basically, a profile gives a **data structure** with all variables you need to handle in the service. The profile code knows how to deal with those variables and **share the service information** with any other.
+:::
 
 The profile handles messaging to share your variables with other services. Moreover, It updates them if a service writes into some of them. Thanks to this feature, your variables are shared with all the system **in real time** without explicit message handling in the service code.
 

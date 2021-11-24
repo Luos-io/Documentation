@@ -2,6 +2,8 @@
 custom_edit_url: null
 ---
 
+import IconExternalLink from '@theme/IconExternalLink';
+
 # Part 2: Take the control
 
 ## The remote control part: you can control the Matrix 💊
@@ -17,7 +19,7 @@ To install it, run:
 pip install pyluos
 ```
 
-This step needs you to have <a href="IPython" target="_blank">IPython &#8599;</a> previously installed on your computer.
+This step needs you to have <a href="IPython" target="_blank">IPython<IconExternalLink width="10" /></a> previously installed on your computer.
 
 ### Connect and control your device
 
@@ -66,4 +68,4 @@ The `device` object is your real device and you can interact with it. For exampl
 
 ## Next steps
 
-Your development environment is now installed and you have a Luos app running on your MCU. The [next part](/docs/get-started/get-started3) of this section deals with creating your first Luos network.
+Your development environment is now installed and you have a Luos app running on your MCU. The [next part](/get-started/get-started3) of this section deals with creating your first Luos network.
