@@ -158,6 +158,11 @@ module.exports = {
               label: 'Electronic Design',
               id: 'hardware-consideration/electronics',
             },
+            {
+              type: 'doc',
+              label: 'Test Your Configuration',
+              id: 'hardware-consideration/Test-your-configuration',
+            },
           ],
         },
         {
