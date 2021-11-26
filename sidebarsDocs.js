@@ -150,13 +150,18 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'MCU with Luos',
+              label: 'Luos configuration',
               id: 'hardware-consideration/mcu',
             },
             {
               type: 'doc',
               label: 'Electronic Design',
               id: 'hardware-consideration/electronics',
+            },
+            {
+              type: 'doc',
+              label: 'Test Your Configuration',
+              id: 'hardware-consideration/Test-your-configuration',
             },
           ],
         },
