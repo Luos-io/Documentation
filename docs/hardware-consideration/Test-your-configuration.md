@@ -2,29 +2,37 @@
 custom_edit_url: null
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '/src/components/Images';
+import IconExternalLink from '@theme/IconExternalLink';
 
-# Test Your configuration
+# Test your hardware configuration
 
-You can use a Luos tool called selftest in Luos Library to check your hardware configuration. Check <a href="https://github.com/Luos-io/Luos" target="_blank">Luos<IconExternalLink width="10" /></a> to find the selftest util folder.
-Based on Luos default configuration, you can change #define values of peripherals and pinout to match your design.
+To adapt Luos to your board specificities you need to configure it. This subject is covered in the [Luos configuration](/hardware-consideration/mcu.md).
+To validate your network hardware configuration, you can use a Luos tool called selftest available in the <a href="https://github.com/Luos-io/Luos" target="_blank">Luos Library<IconExternalLink width="10" /></a>.
 
 
-## Set Hardware
+## Hardware test conditions
 
-Tx and Rx pin must be connected together. This is already the case in One Wire configuration and RS485 configuration.
-You must connect PTP pin together too.
+To allow selftest to check everything you need to have specific conditions for your board.
+To make this test you need to have only one board isolated (unconnected) from the network.
+Tx and Rx pin must be connected together or you have to be able to receive what you send. This is already the case in One Wire and RS485 configurations.
+Also you must connect PTP pins together.
 
 <div align="center">
     <Image src="/img/selftest_connection.png" />
 </div>
 
 
-## Set software
+## Software condition
 
-To use the selftest tool, you have to define the pre-processor definition SELFTEST. If you use platformio IDE to manage your project you must add a "-D SELFTEST" directive in build_flags setting (this can be found in platformio.ini file).
+To check the Luos access to the physical network you need to create a specific binary with only the selftest program on it. This program will perform some checkup allowing you to validate your hardware configuration.
+To use the selftest tool, you have to define SELFTEST using "-D SELFTEST" GCC build flag.
 
-In your main file :
+:::info
+If you use platformio IDE you must add a "-D SELFTEST" directive in build_flags setting (this can be found in platformio.ini file).
+:::
+
+To finish you need to add this on your main file :
 
 ```AsciiDoc
 #include "luos.h"
@@ -47,8 +55,15 @@ int main(void)
 }
 ```
 
+## Execution and validation
+
+To know if your configuration is OK or not you need to be able to know in which function (`selftest_ok` or `selftest_nok`) you will finish.
+If you have debug capabilities you simply can add breakpoints on those functions allowing you to analyses the call stack and precisely diagnose your test.
+If not you need to find a way to give you feedback such as a characteristic led blink for example.
+
 Selftest.c file shows you which part of the hardware communication is tested.
 
+:::info
 If NOK :
 It can be a communication problem :
 1. Check your MCU frequency definition in LuosHAL_config and your setup (those must be equals)
@@ -59,3 +74,4 @@ It can be a communication problem :
 It can be a PTP problem :
 1. Check your Pinout definition and IRQ for you PTP Pin
 2. Check in dedicated files the handler for IRQ
+:::

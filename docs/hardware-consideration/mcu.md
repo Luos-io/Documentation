@@ -5,7 +5,7 @@ custom_edit_url: null
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# MCU with Luos
+# Luos configuration
 
 ## Compatible MCUs
 
