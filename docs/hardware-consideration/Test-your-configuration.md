@@ -10,7 +10,6 @@ import IconExternalLink from '@theme/IconExternalLink';
 To adapt Luos to your board specificities you need to configure it. This subject is covered in the [Luos configuration](/hardware-consideration/mcu.md).
 To validate your network hardware configuration, you can use a Luos tool called selftest available in the <a href="https://github.com/Luos-io/Luos" target="_blank">Luos Library<IconExternalLink width="10" /></a>.
 
-
 ## Hardware test conditions
 
 To allow selftest to check everything you need to have specific conditions for your board.
@@ -19,9 +18,8 @@ Tx and Rx pin must be connected together or you have to be able to receive what 
 Also you must connect PTP pins together.
 
 <div align="center">
-    <Image src="/img/selftest_connection.png" />
+    <Image src="/img/selftest_connection.svg" darkSrc="/img/selftest_connection-dark.svg" />
 </div>
-
 
 ## Software condition
 
@@ -66,12 +64,14 @@ Selftest.c file shows you which part of the hardware communication is tested.
 :::info
 If NOK :
 It can be a communication problem :
+
 1. Check your MCU frequency definition in LuosHAL_config and your setup (those must be equals)
 2. Check USART configuration (Pinout RX/Tx, USART number, IRQ, Handler)
 3. Check the TIMER configuration (Channel, IRQ, Handler)
 4. Check the DMA configuration (Channel, IRQ, Handler)
 
 It can be a PTP problem :
+
 1. Check your Pinout definition and IRQ for you PTP Pin
 2. Check in dedicated files the handler for IRQ
-:::
+   :::

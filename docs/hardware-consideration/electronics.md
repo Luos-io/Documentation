@@ -21,7 +21,7 @@ A Luos-friendly electronic board must contain _at least_ the following elements:
 ## One-wire reference design
 
 <div align="center">
-    <Image src="/img/Luos_Network_Interface_OW.png" />
+    <Image src="/img/Luos_Network_Interface_OW.svg" darkSrc="/img/Luos_Network_Interface_OW-dark.svg"/>
 </div>
 
 Luos' One-wire official connector is <a href="https://octopart.com/df11-4dp-2ds%2852%29-hirose-261749" target="_blank">_DF11-4DP-2DS<IconExternalLink width="10" />_</a>.
@@ -29,7 +29,7 @@ Luos' One-wire official connector is <a href="https://octopart.com/df11-4dp-2ds%
 ## RS485 reference design
 
 <div align="center">
-    <Image src="/img/Luos_Network_Interface_485.png" />
+    <Image src="/img/Luos_Network_Interface_485.svg" darkSrc="/img/Luos_Network_Interface_485-dark.svg"/>
 </div>
 
 Luos' RS485 official connector is <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">_DF11-8DP-2DS<IconExternalLink width="10" />_</a>.
