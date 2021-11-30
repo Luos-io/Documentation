@@ -28,12 +28,12 @@ Luos also needs a Point To Point (PTP) connection allowing to define the physica
 
 To create your network, you have to identify the pins used to perform Luos communication:
 
-| Function name | Arduino pin | STM32L432KC pin |
-| ------------- | ----------- | --------------- |
-| TX            | Pin 0       | PA9             |
-| RX            | Pin 1       | PA10            |
-| PTPA          | Pin 6       | PA5             |
-| PTPB          | Pin 7       | PB4             |
+| Function name | Arduino pin | STM32L432KC pin | STM32F072RB pin | STM32F401RE pin | STM32F410RB pin | STM32G431KB pin |
+| ------------- | ----------- | --------------- | --------------- | --------------- | --------------- | --------------- |
+| TX            | Pin 0       | PA9             | PA9             | PB7             | PB7             | PA9             |
+| RX            | Pin 1       | PA10            | PA10            | PB6             | PB6             | PA10            |
+| PTPA          | Pin 6       | PB5             | PA8             | PB5             | PB5             | PB5             |
+| PTPB          | Pin 7       | PB4             | PB13            | PB4             | PB4             | PB4             |
 
 Now you can link both boards following this wiring :
 
