@@ -79,7 +79,7 @@ In the example above, `2` is the node's ID of _node 2_, not to be confused with 
 Let's type this command, then you should see the following text on your screen:
 
 <div align="center">
-  <Image src="/img/flash_new.png"/>
+  <Image src="/img/bl_flash_new.png"/>
 </div>
 You can see the four steps described in the previous section, plus a few log information. First, the CLI prints the parameters used to program the network:
 
@@ -102,7 +102,7 @@ pyluos-bootloader flash --help
 After the CLI launches the programming process, you can notice that the CLI checks if the node is ready (or alive) before programming it. Once the process is finished, you can re-run the network detection and see the following:
 
 <div align="center">
-  <Image src="/img/detect_new.png"/>
+  <Image src="/img/bl_detect_new.png"/>
 </div>
 
 You can program more than one node by giving an ID list with the option -t :
@@ -118,13 +118,13 @@ Here we will program nodes with ID n°2, 3, 4.
 If, for some reason, you lost the connection with the network or a node during the update, the bootloader allows you to re-run the process without the need to use specific programming tools (such as a JTAG debugger). Let's see what happens if you lost the connection during the update:
 
 <div align="center">
-  <Image src="/img/flash_error.png"/>
+  <Image src="/img/bl_flash_error.png"/>
 </div>
 
 The CLI tells you that you have lost the connection. Now by powering off and on your network and re-running a detection, you should see the following:
 
 <div align="center">
-  <Image src="/img/detect_boot_service.png"/>
+  <Image src="/img/bl_detect_boot_service.png"/>
 </div>
 
 The **boot_service** tells the node is in bootloader mode. You just have to re-run the flashing process with the CLI:
