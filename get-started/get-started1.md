@@ -15,6 +15,10 @@ Supported boards are listed below:
 
 - <a href="https://www.arduino.cc/en/Main/ArduinoBoardZero&" target="_blank">Arduino zero<IconExternalLink width="10" /></a>, <a href="https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data" target="_blank">MKRzero<IconExternalLink width="10" /></a>, <a href="https://store.arduino.cc/collections/boards/products/arduino-mkr1000-wifi" target="_blank">MKR1000<IconExternalLink width="10" /></a>, or any <a href="https://en.wikipedia.org/wiki/List_of_Arduino_boards_and_compatible_systems" target="_blank">SAMD21-based<IconExternalLink width="10" /></a> Arduino board
 - <a href="https://www.st.com/en/evaluation-tools/nucleo-l432kc.html" target="_blank">STM32L432KC Nucleo<IconExternalLink width="10" /></a>
+- <a href="https://www.st.com/en/evaluation-tools/nucleo-f072rb.html" target="_blank">STM32F072RB Nucleo<IconExternalLink width="10" /></a>
+- <a href="https://www.st.com/en/evaluation-tools/nucleo-f401re.html" target="_blank">STM32F401RE Nucleo<IconExternalLink width="10" /></a>
+- <a href="https://www.st.com/en/evaluation-tools/nucleo-f410rb.html" target="_blank">STM32F410RB Nucleo<IconExternalLink width="10" /></a>
+- <a href="https://www.st.com/en/evaluation-tools/nucleo-g431kb.html" target="_blank">STM32G431KB Nucleo<IconExternalLink width="10" /></a>
 
 :::info
 This list will grow longer with time.
