@@ -20,7 +20,7 @@ To check the Luos access to the physical network, you need to create a specific 
 To use the selftest tool, you have to define SELFTEST using "-D SELFTEST" GCC build flag.
 
 :::info
-If you use platformio IDE, you must add a "-D SELFTEST" directive in the build_flags setting (this can be found in platformio.ini file).
+If you use platformio IDE, you must add a "-D SELFTEST" directive in the build_flags setting (this can be found in the file platformio.ini).
 :::
 
 To finish, you need to add this in your main file:
@@ -36,7 +36,7 @@ void selftest_ok(void)
 
 void selftest_nok(void)
 {
-    //selftest don't pass! your configuration is NOK
+    //selftest doesn't pass! your configuration is NOK
 }
 
 
