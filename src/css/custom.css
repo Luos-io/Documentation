@@ -290,24 +290,20 @@ h6 {
 }
 
 .player_iframe {
-  width: 500px;
-  height: 280px;
+  width: 100%;
+  height: 538px;
   left: 0px;
   top: 0px;
   border: none;
 }
 
-.cust_video {
-  margin: 50px;
-  width: 500px;
-  height: 281px;
-}
-
 @media screen and (max-width: 800px) {
-  .cust_video {
-    width: 75%;
-    height: 200px;
-    margin: 25px 0px;
+  .player_iframe {
+    width: 100%;
+    height: 194px;
+    left: 0px;
+    top: 0px;
+    border: none;
   }
 }
 
