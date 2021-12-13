@@ -6,6 +6,8 @@ import IconExternalLink from '@theme/IconExternalLink';
 
 # Part 2: Take the control
 
+<div align="center"><iframe className="player_iframe" src="https://www.youtube.com/embed/VcK-LJ-gnDo?start=363&feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe></div>
+
 ## The remote control part: you can control the Matrix 💊
 
 The gate running on your board allows you to take control of any service loaded on your device.
