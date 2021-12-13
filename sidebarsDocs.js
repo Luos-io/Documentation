@@ -161,7 +161,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'Test Your Configuration',
-              id: 'hardware-consideration/Test-your-configuration',
+              id: 'hardware-consideration/test-your-configuration',
             },
           ],
         },
