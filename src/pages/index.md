@@ -47,7 +47,7 @@ Luos allows you to try, test, and iterate faster on any project to design what u
 
 If you have questions about a specific topic, you can check out and post messages in our <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos' community on Reddit<IconExternalLink width="10" /></a>. And if you have suggestions about this documentation, don't hesitate to create pull requests.
 
-<div align="center"><iframe className="cust_video player_iframe" src="https://www.youtube.com/embed/xQe3z0M_FE8?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe><br /></div>
+<div align="center"><iframe className="player_iframe" src="https://www.youtube.com/embed/ujh0xNE3TZ8?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe><br /></div>
 
 <small><a href="https://github.com/Luos-io/Luos" target="blank">Luos revision:{siteConfig.customFields.last_version_luos}</a><br />
 Luos is under <a href="https://github.com/Luos-io/Luos/blob/master/LICENSE" target="_blank">Apache 2.0 license<IconExternalLink width="10" /></a>.</small>

@@ -7,6 +7,8 @@ import IconExternalLink from '@theme/IconExternalLink';
 
 # Part 1: Your first Luos service
 
+<div align="center"><iframe className="player_iframe" src="https://www.youtube.com/embed/VcK-LJ-gnDo?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe></div>
+
 ## The embedded part: Run your first embedded app!
 
 This tutorial shows you how to quickly upload a Luos application on a Microcontroller Unit (MCU) development kit.

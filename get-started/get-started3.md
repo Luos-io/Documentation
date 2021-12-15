@@ -6,6 +6,8 @@ import Image from '/src/components/Images.js';
 
 # Part 3: Unleash your code
 
+<div align="center"><iframe className="player_iframe" src="https://www.youtube.com/embed/3NsDadp1IYM?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe></div>
+
 ## The network part: Create your first Luos network
 
 :::caution Warning
