@@ -70,10 +70,6 @@ li {
   font-weight: normal !important;
 }
 
-.navbar__link {
-  margin-right: 14px !important;
-}
-
 .table-of-contents a {
   font-size: 14px;
   font-weight: normal !important;
@@ -471,20 +467,16 @@ html[data-theme='dark'] .cust_tooltiptext {
 @media screen and (min-width: 900px) {
   #link__header__faq {
     border-right: 1px solid white !important;
-    padding-right: 28px;
   }
   #link__header__faq:hover {
     border-right: 1px solid white !important;
-    padding-right: 28px;
   }
   html[data-theme='light'] #link__header__faq:hover {
     border-right: 1px solid black !important;
-    padding-right: 28px;
   }
 
   html[data-theme='light'] #link__header__faq {
     border-right: 1px solid black !important;
-    padding-right: 28px;
   }
 }
 .header-github-link:hover:before {
