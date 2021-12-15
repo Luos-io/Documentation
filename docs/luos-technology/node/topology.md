@@ -4,6 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
+import Image from '/src/components/Images.js';
 
 # Network topology
 
@@ -25,14 +26,14 @@ PTP is the point-to-point connection between nodes used for topology detection. 
 
 With two PTP pins per board, you must chained your device as below:
 
-<p align="center">
-	<img src="/img/daisy_chain.png" />
-</p>
+<div align="center">
+  <Image src="/img/daisy_chain.svg" darkSrc="/img/daisy_chain_white.svg"/>
+</div>
 
 ### Star Mounting
 
 With at least three PTP pins per board, you can create a star mounting configuration:
 
-<p align="center">
-	<img src="/img/star_mounting.png" />
-</p>
+<div align="center">
+  <Image src="/img/star_mounting.svg" darkSrc="/img/star_mounting_white.svg"/>
+</div>

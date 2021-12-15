@@ -99,7 +99,7 @@ In order to communicate from a computer to a Luos network through a gate, a seri
 
 Although the connection can be made with Pyluos, the Python library, other languages can be used on the computer side. Here is a C Linux serial connection example:
 
-```C
+```c
 void init_luos_comm(luos_t* m)
 {
  m->serial_fd = open(SERIAL_PORT, O_RDWR);

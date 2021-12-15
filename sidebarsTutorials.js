@@ -54,7 +54,7 @@ module.exports = {
               label: 'Use Luos with Arduino IDE',
               id: 'demo-boards/arduino',
             },
-          ]
+          ],
         },
         {
           type: 'category',
@@ -63,31 +63,27 @@ module.exports = {
             {
               type: 'doc',
               label: 'List',
-              id : 'luos-integration/list',
+              id: 'luos-integration/list',
             },
             {
               type: 'doc',
               label: 'Install ROS 2',
-              id : 'luos-integration/install-ros2',
+              id: 'luos-integration/install-ros2',
             },
             {
               type: 'doc',
               label: 'ROS 2 package example',
-              id : 'luos-integration/ros2-package-example',
+              id: 'luos-integration/ros2-package-example',
             },
             {
               type: 'doc',
               label: 'ROS 1 retro-compatibility with Luos',
-              id : 'luos-integration/ros1-retrocompatibility',
+              id: 'luos-integration/ros1-retrocompatibility',
             },
-          ]
+          ],
         },
-        {
-          type: 'link',
-          label: 'Go to Luos.io',
-          href: 'https://www.luos.io/'
-        }
       ],
     },
-  ]
-}
+    { type: 'link', label: 'Go to Luos.io', href: 'https://www.luos.io/' },
+  ],
+};

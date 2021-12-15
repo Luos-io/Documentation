@@ -4,6 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
+import Image from '/src/components/Images.js';
 
 # Gate
 
@@ -26,7 +27,9 @@ The default behavior of the Gate is optimized for system that only have drivers 
 5.  the Gate setup all the network service to send back their values at the optimal frequency. _(Optional)_
 6.  At this optimal frequency the Gate generate formated data and send commands comming from a pipe.
 
-> **Warning:** The Gate service refreshes sensors informations as fast as it can, so that can be intensive to Luos bandwidth.
+:::caution
+The Gate service refreshes sensors informations as fast as it can, so that can be intensive to Luos bandwidth.
+:::
 
 The Gate and the pipe are two separate services, they can be put on the same node or on separate node.
 
@@ -34,7 +37,7 @@ The Gate and the pipe are two separate services, they can be put on the same nod
 
 In that configuration you put 2 services in the node like below.
 
-```C
+```c
 #include "luos.h"
 #include "pipe.h"
 #include "gate.h"
@@ -54,14 +57,19 @@ int main(void)
 }
 ```
 
-![](/img/gate_pipe.png)
+<div align="center">
+    <Image src="/img/gate_pipe.svg" darkSrc="/img/gate_pipe_dark.svg"/>
+</div>
 
 In that configuration formated messages don't pass through the Luos network and stay in localhost.
 
 ## A Gate and a Pipe on separate node
 
 When the Gate and the Pipe are on separate nodes, formated messages transit into the network and use even more bandwidth on the network and add latency.
-![](/img/gate_pipe_separate.png)
+
+<div align="center">
+    <Image src="/img/gate_pipe_separate.svg" darkSrc="/img/gate_pipe_separate-dark.svg"/>
+</div>
 
 ## The Gate configurations
 

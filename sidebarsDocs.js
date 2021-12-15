@@ -5,11 +5,6 @@ module.exports = {
       label: 'Documentation',
       items: [
         {
-          type: 'doc',
-          label: 'Getting Started',
-          id: 'get-started/getting-started',
-        },
-        {
           type: 'category',
           label: 'Luos Technology',
           items: [
@@ -81,7 +76,7 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Initilization',
+                  label: 'Initialization',
                   id: 'luos-technology/services/service-api',
                 },
                 {
@@ -155,13 +150,18 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'MCU with Luos',
+              label: 'Luos configuration',
               id: 'hardware-consideration/mcu',
             },
             {
               type: 'doc',
               label: 'Electronic Design',
               id: 'hardware-consideration/electronics',
+            },
+            {
+              type: 'doc',
+              label: 'Test Your Configuration',
+              id: 'hardware-consideration/test-your-configuration',
             },
           ],
         },
@@ -217,12 +217,8 @@ module.exports = {
             },
           ],
         },
-        {
-          type: 'link',
-          label: 'Go to Luos.io',
-          href: 'https://www.luos.io/'
-        }
       ],
     },
+    { type: 'link', label: 'Go to Luos.io', href: 'https://www.luos.io/' },
   ],
 };

@@ -4,8 +4,8 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Image from '/src/components/Images.js';
+import IconExternalLink from '@theme/IconExternalLink';
 
 # Luos aims to end the dictatorship of electronics
 
@@ -19,7 +19,7 @@ Luos is here to back you up and keep your projects clean and smooth to develop, 
 
 ## Introduction to Luos
 
-**Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices &#8599;</a> architecture for electronics.** It is a powerful modularity tool to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image &#8599;</a>.
+**Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices<IconExternalLink width="10" /></a> architecture for electronics.** It is a powerful modularity tool to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank">single system image<IconExternalLink width="10" /></a>.
 
 This guide contains all the basic notions you will need to use, create and understand Luos technology.
 
@@ -28,17 +28,16 @@ You can use Luos as a **bare metal** library, or as a driver into your **embedde
 
 Luos is composed as well of **code subdivisions** called <Tooltip def={customFields.service_def}>services</Tooltip>. Services are distributed into every node in a network.
 
-<ThemedImage
-sources={{
-    light: useBaseUrl('/img/feature-service-package-node-board.png'),
-    dark: useBaseUrl('/img/luos-layers-white.png'),
-  }}
-/>
+<div align="center">
+  <Image src="/img/feature-service-package-node-board.png" darkSrc="/img/luos-layers-white.png"/>
+</div>
 
 ## Introduction to embedded containerized platforms
 
 Luos aims to change the way you develop by containerizing your embedded features into services on your devices. A microcontroller can host a series of services, like data acquisition from sensors, actuators, or pieces of behavior for your devices. These features are placed inside <Tooltip def={customFields.service_def}>services</Tooltip>. Prepare your services and deploy them anywhere in a Luos network, and you will be able to access them directly with your services, no matter where they are in the network. Services can be dynamically connected and disconnected and can be detected and find by your application.
 
-> **Example:** Imagine an industrial device. It might contain several temperature sensors that will monitor specific parts of the system, and our system will need to know exactly what they monitor. When we read the temperature of the industrial motor, it is more convenient to get the information from the motor itself. These sensors are placed into services and clearly state which components they monitor. If the device encounters a problem, we need to notify anyone around of the incident. This could be a flashing light, a siren, or any other way of notifying people. In this case, it doesn't matter where the alarm peripherals are placed or even how many there are, Luos can notify all the services that identify as an alarm to activate them. Alarms can even be added to the Luos network while operating, and they will be recognized and used. Alarms also can be hosted or controled by computers or cloud applications.
+:::tip Example
+Imagine an industrial device. It might contain several temperature sensors that will monitor specific parts of the system, and our system will need to know exactly what they monitor. When we read the temperature of the industrial motor, it is more convenient to get the information from the motor itself. These sensors are placed into services and clearly state which components they monitor. If the device encounters a problem, we need to notify anyone around of the incident. This could be a flashing light, a siren, or any other way of notifying people. In this case, it doesn't matter where the alarm peripherals are placed or even how many there are, Luos can notify all the services that identify as an alarm to activate them. Alarms can even be added to the Luos network while operating, and they will be recognized and used. Alarms also can be hosted or controled by computers or cloud applications.
+:::
 
 Finally, it doesn't matter where on the Luos network sensors or actuators are placed. You can wire the different elements together as you want, each element will be detected and you will be able to use all of your services, wherever they are.

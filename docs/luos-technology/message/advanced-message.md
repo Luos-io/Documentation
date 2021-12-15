@@ -4,6 +4,7 @@ custom_edit_url: null
 
 import { customFields } from "/docusaurus.config.js";
 import Tooltip from "/src/components/Tooltip.js";
+import Image from '/src/components/Images.js';
 
 # Receive and Send Advanced messages
 
@@ -37,7 +38,9 @@ void services_MsgHandler(service_t *service, msg_t *msg) {
 }
 ```
 
-> **Note:** If you have to deal with high-frequency real-time data, please read [the Streaming page].
+:::note
+If you have to deal with high-frequency real-time data, please read [the Streaming page].
+:::
 
 ## Time-triggered update messages
 
@@ -47,7 +50,7 @@ To use it, you have to setup targeted service with a message containing a standa
 
 For example, to update a service each 10 ms:
 
-```C
+```c
 time_luos_t time = TimeOD_TimeFrom_ms(10);
 msg_t msg;
 msg.header.target = id;
@@ -57,9 +60,13 @@ msg.header.cmd = UPDATE_PUB;
 Luos_SendMsg(app, &msg);
 ```
 
-> **Info:** services can handle only one time-triggered target, 2 services of the same network can't ask a time-triggered value from the same service.
+:::info
+Services can handle only one time-triggered target, 2 services of the same network can't ask a time-triggered value from the same service.
+:::
 
-> **Warning:** To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](/luos-technology/node/topology.md) for more information).
+:::caution
+To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](/luos-technology/node/topology.md) for more information).
+:::
 
 ## Streaming
 
@@ -93,7 +100,7 @@ chunk_size = 1 x 200 = 200 samples
 In our configuration, data chunk needs to be 200 position samples each second, allowing to feed the streaming channel.
 
 Following our example, if we want to send trajectory to the motor, we will have a _ring buffer_ in the motor side managed by the _streaming channel_. Here are the different states of this ring_buffer:
-<img src="/img/streaming.png"/>
+<Image src="/img/streaming.svg" darkSrc="/img/streaming-dark.svg"/>
 
 1.  The service who sends the trajectory has to make sure that the motor service always has data to consume. To do that you have to bootstrap your streaming flux by sending 2 data chunks to start and then send a new data chunk each _chunk_time_.
     This way, the receiver always has at least one data chunk (1s in this example) ready to be consumed.
@@ -103,7 +110,9 @@ Following our example, if we want to send trajectory to the motor, we will have 
 5.  At each second, the sender sends the next data chunk and Luos adds it to the ring buffer. At the end of the buffer, Luos puts extra data at the begining. The consumer pointer also goes back to the begining of the buffer when it reaches the end. This way we have infinite data stream without any discontinuity.
 6.  You can continue to do this indefinitely.
 
-> **Note:** You can play, pause, stop or record a stream flux with the standard **CONTROL** command using the **control_type_t** structure.
+:::note
+You can play, pause, stop or record a stream flux with the standard **CONTROL** command using the **control_type_t** structure.
+:::
 
 ## How to use it
 
@@ -134,7 +143,7 @@ Now you can use this channel to receive or transmit a streaming flux:
 This is used to make the motor move.<br/>
 When your streaming channel has been created, you can feed it with received messages on your reception callback:
 
-```C
+```c
 void Motor_MsgHandler(service_t *service, msg_t *msg) {
    // check message command
    if (msg->header.cmd == ANGULAR_POSITION) {
@@ -146,7 +155,7 @@ void Motor_MsgHandler(service_t *service, msg_t *msg) {
 
 Now your service is able to receive trajectory chunks. For the next step, you need to have a real-time callback (using a timer for example) which is able to manage the consumption of this trajectory at 200hz:
 
-```C
+```c
 void 200hz_callback(void) {
     Stream_GetSample(&trajectory, &motor.target_angular_position);
 }
@@ -158,7 +167,7 @@ This is used to measure the motor movements.<br/>
 To go the other way and send a sampled signal such as a position measurement, you have to use your streaming channel in reception.
 First you have to put values into your streaming channel at 200Hz:
 
-```C
+```c
 void 200hz_callback(void) {
     Stream_PutSample(&trajectory, &motor.angular_position);
 }
@@ -166,7 +175,7 @@ void 200hz_callback(void) {
 
 This way, samples are buffered into your ring buffer, and you can send this real-time information as you want:
 
-```C
+```c
 void Motor_MsgHandler(service_t *service, msg_t *msg) {
    msg_t pub_msg;
    // check message command

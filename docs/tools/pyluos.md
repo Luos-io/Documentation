@@ -3,6 +3,9 @@ title: Pyluos
 custom_edit_url: null
 ---
 
+import Image from '/src/components/Images.js';
+import IconExternalLink from '@theme/IconExternalLink';
+
 #
 
 <h1><a href="#pyluos" className="header" id="pyluos"><img src="/img/python-logo.png" width="80px"/> / A Pyluos guide</a></h1>
@@ -13,13 +16,15 @@ Pyluos is the standard Python library to manage a Luos system with a computer. I
 
 ### Required: Installing Python and Pip
 
-> **Warning:** In order to use Pyluos library, Python and the Pip package manager must be installed on your computer.
+:::caution
+In order to use Pyluos library, Python and the Pip package manager must be installed on your computer.
+:::
 
-_« Python is a programming language that lets you work more quickly and integrate your systems more effectively. » (<small><a href="https://python.org" target="_blank">Source &#8599;</a></small>)_
+_« Python is a programming language that lets you work more quickly and integrate your systems more effectively. » (<small><a href="https://python.org" target="_blank">Source<IconExternalLink width="10" /></a></small>)_
 
-_« <a href="https://pip.pypa.io/en/stable/" target="_blank">Pip &#8599;</a> is the standard package manager for Python. It allows you to install and manage additional packages that are not part of the Python standard library. » (<small><a href="https://realpython.com/what-is-pip/#getting-started-with-pip" target="_blank">Source &#8599;</a></small>)_
+_« <a href="https://pip.pypa.io/en/stable/" target="_blank">Pip<IconExternalLink width="10" /></a> is the standard package manager for Python. It allows you to install and manage additional packages that are not part of the Python standard library. » (<small><a href="https://realpython.com/what-is-pip/#getting-started-with-pip" target="_blank">Source<IconExternalLink width="10" /></a></small>)_
 
-If Python is not installed on your computer, download and run the last release according to your computer's OS: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/ &#8599;</a>.
+If Python is not installed on your computer, download and run the last release according to your computer's OS: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/<IconExternalLink width="10" /></a>.
 
 To install Pip, type the following commands in a console:
 
@@ -32,7 +37,7 @@ python get-pip.py
 
 The tool _Jupyter Notebook_ is needed for this tutorial. Jupyter Notebook will allow you to type Python commands in an internet browser to communicate with a Luos system, via Pyluos.
 
-_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source &#8599;</a></small>)_
+_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source<IconExternalLink width="10" /></a></small>)_
 
 Type the following command in the console to install Jupyter:
 
@@ -40,7 +45,9 @@ Type the following command in the console to install Jupyter:
 pip install jupyter
 ```
 
-> **Note:** Feel free to consult <a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank">_Jupyter Notebook_'s &#8599;</a> documentation.
+:::note
+Feel free to consult <a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank">_Jupyter Notebook_'s<IconExternalLink width="10" /></a> documentation.
+:::
 
 ### Installing or updating Pyluos library
 
@@ -74,15 +81,17 @@ jupyter notebook
 
 In the browser page that opened, the `New` button creates a new Python file:
 
-<p align="center">
-    <img src="/img/pyluos-1.png"/>
-</p>
+<div align="center">
+    <Image src="/img/pyluos-1.png"/>
+</div>
 
-> **Note:** In the previous picture, _Jupyter_ uses _Python 3_, but you also can use _Python 2.7_ depending on your computer configuration.
+:::info
+In the previous picture, _Jupyter_ uses _Python 3_, but you also can use _Python 2.7_ depending on your computer configuration.
+:::
 
-<p align="center">
-    <img src="/img/pyluos-2.png"/>
-</p>
+<div align="center">
+    <Image src="/img/pyluos-2.png"/>
+</div>
 
 The Jupyter work space looks like the following image. On the keyboard, `Shift+Enter` executes any selected part of the code.
 
@@ -112,21 +121,21 @@ Some devices may not work correctly with the default USB transfer sizes and late
 
 To access to these parameters, open the Device Manager in Windows, right-click on the _USB Serial Port (COMX)_ where your device is connected, and click on _Properties_.
 
-<p align="center">
-    <img src="/img/device-manager.png"/>
-</p>
+<div align="center">
+    <Image src="/img/device-manager.png"/>
+</div>
 
 Click on _Port Settings_ tab and click on _Advanced..._ button.
 
-<p align="center">
-    <img src="/img/serial-properties.png"/>
-</p>
+<div align="center">
+    <Image src="/img/serial-properties.png"/>
+</div>
 
 Change the desired values.
 
-<p align="center">
-    <img src="/img/com-port-adv-settings.png"/>
-</p>
+<div align="center">
+    <Image src="/img/com-port-adv-settings.png"/>
+</div>
 
 These values can give you better results, for example if your device has motors to control.
 
@@ -160,7 +169,9 @@ To display it, use the following command:
 device.services
 ```
 
-> **Note:** `device` is the name of the network.
+:::note
+`device` is the name of the network.
+:::
 
 Pyluos will give you a list of all services without any topological information:
 
@@ -188,7 +199,9 @@ Pyluos also can interpret the routing table and transform it into a tree. This w
 device.nodes
 ```
 
-> **Note:** `device` is the name of the network.
+:::note
+`device` is the name of the network.
+:::
 
 Based on the previous example, Pyluos will give you all information about services and topological information:
 
@@ -233,7 +246,9 @@ device.service_alias.type
 
 `service_alias` is the alias you got from the previous listing.
 
-> **Note:** _Unknown_ service types are defaulty set for custom service types such as some [Luos apps](/luos-technology/services/service-type.md).
+:::info
+_Unknown_ service types are defaulty set for custom service types such as some [Luos apps](/luos-technology/services/service-type.md).
+:::
 
 ### Get and set services information
 
@@ -261,9 +276,9 @@ device.button_mod.robus_revision # Returns the version of Robus
 
 If you use _IPython_ or _Jupyter Notebook_, you can use auto-completion using the `Tab` key to find every available object and variable.
 
-<p align="center">
-    <img src="/img/pyluos-3.png"/>
-</p>
+<div align="center">
+    <Image src="/img/pyluos-3.png"/>
+</div>
 
 ### Change a service name
 
@@ -279,9 +294,12 @@ For example:
 device.rgb_led_mod.rename("myLED")
 ```
 
-> **Note:** You should restart your device and reconnect to it after this operation.
+:::note
 
-> **Note:** To get back to the service default name, set a void name (`""`).
+- You should restart your device and reconnect to it after this operation.
+- To get back to the service default name, set a void name (`""`).
+
+:::
 
 ### Get a node's statistics
 

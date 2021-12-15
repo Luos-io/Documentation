@@ -2,6 +2,8 @@
 custom_edit_url: null
 ---
 
+import IconExternalLink from '@theme/IconExternalLink';
+
 # Servomotor-LED-potentiometer device video tutorial
 
 The following video shows a basic tutorial explaining how to make a LED and a servomotor responsive to a potentiometer.
@@ -10,4 +12,4 @@ The following video shows a basic tutorial explaining how to make a LED and a se
 
 ---
 
-Don't hesitate to share your projects with the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos community &#8599;</a>.
+Don't hesitate to share your projects with the <a href="https://www.reddit.com/r/Luos/" target="_blank">Luos community<IconExternalLink width="10" /></a>.

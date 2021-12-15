@@ -26,10 +26,13 @@ module.exports = {
     luoshal_def:
       'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
     last_version_pyluos: '2.0.0',
-    last_version_luos: '2.0.0',
+    last_version_luos: ' 2.0.0',
     gh_path: 'github.com/Luos-io/doc/tree/master/src',
   },
   themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     googleAnalytics: {
       trackingID: 'UA-153509818-3',
     },
@@ -45,28 +48,32 @@ module.exports = {
       },
       items: [
         {
-          href: 'https://www.luos.io/#technology',
-          label: 'Technology',
+          to: '/get-started/get-started',
+          label: 'Get Started',
           position: 'right',
         },
-        {
-          href: 'https://www.luos.io/support',
-          label: 'Pricing',
-          position: 'right',
-        },
-        { to: '/blog', label: 'Blog', position: 'right' },
         {
           type: 'doc',
           label: 'Documentation',
-          docId: 'get-started/getting-started',
+          docId: 'luos-technology/luos_tech',
           position: 'right',
         },
         { to: '/tutorials/tutorials', label: 'Tutorials', position: 'right' },
-        { to: '/faq/list', label: 'FAQ', position: 'right' },
-
+        {
+          to: '/faq/list',
+          label: 'Troubleshooting',
+          position: 'right',
+          id: 'link__header__faq',
+        },
+        {
+          href: 'https://www.luos.io',
+          label: 'Luos.io',
+          position: 'right',
+        },
         {
           href: 'https://github.com/luos-io',
-          label: 'Download',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
           position: 'right',
         },
       ],
@@ -79,7 +86,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/docs/get-started/getting-started',
+              to: '/docs/luos-technology/luos_tech',
             },
             {
               label: 'Contact us',
@@ -91,12 +98,8 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Reddit',
-              href: 'https://www.reddit.com/r/Luos/',
-            },
-            {
-              label: 'Linkedin',
-              href: 'https://www.linkedin.com/company/luos',
+              label: 'Forum',
+              href: 'http://bit.ly/JoinLuosForum',
             },
             {
               label: 'Twitter',
@@ -113,16 +116,12 @@ module.exports = {
             },
             {
               label: 'Youtube',
-              to: 'https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA',
-            },
-            {
-              label: 'Blog',
-              to: '/blog',
+              href: 'https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Luos, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Luos, built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
@@ -162,6 +161,15 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'get-started',
+        path: 'get-started',
+        routeBasePath: 'get-started',
+        sidebarPath: require.resolve('./sidebarsGetStarted.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'tutorials',
         path: 'tutorials',
         routeBasePath: 'tutorials',
@@ -183,6 +191,12 @@ module.exports = {
         id: 'feedbacks',
         path: 'feedbacks',
         routeBasePath: 'feedbacks',
+      },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        fromExtensions: ['html'],
       },
     ],
   ],
