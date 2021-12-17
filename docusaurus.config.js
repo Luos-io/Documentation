@@ -26,7 +26,7 @@ module.exports = {
     luoshal_def:
       'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
     last_version_pyluos: '2.0.0',
-    last_version_luos: ' 2.0.0',
+    last_version_luos: ' 2.0.1',
     gh_path: 'github.com/Luos-io/doc/tree/master/src',
   },
   themeConfig: {
