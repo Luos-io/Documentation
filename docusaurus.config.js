@@ -48,6 +48,11 @@ module.exports = {
       },
       items: [
         {
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownActiveClassDisabled: true,
+        },
+        {
           to: '/get-started/get-started',
           label: 'Get Started',
           position: 'right',
@@ -137,6 +142,11 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
+          versions: {
+            current: {
+              label: '2.1.0-beta 🚧',
+            },
+          },
         },
         blog: {
           showReadingTime: true,
