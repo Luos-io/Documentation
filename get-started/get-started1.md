@@ -72,6 +72,11 @@ The project folder is opened in the explorer.
 Arduino users can select their board on the `platformio.ini` file by modifying the `board = zero` line.
 :::
 
+:::note Note
+Linux users should give USB access to their boards by modifying the `udev rules` access rights. To give such rights to platformIO, please follow this <a href="https://docs.platformio.org/en/latest//faq.html#platformio-udev-rules" target="_blank">tutorial<IconExternalLink width="10" /></a> on platformio FAQ section.
+:::
+
+
 You can now flash your board: make sure it is connected to your PC with a USB cable, and click on **Upload** on the bottom left in the VSCode window. In order for this step to work, you will need the USB driver related to your board. As an example, here is the <a href="https://www.st.com/en/development-tools/stsw-link009.html" target="_blank">STM32L432K drivers<IconExternalLink width="10" /></a> on the constructor website. If you have any trouble with your USB driver, you can also consult [our troubleshooting page](/faq/dfu) on this topic.
 
 <div align="center">
