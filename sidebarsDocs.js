@@ -199,6 +199,11 @@ module.exports = {
               label: 'ROS',
               id: 'tools/ros',
             },
+            {
+              type: 'doc',
+              label: 'FreeRTOS',
+              id: 'tools/freertos',
+            },
           ],
         },
         {
