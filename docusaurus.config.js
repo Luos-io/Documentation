@@ -103,12 +103,12 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Forum',
-              href: 'http://bit.ly/JoinLuosForum',
+              label: 'Discord',
+              href: 'https://discord.gg/luos',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/Luos_io',
+              label: 'Reddit',
+              href: 'https://www.reddit.com/r/Luos/',
             },
           ],
         },
