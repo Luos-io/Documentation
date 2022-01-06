@@ -69,14 +69,14 @@ function Footer() {
       <div className="container">
         <div className="joinUsContainer">
           <h3>Join us on</h3>
-          <a href="http://bit.ly/JoinLuosDiscord">
+          <a href="https://discord.gg/luos">
             <img src="/img/discord.png" className="rsLogo"></img>
-          </a>
-          <a href="http://bit.ly/JoinLuosSlack">
-            <img src="/img/slack.png" className="rsLogo"></img>
           </a>
           <a href="https://www.reddit.com/r/Luos/">
             <img src="/img/reddit.png" className="rsLogo"></img>
+          </a>
+          <a href="https://twitter.com/Luos_io">
+            <img src="/img/twitter.png" className="rsLogo"></img>
           </a>
           <a href="https://www.linkedin.com/company/luos">
             <img src="/img/linkedin.png" className="rsLogo"></img>
