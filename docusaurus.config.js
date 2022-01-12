@@ -144,7 +144,7 @@ module.exports = {
             'https://github.com/facebook/docusaurus/edit/master/website/',
           versions: {
             current: {
-              label: '2.1.0-beta 🚧',
+              label: '2.2.0-beta 🚧',
             },
           },
         },
