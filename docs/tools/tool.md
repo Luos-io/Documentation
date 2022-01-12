@@ -12,3 +12,4 @@ Luos provide many tools to interface control or monitor a product made with Luos
 |     [Pyluos](/docs/tools/pyluos)     |                 Python library using JSON API to communicate with gate                  |
 |    [BootLoder](/docs/tools/boot)     |                            Update node through Luos Network                             |
 | [Monitoring](/docs/tools/monitoring) |                 all the utils that allow you to monitor a Luos network                  |
+| [Freertos](/docs/tools/freertos) |                 How to use FreeRTOS with Luos                  |
