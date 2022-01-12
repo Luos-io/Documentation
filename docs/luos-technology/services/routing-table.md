@@ -20,12 +20,12 @@ This feature is particularly used by app services to find other services they ne
 
 ## Detection
 
-The routing table is automatically generated when a service initiates a network detection. It is then shared with other services at the end of the detection. Any service can initiate a detection, but driver services should not run it; this features should be only used with app services by including routingTable.h and using this routing table API.
+The routing table is automatically generated when a service demands Luos to initiate a network detection. It is then shared with other services at the end of the detection. Any service can demand a detection, but driver services should not do it; this features should be only used with app services by including routingTable.h and using this routing table API.
 
 To run a detection, type:
 
 ```c
-RoutingTB_DetectServices(app);
+Luos_Detect(app);
 ```
 
 where `app` is the `service_t` pointer running the detection.
@@ -37,12 +37,20 @@ When each service in the network has an attributed ID, the detection algorithm p
 
 Sometimes, multiple services in the network can have the same alias, which is not allowed to prevent service confusion. In this case, the detection algorithm will add a number after each alias instance on the routing table.
 
+At the end of the detection process, each service receives a message with the command of `END_DETECTION`, that can be used in your code in order to understand the exact moment that the detection has finished, and you can then reinitialize the behavior of your services (for example reinitialize the auto-updates, etc,). Also, you can check the detection status of your node, by using the dedicated Luos API:
+
+```c
+Luos_IsNodeDetected();
+```
+ 
+that returns `true` or `false` depending on whether this node is detected or not.
+
 :::caution Warnings
 
 1. Be careful that a service can change ID during a detection depending on the service running this detection.
 2. Do not consider your service's ID fixed.
 3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
-
+4. Make sure that by the creation of your services you specify a callback pointer for each of them, so that the messages arriving to them, concerning the detection do not stay stored in your node's memory.
 :::
 
 ## Modes
