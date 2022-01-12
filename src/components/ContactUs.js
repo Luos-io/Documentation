@@ -8,7 +8,7 @@ export default function ContactUs(props) {
   }
   return (
     <div className="contactUs">
-      <a href="/feedbacks/send">You can't find what your're looking for ? »</a>
+      <a href="/feedbacks/send">You can't find what your're looking for? »</a>
     </div>
   );
 }

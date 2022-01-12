@@ -17,15 +17,12 @@ export default function ContactUs(props) {
 
     sendEmail = (e) => {
       e.preventDefault();
-      elementContainer[0].classList.add('success');
-      element.innerText = 'Your feedback has been sent.';
       let form = document.getElementById('feedbackForm');
-      form.reset();
       emailjs
         .sendForm(
           process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
           process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,
-          form.current,
+          form,
           process.env.REACT_APP_EMAIL_JS_USER_ID,
         )
         .then(
@@ -33,10 +30,12 @@ export default function ContactUs(props) {
             elementContainer[0].classList.add('success');
             element.innerText = 'Your feedback has been sent.';
             localStorage.setItem('prevPageContactUs', '');
+            form.reset();
           },
           (error) => {
             elementContainer[0].classList.add('error');
             element.innerText = error.text;
+            form.reset();
           },
         );
     };
