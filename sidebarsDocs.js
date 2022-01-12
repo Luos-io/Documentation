@@ -94,6 +94,11 @@ module.exports = {
                   label: 'Routing Table',
                   id: 'luos-technology/services/routing-table',
                 },
+                {
+                  type: 'doc',
+                  label: 'Timestamp',
+                  id: 'luos-technology/services/timestamp',
+                },
               ],
             },
             {
