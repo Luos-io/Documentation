@@ -107,3 +107,38 @@ and send the command:
 Do you need more information on how to debug your application using a sniffer?
 Contact us at <a href="mailto:hello@luos.io">hello@luos.io</a>.
 :::
+
+## Inspector
+
+In order to facilitate the debugging process, Luos offers a more advanced monitoring tool, in order to help you investigate the behavior of your network. In other words, inspector is capable of receiving the information of all the nodes and services in the network, as well as all the messages that are transmitted through it, and finally sending them to any other machine via a serial USB port.
+
+The Inspector includes the functionalities of the sniffer, with the main difference that it is a common Luos service that works like any other service in the network. That is to say, the inspector service is detected, and can interact with the other services existing in the same network. Also, we have added some aditional functionalities, which enrich the capacities of monitoring the embedded systems.
+
+Inspector, exactly like the Gate, is a Luos embedded [App service](/docs/luos-technology/services/services#apps-guidelines), so it is able to be hosted in any Luos running MCU.
+
+In order to exploit the functionalities of the inspector app, we need to combine it with the communication driver service, which is called **pipe**.
+
+The format of the messages that are transmitted serially form the inspector using the pipe driver, follow the specified [Luos communication protocol](/docs/luos-technology/message/message).
+
+### Inspector Features
+
+1. System's messages reception
+2. Routing table sharing
+3. Services' and Nodes' Statics occupation
+4. Services' and Nodes' firmware revision occupation
+5. Services' and Nodes' Luos revision
+6. Verbose mode
+7. Assert messages occupation
+
+The Inspector and the pipe are two separate services, they can be put on the same node or on separate node. However, if they are put on the same node, they charge the network with additional messages, so there is a possibility that it can have an impact on the normal behavior of the other services.
+
+:::note
+
+- The inspector does not receive the messages that concern the detection, as it is a normal service which is not yet detected.
+
+:::
+
+:::info
+Do you need more information on how to debug your application using a sniffer?
+Contact us at <a href="mailto:hello@luos.io">hello@luos.io</a>.
+:::
