@@ -60,12 +60,6 @@ function DocItem(props) {
     const windowSize = useWindowSize();
     renderTocDesktop =
       canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
-
-    let node = document.createElement('script');
-    node.src = '/src/components/Chat.js';
-    node.type = 'text/javascript';
-    node.async = true;
-    document.getElementsByTagName('head')[0].appendChild(node);
   }
 
   return (
