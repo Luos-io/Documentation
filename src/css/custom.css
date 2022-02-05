@@ -590,3 +590,14 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 .footer {
   padding: 20px;
 }
+
+.send {
+  width: 10%;
+  float: right;
+  background-color: #32baa0 !important;
+}
+
+.send:hover {
+  background-color: #161616 !important;
+  color: #bd99ff !important;
+}

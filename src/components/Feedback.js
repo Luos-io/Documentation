@@ -1,9 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import useIsBrowser from '@docusaurus/useIsBrowser';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 export default function ContactUs(props) {
   const isBrowser = useIsBrowser();
+  const [sending, isSending] = useState(false);
   const form = useRef();
   let sourcePage;
   let sendEmail = () => {};
@@ -16,6 +20,7 @@ export default function ContactUs(props) {
     );
 
     sendEmail = (e) => {
+      isSending(true);
       e.preventDefault();
       let form = document.getElementById('feedbackForm');
       emailjs
@@ -27,12 +32,14 @@ export default function ContactUs(props) {
         )
         .then(
           () => {
+            isSending(false);
             elementContainer[0].classList.add('success');
             element.innerText = 'Your feedback has been sent.';
             localStorage.setItem('prevPageContactUs', '');
             form.reset();
           },
           (error) => {
+            isSending(false);
             elementContainer[0].classList.add('error');
             element.innerText = error.text;
             form.reset();
@@ -108,7 +115,15 @@ export default function ContactUs(props) {
               name="user_email"
             />
           </div>
-          <input type="submit" value="Send" />
+          <Button type="submit" className="send" variant="contained">
+            {sending ? (
+              <Box sx={{ display: 'flex' }}>
+                <CircularProgress size={24} sx={{ color: '#282D3F' }} />
+              </Box>
+            ) : (
+              'Send'
+            )}
+          </Button>
         </form>
         <div className="feedbackForm__response">
           <p id="response"></p>
