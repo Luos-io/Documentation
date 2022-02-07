@@ -130,7 +130,7 @@ The format of the messages that are transmitted serially form the inspector usin
 6. Verbose mode
 7. Assert messages occupation
 
-The Inspector and the pipe are two separate services, they can be put on the same node or on separate node. However, if they are put on the same node, they charge the network with additional messages, so there is a possibility that it can have an impact on the normal behavior of the other services.
+The Inspector and the pipe are two separate services, they can be put on the same node or on separate node. However, if they are put on a different node, they charge the network with additional messages, so there is a possibility that it can have an impact on the normal behavior of the other services.
 
 :::note
 
@@ -139,6 +139,6 @@ The Inspector and the pipe are two separate services, they can be put on the sam
 :::
 
 :::info
-Do you need more information on how to debug your application using a sniffer?
+Do you need more information on how to monitor your application using a inspector?
 Contact us at <a href="mailto:hello@luos.io">hello@luos.io</a>.
 :::
