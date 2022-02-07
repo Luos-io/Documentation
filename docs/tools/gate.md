@@ -18,7 +18,7 @@ The Gate service must be used with a driver service called **pipe** that can be 
 
 ## Default Gate Process
 
-The default behavior of the Gate is optimized for system that only have drivers and control the entire behavior trough a distant machine.
+The default behavior of the Gate is optimized for system that only have drivers and control the entire behavior through a distant machine.
 
 1.  At power up, the Gate make a network detection to find a pipe service. _(Optional)_
 2.  The Gate wait to receive a detection message from a pipe.
