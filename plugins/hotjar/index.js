@@ -24,9 +24,6 @@ module.exports = function (context) {
 
   return {
     name: 'docusaurus-plugin-hotjar',
-    getClientModules() {
-      return isProd ? [path.resolve(__dirname, './analytics')] : [];
-    },
     injectHtmlTags() {
       if (!isProd) {
         return {};
