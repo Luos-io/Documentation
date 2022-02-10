@@ -1,11 +1,35 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/pages/tools/boot.html",
+      "source": "/pages/tools/boot(.*)",
       "destination": "/docs/tools/boot",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/luos-technology/basics/archi(.*)",
+      "destination": "/docs/luos-technology/basics/basics",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/tools/pyluos(.*)",
+      "destination": "/docs/tools/pyluos",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/tools/gate(.*)",
+      "destination": "/docs/tools/gate",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/hardware-consideration/hardware-consideration(.*)",
+      "destination": "/docs/hardware-consideration/hardware-consideration",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/luos-technology/package/package(.*)",
+      "destination": "/docs/luos-technology/package/package",
       "statusCode": 301
     }
   ]
