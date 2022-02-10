@@ -39,6 +39,9 @@ module.exports = {
     gtag: {
       trackingID: 'GTM-M73ZRR4',
     },
+    hotjar: {
+      applicationId: '2480203',
+    },
     hideableSidebar: true,
     navbar: {
       logo: {
@@ -209,5 +212,6 @@ module.exports = {
         fromExtensions: ['html'],
       },
     ],
+    ['./plugins/hotjar', {}],
   ],
 };
