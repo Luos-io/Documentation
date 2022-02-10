@@ -20,14 +20,17 @@ module.exports = function (context) {
     );
   }
 
-  // const isProd = process.env.NODE_ENV === 'production';
+  const isProd = process.env.NODE_ENV === 'production';
 
   return {
     name: 'docusaurus-plugin-hotjar',
+    getClientModules() {
+      return isProd ? [path.resolve(__dirname, './analytics')] : [];
+    },
     injectHtmlTags() {
-      // if (!isProd) {
-      //   return {};
-      // }
+      if (!isProd) {
+        return {};
+      }
       return {
         headTags: [
           {
