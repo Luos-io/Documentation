@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/pages/*", "destination": "/docs/*", "statusCode": 301 },
+
+    {
+      "source": "/pages/tools/boot.html",
+      "destination": "/docs/tools/boot",
+      "statusCode": 301
+    }
+  ]
+}
