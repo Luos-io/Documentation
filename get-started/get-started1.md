@@ -9,96 +9,138 @@ import IconExternalLink from '@theme/IconExternalLink';
 
 <div align="center"><iframe className="player_iframe" src="https://www.youtube.com/embed/VcK-LJ-gnDo?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe></div>
 
-## The embedded part: Run your first embedded app!
+# Summary
 
-This tutorial shows you how to quickly upload a Luos application on a Microcontroller Unit (MCU) development kit.
+1. Introduction
+2. Set up development environment
+3. Clone the project
+4. Build your project
+5. Upload to the board
+6. Luos Package
 
-Supported boards are listed below:
+## 1. Introduction
 
-- <a href="https://www.arduino.cc/en/Main/ArduinoBoardZero&" target="_blank">Arduino zero<IconExternalLink width="10" /></a>, <a href="https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data" target="_blank">MKRzero<IconExternalLink width="10" /></a>, <a href="https://store.arduino.cc/collections/boards/products/arduino-mkr1000-wifi" target="_blank">MKR1000<IconExternalLink width="10" /></a>, or any <a href="https://en.wikipedia.org/wiki/List_of_Arduino_boards_and_compatible_systems" target="_blank">SAMD21-based<IconExternalLink width="10" /></a> Arduino board
-- <a href="https://www.st.com/en/evaluation-tools/nucleo-l432kc.html" target="_blank">STM32L432KC Nucleo<IconExternalLink width="10" /></a>
-- <a href="https://www.st.com/en/evaluation-tools/nucleo-f072rb.html" target="_blank">STM32F072RB Nucleo<IconExternalLink width="10" /></a>
-- <a href="https://www.st.com/en/evaluation-tools/nucleo-f401re.html" target="_blank">STM32F401RE Nucleo<IconExternalLink width="10" /></a>
-- <a href="https://www.st.com/en/evaluation-tools/nucleo-f410rb.html" target="_blank">STM32F410RB Nucleo<IconExternalLink width="10" /></a>
-- <a href="https://www.st.com/en/evaluation-tools/nucleo-g431kb.html" target="_blank">STM32G431KB Nucleo<IconExternalLink width="10" /></a>
+This part will guide you through the basic essential tools’ installation and how to use them.
 
-:::info
-This list will grow longer with time.
-:::
+## 2. Set up your development environment
 
-### Setup development environment
+We will use [PlatformIO](https://platformio.org/platformio-ide) as a development environment.
 
-We will use <a href="https://platformio.org/platformio-ide" target="_blank">PlatformIO<IconExternalLink width="10" /></a> as development environment.
-
-First, download and install the free coding editor <a href="https://code.visualstudio.com/" target="_blank">Microsoft Visual Studio Code<IconExternalLink width="10" /></a> (VSCode). PlatformIO's IDE is built on top of it.
-
-Then, in VSCode:
-
-1.  Open VSCode Extension Manager.
-2.  Search for the official <a href="https://platformio.org/install/ide?install=vscode" target="_blank">PlatformIO IDE<IconExternalLink width="10" /></a> extension.
-3.  Install PlatformIO IDE.
-
+1. First, download and install it following the [PlatformIO installation page](https://platformio.org/install/ide?install=vscode).
+2. When it is done, open the VS Code editor.
+3. throught the Get started, you will need to enter some command lines in a terminal. You can either use the terminal from VS Code, or use your favorite one.
 <div align="center">
-  <Image src="/img/get-started/install_VSCODE.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-1.png" darkSrc=''/>
+</div>
+<div align="center">
+  <Image src="/img/get-started/get-started-1-1.png" darkSrc=''/>
 </div>
 
-### Clone the project
+## 3. Download the base code
 
-There are two ways to clone the _get started_ repository on your computer:
+Download and unzip the [Get Started](https://github.com/Luos-io/Get_started/archive/refs/heads/master.zip) base code.
 
-- via the terminal, using the following command line (in this case you will need to have <a href="https://git-scm.com/downloads" target="_blank">GIT<IconExternalLink width="10" /></a> previously installed on your computer)
+:::caution
+Alternatively, you can clone this code through **Git** via the terminal, using the following command line :
 
-```bash
+```
 git clone https://github.com/Luos-io/Get_started.git
 ```
 
-- by downloading and unziping the <a href="https://github.com/Luos-io/Get_started/archive/refs/heads/master.zip" target="_blank">Get Started repository<IconExternalLink width="10" /></a> in your chosen directory
+You will need to have [GIT](https://git-scm.com/downloads) installed on your computer to do that. If you are not familiar with Git, you can consult [their documentation](https://git-scm.com/doc).
 
-If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc" target="_blank">their documentation<IconExternalLink width="10" /></a>.
-
-### Flash your board depending on which one you have
-
-Open VSCode and click on **Open Folder** in the project explorer on the left, then select a project depending on the board you have chosen. For example, for the STM32L432KC Nucleo, open **L432KC_Nucleo** in the folder explorer then click on **ADD**.
-
-If VSCode outputs the following message "Do you trust the authors of the files in the folder?": you can trust us 😉 and check the option "Trust the authors of all files in the parent folder" so it won't popup anymore. Then click the "Yes, I trust the authors" button.
-
-<div align="center">
-  <Image src="/img/get-started/Open_project2.png" darkSrc=''/>
-</div>
-
-The project folder is opened in the explorer.
-
-:::note Note
-Arduino users can select their board on the `platformio.ini` file by modifying the `board = zero` line.
 :::
 
-:::note Note
-Linux users should give USB access to their boards by modifying the `udev rules` access rights. To give such rights to platformIO, please follow this <a href="https://docs.platformio.org/en/latest//faq.html#platformio-udev-rules" target="_blank">tutorial<IconExternalLink width="10" /></a> on platformio FAQ section.
-:::
+## 4. Build your project
 
-
-You can now flash your board: make sure it is connected to your PC with a USB cable, and click on **Upload** on the bottom left in the VSCode window. In order for this step to work, you will need the USB driver related to your board. As an example, here is the <a href="https://www.st.com/en/development-tools/stsw-link009.html" target="_blank">STM32L432K drivers<IconExternalLink width="10" /></a> on the constructor website. If you have any trouble with your USB driver, you can also consult [our troubleshooting page](/faq/dfu) on this topic.
+1. On VS Code, click on **File→Open Folder.** Locate the Get started folder.
+2. Select a project in the folder you just downloaded or cloned from GitHub, depending on the board you use. (For example, for the STM32L432KC Nucleo, select the folder **NUCLEO_L432KC**)
+3. Click on **Add**.
 
 <div align="center">
-  <Image src="/img/get-started/Flash_board2.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-1-2.png" darkSrc=''/>
 </div>
 
-PlatformIO will build the firmware and flash it. Take a look at the terminal to watch each step platformIO follows and a **Success** message at the end. Once the board is programmed, you should see the **LED** blinking on your board.
+:::caution
+If VS Code displays the message “Do you trust the authors of the files in the folder?”, you can trust us 😉. Check the option “Trust the authors of all files in the parent folder” so it will not pop up anymore, then click the “Yes, I trust the authors” button.
+
+:::
+
+The project folder should now be opened in the PlatformIO explorer. 👍
+
+4. Select the environment corresponding to your demo board:
+
+All the project from the Get_started folder are already configure in the file plateformio.ini. If you use an Arduino board, you will have to specify the model of your board in the plateformio.ini file.”
+
+Click on the platformio.ini file and type the right board in the line `board = ` and uncomment the name corresponding to the board you are currently using.
+
+:::info
+Note: Arduino users can select their board on the `platformio.ini` file by modifying the `board = zero` line.
+
+<div align="center">
+  <Image src="/img/get-started/get-started-1-3.png" darkSrc=''/>
+</div>
+
+:::
+
+5. Build the project
+
+Building the project will create a binary files of your code that you will upload!
+
+<div align="center">
+  <Image src="/img/get-started/get-started-1-4.png" darkSrc=''/>
+</div>
+
+:::caution
+In some cases, the build may output an error message, you may need to update the PlatformIO libraries and rebuild as explained in this image:
+
+<div align="center">
+  <Image src="/img/get-started/get-started-1-5.png" darkSrc=''/>
+</div>
+
+:::
+
+## 5. Upload to the board
+
+You can now flash your board: connect it to your PC with a USB cable and upload the code by clicking on the right arrow in the bottom left of the VS Code window.
+
+PlatformIO will build the firmware and flash it. Take a look at the terminal to observe each step thet PlatformIO follow. A "success message" should appear at the end.
+
+Once the board is flashed, it means it is properly programmed and you should see the **LED** blinking on your board.
+
+<div align="center">
+  <Image src="/img/get-started/get-started-1-6.png" darkSrc=''/>
+</div>
+
+:::tip
+In order to make this step to work, you may need to install the USB driver related to your board on your computer.
+Note: Linux users should give USB access to their boards by modifying the `udev rules` access rights. To give such rights to PlatformIO, please follow this [tutorial](https://docs.platformio.org/en/latest//faq.html#platformio-udev-rules) on PlatformIO FAQ section.
+
+:::
+
+:::warning
+If you have any trouble with your board’s USB driver, you can consult **[our related troubleshooting page](/faq/dfu)**. Also, Make sure your USB cable is not faulty (it happens... 🤗).
+
+:::
 
 Congratulations, your first Luos app is running!
 
-### What is going on
+## 6. What is going on?
 
-There are two [services](/docs/luos-technology/services/services) loaded in your board allowing to blink the LED.
+Two [services](/docs/luos-technology/services/services) have been loaded in your board on step 5, allowing you to make the LED blink.
 
-- **Blinker** sends a message at a fixed duration<br /> ╰ located at the root of the _get_started_ repository (because the same app can run on any board)
-- **Led** receives this message and makes the LED blink<br /> ╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
+- **Blinker** sends a message at a fixed duration
+  ╰ located at the root of the _get_started_ repository (because the same app can run on any board)
+- **Led** receives this message and makes the LED blink
+  ╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
 
 On top of it, we also added two other services allowing you to take control of your board:
 
-- **Pipe**, managing a serial interface<br /> ╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
-- **Gate**, an app that translates Luos to JSON and sends it through _Pipe_<br /> ╰ located in the cloud (because it is a common cross-platform's Luos app), PlatformIO just downloaded it for you.
+- **Pipe**, managing a serial interface
+  ╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
+- **Gate**, an app that translates Luos to JSON and sends it through _Pipe_
+  ╰ located in the cloud (because it is a common cross-platform’s Luos app), PlatformIO just downloaded it for you.
 
 ## Next steps
 
-Your development environment is set up and the project is installed in a local folder. The [next part](/get-started/get-started2) of this section will teach you how to run Luos on your MCU.
+Your development environment is now configured, and the Get Started project is installed in a local folder of your choice. The [next part](/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take the control with high level API!

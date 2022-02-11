@@ -2,41 +2,62 @@
 custom_edit_url: null
 ---
 
+import Image from '/src/components/Images.js';
 import IconExternalLink from '@theme/IconExternalLink';
 
 # Part 2: Take the control
 
 <div align="center"><iframe className="player_iframe" src="https://www.youtube.com/embed/VcK-LJ-gnDo?start=363&feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe></div>
 
-## The remote control part: you can control the Matrix 💊
+# Summary
 
-The gate running on your board allows you to take control of any service loaded on your device.
+1. Introduction
+2. Setup devellopment environnement
+3. Connecting and controlling your device
 
-### Setup development environment
+## 1. Introduction
 
-We will use Python with the default library of Luos called pyluos.
-To install it, run:
+This is the remote control part for you to control the Matrix 💊: The service gate running on your board allows you to take control of any service loaded on your device.
+
+## 2. Set up your development environment
+
+We will use Python to control your Luos board with a library called pyluos.
+
+In order to install it, run the following command on the terminal:
 
 ```bash
 pip install pyluos
 ```
 
-This step needs you to have <a href="IPython" target="_blank">IPython<IconExternalLink width="10" /></a> previously installed on your computer.
+:::caution
+As you need to use a `pip` command on your terminal, [make sure to have a working pip environment](https://pip.pypa.io/en/stable/getting-started/).
 
-### Connect and control your device
+:::
 
-Pyluos provides a set of tools. To control you device, run:
+:::warning
+Depending on your version of Python, you may need to use the command `pip3` instead of `pip`
 
-```bash
+:::
+
+:::caution
+If you already have Pyluos installed on your computer, please make sure it is up to date by using this prompt: `pip install pyluos --upgrade`
+
+:::
+
+## 3. Connecting and controlling your device
+
+Pyluos provides a set of application programming interfaces (APIs). To control your device, connect the same card you flashed in part 1 and run the following command in the terminal:
+
+```
 pyluos-shell
 ```
 
-This command will find the serial port of your device and mount it into a "device" object.
+This command will find the serial port of your device and mount it into a “device” object.
 
 For example:
 
 ```bash
-$ pyluos-shell
+**$ pyluos-shell**
 Searching for a gate available
 Testing /dev/cu.usbserial-D308N885
 Testing /dev/cu.usbmodem13102
@@ -56,18 +77,62 @@ Your luos device have been successfully mounted into a "device" object:
   ┃  ├> Gate                gate                1    ┃
   ┃  ╰> Unknown             blinker             4    ┃
 ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
 ```
 
-Now that you are on an IPython command line, you can run Python scripts in it.
-The `device` object is your real device and you can interact with it. For example, try to execute these lines one by one:
+:::caution
+In some cases, you may encounter an error message at this point. Most of the time, this is related to IPython. Installation or performing a new installation solves the problem. Type the command `pip install ipython` in the terminal.
 
-`device.blinker.time=0.25`  
-`device.blinker.pause()`  
-`device.led.state=True`  
-`device.led.state=False`  
-`device.blinker.play()`
+:::
+
+The `device` object is an object representation of your actual device that pyluos-shell displays.
+
+Now that you have opened an IPython session, you are able to execute Python command line by line. By doing so, you can interact with your actual device directly into the **pyluos-shell** interface.
+
+In the device object, there are multiple services. Each of those services will have special capabilities depending on their type.
+
+For example, try to execute these lines one by one:
+
+1. Set up the blinking timing to 250ms (you should see the LED blink faster)
+
+```
+In [1]: device.blinker.time=0.25
+```
+
+1. Pause the blinking of the LED
+
+```
+In [2]:device.blinker.pause()
+```
+
+1. Turn on the LED
+
+```
+In [3]:device.led.state=True
+```
+
+1. Turn off the LED
+
+```
+In [4]:device.led.state=False
+```
+
+1. Restart the blinking of the LED
+
+```
+In [5]:device.blinker.play()
+```
+
+:::info
+You can always check the list of the commands available for all services using your `tab` key:
+
+<div align="center">
+  <Image src="/img/get-started/get-started-2.png" darkSrc=''/>
+</div>
+
+See [Pyluos](https://docs.luos.io/docs/tools/pyluos) documentation for more information.
+
+:::
 
 ## Next steps
 
-Your development environment is now installed and you have a Luos app running on your MCU. The [next part](/get-started/get-started3) of this section deals with creating your first Luos network.
+Your development environment is now installed, and you have taken control of a Luos app running on your MCU, with Python. The [next part](/get-started/get-started3) of this section deals with creating your first Luos network.
