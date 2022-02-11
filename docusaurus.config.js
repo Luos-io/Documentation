@@ -64,6 +64,7 @@ module.exports = {
           position: 'right',
         },
         { to: '/tutorials/tutorials', label: 'Tutorials', position: 'right' },
+        { to: '/school', label: 'School', position: 'right' },
         {
           to: '/faq/list',
           label: 'Troubleshooting',

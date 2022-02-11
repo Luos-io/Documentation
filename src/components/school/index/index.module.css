@@ -1,0 +1,88 @@
+.introContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+.stats {
+  margin-top: 10px;
+  display: block;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 13px;
+  float: right;
+}
+
+.introText {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.filterBtn {
+  height: 50px;
+  max-height: 50px;
+}
+
+.filterBtn select {
+  text-indent: 5px;
+}
+
+.lvlBtn {
+  margin-top: 18px;
+  display: block;
+  float: right;
+}
+
+.lvlBtn button {
+  border-color: #c4c4c4;
+  font-size: 13px;
+  color: black;
+  height: 40px;
+}
+
+.cardContainer {
+  margin-top: 20px !important;
+}
+
+.card {
+  padding: 10px;
+}
+
+.cardTitle {
+  font-size: 16px !important;
+  padding-bottom: 15px;
+}
+
+.cardText {
+  font-size: 11px !important;
+  border-right: 1px solid black;
+  text-align: center;
+}
+
+.cardLastText {
+  font-size: 11px !important;
+  text-align: center;
+}
+
+.cardLastText span {
+  display: block;
+  margin-top: -8px;
+}
+
+.cardText span {
+  display: block;
+  margin-top: -5px;
+}
+
+.cardIcons {
+  float: left !important;
+}
+
+.cardDesc {
+  font-size: 12px !important;
+  line-height: 18px;
+  margin: 15px 0px;
+}
+
+.cardTag span {
+  font-size: 12px;
+  font-family: 'Roboto Mono', sans-serif;
+}
