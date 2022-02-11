@@ -28,7 +28,7 @@ We will use [PlatformIO](https://platformio.org/platformio-ide) as a development
 
 1. First, download and install it following the [PlatformIO installation page](https://platformio.org/install/ide?install=vscode).
 2. When it is done, open the VS Code editor.
-3. throught the Get started, you will need to enter some command lines in a terminal. You can either use the terminal from VS Code, or use your favorite one.
+3. Throught the *Get started*, you will need to enter some command lines in a terminal. You can either use the terminal from VS Code, or use your favorite one.
 <div align="center">
   <Image src="/img/get-started/get-started-1.png" darkSrc=''/>
 </div>
@@ -38,10 +38,10 @@ We will use [PlatformIO](https://platformio.org/platformio-ide) as a development
 
 ## 3. Download the base code
 
-Download and unzip the [Get Started](https://github.com/Luos-io/Get_started/archive/refs/heads/master.zip) base code.
+Download and unzip [from this link](https://github.com/Luos-io/Get_started/archive/refs/heads/master.zip) the *Get started* base code.
 
-:::caution
-Alternatively, you can clone this code through **Git** via the terminal, using the following command line :
+:::tip
+Alternatively, you can clone this code through **Git** via the terminal, using the following command line:
 
 ```
 git clone https://github.com/Luos-io/Get_started.git
@@ -53,7 +53,7 @@ You will need to have [GIT](https://git-scm.com/downloads) installed on your com
 
 ## 4. Build your project
 
-1. On VS Code, click on **File→Open Folder.** Locate the Get started folder.
+1. On VS Code, click on **File → Open Folder**. Locate the *Get_started* folder.
 2. Select a project in the folder you just downloaded or cloned from GitHub, depending on the board you use. (For example, for the STM32L432KC Nucleo, select the folder **NUCLEO_L432KC**)
 3. Click on **Add**.
 
@@ -70,12 +70,12 @@ The project folder should now be opened in the PlatformIO explorer. 👍
 
 4. Select the environment corresponding to your demo board:
 
-All the project from the Get_started folder are already configure in the file plateformio.ini. If you use an Arduino board, you will have to specify the model of your board in the plateformio.ini file.”
+All the project from the *Get_started* folder are already configure in the file plateformio.ini. If you use an Arduino board, you will have to specify the model of your board in the plateformio.ini file.”
 
 Click on the platformio.ini file and type the right board in the line `board = ` and uncomment the name corresponding to the board you are currently using.
 
 :::info
-Note: Arduino users can select their board on the `platformio.ini` file by modifying the `board = zero` line.
+Arduino users can select their board on the `platformio.ini` file by modifying the `board = zero` line.
 
 <div align="center">
   <Image src="/img/get-started/get-started-1-3.png" darkSrc=''/>
@@ -129,18 +129,14 @@ Congratulations, your first Luos app is running!
 
 Two [services](/docs/luos-technology/services/services) have been loaded in your board on step 5, allowing you to make the LED blink.
 
-- **Blinker** sends a message at a fixed duration
-  ╰ located at the root of the _get_started_ repository (because the same app can run on any board)
-- **Led** receives this message and makes the LED blink
-  ╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
+- **Blinker** sends a message at a fixed duration<br /> ╰ located at the root of the _get_started_ repository (because the same app can run on any board)
+- **Led** receives this message and makes the LED blink<br /> ╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
 
 On top of it, we also added two other services allowing you to take control of your board:
 
-- **Pipe**, managing a serial interface
-  ╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
-- **Gate**, an app that translates Luos to JSON and sends it through _Pipe_
-  ╰ located in the cloud (because it is a common cross-platform’s Luos app), PlatformIO just downloaded it for you.
+- **Pipe**, managing a serial interface<br /> ╰ located on the _lib_ folder of your project (because it is a driver which is specific to your board)
+- **Gate**, an app that translates Luos to JSON and sends it through _Pipe_<br /> ╰ located in the cloud (because it is a common cross-platform’s Luos app), PlatformIO just downloaded it for you.
 
-## Next steps
+## Next step
 
-Your development environment is now configured, and the Get Started project is installed in a local folder of your choice. The [next part](/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take the control with high level API!
+Your development environment is now configured, and the *Get started* project is installed in a local folder of your choice. The [next part](/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take the control with high level API!

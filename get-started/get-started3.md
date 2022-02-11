@@ -19,11 +19,11 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Introduction
 
-The first two parts of the [Get started tutorial](/get-started/get-started) are now done 💪
+The first two parts of the [*Get started* tutorial](/get-started/get-started) are now done 💪
 
 In this part, we will learn how to configure Luos to access to multi-card in your physical network.. Then, we will run our first example into these multiple boards.
 
-:::caution
+:::info
 We will use the same board from the first two parts, but **you also need a second board to create a network**. Supported boards are listed [here](/get-started/get-started1#setup-development-environment).
 
 :::
@@ -45,8 +45,7 @@ In this part, we will use the “default wiring” defined by Luos to create a n
 :::
 
 :::caution
-
-**To Prevent any mistakes, unplug the USB cable of the boards before wiring 😉**
+To Prevent any mistakes, unplug the USB cables from the boards before wiring 😉
 
 :::
 
@@ -99,23 +98,23 @@ Below are the schematics of various boards and how to wire them:
 You should now be able to wire the two boards together. From now on, we will call these boards _board 1_ and _board 2_.
 
 :::warning
-When wiring the boards together, you will have to power both of them for the network to work correctly. In the next steps of this tutorial, board 1 will be plugged to the computer with the USB cable, so you can either connect the power output pin of _board 1 (5V pin)_ to the power input pin of _board 2 (Vin pin)_, or simply plug board 2 to another USB cable so that both boards are powered by the computer. \***\*In the first case, do not forget to wire the GND pins together on both boards.**
+While wiring the boards together, you will have to power both of them for the network to work correctly. In the next steps of this tutorial, board 1 will be plugged to the computer with the USB cable, so you can either connect the power output pin of _board 1 (5V pin)_ to the power input pin of _board 2 (Vin pin)_, or simply plug board 2 to another USB cable so that both boards are powered by the computer. **In the first case, do not forget to wire the GND pins together on both boards.**
 
 :::
 
 ## 3. Build Luos distributed system
 
-In Part 1, you have downloaded or cloned the Get*started code folder in your computer. We will use this code to demonstrate how Luos works using a network. We will begin by moving the blinker app service into \_board 2* and see what is happening.
+In Part 1, you have downloaded or cloned the *Get started* code folder in your computer. We will use this code to demonstrate how Luos works using a network. We will begin by moving the blinker app service into *board 2* and see what is happening.
 
-### Flash board 1:
+### Flash board 1
 
 :::caution
-**Connect the USB cable of card 1 and leave the USB cable of card 2 not connected**
+Connect the USB cable of card 1 and leave the USB cable of card 2 not connected
 
 :::
 
-1. In VS Code, open the folder Get_started **\***project\* corresponding to your board 1: `file/open folder`.
-2. From the left panel, find and open \**the file *src/main.c* or *src/Arduino.ino\* file.
+1. In VS Code, open the folder *Get_started* project corresponding to your board 1: `file/open folder`.
+2. From the left panel, find and open the file *src/main.c* or *src/Arduino.ino* file.
 3. Comment the two lines to remove the blinker service from this board: `Blinker_Init();` and `Blinker_Loop();`
 
    ```c
@@ -134,7 +133,7 @@ In Part 1, you have downloaded or cloned the Get*started code folder in your com
    ```
 
 :::info
-Those lines trigger the initialisation and looping execution of all the packages in your project.
+These lines trigger the initialization and looping execution of all the packages in your project.
 
 :::
 
@@ -146,14 +145,14 @@ Those lines trigger the initialisation and looping execution of all the packages
     
 5. Build and flash *board 1* by clicking on the right arrow button in the bottom left in VS Code.
 
-### Flash board 2:
+### Flash board 2
 
 :::caution
-**Now Unplug the USB cable of card 1 and connect the USB cable of card 2.**
+You should now unplug the USB cable of *board 1* and connect the USB cable of *board 2*.
 
 :::
 
-1. In VS Code, open the folder Get_started **\***project\* corresponding to your board 2, `file/open folder`. (If you have twice the same board, you will open the same folder.)
+1. In VS Code, open the folder *Get_started* **\***project\* corresponding to your board 2, `file/open folder`. (If you have twice the same board, you will open the same folder.)
 2. From the left panel, find and open \**the file *src/main.c* (or *src/Arduino.ino\* for Arduino users).
 3. This time, comment the six lines to remove all the services except the blinker: `Led_Init();`, `Pipe_Init();`, `Gate_Init();`, `Led_Loop();`, `Pipe_Loop();`, and `Gate_Loop();`
 
@@ -173,7 +172,7 @@ Those lines trigger the initialisation and looping execution of all the packages
    ```
 
 :::tip
-In order to keep using Luos engine in your MCU`Luos_init()` and `Luos_Loop()` must not be commented.
+In order to keep using Luos Engine in your MCU, `Luos_init()` and `Luos_Loop()` must not be commented.
 
 :::
 
@@ -187,7 +186,7 @@ In order to keep using Luos engine in your MCU`Luos_init()` and `Luos_Loop()` mu
 
 We are done!
 
-To check if everything is OK, plug a USB cable into _board 1,_ and power _board 2_ according to your previous choice (power pins or USB cable). \*\*
+To check if everything is OK, plug a USB cable into _board 1,_ and power _board 2_ according to your previous choice (power pins or USB cable). 
 
 The LED of _board 1_ should blink thanks to _board 2_ blinker app.
 
@@ -228,31 +227,31 @@ As we can see, the blinker application is now displayed on a separate board. You
 
 For example, you can try to execute these lines one by one:
 
-1. Set up the blinking timing to 250ms (you should see the LED blink faster)
+1. Set up the blinking timing to 250ms (you should see the LED blink faster):
 
 ```
 In [1]: device.blinker.time=0.25
 ```
 
-1. Pause the blinking of the LED
+2. Pause the blinking of the LED:
 
 ```
 In [2]:device.blinker.pause()
 ```
 
-1. Turn on the LED
+3. Turn on the LED:
 
 ```
 In [3]:device.led.state=True
 ```
 
-1. Turn off the LED
+4. Turn off the LED:
 
 ```
 In [4]:device.led.state=False
 ```
 
-1. Restart the blinking of the LED
+5. Restart the blinking of the LED:
 
 ```
 In [5]:device.blinker.play()
@@ -261,8 +260,10 @@ In [5]:device.blinker.play()
 ## Next steps
 
 :::info
-In this get-started tutorial, we used the default wiring defined by Luos. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Luos is defined on the [LuosHAL](https://github.com/Luos-io/LuosHAL) folder corresponding to your device.
+In this *Get started* tutorial, we used the default wiring defined by Luos. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Luos is defined on the [LuosHAL](https://github.com/Luos-io/LuosHAL) folder corresponding to your device.
+
 :::
+
 **Congratulation, you have plugged, configured, and used your first Luos network!**
 
 You can check out our [tutorials](/tutorials/tutorials) in our Academy section to learn more about Luos and understand how to use the features of Luos technology. We also invite you to check out our [documentation](/docs/luos-technology/luos_tech) to learn more about the core concepts of Luos.
