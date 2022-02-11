@@ -5,6 +5,14 @@ custom_edit_url: null
 
 # Get Started
 
+### Estimated difficulty level
+Easy
+
+### Total estimated time
+
+- Part 1: 15 minutes
+- Part 2: 15 minutes
+- Part 3: 30 minutes
 ## 1. Description
 
 The Get started allows you to build, flash, run, and control your very first Luos project.
@@ -38,14 +46,6 @@ Below is a list of boards allowing this Get started tutorial to be plug-and-play
 - **[STM32G431KB Nucleo](https://www.st.com/en/evaluation-tools/nucleo-g431kb.html)**
 
 This tutorial shows you how to upload a Luos application on a Microcontroller Unit (MCU) and use the development kit (SDK pyhton Luos call Pyluos).
-
-### Total estimated time:
-
-- Part 1: 15 minutes
-- Part 2: 15 minutes
-- Part 3: 30 minutes
-
-### Estimated difficulty level: Easy
 
 ## 3. Summary
 
