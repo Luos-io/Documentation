@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Introduction
 
-The first two parts of the [*Get started* tutorial](/get-started/get-started) are now done 💪
+The first two parts of the [_Get started_ tutorial](/get-started/get-started) are now done 💪
 
 In this part, we will learn how to configure Luos to access to multi-card in your physical network.. Then, we will run our first example into these multiple boards.
 
@@ -50,7 +50,7 @@ To Prevent any mistakes, unplug the USB cables from the boards before wiring �
 :::
 
 <div align="center">
-  <Image src="/img/get-started/get-started-3.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-3.png" darkSrc="/img/get-started/get-started-3.png"/>
 </div>
 
 To create your network, you have to identify the pins used to perform Luos communication:
@@ -66,29 +66,29 @@ Below are the schematics of various boards and how to wire them:
 <Tabs>
 <TabItem value="Arduino MKR" label="Arduino MKR">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-1.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-3-1.png" darkSrc="/img/get-started/get-started-3-1.png"/>
 </div>
 </TabItem>
 <TabItem value="Arduino Classic" label="Arduino Classic">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-2.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-3-2.png" darkSrc="/img/get-started/get-started-3-2.png"/>
 </div>
 </TabItem>
 <TabItem value="NUCLEO 32" label="NUCLEO 32">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-3.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-3-3.png" darkSrc="/img/get-started/get-started-3-3.png"/>
 </div>
 </TabItem>
 <TabItem value="NUCLEO 64" label="NUCLEO 64">
 <Tabs>
 <TabItem value="STM32F072RB" label="STM32F072RB">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-4.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-3-4.png" darkSrc="/img/get-started/get-started-3-4.png"/>
 </div>
 </TabItem>
 <TabItem value="STM32F401RE/STM32F410RB" label="STM32F401RE/STM32F410RB">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-5.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-3-5.png" darkSrc="/img/get-started/get-started-3-5.png"/>
 </div>
 </TabItem>
 </Tabs>
@@ -104,7 +104,7 @@ While wiring the boards together, you will have to power both of them for the ne
 
 ## 3. Build Luos distributed system
 
-In Part 1, you have downloaded or cloned the *Get started* code folder in your computer. We will use this code to demonstrate how Luos works using a network. We will begin by moving the blinker app service into *board 2* and see what is happening.
+In Part 1, you have downloaded or cloned the _Get started_ code folder in your computer. We will use this code to demonstrate how Luos works using a network. We will begin by moving the blinker app service into _board 2_ and see what is happening.
 
 ### Flash board 1
 
@@ -113,8 +113,8 @@ Connect the USB cable of card 1 and leave the USB cable of card 2 not connected
 
 :::
 
-1. In VS Code, open the folder *Get_started* project corresponding to your board 1: `file/open folder`.
-2. From the left panel, find and open the file *src/main.c* or *src/Arduino.ino* file.
+1. In VS Code, open the folder _Get_started_ project corresponding to your board 1: `file/open folder`.
+2. From the left panel, find and open the file _src/main.c_ or _src/Arduino.ino_ file.
 3. Comment the two lines to remove the blinker service from this board: `Blinker_Init();` and `Blinker_Loop();`
 
    ```c
@@ -140,7 +140,7 @@ These lines trigger the initialization and looping execution of all the packages
 4. Check if the proper board environnement is selected depending on your board:
 
   <div align="center">
-  <Image src="/img/get-started/get-started-3-6.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-3-6.png" darkSrc="/img/get-started/get-started-3-6.png"/>
 </div>
     
 5. Build and flash *board 1* by clicking on the right arrow button in the bottom left in VS Code.
@@ -148,11 +148,11 @@ These lines trigger the initialization and looping execution of all the packages
 ### Flash board 2
 
 :::caution
-You should now unplug the USB cable of *board 1* and connect the USB cable of *board 2*.
+You should now unplug the USB cable of _board 1_ and connect the USB cable of _board 2_.
 
 :::
 
-1. In VS Code, open the folder *Get_started* **\***project\* corresponding to your board 2, `file/open folder`. (If you have twice the same board, you will open the same folder.)
+1. In VS Code, open the folder _Get_started_ **\***project\* corresponding to your board 2, `file/open folder`. (If you have twice the same board, you will open the same folder.)
 2. From the left panel, find and open \**the file *src/main.c* (or *src/Arduino.ino\* for Arduino users).
 3. This time, comment the six lines to remove all the services except the blinker: `Led_Init();`, `Pipe_Init();`, `Gate_Init();`, `Led_Loop();`, `Pipe_Loop();`, and `Gate_Loop();`
 
@@ -179,14 +179,14 @@ In order to keep using Luos Engine in your MCU, `Luos_init()` and `Luos_Loop()` 
 4. Check if the proper board environnement is selected depending on your board:
 
 <div align="center">
-  <Image src="/img/get-started/get-started-3-7.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-3-7.png" darkSrc="/img/get-started/get-started-3-7.png"/>
 </div>
     
 5. Build and flash *board 2* by clicking on the right arrow button in the bottom left in VS Code.
 
 We are done!
 
-To check if everything is OK, plug a USB cable into _board 1,_ and power _board 2_ according to your previous choice (power pins or USB cable). 
+To check if everything is OK, plug a USB cable into _board 1,_ and power _board 2_ according to your previous choice (power pins or USB cable).
 
 The LED of _board 1_ should blink thanks to _board 2_ blinker app.
 
@@ -260,7 +260,7 @@ In [5]:device.blinker.play()
 ## Next steps
 
 :::info
-In this *Get started* tutorial, we used the default wiring defined by Luos. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Luos is defined on the [LuosHAL](https://github.com/Luos-io/LuosHAL) folder corresponding to your device.
+In this _Get started_ tutorial, we used the default wiring defined by Luos. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Luos is defined on the [LuosHAL](https://github.com/Luos-io/LuosHAL) folder corresponding to your device.
 
 :::
 

@@ -28,17 +28,17 @@ We will use [PlatformIO](https://platformio.org/platformio-ide) as a development
 
 1. First, download and install it following the [PlatformIO installation page](https://platformio.org/install/ide?install=vscode).
 2. When it is done, open the VS Code editor.
-3. Throught the *Get started*, you will need to enter some command lines in a terminal. You can either use the terminal from VS Code, or use your favorite one.
+3. Throught the _Get started_, you will need to enter some command lines in a terminal. You can either use the terminal from VS Code, or use your favorite one.
 <div align="center">
-  <Image src="/img/get-started/get-started-1.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-1.png" darkSrc="/img/get-started/get-started-1.png"/>
 </div>
 <div align="center">
-  <Image src="/img/get-started/get-started-1-1.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-1-1.png" darkSrc="/img/get-started/get-started-1-1.png" />
 </div>
 
 ## 3. Download the base code
 
-Download and unzip [from this link](https://github.com/Luos-io/Get_started/archive/refs/heads/master.zip) the *Get started* base code.
+Download and unzip [from this link](https://github.com/Luos-io/Get_started/archive/refs/heads/master.zip) the _Get started_ base code.
 
 :::tip
 Alternatively, you can clone this code through **Git** via the terminal, using the following command line:
@@ -53,12 +53,12 @@ You will need to have [GIT](https://git-scm.com/downloads) installed on your com
 
 ## 4. Build your project
 
-1. On VS Code, click on **File → Open Folder**. Locate the *Get_started* folder.
+1. On VS Code, click on **File → Open Folder**. Locate the _Get_started_ folder.
 2. Select a project in the folder you just downloaded or cloned from GitHub, depending on the board you use. (For example, for the STM32L432KC Nucleo, select the folder **NUCLEO_L432KC**)
 3. Click on **Add**.
 
 <div align="center">
-  <Image src="/img/get-started/get-started-1-2.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-1-2.png" darkSrc="/img/get-started/get-started-1-2.png"/>
 </div>
 
 :::caution
@@ -70,7 +70,7 @@ The project folder should now be opened in the PlatformIO explorer. 👍
 
 4. Select the environment corresponding to your demo board:
 
-All the project from the *Get_started* folder are already configure in the file plateformio.ini. If you use an Arduino board, you will have to specify the model of your board in the plateformio.ini file.”
+All the project from the _Get_started_ folder are already configure in the file plateformio.ini. If you use an Arduino board, you will have to specify the model of your board in the plateformio.ini file.”
 
 Click on the platformio.ini file and type the right board in the line `board = ` and uncomment the name corresponding to the board you are currently using.
 
@@ -78,7 +78,7 @@ Click on the platformio.ini file and type the right board in the line `board = `
 Arduino users can select their board on the `platformio.ini` file by modifying the `board = zero` line.
 
 <div align="center">
-  <Image src="/img/get-started/get-started-1-3.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-1-3.png" darkSrc="/img/get-started/get-started-1-3.png"/>
 </div>
 
 :::
@@ -88,14 +88,14 @@ Arduino users can select their board on the `platformio.ini` file by modifying t
 Building the project will create a binary files of your code that you will upload!
 
 <div align="center">
-  <Image src="/img/get-started/get-started-1-4.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-1-4.png" darkSrc="/img/get-started/get-started-1-4.png"/>
 </div>
 
 :::caution
 In some cases, the build may output an error message, you may need to update the PlatformIO libraries and rebuild as explained in this image:
 
 <div align="center">
-  <Image src="/img/get-started/get-started-1-5.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-1-5.png" darkSrc="/img/get-started/get-started-1-5.png" />
 </div>
 
 :::
@@ -109,7 +109,7 @@ PlatformIO will build the firmware and flash it. Take a look at the terminal to 
 Once the board is flashed, it means it is properly programmed and you should see the **LED** blinking on your board.
 
 <div align="center">
-  <Image src="/img/get-started/get-started-1-6.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-1-6.png" darkSrc="/img/get-started/get-started-1-6.png"/>
 </div>
 
 :::tip
@@ -139,4 +139,4 @@ On top of it, we also added two other services allowing you to take control of y
 
 ## Next step
 
-Your development environment is now configured, and the *Get started* project is installed in a local folder of your choice. The [next part](/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take the control with high level API!
+Your development environment is now configured, and the _Get started_ project is installed in a local folder of your choice. The [next part](/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take the control with high level API!

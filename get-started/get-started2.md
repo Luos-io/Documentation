@@ -126,7 +126,7 @@ In [5]:device.blinker.play()
 You can always check the list of the commands available for all services using your `tab` key:
 
 <div align="center">
-  <Image src="/img/get-started/get-started-2.png" darkSrc=''/>
+  <Image src="/img/get-started/get-started-2.png" darkSrc="/img/get-started/get-started-2.png"/>
 </div>
 
 See [Pyluos](https://docs.luos.io/docs/tools/pyluos) documentation for more information.

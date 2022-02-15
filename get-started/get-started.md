@@ -6,6 +6,7 @@ custom_edit_url: null
 # Get Started
 
 ### Estimated difficulty level
+
 Easy
 
 ### Total estimated time
@@ -20,9 +21,9 @@ The Get started allows you to build, flash, run, and control your very first Luo
 
 This section is separated into three parts:
 
-1. *Part 1: Your first Luos Project —* The embedded part, where you will have all the tools you need to easily develop using Luos in your embedded target.
-2. *Part 2: Take the control —* The remote control part, where you will have all the tools you need to take control and quickly test any Luos device.
-3. *Part 3: Unleash your code —* The last part will guide you in creating your first Luos network allowing you to deal with a multiple-boards system.
+1. _Part 1: Your first Luos Project —_ The embedded part, where you will have all the tools you need to easily develop using Luos in your embedded target.
+2. _Part 2: Take the control —_ The remote control part, where you will have all the tools you need to take control and quickly test any Luos device.
+3. _Part 3: Unleash your code —_ The last part will guide you in creating your first Luos network allowing you to deal with a multiple-boards system.
 
 In order to complete this tutorial, you will need to install dependencies such as **[Python](https://www.python.org/)**, **[GIT](https://git-scm.com/)**, **[Ipython](https://ipython.org/)**, and a USB driver compatible with your board. Although the purpose of this tutorial is not to guide you through the installation of these dependencies, we will recommend some links to help you along the process.
 
@@ -58,11 +59,11 @@ This tutorial shows you how to upload a Luos application on a Microcontroller Un
 
 ## 4. Keywords
 
-- Board (Electronic board with an MCU on it)
-- MCU (Microcontroller)
-- Service
+- <span className="cust_tooltip">Board<span className="cust_tooltiptext">Electronic board with an MCU on it</span></span>
+- <span className="cust_tooltip">MCU<span className="cust_tooltiptext">Microcontroller</span></span>
+- <span className="cust_tooltip">Service<span className="cust_tooltiptext">Software element run by Luos that can communicate with other services. It can be a driver or an app.</span></span>
 - Network
-- Distributed system
+- <span className="cust_tooltip">Distributed system<span className="cust_tooltiptext">Microservices are a software development technique that arranges an application as a collection of loosely coupled services.</span></span>
 
 ## 5. Resources
 
