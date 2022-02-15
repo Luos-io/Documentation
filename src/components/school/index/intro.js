@@ -1,16 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
-import useIsBrowser from '@docusaurus/useIsBrowser';
+import React, { useEffect, useState } from 'react';
 import { Paper } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-//import useIsBrowser from '@docusaurus/useIsBrowser';
 import CardGrid from './cardGrid';
 import styles from './index.module.css';
 import data from './data/dataIntro.json';
@@ -26,83 +22,42 @@ export default function Intro() {
   });
 
   const handleToc = (event, newLevel) => {
-    const oldFilter = filters;
     setfilters({
+      ...filters,
       toc: newLevel.props.value,
-      tags: oldFilter.tags,
-      hardware: oldFilter.hardware,
-      category: oldFilter.category,
-      lvl: oldFilter.lvl,
     });
-    //  setSelection(filters);
+    test = true;
   };
 
-  useEffect(() => {
-    console.log(filters);
-    let filtered = [];
-
-    data.tuto.forEach((tuto) => {
-      console.log(tuto);
-      if (tuto.tags.includes(filters.tags)) {
-        filtered.push(tuto);
-      }
-    });
-    console.log(filtered);
-    setSelection(filtered);
-    console.log(selection);
-  }, [filters]);
-
   const handleTopic = (event, newLevel) => {
-    const oldFilter = filters;
-    console.log('old filter');
-    console.log(oldFilter);
     setfilters({
-      toc: oldFilter.toc,
+      ...filters,
       tags: newLevel.props.value,
-      hardware: oldFilter.hardware,
-      category: oldFilter.category,
-      lvl: oldFilter.lvl,
     });
-    // setSelection(filters);
-    console.log('new filter');
-    console.log(filters);
   };
 
   const handleHardware = (event, newLevel) => {
-    const oldFilter = filters;
     setfilters({
-      toc: oldFilter.toc,
-      tags: oldFilter.tags,
+      ...filters,
       hardware: newLevel.props.value,
-      category: oldFilter.category,
-      lvl: oldFilter.lvl,
     });
-    //  setSelection(filters);
   };
 
   const handleCategory = (event, newLevel) => {
-    const oldFilter = filters;
     setfilters({
-      toc: oldFilter.toc,
-      tags: oldFilter.tags,
-      hardware: oldFilter.hardware,
+      ...filters,
       category: newLevel.props.value,
-      lvl: oldFilter.lvl,
     });
-    //  setSelection(filters);
   };
 
   const handleLevel = (event, newLevel) => {
-    const oldFilter = filters;
     setfilters({
-      toc: oldFilter.toc,
-      tags: oldFilter.tags,
-      hardware: oldFilter.hardware,
-      category: oldFilter.category,
+      ...filters,
       lvl: newLevel,
     });
-    //  setSelection(filters);
   };
+
+  console.log(filters);
 
   return (
     <div>
@@ -131,7 +86,13 @@ export default function Intro() {
                 value={filters.toc}
                 className={styles.filterBtn}
                 sx={{ width: '200px' }}
-                onChange={handleToc}
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setfilters({
+                    ...filters,
+                    toc: e.target.value,
+                  });
+                }}
               >
                 {data.filters.toc.map((filter, index) => (
                   <MenuItem value={filter.id} key={index}>
@@ -195,24 +156,21 @@ export default function Intro() {
               onChange={handleLevel}
               aria-label="text alignment"
             >
-              <ToggleButton value="left" aria-label="left aligned">
+              <ToggleButton value="1" aria-label="left aligned">
                 Beginner
               </ToggleButton>
-              <ToggleButton value="center" aria-label="centered">
+              <ToggleButton value="2" aria-label="centered">
                 Confirmed
               </ToggleButton>
-              <ToggleButton value="right" aria-label="right aligned">
+              <ToggleButton value="3" aria-label="right aligned">
                 Expert
               </ToggleButton>
             </ToggleButtonGroup>
           </Grid>
         </Grid>
       </Paper>
-      {selection !== '' ? (
-        <CardGrid selection={data.tuto} test={selection} />
-      ) : (
-        ''
-      )}
+
+      <CardGrid selection={data.tuto} test={filters} />
     </div>
   );
 }
