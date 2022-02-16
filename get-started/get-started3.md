@@ -50,7 +50,7 @@ To Prevent any mistakes, unplug the USB cables from the boards before wiring ðŸ˜
 :::
 
 <div align="center">
-  <Image src="/img/get-started/get-started-3.png" darkSrc="/img/get-started/get-started-3.png"/>
+  <Image src="/img/get-started/get-started-3.png" darkSrc="/img/get-started/get-started-3-dark.png"/>
 </div>
 
 To create your network, you have to identify the pins used to perform Luos communication:
@@ -66,29 +66,29 @@ Below are the schematics of various boards and how to wire them:
 <Tabs>
 <TabItem value="Arduino MKR" label="Arduino MKR">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-1.png" darkSrc="/img/get-started/get-started-3-1.png"/>
+  <Image src="/img/get-started/get-started-3-1.png" darkSrc="/img/get-started/get-started-3-1-dark.png"/>
 </div>
 </TabItem>
 <TabItem value="Arduino Classic" label="Arduino Classic">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-2.png" darkSrc="/img/get-started/get-started-3-2.png"/>
+  <Image src="/img/get-started/get-started-3-2.png" darkSrc="/img/get-started/get-started-3-2-dark.png"/>
 </div>
 </TabItem>
 <TabItem value="NUCLEO 32" label="NUCLEO 32">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-3.png" darkSrc="/img/get-started/get-started-3-3.png"/>
+  <Image src="/img/get-started/get-started-3-3.png" darkSrc="/img/get-started/get-started-3-3-dark.png"/>
 </div>
 </TabItem>
 <TabItem value="NUCLEO 64" label="NUCLEO 64">
 <Tabs>
 <TabItem value="STM32F072RB" label="STM32F072RB">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-4.png" darkSrc="/img/get-started/get-started-3-4.png"/>
+  <Image src="/img/get-started/get-started-3-4.png" darkSrc="/img/get-started/get-started-3-4-dark.png"/>
 </div>
 </TabItem>
 <TabItem value="STM32F401RE/STM32F410RB" label="STM32F401RE/STM32F410RB">
 <div align="center">
-  <Image src="/img/get-started/get-started-3-5.png" darkSrc="/img/get-started/get-started-3-5.png"/>
+  <Image src="/img/get-started/get-started-3-5.png" darkSrc="/img/get-started/get-started-3-5-dark.png"/>
 </div>
 </TabItem>
 </Tabs>
