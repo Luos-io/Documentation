@@ -11,8 +11,7 @@ import CardGrid from './cardGrid';
 import styles from './index.module.css';
 import data from './data/dataIntro.json';
 
-export default function Intro() {
-  const [selection, setSelection] = useState();
+const Intro = () => {
   const [filters, setfilters] = useState({
     toc: '',
     tags: '',
@@ -26,7 +25,6 @@ export default function Intro() {
       ...filters,
       toc: newLevel.props.value,
     });
-    test = true;
   };
 
   const handleTopic = (event, newLevel) => {
@@ -44,6 +42,7 @@ export default function Intro() {
   };
 
   const handleCategory = (event, newLevel) => {
+    console.log(newLevel.props.value);
     setfilters({
       ...filters,
       category: newLevel.props.value,
@@ -56,8 +55,6 @@ export default function Intro() {
       lvl: newLevel,
     });
   };
-
-  console.log(filters);
 
   return (
     <div>
@@ -86,13 +83,7 @@ export default function Intro() {
                 value={filters.toc}
                 className={styles.filterBtn}
                 sx={{ width: '200px' }}
-                onChange={(e) => {
-                  console.log(e.target.value);
-                  setfilters({
-                    ...filters,
-                    toc: e.target.value,
-                  });
-                }}
+                onChange={handleToc}
               >
                 {data.filters.toc.map((filter, index) => (
                   <MenuItem value={filter.id} key={index}>
@@ -170,7 +161,9 @@ export default function Intro() {
         </Grid>
       </Paper>
 
-      <CardGrid selection={data.tuto} test={filters} />
+      <CardGrid selection={data.tuto} filter={filters} />
     </div>
   );
-}
+};
+
+export default Intro;

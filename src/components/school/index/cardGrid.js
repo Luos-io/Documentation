@@ -4,9 +4,28 @@ import { Paper } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import styles from './index.module.css';
 
-export default function CardGrid(data, test) {
-  console.log(test);
-  const selection = data.selection;
+const cardGrid = (props) => {
+  const toc = {
+    1: 60,
+    2: 180,
+    3: 360,
+    4: 361,
+  };
+
+  const filters = props.filter;
+
+  console.log(toc[filters.toc]);
+  console.log(filters);
+
+  let selection = props.selection.filter(function (el) {
+    return (
+      el.category === filters.category &&
+      el.toc <= toc[filters.toc] &&
+      el.level === parseInt(filters.lvl) &&
+      el.tags.includes(filters.tags)
+    );
+  });
+
   return (
     <Grid container spacing={2}>
       {selection.map((x, y) => (
@@ -50,4 +69,6 @@ export default function CardGrid(data, test) {
       ))}
     </Grid>
   );
-}
+};
+
+export default cardGrid;
