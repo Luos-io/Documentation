@@ -17,7 +17,7 @@ Easy
 
 ## 1. Description
 
-The Get started allows you to build, flash, run, and control your very first Luos project.
+The _Get started_ tutorial allows you to build, flash, run, and control your very first Luos project.
 
 This section is separated into three parts:
 
@@ -38,7 +38,7 @@ In order to complete this tutorial, you will need to install dependencies such a
 
 Luos Engine is compatible with any MCU available on the market but needs a HAL (Hardware Abstraction Layer) to fit the network and adequately work. Luos provides some of these, allowing you to use Luos library in a plug-and-play way.
 
-Below is a list of the boards allowing this Get started tutorial to be plug-and-play:
+Below is a list of the boards allowing this _Get started_ tutorial to be plug-and-play:
 
 - **[Arduino zero](https://www.arduino.cc/en/Main/ArduinoBoardZero&)**, **[MKRzero](https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data)**, **[MKR1000](https://store.arduino.cc/collections/boards/products/arduino-mkr1000-wifi)**, or any **[SAMD21-based](https://en.wikipedia.org/wiki/List_of_Arduino_boards_and_compatible_systems)** Arduino boards
 - **[STM32L432KC Nucleo](https://www.st.com/en/evaluation-tools/nucleo-l432kc.html)**
