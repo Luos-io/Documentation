@@ -6,62 +6,38 @@
  */
 import React from 'react';
 import clsx from 'clsx';
-import useIsBrowser from '@docusaurus/useIsBrowser';
-import { useActivePlugin, useVersions } from '@theme/hooks/useDocs';
-import useWindowSize from '@theme/hooks/useWindowSize';
 import DocPaginator from '@theme/DocPaginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
+import DocVersionBadge from '@theme/DocVersionBadge';
 import Seo from '@theme/Seo';
-import LastUpdated from '@theme/LastUpdated';
+import DocItemFooter from '@theme/DocItemFooter';
 import TOC from '@theme/TOC';
 import TOCCollapsible from '@theme/TOCCollapsible';
-import EditThisPage from '@theme/EditThisPage';
-import { MainHeading } from '@theme/Heading';
+import Heading from '@theme/Heading';
 import styles from './styles.module.css';
-import ContactUs from '/src/components/ContactUs.js';
-import { customFields } from '/docusaurus.config.js';
-
-function DocItem(props) {
-  const { content: DocContent, versionMetadata } = props;
-  const { metadata, frontMatter } = DocContent;
+import {ThemeClassNames, useWindowSize } from '@docusaurus/theme-common';
+export default function DocItem(props) {
+  const {content: DocContent} = props;
+  const {metadata, frontMatter} = DocContent;
   const {
     image,
     keywords,
     hide_title: hideTitle,
     hide_table_of_contents: hideTableOfContents,
+    toc_min_heading_level: tocMinHeadingLevel,
+    toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
-  const {
-    description,
-    title,
-    editUrl,
-    lastUpdatedAt,
-    formattedLastUpdatedAt,
-    lastUpdatedBy,
-  } = metadata;
-  const { pluginId } = useActivePlugin({
-    failfast: true,
-  });
-  const versions = useVersions(pluginId); // If site is not versioned or only one version is included
-  // we don't show the version badge
-  // See https://github.com/facebook/docusaurus/issues/3362
-
-  const showVersionBadge = versions.length > 1; // We only add a title if:
-  // - user asks to hide it with frontmatter
+  const {description, title} = metadata; // We only add a title if:
+  // - user asks to hide it with front matter
   // - the markdown content does not already contain a top-level h1 heading
 
-  const isBrowser = useIsBrowser();
-
-  let shouldAddTitle, canRenderTOC, renderTocDesktop;
-  if (isBrowser) {
-    shouldAddTitle =
-      !hideTitle && typeof DocContent.contentTitle === 'undefined';
-    canRenderTOC =
-      !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
-    const windowSize = useWindowSize();
-    renderTocDesktop =
-      canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
-  }
-
+  const shouldAddTitle =
+    !hideTitle && typeof DocContent.contentTitle === 'undefined';
+  const windowSize = useWindowSize();
+  const canRenderTOC =
+    !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
+  const renderTocDesktop =
+    canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
   return (
     <>
       <Seo
@@ -81,69 +57,58 @@ function DocItem(props) {
               [styles.docItemCol]: !hideTableOfContents,
             },
             'custom_mobile_col',
-          )}
+          )}            
         >
-          <DocVersionBanner versionMetadata={versionMetadata} />
+          <DocVersionBanner />
           <div className={styles.docItemContainer}>
             <article>
-              {showVersionBadge && (
-                <span className="badge badge--secondary">
-                  Version: {versionMetadata.label}
-                </span>
-              )}
+              <DocVersionBadge />
 
               {canRenderTOC && (
                 <TOCCollapsible
                   toc={DocContent.toc}
-                  className={styles.tocMobile}
+                  minHeadingLevel={tocMinHeadingLevel}
+                  maxHeadingLevel={tocMaxHeadingLevel}
+                  className={clsx(
+                    ThemeClassNames.docs.docTocMobile,
+                    styles.tocMobile,
+                  )}
                 />
               )}
 
-              <div className="markdown">
+              <div
+                className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
                 {/*
-                Title can be declared inside md content or declared through frontmatter and added manually
+                Title can be declared inside md content or declared through front matter and added manually
                 To make both cases consistent, the added title is added under the same div.markdown block
                 See https://github.com/facebook/docusaurus/pull/4882#issuecomment-853021120
                 */}
-                {shouldAddTitle && <MainHeading>{title}</MainHeading>}
+                {shouldAddTitle && (
+                  <header>
+                    <Heading as="h1">{title}</Heading>
+                  </header>
+                )}
 
-                {isBrowser ? (
-                  <>
-                    <DocContent />
-                    <ContactUs pageName={window.location} />
-                  </>
-                ) : null}
+                <DocContent />
               </div>
 
-              {(editUrl || lastUpdatedAt || lastUpdatedBy) && (
-                <footer className="row docusaurus-mt-lg">
-                  <div className="col">
-                    {editUrl && <EditThisPage editUrl={editUrl} />}
-                  </div>
-
-                  <div className={clsx('col', styles.lastUpdated)}>
-                    {(lastUpdatedAt || lastUpdatedBy) && (
-                      <LastUpdated
-                        lastUpdatedAt={lastUpdatedAt}
-                        formattedLastUpdatedAt={formattedLastUpdatedAt}
-                        lastUpdatedBy={lastUpdatedBy}
-                      />
-                    )}
-                  </div>
-                </footer>
-              )}
+              <DocItemFooter {...props} />
             </article>
-            <DocPaginator metadata={metadata} />
+
+            <DocPaginator previous={metadata.previous} next={metadata.next} />
           </div>
         </div>
         {renderTocDesktop && (
           <div className="col col--3">
-            <TOC toc={DocContent.toc} />
+            <TOC
+              toc={DocContent.toc}
+              minHeadingLevel={tocMinHeadingLevel}
+              maxHeadingLevel={tocMaxHeadingLevel}
+              className={ThemeClassNames.docs.docTocDesktop}
+            />
           </div>
         )}
       </div>
     </>
   );
 }
-
-export default DocItem;
