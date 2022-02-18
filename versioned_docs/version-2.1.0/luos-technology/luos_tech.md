@@ -25,8 +25,8 @@ Luos proposes organized and effective development practices, guaranteeing develo
 
 This section details the features of Luos technology as an embedded development platform, following these subjects:
 
-- **The [Basics](/docs/luos-technology/basics/basics) of Luos, explaining the general concepts and the project organization.**
-- **Definition of [Nodes](/docs/luos-technology/node/node), and the relation between Luos and the physical world.**
-- **Definition of [Packages](/docs/luos-technology/package/package), and how to make a portable and reusable development.**
-- **Definition of [Services](/docs/luos-technology/services/services), how to create and declare features in your product.**
-- **Definition of [Messages](/docs/luos-technology/message/message), when, why, and how to handle them, explaining the more advanced features of Luos.**
+- **The [Basics](./basics) of Luos, explaining the general concepts and the project organization.**
+- **Definition of [Nodes](./node), and the relation between Luos and the physical world.**
+- **Definition of [Packages](./package), and how to make a portable and reusable development.**
+- **Definition of [Services](./services), how to create and declare features in your product.**
+- **Definition of [Messages](./message), when, why, and how to handle them, explaining the more advanced features of Luos.**

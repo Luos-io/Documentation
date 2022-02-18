@@ -11,7 +11,7 @@ To help you in your development journey, Luos provides monitoring and debugging 
 ## Luos self-healing capabilities
 
 :::caution
-Make sure to read and understand how to create Luos services(./create-project.md) before reading this page.
+Make sure to read and understand how to create Luos services(./create-project) before reading this page.
 :::
 
 Finding, understanding, and managing bugs on multiple boards running multiple services can be hard. To make your life easier, Luos allows you to get some basic information about any problems in your system, allowing you to adapt to them.
@@ -114,11 +114,11 @@ In order to facilitate the debugging process, Luos offers a more advanced monito
 
 The Inspector includes the functionalities of the sniffer, with the main difference that it is a common Luos service that works like any other service in the network. That is to say, the inspector service is detected, and can interact with the other services existing in the same network. Also, we have added some aditional functionalities, which enrich the capacities of monitoring the embedded systems.
 
-Inspector, exactly like the Gate, is a Luos embedded [App service](/docs/luos-technology/services/services#apps-guidelines), so it is able to be hosted in any Luos running MCU.
+Inspector, exactly like the Gate, is a Luos embedded [App service](../luos-technology/services/service-api#apps-guidelines), so it is able to be hosted in any Luos running MCU.
 
 In order to exploit the functionalities of the inspector app, we need to combine it with the communication driver service, which is called **pipe**.
 
-The format of the messages that are transmitted serially form the inspector using the pipe driver, follow the specified [Luos communication protocol](/docs/luos-technology/message/message).
+The format of the messages that are transmitted serially form the inspector using the pipe driver, follow the specified [Luos communication protocol](../luos-technology/message).
 
 ### Inspector Features
 

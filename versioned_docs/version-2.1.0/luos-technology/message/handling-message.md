@@ -7,7 +7,7 @@ custom_edit_url: null
 Message callbacks of services can be difficult to use when a project has high real-time constraints.
 
 Luos provides two different configurations allowing you to choose the best way for you to deal with messages.
-The message handling configuration is set during the [initialization of a service](/luos-technology/services/service-api.md).
+The message handling configuration is set during the [initialization of a service](../services/service-api).
 
 |                 Configuration                 |  execution type  |
 | :-------------------------------------------: | :--------------: |

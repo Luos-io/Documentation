@@ -10,7 +10,7 @@ import Tooltip from "/src/components/Tooltip.js";
 **As a developer, you will always develop your functionalities as services into packages and never into the `main()` program.**
 
 :::caution
-Make sure to read and understand the [package](../package/package.md) section before reading this page.
+Make sure to read and understand the [package](../package) section before reading this page.
 :::
 
 ## How to create and initialize a service
@@ -23,7 +23,7 @@ service_t* Luos_CreateService(void* callback, service_type_t type, char* default
 
 The returned `service_t*` is a service structure pointer that will be useful to make your service act in the network after this initialization.
 
-**callback** is a pointer to a callback function called by Luos when a service receives messages from other services (see [messages](../message/message.md) for more details).
+**callback** is a pointer to a callback function called by Luos when a service receives messages from other services (see [messages](../message) for more details).
 This function needs to have a specific format:
 
 ```c
@@ -39,7 +39,7 @@ void Service_MsgHandler(service_t *service, msg_t *msg)
 
 **revision** is the revision number of the service you are creating and which will be accessible via Pyluos.
 
-Following the [packages rules](../package/package.md), here is a code example for a button service:
+Following the [packages rules](../package), here is a code example for a button service:
 
 ```c
 service_t* service_btn;
@@ -73,7 +73,7 @@ A driver is a type of service that handles hardware. Motors, distance sensors, L
 
 By designing a driver, you have to keep the following rules in mind:
 
-- A driver service always uses a standard Luos type to be usable by any other services called [profiles](./profile.md).
+- A driver service always uses a standard Luos type to be usable by any other services called [profiles](./profile).
 - A driver service always uses standard <Tooltip def={customFields.od_def}>object dictionary</Tooltip> structures to be usable by any other services.
 - A driver service never depends on or uses any other services (driver or app).
 - A driver service is "dumb", as it can't do anything else than manage its hardware feature (but it does it very well).
@@ -88,11 +88,11 @@ Apps can be placed in any <Tooltip def={customFields.node_def}>node</Tooltip> on
 By designing an app, you have to keep the following rules in mind:
 
 - An app can't have hardware dependencies.
-- An app can use custom service types (you can create your own [profiles](./profile.md) for that).
+- An app can use custom service types (you can create your own [profiles](./profile) for that).
 - An app must use standard <Tooltip def={customFields.od_def}>object dictionary</Tooltip> data structures (you can create your own object dictionary for that).
 
 :::caution
-If the data structures used are not standard, the [gate](../../tools/gate.md) services could be completely unable to manage them.
+If the data structures used are not standard, the [gate](../../tools/gate) services could be completely unable to manage them.
 :::
 
 Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every service in every node in your device and make it work properly. Go to the [Routing table](/docs/luos-technology/services/routing-table) page for more information.
@@ -131,7 +131,7 @@ This doesn't change anything else on your service code as it allows external ser
 
 ## Messages
 
-The core of Luos technology enables sending and receiving messages from services with a straightforward API. More information about messages can be found in the [dedicated page](../message/basic-message.md).
+The core of Luos technology enables sending and receiving messages from services with a straightforward API. More information about messages can be found in the [dedicated page](../message/basic-message).
 
 ## Luos APIs
 
