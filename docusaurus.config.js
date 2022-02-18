@@ -6,7 +6,7 @@ module.exports = {
   title: 'Luos',
   tagline:
     'Open source and real-time orchestrator for distributed architectures',
-  url: 'https://luos.io',
+  url: 'https://docs.luos.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
@@ -32,12 +32,6 @@ module.exports = {
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
-    },
-    googleAnalytics: {
-      trackingID: 'UA-153509818-3',
-    },
-    gtag: {
-      trackingID: 'GTM-M73ZRR4',
     },
     hotjar: {
       applicationId: '2480203',
@@ -144,7 +138,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/luos-io/Documentation',
           versions: {
             current: {
               label: '2.2.0-beta 🚧',
@@ -155,10 +149,16 @@ module.exports = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/luos-io/Documentation',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        gtag: {
+          trackingID: 'GTM-M73ZRR4',
+        },
+        googleAnalytics: {
+          trackingID: 'UA-153509818-3',
         },
       },
     ],
@@ -212,6 +212,6 @@ module.exports = {
         fromExtensions: ['html'],
       },
     ],
-    ['./plugins/hotjar', {}],
+    // ['./plugins/hotjar', {}],
   ],
 };
