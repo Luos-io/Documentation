@@ -3,51 +3,50 @@
   "introText": "Section presentation. Describe here what will we can learn, the topics, the the format of totui etc. Section presentation. Describe here what will we can learn, the topics, the the format of totui etc. Section presentation. Describe here what will we can learn, the topics, the the format of totui etc. Section presentation. Describe here what will we can learn, the topics, the the format of totui etc.",
   "filters": {
     "toc": [
-      { "id": 1, "label": "Less than 1 hours" },
-      { "id": 2, "label": "Less than 3 hours" },
-      { "id": 3, "label": "Less than 6 hours" },
-      { "id": 4, "label": "More than 6 hours" }
+      { "id": 1, "label": "Less than 1 hours", "duration": 60 },
+      { "id": 2, "label": "Less than 3 hours", "duration": 180 },
+      { "id": 3, "label": "Less than 6 hours", "duration": 360 },
+      { "id": 4, "label": "More than 6 hours", "duration": 361 }
     ],
-    "tags": ["tag1", "tag2", "tag3"],
     "hardware": ["arduino", "l0", "nucleo"],
     "category": ["Tutorials", "Trainings", "Codelab", "Use Case"]
   },
   "tuto": [
     {
-      "title": "Bootloader",
-      "category": "Tutorials",
-      "toc": 120,
-      "level": 2,
-      "img": "bootloader",
-      "desc": "What will you learn with this tutorial in 3 lines. What will you learn with this tutorial in 3 lines. What will you learn with this tutorial in 3 lines.What will you learn with this tutorial in 3 lines.",
-      "tags": ["tag1", "tag2"]
-    },
-    {
-      "title": "Install ROS 2",
-      "category": "Tutorial",
-      "toc": 120,
+      "title": "Get Started",
+      "category": "Trainings",
+      "toc": 60,
       "level": 1,
-      "img": "bootloader",
-      "desc": "What will you learn with this tutorial in 3 lines. What will you learn with this tutorial in 3 lines. What will you learn with this tutorial in 3 lines.What will you learn with this tutorial in 3 lines.",
-      "tags": ["tag2"]
+      "img": "get-started",
+      "desc": "The Get started allows you to build, flash, run, and control your very first Luos project.",
+      "tags": ["Board", "MCU", "Service", "Network", "Distributed system"]
     },
     {
-      "title": "Luos Demo Board",
-      "category": "Training",
-      "toc": 120,
-      "level": 3,
-      "img": "bootloader",
-      "desc": "What will you learn with this tutorial in 3 lines. What will you learn with this tutorial in 3 lines. What will you learn with this tutorial in 3 lines.What will you learn with this tutorial in 3 lines.",
-      "tags": ["tag1"]
+      "title": "Your First Service",
+      "category": "Tutorials",
+      "toc": 60,
+      "level": 2,
+      "img": "services",
+      "desc": "You just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
+      "tags": ["Service", "Package", "Handler", "Gate", "Pipe"]
     },
     {
-      "title": "Lsdgdsgdgd",
-      "category": "Codebase",
-      "toc": 300,
+      "title": "Your First Message",
+      "category": "Tutorials",
+      "toc": 60,
+      "level": 2,
+      "img": "message",
+      "desc": "Luos aim to exchange information between services by sending messages. In this tutorial we will learn the message structure and how to send it to another services.",
+      "tags": ["Luos Message", "Service", "Polling", "Message Handler"]
+    },
+    {
+      "title": "Your First Topology detection",
+      "category": "Tutorials",
+      "toc": 60,
       "level": 3,
-      "img": "bootloader",
-      "desc": "What will you learn with this tutorial in 3 lines. What will you learn with this tutorial in 3 lines. What will you learn with this tutorial in 3 lines.What will you learn with this tutorial in 3 lines.",
-      "tags": ["tag1"]
+      "img": "topology",
+      "desc": "Since the beginning of this training, we discover how to create services, deal with messages and control them using Pyluos. But we never create any embedded application service using other services.",
+      "tags": ["Service", "Topology", "Detection", "Application"]
     }
   ]
 }

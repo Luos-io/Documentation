@@ -601,3 +601,22 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   background-color: #161616 !important;
   color: #bd99ff !important;
 }
+
+.Confirmed {
+  background: #15c9ff !important;
+  box-shadow: 6px 0 0 #15c9ff, 12px 0 0 #a8b6d1 !important;
+}
+
+.Beginner {
+  background: #03c273 !important;
+  box-shadow: 6px 0 0 #a8b6d1, 12px 0 0 #a8b6d1 !important;
+}
+
+.Expert {
+  background: #ff5100 !important;
+  box-shadow: 6px 0 0 #ff5100, 12px 0 0 #ff5100 !important;
+}
+
+.chipText {
+  line-height: 21px !important;
+}

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Paper } from '@mui/material';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Chip from '@mui/material/Chip';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
@@ -14,47 +16,33 @@ import data from './data/dataIntro.json';
 const Intro = () => {
   const [filters, setfilters] = useState({
     toc: '',
-    tags: '',
+    tags: [],
     hardware: '',
     category: '',
-    lvl: '',
+    level: '',
   });
 
-  const handleToc = (event, newLevel) => {
+  const handleFilter = (newLevel, filterName) => {
+    if (newLevel === filters[filterName]) {
+      newLevel = '';
+    }
     setfilters({
       ...filters,
-      toc: newLevel.props.value,
+      [filterName]: newLevel,
     });
   };
 
-  const handleTopic = (event, newLevel) => {
-    setfilters({
-      ...filters,
-      tags: newLevel.props.value,
-    });
-  };
+  let countTutos = 0,
+    countHours = 0;
 
-  const handleHardware = (event, newLevel) => {
-    setfilters({
-      ...filters,
-      hardware: newLevel.props.value,
+  let tagList = [];
+  data.tuto.forEach((tuto) => {
+    countTutos++;
+    countHours += tuto.toc;
+    tuto.tags.forEach((tag) => {
+      tagList.indexOf(tag) === -1 ? tagList.push(tag) : null;
     });
-  };
-
-  const handleCategory = (event, newLevel) => {
-    console.log(newLevel.props.value);
-    setfilters({
-      ...filters,
-      category: newLevel.props.value,
-    });
-  };
-
-  const handleLevel = (event, newLevel) => {
-    setfilters({
-      ...filters,
-      lvl: newLevel,
-    });
-  };
+  });
 
   return (
     <div>
@@ -66,7 +54,9 @@ const Intro = () => {
           </Grid>
           <Grid item xs={4}>
             {/* TODO set value with JSON */}
-            <span className={styles.stats}>X tutorials | X Hours</span>
+            <span className={styles.stats}>
+              {countTutos} tutorials | {Math.round(countHours / 60)} Hours
+            </span>
           </Grid>
           <Grid item xs={10}>
             <p className={styles.introText}>{data.introText}</p>
@@ -74,47 +64,63 @@ const Intro = () => {
         </Grid>
         {/* Filter container */}
         <Grid container spacing={2}>
-          <Grid item xs={9}>
-            <FormControl sx={{ m: 1, minWidth: 100 }}>
+          <Grid item xs={12}>
+            <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
               <InputLabel id="toc-label">Time to complete</InputLabel>
               <Select
                 labelId="toc-label"
                 id="toc"
                 value={filters.toc}
-                className={styles.filterBtn}
-                sx={{ width: '200px' }}
-                onChange={handleToc}
+                label="Time to complete"
+                onChange={(e) => {
+                  handleFilter(e.target.value, 'toc');
+                }}
               >
+                <MenuItem value="">All</MenuItem>
                 {data.filters.toc.map((filter, index) => (
-                  <MenuItem value={filter.id} key={index}>
+                  <MenuItem value={filter.duration} key={index}>
                     {filter.label}
                   </MenuItem>
                 ))}
               </Select>
             </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-              <InputLabel id="topic-label">Topics(s)</InputLabel>
+            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+              <InputLabel id="topic-label">Tags</InputLabel>
               <Select
                 value={filters.tags}
-                className={styles.filterBtn}
+                label="Tags"
                 labelId="topic-label"
-                onChange={handleTopic}
+                onChange={(e) => {
+                  handleFilter(e.target.value, 'tags');
+                }}
+                multiple
+                renderValue={(selected) => (
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                    {selected.map((value) => (
+                      <Chip key={value} label={value} />
+                    ))}
+                  </Box>
+                )}
               >
-                {data.filters.tags.map((label, index) => (
+                <MenuItem value="">All</MenuItem>
+                {tagList.map((label, index) => (
                   <MenuItem value={label} key={index}>
                     {label}
                   </MenuItem>
                 ))}
               </Select>
             </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
               <InputLabel id="hardware-label">Hardware</InputLabel>
               <Select
                 value={filters.hardware}
-                className={styles.filterBtn}
+                label="Hardware"
                 labelId="hardware-label"
-                onChange={handleHardware}
+                onChange={(e) => {
+                  handleFilter(e.target.value, 'hardware');
+                }}
               >
+                <MenuItem value="">All</MenuItem>
                 {data.filters.hardware.map((label, index) => (
                   <MenuItem value={label} key={index}>
                     {label}
@@ -122,14 +128,17 @@ const Intro = () => {
                 ))}
               </Select>
             </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
               <InputLabel id="category-label">Category</InputLabel>
               <Select
                 value={filters.category}
-                className={styles.filterBtn}
+                label="Category"
                 labelId="category-label"
-                onChange={handleCategory}
+                onChange={(e) => {
+                  handleFilter(e.target.value, 'category');
+                }}
               >
+                <MenuItem value="">All</MenuItem>
                 {data.filters.category.map((label, index) => (
                   <MenuItem value={label} key={index}>
                     {label}
@@ -138,13 +147,17 @@ const Intro = () => {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={3}>
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item sx={12}>
             <ToggleButtonGroup
               className={styles.lvlBtn}
               color="success"
-              value={filters.lvl}
+              value={filters.level}
               exclusive
-              onChange={handleLevel}
+              onChange={(e) => {
+                handleFilter(e.target.value, 'level');
+              }}
               aria-label="text alignment"
             >
               <ToggleButton value="1" aria-label="left aligned">

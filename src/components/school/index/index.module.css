@@ -16,17 +16,13 @@
   line-height: 18px;
 }
 
-.filterBtn {
-  height: 50px;
-  max-height: 50px;
-}
-
 .filterBtn select {
   text-indent: 5px;
 }
 
 .lvlBtn {
-  margin-top: 18px;
+  margin-left: 6px;
+  margin-top: 10px;
   display: block;
   float: right;
 }
@@ -44,36 +40,19 @@
 
 .card {
   padding: 10px;
+  min-height: 400px;
 }
 
 .cardTitle {
-  font-size: 16px !important;
-  padding-bottom: 15px;
-}
-
-.cardText {
-  font-size: 11px !important;
-  border-right: 1px solid black;
-  text-align: center;
-}
-
-.cardLastText {
-  font-size: 11px !important;
-  text-align: center;
-}
-
-.cardLastText span {
-  display: block;
-  margin-top: -8px;
-}
-
-.cardText span {
-  display: block;
-  margin-top: -5px;
+  font-size: 20px !important;
+  margin-bottom: 10px;
 }
 
 .cardIcons {
   float: left !important;
+  width: 24px;
+  margin-top: 6px;
+  padding-right: 5px;
 }
 
 .cardDesc {
@@ -84,5 +63,41 @@
 
 .cardTag span {
   font-size: 12px;
+  line-height: 15px !important;
   font-family: 'Roboto Mono', sans-serif;
+}
+
+.difficultyContainer {
+  background: rgba(149, 143, 174, 0.2);
+  width: 150px;
+  margin: 15px 0px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-family: 'Roboto Mono', sans-serif;
+  text-transform: capitalize;
+  float: right;
+}
+
+.difficultyContainer span {
+  font-size: 16px !important;
+}
+
+.difficulty {
+  height: 0.75rem;
+  width: 0.25rem;
+  display: inline-block;
+  margin-right: 1.25rem;
+  background: #a8b6d1;
+  box-shadow: 6px 0 0 #a8b6d1, 12px 0 0 #a8b6d1;
+}
+
+.levelTxt {
+  padding-right: 5px;
+  font-size: 14px !important;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.tag {
+  margin-right: 10px;
+  margin-bottom: 10px;
 }

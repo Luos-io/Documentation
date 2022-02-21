@@ -1,69 +1,84 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Paper } from '@mui/material';
-import Chip from '@mui/material/Chip';
 import styles from './index.module.css';
 
 const cardGrid = (props) => {
-  const toc = {
-    1: 60,
-    2: 180,
-    3: 360,
-    4: 361,
+  const level = {
+    1: 'Beginner',
+    2: 'Confirmed',
+    3: 'Expert',
   };
 
   const filters = props.filter;
+  let filtered = props.selection;
+  Object.keys(filters).forEach((key) => {
+    if (filters[key]) {
+      filtered = filtered.filter((el) => {
+        switch (key) {
+          case 'category':
+            return el[key] === filters[key];
+          case 'toc':
+            if (filters[key] === 361) {
+              return el[key] >= filters[key];
+            }
+            return el[key] <= filters[key];
 
-  console.log(toc[filters.toc]);
-  console.log(filters);
-
-  let selection = props.selection.filter(function (el) {
-    return (
-      el.category === filters.category &&
-      el.toc <= toc[filters.toc] &&
-      el.level === parseInt(filters.lvl) &&
-      el.tags.includes(filters.tags)
-    );
+          case 'level':
+            return el[key] === parseInt(filters[key]);
+          case 'tags':
+            // return el[key].includes(filters[key]);
+            return filters[key].every((v) => el[key].includes(v));
+        }
+      });
+    }
   });
 
   return (
     <Grid container spacing={2}>
-      {selection.map((x, y) => (
-        <Grid className={styles.cardContainer} key={y} item xs={12} md={6}>
+      {filtered.map((x, y) => (
+        <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
           <Paper className={styles.card} elevation={1}>
             <img src={`/img/school/${x.img}.svg`} />
             <h2 className={styles.cardTitle}>{x.title}</h2>
 
             <Grid container spacing={1}>
-              <Grid className={styles.cardText} item xs={4}>
-                <img
-                  className={styles.cardIcons}
-                  src="/img/school/category.svg"
-                />
-                <span>{x.category}</span>
+              <Grid item xs={6}>
+                <div>
+                  <span>
+                    {' '}
+                    <img
+                      className={styles.cardIcons}
+                      src="/img/school/category.svg"
+                    />
+                  </span>
+                  <span className={styles.levelTxt}>{x.category}</span>
+                </div>
+                <div>
+                  <span>
+                    {' '}
+                    <img
+                      className={styles.cardIcons}
+                      src="/img/school/clock.svg"
+                    />
+                  </span>
+                  <span className={styles.levelTxt}>
+                    {Math.round(x.toc / 60)} Hrs
+                  </span>
+                </div>
               </Grid>
-              <Grid className={styles.cardText} item xs={3}>
-                <img className={styles.cardIcons} src="/img/school/clock.svg" />
-                <span>{x.toc / 60} Hours</span>
-              </Grid>
-              <Grid className={styles.cardLastText} item xs={3}>
-                <img className={styles.cardIcons} src="/img/school/level.svg" />
-                <span>{x.level}</span>
+              <Grid item xs={6}>
+                <div style={{ width: '100%' }}>
+                  <div className={`${styles.difficultyContainer}`}>
+                    <span
+                      className={`${styles.difficulty} ${level[x.level]}`}
+                    ></span>
+                    <span>{level[x.level]}</span>
+                  </div>
+                </div>
               </Grid>
             </Grid>
-            <p className={styles.cardDesc}>
-              What will you learn with this tutorial in 3 lines. What will you
-              learn with this tutorial in 3 lines. What will you learn with this
-              tutorial in 3 lines. What will you learn with this tutorial in 3
-              lines.{' '}
-            </p>
-            <Grid container spacing={1}>
-              {x.tags.map((tag, y) => (
-                <Grid className={styles.cardTag} key={y} item xs={2}>
-                  <Chip label={tag} variant="outlined" />
-                </Grid>
-              ))}
-            </Grid>
+            <p className={styles.cardDesc}>{x.desc}</p>
           </Paper>
         </Grid>
       ))}
