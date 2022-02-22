@@ -32,7 +32,7 @@ The setup is simple and is composed of two l0 boards (see [boards](/docs/tutoria
 We will use one of these nodes as a [gate](/docs/tools/gate) and the other as an application node. The second node will host a bootloader, and you will be able to update its firmware through the gate. You need an USB shield to connect to the first node to complete this tutorial.
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/tutorial_setup.png" />
+  <Image src="/img/tutorials/bootloader/tutorial_setup.png" darkSrc="/img/tutorials/bootloader/tutorial_setup-dark.png"/>
 </div>
 
 :::caution
