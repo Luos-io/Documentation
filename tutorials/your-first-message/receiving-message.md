@@ -1,0 +1,169 @@
+---
+custom_edit_url: null
+---
+
+import Image from '/src/components/Images.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Part 1: Receiving a message
+
+# Summary
+
+1. Introduction
+2. Callback vs. polling
+3. Create a button service
+4. Handle a request using the polling method
+
+## 1. Introduction
+
+A button can be represented (as a LED) by a state-type service. But contrary to the LED, the button will have to send a state value instead of receiving it.
+
+A button service only has to manage a button, so it is kind of dumb! Your button service doesn’t know where it needs to send its value, that’s why you will have to program a reaction from an external request.
+
+<div align="center">
+  <img src ="https://media.giphy.com/media/vRNpn8HOGmpOpPmS7g/giphy.gif" className="gif_tutorial"/>
+</div>
+
+Your button service will have to receive a request message asking for the state of the button, then the service will have to send the state's value back to the asking service.
+
+<div align="center">
+  <Image src="/img/your-first-message/your-first-message-1.png" darkSrc="/img/your-first-message/your-first-message-1-dark.png"/>
+</div>
+
+## 2. Callback vs. polling
+
+Since the [Create a Package](/tutorials/your-first-service/create-a-package) tutorial, you know how to create a service into a package with a callback.
+
+But Luos Engine's services have in fact two different ways to receive messages: callback and polling.
+
+- Asynchronous reception (Callback)
+<div align="center">
+  <Image src="/img/your-first-message/your-first-message-1-1.png" darkSrc="/img/your-first-message/your-first-message-1-1-dark.png"/>
+</div>
+
+In the callback option, you give to Luos Engine a shipping address (called a message handler) allowing it to just deliver the message to your service. Your service needs to be ready to receive and handle the message directly.
+
+- Synchronous reception (Polling)
+<div align="center">
+  <Image src="/img/your-first-message/your-first-message-1-2.png" darkSrc="/img/your-first-message/your-first-message-1-2-dark.png"/>
+</div>
+
+In the polling option, Luos Engine doesn’t know the shipping address, so your service will have to check if Luos Engine has a messages available, and then get it if there is one.
+Your service can get a message whenever it wants to.
+
+In this tutorial, we will create a service without any callback to explore the polling option.
+
+In PlatformIO IDE, open the folder corresponding to your board in `Training/1_First_Service/Work_base` from the repository you just cloned or downloaded, and connect the board to your computer with a USB cable.
+
+## 3. Create a button service
+
+You can create your service in the button package's `Init` function, but this time do not write any callback in the first argument and put a `0` instead:
+
+
+```c
+void Button_Init(void)
+{
+    // the two new lines to copy and paste
+    revision_t revision = {1, 0, 0};
+    Luos_CreateService(0, STATE_TYPE, "button", revision);
+}
+
+void Button_Loop(void){}
+```
+
+Because you did not give any shipping address to Luos Engine, your service will have to go get it by itself.
+
+We only need 2 functions here, called `Button_Init()` and `Button_loop()`.
+
+Let’s try it!
+
+1. Compile and upload the project to the board.
+2. Use `pyluos-shell` in a terminal. You should see the following routing table:
+
+```bash
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Pipe                Pipe                2    ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> State               button              3    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+<div align="center">
+  <img src ="https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" className="gif_tutorial"/>
+</div>
+
+## 4. Handle a request using the polling method
+
+To pull messages from Luos Engine, we will need to know which service is asking for them. To do that, you need to create a `service_t` pointer, so that at the service creation Luos Engine would allow you to link it to the actual created service:
+
+```c
+/*******************************************************************************
+ * Variable
+ ******************************************************************************/
+// the new line to copy and paste
+service_t *button_service;
+```
+
+Assign the variable to your service creation:
+
+```c
+void Button_Init(void)
+{
+  // the two new lines to copy and paste
+  revision_t revision = {1, 0, 0};
+  button_service = Luos_CreateService(0, STATE_TYPE, "button", revision);
+}
+```
+
+Because we do not give any message handler to Luos Engine, we will have to get the available messages into the service loop function using `Luos_ReadMsg` function:
+
+```c
+void Button_Loop(void)
+{
+  // the new block to copy and paste
+  msg_t* msg;
+  if (Luos_ReadMsg(button_service, &msg) == SUCCEED)
+  {
+    // We get a message!
+  }
+}
+```
+
+If we enter into this `if` condition, that tells us we have received a message and that we can deal with it.
+
+To be able to send back the button value, we now need to check if the received message is a proper request:
+
+```c
+void Button_Loop(void)
+{
+		msg_t* msg;
+		if (Luos_ReadMsg(button_service, &msg) == SUCCEED)
+		{
+        // the new line to copy and paste
+				if ((msg->header.cmd == IO_STATE)||(msg->header.cmd == UNKNOW)
+				{
+		      // We will have to send our button info here
+		    }
+		}
+}
+```
+
+As you can see in this message filtering, this request could be two different commands:
+
+- A service can ask specifically for an IO_STATE.
+
+- A service can ask for an UNKNOW value because it does not known the returned type of the value.
+
+:::info
+Sometimes, a service wants an **UNKNOW** type because it does not specifically know what the returned value will be an **IO_STATE** type. You can use it as a common way to get any kind of value from services.
+
+:::
+
+Everything is ready for reception, we can now learn how to reply to the request and send a message!
+
+<div align="center">
+  <img src ="https://media.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.gif" className="gif_tutorial"/>
+</div>

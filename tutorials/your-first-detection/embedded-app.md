@@ -1,0 +1,417 @@
+---
+custom_edit_url: null
+---
+
+import Image from '/src/components/Images.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Part 3: Full embedded application
+
+# Summary
+
+1. Introduction
+2. Add the package button
+3. Find the button service's ID
+4. Ask for the button value
+5. Turn on the LED depending on the button's value
+6. Try to change button's value
+7. Exercise
+
+## 1. Introduction
+
+The purpose of this training is to create a full embedded application that detects all the services in the system and create a switcher that turns on or off a LED, depending on a button.
+
+Let’s code that and see how cool it is to do it with Luos!
+
+## 2. Add the package button
+
+For now, there are tow packages in the project. In the next step, we will add the button package into _main.c_ or _Arduino.ino_.
+
+<Tabs>
+<TabItem value="Arduino" label="Arduino">
+
+```c
+#include <luos.h>
+#include "led.h"
+// the new line to copy and paste
+#include "button.h"
+#include "switcher.h"
+
+#ifdef __cplusplus
+}
+#endif
+
+/******************************************************************************
+ * @brief Setup ardiuno
+ * @param None
+ * @return None
+ ******************************************************************************/
+void setup()
+{
+    Luos_Init();
+    Led_Init();
+	// the new line to copy and paste
+    Button_Init();
+    Switcher_Init();
+}
+/******************************************************************************
+ * @brief Loop Arduino
+ * @param None
+ * @return None
+ ******************************************************************************/
+void loop()
+{
+    Luos_Loop();
+    Led_Loop();
+	// the new line to copy and paste
+    Button_Loop();
+    Switcher_Loop();
+}
+```
+
+</TabItem>
+<TabItem value="Nucleo" label="Nucleo">
+
+```c
+#include <luos.h>
+#include "switcher.h"
+#include "led.h"
+// the new line to copy and paste
+#include "button.h"
+
+void SystemClock_Config(void);
+
+int main(void)
+{
+    HAL_Init();
+    SystemClock_Config();
+    MX_GPIO_Init();
+
+    Luos_Init();
+    SwitcherInit();
+    Led_Init();
+	// the new line to copy and paste
+    Button_Init();
+
+    while (1)
+    {
+        Luos_Loop();
+        Switcher_Loop();
+        Led_Loop();
+		// the new line to copy and paste
+        Button_Loop();
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+:::caution
+You must call the `Luos_Init()` API before any service initialization to make the library work properly.
+:::
+
+:::tip
+The actual detection will be performed at `Luos_Loop()` execution. So it is better to call the `Luos_Loop()` function first, allowing the services to start working as soon as possible.
+:::
+
+## 3. Find the button service's ID
+
+The button package is now added to your project. we must find its ID to send a message to it.
+
+1. Create a variable where the ID of button service will be saved:
+
+```c
+/*******************************************************************************
+ * Variables
+ ******************************************************************************/
+service_t *switcher_app; // This will be our switcher service
+uint16_t ID_Led;
+// the new line to copy and paste
+uint16_t ID_Button;
+```
+
+2. Filter the button service alias in the routing table and ask it about it:
+
+```c
+void Switcher_MsgHandler(service_t *service, msg_t *msg)
+{
+    if (msg->header.cmd == END_DETECTION)
+    {
+		search_result_t filter_result;
+        RTFilter_Reset(&filter_result); // Init your filter.
+		// Now your filter_result have the entire routing table. #nofilter ;)
+        RTFilter_Alias(&filter_result, "led"); // Filter your filter_result only keep the services with the alias "led"
+		ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
+
+		// the three new lines to copy and paste
+		RTFilter_Reset(&filter_result); // Reset your filter.
+		RTFilter_Alias(&filter_result, "button");
+		ID_Button = filter_result.result_table[0]->id;
+
+        if (ID_Led > 0)
+        {
+	        msg_t pub_msg;
+	        pub_msg.header.cmd = IO_STATE;
+	        pub_msg.header.target_mode = ID;
+	        pub_msg.header.target =  ID_Led; // configure the target to be our led service ID
+	        pub_msg.header.size = 1;
+	        pub_msg.data[0] = 1;
+	        Luos_SendMsg(switcher_app, &pub_msg);
+		}
+    }
+}
+```
+
+## 4. Ask for the button value
+
+Now that we have the button service's ID, we can easily get the button's value (or state) by sending a message to the button service in `Switcher_Loop`. The button service will reply with a message containing the button's value
+
+If we send this request at every loop, this will create too many messages and overload the network, consuming a lot of RAM and creating network congestion.
+
+Let’s space them to 10ms between each one!
+
+1. Execute request every 10ms
+
+We will have to bring improvement to the **Switcher_loop** to be able to send a message every 10ms.
+
+You can use the **sysTick** to get a 1ms precision date using `Luos_GetSystick();`. This tick gives you the opportunity to count the milliseconds.
+
+Let’s create a variable to track the **LastAsk**:
+
+```c
+/*******************************************************************************
+ * Variables
+ ******************************************************************************/
+service_t *switcher_app; // This will be our switcher service
+uint16_t ID_Led;
+uint16_t ID_Button;
+// the new line to copy and paste
+uint32_t LastAsk;
+
+```
+
+Initialize this variable at the service start:
+
+```c
+void Switcher_Init(void)
+{
+    revision_t revision = {1, 0, 0};
+    switcher_app = Luos_CreateService(Switcher_MsgHandler, SWITCHER_APP, "Switcher", revision);
+    Luos_Detect(switcher_app);
+	// the new line to copy and paste
+    LastAsk = Luos_GetSystick();
+}
+```
+
+Check if 10ms have passed:
+
+```c
+void Switcher_Loop(void)
+{
+	// the new block to copy and paste
+    // ask button value every 10ms
+    if ((Luos_GetSystick() - LastAsk) > 10)
+    {
+        // Ask the button
+        LastAsk = Luos_GetSystick();
+    }
+}
+```
+
+2. Be sure a that detection has been made before sending a message on a network
+
+before sending a request value to the button service, we have to be sure that a detection has been made. Luos Engine provides a specific API allowing you to know if your system has been detected or not: `bool Luos_IsNodeDetected(void)`
+
+This function returns **TRUE** when your system has been entirely detected:
+
+```c
+void Switcher_Loop(void)
+{
+	// the new block to copy and paste
+    if (Luos_IsNodeDetected() == true) // Topology detection completed
+    {
+		// ask button value every 10ms
+		if ((Luos_GetSystick() - LastAsk) > 10)
+		{
+			LastAsk = Luos_GetSystick();
+		}
+	}
+}
+```
+
+3. Finally, ask for the button's value
+
+Now taht everything is ready, we can ask the button to send us its value:
+
+```c
+void Switcher_Loop(void)
+{
+    if (Luos_IsNodeDetected() == true) // Topology detection completed
+    {
+		    // ask button value every 10ms
+		    if ((Luos_GetSystick() - LastAsk) > 10)
+		    {
+				// the new block to copy and paste
+				if (ID_Button > 0)
+		        {
+					// Ask the button
+				    msg_t pub_msg;
+		            pub_msg.header.cmd = IO_STATE;
+		            pub_msg.header.target_mode = ID;
+		            pub_msg.header.target = ID_Button;
+		            pub_msg.header.size = 0;
+		            Luos_SendMsg(switcher_app, &pub_msg);
+				}
+		        LastAsk = Luos_GetSystick();
+		    }
+		}
+}
+```
+
+The button sends us an update every 10ms!
+
+## 5. Turn on the LED depending on the button's value
+
+In the `Switcher_Loop()` function, we asked the button to send us an update every 10ms. The reply of the button will be received on the `Switcher_MsgHandler` function.
+
+1. Let’s add a new condition in our message handler allowing us to deal with the button's messages:
+
+```c
+void Switcher_MsgHandler(service_t *service, msg_t *msg)
+{
+    if (msg->header.cmd == END_DETECTION)
+    {
+		search_result_t filter_result;
+        RTFilter_Reset(&filter_result); // Init your filter.
+		// Now your filter_result have the entire routing table. #nofilter ;)
+        RTFilter_Alias(&filter_result, "led"); // Filter your filter_result only keep the services with the alias "led"
+		ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
+
+		RTFilter_Reset(&filter_result); // Reset your filter.
+		RTFilter_Alias(&filter_result, "button");
+		ID_Button = filter_result.result_table[0]->id;
+
+		if (ID_Led > 0)
+        {
+	        msg_t pub_msg;
+	        pub_msg.header.cmd = IO_STATE;
+	        pub_msg.header.target_mode = ID;
+	        pub_msg.header.target =  ID_Led // configure the target to be our led service ID
+	        pub_msg.header.size = 1;
+	        pub_msg.data[0] = 1;
+	        Luos_SendMsg(switcher_app, &pub_msg);
+		}
+    }
+	// the new block to copy and paste
+	else if ((msg->header.cmd == IO_STATE) && (msg->header.source == ID_Button))
+	{
+		// Command the led accordingly to the button message
+	}
+}
+```
+
+To properly switch the LED, we have to deal with this button's message and send a command to the LED.
+
+2. Type the code that sends a message to turn on the LED at the end of the detection, inside the button's reception message condition:
+
+```c
+void Switcher_MsgHandler(service_t *service, msg_t *msg)
+{
+    if (msg->header.cmd == END_DETECTION)
+    {
+		search_result_t filter_result;
+        RTFilter_Reset(&filter_result); // Init your filter.
+		// Now your filter_result have the entire routing table. #nofilter ;)
+        RTFilter_Alias(&filter_result, "led"); // Filter your filter_result only keep the services with the alias "led"
+		ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
+
+		RTFilter_Reset(&filter_result); // Reset your filter.
+		RTFilter_Alias(&filter_result, "button");
+		ID_Button = filter_result.result_table[0]->id;
+    }
+	else if ((msg->header.cmd == IO_STATE) && (msg->header.source == ID_Button))
+	{
+		// the new block to copy and paste
+		// Command the led accordingly to the button message
+		if (ID_Led > 0)
+        {
+	        msg_t pub_msg;
+	        pub_msg.header.cmd = IO_STATE;
+	        pub_msg.header.target_mode = ID;
+	        pub_msg.header.target =  ID_Led // configure the target to be our led service ID
+	        pub_msg.header.size = 1;
+	        pub_msg.data[0] = 1;
+	        Luos_SendMsg(switcher_app, &pub_msg);
+		}
+	}
+}
+```
+
+At this point, everytime you receive a message from the button service, you will turn on the LED.
+
+3. To finish, we simply need to send to the LED the state of the button. This button's value is recovered in the first case of the tab data of the button's message:
+
+```c
+...
+	else if ((msg->header.cmd == IO_STATE) && (msg->header.source == ID_Button))
+	{
+		// Command the led accordingly to the button message
+		if (ID_Led > 0)
+        {
+	        msg_t pub_msg;
+	        pub_msg.header.cmd = IO_STATE;
+	        pub_msg.header.target_mode = ID;
+	        pub_msg.header.target =  ID_Led // configure the target to be our led service ID
+	        pub_msg.header.size = 1;
+			// the new line to copy and paste
+	        pub_msg.data[0] = msg->data[0];
+	        Luos_SendMsg(switcher_app, &pub_msg);
+		}
+	}
+...
+```
+
+Because we asked the button to update its value every 10ms, we will receive a button update every 10ms. At each update reception a new LED command will be sent, so the LED is also updated every 10ms.
+
+This way, your button control your LED.
+
+## 6. Try to change button's value
+
+1. Compile and upload the project to the board. the LED turns on at the end of the detection.
+
+2. Push on your button:
+
+<Tabs>
+<TabItem value="Arduino" label="Arduino">
+To simulate a press button, connect a wire between the BTN_PIN (Pin 8) and GND.
+<div align="center">
+  <Image src="/img/your-first-message/your-first-message-2-1.png" darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"/>
+</div>
+
+</TabItem>
+<TabItem value="Nucleo1" label="STM32F072RB Nucleo/STM32F401RE Nucleo/STM32F410RB Nucleo">
+Now push on the B1 button (the blue one) on your board.
+</TabItem>
+<TabItem value="Nucleo2" label="STM32G431KB Nucleo/STM32L432KC Nucleo">
+To simulate a press button, connect a wire between the BTN_PIN (Pin D10) and GND.
+<div align="center">
+  <Image src="/img/your-first-message/your-first-message-2-1.png" darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"/>
+</div>
+</TabItem>
+</Tabs>
+
+Congratulation, You created your first full embedded application!
+
+<div align="center">
+  <img src ="https://media.giphy.com/media/l4q8cJzGdR9J8w3hS/giphy.gif" className="gif_tutorial"/>
+</div>
+
+You can now detect all the services in your project and command them through an application.
+
+## 6. Exercise
+
+Now try to move your switcher package on another board, and keep the button and led packages on the first one: everything should work the same way!
+
+Asking the value of the button every 10ms represents a not negligible portion of code. Luos provides an `update_time` command to simplify it, check the [documentation associated page](/docs/luos-technology/message/advanced-message) to learn more about it.

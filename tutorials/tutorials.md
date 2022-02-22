@@ -11,6 +11,23 @@ This section includes step-by-steps tutorials to help you understand how to use 
 Tutorials about Luos and its associated tools.
 
 <div className="cust_square_wrapper">
+  <a href="/tutorials/your-first-service/your-first-service"><div className="cust_square">
+    <div className="cust_landing_title">Your first service</div>
+    <div className="cust_landing_seperator"></div>
+    <div className="cust_landing_text">How to create your first service with Luos Engine.</div>  
+  </div></a>
+  <a href="/tutorials/your-first-message/your-first-message"><div className="cust_square">
+    <div className="cust_landing_title">Your first message</div>
+    <div className="cust_landing_seperator"></div>
+    <div className="cust_landing_text">How to create your first message with Luos Engine.</div>  
+  </div></a>
+
+<a href="/tutorials/your-first-detection/your-first-detection"><div className="cust_square">
+<div className="cust_landing_title">Your first detection</div>
+<div className="cust_landing_seperator"></div>
+<div className="cust_landing_text">How to create your first detection with Luos Engine.</div>
+
+  </div></a>
   <a href="/tutorials/luos-and-tools/bootloader"><div className="cust_square">
     <div className="cust_landing_title">Bootloader</div>
     <div className="cust_landing_seperator"></div>
