@@ -212,6 +212,6 @@ module.exports = {
         fromExtensions: ['html'],
       },
     ],
-    // ['./plugins/hotjar', {}],
+    ['./plugins/hotjar', {}],
   ],
 };
