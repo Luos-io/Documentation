@@ -11,34 +11,30 @@ import TabItem from '@theme/TabItem';
 # Summary
 
 1. Introduction
-2. Our first embedded app, a Switcher service
+2. Your first embedded app, a switcher service
 3. Your first detection
-4. Turn the led on with our app
+4. Turn on the LED with your app
 
 ## 1. Introduction
 
-In the previous training, we created a led and a button service to control them using Pyluos.
+In the previous training, we created a LED and a button services to control them using Pyluos.
 
 We will reuse those services and create our first fully embedded application able to detect the topology of our system and use the available services in it.
 
-## 2. Our first embedded app, a Switcher service
+## 2. Our first embedded app, a switcher service
 
-We will create a simple application able to find a `led` and `button` services to turn **on** or **off** the led depending on the button state.
+We will create a simple application able to find a `led` and `button` services, to turn **on** or **off** the LED depending on the button's state.
 
 First, clone or download the training [repository](https://github.com/Luos-io/Training).
 
-In your Platformio IDE, in the `Training/3_First_Detection/Work_base` open the folder corresponding to your board, and connect the board with an USB cable.
+In PlatformIO IDE, open the folder corresponding to your board in `Training/1_First_Service/Work_base` from the repository you just cloned or downloaded, and connect the board to your computer with a USB cable.
 
-Because we already previously learn how to make a services skeleton, we already made it for you in this one.
+Because you previously learned how to make a service's skeleton, we already prepared it for you in this tutorial.
 
-Open the `lib/switcher/switcher.c` file on Platformio. This will be your base work!
+Open the `lib/switcher/switcher.c` file on PlatformIO. This will be your base work!
 
-This switcher application is specific to this tutorial, so there is no default Luos type available for it. This means that you will need to create a new custom one. Let’s call it `SWITCHER_APP`:
+This switcher application is specific to this tutorial, so there is no default Luos type available for it. This means that you will need to create a custom one. Let’s call it `SWITCHER_APP`.
 
-:::caution
-Throughout this tutorial, you will have to locate the right lines where to copy/paste the new line(s) code we provide to you, into your C file (Nucleo) or your INO file (Arduino). We explain it below for this first case, and then we will let you do it by your own.
-
-:::
 
 ```c
 void Switcher_Init(void)
@@ -48,7 +44,7 @@ void Switcher_Init(void)
 }
 ```
 
-Now we need to add this type after the Luos default ones. To do that Luos provide a constant defining the beginning of the custom type list. To start your custom type list you can do :
+Now we need to add this type after the Luos default ones. To do that, Luos Engine provides a constant defining the beginning of the custom type list. To start your custom type list, you can add:
 
 ```c
 enum // Custom type list
@@ -59,17 +55,17 @@ enum // Custom type list
 
 ## 3. Your first detection
 
-To be able to use other services we need to list them, define their position and purpose. To do that Luos allow you to make a topology detection. The detection has to be done at least one time by one of the services of the network to allow Luos to know how to route the different messages to their destinations. **Without detection, you can’t exchange any information between services**.
+To be able to use other services, we need to list them, define their position, and their purpose. To do that, Luos Engine allows you to make a topology detection. The detection has to be done at least once by one of the services in the network, so that Luos Engine knows how to route the different messages to their destinations. **Without a detection, you can’t exchange any information between services**.
 
-In the previous tutorials, the Gate application made the detection for you. Now it’s time to emancipate from the gate and make it by yourself
+In the previous tutorials, the gate application was making the detection for you. Now it is time to emancipate from the gate and make the detection by yourself.
 
-:::caution
+:::info
 More details about detections and topology are on [the related Luos documentation page](/docs/luos-technology/node/topology).
-:::caution
+:::
 
-To make a detection, Luos engine will need to know which service is asking for it. So we will need to pass our Switcher service to the detection function.
+To make a detection, Luos Engine needs to know which service is requesting it. So we will need to pass the switcher service to the detection function.
 
-To do that you need to create a `service_t` pointer, and at the service creation, Luos will allow you to link it to the real created service :
+To do that, you need to create a `service_t` pointer, so that Luos Engine allows you to link it to the actual created service, at the service creation:
 
 ```c
 /*******************************************************************************
@@ -88,7 +84,7 @@ void Switcher_Init(void)
 }
 ```
 
-Now we can make the detection using **`Luos_Detect()`**:
+Now we can make the detection using `Luos_Detect()`:
 
 ```c
 void Switcher_Init(void)
@@ -100,17 +96,17 @@ void Switcher_Init(void)
 }
 ```
 
-:::caution
-After using this API Luos will assign unique ID to all the services of the system and create a routing table containing all the service information present in the network: [ID, Alias](/docs/luos-technology/services/services/), [topology](docs/luos-technology/node/topology/). This routing table create by the service starting the detection and share to the other. More details about the routing table on the [dedicated Luos documentation page](/docs/luos-technology/services/routing-table).
+:::info
+After using this API, Luos Engine will assign a unique ID to each service in the system and create a routing table containing all the services' information present in the network: [ID, Alias](/docs/luos-technology/services/services/), and [topology](docs/luos-technology/node/topology/). This routing table created by the service starting the detection is shared to the others. More details about the routing table can be found on the [dedicated Luos documentation page](/docs/luos-technology/services/routing-table).
 :::
 
-If you check your main files, we have a switcher package and a Led Package. All those packages create only 1 service. The service performing the detection always has the id 1 because this service will be the “root” of your system. So in our case, the switcher app will receive ID 1. Then the other services will get the next ID following the creation order, So the Led service will receive ID 2.
+If you check your main files, you will see a switcher package and a led package. All those packages create only one service. The service performing the detection always has the ID 1 because this service will be the “root” of your system. So in our case, the switcher app will receive ID 1. Then, the other services will get the next ID following the creation order, so the led service will receive ID 2.
 
-let’s try to turn on the led!
+Now, let’s try to turn on the LED!
 
-## 4. Turn the led on with our app
+## 4. Turn on the LED on with your app
 
-At the end of a detection, every service will receive an **END_DETECTION** message**.** To simply turn on the led on after the detection we will use this **END_DETECTION** message to send an order to the led.
+At the end of a detection, every service will receive an **END_DETECTION** message. To simply turn on the LED after the detection, we will use this **END_DETECTION** message to send an order to the LED.
 
 ```c
 void Switcher_MsgHandler(service_t *service, msg_t *msg)
@@ -131,7 +127,7 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 
 Compile and upload the project to the board.
 
-The service led was detected by the switcher application and at the end of the detection, a message was sent to the led service to turn on the LED.
+The led service was detected by the switcher application. At the end of the detection, a message was sent to the led service to turn on the LED.
 
 <div align="center">
   <img src ="https://media.giphy.com/media/KcQ73bfmmsy6lg2RzG/giphy.gif" className="gif_tutorial"/>

@@ -21,11 +21,11 @@ import TabItem from '@theme/TabItem';
 
 In the _Get started_ tutorial, we learned to perform the following essential actions:
 
-1. Set up the embedded environment to make a basic Luos-LED-blinking project
-2. Control of your microservices with high-level API and set up the Python environment
-3. How to spread microservices across multiple boards on a network while keeping the exact same behavior with Luos Engine
+1. Set up the embedded environment to make a basic Luos-LED-blinking project.
+2. Control of your microservices with high-level API and set up the Python environment.
+3. How to spread microservices across multiple boards on a network while keeping the exact same behavior with Luos Engine.
 
-Upon finishing the _Get started_, you can grab what a microservice represents into an embedded system. However, Luos still is black magic to you.
+Upon finishing the _Get started_, you can grab what a microservice represents into an embedded system. However, Luos still remains black magic to you.
 
 Let us demystify it by helping you to make first service code!
 
@@ -37,10 +37,10 @@ Let us demystify it by helping you to make first service code!
 
 Clone or download the [training repository](https://github.com/Luos-io/Training).
 
-In PlatformIO IDE, open the folder corresponding to your board from the repository you just cloned or downloaded `Training/1_First_Service/Work_base`, and connect the board with an USB cable.
+In PlatformIO IDE, open the folder corresponding to your board in `Training/1_First_Service/Work_base` from the repository you just cloned or downloaded, and connect the board to your computer with a USB cable.
 
 1. Check that the right environment is selected, then compile and upload the project to the board (right arrow button in the bottom left of the window).
-2. Using a terminal and the`pyluos-shell`command, you should see:
+2. Using a terminal and the `pyluos-shell` command, you should see:
 
 ```bash
 	  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -56,27 +56,28 @@ You are ready to go!
 
 ## 3. Create your first service
 
-Now, let’s learn how to create a service. To understand how to create your own service, we will create a simple LED service that you will be able to use the same way you were using it in the Get started.
+Now, let’s learn how to create your own service. To understand how to do it, we will create a simple LED service that you will be able to use the same way you were using it in the Get started.
 
 :::tip
-At any time, you can check the solution in the folder Training/1_First_Service/Solution, but no cheating! This is only for emergency situation...
+At any time, you can check the solution in the folder _Training/1_First_Service/Solution_, but no cheating! This is only for emergency situation...
 
 :::
 
-A service is an encapsulated feature defining an API and allowing other services to interact with it (see the [documentation](/docs/luos-technology/services/services))
+A service is an encapsulated feature defining an API and allowing other services to interact with it (see the [documentation](/docs/luos-technology/services/services)).
 
-In the case of a simple LED, your service will have one input with the state of the IO that turns the LED ON or OFF:
+In the case of a simple LED, your service will have one input with the state of the IO that turns the LED on or off:
 
 <div align="center">
   <Image src="/img/your-first-service/luos-service-1.png" darkSrc="/img/your-first-service/luos-service-1-dark.png"/>
 </div>
 
-In your service code, you will have to give the order to turn the LED ON or OFF depending on the received IO state message. So you need a function to be called when another service sends a message, so that this function deals with the LED; this kind of function is called a _callback_.
+In your service code, you will have to give the order to turn the LED on or off depending on the received IO state message. So you need a function to be called when another service sends a message, so that this function deals with the LED; this type of function is called a _callback_.
 
-You can declare your LED callback functions at the beginning of the file main file located in the _/src/_ folder. We will see later how to deal with this function.
+You can now declare your LED callback functions at the beginning of the file main file located in the _/src/_ folder (we will see later how to deal with this function).
 
 :::info
-Throughout this tutorial, you will have to locate the right lines where to copy/paste the new line(s) code we provide to you, into your C file (Nucleo) or your INO file (Arduino). We explain it below for this first case, and then we will let you do it by your own.
+Throughout this tutorial, you will have to locate the right lines where to copy/paste the new code line(s) we provide to you, into your C file (Nucleo) or your INO file (Arduino). It is explained below with a comment before the lines to locate for this first case, but after that we will let you locate on your own the right place to put the code. Of course we will continue providing the few lines of code situated just before the code you have to add to the files. 
+
 :::
 
 ```c
@@ -93,9 +94,9 @@ void Led_MsgHandler(service_t *service, msg_t *msg){}
 
 So that your service can be recognized by other services, you will need to expose some information about the features you want to encapsulate into it:
 
-- The service type, which defines the capabilities and the purpose of your service. You can find the list of all the [Luos types](https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h). Our new service fits with the **STATE_TYPE** (boolean 1 or 0).
+- The service type, which defines the capabilities and the purpose of your service. You can find the list of all the [Luos types in this page](https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h). Our new service fits with the **STATE_TYPE** (boolean 1 or 0).
 - The service alias, which is the default name of your service. Let’s name our LED “**led**”.
-- The service revision, which is the firmware version of your service. Let’s say our firmware has version **1.0.0**. We have to make a _revision_t_ variable to send it.
+- The service revision, which is the firmware version of your service. Let’s say our firmware has the version **1.0.0**; we have to make a _revision_t_ variable to send it.
 
 Now that we have everything we need to create our service, we will begin by creating the LED service directly after the initialization of the other services, into the initialization of your code and using the `Luos_CreateService` function:
 
@@ -110,7 +111,7 @@ void setup()
     Gate_Init();
     Blinker_Init();
 
-    // the two new lines line to copy and paste
+    // the two new lines to copy and paste:
 	revision_t revision = {1, 0, 0};
     Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 
@@ -131,7 +132,8 @@ int main(void)
     Pipe_Init();
     Gate_Init();
     Blinker_Init();
-    // the two new lines to copy and paste
+
+    // the two new lines to copy and paste:
 	revision_t revision = {1, 0, 0};
     Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 
@@ -148,9 +150,7 @@ int main(void)
 </TabItem>
 </Tabs>
 
-By adding these few lines to your code, you just created your first service. For now, this service doesn’t do anything because it is empty, but you still can see and access it.
-
-Let’s try to see it by lauching a detection:
+By adding these few lines to your code, you just created your first service. For now, this service doesn’t do anything because it is empty, but you still can see and access it by lauching a detection:
 
 1. Save the file, then compile and upload the project to the board.
 2. Using the command `pyluos-shell` in a terminal, you should see the following routing table:
@@ -176,9 +176,9 @@ The blinker service will be able to find your LED service thanks to the descript
 
 ## 4. Manage the LED on your service
 
-To control the LED, we now need to configure the LED’s GPIO pin. On a MCU to set a value on a GPIO pin, it must be configurate as output. this way we can switch on or off a LED.
+To control the LED, we now need to configure the LED’s GPIO pin. To set a value to a GPIO pin on a MCU, you must configurate it as an output; this way we can switch a LED on or off.
 
-Add your PIN configuration next the service initialization in the same file:
+Add your PIN configuration next to the service initialization in the same file:
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -194,7 +194,7 @@ void setup()
     revision_t revision = {1, 0, 0};
     Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 
-    // the new line to copy and paste
+    // the new line to copy and paste:
     pinMode(LED_BUILTIN, OUTPUT);
 
 }
@@ -209,7 +209,7 @@ int main(void)
     HAL_Init();
     SystemClock_Config();
 
-    // the new line to copy and paste
+    // the new line to copy and paste:
     MX_GPIO_Init();//Nucleo Led Pin init
 
     Luos_Init();
@@ -232,7 +232,7 @@ int main(void)
 </TabItem>
 </Tabs>
 
-As we mentioned previously, our LED service needs to react at the reception of an IO state message. To do that, we created earlier a callback function (**`Led_MsgHandler`**) called by Luos Engine when another service sends a message. So to make the LED service work, we simply have to complete (see below) the `Led_MsgHandler` of our service. This will allow the LED service to use the messages sent by the blinker service.
+As we mentioned previously, our LED service needs to react at the reception of an IO state message. To do that, we created earlier a callback function (**`Led_MsgHandler`**) called by Luos Engine when another service sends a message. So to make the LED service work, we simply have to complete the `Led_MsgHandler` of our service (see below). This will allow the LED service to use the messages sent by the blinker service.
 
 There are two arguments in the callback function **`Led_MsgHandler`**:
 
@@ -240,7 +240,7 @@ There are two arguments in the callback function **`Led_MsgHandler`**:
 
 - A message pointer (msg): This is the actual message you receive with all the information the other service wants to give you. You will be able to get the LED state from the data of this message.
 
-To control the LED depending on the message data, you can fill the content of the callback function `Led_MsgHandler` where you pasted it at the beginning of your main file (Arduiono.ino or main.c)
+To control the LED depending on the message data, you can fill the content of the callback function `Led_MsgHandler` where you pasted it at the beginning of your main file (Arduino.ino or main.c)
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -248,7 +248,7 @@ To control the LED depending on the message data, you can fill the content of th
 ```c
 void Led_MsgHandler(service_t *service, msg_t *msg)
 {
-     // the block to copy and paste
+     // the block to copy and paste:
       if (msg->data[0] == 0)
       {
           digitalWrite(LED_BUILTIN, false);
@@ -266,7 +266,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 ```c
 void Led_MsgHandler(service_t *service, msg_t *msg)
 {
-    // the block to copy and paste
+    // the block to copy and paste:
     if (msg->data[0] == true)
     {
         HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, true);
@@ -282,8 +282,10 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 </Tabs>
 
 Compile and upload the project to the board. You should now see the LED blink at the frequency decided by the blinker service.
+
 :::tip
-The Blinker service will send a message at the blink frequency you want the LED to change state (ON/OFF). When a message is sent to the LED service, Luos will call the message handler so that your code makes the LED react.
+The blinker service will send a message at the blink frequency you want the LED to change state (ON/OFF). When a message is sent to the LED service, Luos will call the message handler so that your code makes the LED react.
+
 :::
 
 <div align="center">
@@ -292,7 +294,7 @@ The Blinker service will send a message at the blink frequency you want the LED 
 
 ## 5. Secure your input data
 
-Thank’s to our `Led_MsgHandler` callback function, our service is now able to react to any input message. However, we don’t want it to react to _any_ message, but only to IO state messages. To make sure we use the data appropriately, it is better to use message type specifis to the data in the command field of the message.
+Thank’s to our callback function `Led_MsgHandler`, our service is now able to react to any input message. However, we don’t want it to react to _any_ message, but only to IO state messages. To make sure we use the data appropriately, it is better to use message types that are specific to the data in the command field of the message.
 
 To do that, let’s add a filter on the message command:
 
@@ -302,7 +304,7 @@ To do that, let’s add a filter on the message command:
 ```c
 void Led_MsgHandler(service_t *service, msg_t *msg)
 {
-    // the new line to copy and paste
+    // the new line to copy and paste:
     if (msg->header.cmd == IO_STATE)
     {
         if (msg->data[0] == 0)
@@ -323,7 +325,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 ```c
 void Led_MsgHandler(service_t *service, msg_t *msg)
 {
-    // the new line to copy and paste
+    // the new line to copy and paste:
 	if (msg->header.cmd == IO_STATE)
     {
 		    if (msg->data[0] == false)
@@ -341,12 +343,12 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 </TabItem>
 </Tabs>
 
-Using conditional statements, you will also be able to manage multiple types of input messages and so that the services react differently depending on the command they receive.
+Using conditional statements, you will also be able to manage multiple types of input messages so that the services react differently depending on the command they receive.
 
 ## 6. Luos Package
 
 We successfully created a simple service in our main file. But this service doesn’t look like the other one already present on your project yet.
 
-If you want to move your service into another project, you will have to directly copy your code from one main program to another. Also, If you want to have multiple services, your code will quickly become a mess!
+If you want to move your service into another project, you will have to directly copy your code from one main program to another. Also, if you want to have multiple services, your code may quickly become a mess!
 
 That is why we recommend creating Luos Engine’s packages to solve these issues.

@@ -6,60 +6,60 @@ import Image from '/src/components/Images.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Part 1: Receiving Message
+# Part 1: Receiving a message
 
 # Summary
 
 1. Introduction
-2. Callback Vs Polling
-3. Create your Button service
+2. Callback vs. polling
+3. Create a button service
 4. Handle a request using the polling method
 
 ## 1. Introduction
 
-A button can be represented (as the led) by a state-type service. But contrary to the Led the button will have to send a state value instead of receiving it.
+A button can be represented (as a LED) by a state-type service. But contrary to the LED, the button will have to send a state value instead of receiving it.
 
-A button service only has to manage a button, so it’s kind of dumb! Your button service doesn’t know where it needs to send its value, that’s why you will have to react to a request.
+A button service only has to manage a button, so it is kind of dumb! Your button service doesn’t know where it needs to send its value, that’s why you will have to program a reaction from an external request.
 
 <div align="center">
   <img src ="https://media.giphy.com/media/vRNpn8HOGmpOpPmS7g/giphy.gif" className="gif_tutorial"/>
 </div>
 
-Your button service will have to receive a request message asking for the state of the button, then your service will have to send the state value back to the asking service.
+Your button service will have to receive a request message asking for the state of the button, then the service will have to send the state's value back to the asking service.
 
 <div align="center">
   <Image src="/img/your-first-message/your-first-message-1.png" darkSrc="/img/your-first-message/your-first-message-1-dark.png"/>
 </div>
 
-## 2. Callback vs polling
+## 2. Callback vs. polling
 
-Since the [Create a Package ](/tutorials/your-first-service/create-a-package) tutorial, you know how to create a service on a package with a callback and stuff.
+Since the [Create a Package](/tutorials/your-first-service/create-a-package) tutorial, you know how to create a service into a package with a callback.
 
-But in fact, Luos Services have 2 different ways to receive messages, callback, and polling.
+But Luos Engine's services have in fact two different ways to receive messages: callback and polling.
 
-- Asynchronously (CallBack)
+- Asynchronous reception (Callback)
 <div align="center">
   <Image src="/img/your-first-message/your-first-message-1-1.png" darkSrc="/img/your-first-message/your-first-message-1-1-dark.png"/>
 </div>
-In the callback option, you give to Luos a shipping address (a message handler) allowing it to just deliver the message to your service. Your service need to be ready to receive and handle the message directly.
 
-- Synchronously (Polling)
+In the callback option, you give to Luos Engine a shipping address (called a message handler) allowing it to just deliver the message to your service. Your service needs to be ready to receive and handle the message directly.
+
+- Synchronous reception (Polling)
 <div align="center">
   <Image src="/img/your-first-message/your-first-message-1-2.png" darkSrc="/img/your-first-message/your-first-message-1-2-dark.png"/>
-  In the polling option, Luos don’t know your shipping address, so your service will have to check if Luos have a messages available and get it if there is.
-Your service can go get a messages when he want to.
 </div>
-This time we will create a service without any callback to explore the polling option.
 
-In PlatformIO IDE, open the folder corresponding to your board from the repository you cloned or downloaded `Training/2_First_Message/Work_base`, and connect the board with an USB cable.
+In the polling option, Luos Engine doesn’t know the shipping address, so your service will have to check if Luos Engine has a messages available, and then get it if there is one.
+Your service can get a message whenever it wants to.
 
-## 3. Create your Button service
+In this tutorial, we will create a service without any callback to explore the polling option.
 
-In the button package init function you can create your service but this time doesn’t give any callback and replace it with a 0:
+In PlatformIO IDE, open the folder corresponding to your board in `Training/1_First_Service/Work_base` from the repository you just cloned or downloaded, and connect the board to your computer with a USB cable.
 
-:::caution
-Throughout this tutorial, you will have to locate the right lines where to copy/paste the new line(s) code we provide to you, into your C file (Nucleo) or your INO file (Arduino). We explain it below for this first case, and then we will let you do it by your own.
-:::
+## 3. Create a button service
+
+You can create your service in the button package's `Init` function, but this time do not write any callback in the first argument and put a `0` instead:
+
 
 ```c
 void Button_Init(void)
@@ -72,14 +72,14 @@ void Button_Init(void)
 void Button_Loop(void){}
 ```
 
-Because you don’t give any shipping address to Luos you will have to go get it by yourself!
+Because you did not give any shipping address to Luos Engine, your service will have to go get it by itself.
 
-We only need 2 functions here `Button_Init()` and `Button_loop()`.
+We only need 2 functions here, called `Button_Init()` and `Button_loop()`.
 
 Let’s try it!
 
-1. Compil and upload to the board the project.
-2. Use pyluos-shell. You should see :
+1. Compile and upload the project to the board.
+2. Use `pyluos-shell` in a terminal. You should see the following routing table:
 
 ```bash
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -97,7 +97,7 @@ Let’s try it!
 
 ## 4. Handle a request using the polling method
 
-To Pull message from Luos engine we will need to know which service is asking for it. To do that you need to create a `service_t` pointer, and at the service creation, Luos will allow you to link it to the real created service :
+To pull messages from Luos Engine, we will need to know which service is asking for them. To do that, you need to create a `service_t` pointer, so that at the service creation Luos Engine would allow you to link it to the actual created service:
 
 ```c
 /*******************************************************************************
@@ -107,7 +107,7 @@ To Pull message from Luos engine we will need to know which service is asking fo
 service_t *button_service;
 ```
 
-Assign your variable to your service creation
+Assign the variable to your service creation:
 
 ```c
 void Button_Init(void)
@@ -118,7 +118,7 @@ void Button_Init(void)
 }
 ```
 
-Because we don’t give any message handler to Luos we will have to get the available messages into the service loop function using `Luos_ReadMsg` function:
+Because we do not give any message handler to Luos Engine, we will have to get the available messages into the service loop function using `Luos_ReadMsg` function:
 
 ```c
 void Button_Loop(void)
@@ -132,9 +132,9 @@ void Button_Loop(void)
 }
 ```
 
-If we enter in this if condition this is because we have received a message so we can deal with it.
+If we enter into this `if` condition, that tells us we have received a message and that we can deal with it.
 
-To be able to send back the button value we need to check if the received message is a good request:
+To be able to send back the button value, we now need to check if the received message is a proper request:
 
 ```c
 void Button_Loop(void)
@@ -151,17 +151,18 @@ void Button_Loop(void)
 }
 ```
 
-As you can see in this message filtering, this request could be 2 different command :
+As you can see in this message filtering, this request could be two different commands:
 
-- A service could ask specifically for an IO_STATE.
+- A service can ask specifically for an IO_STATE.
 
-- A service could ask for an UNKNOW value because it doesn’t known the returned type of the value.
+- A service can ask for an UNKNOW value because it does not known the returned type of the value.
 
 :::info
-Sometime a service want an **UNKNOW** because it doesn’t specifically know what the returned value will be an **IO_STATE**. You can use it as a common way to get any kind of value from services.
+Sometimes, a service wants an **UNKNOW** type because it does not specifically know what the returned value will be an **IO_STATE** type. You can use it as a common way to get any kind of value from services.
+
 :::
 
-Everything is ready, we can now learn how to reply to the request and send Message!!!
+Everything is ready for reception, we can now learn how to reply to the request and send a message!
 
 <div align="center">
   <img src ="https://media.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.gif" className="gif_tutorial"/>

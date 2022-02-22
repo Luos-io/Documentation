@@ -11,49 +11,49 @@ import TabItem from '@theme/TabItem';
 # Summary
 
 1. Introduction
-2. Dynamic and scaling
-3. Searching things in the routing table
+2. Dynamic and scaling: how the routing table can make your code flexible
+3. Searching information in the routing table
 
 ## 1. Introduction
 
-We just learn how to detect a Luos network. But what is the point of making a detection if we have to count the service number into the network to find the ID corresponding to the service we want?
+You just learned how to detect a Luos Engine network. But what is the point of making a detection if we have to count every service number in the network to find the ID corresponding to the service we want?
 
 <div align="center">
   <img src ="https://media.giphy.com/media/z1GQ9t8FxipnG/giphy-downsized-large.gif" className="gif_tutorial"/>
 </div>
 
-Don’t worry, that’s why the routing table exists.
-Lets’s discover how to dynamically find an ID using it!
+Do not worry, this is why the routing table exists.
+Let’s discover how to dynamically find an ID using it!
 
-## 2. How routing table can make your code extremely flexible?
+## 2. Dynamic and scaling: how the routing table can make your code flexible
 
-In a classic multi-board system, to send messages between entities (most of the time boards), you have to define a list of addresses for any of them allowing you to target messages.
+In a classic multi-board system, to send messages between entities (most of the time boards), you have to define a list of addresses for each of them allowing you to target messages.
 
-If something moves on your system, you will have to update this list and probably re-compile all your board projects with this new list.
+If an entity is moved inside your system, you have to update this list and probably re-compile all your boards' projects with this new list.
 
-But most importantly all your code will be specific to this particular configuration, and it will be almost impossible to reuse any piece of your code in any other project.
+But most importantly, all your code is specific to this particular configuration, and it is almost impossible to reuse any piece of your code in any other project.
 
-The Luos detection dynamically assigns ID for you depending on the physical topology and regroup all the information regarding services in a Routing table.
+The Luos Engine detection dynamically assigns ID for you depending on the physical topology, and regroups all the information regarding services in a routing table.
 
-The routing table is a kind of database with all the nodes and services information available and after detection, every service has access to it.
+The routing table is kind of a database with all the nodes' and services' information available; and after detection, every service has access to it.
 
-Instead of having defined ID on your system, you can dynamically find them to make your service work in any condition allowing dynamic, portable, and scalable systems.🤯
+Instead of having defined IDs on your system, you can dynamically find them to make your service work in any condition allowing dynamic, portable, and scalable systems.
 
-## 3. Searching things in the routing table
+## 3. Searching information in the routing table
 
-To find things on this routing table, Luos engine provides some filtering function allowing you to extract the services depending on some criteria. You can cumulate those filtering functions to create complex research and find the perfect resource fitting your needs.
+To find information on this routing table, Luos Engine provides some filtering functions allowing you to extract the services depending on various criteria. You can cumulate those filtering functions to create complex searches and find the perfect resource fitting your needs.
 
-:::warning
-To learn more about routing table filters please feel free to check out [the related documentation page](/docs/luos-technology/services/routing-table).
+:::info
+To learn more about routing table filters, feel free to check out [the related documentation page](/docs/luos-technology/services/routing-table).
 :::
 
-Instead of directly writing the ID of the led at the end of the detection, let’s find it and see how we can make it easily scale!
+Instead of directly writing the ID of the led service at the end of the detection, let’s find it and see how we can scale it easily!
 
 One of the characteristics of our led service is its alias.
 
-In your Switcher.c file, on the Switcher_MsgHandler let’s find the service with the “led” alias to send it a message.
+In _Switcher.c_, on the `Switcher_MsgHandler` let’s find the service with the “led” alias to send a message to it.
 
-1. Create a variable where the ID of led service will be save
+1. Create a variable where the ID of theled service will be saved:
 
 ```c
 /*******************************************************************************
@@ -64,10 +64,10 @@ service_t *switcher_app; // This will be our switcher service
 uint16_t ID_Led;
 ```
 
-1. Use routing table filter to find the id of the led service by its alias
-   - Create a filter result variable that store the result after filtering
-   - Reset this filter to get back the complet routing table
-   - Apply you filter
+2. Use the routing table filters to find the ID of the led service by its alias:
+ - Create a filter result variable that stores the result after filtering.
+ - Reset this filter to get back the full routing table.
+ - Apply your filter.
 
 ```c
 void Switcher_MsgHandler(service_t *service, msg_t *msg)
@@ -97,12 +97,12 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 ```
 
 :::info
-A field **result_nbr (**see **[search_result_t](/docs/luos-technology/services/routing-table)** structure**)** give you the match number of your research.
-For example, in our system only one service have an alias “led” so **filter_result.result_nbr = 1;** the return of the filtering (ID of led) is place the first case of a tab: **filter_result.result_table[0].**
-Using this filtering we can easily adapt our switcher code to be able to control as many led services we have on the network by sending the message in a loop until the **result_nbr** is match
+A field `result_nbr` (see **[search_result_t](/docs/luos-technology/services/routing-table)** structure) gives you the  number matching your search.
+For example, only one service have an alias “led” in our system, so `filter_result.result_nbr = 1;` returns the filtering (ID of led service) and is placed in the first case of a tab: `filter_result.result_table[0]`.
+Using this filtering, we can easily adapt our switcher code to be able to control as many led services we have on the network by sending the message in a loop until the **result_nbr** matches.
 :::
 
-Compile and upload the project to the board, and the LED turns on at the end of the detection.
+Compile and upload the project to the board, and watch the LED turns on at the end of the detection.
 
 <div align="center">
   <img src ="https://media.giphy.com/media/zcCGBRQshGdt6/giphy.gif" className="gif_tutorial"/>

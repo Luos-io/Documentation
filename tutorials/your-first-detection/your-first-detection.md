@@ -15,27 +15,25 @@ High
 
 ## 1. Description
 
-Since the beginning of this training, we discover how to create services, deal with messages and control them using Pyluos. But we never create any embedded application service using other services.
+Since the beginning of this training, you discovered how to create services, deal with messages, or control them using Pyluos. But you never created embedded application service using other services yet.
 
-##
-
-It’s time for you to go to the next stage and learn how to use your new superpowers!
+It is time for you to go to the next stage and learn how to use your new superpowers!
 
 <div align="center">
   <img src ="https://media.giphy.com/media/977YesTjNfQC7vQiph/giphy.gif" className="gif_tutorial"/>
 </div>
 
-In this tutorial, you will learn :
+In this tutorial, you will learn:
 
-- How to start a topology detection
+- how to start a topology detection
 
-- How to find what you need in the routing table
+- how to find what you need in the routing table.
 
 ## 2. Level guidelines
 
 ### Pre-requisite:
 
-- [Luos Get started](/get-started/get-started)
+- [Luos _Get started_](/get-started/get-started)
 - [Training repository](https://github.com/Luos-io/Training)
 - [Luos Basics](/docs/luos-technology/basics/basics)
 - [Training 1: Your first service](/tutorials/your-first-service/your-first-service)
@@ -43,7 +41,7 @@ In this tutorial, you will learn :
 
 ### Equipment you will need
 
-Choose your Dev board from the Get Started :
+Choose your development board from the list in the _Get started_ tutorial:
 
 - **[Arduino zero](https://www.arduino.cc/en/Main/ArduinoBoardZero&)**, **[MKRzero](https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data)**, **[MKR1000](https://store.arduino.cc/collections/boards/products/arduino-mkr1000-wifi)**, or any **[SAMD21-based](https://en.wikipedia.org/wiki/List_of_Arduino_boards_and_compatible_systems)** Arduino board
 - **[STM32L432KC Nucleo](https://www.st.com/en/evaluation-tools/nucleo-l432kc.html)**
@@ -52,15 +50,15 @@ Choose your Dev board from the Get Started :
 - **[STM32F410RB Nucleo](https://www.st.com/en/evaluation-tools/nucleo-f410rb.html)**
 - **[STM32G431KB Nucleo](https://www.st.com/en/evaluation-tools/nucleo-g431kb.html)**
 
-:::warning
-In case of Arduino board don’t forget to modify the file plateformio.ini to match your board choose.
+:::caution
+If you are using an Arduino board other than MKRzero, you will have to modify the line board= in the file plateformio.ini from the folder 1_First_Service/Work_base/Arduino to match your board reference.
 :::
 
 ## 3. Summary
 
 [Part 1: The topology of your system](/tutorials/your-first-detection/topology)
 
-[Part 2: How to use the routing Table](/tutorials/your-first-detection/routing-table)
+[Part 2: How to use the routing table](/tutorials/your-first-detection/routing-table)
 
 [Part 3: Full embedded application](/tutorials/your-first-detection/embedded-app)
 

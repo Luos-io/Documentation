@@ -6,30 +6,30 @@ import Image from '/src/components/Images.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Part 2: Send Message from button service
+# Part 2: Send a message from a button service
 
 # Summary
 
 1. Introduction
-2. Setup your Hardware
+2. Set up your hardware
 3. Structure of a Luos message
-4. Send the button value back
+4. Send back the button's value
 5. Test the response
-6. Exercice
+6. Exercise
 
 ## 1. Introduction
 
-There is 2 way to receive a message but what about sending one!
+There are two ways to receive a message, but what about sending one?
 
 <div align="center">
   <img src ="https://c.tenor.com/GM0o1UWir1wAAAAC/i-dont-know-how-it-works-eric-cartman.gif" className="gif_tutorial"/>
 </div>
 
-Don’t worry we see that step by step.
+Don’t worry, we will see how to do it step by step.
 
-## 2. Setup your Hardware
+## 2. Set up your hardware
 
-Setup the MCU pin for your button in your button.c file:
+Begin by setting up the MCU pins for your button in the file _button.c_:
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -45,7 +45,7 @@ Setup the MCU pin for your button in your button.c file:
 #define BTN_PIN 8
 ```
 
-Set the Pin as Input
+Set the pin as an input:
 
 ```c
 
@@ -61,23 +61,23 @@ void Button_Init(void)
 </TabItem>
 <TabItem value="Nucleo" label="Nucleo">
 
-For Nucleo the initialisation of your PIN as input is done in the main files by the function
+For Nucleo boards, the initialization of your pins as an input is done in the main file (C) inside the following function:
 
 ```c
 MX_GPIO_Init();
 ```
 
-You have nothing special to do just remember the value of the pin : BTN_GPIO_Port and BTN_Pin (see main.h)
+You must only remember the names of the pins: BTN_GPIO_Port and BTN_Pin (see _main.h_).
 </TabItem>
 </Tabs>
 
-Now everything is ready to send back the button value.
+Now everything is ready to send back the button's value in a message.
 
-## 3. Setup your Hardware
+## 3. Send back the button's value
 
-> By catching a message we already see that they contain some interesting information allowing you to understand the meaning of the transmitted data.
+> By learning how to catch messages from the previous page of this tutorial, we already know that they contain some interesting information allowing you to understand the meaning of the transmitted data.
 
-Any message contains 2 main parts :
+Any message contains two main parts:
 
 <div align="center">
   <Image src="/img/your-first-message/your-first-message-2.png" darkSrc="/img/your-first-message/your-first-message-2.png"/>
@@ -85,59 +85,59 @@ Any message contains 2 main parts :
 
 The **Data** is the actual transmitted data.
 
-The **Header** contains some contextual information allowing you to get the purpose of the Data.
+The **Header** contains some contextual information allowing the receiver to get the purpose of the Data.
 
 :::info
-For more information about the messages please read [the related documentation page](https://docs.luos.io/docs/luos-technology/message/message).
+For more information about the messages, you can refer to [the related documentation page](https://docs.luos.io/docs/luos-technology/message/message).
 :::
 
-:::tip
-To send a msg you will need to fill in some header information regarding the target and the data of you message.
-:::
+To send a message, you will need to fill in some header information regarding the target and the data of you message:
 
 ### Message target
 
-In this button service, we want to reply to a request coming from another service. So we will want to target this specific service and be sure it gets our answer.
+In this button service, we want to reply to a request coming from another service. So we will target this specific service and be sure that it gets the answer.
 
-To do that we will need to configure :
+To do that, we will need to configure the following information:
 
-- **target_mode** as **IDACK ⇒** because we target only one service and want to be sure it gets our message
+- **target_mode** as **IDACK** ⇒ because we target only one service and want to be sure it gets the message
 
-- **target** as the requested message **source** ⇒ because we want to target the one sending us the request.
+- **target** as the requested message **source** ⇒ because we want to target the service sending the request.
 
 ### Message data meaning
 
-In this message, we also need to explain the meaning of the data.
+To send the message, we also need to explain the meaning of the data.
 
-In this button service, we want to send an **IO_STATE** and our data **size** will be a byte because we just need to send 1 or 0.
+In this button service, we want to send an **IO_STATE**, so data **size** will be a byte because it just needs to send 1 or 0.
 
-To do that we will need to configure :
+To do that, we will need to configure the following information:
 
-- **cmd** as **IO_STATE** ⇒ to give the kind of data we transmit
+- **cmd** as **IO_STATE** ⇒ to define the type of transmited data
 
-- **size** as **1** ⇒ because we want to send only 1 byte
+- **size** as **1** ⇒ because only 1 byte is sent
 
-- **data** as the button state ⇒ This will be our actual data
+- **data** as the button's state ⇒ this will be the actual data.
 
 :::info
-On the message request filtering, you previously made, we don’t look at the message size. This is because a request doesn’t need any data. most of the time, a message where **size = 0** is equivalent to a “get” command. A **size != 0** mean you want to set something by sending a value.
+On the message request filtering you previously made, we did not look at the message size. This is because a request does not need any data. most of the time, a message where `size = 0` is equivalent to a “get” command. If `size != 0`, it means that you want to set something by sending a value.
 :::
 
-## 4. Send the button value back
+## 4. Send back the button's value
 
-When we fill in all those information we are now able to send it using the `Luos_SendMsg` function.
+After filling in all this information, we are now able to send it using the `Luos_SendMsg` function.
 
-This function needs to know who wants to send this message, you will need to give it your service, and the message you want to send.
+This function needs to know which service wants to send this message, so you will need to provide it with your service and the message you want to send in arguments.
 
 :::info
-Luos_SendMsg function return an error_return_t information allowing you to know if your message transmission **FAILED** or **SUCCEED**.
+`Luos_SendMsg` function returns an `error_return_t` information allowing you to know if the message transmission **FAILED** or **SUCCEED**.
+
 `error_return_t Luos_SendMsg(service_t *service, msg_t *msg)`
-The only reason this function send you back a FAILED status is because you don’t have enough RAM space.
+
+The only reason why this function sends back a **FAILED** status is because there is not enough RAM in your device.
 :::
 
-### Make it in the code
+### Write it in the code
 
-Let’s fill in the information of the structure.
+Let’s fill in the information of the structure:
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -192,10 +192,8 @@ void Button_Loop(void)
 </TabItem>
 </Tabs>
 
-##
-
-Now our **STATE** button service returns an **IO_STATE** value when a service asks for it!
-Let’s see if our service react as expected.
+The **STATE** button service now returns an **IO_STATE** value when a service asks for it!
+Let’s see if our service reacts as expected.
 
 <div align="center">
   <img src ="https://media.giphy.com/media/DIxETbmfEdc6A/giphy-downsized-large.gif" className="gif_tutorial"/>
@@ -204,7 +202,7 @@ Let’s see if our service react as expected.
 ## 5. Test the response
 
 1. Compile and upload the project to the board.
-2. Using `pyluos-shell` on your terminal you should see :
+2. Using the command `pyluos-shell` in a terminal, you should see the following routing table:
 
 ```bash
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -216,7 +214,7 @@ Let’s see if our service react as expected.
 ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-Typing : `device.button.state` you should see the value of the pin
+Typing `device.button.state`, you should see the pin's value:
 
 ```c
 In [1]: device.button.state
@@ -225,7 +223,7 @@ Out[1]: False
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
-To simulate a press button, connect a wire between the BTN_PIN (Pin 8) and GND.
+To simulate a press button, connect a wire between the BTN_PIN (pin 8) and GND.
 <div align="center">
   <Image src="/img/your-first-message/your-first-message-2-1.png" darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"/>
 </div>
@@ -235,29 +233,29 @@ To simulate a press button, connect a wire between the BTN_PIN (Pin 8) and GND.
 Now push on the B1 button (the blue one) on your board
 </TabItem>
 <TabItem value="Nucleo2" label="STM32G431KB Nucleo/STM32L432KC Nucleo">
-To simulate a press button, connect a wire between the BTN_PIN (Pin D10) and GND.
+To simulate a press button, connect a wire between the BTN_PIN (pin D10) and GND.
 <div align="center">
   <Image src="/img/your-first-message/your-first-message-2-1.png" darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"/>
 </div>
 </TabItem>
 </Tabs>
 
-Typing : `device.button.state` you should see the value of the pin
+Typing `device.button.state`, you should see the new pin's value:
 
 ```c
 In [2]: device.button.state
 Out[2]: True
 ```
 
-## 6. Exercice: control a led depending on your button
+## 6. Exercise: control a LED depending on your button's state
 
-Let’s try a small exercice:
+Let’s try a small exercise:
 
-> Make a LED turn on when the button is True and off when it’s False
+> Make a LED turn on when the button's state is **TRUE** and off when it’s **FALSE**.
 
-1. Add the led package created on the [previous tutorial](/tutorials/your-first-service/your-first-service) on your board
+1. Add the led package created on the [previous tutorial](/tutorials/your-first-service/your-first-service) on your board.
 2. Compile and flash your board again.
-3. Using `pyluos-shell` again, you should see :
+3. Type `pyluos-shell` in the terminal again, you should see:
 
    ```bash
      ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -270,14 +268,14 @@ Let’s try a small exercice:
    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
    ```
 
-4. Now on `Pyluos-shell` do:
+4. Then still in `Pyluos-shell` type:
 
    ```c
    while True :
    	device.led.state = device.button.state
    ```
 
-5. Run this while loop and try to push on the button
+5. Run this while-loop and try to push on the button to see the LED turning on and off.
 
 <div align="center">
   <img src ="https://media.giphy.com/media/fSRs6SJH6m0c3iG2hk/giphy.gif" className="gif_tutorial"/>

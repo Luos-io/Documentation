@@ -19,14 +19,14 @@ You just finished the _Get started_ and you want to go further with Luos? This t
 
 In this tutorial, you will learn:
 
-- How to create your first service with Luos Engine step by step
-- How to make your project structure ready for a modular architecture
+- How to create your first service with Luos Engine step by step.
+- How to make your project structure ready for a modular architecture.
 
 ## 2. Level guidelines
 
 ### Pre-requisite:
 
-- [Luos Get started](/get-started/get-started)
+- [Luos _Get started_](/get-started/get-started)
 - [Training repository](https://github.com/Luos-io/Training)
 
 ### Equipment you will need

@@ -12,21 +12,21 @@ import TabItem from '@theme/TabItem';
 
 1. Introduction
 2. Add the package button
-3. Find the button Services ID
-4. Ask the button value
-5. Switch the Led depending on the button value!
-6. Try the button value changing
-7. Exercice
+3. Find the button service's ID
+4. Ask for the button value
+5. Turn on the LED depending on the button's value
+6. Try to change button's value
+7. Exercise
 
 ## 1. Introduction
 
-The purpose of this training is to create a full embedded application that detect all the services in the system and create a switcher the turn on or off a LED depending on a button.
+The purpose of this training is to create a full embedded application that detects all the services in the system and create a switcher that turns on or off a LED, depending on a button.
 
 Let’s code that and see how cool it is to do it with Luos!
 
 ## 2. Add the package button
 
-For now in the project there is 2 packages! For the next step, we will add the button package into your main.c or Arduino.ino file.
+For now, there are tow packages in the project. In the next step, we will add the button package into _main.c_ or _Arduino.ino_.
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -109,18 +109,18 @@ int main(void)
 </Tabs>
 
 :::caution
-You must call the `Luos_Init()` API before any service init to make the library properly work!
+You must call the `Luos_Init()` API before any service initialization to make the library work properly.
 :::
 
 :::tip
-The actual detection will be performed at `Luos_Loop()` execution. So It’s better to call the `Luos_Loop()` first allowing the services to start working as soon as possible.
+The actual detection will be performed at `Luos_Loop()` execution. So it is better to call the `Luos_Loop()` function first, allowing the services to start working as soon as possible.
 :::
 
-## 3. Find the button Services ID
+## 3. Find the button service's ID
 
-Now the button package was add to our project. we must find its ID to send a message to it!
+The button package is now added to your project. we must find its ID to send a message to it.
 
-1. Create a variable where the ID of button service will be save
+1. Create a variable where the ID of button service will be saved:
 
 ```c
 /*******************************************************************************
@@ -132,7 +132,7 @@ uint16_t ID_Led;
 uint16_t ID_Button;
 ```
 
-2. Filter the button service alias in the routing table and ask it about it.
+2. Filter the button service alias in the routing table and ask it about it:
 
 ```c
 void Switcher_MsgHandler(service_t *service, msg_t *msg)
@@ -164,19 +164,19 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-## 4. Ask the button value
+## 4. Ask for the button value
 
-Now we have the button service ID, we can easily get the button value by sending a message to button service in `Switcher_Loop`. The button service will reply with a message containing the button value!
+Now that we have the button service's ID, we can easily get the button's value (or state) by sending a message to the button service in `Switcher_Loop`. The button service will reply with a message containing the button's value
 
-If we send this request at every Loop, this will create messages a lot and overload the network. This will consume a lot of RAM and create network congestion!
+If we send this request at every loop, this will create too many messages and overload the network, consuming a lot of RAM and creating network congestion.
 
-Let’s space them from 10ms!
+Let’s space them to 10ms between each one!
 
-1. **Execute request every 10ms**
+1. Execute request every 10ms
 
-On your Switcher_loop we will have to do something to be able to send a message every 10ms.
+We will have to bring improvement to the **Switcher_loop** to be able to send a message every 10ms.
 
-You can use the sysTick to get a 1ms precision date using `Luos_GetSystick();`. This tick give you the opportunity to count how many millisecond are passed!
+You can use the **sysTick** to get a 1ms precision date using `Luos_GetSystick();`. This tick gives you the opportunity to count the milliseconds.
 
 Let’s create a variable to track the **LastAsk**:
 
@@ -192,7 +192,7 @@ uint32_t LastAsk;
 
 ```
 
-Init this variable at the service start:
+Initialize this variable at the service start:
 
 ```c
 void Switcher_Init(void)
@@ -205,7 +205,7 @@ void Switcher_Init(void)
 }
 ```
 
-Check if 10ms have passed :
+Check if 10ms have passed:
 
 ```c
 void Switcher_Loop(void)
@@ -220,11 +220,11 @@ void Switcher_Loop(void)
 }
 ```
 
-2. **Be sure a detection have been made before send a message on a network**
+2. Be sure a that detection has been made before sending a message on a network
 
-before sending a request value to the button service we have to be sure that a detection have been made. Luos provide a specific API allowing you to know if your system have been detected or not : `bool Luos_IsNodeDetected(void)`
+before sending a request value to the button service, we have to be sure that a detection has been made. Luos Engine provides a specific API allowing you to know if your system has been detected or not: `bool Luos_IsNodeDetected(void)`
 
-This function return true when your system have been entirely detected :
+This function returns **TRUE** when your system has been entirely detected:
 
 ```c
 void Switcher_Loop(void)
@@ -241,9 +241,9 @@ void Switcher_Loop(void)
 }
 ```
 
-3. **Finally ask the button value**
+3. Finally, ask for the button's value
 
-Now everything is ready, we can ask the button to send us it’s value.
+Now taht everything is ready, we can ask the button to send us its value:
 
 ```c
 void Switcher_Loop(void)
@@ -270,13 +270,13 @@ void Switcher_Loop(void)
 }
 ```
 
-Now we are asking the button to send us an update every 10ms!
+The button sends us an update every 10ms!
 
-## 5. Switch the Led depending on the button value!
+## 5. Turn on the LED depending on the button's value
 
-In the `Switcher_Loop()` function we asking the button to send us an update every 10ms. The reply of the button will be received on our `Switcher_MsgHandler` function.
+In the `Switcher_Loop()` function, we asked the button to send us an update every 10ms. The reply of the button will be received on the `Switcher_MsgHandler` function.
 
-1. **Let’s add a new condition in our message handler allowing us to deal with the button messages**
+1. Let’s add a new condition in our message handler allowing us to deal with the button's messages:
 
 ```c
 void Switcher_MsgHandler(service_t *service, msg_t *msg)
@@ -312,9 +312,9 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-To properly switch the led, we have to deal with this button message and send a command to the led!
+To properly switch the LED, we have to deal with this button's message and send a command to the LED.
 
-2. **Put the code that send a message to turn on the led at the end of the detection inside the button reception message condition**
+2. Type the code that sends a message to turn on the LED at the end of the detection, inside the button's reception message condition:
 
 ```c
 void Switcher_MsgHandler(service_t *service, msg_t *msg)
@@ -349,9 +349,9 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-At this point everytime you receive a message from the button service, you will turn on the Led!
+At this point, everytime you receive a message from the button service, you will turn on the LED.
 
-3. **To finish we simply need to send to the led the state of the button. This button value is recover in the first case of tab data of the message button.**
+3. To finish, we simply need to send to the LED the state of the button. This button's value is recovered in the first case of the tab data of the button's message:
 
 ```c
 ...
@@ -373,15 +373,15 @@ At this point everytime you receive a message from the button service, you will 
 ...
 ```
 
-Because we ask the button to update it’s value every 10ms, we will receive a button update every 10ms. At this update reception we will send a new led command, so the led is also updated every 10ms.
+Because we asked the button to update its value every 10ms, we will receive a button update every 10ms. At each update reception a new LED command will be sent, so the LED is also updated every 10ms.
 
-This way your button control your led.
+This way, your button control your LED.
 
-## 6. Try the button value changing
+## 6. Try to change button's value
 
-1. Compile and upload the project to the board. the led turn on at the end of the detection
+1. Compile and upload the project to the board. the LED turns on at the end of the detection.
 
-2. Push on your button :
+2. Push on your button:
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -392,7 +392,7 @@ To simulate a press button, connect a wire between the BTN_PIN (Pin 8) and GND.
 
 </TabItem>
 <TabItem value="Nucleo1" label="STM32F072RB Nucleo/STM32F401RE Nucleo/STM32F410RB Nucleo">
-Now push on the B1 button (the blue one) on your board
+Now push on the B1 button (the blue one) on your board.
 </TabItem>
 <TabItem value="Nucleo2" label="STM32G431KB Nucleo/STM32L432KC Nucleo">
 To simulate a press button, connect a wire between the BTN_PIN (Pin D10) and GND.
@@ -402,19 +402,16 @@ To simulate a press button, connect a wire between the BTN_PIN (Pin D10) and GND
 </TabItem>
 </Tabs>
 
-Congratulation, You create your first full embedded application!!!
+Congratulation, You created your first full embedded application!
 
 <div align="center">
   <img src ="https://media.giphy.com/media/l4q8cJzGdR9J8w3hS/giphy.gif" className="gif_tutorial"/>
 </div>
-You detect all the service in your project and command them through an application.
 
-## 6. Exercice
+You can now detect all the services in your project and command them through an application.
 
-Now try to move your Switcher package on another board and keep the button and led package on the first one!
+## 6. Exercise
 
-Everything should work the same way!
+Now try to move your switcher package on another board, and keep the button and led packages on the first one: everything should work the same way!
 
-Asking every 10ms the value of the button represent a not negligible portion of code.
-
-Luos provide an update_time command to simplify it, check documentation [here](/docs/luos-technology/message/advanced-message).
+Asking the value of the button every 10ms represents a not negligible portion of code. Luos provides an `update_time` command to simplify it, check the [documentation associated page](/docs/luos-technology/message/advanced-message) to learn more about it.
