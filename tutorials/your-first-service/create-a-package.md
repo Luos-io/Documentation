@@ -31,13 +31,13 @@ Packages also allow you to have plenty of code on your project and keep it clean
 First, you will have to create a dedicated folder on your lib folder and call it “Led”:
 
 <div align="center">
-  <Image src="/img/your-first-service/luos-service-2.png" darkSrc="/img/your-first-service/luos-service-2-dark.png"/>
+  <Image src="/img/your-first-service/luos-service-2.png" darkSrc="/img/your-first-service/luos-service-2.png"/>
 </div>
 
 Then on this folder create 2 files, “led.h” and “led.c” :
 
 <div align="center">
-  <Image src="/img/your-first-service/luos-service-2-1.png" darkSrc="/img/your-first-service/luos-service-2-1-dark.png"/>
+  <Image src="/img/your-first-service/luos-service-2-1.png" darkSrc="/img/your-first-service/luos-service-2-1.png"/>
 </div>
 
 On the “led.h” file we will have to declare some functions allowing us to call the package from the main, declarate in the header files give acces in other files to your function.

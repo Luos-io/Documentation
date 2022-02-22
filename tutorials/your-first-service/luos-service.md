@@ -63,7 +63,7 @@ Now, let’s learn how to create a service. To understand how to create your own
 
 :::
 
-A service is an encapsulated feature defining an API and allowing other services to interact with it (see the documentation: [https://docs.luos.io/docs/luos-technology/services/services](/docs/luos-technology/services/services))
+A service is an encapsulated feature defining an API and allowing other services to interact with it (see the [documentation](/docs/luos-technology/services/services))
 
 In the case of a simple LED, your service will have one input with the state of the IO that turns the LED ON or OFF:
 

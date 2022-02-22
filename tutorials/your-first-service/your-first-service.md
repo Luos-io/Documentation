@@ -49,9 +49,9 @@ Additionally, you will need for this tutorial a coding environment with the last
 
 ## 3. Summary
 
-[Part 1: Luos service](/your-first-service/luos-service)
+[Part 1: Luos service](/tutorials/your-first-service/luos-service)
 
-[Part 2: Create a package](/your-first-service/create-a-package)
+[Part 2: Create a package](/tutorials/your-first-service/create-a-package)
 
 ## 4. Keywords
 
