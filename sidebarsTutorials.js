@@ -23,36 +23,15 @@ module.exports = {
               label: 'Bootloader',
               id: 'luos-and-tools/bootloader',
             },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Demo boards',
-          items: [
-            {
-              type: 'doc',
-              label: 'List',
-              id: 'demo-boards/list',
-            },
-            {
-              type: 'doc',
-              label: 'Luos demo boards',
-              id: 'demo-boards/luos-demo-boards',
-            },
-            {
-              type: 'doc',
-              label: 'Basic button-LED device',
-              id: 'demo-boards/button-led',
-            },
-            {
-              type: 'doc',
-              label: 'Basic servomotor-LED device (video)',
-              id: 'demo-boards/servomotor',
-            },
             {
               type: 'doc',
               label: 'Use Luos with Arduino IDE',
-              id: 'demo-boards/arduino',
+              id: 'luos-and-tools/arduino',
+            },
+            {
+              type: 'doc',
+              label: 'FreeRTOS',
+              id: 'luos-and-tools/freertos',
             },
           ],
         },
