@@ -450,7 +450,7 @@ html[data-theme='dark'] .cust_tooltiptext {
 .row .col {
   margin-left: auto;
   margin-right: auto;
-  max-width: 75% !important;
+  /* max-width: 75% !important; */
 }
 
 .typeform-sidetab-button-icon {

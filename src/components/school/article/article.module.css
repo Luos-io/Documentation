@@ -1,0 +1,56 @@
+.introContainer {
+  width: 100%;
+  padding: 50px 30px;
+}
+
+.title {
+  font-size: 24px;
+  font-family: 'Roboto Mono', sans-serif;
+  margin-bottom: 15px !important;
+}
+
+.navigation {
+  padding-top: 25px;
+  font-family: 'Roboto Mono', sans-serif;
+}
+@media screen and (min-width: 900px) {
+  .navigation {
+    float: right;
+  }
+}
+
+.navigation .counter {
+  font-size: 13px;
+  line-height: 21px;
+  vertical-align: top;
+  padding: 0px 7px 2px 0px;
+  border-right: 1px solid black;
+}
+
+.navigation .lastCounter {
+  font-size: 13px;
+  line-height: 21px;
+  vertical-align: top;
+  padding: 0px 7px 2px 0px;
+}
+
+.navigation span {
+  padding-bottom: 0px;
+  display: inline-block;
+}
+.navigation .materialIcons {
+  font-size: 21px;
+  vertical-align: top;
+  padding: 2px 7px;
+}
+
+.navigation .categoryIcons {
+  font-size: 21px;
+  vertical-align: top;
+  padding: 0px 7px;
+}
+
+.subtitle {
+  font-size: 22px !important;
+  font-family: 'Roboto Mono', sans-serif;
+}

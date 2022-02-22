@@ -19,7 +19,8 @@
       "level": 1,
       "img": "get-started",
       "desc": "The Get started allows you to build, flash, run, and control your very first Luos project.",
-      "tags": ["Board", "MCU", "Service", "Network", "Distributed system"]
+      "tags": ["Board", "MCU", "Service", "Network", "Distributed system"],
+      "link": "get-started/get-started"
     },
     {
       "title": "Your First Service",
@@ -28,7 +29,8 @@
       "level": 2,
       "img": "services",
       "desc": "You just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
-      "tags": ["Service", "Package", "Handler", "Gate", "Pipe"]
+      "tags": ["Service", "Package", "Handler", "Gate", "Pipe"],
+      "link": "tutorials/your-first-service/your-first-service"
     },
     {
       "title": "Your First Message",
@@ -37,7 +39,8 @@
       "level": 2,
       "img": "message",
       "desc": "Luos aim to exchange information between services by sending messages. In this tutorial we will learn the message structure and how to send it to another services.",
-      "tags": ["Luos Message", "Service", "Polling", "Message Handler"]
+      "tags": ["Luos Message", "Service", "Polling", "Message Handler"],
+      "link": "tutorials/your-first-message/your-first-message"
     },
     {
       "title": "Your First Topology detection",
@@ -46,7 +49,8 @@
       "level": 3,
       "img": "topology",
       "desc": "Since the beginning of this training, we discover how to create services, deal with messages and control them using Pyluos. But we never create any embedded application service using other services.",
-      "tags": ["Service", "Topology", "Detection", "Application"]
+      "tags": ["Service", "Topology", "Detection", "Application"],
+      "link": "tutorials/your-first-detection/your-first-detection"
     }
   ]
 }

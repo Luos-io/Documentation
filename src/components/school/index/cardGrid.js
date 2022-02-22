@@ -38,48 +38,50 @@ const cardGrid = (props) => {
     <Grid container spacing={2}>
       {filtered.map((x, y) => (
         <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
-          <Paper className={styles.card} elevation={1}>
-            <img src={`/img/school/${x.img}.svg`} />
-            <h2 className={styles.cardTitle}>{x.title}</h2>
+          <a href={x.link} className={styles.link}>
+            <Paper className={styles.card} elevation={1}>
+              <img src={`/img/school/${x.img}.svg`} />
+              <h2 className={styles.cardTitle}>{x.title}</h2>
 
-            <Grid container spacing={1}>
-              <Grid item xs={6}>
-                <div>
-                  <span>
-                    {' '}
-                    <img
-                      className={styles.cardIcons}
-                      src="/img/school/category.svg"
-                    />
-                  </span>
-                  <span className={styles.levelTxt}>{x.category}</span>
-                </div>
-                <div>
-                  <span>
-                    {' '}
-                    <img
-                      className={styles.cardIcons}
-                      src="/img/school/clock.svg"
-                    />
-                  </span>
-                  <span className={styles.levelTxt}>
-                    {Math.round(x.toc / 60)} Hrs
-                  </span>
-                </div>
-              </Grid>
-              <Grid item xs={6}>
-                <div style={{ width: '100%' }}>
-                  <div className={`${styles.difficultyContainer}`}>
-                    <span
-                      className={`${styles.difficulty} ${level[x.level]}`}
-                    ></span>
-                    <span>{level[x.level]}</span>
+              <Grid container spacing={1}>
+                <Grid item xs={6}>
+                  <div>
+                    <span>
+                      {' '}
+                      <img
+                        className={styles.cardIcons}
+                        src="/img/school/category.svg"
+                      />
+                    </span>
+                    <span className={styles.levelTxt}>{x.category}</span>
                   </div>
-                </div>
+                  <div>
+                    <span>
+                      {' '}
+                      <img
+                        className={styles.cardIcons}
+                        src="/img/school/clock.svg"
+                      />
+                    </span>
+                    <span className={styles.levelTxt}>
+                      {Math.round(x.toc / 60)} Hrs
+                    </span>
+                  </div>
+                </Grid>
+                <Grid item xs={6}>
+                  <div style={{ width: '100%' }}>
+                    <div className={`${styles.difficultyContainer}`}>
+                      <span
+                        className={`${styles.difficulty} ${level[x.level]}`}
+                      ></span>
+                      <span>{level[x.level]}</span>
+                    </div>
+                  </div>
+                </Grid>
               </Grid>
-            </Grid>
-            <p className={styles.cardDesc}>{x.desc}</p>
-          </Paper>
+              <p className={styles.cardDesc}>{x.desc}</p>
+            </Paper>
+          </a>
         </Grid>
       ))}
     </Grid>
