@@ -6,21 +6,53 @@ import Image from '/src/components/Images.js';
 
 # Bootloader
 
+### Estimated difficulty level
+
+Intermediate
+
+### Total estimated time
+
+30 minutes
+
+## 1. Description
+
 In this tutorial, you will learn to use the bootloader feature offered by Luos technology.
+
+## 2. Level guidelines
+
+### Pre-requisite
+
+- [Training repository](https://github.com/Luos-io/Get_started)
+- [Luos Basics](/docs/luos-technology/basics/basics)
+
+### Equipment you will need
 
 The setup is simple and is composed of two l0 boards (see [boards](/docs/tutorials/demo-boards/luos-demo-boards) for further information on boards we are using). These boards are chained following rules described in [hardware considerations](/docs/hardware-consideration/hardware-consideration).
 
 We will use one of these nodes as a [gate](/docs/tools/gate) and the other as an application node. The second node will host a bootloader, and you will be able to update its firmware through the gate. You need an USB shield to connect to the first node to complete this tutorial.
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/tutorial_setup.png" />
+  <Image src="/img/tutorials/bootloader/tutorial_setup.png" darkSrc="/img/tutorials/bootloader/tutorial_setup-dark.png"/>
 </div>
 
 :::caution
 It is not possible to update the firmware on a gate node.
 :::
 
-### Step 1: Setup development environment
+## 3. Keywords
+
+- <span className="cust_tooltip">Board<span className="cust_tooltiptext">Electronic board with an MCU on it</span></span>
+- <span className="cust_tooltip">MCU<span className="cust_tooltiptext">Microcontroller</span></span>
+- <span className="cust_tooltip">Service<span className="cust_tooltiptext">Software element run by Luos that can communicate with other services. It can be a driver or an app.</span></span>
+- Network
+- <span className="cust_tooltip">Distributed system<span className="cust_tooltiptext">Microservices are a software development technique that arranges an application as a collection of loosely coupled services.</span></span>
+
+## 4. Resources
+
+- [Bootloader](https://github.com/Luos-io/Luos_bootloader.git)
+- [Application](https://github.com/Luos-io/luos_bootloader_app.git)
+
+## 5. Setup development environment
 
 The first thing to do is to install [pyluos](/docs/tools/pyluos) and [PlatformIO](/get-started/get-started) if not already done.
 
@@ -46,7 +78,7 @@ Your folder should then look like this:
 
 If not, please follow the commands listed above.
 
-### Step 2: Load gate program
+## 6. Load gate program
 
 Open Visual Studio Code. On the top left corner, in the **Explorer** section, click on **Add Folder.** Search **Gate_SerialCom** project in **Examples/Projects/l0**:
 
@@ -70,7 +102,7 @@ Click on **Upload** on the bottom left corner of the IDE. Wait for the compilati
 
 If not, please verify you are properly connected to the correct port of the device.
 
-### Step 3: Detect gate node with the CLI
+## 7. Detect gate node with the CLI
 
 You can now detect your Luos node with the CLI: connect your USB cable on the USB shield port instead of the dfu port and type the following command in a terminal:
 
@@ -86,7 +118,7 @@ pyluos-bootloader detect COM6
 
 If the command is not recognized by the PC, verify your pyluos installation (see **Step 1**). After execution, you should see the following:
 
-### Step 4: Load the bootloader
+## 8. Load the bootloader
 
 Now, you will load the bootloader in the second node. Follow the same process as described in **Step 2**, but this time open **Luos_bootloader/luos_bootloader_f072RB** project.
 
@@ -96,7 +128,7 @@ Connect the second node with the **dfu** port and click on **Upload**; you shoul
   <Image src="/img/tutorials/bootloader/load_bootloader.png"/>
 </div>
 
-### Step 5: Detection
+## 9. Detection
 
 Connect your two nodes through the Luos network and connect your USB shield to your PC. Type the same command used on **Step 3**, and you should see the following:
 
@@ -106,7 +138,7 @@ Connect your two nodes through the Luos network and connect your USB shield to y
 
 **boot_service** indicates there is a bootloader running on your node. You are now able to communicate with it through the gate and load any application.
 
-### Step 6: Compile an app compatible with the bootloader
+## 10. Compile an app compatible with the bootloader
 
 Some applications examples are available with the bootloader feature, and they can be used as a template for your custom application. They can be found in **luos_bootloader_app/.** As we are using l0 boards, open **luos_bootloader_app/luos_bootloader_application_f072RB** in VSCode.
 
@@ -146,7 +178,7 @@ Then relaunch a detection (as done in **Step 3**):
 
 You can see that **boot_service** has been replaced by **button_old**, which is the name of the service running in your app: the bootloader switched to application mode and launched your app.
 
-### Step 7: Update your app
+## 11. Update your app
 
 You also can update your app and reload it in the node. As an example, change the name of your service from **button_old** to **button_new:**
 
