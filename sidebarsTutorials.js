@@ -23,6 +23,16 @@ module.exports = {
               label: 'Bootloader',
               id: 'luos-and-tools/bootloader',
             },
+            {
+              type: 'doc',
+              label: 'Use Luos with Arduino IDE',
+              id: 'luos-and-tools/arduino',
+            },
+            {
+              type: 'doc',
+              label: 'FreeRTOS',
+              id: 'luos-and-tools/freertos',
+            },
           ],
         },
         {
@@ -90,27 +100,6 @@ module.exports = {
               type: 'doc',
               label: 'Full embedded application',
               id: 'your-first-detection/embedded-app',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Demo boards',
-          items: [
-            {
-              type: 'doc',
-              label: 'List',
-              id: 'demo-boards/list',
-            },
-            {
-              type: 'doc',
-              label: 'Use Luos with Arduino IDE',
-              id: 'luos-and-tools/arduino',
-            },
-            {
-              type: 'doc',
-              label: 'FreeRTOS',
-              id: 'luos-and-tools/freertos',
             },
           ],
         },
