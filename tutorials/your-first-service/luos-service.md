@@ -56,10 +56,10 @@ You are ready to go!
 
 ## 3. Create your first service
 
-Now, let’s learn how to create a service. To understand how to create your own service, we will create a simple LED service that you will be able to use the same way you were using it in the _Get started_.
+Now, let’s learn how to create a service. To understand how to create your own service, we will create a simple LED service that you will be able to use the same way you were using it in the Get started.
 
 :::tip
-💡 At any time, you can check the solution in the folder `Training/1_First_Service/Solution`, but no cheating! This is only for emergency situation...
+At any time, you can check the solution in the folder Training/1_First_Service/Solution, but no cheating! This is only for emergency situation...
 
 :::
 
@@ -108,7 +108,7 @@ Locate the following lines in the file _Arduino.ino_...
 
 So that your service can be recognized by other services, you will need to expose some information about the features you want to encapsulate into it:
 
-- The service type, which defines the capabilities and the purpose of your service. You can find the list of all the Luos types [here](https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h). Our new service fits with the **STATE_TYPE** (boolean 1 or 0).
+- The service type, which defines the capabilities and the purpose of your service. You can find the list of all the [Luos types](https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h). Our new service fits with the **STATE_TYPE** (boolean 1 or 0).
 - The service alias, which \***\*is the default name of your service. Let’s name our LED “**led\*\*”.
 - The service revision, which \***\*is the firmware version of your service. Let’s say our firmware has version **1.0.0**. We \*\***have to make a _revision_t_ variable to send it.
 
@@ -184,13 +184,12 @@ Let’s try to see it by lauching a detection:
 </div>
 
 :::tip
-💡 The blinker service will be able to find your LED service thanks to the description information you provided. But for now, your LED doesn’t react yet to the blinker service commands.
-
+The blinker service will be able to find your LED service thanks to the description information you provided. But for now, your LED doesn’t react yet to the blinker service commands.
 :::
 
 ## 4. Manage the LED on your service
 
-To control the LED, we now need to configure the LED’s GPIO pin. To set a value on a LED the pin should be output
+To control the LED, we now need to configure the LED’s GPIO pin. On a MCU to set a value on a GPIO pin, it must be configurate as output. this way we can switch on or off a LED.
 
 Add your PIN configuration next the service initialization in the same file:
 
@@ -242,7 +241,7 @@ int main(void)
 </TabItem>
 </Tabs>
 
-As we mentioned previously, our LED service needs to react at the reception of an IO state message. To do that, we created earlier a callback function (**`Led_MsgHandler`**) called by Luos Engine when another service sends a message. So to make the LED service work, we simply have to complete the `Led_MsgHandler` of our service. This will allow the LED service to use the messages sent by the blinker service.
+As we mentioned previously, our LED service needs to react at the reception of an IO state message. To do that, we created earlier a callback function (**`Led_MsgHandler`**) called by Luos Engine when another service sends a message. So to make the LED service work, we simply have to complete (see below) the `Led_MsgHandler` of our service. This will allow the LED service to use the messages sent by the blinker service.
 
 There are two arguments in the callback function **`Led_MsgHandler`**:
 
@@ -250,7 +249,7 @@ There are two arguments in the callback function **`Led_MsgHandler`**:
 
 - A message pointer (msg): This is the actual message you receive with all the information the other service wants to give you. You will be able to get the LED state from the data of this message.
 
-To control the LED depending on the message data, you can fill the content of the callback function `Led_MsgHandler` where you pasted it at the beginning of your file _Arduino.ino_:
+To control the LED depending on the message data, you can fill the content of the callback function `Led_MsgHandler` where you pasted it at the beginning of your main file (Arduiono.ino or main.c)
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -290,6 +289,9 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 </Tabs>
 
 Compile and upload the project to the board. You should now see the LED blink at the frequency decided by the blinker service.
+:::tip
+The Blinker service will send a message at the blink frequency you want the LED to change state (ON/OFF). When a message is sent to the LED service, Luos will call the message handler so that your code makes the LED react.
+:::
 
 <div align="center">
   <img src ="https://media.giphy.com/media/3o7qDSOvfaCO9b3MlO/giphy.gif" className="gif_tutorial"/>
@@ -297,9 +299,9 @@ Compile and upload the project to the board. You should now see the LED blink at
 
 ## 5. Secure your input data
 
-Thank’s to our `Led_MsgHandler` callback function, our service is now able to react to any input message. However, we don’t want it to react to _any_ message, but only to IO state messages. To make sure we use the data appropriately, it is better to be sure of the message type using the command of the message.
+Thank’s to our `Led_MsgHandler` callback function, our service is now able to react to any input message. However, we don’t want it to react to _any_ message, but only to IO state messages. To make sure we use the data appropriately, it is better to use message type specifis to the data in the command field of the message.
 
-To do that, let’s add a filte on the message command:
+To do that, let’s add a filter on the message command:
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -346,7 +348,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 
 Using conditional statements, you will also be able to manage multiple types of input messages and so that the services react differently depending on the command they receive.
 
-## 5. Luos Package
+## 6. Luos Package
 
 We successfully created a simple service in our main file. But this service doesn’t look like the other one already present on your project yet.
 

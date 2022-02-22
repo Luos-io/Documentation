@@ -41,19 +41,18 @@ Setup the MCU pin for your button in your button.c file:
 /*******************************************************************************
 * Definitions
 ******************************************************************************/
-#define BTN_PIN 8
-/*******************************************************************************
-* Variable
-******************************************************************************/
-service_t *button_service;
-/*******************************************************************************
-* Functions
-******************************************************************************/
+**#define BTN_PIN 8**
+```
+
+Set the Pin as Input
+
+```c
+
 void Button_Init(void)
 {
     revision_t revision = {1, 0, 0};
     button_service = Luos_CreateService(0, STATE_TYPE, "button", revision);
-    pinMode(BTN_PIN, INPUT);
+    **pinMode(BTN_PIN, INPUT);**
 }
 ```
 
@@ -74,9 +73,7 @@ Now everything is ready to send back the button value.
 
 ## 3. Setup your Hardware
 
-:::info
-By catching a message we already see that they contain some interesting information allowing you to understand the meaning of the transmitted data.
-:::
+> By catching a message we already see that they contain some interesting information allowing you to understand the meaning of the transmitted data.
 
 Any message contains 2 main parts :
 

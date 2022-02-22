@@ -49,11 +49,6 @@ In the callback option, you give to Luos a shipping address (a message handler) 
   In the polling option, Luos don’t know your shipping address, so your service will have to check if Luos have a messages available and get it if there is.
 Your service can go get a messages when he want to.
 </div>
-
-In the polling option, Luos don’t know your shipping address, so your service will have to check if Luos have a messages available and get it if there is.
-
-Your service can go get a messages when he want to.
-
 This time we will create a service without any callback to explore the polling option.
 
 In PlatformIO IDE, open the folder corresponding to your board from the repository you cloned or downloaded `Training/2_First_Message/Work_base`, and connect the board with an USB cable.
@@ -109,6 +104,8 @@ To Pull message from Luos engine we will need to know which service is asking fo
  ******************************************************************************/
 **service_t *button_service;**
 ```
+
+Assign your variable to your service creation
 
 ```c
 void Button_Init(void)

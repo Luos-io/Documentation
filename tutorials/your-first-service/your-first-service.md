@@ -41,11 +41,10 @@ Choose your development board from the list in the _Get started_ tutorial:
 - **[STM32G431KB Nucleo](https://www.st.com/en/evaluation-tools/nucleo-g431kb.html)**
 
 :::caution
-If you are using an Arduino board other than MKRzero, you will have to modify the line `board=` in the file _plateformio.ini_ from the folder `1_First_Service/Work_base/Arduino` to match your board reference.
-
+If you are using an Arduino board other than MKRzero, you will have to modify the line board= in the file plateformio.ini from the folder 1_First_Service/Work_base/Arduino to match your board reference.
 :::
 
-Additionally, you will need for this tutorial a coding environment with the last versions of [Python](https://www.python.org/), [GIT](https://git-scm.com/), [Ipython](https://ipython.org/), pyluos, and of a USB driver compatible with your board.
+Additionally, you will need for this tutorial a coding environment with the last versions of Python, GIT, Ipython, pyluos, and of a USB driver compatible with your board.
 
 ## 3. Summary
 

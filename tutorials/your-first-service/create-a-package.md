@@ -53,8 +53,7 @@ void Led_Loop(void);
 Now we can create these functions on the “led.c” file. Like you main file, package need 2 functions. `Init` call one time at the beguining and on `loop` that will be call periodicly:
 
 :::tip
-💡 Beguin your function with the name of the package is a Luos convention : `Led_Init`
-
+Beguin your function with the name of the package is a Luos convention : `Led_Init`
 :::
 
 <Tabs>
