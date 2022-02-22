@@ -4,21 +4,24 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react';
-import clsx from 'clsx';
-import DocPaginator from '@theme/DocPaginator';
-import DocVersionBanner from '@theme/DocVersionBanner';
-import DocVersionBadge from '@theme/DocVersionBadge';
-import Seo from '@theme/Seo';
-import DocItemFooter from '@theme/DocItemFooter';
-import TOC from '@theme/TOC';
-import TOCCollapsible from '@theme/TOCCollapsible';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
-import {ThemeClassNames, useWindowSize } from '@docusaurus/theme-common';
+import React from "react";
+import clsx from "clsx";
+import DocPaginator from "@theme/DocPaginator";
+import DocVersionBanner from "@theme/DocVersionBanner";
+import DocVersionBadge from "@theme/DocVersionBadge";
+import Seo from "@theme/Seo";
+import DocItemFooter from "@theme/DocItemFooter";
+import TOC from "@theme/TOC";
+import TOCCollapsible from "@theme/TOCCollapsible";
+import Heading from "@theme/Heading";
+import { ThemeClassNames, useWindowSize } from "@docusaurus/theme-common";
+import ContactUs from "@site/src/components/ContactUs";
+
+import styles from "./styles.module.css";
+
 export default function DocItem(props) {
-  const {content: DocContent} = props;
-  const {metadata, frontMatter} = DocContent;
+  const { content: DocContent } = props;
+  const { metadata, frontMatter } = DocContent;
   const {
     image,
     keywords,
@@ -27,17 +30,17 @@ export default function DocItem(props) {
     toc_min_heading_level: tocMinHeadingLevel,
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
-  const {description, title} = metadata; // We only add a title if:
+  const { description, title } = metadata; // We only add a title if:
   // - user asks to hide it with front matter
   // - the markdown content does not already contain a top-level h1 heading
 
   const shouldAddTitle =
-    !hideTitle && typeof DocContent.contentTitle === 'undefined';
+    !hideTitle && typeof DocContent.contentTitle === "undefined";
   const windowSize = useWindowSize();
   const canRenderTOC =
     !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
   const renderTocDesktop =
-    canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
+    canRenderTOC && (windowSize === "desktop" || windowSize === "ssr");
   return (
     <>
       <Seo
@@ -52,12 +55,12 @@ export default function DocItem(props) {
       <div className="row">
         <div
           className={clsx(
-            'col',
+            "col",
             {
               [styles.docItemCol]: !hideTableOfContents,
             },
-            'custom_mobile_col',
-          )}            
+            "custom_mobile_col"
+          )}
         >
           <DocVersionBanner />
           <div className={styles.docItemContainer}>
@@ -71,13 +74,14 @@ export default function DocItem(props) {
                   maxHeadingLevel={tocMaxHeadingLevel}
                   className={clsx(
                     ThemeClassNames.docs.docTocMobile,
-                    styles.tocMobile,
+                    styles.tocMobile
                   )}
                 />
               )}
 
               <div
-                className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
+                className={clsx(ThemeClassNames.docs.docMarkdown, "markdown")}
+              >
                 {/*
                 Title can be declared inside md content or declared through front matter and added manually
                 To make both cases consistent, the added title is added under the same div.markdown block
@@ -90,6 +94,7 @@ export default function DocItem(props) {
                 )}
 
                 <DocContent />
+                <ContactUs />
               </div>
 
               <DocItemFooter {...props} />
