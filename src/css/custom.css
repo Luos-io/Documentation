@@ -601,3 +601,7 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   background-color: #161616 !important;
   color: #bd99ff !important;
 }
+
+.gif_tutorial {
+  width: 300px !important;
+}

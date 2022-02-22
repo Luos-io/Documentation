@@ -27,6 +27,74 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Your first service',
+          items: [
+            {
+              type: 'doc',
+              label: 'Your first service',
+              id: 'your-first-service/your-first-service',
+            },
+            {
+              type: 'doc',
+              label: 'Luos service',
+              id: 'your-first-service/luos-service',
+            },
+            {
+              type: 'doc',
+              label: 'Create a package',
+              id: 'your-first-service/create-a-package',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Your first message',
+          items: [
+            {
+              type: 'doc',
+              label: 'Your first message',
+              id: 'your-first-message/your-first-message',
+            },
+            {
+              type: 'doc',
+              label: 'Receiving Message',
+              id: 'your-first-message/receiving-message',
+            },
+            {
+              type: 'doc',
+              label: 'Send Message from button service',
+              id: 'your-first-message/send-message',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Your First Topology detection',
+          items: [
+            {
+              type: 'doc',
+              label: 'Your First Topology detection',
+              id: 'your-first-detection/your-first-detection',
+            },
+            {
+              type: 'doc',
+              label: 'The topology of your system',
+              id: 'your-first-detection/topology',
+            },
+            {
+              type: 'doc',
+              label: 'How to use the routing Table',
+              id: 'your-first-detection/routing-table',
+            },
+            {
+              type: 'doc',
+              label: 'Full embedded application',
+              id: 'your-first-detection/embedded-app',
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Demo boards',
           items: [
             {
