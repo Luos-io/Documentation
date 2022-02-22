@@ -73,10 +73,10 @@ In the case of a simple LED, your service will have one input with the state of 
 
 In your service code, you will have to give the order to turn the LED ON or OFF depending on the received IO state message. So you need a function to be called when another service sends a message, so that this function deals with the LED; this kind of function is called a _callback_.
 
-You can declare your LED callback functions at the beginning of the file _Arduino.ino_ located in the _/src/_ folder. We will see later how to deal with this function.
+You can declare your LED callback functions at the beginning of the file main file located in the _/src/_ folder. We will see later how to deal with this function.
 
 :::info
-Throughout this tutorial, you will have to locate the right lines where to copy/paste the bold code we provide to you, into your C file (Nucleo) or your INO file (Arduino). We explain it below for this first case, and then we will let you do it by your own.
+Throughout this tutorial, you will have to locate the right lines where to copy/paste the new line(s) code we provide to you, into your C file (Nucleo) or your INO file (Arduino). We explain it below for this first case, and then we will let you do it by your own.
 :::
 
 ```c
@@ -86,33 +86,18 @@ Throughout this tutorial, you will have to locate the right lines where to copy/
 #include "pipe.h"
 #include "gate.h"
 
-// the code to copy and paste, in Bold
-**void Led_MsgHandler(service_t *service, msg_t *msg){}**
+// the new line to copy and paste
+void Led_MsgHandler(service_t *service, msg_t *msg){}
 
-```
-
-Locate the following lines in the file _Arduino.ino_...
-
-```c
-> #include <luos.h>
-> #include "blinker.h"
-> #include "pipe.h"
-> #include "gate.h"
-```
-
-...and copy/paste this line below them:
-
-```c
-**void Led_MsgHandler(service_t *service, msg_t *msg){}**
 ```
 
 So that your service can be recognized by other services, you will need to expose some information about the features you want to encapsulate into it:
 
 - The service type, which defines the capabilities and the purpose of your service. You can find the list of all the [Luos types](https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h). Our new service fits with the **STATE_TYPE** (boolean 1 or 0).
-- The service alias, which \***\*is the default name of your service. Let’s name our LED “**led\*\*”.
-- The service revision, which \***\*is the firmware version of your service. Let’s say our firmware has version **1.0.0**. We \*\***have to make a _revision_t_ variable to send it.
+- The service alias, which is the default name of your service. Let’s name our LED “**led**”.
+- The service revision, which is the firmware version of your service. Let’s say our firmware has version **1.0.0**. We have to make a _revision_t_ variable to send it.
 
-Now that we have everything we need to create our service, we will begin by creating the LED service directly after the initialization of the other services, into the initialization of your code and using the `Luos_CreateService` \*\*\*\*function:
+Now that we have everything we need to create our service, we will begin by creating the LED service directly after the initialization of the other services, into the initialization of your code and using the `Luos_CreateService` function:
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -125,8 +110,9 @@ void setup()
     Gate_Init();
     Blinker_Init();
 
-	  **revision_t revision = {1, 0, 0};**
-    **Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);**
+    // the two new lines line to copy and paste
+	revision_t revision = {1, 0, 0};
+    Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 
 }
 ```
@@ -145,8 +131,9 @@ int main(void)
     Pipe_Init();
     Gate_Init();
     Blinker_Init();
-		**revision_t revision = {1, 0, 0};**
-    **Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);**
+    // the two new lines to copy and paste
+	revision_t revision = {1, 0, 0};
+    Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 
     while (1)
     {
@@ -170,13 +157,13 @@ Let’s try to see it by lauching a detection:
 
 ```bash
     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-  ┃  ╭node 1            /!\ Not certified            ┃
-  ┃  │  Type                Alias               ID   ┃
-  ┃  ├> State               led                 2    ┃
-  ┃  ├> Pipe                Pipe                3    ┃
-  ┃  ├> Gate                gate                1    ┃
-  ┃  ╰> Unknown             blinker             4    ┃
-╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    ┃  ╭node 1            /!\ Not certified            ┃
+    ┃  │  Type                Alias               ID   ┃
+    ┃  ├> State               led                 2    ┃
+    ┃  ├> Pipe                Pipe                3    ┃
+    ┃  ├> Gate                gate                1    ┃
+    ┃  ╰> Unknown             blinker             4    ┃
+  ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
 <div align="center">
@@ -206,6 +193,8 @@ void setup()
 
     revision_t revision = {1, 0, 0};
     Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
+
+    // the new line to copy and paste
     pinMode(LED_BUILTIN, OUTPUT);
 
 }
@@ -219,6 +208,8 @@ int main(void)
 {
     HAL_Init();
     SystemClock_Config();
+
+    // the new line to copy and paste
     MX_GPIO_Init();//Nucleo Led Pin init
 
     Luos_Init();
@@ -257,6 +248,7 @@ To control the LED depending on the message data, you can fill the content of th
 ```c
 void Led_MsgHandler(service_t *service, msg_t *msg)
 {
+     // the block to copy and paste
       if (msg->data[0] == 0)
       {
           digitalWrite(LED_BUILTIN, false);
@@ -274,6 +266,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 ```c
 void Led_MsgHandler(service_t *service, msg_t *msg)
 {
+    // the block to copy and paste
     if (msg->data[0] == true)
     {
         HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, true);
@@ -309,6 +302,7 @@ To do that, let’s add a filter on the message command:
 ```c
 void Led_MsgHandler(service_t *service, msg_t *msg)
 {
+    // the new line to copy and paste
     if (msg->header.cmd == IO_STATE)
     {
         if (msg->data[0] == 0)
@@ -329,7 +323,8 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 ```c
 void Led_MsgHandler(service_t *service, msg_t *msg)
 {
-		if (msg->header.cmd == IO_STATE)
+    // the new line to copy and paste
+	if (msg->header.cmd == IO_STATE)
     {
 		    if (msg->data[0] == false)
 		    {

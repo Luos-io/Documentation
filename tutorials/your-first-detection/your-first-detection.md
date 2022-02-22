@@ -58,11 +58,11 @@ In case of Arduino board don’t forget to modify the file plateformio.ini to ma
 
 ## 3. Summary
 
-[Part 1: The topology of your system](/your-first-detection/topology)
+[Part 1: The topology of your system](/tutorials/your-first-detection/topology)
 
-[Part 2: How to use the routing Table](/your-first-detection/routing-table)
+[Part 2: How to use the routing Table](/tutorials/your-first-detection/routing-table)
 
-[Part 3: Full embedded application](/your-first-detection/embedded-app)
+[Part 3: Full embedded application](/tutorials/your-first-detection/embedded-app)
 
 ## 4. Keywords
 

@@ -41,7 +41,8 @@ Setup the MCU pin for your button in your button.c file:
 /*******************************************************************************
 * Definitions
 ******************************************************************************/
-**#define BTN_PIN 8**
+// the new line to copy and paste
+#define BTN_PIN 8
 ```
 
 Set the Pin as Input
@@ -52,7 +53,8 @@ void Button_Init(void)
 {
     revision_t revision = {1, 0, 0};
     button_service = Luos_CreateService(0, STATE_TYPE, "button", revision);
-    **pinMode(BTN_PIN, INPUT);**
+    // the new line to copy and paste
+    pinMode(BTN_PIN, INPUT);
 }
 ```
 
@@ -141,21 +143,22 @@ Let’s fill in the information of the structure.
 <TabItem value="Arduino" label="Arduino">
 
 ```c
-Button_Loop()
+void Button_Loop(void)
 {
 	msg_t* msg;
 	while (Luos_ReadMsg(button_service, &msg) == SUCCEED)
 	{
     if ((msg->header.cmd == IO_STATE)||(msg->header.cmd == UNKNOW)
     {
-        // fill the message infos
-        msg_t pub_msg;
-        pub_msg.header.cmd         = IO_STATE;
-        pub_msg.header.target_mode = IDACK;
-        pub_msg.header.target      = msg->header.source;
-        pub_msg.header.size        = sizeof(char); // 1 byte
-        pub_msg.data[0]            = digitalRead(BTN_PIN);
-        Luos_SendMsg(service, &pub_msg);
+      // the new block to copy and paste
+      // fill the message infos
+      msg_t pub_msg;
+      pub_msg.header.cmd         = IO_STATE;
+      pub_msg.header.target_mode = IDACK;
+      pub_msg.header.target      = msg->header.source;
+      pub_msg.header.size        = sizeof(char); // 1 byte
+      pub_msg.data[0]            = digitalRead(BTN_PIN);
+      Luos_SendMsg(service, &pub_msg);
     }
 	}
 }
@@ -165,21 +168,22 @@ Button_Loop()
 <TabItem value="Nucleo" label="Nucleo">
 
 ```c
-Button_Loop()
+void Button_Loop(void)
 {
 	msg_t* msg;
 	while (Luos_ReadMsg(button_service, &msg) == SUCCEED)
 	{
     if ((msg->header.cmd == IO_STATE)||(msg->header.cmd == UNKNOW)
     {
-        // fill the message infos
-        msg_t pub_msg;
-        pub_msg.header.cmd         = IO_STATE;
-        pub_msg.header.target_mode = IDACK;
-        pub_msg.header.target      = msg->header.source;
-        pub_msg.header.size        = sizeof(char); // 1 byte
-        pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
-        Luos_SendMsg(service, &pub_msg);
+      // the new block to copy and paste
+      // fill the message infos
+      msg_t pub_msg;
+      pub_msg.header.cmd         = IO_STATE;
+      pub_msg.header.target_mode = IDACK;
+      pub_msg.header.target      = msg->header.source;
+      pub_msg.header.size        = sizeof(char); // 1 byte
+      pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
+      Luos_SendMsg(service, &pub_msg);
     }
 	}
 }
@@ -209,7 +213,7 @@ Let’s see if our service react as expected.
   ┃  ├> Pipe                Pipe                2    ┃
   ┃  ├> Gate                gate                1    ┃
   ┃  ╰> State               button              3    ┃
-╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 Typing : `device.button.state` you should see the value of the pin

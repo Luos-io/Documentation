@@ -36,7 +36,7 @@ Open the `lib/switcher/switcher.c` file on Platformio. This will be your base wo
 This switcher application is specific to this tutorial, so there is no default Luos type available for it. This means that you will need to create a new custom one. Let’s call it `SWITCHER_APP`:
 
 :::caution
-Locate the right place to copy/paste the bold code into your C file.
+Throughout this tutorial, you will have to locate the right lines where to copy/paste the new line(s) code we provide to you, into your C file (Nucleo) or your INO file (Arduino). We explain it below for this first case, and then we will let you do it by your own.
 
 :::
 
@@ -75,14 +75,16 @@ To do that you need to create a `service_t` pointer, and at the service creation
 /*******************************************************************************
  * Variables
  ******************************************************************************/
-**service_t *switcher_app;** // This will be our switcher service
+// the new line to copy and paste
+service_t *switcher_app; // This will be our switcher service
 ```
 
 ```c
 void Switcher_Init(void)
 {
     revision_t revision = {1, 0, 0};
-    **switcher_app =** Luos_CreateService(Switcher_MsgHandler, SWITCHER_APP, "Switcher", revision);
+    // the new line to copy and paste
+    switcher_app = Luos_CreateService(Switcher_MsgHandler, SWITCHER_APP, "Switcher", revision);
 }
 ```
 
@@ -92,8 +94,9 @@ Now we can make the detection using **`Luos_Detect()`**:
 void Switcher_Init(void)
 {
     revision_t revision = {1, 0, 0};
-    switcher_app **=** Luos_CreateService(Switcher_MsgHandler, SWITCHER_APP, "Switcher", revision);
-		**Luos_Detect(switcher_app);**
+    switcher_app = Luos_CreateService(Switcher_MsgHandler, SWITCHER_APP, "Switcher", revision);
+    // the new line to copy and paste
+	Luos_Detect(switcher_app);
 }
 ```
 
@@ -112,8 +115,9 @@ At the end of a detection, every service will receive an **END_DETECTION** messa
 ```c
 void Switcher_MsgHandler(service_t *service, msg_t *msg)
 {
-    **if (msg->header.cmd == END_DETECTION)**
-    **{
+    // the new block to copy and paste
+    if (msg->header.cmd == END_DETECTION)
+    {
 					msg_t pub_msg;
           pub_msg.header.cmd = IO_STATE;
           pub_msg.header.target_mode = ID;
@@ -121,7 +125,7 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
           pub_msg.header.size = 1;
           pub_msg.data[0] = 1;
           Luos_SendMsg(switcher_app, &pub_msg);
-    }**
+    }
 }
 ```
 

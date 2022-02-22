@@ -58,14 +58,15 @@ In PlatformIO IDE, open the folder corresponding to your board from the reposito
 In the button package init function you can create your service but this time doesn’t give any callback and replace it with a 0:
 
 :::caution
-Locate the right place to copy/paste the bold code into your C file.
+Throughout this tutorial, you will have to locate the right lines where to copy/paste the new line(s) code we provide to you, into your C file (Nucleo) or your INO file (Arduino). We explain it below for this first case, and then we will let you do it by your own.
 :::
 
 ```c
 void Button_Init(void)
 {
-    **revision_t revision = {1, 0, 0};
-    Luos_CreateService(0, STATE_TYPE, "button", revision);**
+    // the two new lines to copy and paste
+    revision_t revision = {1, 0, 0};
+    Luos_CreateService(0, STATE_TYPE, "button", revision);
 }
 
 void Button_Loop(void){}
@@ -102,7 +103,8 @@ To Pull message from Luos engine we will need to know which service is asking fo
 /*******************************************************************************
  * Variable
  ******************************************************************************/
-**service_t *button_service;**
+// the new line to copy and paste
+service_t *button_service;
 ```
 
 Assign your variable to your service creation
@@ -110,21 +112,23 @@ Assign your variable to your service creation
 ```c
 void Button_Init(void)
 {
-    ****revision_t revision = {1, 0, 0};
-    **button_service = Luos_CreateService(0, STATE_TYPE, "button", revision);**
+  // the two new lines to copy and paste
+  revision_t revision = {1, 0, 0};
+  button_service = Luos_CreateService(0, STATE_TYPE, "button", revision);
 }
 ```
 
 Because we don’t give any message handler to Luos we will have to get the available messages into the service loop function using `Luos_ReadMsg` function:
 
 ```c
-Button_Loop()
+void Button_Loop(void)
 {
-		**msg_t* msg;
-		if (Luos_ReadMsg(button_service, &msg) == SUCCEED)
-		{**
-			// We get a message!
-		**}**
+  // the new block to copy and paste
+  msg_t* msg;
+  if (Luos_ReadMsg(button_service, &msg) == SUCCEED)
+  {
+    // We get a message!
+  }
 }
 ```
 
@@ -133,15 +137,16 @@ If we enter in this if condition this is because we have received a message so w
 To be able to send back the button value we need to check if the received message is a good request:
 
 ```c
-Button_Loop()
+void Button_Loop(void)
 {
-		****msg_t* msg;
+		msg_t* msg;
 		if (Luos_ReadMsg(button_service, &msg) == SUCCEED)
 		{
-		****		**if ((msg->header.cmd == IO_STATE)||(msg->header.cmd == UNKNOW)
+        // the new line to copy and paste
+				if ((msg->header.cmd == IO_STATE)||(msg->header.cmd == UNKNOW)
 				{
 		      // We will have to send our button info here
-		    }**
+		    }
 		}
 }
 ```

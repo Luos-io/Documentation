@@ -102,13 +102,15 @@ To finish you have to move the code you created on the Arduino.ino file directly
 #include "led.h"
 #include "Arduino.h"
 
+// the new line to copy and paste
 void Led_MsgHandler(service_t *service, msg_t *msg);
 
 void Led_Init(void)
 {
+    // the three new lines to copy and paste
     pinMode(LED_BUILTIN, OUTPUT);
-		revision_t revision = {1, 0, 0};
-		Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
+    revision_t revision = {1, 0, 0};
+    Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 }
 
 void Led_Loop(void)
@@ -116,6 +118,7 @@ void Led_Loop(void)
  // Nothing to do here in the case of the lED because everything is made on event on Led_MsgHandler.
 }
 
+// the new block to copy and paste
 void Led_MsgHandler(service_t *service, msg_t *msg)
 {
     if (msg->header.cmd == IO_STATE)
@@ -139,16 +142,19 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 #include "led.h"
 #include "gpio.h"
 
+// the new line to copy and paste
 static void Led_MsgHandler(service_t *service, msg_t *msg);
 
 void Led_Init(void)
 {
+    // the two new lines to copy and paste
     revision_t revision = {1, 0, 0};
     Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 }
 
 void Led_Loop(void) {}
 
+// the new block to copy and paste
 static void Led_MsgHandler(service_t *service, msg_t *msg)
 {
     if (msg->header.cmd == IO_STATE)
@@ -185,6 +191,7 @@ extern "C"
 #include "blinker.h"
 #include "pipe.h"
 #include "gate.h"
+// the new line to copy and paste
 #include "led.h"
 
 #ifdef __cplusplus
@@ -197,7 +204,8 @@ void setup()
     Pipe_Init();
     Gate_Init();
     Blinker_Init();
-		Led_Init();
+    // the new line to copy and paste
+	Led_Init();
 }
 
 void loop()
@@ -206,6 +214,7 @@ void loop()
     Pipe_Loop();
     Gate_Loop();
     Blinker_Loop();
+    // the new line to copy and paste
     Led_Loop();
 }
 ```
@@ -218,6 +227,7 @@ void loop()
 #include "blinker.h"
 #include "pipe.h"
 #include "gate.h"
+// the new line to copy and paste
 #include "led.h"
 
 void SystemClock_Config(void);
@@ -232,6 +242,7 @@ int main(void)
     Pipe_Init();
     Gate_Init();
     Blinker_Init();
+    // the new line to copy and paste
     Led_Init();
 
     while (1)
@@ -240,6 +251,7 @@ int main(void)
         Pipe_Loop();
         Gate_Loop();
         Blinker_Loop();
+        // the new line to copy and paste
         Led_Loop();
     }
 }

@@ -34,7 +34,8 @@ For now in the project there is 2 packages! For the next step, we will add the b
 ```c
 #include <luos.h>
 #include "led.h"
-**#include "button.h"**
+// the new line to copy and paste
+#include "button.h"
 #include "switcher.h"
 
 #ifdef __cplusplus
@@ -50,7 +51,8 @@ void setup()
 {
     Luos_Init();
     Led_Init();
-    **Button_Init();**
+	// the new line to copy and paste
+    Button_Init();
     Switcher_Init();
 }
 /******************************************************************************
@@ -62,7 +64,8 @@ void loop()
 {
     Luos_Loop();
     Led_Loop();
-    **Button_Loop();**
+	// the new line to copy and paste
+    Button_Loop();
     Switcher_Loop();
 }
 ```
@@ -74,7 +77,8 @@ void loop()
 #include <luos.h>
 #include "switcher.h"
 #include "led.h"
-**#include "button.h"**
+// the new line to copy and paste
+#include "button.h"
 
 void SystemClock_Config(void);
 
@@ -87,14 +91,16 @@ int main(void)
     Luos_Init();
     SwitcherInit();
     Led_Init();
-    **Button_Init();**
+	// the new line to copy and paste
+    Button_Init();
 
     while (1)
     {
         Luos_Loop();
         Switcher_Loop();
         Led_Loop();
-        **Button_Loop();**
+		// the new line to copy and paste
+        Button_Loop();
     }
 }
 ```
@@ -121,8 +127,9 @@ Now the button package was add to our project. we must find its ID to send a mes
  * Variables
  ******************************************************************************/
 service_t *switcher_app; // This will be our switcher service
-****uint16_t ID_Led;
-**uint16_t ID_Button;**
+uint16_t ID_Led;
+// the new line to copy and paste
+uint16_t ID_Button;
 ```
 
 2. Filter the button service alias in the routing table and ask it about it.
@@ -132,17 +139,18 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 {
     if (msg->header.cmd == END_DETECTION)
     {
-				search_result_t filter_result;
+		search_result_t filter_result;
         RTFilter_Reset(&filter_result); // Init your filter.
-				// Now your filter_result have the entire routing table. #nofilter ;)
+		// Now your filter_result have the entire routing table. #nofilter ;)
         RTFilter_Alias(&filter_result, "led"); // Filter your filter_result only keep the services with the alias "led"
-				ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
+		ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
 
-				**RTFilter_Reset(&filter_result); // Reset your filter.
-				RTFilter_Alias(&filter_result, "button");
-				ID_Button = filter_result.result_table[0]->id;**
+		// the three new lines to copy and paste
+		RTFilter_Reset(&filter_result); // Reset your filter.
+		RTFilter_Alias(&filter_result, "button");
+		ID_Button = filter_result.result_table[0]->id;
 
-****				if (ID_Led > 0)
+        if (ID_Led > 0)
         {
 	        msg_t pub_msg;
 	        pub_msg.header.cmd = IO_STATE;
@@ -151,7 +159,7 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 	        pub_msg.header.size = 1;
 	        pub_msg.data[0] = 1;
 	        Luos_SendMsg(switcher_app, &pub_msg);
-				}
+		}
     }
 }
 ```
@@ -160,7 +168,7 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 
 Now we have the button service ID, we can easily get the button value by sending a message to button service in `Switcher_Loop`. The button service will reply with a message containing the button value!
 
-If we send this request at every Loop, this will create messages a lot and overload \*\*\*\*the network. This will consume a lot of RAM and create network congestion!
+If we send this request at every Loop, this will create messages a lot and overload the network. This will consume a lot of RAM and create network congestion!
 
 Let’s space them from 10ms!
 
@@ -179,7 +187,8 @@ Let’s create a variable to track the **LastAsk**:
 service_t *switcher_app; // This will be our switcher service
 uint16_t ID_Led;
 uint16_t ID_Button;
-**uint32_t LastAsk;**
+// the new line to copy and paste
+uint32_t LastAsk;
 
 ```
 
@@ -191,7 +200,8 @@ void Switcher_Init(void)
     revision_t revision = {1, 0, 0};
     switcher_app = Luos_CreateService(Switcher_MsgHandler, SWITCHER_APP, "Switcher", revision);
     Luos_Detect(switcher_app);
-    **LastAsk = Luos_GetSystick();**
+	// the new line to copy and paste
+    LastAsk = Luos_GetSystick();
 }
 ```
 
@@ -200,12 +210,13 @@ Check if 10ms have passed :
 ```c
 void Switcher_Loop(void)
 {
-    **// ask button value every 10ms
+	// the new block to copy and paste
+    // ask button value every 10ms
     if ((Luos_GetSystick() - LastAsk) > 10)
     {
         // Ask the button
         LastAsk = Luos_GetSystick();
-    }**
+    }
 }
 ```
 
@@ -218,14 +229,15 @@ This function return true when your system have been entirely detected :
 ```c
 void Switcher_Loop(void)
 {
-    **if (Luos_IsNodeDetected() == true) // Topology detection completed
-    {**
-		    // ask button value every 10ms
-		    if ((Luos_GetSystick() - LastAsk) > 10)
-		    {
-		        LastAsk = Luos_GetSystick();
-		    }
-		**}**
+	// the new block to copy and paste
+    if (Luos_IsNodeDetected() == true) // Topology detection completed
+    {
+		// ask button value every 10ms
+		if ((Luos_GetSystick() - LastAsk) > 10)
+		{
+			LastAsk = Luos_GetSystick();
+		}
+	}
 }
 ```
 
@@ -241,16 +253,17 @@ void Switcher_Loop(void)
 		    // ask button value every 10ms
 		    if ((Luos_GetSystick() - LastAsk) > 10)
 		    {
-						**if (ID_Button > 0)
+				// the new block to copy and paste
+				if (ID_Button > 0)
 		        {
-								// Ask the button
-				        msg_t pub_msg;
+					// Ask the button
+				    msg_t pub_msg;
 		            pub_msg.header.cmd = IO_STATE;
 		            pub_msg.header.target_mode = ID;
 		            pub_msg.header.target = ID_Button;
 		            pub_msg.header.size = 0;
 		            Luos_SendMsg(switcher_app, &pub_msg);
-						}**
+				}
 		        LastAsk = Luos_GetSystick();
 		    }
 		}
@@ -270,17 +283,17 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 {
     if (msg->header.cmd == END_DETECTION)
     {
-				search_result_t filter_result;
+		search_result_t filter_result;
         RTFilter_Reset(&filter_result); // Init your filter.
-				// Now your filter_result have the entire routing table. #nofilter ;)
+		// Now your filter_result have the entire routing table. #nofilter ;)
         RTFilter_Alias(&filter_result, "led"); // Filter your filter_result only keep the services with the alias "led"
-				ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
+		ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
 
-****				RTFilter_Reset(&filter_result); // Reset your filter.
-				RTFilter_Alias(&filter_result, "button");
-				ID_Button = filter_result.result_table[0]->id;
+		RTFilter_Reset(&filter_result); // Reset your filter.
+		RTFilter_Alias(&filter_result, "button");
+		ID_Button = filter_result.result_table[0]->id;
 
-****				if (ID_Led > 0)
+		if (ID_Led > 0)
         {
 	        msg_t pub_msg;
 	        pub_msg.header.cmd = IO_STATE;
@@ -289,12 +302,13 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 	        pub_msg.header.size = 1;
 	        pub_msg.data[0] = 1;
 	        Luos_SendMsg(switcher_app, &pub_msg);
-				}
+		}
     }
-		**else if ((msg->header.cmd == IO_STATE) && (msg->header.source == ID_Button))
-	  {
-				// Command the led accordingly to the button message
-		}**
+	// the new block to copy and paste
+	else if ((msg->header.cmd == IO_STATE) && (msg->header.source == ID_Button))
+	{
+		// Command the led accordingly to the button message
+	}
 }
 ```
 
@@ -307,20 +321,21 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 {
     if (msg->header.cmd == END_DETECTION)
     {
-				search_result_t filter_result;
+		search_result_t filter_result;
         RTFilter_Reset(&filter_result); // Init your filter.
-				// Now your filter_result have the entire routing table. #nofilter ;)
+		// Now your filter_result have the entire routing table. #nofilter ;)
         RTFilter_Alias(&filter_result, "led"); // Filter your filter_result only keep the services with the alias "led"
-				ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
+		ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
 
-****				RTFilter_Reset(&filter_result); // Reset your filter.
-				RTFilter_Alias(&filter_result, "button");
-				ID_Button = filter_result.result_table[0]->id;
+		RTFilter_Reset(&filter_result); // Reset your filter.
+		RTFilter_Alias(&filter_result, "button");
+		ID_Button = filter_result.result_table[0]->id;
     }
-		else if ((msg->header.cmd == IO_STATE) && (msg->header.source == ID_Button))
-	  {
-				// Command the led accordingly to the button message
-				**if (ID_Led > 0)
+	else if ((msg->header.cmd == IO_STATE) && (msg->header.source == ID_Button))
+	{
+		// the new block to copy and paste
+		// Command the led accordingly to the button message
+		if (ID_Led > 0)
         {
 	        msg_t pub_msg;
 	        pub_msg.header.cmd = IO_STATE;
@@ -329,8 +344,8 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 	        pub_msg.header.size = 1;
 	        pub_msg.data[0] = 1;
 	        Luos_SendMsg(switcher_app, &pub_msg);
-				}**
 		}
+	}
 }
 ```
 
@@ -340,20 +355,21 @@ At this point everytime you receive a message from the button service, you will 
 
 ```c
 ...
-		else if ((msg->header.cmd == IO_STATE) && (msg->header.source == ID_Button))
-	  {
-				// Command the led accordingly to the button message
-				if (ID_Led > 0)
+	else if ((msg->header.cmd == IO_STATE) && (msg->header.source == ID_Button))
+	{
+		// Command the led accordingly to the button message
+		if (ID_Led > 0)
         {
 	        msg_t pub_msg;
 	        pub_msg.header.cmd = IO_STATE;
 	        pub_msg.header.target_mode = ID;
 	        pub_msg.header.target =  ID_Led // configure the target to be our led service ID
 	        pub_msg.header.size = 1;
-	        **pub_msg.data[0] = msg->data[0];**
+			// the new line to copy and paste
+	        pub_msg.data[0] = msg->data[0];
 	        Luos_SendMsg(switcher_app, &pub_msg);
-				}
 		}
+	}
 ...
 ```
 

@@ -60,7 +60,8 @@ In your Switcher.c file, on the Switcher_MsgHandler let’s find the service wit
  * Variables
  ******************************************************************************/
 service_t *switcher_app; // This will be our switcher service
-**uint16_t ID_Led;**
+// the new line to copy and paste
+uint16_t ID_Led;
 ```
 
 1. Use routing table filter to find the id of the led service by its alias
@@ -73,22 +74,24 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 {
     if (msg->header.cmd == END_DETECTION)
     {
-				**search_result_t filter_result;
+		// the five new lines to copy and paste
+		search_result_t filter_result;
         RTFilter_Reset(&filter_result); // Init your filter.
-				// Now your filter_result have the entire routing table. #nofilter ;)
+		// Now your filter_result have the entire routing table. #nofilter ;)
         RTFilter_Alias(&filter_result, "led"); // Filter your filter_result only keep the services with the alias "led"
-				ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
+		ID_Led = filter_result.result_table[0]->id;//recover the first service ID with alias "led"
 
-				if (ID_Led > 0)
-        {**
+		if (ID_Led > 0)
+        {
 	        msg_t pub_msg;
 	        pub_msg.header.cmd = IO_STATE;
 	        pub_msg.header.target_mode = ID;
-	        pub_msg.header.target =  **ID_Led // configure the target to be our led service ID**
+			// the new line to copy and paste
+	        pub_msg.header.target =  ID_Led // configure the target to be our led service ID
 	        pub_msg.header.size = 1;
 	        pub_msg.data[0] = 1;
 	        Luos_SendMsg(switcher_app, &pub_msg);
-				**}**
+		}
     }
 }
 ```
