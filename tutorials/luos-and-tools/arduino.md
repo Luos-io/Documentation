@@ -33,7 +33,6 @@ The Luos library can be used with PlatformIO, the IDE Luos company uses, but you
 
 You can download Arduino IDE compatible example and Luos Library with <a href="https://github.com/Luos-io/Luos/releases" target="_blank">Luos Release<IconExternalLink width="10" /></a>.
 
-
 ## 3. Keywords
 
 - <span className="cust_tooltip">Board<span className="cust_tooltiptext">Electronic board with an MCU on it</span></span>
@@ -43,12 +42,6 @@ You can download Arduino IDE compatible example and Luos Library with <a href="h
 - <span className="cust_tooltip">Distributed system<span className="cust_tooltiptext">Microservices are a software development technique that arranges an application as a collection of loosely coupled services.</span></span>
 
 ## 4. Resources
-
-- [Bootloader](https://github.com/Luos-io/Luos_bootloader.git)
-- [Application](https://github.com/Luos-io/luos_bootloader_app.git)
-
-import Image from '/src/components/Images.js';
-import IconExternalLink from '@theme/IconExternalLink';
 
 ## 5. Introduction to Arduino
 
