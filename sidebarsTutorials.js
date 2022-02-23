@@ -23,36 +23,83 @@ module.exports = {
               label: 'Bootloader',
               id: 'luos-and-tools/bootloader',
             },
+            {
+              type: 'doc',
+              label: 'Use Luos with Arduino IDE',
+              id: 'luos-and-tools/arduino',
+            },
+            {
+              type: 'doc',
+              label: 'FreeRTOS',
+              id: 'luos-and-tools/freertos',
+            },
           ],
         },
         {
           type: 'category',
-          label: 'Demo boards',
+          label: 'Your first service',
           items: [
             {
               type: 'doc',
-              label: 'List',
-              id: 'demo-boards/list',
+              label: 'Your first service',
+              id: 'your-first-service/your-first-service',
             },
             {
               type: 'doc',
-              label: 'Luos demo boards',
-              id: 'demo-boards/luos-demo-boards',
+              label: 'Luos service',
+              id: 'your-first-service/luos-service',
             },
             {
               type: 'doc',
-              label: 'Basic button-LED device',
-              id: 'demo-boards/button-led',
+              label: 'Create a package',
+              id: 'your-first-service/create-a-package',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Your first message',
+          items: [
+            {
+              type: 'doc',
+              label: 'Your first message',
+              id: 'your-first-message/your-first-message',
             },
             {
               type: 'doc',
-              label: 'Basic servomotor-LED device (video)',
-              id: 'demo-boards/servomotor',
+              label: 'Receiving Message',
+              id: 'your-first-message/receiving-message',
             },
             {
               type: 'doc',
-              label: 'Use Luos with Arduino IDE',
-              id: 'demo-boards/arduino',
+              label: 'Send Message from button service',
+              id: 'your-first-message/send-message',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Your First Topology detection',
+          items: [
+            {
+              type: 'doc',
+              label: 'Your First Topology detection',
+              id: 'your-first-detection/your-first-detection',
+            },
+            {
+              type: 'doc',
+              label: 'The topology of your system',
+              id: 'your-first-detection/topology',
+            },
+            {
+              type: 'doc',
+              label: 'How to use the routing Table',
+              id: 'your-first-detection/routing-table',
+            },
+            {
+              type: 'doc',
+              label: 'Full embedded application',
+              id: 'your-first-detection/embedded-app',
             },
           ],
         },
