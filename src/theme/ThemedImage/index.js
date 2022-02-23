@@ -7,12 +7,12 @@
 import React from 'react';
 import clsx from 'clsx';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import {useColorMode} from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 
 const ThemedImage = (props) => {
   const isBrowser = useIsBrowser();
-  const {isDarkTheme} = useThemeContext();
+  const {isDarkTheme} = useColorMode();
   const {sources, className, alt = '', ...propsRest} = props;
   const clientThemes = isDarkTheme ? ['dark'] : ['light'];
   const renderedSourceNames = isBrowser

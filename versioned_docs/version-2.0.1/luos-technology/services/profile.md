@@ -41,7 +41,7 @@ The returned `service_t*` is a service structure pointer that will be useful to 
 - **default alias** is the alias by default for your new service, e.g. `Myprofile02`. This alias is the one your service will use if no other alias is set by the user of your functionality hosted in your service. Aliases have a maximum size of 16 characters.
 - **revision** is the revision number of the service you are creating.
 
-Following the [packages rules](../package/package.html#basic-services-functions), here is a code example for a button service using a state profile:
+Following the [packages rules](../package#basic-packages-functions), here is a code example for a button service using a state profile:
 
 ```c
 #include "profile_state.h"

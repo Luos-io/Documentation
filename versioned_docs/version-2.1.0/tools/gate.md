@@ -12,7 +12,7 @@ The Gate is a major tool of the Luos eco-system. It's allowing you to translate 
 
 You can use it to take control of any embedded service with [any languages](/docs/api/list) on any machine. For example we use it in [Pyluos](/docs/tools/pyluos) or [ROS](/docs/tools/ros)!
 
-Gate is a simple embedded [App service](/docs/luos-technology/services/services#apps-guidelines), so it can work on any MCU running Luos without any modification.
+Gate is a simple embedded [App service](../luos-technology/services#apps-guidelines), so it can work on any MCU running Luos without any modification.
 
 The Gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <Tooltip def={customFields.node_def}>node</Tooltip> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
 
