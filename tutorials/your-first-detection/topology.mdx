@@ -35,7 +35,6 @@ Open the `lib/switcher/switcher.c` file on PlatformIO. This will be your base wo
 
 This switcher application is specific to this tutorial, so there is no default Luos type available for it. This means that you will need to create a custom one. Let’s call it `SWITCHER_APP`.
 
-
 ```c
 void Switcher_Init(void)
 {
@@ -97,7 +96,7 @@ void Switcher_Init(void)
 ```
 
 :::info
-After using this API, Luos Engine will assign a unique ID to each service in the system and create a routing table containing all the services' information present in the network: [ID, Alias](/docs/luos-technology/services/services/), and [topology](docs/luos-technology/node/topology/). This routing table created by the service starting the detection is shared to the others. More details about the routing table can be found on the [dedicated Luos documentation page](/docs/luos-technology/services/routing-table).
+After using this API, Luos Engine will assign a unique ID to each service in the system and create a routing table containing all the services' information present in the network: [ID, Alias](/docs/luos-technology/services/), and [topology](docs/luos-technology/node/topology/). This routing table created by the service starting the detection is shared to the others. More details about the routing table can be found on the [dedicated Luos documentation page](/docs/luos-technology/services/routing-table).
 :::
 
 If you check your main files, you will see a switcher package and a led package. All those packages create only one service. The service performing the detection always has the ID 1 because this service will be the “root” of your system. So in our case, the switcher app will receive ID 1. Then, the other services will get the next ID following the creation order, so the led service will receive ID 2.

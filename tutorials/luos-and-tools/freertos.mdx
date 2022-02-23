@@ -21,7 +21,7 @@ If you're used to develop your embedded system with FreeRTOS, you can leverage L
 ### Pre-requisite
 
 - [Training repository](https://github.com/Luos-io/Get_started)
-- [Luos Basics](/docs/luos-technology/basics/basics)
+- [Luos Basics](/docs/luos-technology/basics)
 
 ### Equipment you will need
 
@@ -40,7 +40,7 @@ The project is running on [Nucleo-F072RB](https://www.st.com/en/evaluation-tools
 
 ## 5. Setup a PlatformIO project
 
-You can start from an example brought by Luos: we will use a LED example you can find [here](https://github.com/Luos-io/Examples/tree/master/Projects/l0/Led). First, create a folder and clone the repository: 
+You can start from an example brought by Luos: we will use a LED example you can find [here](https://github.com/Luos-io/Examples/tree/master/Projects/l0/Led). First, create a folder and clone the repository:
 
     mkdir workspace
     cd ./workspace/
@@ -48,6 +48,7 @@ You can start from an example brought by Luos: we will use a LED example you can
     cd Examples/Projects/l0/Led/
 
 For a quick reminder, you will find in this project:
+
 - a **src/** folder containing a **main.c** whose main purpose is to call **services** and **luos** initialization functions. This folder also contains the file **stm32f0xx_it.c** in which we define interrupt handlers.
 - a **lib/** folder containing services source files.
 
@@ -60,7 +61,7 @@ Now we need to import FreeRTOS source files in our project and configure the ker
 
 Then you have to configure available options in the kernel and plug them in your project: FreeRTOS needs some resources as a timer to work properly. It also needs to handle three interrupters handlers (PendSV, SVC and Systick handlers) so you must not redefine these three handlers in **stm32f0xx_it.c**.
 
-For more conveniance, we will download a folder with all the ressources we need to complete this tutorial:  
+For more conveniance, we will download a folder with all the ressources we need to complete this tutorial:
 
     cd ../../
     git clone https://github.com/Luos-io/tutorial_freertos.git
@@ -73,7 +74,7 @@ If you want more information about the options displayed in this file, please ch
     #define xPortPendSVHandler  PendSV_Handler
     #define xPortSysTickHandler SysTick_Handler
 
-As FreeRTOS defines these handlers, you have to delete their implementation in **stm32f0xx_it.c**. Once you've done this, there is one remaining action to complete the kernel configuration: FreeRTOS needs a dedicated timer to properly works. 
+As FreeRTOS defines these handlers, you have to delete their implementation in **stm32f0xx_it.c**. Once you've done this, there is one remaining action to complete the kernel configuration: FreeRTOS needs a dedicated timer to properly works.
 
 The timer you choose depends of your MCU. On STMF0 we will use the **Timer 7**, which is a very simple and basic one. It's only used to call the scheduler at a fixed period (defined by **configTICK_RATE_HZ** in **FreeRTOSConfig.h**). So, let's create a new file called **stm32f0xx_hal_timebase_tim.c** in **src/** and copy the following code in it:
 
@@ -136,7 +137,7 @@ The function **HAL_InitTick()** is called at system startup and configures the t
 
 ## 7. Use CMSIS RTOS interface to call kernel routines
 
-Now we have to call kernel routines from our **main** function. We could directly use FreeRTOS functions, but ARM defined a standard API to interface with RTOS capabilities and we will use it. Follow the steps below to copy these files in your project: 
+Now we have to call kernel routines from our **main** function. We could directly use FreeRTOS functions, but ARM defined a standard API to interface with RTOS capabilities and we will use it. Follow the steps below to copy these files in your project:
 
     cp -r ../tutorial_freertos/CMSIS_RTOS_V2/ ./lib/FreeRTOS/Source
 
@@ -151,7 +152,7 @@ We can call the OS API in our **main.c** file (notice that we deleted all the Lu
         SystemClock_Config();
 
         osKernelInitialize();
-        
+
         osKernelStart();
     }
 
@@ -166,7 +167,7 @@ One last thing to set the kernel, we have to tell to platformIO how to compile t
         -I lib//FreeRTOS//Source//CMSIS_RTOS_V2
         -I lib//FreeRTOS//Source//portable//GCC//ARM_CM0
         -O1
-    lib_deps = 
+    lib_deps =
         Luos@^2.0.1
         LuosHAL
         Button
@@ -175,7 +176,8 @@ One last thing to set the kernel, we have to tell to platformIO how to compile t
 
 We added the path to include files in **build_flags** and the source folder name in **lib_deps**.
 
-Let's recall what we've done so far: 
+Let's recall what we've done so far:
+
 - We have used a Luos button example as a base project.
 - We imported FreeRTOS sources, configured them and started the kernel from the **main** function.
 
@@ -183,9 +185,9 @@ If you compile and load this code in the target, nothing will happen for a simpl
 
 ## 8. Create Luos tasks
 
-We will create two services: a **button** service and a **led** service. The goal is to turn off / on the LED by pushing the user button on the Nucleo board. 
+We will create two services: a **button** service and a **led** service. The goal is to turn off / on the LED by pushing the user button on the Nucleo board.
 
-First, copy services' source files from the downloaded repository: 
+First, copy services' source files from the downloaded repository:
 
     cp -r ../tutorial_freertos/Button/ ./lib/
     cp -r ../tutorial_freertos/Led/ ./lib/
@@ -194,7 +196,7 @@ Then we will call our services routines in FreeRTOS tasks, and we will manage th
 
     cp ../tutorial_freertos/freertos.c ./src/
 
-Open it in VSCode and you will see the following code: 
+Open it in VSCode and you will see the following code:
 
     #include "FreeRTOS.h"
     #include "task.h"
@@ -273,25 +275,27 @@ Open it in VSCode and you will see the following code:
 First, we included files we need to call FreeRTOS and Luos APIs. Then we created three structures: **LuosTask_attributes**, **ButtonTask_attributes** and **LedTask_attributes**. Those structures are used by FreeRTOS to configure **heap** size and **priority** for each task.
 
 Here we have three tasks:
+
 - luos task: it's used to manage the messages passing between services
 - button task: it's used to read the blue button's state present on the nucleo board and send a message to the led service
 - led task: it's used to receive the messages from button service and turn ON / OFF the LED.
 
 These tasks are initialized in **MX_FREERTOS_Init()** with the **osThreadNew()** routine. Notice that we called **Luos_Init()**, **Button_Init()** and **Led_Init()** just before creating threads.
 
-We've created three threads for two services because the first one is dedicated to handle **luos** platform. The three threads have the *same priority* and that's important because the scheduler will place them in the *same queue*, running one after the other. 
+We've created three threads for two services because the first one is dedicated to handle **luos** platform. The three threads have the _same priority_ and that's important because the scheduler will place them in the _same queue_, running one after the other.
 
-One last thing, in each *task* routine, we call the service loop then we *yield* to the next threads. Indeed, FreeRTOS scheduler can be called in preemptive or cooperative mode. The timer 7 will call it each 1 millisecond, but this implies that you will switch from one thread to the other at this period. This can be way too slow for most applications and we can improve the reactivity of the system by calling **taskYield** after each service loop routine.
+One last thing, in each _task_ routine, we call the service loop then we _yield_ to the next threads. Indeed, FreeRTOS scheduler can be called in preemptive or cooperative mode. The timer 7 will call it each 1 millisecond, but this implies that you will switch from one thread to the other at this period. This can be way too slow for most applications and we can improve the reactivity of the system by calling **taskYield** after each service loop routine.
 
 ## 9. Test your project
 
-Now you can build your project in VSCode and load your project in the nucleo board. Once the board is flashed, push the button and you should see the green LED turn on: FreeRTOS is now running Luos and your services. 
+Now you can build your project in VSCode and load your project in the nucleo board. Once the board is flashed, push the button and you should see the green LED turn on: FreeRTOS is now running Luos and your services.
 
 You can use this project to develop your application: to create a new service, add the code in the **lib/** folder and instanciate it by creating a new task in **freertos.c**.
 
 ## 10. Main advantages
 
 From a FreeRTOS developer point of view, Luos brought you APIs to develop distributed applications with ease:
+
 - Develop each application in a service,
 - manage messages between services through luos API, and
 - manage and monitor your network with our SaaS tools.
