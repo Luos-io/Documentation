@@ -222,6 +222,22 @@ module.exports = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: 'Compatibility',
+          items: [
+            {
+              type: 'doc',
+              label: 'Luos ecosystem',
+              id: 'compatibility/ecosystem',
+            },
+            {
+              type: 'doc',
+              label: 'Boards compatibility',
+              id: 'compatibility/mcu_demoboard',
+            },
+          ],
+        },
       ],
     },
     { type: 'link', label: 'Go to Luos.io', href: 'https://www.luos.io/' },
