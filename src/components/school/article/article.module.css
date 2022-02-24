@@ -1,6 +1,6 @@
 .introContainer {
   width: 100%;
-  padding: 50px 30px;
+  padding: 20px;
 }
 
 .title {
@@ -53,4 +53,42 @@
 .subtitle {
   font-size: 22px !important;
   font-family: 'Roboto Mono', sans-serif;
+  margin-bottom: 25px !important;
+}
+
+.requirement {
+  width: 100%;
+  padding: 20px;
+  border-left: 3px solid #ddaa3a;
+  min-height: 175px;
+  margin-bottom: 10px;
+}
+
+.titleRequirement {
+  font-size: 18px !important;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.separator {
+  border: none;
+  border-top: 2px solid #ddaa3a;
+  color: #333;
+  overflow: visible;
+  margin: 0px;
+}
+
+.requirement a {
+  padding: 0px 16px !important;
+}
+
+.showMoreBtn {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  margin-bottom: -20px !important;
+  width: 100%;
+}
+
+.showMoreBtn:hover {
+  background: none !important;
 }

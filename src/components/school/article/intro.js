@@ -1,60 +1,73 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Paper } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import styles from './article.module.css';
+import Requirement from './requirement';
 
-export const Introduction = () => {
-  const keyword = ['test 1', 'test 2', 'test 3'];
-  keyword.forEach((element) => {
-    console.log(element);
-  });
+export const Introduction = (props) => {
+  console.log(props.requierements);
+  const keyword = props.tags;
   return (
-    <Paper className={styles.introContainer} elevation={1}>
-      <Grid className={styles.titleContainer} container>
-        <Grid item md={6} xs={12}>
-          <h1 className={styles.title}>Title</h1>
+    <div style={{ marginTop: '-65px' }}>
+      <Paper className={styles.introContainer} elevation={1}>
+        <Grid className={styles.titleContainer} container>
+          <Grid item md={7} xs={12}>
+            <h1 className={styles.title}>{props.title}</h1>
+          </Grid>
+          <Grid item md={5} xs={12}>
+            <div className={styles.navigation}>
+              <span>
+                <img
+                  className={styles.categoryIcons}
+                  src="/img/school/category.svg"
+                />
+              </span>
+              <span className={styles.counter}>{props.category}</span>
+              <span>
+                <img
+                  className={styles.materialIcons}
+                  src="/img/school/clock.svg"
+                />
+              </span>
+              <span className={styles.counter}>{props.time}</span>
+              <span>
+                <img
+                  className={styles.materialIcons}
+                  src="/img/school/level.svg"
+                />
+              </span>
+              <span className={styles.lastCounter}>{props.level}</span>
+            </div>
+          </Grid>
         </Grid>
-        <Grid item md={6} xs={12}>
-          <div className={styles.navigation}>
-            <span>
-              <img
-                className={styles.categoryIcons}
-                src="/img/school/category.svg"
-              />
-            </span>
-            <span className={styles.counter}>Category</span>
-            <span>
-              <img
-                className={styles.materialIcons}
-                src="/img/school/clock.svg"
-              />
-            </span>
-            <span className={styles.counter}>Time</span>
-            <span>
-              <img
-                className={styles.materialIcons}
-                src="/img/school/level.svg"
-              />
-            </span>
-            <span className={styles.lastCounter}>level</span>
-          </div>
+        <h2 className={styles.subtitle}>What will you learn</h2>
+        <Stack direction="row" spacing={1} marginBottom={2}>
+          {keyword.map((element, index) => (
+            <Chip key={index} label={element} />
+          ))}
+        </Stack>
+        <p>{props.desc}</p>
+        <Grid container spacing={5}>
+          <Grid item md={6} xs={12}>
+            <Requirement title="Pre-requisites" list={props.requierements} />
+          </Grid>
+          <Grid item md={6} xs={12}>
+            <Requirement
+              title="Equipment you will need​"
+              list={props.ressources}
+              shortList={new Boolean(props.shortList)}
+            />
+          </Grid>
+        </Grid>
+      </Paper>
+      <Grid container mt={3}>
+        <Grid item xs={12}>
+          <Requirement title="Summary" color="yellow" list={props.summary} />
         </Grid>
       </Grid>
-      <h2 className={styles.subtitle}>What will you learn</h2>
-      <Stack direction="row" spacing={1} marginBottom={5}>
-        {keyword.map((element, index) => (
-          <Chip key={index} label={element} />
-        ))}
-      </Stack>
-      <p>
-        We will use one of these nodes as a gate and the other as an application
-        node. The second node will host a bootloader, and you will be able to
-        update its firmware through the gate. You need an USB shield to connect
-        to the first node to complete this tutorial.
-      </p>
-    </Paper>
+    </div>
   );
 };
 
