@@ -138,7 +138,7 @@ function DocItem(props) {
         </div>
         {renderTocDesktop && (
           <div className="col col--3">
-            <TOC toc={DocContent.toc} />
+            <TOC toc={DocContent.toc} link={DocContent.metadata.permalink} />
           </div>
         )}
       </div>
