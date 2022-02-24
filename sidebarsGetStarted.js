@@ -11,7 +11,7 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Part 1: Your fist Luos service',
+          label: 'Part 1: Your first Luos service',
           id: 'get-started1',
         },
         {
