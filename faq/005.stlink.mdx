@@ -1,0 +1,53 @@
+---
+custom_edit_url: null
+---
+
+import Image from "@site/src/components/Images.js";
+
+# I am enable to update my board using ST-Link
+
+## Symptom(s)
+
+When you try to update a card using ST-Link, an error message may appear on platform.io. This error is not expected if platform.io has been successfully installed, but in some specific configurations it may happen.
+
+## Possible explanation
+
+Your ST-Link driver is not installed.
+
+## Resolution
+
+### Download the ST -Link driver for your platform
+
+You may need to download and install the ST-Link driver for your OS (ST website might ask you to login or register):
+
+#### Windows
+
+You need to download and install the dedicated driver from the <a href="https://www.st.com/en/development-tools/stsw-link009.html" target="blank_">**ST microelectronics website**</a>:
+
+<div align="center">
+  <Image src="/img/windows_driver.png" />
+</div>
+
+#### Linux & MacOS
+
+You need to download and install the dedicated driver from the <a href="https://www.st.com/en/development-tools/stsw-link007.html" target="blank_">**ST microelectronics website**</a>:
+
+<div align="center">
+  <Image src="/img/mac_linux_driver.png" />
+</div>
+
+#### Installation completed
+
+Once the installation is completed successfully, you should see the following message:
+
+<div align="center">
+  <Image src="/img/installation_ok.png" />
+</div>
+
+### Relaunch the Upload process in PlatformIO
+
+Now if you relaunch the upload after the driver installation, you should see the following message in platformIO:
+
+<div align="center">
+  <Image src="/img/program_ok_zoom.png" />
+</div>

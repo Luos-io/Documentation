@@ -12,28 +12,52 @@ module.exports = {
         {
           type: 'category',
           label: 'Luos and tools',
+          link: { type: 'doc', id: 'luos-and-tools/list' },
           items: [
-            {
-              type: 'doc',
-              label: 'List',
-              id: 'luos-and-tools/list',
-            },
             {
               type: 'doc',
               label: 'Bootloader',
               id: 'luos-and-tools/bootloader',
+            },
+            {
+              type: 'doc',
+              label: 'Use Luos with Arduino IDE',
+              id: 'luos-and-tools/arduino',
+            },
+            {
+              type: 'doc',
+              label: 'FreeRTOS',
+              id: 'luos-and-tools/freertos',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Get Started',
+          link: { type: 'doc', id: 'get-started/get-started' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: Your first Luos service',
+              id: 'get-started/get-started1',
+            },
+            {
+              type: 'doc',
+              label: 'Part 2: Take the control',
+              id: 'get-started/get-started2',
+            },
+            {
+              type: 'doc',
+              label: 'Part 3: Unleash your code',
+              id: 'get-started/get-started3',
             },
           ],
         },
         {
           type: 'category',
           label: 'Your first service',
+          link: { type: 'doc', id: 'your-first-service/your-first-service' },
           items: [
-            {
-              type: 'doc',
-              label: 'Your first service',
-              id: 'your-first-service/your-first-service',
-            },
             {
               type: 'doc',
               label: 'Luos service',
@@ -49,12 +73,8 @@ module.exports = {
         {
           type: 'category',
           label: 'Your first message',
+          link: { type: 'doc', id: 'your-first-message/your-first-message' },
           items: [
-            {
-              type: 'doc',
-              label: 'Your first message',
-              id: 'your-first-message/your-first-message',
-            },
             {
               type: 'doc',
               label: 'Receiving Message',
@@ -70,12 +90,11 @@ module.exports = {
         {
           type: 'category',
           label: 'Your First Topology detection',
+          link: {
+            type: 'doc',
+            id: 'your-first-detection/your-first-detection',
+          },
           items: [
-            {
-              type: 'doc',
-              label: 'Your First Topology detection',
-              id: 'your-first-detection/your-first-detection',
-            },
             {
               type: 'doc',
               label: 'The topology of your system',
@@ -95,44 +114,12 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Demo boards',
-          items: [
-            {
-              type: 'doc',
-              label: 'List',
-              id: 'demo-boards/list',
-            },
-            {
-              type: 'doc',
-              label: 'Luos demo boards',
-              id: 'demo-boards/luos-demo-boards',
-            },
-            {
-              type: 'doc',
-              label: 'Basic button-LED device',
-              id: 'demo-boards/button-led',
-            },
-            {
-              type: 'doc',
-              label: 'Basic servomotor-LED device (video)',
-              id: 'demo-boards/servomotor',
-            },
-            {
-              type: 'doc',
-              label: 'Use Luos with Arduino IDE',
-              id: 'demo-boards/arduino',
-            },
-          ],
-        },
-        {
-          type: 'category',
           label: 'Luos integration',
+          link: {
+            type: 'doc',
+            id: 'luos-integration/list',
+          },
           items: [
-            {
-              type: 'doc',
-              label: 'List',
-              id: 'luos-integration/list',
-            },
             {
               type: 'doc',
               label: 'Install ROS 2',

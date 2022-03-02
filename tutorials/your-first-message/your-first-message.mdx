@@ -1,0 +1,81 @@
+---
+hide_table_of_contents: true
+custom_edit_url: null
+title: 'Your First Message'
+---
+
+import Introduction from '/src/components/school/article/intro.js';
+
+#
+
+<Introduction
+  title="Your First Message"
+  time="1 hour"
+  level="Confirmed"
+  category="Tutorial"
+  desc="Luos Engine aims to exchange information between services by sending messages. In this tutorial, you will learn messages' structure and how to send one to another service."
+  tags={['Service', 'Luos message', 'Polling', 'Message handler']}
+  requierements={[
+    { label: 'Luos Get Started', link: '/get-started/get-started' },
+    {
+      label: 'Training repository',
+      link: 'https://github.com/Luos-io/Training',
+    },
+    {
+      label: 'Luos Basics',
+      link: '/docs/luos-technology/basics',
+    },
+    {
+      label: 'Your first service tutorial',
+      link: '/tutorials/your-first-service',
+    },
+  ]}
+  shortList="true"
+  shortListSize="3"
+  ressources={[
+    {
+      label: 'Arduino zero',
+      link: 'https://www.arduino.cc/en/Main/ArduinoBoardZero&',
+    },
+    {
+      label: 'MKRzero',
+      link: 'https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data',
+    },
+    {
+      label: 'MKR1000',
+      link: 'https://store.arduino.cc/collections/boards/products/arduino-mkr1000-wifi',
+    },
+    {
+      label: 'STM32L432KC',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-l432kc.html',
+    },
+    {
+      label: 'STM32F072RB',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-f072rb.html',
+    },
+    {
+      label: 'STM32F401RE',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-f401re.html',
+    },
+    {
+      label: 'STM32F410RB',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-f410rb.html',
+    },
+    {
+      label: 'STM32G431KB',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-g431kb.html',
+    },
+  ]}
+  summary={[
+    {
+      label: 'Part 1: Receiving a message',
+      desc: 'How to receive your first message with Luos Engine',
+      link: '/tutorials/your-first-message/receiving-message',
+    },
+    {
+      label: 'Part 2: Send a message from a button service',
+      desc: 'How to send a message',
+      link: '/tutorials/your-first-message/send-message',
+    },
+  ]}
+/>

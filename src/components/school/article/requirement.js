@@ -10,7 +10,7 @@ import styles from './article.module.css';
 
 export const Requirement = (props) => {
   const completeList = props.list;
-  const shortList = props.list.slice(0, 2);
+  const shortList = props.list.slice(0, props.shortListSize);
 
   const [displayList, setDisplayList] = useState(
     props.shortList ? shortList : completeList,
@@ -26,7 +26,7 @@ export const Requirement = (props) => {
     <div
       className={styles.requirement}
       style={{
-        backgroundColor: props.color === 'yellow' ? '#FFF9E6' : '#f5f5f5',
+        backgroundColor: props.color,
       }}
     >
       <h3 className={styles.titleRequirement}>{props.title}</h3>

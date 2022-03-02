@@ -65,7 +65,7 @@ Services can handle only one time-triggered target, 2 services of the same netwo
 :::
 
 :::caution
-To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](/luos-technology/node/topology.md) for more information).
+To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](../node/topology) for more information).
 :::
 
 ## Streaming

@@ -5,7 +5,7 @@ custom_edit_url: null
 <h1><a href="#json-api" className="header" id="json-api"><img src="/img/json-logo.png" width="80px"/> / JSON API</a></h1>
 
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
-To do that, you must add a specific app service called a [Gate](./services_list/gate.md) on your device.
+To do that, you must add a specific app service called a [Gate](./services_list/gate) on your device.
 
 ## How to start using the JSON API
 
@@ -20,7 +20,7 @@ This command asks the Gate to start a topological detection, create a routing ta
 
 ## Routing table messages
 
-> **Warning:** Make sure to read and understand how [routing table](/embedded/services/routing-table.md) works before reading this part.
+> **Warning:** Make sure to read and understand how [routing table](../luos-technology/services/routing-table) works before reading this part.
 
 After the Gate starts, the first message you receive is a routing table.<br/>
 This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
@@ -68,7 +68,7 @@ Each listed node of the network has basic node information and a list of hosted 
 }
 ```
 
-> **Note:** To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](/embedded/services/routing-table.md).
+> **Note:** To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](../luos-technology/services/routing-table).
 
 #### Services
 
@@ -83,7 +83,7 @@ Each listed service of a node has basic services information:
 }
 ```
 
-> **Note:** To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](/embedded/services.html).
+> **Note:** To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](../luos-technology/services).
 
 #### Full routing table example
 
@@ -290,23 +290,23 @@ sendCmd(s, '{"services": {"controller_moto": {"parameters": 2440}}}')
 
 Parameters are defined by a 16-bit bitfield.
 
-|   Object   |               Definition               |                                                                         Structure                                                                         |                                                            Service(s)                                                             |
-| :--------: | :------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------: |
-| parameters | enabling or disabling some measurement | [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31) | [Stepper](./services_list/stepper.md), [Controller-motor](./services_list/controller-motor.md), [Servo](./services_list/servo.md) |
-| parameters | enabling or disabling some measurement |             [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)             |                                                   [Imu](./services_list/imu.md)                                                   |
+|   Object   |               Definition               |                                                                         Structure                                                                         |                                                        Service(s)                                                        |
+| :--------: | :------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------: |
+| parameters | enabling or disabling some measurement | [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31) | [Stepper](./services_list/stepper), [Controller-motor](./services_list/controller-motor), [Servo](./services_list/servo) |
+| parameters | enabling or disabling some measurement |             [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)             |                                                [Imu](./services_list/imu)                                                |
 
 Other specific messages:
 
-|   Object   |                            Definition                            |                Service(s)                 |
-| :--------: | :--------------------------------------------------------------: | :---------------------------------------: |
-|  register  |   Motor memory register filed with \[register_number, value\]    | [Dynamixel](./services_list/dxl.md), void |
-|   set_id   |                         A set id command                         | [Dynamixel](./services_list/dxl.md), void |
-| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False | [Dynamixel](./services_list/dxl.md), void |
-|   delay    |                   reduce services refresh rate                   |      [Gate](./services_list/gate.md)      |
+|   Object   |                            Definition                            |               Service(s)               |
+| :--------: | :--------------------------------------------------------------: | :------------------------------------: |
+|  register  |   Motor memory register filed with \[register_number, value\]    | [Dynamixel](./services_list/dxl), void |
+|   set_id   |                         A set id command                         | [Dynamixel](./services_list/dxl), void |
+| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False | [Dynamixel](./services_list/dxl), void |
+|   delay    |                   reduce services refresh rate                   |      [Gate](./services_list/gate)      |
 
 ### Services exclusion messages
 
-Services can be excluded from the network if a problem occurs (see [self-healing](/embedded/services/self-healing.md#service-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this service is no longer available:
+Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring#service-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this service is no longer available:
 
 ```json
 { "dead_service": "service_alias" }
@@ -314,7 +314,7 @@ Services can be excluded from the network if a problem occurs (see [self-healing
 
 ### Node assert messages
 
-Nodes can assert if a critical issue occurs (see [self-healing](/embedded/services/self-healing.html#assert) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 
 ```json
 {

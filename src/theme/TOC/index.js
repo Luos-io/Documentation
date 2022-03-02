@@ -7,18 +7,28 @@
 import React from 'react';
 import clsx from 'clsx';
 import TOCItems from '@theme/TOCItems';
-import styles from './styles.module.css'; // Using a custom className
-// This prevents TOC highlighting to highlight TOCInline/TOCCollapsible by mistake
+import styles from './styles.module.css';
+import { Paper } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import Requirement from '../../components/school/article/requirement';
+import authors from '../../components/school/index/data/author';
 
 const LINK_CLASS_NAME = 'table-of-contents__link toc-highlight';
 const LINK_ACTIVE_CLASS_NAME = 'table-of-contents__link--active';
 
 function TOC({ className, ...props }) {
-  console.log(props);
   const link = props.link;
   const regex = /tutorials/g;
   const found = link.match(regex);
-  console.log(found);
+  const parentName = props.parentName;
+  let author = {};
+  let list = [];
+  if (found) {
+    author = authors[parentName] ? authors[parentName].author : {};
+  }
+
   return (
     <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
       <TOCItems
@@ -26,8 +36,42 @@ function TOC({ className, ...props }) {
         linkClassName={LINK_CLASS_NAME}
         linkActiveClassName={LINK_ACTIVE_CLASS_NAME}
       />
-
-      {found !== null ? <p>test</p> : null}
+      {found && author.name ? (
+        <div className={styles.relatedContainer}>
+          <Paper elevation={2} className={styles.authorContainer}>
+            <Grid container spacing={2}>
+              <Grid item md={9}>
+                <h3 className={styles.author}>{author.name}</h3>
+                <span className={styles.authorDesc}>{author.job}</span>
+                <hr className={styles.separator} />
+              </Grid>
+              <Grid item md={3}>
+                <Avatar
+                  alt="Remy Sharp"
+                  src={`/img/school/authors/${author.img}`}
+                  sx={{ width: 56, height: 56, float: 'right' }}
+                />
+              </Grid>
+            </Grid>
+            <p className={styles.authorText}>{author.desc}</p>
+          </Paper>
+          <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
+            <a href="https://discord.gg/luos">
+              <img src="/img/discord.png" className="rsLogo"></img>
+            </a>
+            <a href="https://www.reddit.com/r/Luos/">
+              <img src="/img/reddit.png" className="rsLogo"></img>
+            </a>
+            <a href="https://twitter.com/Luos_io">
+              <img src="/img/twitter.png" className="rsLogo"></img>
+            </a>
+            <a href="https://www.linkedin.com/company/luos">
+              <img src="/img/linkedin.png" className="rsLogo"></img>
+            </a>
+          </Stack>
+          <Requirement title="Related Content" color="#FFFFFF" list={list} />
+        </div>
+      ) : null}
     </div>
   );
 }

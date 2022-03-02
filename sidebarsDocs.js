@@ -204,11 +204,6 @@ module.exports = {
               label: 'ROS',
               id: 'tools/ros',
             },
-            {
-              type: 'doc',
-              label: 'FreeRTOS',
-              id: 'tools/freertos',
-            },
           ],
         },
         {
@@ -224,6 +219,22 @@ module.exports = {
               type: 'doc',
               label: 'JSON API',
               id: 'api/api-json',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Compatibility',
+          items: [
+            {
+              type: 'doc',
+              label: 'Luos ecosystem',
+              id: 'compatibility/ecosystem',
+            },
+            {
+              type: 'doc',
+              label: 'Boards compatibility',
+              id: 'compatibility/mcu_demoboard',
             },
           ],
         },

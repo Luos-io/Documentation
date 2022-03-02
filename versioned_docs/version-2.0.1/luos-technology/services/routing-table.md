@@ -11,7 +11,7 @@ import Image from '/src/components/Images.js';
 # Routing Table
 
 :::caution
-Make sure you have read and understood the [network topoly section](../node/topology.md) before reading this page.
+Make sure you have read and understood the [network topoly section](../node/topology) before reading this page.
 :::
 
 The routing table is a feature of Luos allowing every <Tooltip def={customFields.service_def}>services</Tooltip> to own a "map" (or topology) of the entire network of your device. This map enables services to know their physical position and to search and interact with other services quickly.
@@ -96,7 +96,7 @@ Service entry mode allows the routing table to include information about a servi
 - **type**: service's type
 - **alias**: service's alias
 
-You can read the [services page](../services/services.md) for more information about what services are and how they are used.
+You can read the [services page](../services) for more information about what services are and how they are used.
 
 ### Node entry mode
 
@@ -122,7 +122,7 @@ Specific values can be taken by `port_table`:
 - **0x0FFF**: this port is not connected to any other node.
 
 :::info
-Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a [USB gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
+Routing tables can be easily displayed using [Pyluos](../../tools/pyluos) through a [USB gate](../../tools/gate). Please refer to the [Pyluos routing table section](../../tools/pyluos) for more information.
 :::
 
 <Tabs className="unique-tabs">

@@ -11,7 +11,7 @@ import Image from '/src/components/Images.js';
 # Routing Table
 
 :::caution
-Make sure you have read and understood the [network topoly section](../node/topology.md) before reading this page.
+Make sure you have read and understood the [network topoly section](../node/topology) before reading this page.
 :::
 
 The routing table is a feature of Luos allowing every <Tooltip def={customFields.service_def}>services</Tooltip> to own a "map" (or topology) of the entire network of your device. This map enables services to know their physical position and to search and interact with other services quickly.
@@ -42,7 +42,7 @@ At the end of the detection process, each service receives a message with the co
 ```c
 Luos_IsNodeDetected();
 ```
- 
+
 that returns `true` or `false` depending on whether this node is detected or not.
 
 :::caution Warnings
@@ -51,7 +51,7 @@ that returns `true` or `false` depending on whether this node is detected or not
 2. Do not consider your service's ID fixed.
 3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
 4. Make sure that by the creation of your services you specify a callback pointer for each of them, so that the messages arriving to them, concerning the detection do not stay stored in your node's memory.
-:::
+   :::
 
 ## Modes
 
@@ -104,7 +104,7 @@ Service entry mode allows the routing table to include information about a servi
 - **type**: service's type
 - **alias**: service's alias
 
-You can read the [services page](../services/services.md) for more information about what services are and how they are used.
+You can read the [services page](../services) for more information about what services are and how they are used.
 
 ### Node entry mode
 
@@ -130,7 +130,7 @@ Specific values can be taken by `port_table`:
 - **0x0FFF**: this port is not connected to any other node.
 
 :::info
-Routing tables can be easily displayed using [Pyluos](../../tools/pyluos.md) through a [USB gate](../../tools/gate.md). Please refer to the [Pyluos routing table section](../../tools/pyluos.md) for more information.
+Routing tables can be easily displayed using [Pyluos](../../tools/pyluos) through a [USB gate](../../tools/gate). Please refer to the [Pyluos routing table section](../../tools/pyluos) for more information.
 :::
 
 <Tabs className="unique-tabs">

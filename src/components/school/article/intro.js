@@ -7,7 +7,6 @@ import styles from './article.module.css';
 import Requirement from './requirement';
 
 export const Introduction = (props) => {
-  console.log(props.requierements);
   const keyword = props.tags;
   return (
     <div style={{ marginTop: '-65px' }}>
@@ -51,20 +50,26 @@ export const Introduction = (props) => {
         <p>{props.desc}</p>
         <Grid container spacing={5}>
           <Grid item md={6} xs={12}>
-            <Requirement title="Pre-requisites" list={props.requierements} />
+            <Requirement
+              title="Pre-requisites"
+              list={props.requierements}
+              color="#f5f5f5"
+            />
           </Grid>
           <Grid item md={6} xs={12}>
             <Requirement
               title="Equipment you will need​"
               list={props.ressources}
               shortList={new Boolean(props.shortList)}
+              shortListSize={props.shortListSize}
+              color="#f5f5f5"
             />
           </Grid>
         </Grid>
       </Paper>
       <Grid container mt={3}>
         <Grid item xs={12}>
-          <Requirement title="Summary" color="yellow" list={props.summary} />
+          <Requirement title="Summary" color="#FFF9E6" list={props.summary} />
         </Grid>
       </Grid>
     </div>

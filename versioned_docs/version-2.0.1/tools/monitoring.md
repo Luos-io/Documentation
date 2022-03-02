@@ -11,7 +11,7 @@ To help you in your development journey, Luos provides monitoring and debugging 
 ## Luos self-healing capabilities
 
 :::caution
-Make sure to read and understand how to create Luos services(./create-project.md) before reading this page.
+Make sure to read and understand how to create Luos services(./create-project) before reading this page.
 :::
 
 Finding, understanding, and managing bugs on multiple boards running multiple services can be hard. To make your life easier, Luos allows you to get some basic information about any problems in your system, allowing you to adapt to them.

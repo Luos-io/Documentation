@@ -620,3 +620,6 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 .chipText {
   line-height: 21px !important;
 }
+.gif_tutorial {
+  width: 300px !important;
+}

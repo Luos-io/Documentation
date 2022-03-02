@@ -33,14 +33,14 @@ Services, much like their server-world counterparts, can be placed anywhere in y
 
 For example, the Dynamixel example (available in the [GitHub example repository](https://github.com/Luos-io/Examples)) can dynamically create servomotors services depending on the number of Dynamixel motors linked to it. Any Dynamixel services are visible as independent servomotors similar to any other servomotor technology such as the stepper service example, or the controller motor service example. Then, you can use any of your Dynamixel from any other services or even from any computer, cloud program, or ecosystem such as ROS.
 
-There are two categories of services, [drivers](/luos-technology/services/service-api.md#drivers-guidelines) or [applications](/luos-technology/services/service-api.md#apps-guidelines).
+There are two categories of services, [drivers](../services/service-api#drivers-guidelines) or [applications](../services/service-api#apps-guidelines).
 
 - **Drivers** are services giving advanced access to a physical resource. Drivers cannot rely on any other services; they are independent. Drivers should comply to the adapted service profile provided by Luos and the community, allowing an universal access to any physical resource.
 - **Applications** are the behaviors of your product and don't rely on any hardware. Application services search for the driver services they need and use them to physically control the device.
 
 Following the rules of these categories will help you to improve the maintainability and the re-usability of all your developments.
 
-[Go to the Services page](../services/services.md) for more information.
+[Go to the Services page](../services) for more information.
 
 ## Service detection
 
@@ -56,10 +56,10 @@ It is possible to execute a detection in the network frequently in order to dyna
 
 A routing table is a data structure managed by the Luos network and available for any services on any nodes. This data structure lists all the services in the network and allows any services to access and use basic information of any other services or nodes. The routing table's data can be loaded or auto-generated during detection, and can be refreshed on demand.
 
-[Go to the Routing table page](/docs/luos-technology/services/routing-table) for more information.
+[Go to the Routing table page](../services/routing-table) for more information.
 
 ## Messages
 
 Communication between services and apps is performed through messages. A message contains information on the destination service(s), the type of operation to be performed (a read or write operation and the type of message), as well as any additional data. The message will be sent in the network and will arrive at the destination, no matter where the service is placed in the network.
 
-[Go to the Messages handling page](/luos-technology/message/handling-message.md) for more information.
+[Go to the Messages handling page](../message/handling-message) for more information.

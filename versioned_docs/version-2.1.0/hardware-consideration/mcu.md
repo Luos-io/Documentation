@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 Luos can manage any type of microcontrollers as long as they are first added to the library manually. If your microcontroller is not supported yet, please contact us:
 
 - by mail <a href="mailto:hello@luos.io">hello&#x40;luos.io</a>
-- on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
+- on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
 Check the list of MCU family Luos cover :<a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
 
