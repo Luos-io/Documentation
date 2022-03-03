@@ -129,6 +129,12 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    algolia: {
+      appId: 'K3VMDT0LOA',
+      apiKey: '23d513e266b837c633b0aa6f5cf125bf',
+      indexName: 'docs-luos',
+      contextualSearch: true,
+    },
   },
   presets: [
     [
