@@ -3,6 +3,20 @@
   padding: 20px;
 }
 
+html[data-theme='dark'] .introContainer {
+  background-color: #393f58;
+  border: 0.5px solid #c4c4c4;
+  color: white;
+}
+
+html[data-theme='dark'] .select {
+  color: white !important;
+}
+
+html[data-theme='dark'] .lvlBtn button {
+  color: #c4c4c4;
+}
+
 .stats {
   margin-top: 10px;
   display: block;
@@ -41,6 +55,12 @@
 .card {
   padding: 10px;
   min-height: 450px;
+}
+
+html[data-theme='dark'] .card {
+  background-color: #393f58;
+  border: 0.5px solid #c4c4c4;
+  color: white;
 }
 
 .cardTitle {

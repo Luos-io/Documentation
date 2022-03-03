@@ -8,18 +8,15 @@ import TabItem from '@theme/TabItem';
 
 # Part 2: How to use the routing Table
 
-# Summary
-
-1. Introduction
-2. Dynamic and scaling: how the routing table can make your code flexible
-3. Searching information in the routing table
-
 ## 1. Introduction
 
 You just learned how to detect a Luos Engine network. But what is the point of making a detection if we have to count every service number in the network to find the ID corresponding to the service we want?
 
 <div align="center">
-  <img src ="https://media.giphy.com/media/z1GQ9t8FxipnG/giphy-downsized-large.gif" className="gif_tutorial"/>
+  <img
+    src="https://media.giphy.com/media/z1GQ9t8FxipnG/giphy-downsized-large.gif"
+    className="gif_tutorial"
+  />
 </div>
 
 Do not worry, this is why the routing table exists.
@@ -65,9 +62,10 @@ uint16_t ID_Led;
 ```
 
 2. Use the routing table filters to find the ID of the led service by its alias:
- - Create a filter result variable that stores the result after filtering.
- - Reset this filter to get back the full routing table.
- - Apply your filter.
+
+- Create a filter result variable that stores the result after filtering.
+- Reset this filter to get back the full routing table.
+- Apply your filter.
 
 ```c
 void Switcher_MsgHandler(service_t *service, msg_t *msg)
@@ -97,7 +95,7 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 ```
 
 :::info
-A field `result_nbr` (see **[search_result_t](/docs/luos-technology/services/routing-table)** structure) gives you the  number matching your search.
+A field `result_nbr` (see **[search_result_t](/docs/luos-technology/services/routing-table)** structure) gives you the number matching your search.
 For example, only one service have an alias “led” in our system, so `filter_result.result_nbr = 1;` returns the filtering (ID of led service) and is placed in the first case of a tab: `filter_result.result_table[0]`.
 Using this filtering, we can easily adapt our switcher code to be able to control as many led services we have on the network by sending the message in a loop until the **result_nbr** matches.
 :::
@@ -105,5 +103,8 @@ Using this filtering, we can easily adapt our switcher code to be able to contro
 Compile and upload the project to the board, and watch the LED turns on at the end of the detection.
 
 <div align="center">
-  <img src ="https://media.giphy.com/media/zcCGBRQshGdt6/giphy.gif" className="gif_tutorial"/>
+  <img
+    src="https://media.giphy.com/media/zcCGBRQshGdt6/giphy.gif"
+    className="gif_tutorial"
+  />
 </div>

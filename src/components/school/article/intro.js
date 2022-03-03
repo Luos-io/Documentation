@@ -42,12 +42,18 @@ export const Introduction = (props) => {
           </Grid>
         </Grid>
         <h2 className={styles.subtitle}>What will you learn</h2>
+        <p>{props.desc}</p>
         <Stack direction="row" spacing={1} marginBottom={2}>
           {keyword.map((element, index) => (
-            <Chip key={index} label={element} />
+            <Chip
+              key={index}
+              label={element}
+              className={styles.chip}
+              size="small"
+            />
           ))}
         </Stack>
-        <p>{props.desc}</p>
+
         <Grid container spacing={5}>
           <Grid item md={6} xs={12}>
             <Requirement

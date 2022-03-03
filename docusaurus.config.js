@@ -60,7 +60,7 @@ module.exports = {
           docId: 'luos-technology/luos_tech',
           position: 'right',
         },
-        { to: '/tutorials', label: 'Tutorials', position: 'right' },
+        { to: '/tutorials/tutorials', label: 'Tutorials', position: 'right' },
         {
           to: '/faq/list',
           label: 'Troubleshooting',

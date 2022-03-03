@@ -66,7 +66,9 @@ const Intro = () => {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
-              <InputLabel id="toc-label">Time to complete</InputLabel>
+              <InputLabel id="toc-label" className={styles.select}>
+                Time to complete
+              </InputLabel>
               <Select
                 labelId="toc-label"
                 id="toc"
@@ -85,7 +87,9 @@ const Intro = () => {
               </Select>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-              <InputLabel id="topic-label">Tags</InputLabel>
+              <InputLabel id="topic-label" className={styles.select}>
+                Tags
+              </InputLabel>
               <Select
                 value={filters.tags}
                 label="Tags"
@@ -111,7 +115,9 @@ const Intro = () => {
               </Select>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-              <InputLabel id="hardware-label">Hardware</InputLabel>
+              <InputLabel id="hardware-label" className={styles.select}>
+                Hardware
+              </InputLabel>
               <Select
                 value={filters.hardware}
                 label="Hardware"
@@ -129,7 +135,9 @@ const Intro = () => {
               </Select>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-              <InputLabel id="category-label">Category</InputLabel>
+              <InputLabel id="category-label" className={styles.select}>
+                Category
+              </InputLabel>
               <Select
                 value={filters.category}
                 label="Category"

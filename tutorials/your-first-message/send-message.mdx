@@ -8,21 +8,15 @@ import TabItem from '@theme/TabItem';
 
 # Part 2: Send a message from a button service
 
-# Summary
-
-1. Introduction
-2. Set up your hardware
-3. Structure of a Luos message
-4. Send back the button's value
-5. Test the response
-6. Exercise
-
 ## 1. Introduction
 
 There are two ways to receive a message, but what about sending one?
 
 <div align="center">
-  <img src ="https://c.tenor.com/GM0o1UWir1wAAAAC/i-dont-know-how-it-works-eric-cartman.gif" className="gif_tutorial"/>
+  <img
+    src="https://c.tenor.com/GM0o1UWir1wAAAAC/i-dont-know-how-it-works-eric-cartman.gif"
+    className="gif_tutorial"
+  />
 </div>
 
 Don’t worry, we will see how to do it step by step.
@@ -67,7 +61,8 @@ For Nucleo boards, the initialization of your pins as an input is done in the ma
 MX_GPIO_Init();
 ```
 
-You must only remember the names of the pins: BTN_GPIO_Port and BTN_Pin (see _main.h_).
+You must only remember the names of the pins: BTN*GPIO_Port and BTN_Pin (see \_main.h*).
+
 </TabItem>
 </Tabs>
 
@@ -80,7 +75,10 @@ Now everything is ready to send back the button's value in a message.
 Any message contains two main parts:
 
 <div align="center">
-  <Image src="/img/your-first-message/your-first-message-2.png" darkSrc="/img/your-first-message/your-first-message-2.png"/>
+  <Image
+    src="/img/your-first-message/your-first-message-2.png"
+    darkSrc="/img/your-first-message/your-first-message-2.png"
+  />
 </div>
 
 The **Data** is the actual transmitted data.
@@ -196,7 +194,10 @@ The **STATE** button service now returns an **IO_STATE** value when a service as
 Let’s see if our service reacts as expected.
 
 <div align="center">
-  <img src ="https://media.giphy.com/media/DIxETbmfEdc6A/giphy-downsized-large.gif" className="gif_tutorial"/>
+  <img
+    src="https://media.giphy.com/media/DIxETbmfEdc6A/giphy-downsized-large.gif"
+    className="gif_tutorial"
+  />
 </div>
 
 ## 5. Test the response
@@ -278,5 +279,8 @@ Let’s try a small exercise:
 5. Run this while-loop and try to push on the button to see the LED turning on and off.
 
 <div align="center">
-  <img src ="https://media.giphy.com/media/fSRs6SJH6m0c3iG2hk/giphy.gif" className="gif_tutorial"/>
+  <img
+    src="https://media.giphy.com/media/fSRs6SJH6m0c3iG2hk/giphy.gif"
+    className="gif_tutorial"
+  />
 </div>

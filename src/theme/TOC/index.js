@@ -27,6 +27,11 @@ function TOC({ className, ...props }) {
   let list = [];
   if (found) {
     author = authors[parentName] ? authors[parentName].author : {};
+    if (authors[parentName] && authors[parentName].content) {
+      Object.keys(authors[parentName].content).forEach((key) => {
+        list.push(authors[parentName].content[key]);
+      });
+    }
   }
 
   return (

@@ -8,18 +8,9 @@ import TabItem from '@theme/TabItem';
 
 # Part 1: Luos service
 
-# Summary
-
-1. Introduction
-2. Environnement
-3. Create your first service
-4. Manage the LED on your service
-5. Secure your input data
-6. Luos Package
-
 ## 1. Introduction
 
-In the _Get started_ tutorial, we learned to perform the following essential actions:
+In the Get started tutorial, we learned to perform the following essential actions:
 
 1. Set up the embedded environment to make a basic Luos-LED-blinking project.
 2. Control of your microservices with high-level API and set up the Python environment.
@@ -30,7 +21,10 @@ Upon finishing the _Get started_, you can grab what a microservice represents in
 Let us demystify it by helping you to make first service code!
 
 <div align="center">
-  <img src ="https://media.giphy.com/media/unQ3IJU2RG7DO/giphy.gif" className="gif_tutorial"/>
+  <img
+    src="https://media.giphy.com/media/unQ3IJU2RG7DO/giphy.gif"
+    className="gif_tutorial"
+  />
 </div>
 
 ## 2. Environment
@@ -68,7 +62,10 @@ A service is an encapsulated feature defining an API and allowing other services
 In the case of a simple LED, your service will have one input with the state of the IO that turns the LED on or off:
 
 <div align="center">
-  <Image src="/img/your-first-service/luos-service-1.png" darkSrc="/img/your-first-service/luos-service-1-dark.png"/>
+  <Image
+    src="/img/your-first-service/luos-service-1.png"
+    darkSrc="/img/your-first-service/luos-service-1-dark.png"
+  />
 </div>
 
 In your service code, you will have to give the order to turn the LED on or off depending on the received IO state message. So you need a function to be called when another service sends a message, so that this function deals with the LED; this type of function is called a _callback_.
@@ -167,7 +164,10 @@ By adding these few lines to your code, you just created your first service. For
 ```
 
 <div align="center">
-  <img src ="https://c.tenor.com/gZRvEFMyTQYAAAAd/khaby-lame.gif" className="gif_tutorial"/>
+  <img
+    src="https://c.tenor.com/gZRvEFMyTQYAAAAd/khaby-lame.gif"
+    className="gif_tutorial"
+  />
 </div>
 
 :::tip
@@ -289,7 +289,10 @@ The blinker service will send a message at the blink frequency you want the LED 
 :::
 
 <div align="center">
-  <img src ="https://media.giphy.com/media/3o7qDSOvfaCO9b3MlO/giphy.gif" className="gif_tutorial"/>
+  <img
+    src="https://media.giphy.com/media/3o7qDSOvfaCO9b3MlO/giphy.gif"
+    className="gif_tutorial"
+  />
 </div>
 
 ## 5. Secure your input data

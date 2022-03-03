@@ -11,7 +11,6 @@ import styles from './article.module.css';
 export const Requirement = (props) => {
   const completeList = props.list;
   const shortList = props.list.slice(0, props.shortListSize);
-
   const [displayList, setDisplayList] = useState(
     props.shortList ? shortList : completeList,
   );
@@ -41,11 +40,12 @@ export const Requirement = (props) => {
             <ListItemText
               primary={element.label}
               secondary={element.desc ? element.desc : null}
+              className={styles.listItem}
             />
           </ListItem>
         ))}
       </List>
-      {props.shortList ? (
+      {props.shortList == true ? (
         <Button
           onClick={handleOpen}
           className={styles.showMoreBtn}

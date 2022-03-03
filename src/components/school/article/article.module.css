@@ -3,6 +3,21 @@
   padding: 20px;
 }
 
+html[data-theme='dark'] .introContainer {
+  background-color: #393f58;
+  border: 0.5px solid #c4c4c4;
+  color: white !important;
+}
+
+html[data-theme='dark'] .chip {
+  color: white !important;
+  border: 1px solid #ddaa3a;
+}
+
+html[data-theme='dark'] .listItem p {
+  color: white !important;
+}
+
 .title {
   font-size: 26px !important;
   font-family: 'Roboto Mono', sans-serif;
@@ -62,6 +77,10 @@
   border-left: 3px solid #ddaa3a;
   min-height: 185px;
   margin-bottom: 10px;
+}
+
+html[data-theme='dark'] .requirement {
+  background-color: #282d3f !important;
 }
 
 .titleRequirement {

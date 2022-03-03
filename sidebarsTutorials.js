@@ -3,34 +3,8 @@ module.exports = {
     {
       type: 'category',
       label: 'Tutorials',
+      link: { type: 'doc', id: 'tutorials' },
       items: [
-        {
-          type: 'doc',
-          label: 'Tutorials',
-          id: 'tutorials',
-        },
-        {
-          type: 'category',
-          label: 'Luos and tools',
-          link: { type: 'doc', id: 'luos-and-tools/list' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Bootloader',
-              id: 'luos-and-tools/bootloader',
-            },
-            {
-              type: 'doc',
-              label: 'Use Luos with Arduino IDE',
-              id: 'luos-and-tools/arduino',
-            },
-            {
-              type: 'doc',
-              label: 'FreeRTOS',
-              id: 'luos-and-tools/freertos',
-            },
-          ],
-        },
         {
           type: 'category',
           label: 'Get Started',
@@ -50,6 +24,42 @@ module.exports = {
               type: 'doc',
               label: 'Part 3: Unleash your code',
               id: 'get-started/get-started3',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Arduino',
+          link: { type: 'doc', id: 'arduino/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: Use Luos with Arduino IDE',
+              id: 'arduino/arduino',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Bootloader',
+          link: { type: 'doc', id: 'bootloader/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: Use Luos Bootloader',
+              id: 'bootloader/bootloader',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'FreeRTos X Luos',
+          link: { type: 'doc', id: 'freertos/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: Use Luos with FreeRTos',
+              id: 'freertos/freertos',
             },
           ],
         },
