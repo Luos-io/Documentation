@@ -1,6 +1,6 @@
 {
-  "title": "School section name",
-  "introText": "Section presentation. Describe here what will we can learn, the topics, the the format of totui etc. Section presentation. Describe here what will we can learn, the topics, the the format of totui etc. Section presentation. Describe here what will we can learn, the topics, the the format of totui etc. Section presentation. Describe here what will we can learn, the topics, the the format of totui etc.",
+  "title": "Tutorials",
+  "introText": "Here you can find all of our trainings and tutorials.",
   "filters": {
     "toc": [
       { "id": 1, "label": "Less than 1 hours", "duration": 60 },
