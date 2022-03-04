@@ -24,7 +24,7 @@
     },
     {
       "title": "Your First Service",
-      "category": "Tutorials",
+      "category": "Trainings",
       "toc": 60,
       "level": 2,
       "img": "services",
@@ -35,7 +35,7 @@
     },
     {
       "title": "Your First Message",
-      "category": "Tutorials",
+      "category": "Trainings",
       "toc": 60,
       "level": 2,
       "img": "message",
@@ -45,7 +45,7 @@
     },
     {
       "title": "Your First Topology detection",
-      "category": "Tutorials",
+      "category": "Trainings",
       "toc": 60,
       "level": 3,
       "img": "topology",
