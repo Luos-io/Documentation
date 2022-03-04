@@ -45,6 +45,10 @@
   margin: 0 !important;
 }
 
+.aboutTheAuthor {
+  margin-bottom: 10 !important;
+}
+
 .authorDesc {
   font-size: 12px !important;
   font-family: 'Roboto Mono', sans-serif;

@@ -64,7 +64,7 @@ export const Introduction = (props) => {
           </Grid>
           <Grid item md={6} xs={12}>
             <Requirement
-              title="Equipment you will need​"
+              title="Supported Hardware"
               list={props.ressources}
               shortList={new Boolean(props.shortList)}
               shortListSize={props.shortListSize}

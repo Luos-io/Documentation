@@ -29,42 +29,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Arduino',
-          link: { type: 'doc', id: 'arduino/intro' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Part 1: Use Luos with Arduino IDE',
-              id: 'arduino/arduino',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Bootloader',
-          link: { type: 'doc', id: 'bootloader/intro' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Part 1: Use Luos Bootloader',
-              id: 'bootloader/bootloader',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'FreeRTos X Luos',
-          link: { type: 'doc', id: 'freertos/intro' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Part 1: Use Luos with FreeRTos',
-              id: 'freertos/freertos',
-            },
-          ],
-        },
-        {
-          type: 'category',
           label: 'Your first service',
           link: { type: 'doc', id: 'your-first-service/your-first-service' },
           items: [
@@ -119,6 +83,42 @@ module.exports = {
               type: 'doc',
               label: 'Full embedded application',
               id: 'your-first-detection/embedded-app',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Arduino',
+          link: { type: 'doc', id: 'arduino/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: Use Luos with Arduino IDE',
+              id: 'arduino/arduino',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'FreeRTos',
+          link: { type: 'doc', id: 'freertos/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: Use Luos with FreeRTos',
+              id: 'freertos/freertos',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Bootloader',
+          link: { type: 'doc', id: 'bootloader/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: Use Luos Bootloader',
+              id: 'bootloader/bootloader',
             },
           ],
         },

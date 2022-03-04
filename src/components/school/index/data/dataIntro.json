@@ -74,7 +74,7 @@
       "link": "/tutorials/bootloader/intro"
     },
     {
-      "title": "FreeRTos X Luos",
+      "title": "How to use Luos with FeeRTos",
       "category": "Tutorials",
       "toc": 30,
       "level": 2,

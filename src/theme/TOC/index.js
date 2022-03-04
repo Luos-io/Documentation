@@ -44,9 +44,10 @@ function TOC({ className, ...props }) {
       {found && author.name ? (
         <div className={styles.relatedContainer}>
           <Paper elevation={2} className={styles.authorContainer}>
+            {/* <h3 className={styles.aboutTheAuthor}>About the Author:</h3> */}
             <Grid container spacing={2}>
               <Grid item md={9}>
-                <h3 className={styles.author}>{author.name}</h3>
+                <h3 className={styles.author}>The author: {author.name}</h3>
                 <span className={styles.authorDesc}>{author.job}</span>
                 <hr className={styles.separator} />
               </Grid>

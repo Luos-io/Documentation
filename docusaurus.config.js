@@ -184,7 +184,6 @@ module.exports = {
         id: 'faq',
         path: 'faq',
         routeBasePath: 'faq',
-        sidebarPath: require.resolve('./sidebarsFaq.js'),
       },
     ],
     [
