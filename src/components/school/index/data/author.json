@@ -9,7 +9,7 @@
     "content": {
       "1": {
         "label": "Training Repository",
-        "link": "https://github.com/Luos-io/Training/tree/main/1_First_Service"
+        "link": "https://github.com/Luos-io/Get_started"
       }
     }
   },
@@ -33,6 +33,12 @@
       "job": "CEO at Luos",
       "desc": "Former roboticist, research engineer in real-time embedded systems and founder of Pollen Robotics; Nicolas Rabault is CEO of Luos. Nicolas dedicated his life to develop tools making embedded things work together and simplifying reusability.",
       "img": "nicoR.png"
+    },
+    "content": {
+      "1": {
+        "label": "Training Repository",
+        "link": "https://github.com/Luos-io/Training/tree/main/2_First-Message"
+      }
     }
   },
   "your-first-detection": {
@@ -41,6 +47,12 @@
       "job": "CEO at Luos",
       "desc": "Former roboticist, research engineer in real-time embedded systems and founder of Pollen Robotics; Nicolas Rabault is CEO of Luos. Nicolas dedicated his life to develop tools making embedded things work together and simplifying reusability.",
       "img": "nicoR.png"
+    },
+    "content": {
+      "1": {
+        "label": "Training Repository",
+        "link": "https://github.com/Luos-io/Training/tree/main/3_First_Detection"
+      }
     }
   }
 }
