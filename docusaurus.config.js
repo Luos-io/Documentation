@@ -131,7 +131,7 @@ module.exports = {
     },
     algolia: {
       appId: 'K3VMDT0LOA',
-      apiKey: '23d513e266b837c633b0aa6f5cf125bf',
+      apiKey: '9394b39227bc70e30ff8a34bc6489a3f',
       indexName: 'docs-luos',
       contextualSearch: true,
     },
