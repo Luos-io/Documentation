@@ -143,19 +143,17 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/luos-io/Documentation',
+          editUrl: 'https://github.com/luos-io/Documentation',
           versions: {
             current: {
-              label: '2.2.0-beta 🚧',
+              label: '2.3.0-beta 🚧',
             },
           },
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/luos-io/Documentation',
+          editUrl: 'https://github.com/luos-io/Documentation',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
