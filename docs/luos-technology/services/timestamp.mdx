@@ -25,7 +25,7 @@ Timestamp_Tag(&button_timestamp, &button.state);
 - if you use button.state in an another function in your service, you can check if there is a timestamp linked to the data and get it from the token with **Timestamp_GetToken** and **Timestamp_GetTimeFromToken** functions.
 - if you send button.state through a luos message, the timestamp will be copied in the message. Then you can get it from the message in the receiving service with the **Timestamp_DecodeMsg** function.
 
-All **timestamp** API functions can be found in Luos/Robus/inc/timestamp.h. You can also find [examples](https://github.com/Luos-io/Examples/blob/master/Projects/l0/) which are using this feature. For now, examples using timestamp are : 
+All **timestamp** API functions can be found in Luos/Robus/inc/timestamp.h. You can also find [examples](https://github.com/Luos-io/Luos/tree/main/Examples/Projects/l0/) which are using this feature. For now, examples using timestamp are : 
 - button
 - distance
 - light sensor
