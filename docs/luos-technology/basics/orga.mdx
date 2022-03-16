@@ -6,9 +6,9 @@ import Image from "@site/src/components/Images.js";
 
 # Code organization
 
-Because Luos allows you to manage your features as sharable blocks of code, we organized code in a specific way allowing to easily integrate and share packages from your projects with as little friction as possible.
+Because the Luos engine allows you to manage your features as sharable blocks of code, we organized code in a specific way allowing to easily integrate and share packages from your projects with as little friction as possible.
 
-### Luos Levels
+### Luos engine Levels
 
 Different levels on the embedded code are defined, corresponding to the different levels of information needed across your entire product.
 
@@ -32,37 +32,38 @@ Different levels on the embedded code are defined, corresponding to the differen
  Project
   │
   ├─── product_config.h
-  ├─── Node_1
-  │    ├─── node_config.h
-  │    ├─── main.c
-  │    ├─── main.h
-  │    ├─── Package_1
-  │    │     ├─── package_1.c
-  │    │     └─── package_1.h
-  │    └─── Package_2
-  │          ├─── package_2.c
-  │          └─── package_2.h
-  ├─── Node_2
-  │    ├─── node_config.h
-  │    ├─── main.c
-  │    ├─── main.h
-  │    └─── Package_3
-  │          ├─── package_3.c
-  │          └─── package_3.h
-  │
-  └─── Node_3
-       ├─── node_config.h
-       ├─── main.c
-       ├─── main.h
-       ├─── Package_4
-       │     ├─── package_4.c
-       │     └─── package_4.h
-       ├─── Package_5
-       │     ├─── package_5.c
-       │     └─── package_5.h
-       └─── Package_6
-             ├─── package_6.c
-             └─── package_6.h
+  └─── Nodes
+        ├─── Node_1
+        │     ├─── node_config.h
+        │     ├─── main.c
+        │     └─── Packages
+        │             ├─── Package_1
+        │             │     ├─── package_1.c
+        │             │     └─── package_1.h
+        │             └─── Package_2
+        │                   ├─── package_2.c
+        │                   └─── package_2.h
+        ├─── Node_2
+        │     ├─── node_config.h
+        │     ├─── main.c
+        │     └─── Packages
+        │             └─── Package_3
+        │                   ├─── package_3.c
+        │                   └─── package_3.h
+        │
+        └─── Node_3
+                ├─── node_config.h
+                ├─── main.c
+                └─── Packages
+                        ├─── Package_4
+                        │     ├─── package_4.c
+                        │     └─── package_4.h
+                        ├─── Package_5
+                        │     ├─── package_5.c
+                        │     └─── package_5.h
+                        └─── Package_6
+                            ├─── package_6.c
+                            └─── package_6.h
 
 ```
 
@@ -83,9 +84,9 @@ Different levels on the embedded code are defined, corresponding to the differen
 
   Uses Luos API and Service Profile on your package's code to create either a standard or a custom service that anybody can use.
 
-### Where is Luos?
+### Where is Luos engine?
 
-Luos Library is used at the node level. You will need to initialize Luos and call a loop function on your main program to be able to use the Luos API on your packages.
+Luos engine library is used at the node level. You will need to initialize the engine and call a loop function on your main program to be able to use the Luos engine API on your packages.
 
 <div align="center">
   <Image

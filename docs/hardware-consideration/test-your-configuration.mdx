@@ -1,7 +1,7 @@
-# Test your hardware configuration
+# Test your Robus configuration
 
-To adapt Luos to your board specificities, you need to configure it. This subject is covered in the [Luos configuration](./mcu).
-To validate your network hardware configuration, you can use a Luos tool called selftest available in the <a href="https://github.com/Luos-io/Luos" target="_blank">Luos Library<IconExternalLink width="10"></IconExternalLink></a>.
+To adapt Luos engine to your board specificities, you need to configure it. This subject is covered in the [Luos engine configuration](./mcu).
+To validate your Robus network hardware configuration, you can use a Robus tool called selftest available in the <a href="https://github.com/Luos-io/Luos/tree/main/Network/Robus/SelfTest" target="_blank">Luos engine library<IconExternalLink width="10"></IconExternalLink></a>.
 
 ## Hardware test conditions
 
@@ -19,7 +19,7 @@ You must also connect the PTP pins together.
 
 ## Software conditions
 
-To check the Luos access to the physical network, you need to create a specific binary file only containing the selftest program. This program will perform some checkups allowing you to validate your hardware configuration.
+To check the Robus access to the physical network, you need to create a specific binary file only containing the selftest program. This program will perform some checkups allowing you to validate your hardware configuration.
 To use the selftest tool, you have to define SELFTEST using "-D SELFTEST" GCC build flag.
 
 :::info
@@ -29,7 +29,7 @@ If you use platformio IDE, you must add a "-D SELFTEST" directive in the build_f
 To finish, you need to add this in your main file:
 
 ```AsciiDoc
-#include "luos.h"
+#include "luos_engine.h"
 #include "selftest.h"
 
 void selftest_ok(void)

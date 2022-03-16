@@ -6,11 +6,20 @@ import { customFields } from "/docusaurus.config.js";
 import Tooltip from "@site/src/components/Tooltip.js";
 import Image from "@site/src/components/Images.js";
 
-# Concept
+# Concepts
+
+## Luos engine
+
+Luos engine is the engine provided by Luos that will manage your services on all your nodes.
+
+Technically this engine is an embedded lightwheight and realtime C code library you can include and use in your firmware. This lib provide simple API to create, manage, and interact with services.
+> Luos engine is not an operating system so you can use it with or without any operating system.
+
+Luos engine is open source under _Apache 2.0_ license and available [on GitHub](https://github.com/Luos-io/Luos/tree/main).
 
 ## What is a Node?
 
-A node is a physical component (hardware) running Luos and hosting one or several services. In a Luos network, nodes are all connected together using <Tooltip def={customFields.robus_def}>Robus</Tooltip>, the Luos network manager compatible with most of the existing communication bus.
+A node is a physical component (hardware) running Luos engine and hosting one or several services. In a Luos network, nodes are all connected together using a network interface. You can  choose or create your own communication bus, Luos provide <Tooltip def={customFields.robus_def}>Robus</Tooltip> as default network layer.
 
 In other words, **a node is a microcontroller** connected to other microcontrollers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.
@@ -35,7 +44,7 @@ Services, much like their server-world counterparts, can be placed anywhere in y
 
 **Each service is hosted in a single node**, but you can have the same service duplicated multiple times in your product.
 
-For example, the Dynamixel example (available in the [GitHub example repository](https://github.com/Luos-io/Luos/tree/main/Examples)) can dynamically create servomotors services depending on the number of Dynamixel motors linked to it. Any Dynamixel services are visible as independent servomotors similar to any other servomotor technology such as the stepper service example, or the controller motor service example. Then, you can use any of your Dynamixel from any other services or even from any computer, cloud program, or ecosystem such as ROS.
+For example, the Dynamixel example (available in the [Luos engine example folder](https://github.com/Luos-io/Luos/tree/main/Examples)) can dynamically create servomotors services depending on the number of Dynamixel motors linked to it. Any Dynamixel services are visible as independent servomotors similar to any other servomotor technology such as the stepper service example, or the controller motor service example. Then, you can use any of your Dynamixel from any other services or even from any computer, cloud program, or ecosystem such as ROS.
 
 There are two categories of services, [drivers](../services/service-api#drivers-guidelines) or [applications](../services/service-api#apps-guidelines).
 

@@ -5,31 +5,31 @@ custom_edit_url: null
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Luos configuration
+# Luos engine configuration
 
 ## Compatible MCUs
 
-Luos can manage any type of microcontrollers as long as they are first added to the library manually. If your microcontroller is not supported yet, please contact us:
+Luos engine can manage any type of microcontrollers as long as they have HAL. If your microcontroller is not supported yet, please contact us:
 
 - by mail <a href="mailto:hello@luos.io">hello&#x40;luos.io</a>
 - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
-Check the list of MCU family Luos cover :<a href="https://github.com/Luos-io/Luos/tree/main/Engine/HAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
+Check the list of MCU family Luos engine cover :<a href="https://github.com/Luos-io/Luos/tree/main/Engine/HAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
 
-> Depending on your Network you may also configure the specific HAL of your network. By default Luos use the Robus network layer with <a href="https://github.com/Luos-io/Luos/tree/main/Network/Robus/HAL" target="_blank">Robus HAL</a>.
+> Depending on your Network you may also configure the specific HAL of your network. By default Luos engine use the Robus network layer with <a href="https://github.com/Luos-io/Luos/tree/main/Network/Robus/HAL" target="_blank">Robus HAL</a>.
 
 ## Default Configurations
 
-Luos libraries is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low level part, Luos compagny provide, for many MCU family, a default configuration that can be follow to plug and play luos library with the chosen MCU family. The peripheral configuration is describe in files luos_hal_config.h, and can be redefined in the node_config.h file to fit with your design.
+Luos engine is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low level part, Luos company provide, for many MCU family, a default configuration that can be follow to plug and play Luos engine with the chosen MCU family. The peripheral configuration is describe in files luos_hal_config.h, and can be redefined in the node_config.h file to fit with your design.
 
-## Luos HAL configuration
+## Luos engine HAL configuration
 
-To match pinout and fonctionality with your design, you can create or use the file `node_config.h` (see Luos example)
+To match pinout and fonctionality with your design, you can create or use the file `node_config.h` (see [Luos examples](https://github.com/Luos-io/Luos/tree/main/Examples))
 Base on the default configuration define in luos_hal_config.h, you can define in the file `node_config.h`, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer etc.
 
 This way you are able to change default hardware configuration so it need to be call in the preprossessor variable section of your IDE to be taken into consideration for your project
 
-> **FYI:** Every example provide by luos has a node_config.h files and includes by the file platformio.ini
+> **FYI:** Every example provide by Luos has a node_config.h files and includes by the file platformio.ini
 
 For example, redefine PTPA to fit with your design
 

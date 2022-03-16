@@ -1,216 +1,216 @@
 module.exports = {
-  documentation: [
-    {
-      type: 'category',
-      label: 'Documentation',
-      items: [
+    documentation: [
         {
-          type: 'category',
-          label: 'Luos Technology',
-          link: { type: 'doc', id: 'luos-technology/luos_tech' },
-          items: [
-            {
-              type: 'category',
-              label: 'Basics',
-              link: { type: 'doc', id: 'luos-technology/basics/basics' },
-              items: [
+            type: 'category',
+            label: 'Documentation',
+            items: [
                 {
-                  type: 'doc',
-                  label: 'Concept',
-                  id: 'luos-technology/basics/concept',
+                    type: 'category',
+                    label: 'Luos engine',
+                    link: { type: 'doc', id: 'luos-technology/luos_tech' },
+                    items: [
+                        {
+                            type: 'category',
+                            label: 'Basics',
+                            link: { type: 'doc', id: 'luos-technology/basics/basics' },
+                            items: [
+                                {
+                                    type: 'doc',
+                                    label: 'Concept',
+                                    id: 'luos-technology/basics/concept',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Code organization',
+                                    id: 'luos-technology/basics/orga',
+                                },
+                            ],
+                        },
+                        {
+                            type: 'category',
+                            label: 'Node',
+                            link: { type: 'doc', id: 'luos-technology/node/node' },
+                            items: [
+                                {
+                                    type: 'doc',
+                                    label: 'Luos engine',
+                                    id: 'luos-technology/node/luos',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Luos engine HAL',
+                                    id: 'luos-technology/node/luos-hal',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Network topology',
+                                    id: 'luos-technology/node/topology',
+                                },
+                            ],
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Package',
+                            id: 'luos-technology/package/package',
+                        },
+                        {
+                            type: 'category',
+                            label: 'Services',
+                            link: { type: 'doc', id: 'luos-technology/services/services' },
+                            items: [
+                                {
+                                    type: 'doc',
+                                    label: 'Initialization',
+                                    id: 'luos-technology/services/service-api',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Types',
+                                    id: 'luos-technology/services/service-type',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Profiles',
+                                    id: 'luos-technology/services/profile',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Routing Table',
+                                    id: 'luos-technology/services/routing-table',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Timestamp',
+                                    id: 'luos-technology/services/timestamp',
+                                },
+                            ],
+                        },
+                        {
+                            type: 'category',
+                            label: 'Message',
+                            link: { type: 'doc', id: 'luos-technology/message/message' },
+                            items: [
+                                {
+                                    type: 'doc',
+                                    label: 'Send Message',
+                                    id: 'luos-technology/message/basic-message',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Receive Message',
+                                    id: 'luos-technology/message/handling-message',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Commands',
+                                    id: 'luos-technology/message/command',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Object dictionnary',
+                                    id: 'luos-technology/message/object-dictionary',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Advanced message',
+                                    id: 'luos-technology/message/advanced-message',
+                                },
+                            ],
+                        },
+                    ],
                 },
                 {
-                  type: 'doc',
-                  label: 'Code organization',
-                  id: 'luos-technology/basics/orga',
-                },
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Node',
-              link: { type: 'doc', id: 'luos-technology/node/node' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Luos',
-                  id: 'luos-technology/node/luos',
-                },
-                {
-                  type: 'doc',
-                  label: 'Luos HAL',
-                  id: 'luos-technology/node/luos-hal',
-                },
-                {
-                  type: 'doc',
-                  label: 'Network topology',
-                  id: 'luos-technology/node/topology',
-                },
-              ],
-            },
-            {
-              type: 'doc',
-              label: 'Package',
-              id: 'luos-technology/package/package',
-            },
-            {
-              type: 'category',
-              label: 'Services',
-              link: { type: 'doc', id: 'luos-technology/services/services' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Initialization',
-                  id: 'luos-technology/services/service-api',
+                    type: 'category',
+                    label: 'Hardware Consideration',
+                    link: {
+                        type: 'doc',
+                        id: 'hardware-consideration/hardware-consideration',
+                    },
+                    items: [
+                        {
+                            type: 'doc',
+                            label: 'Minimum Requirement',
+                            id: 'hardware-consideration/minimum-requirement',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Luos engine configuration',
+                            id: 'hardware-consideration/mcu',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Electronic Design',
+                            id: 'hardware-consideration/electronics',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Test your Robus Configuration',
+                            id: 'hardware-consideration/test-your-configuration',
+                        },
+                    ],
                 },
                 {
-                  type: 'doc',
-                  label: 'Types',
-                  id: 'luos-technology/services/service-type',
+                    type: 'category',
+                    label: 'Tools',
+                    link: { type: 'doc', id: 'tools/tool' },
+                    items: [
+                        {
+                            type: 'doc',
+                            label: 'Gate',
+                            id: 'tools/gate',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Pyluos',
+                            id: 'tools/pyluos',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Bootloader',
+                            id: 'tools/boot',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Monitoring',
+                            id: 'tools/monitoring',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'ROS',
+                            id: 'tools/ros',
+                        },
+                    ],
                 },
                 {
-                  type: 'doc',
-                  label: 'Profiles',
-                  id: 'luos-technology/services/profile',
+                    type: 'category',
+                    label: 'API',
+                    link: { type: 'doc', id: 'api/list' },
+                    items: [
+                        {
+                            type: 'doc',
+                            label: 'JSON API',
+                            id: 'api/api-json',
+                        },
+                    ],
                 },
                 {
-                  type: 'doc',
-                  label: 'Routing Table',
-                  id: 'luos-technology/services/routing-table',
+                    type: 'category',
+                    label: 'Compatibility',
+                    items: [
+                        {
+                            type: 'doc',
+                            label: 'Luos ecosystem',
+                            id: 'compatibility/ecosystem',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Boards compatibility',
+                            id: 'compatibility/mcu_demoboard',
+                        },
+                    ],
                 },
-                {
-                  type: 'doc',
-                  label: 'Timestamp',
-                  id: 'luos-technology/services/timestamp',
-                },
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Message',
-              link: { type: 'doc', id: 'luos-technology/message/message' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Send Message',
-                  id: 'luos-technology/message/basic-message',
-                },
-                {
-                  type: 'doc',
-                  label: 'Receive Message',
-                  id: 'luos-technology/message/handling-message',
-                },
-                {
-                  type: 'doc',
-                  label: 'Commands',
-                  id: 'luos-technology/message/command',
-                },
-                {
-                  type: 'doc',
-                  label: 'Object dictionnary',
-                  id: 'luos-technology/message/object-dictionary',
-                },
-                {
-                  type: 'doc',
-                  label: 'Advanced message',
-                  id: 'luos-technology/message/advanced-message',
-                },
-              ],
-            },
-          ],
+            ],
         },
-        {
-          type: 'category',
-          label: 'Hardware Consideration',
-          link: {
-            type: 'doc',
-            id: 'hardware-consideration/hardware-consideration',
-          },
-          items: [
-            {
-              type: 'doc',
-              label: 'Minimum Requirement',
-              id: 'hardware-consideration/minimum-requirement',
-            },
-            {
-              type: 'doc',
-              label: 'Luos configuration',
-              id: 'hardware-consideration/mcu',
-            },
-            {
-              type: 'doc',
-              label: 'Electronic Design',
-              id: 'hardware-consideration/electronics',
-            },
-            {
-              type: 'doc',
-              label: 'Test Your Configuration',
-              id: 'hardware-consideration/test-your-configuration',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Tools',
-          link: { type: 'doc', id: 'tools/tool' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Gate',
-              id: 'tools/gate',
-            },
-            {
-              type: 'doc',
-              label: 'Pyluos',
-              id: 'tools/pyluos',
-            },
-            {
-              type: 'doc',
-              label: 'Bootloader',
-              id: 'tools/boot',
-            },
-            {
-              type: 'doc',
-              label: 'Monitoring',
-              id: 'tools/monitoring',
-            },
-            {
-              type: 'doc',
-              label: 'ROS',
-              id: 'tools/ros',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'API',
-          link: { type: 'doc', id: 'api/list' },
-          items: [
-            {
-              type: 'doc',
-              label: 'JSON API',
-              id: 'api/api-json',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Compatibility',
-          items: [
-            {
-              type: 'doc',
-              label: 'Luos ecosystem',
-              id: 'compatibility/ecosystem',
-            },
-            {
-              type: 'doc',
-              label: 'Boards compatibility',
-              id: 'compatibility/mcu_demoboard',
-            },
-          ],
-        },
-      ],
-    },
-    { type: 'link', label: 'Go to Luos.io', href: 'https://www.luos.io/' },
-  ],
+        { type: 'link', label: 'Go to Luos.io', href: 'https://www.luos.io/' },
+    ],
 };

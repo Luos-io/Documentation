@@ -44,8 +44,8 @@ If you have to deal with high-frequency real-time data, please read [the Streami
 
 ## Time-triggered update messages
 
-Luos provides a standard command to ask a service to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take up valuable resources.
-In this kind of polling situation, **you can use the time-triggered auto-update features available from any Luos service**. This feature allows you to ask a service to send you an update of any value each X milliseconds.
+Luos engine provides a standard command to ask a service to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take up valuable resources.
+In this kind of polling situation, **you can use the time-triggered auto-update features available from any Luos engine service**. This feature allows you to ask a service to send you an update of any value each X milliseconds.
 To use it, you have to setup targeted service with a message containing a standard time <Tooltip def={customFields.od_def}>object dictionary</Tooltip>, but with a specific command associated to it.
 
 For example, to update a service each 10 ms:
@@ -72,7 +72,7 @@ To prevent any ID movement, auto-update configuration is reset on all services o
 
 On occasion, you will have to deal with high-frequency small data with strong time constraints.
 
-To make it easy, Luos manages streaming channels trough ring buffers.
+To make it easy, Luos engine manages streaming channels trough ring buffers.
 
 A streaming channel allows you to drastically reduce the time constraints of your Luos network thanks to 2 factors:
 
@@ -107,8 +107,8 @@ Following our example, if we want to send trajectory to the motor, we will have 
     This way, the receiver always has at least one data chunk (1s in this example) ready to be consumed.
 2.  When data chunks are received, the receiver can start consuming data at its _sampling frequency_.
 3.  One data chunk later (1s in our example), the receiver has consumed the first data chunk, and the sender can start to compute the next one.
-4.  At the end of the data chunk computation, the sender sends the chunk. Luos adds it to the ring buffer.
-5.  At each second, the sender sends the next data chunk and Luos adds it to the ring buffer. At the end of the buffer, Luos puts extra data at the begining. The consumer pointer also goes back to the begining of the buffer when it reaches the end. This way we have infinite data stream without any discontinuity.
+4.  At the end of the data chunk computation, the sender sends the chunk. Luos engine adds it to the ring buffer.
+5.  At each second, the sender sends the next data chunk and Luos engine adds it to the ring buffer. At the end of the buffer, Luos engine puts extra data at the begining. The consumer pointer also goes back to the begining of the buffer when it reaches the end. This way we have infinite data stream without any discontinuity.
 6.  You can continue to do this indefinitely.
 
 :::note

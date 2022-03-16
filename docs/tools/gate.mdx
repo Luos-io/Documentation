@@ -28,7 +28,7 @@ The default behavior of the Gate is optimized for system that only have drivers 
 6.  At this optimal frequency the Gate generate formated data and send commands comming from a pipe.
 
 :::caution
-The Gate service refreshes sensors informations as fast as it can, so that can be intensive to Luos bandwidth.
+The Gate service refreshes sensors informations as fast as it can, so that can be intensive to Luos network bandwidth.
 :::
 
 The Gate and the pipe are two separate services, they can be put on the same node or on separate node.
@@ -38,7 +38,7 @@ The Gate and the pipe are two separate services, they can be put on the same nod
 In that configuration you put 2 services in the node like below.
 
 ```c
-#include "luos.h"
+#include "luos_engine.h"
 #include "pipe.h"
 #include "gate.h"
 
