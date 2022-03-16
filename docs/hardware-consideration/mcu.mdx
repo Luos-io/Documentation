@@ -14,11 +14,13 @@ Luos can manage any type of microcontrollers as long as they are first added to 
 - by mail <a href="mailto:hello@luos.io">hello&#x40;luos.io</a>
 - on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
-Check the list of MCU family Luos cover :<a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
+Check the list of MCU family Luos cover :<a href="https://github.com/Luos-io/Luos/tree/main/Engine/HAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
 
-## Default Configuration
+> Depending on your Network you may also configure the specific HAL of your network. By default Luos use the Robus network layer with <a href="https://github.com/Luos-io/Luos/tree/main/Network/Robus/HAL" target="_blank">Robus HAL</a>.
 
-Luos libraries is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low level part, Luos compagny provide, for many MCU family, a default configuration that can be follow to plug and play luos library with the chosen MCU family. The peripheral configuration is describe in files luos_hal_config.h in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>, and can be redefined in the node_config.h file to fit with your design.
+## Default Configurations
+
+Luos libraries is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low level part, Luos compagny provide, for many MCU family, a default configuration that can be follow to plug and play luos library with the chosen MCU family. The peripheral configuration is describe in files luos_hal_config.h, and can be redefined in the node_config.h file to fit with your design.
 
 ## Luos HAL configuration
 
