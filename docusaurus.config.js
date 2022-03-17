@@ -129,6 +129,12 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    algolia: {
+      appId: 'K3VMDT0LOA',
+      apiKey: '9394b39227bc70e30ff8a34bc6489a3f',
+      indexName: 'docs-luos',
+      contextualSearch: true,
+    },
   },
   presets: [
     [
@@ -140,7 +146,7 @@ module.exports = {
           editUrl: 'https://github.com/luos-io/Documentation',
           versions: {
             current: {
-              label: '2.2.0-beta 🚧',
+              label: '2.3.0-beta 🚧',
             },
           },
         },

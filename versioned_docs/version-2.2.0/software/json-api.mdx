@@ -1,47 +1,33 @@
 ---
-title: API JSON
 custom_edit_url: null
 ---
 
-import Image from '@site/src/components/Images.js';
+<h1><a href="#json-api" className="header" id="json-api"><img src="/img/json-logo.png" width="80px"/> / JSON API</a></h1>
 
-#
-
-<h1>
-  <a href="#json-api" className="header" id="json-api">
-    <img src="/img/json-logo.png" width="80px" /> / JSON API
-  </a>
-</h1>
-
-The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formatted data</a> is common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with your device easily.
-
-To do that, you must add a specific app service called a [gate](../tools/gate) on your device.
+The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formated data</a> is very common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to easily interact with your device.<br/>
+To do that, you must add a specific app service called a [Gate](./services_list/gate) on your device.
 
 ## How to start using the JSON API
 
-Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your gate service.
-
-Then you can start the gate by sending:
+Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate service.<br/>
+Then you can start the Gate by sending:
 
 ```json
-{"detection": {}}\n
+{"detection": {}}\r
 ```
 
-This command asks the gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
+This command asks the Gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
 
 ## Routing table messages
 
-:::caution
-Make sure to read and understand how the [routing table](../luos-technology/node/topology) works before reading this part.
-:::
+> **Warning:** Make sure to read and understand how [routing table](../luos-technology/services/routing-table) works before reading this part.
 
-After the gate starts, the first message you receive is a routing table.
-
-This first message is essential because it contains all the information allowing you to create a code object for your device, including all its features.
+After the Gate starts, the first message you receive is a routing table.<br/>
+This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
 
 ### Routing table structure
 
-A routing table in JSON consists of a list of the nodes present in the Luos network:
+A routing table in JSON consists in a list of the nodes present in the Luos network:
 
 ```json
 {
@@ -82,9 +68,7 @@ Each listed node of the network has basic node information and a list of hosted 
 }
 ```
 
-:::tip
-To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](../luos-technology/node/topology).
-:::
+> **Note:** To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](../luos-technology/services/routing-table).
 
 #### Services
 
@@ -99,9 +83,7 @@ Each listed service of a node has basic services information:
 }
 ```
 
-:::tip
-To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](../luos-technology/services).
-:::
+> **Note:** To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](../luos-technology/services).
 
 #### Full routing table example
 
@@ -172,13 +154,11 @@ To understand the meanings of _type_, _id_ and _alias_, please refer to the [ser
 
 Below is a visual representation of this routing table:
 
-<div align="center">
-  <Image src="/img/luos-network-ex.png"></Image>
-</div>
+![](/img/luos-network-ex.png)
 
 ### Service's information messages
 
-When the JSON routing table is transmitted, the gate updates and streams your network data with **services information**.
+When the JSON routing table is transmitted, the Gate starts to update and stream your network data with **services information**.
 
 This JSON is a "service" object listing all the services by their alias and the values they send:
 
@@ -196,9 +176,9 @@ This JSON is a "service" object listing all the services by their alias and the 
 }
 ```
 
-You can use the same JSON object structure to send data to services.
+You can use the exact same JSON object structure to send data to services.
 
-Here is the list of all values that services can use:
+Here is the list of all values that can be used by services:
 
 |      Value name       |                                                       Definition                                                       |
 | :-------------------: | :--------------------------------------------------------------------------------------------------------------------: |
@@ -213,7 +193,7 @@ Here is the list of all values that services can use:
 |  target_trans_speed   |                                             Actuator's target linear speed                                             |
 |         time          |                                                       Time value                                                       |
 |       compliant       |                                              Actuator's compliance status                                              |
-|          pid          |                                 Set of PID values (proportional, integral, derivative)                                 |
+|          pid          |                                Set of PID values (proportionnal, integral, derivative)                                 |
 |      resolution       |                                               Sensor's resolution value                                                |
 |        offset         |                                                      Offset value                                                      |
 |       reduction       |                                            Ratio of an actuator's reduction                                            |
@@ -250,7 +230,7 @@ Here is the list of all values that services can use:
 |     luos_revision     |                                                     Luos's version                                                     |
 |    luos_statistics    | Luos's memory usage statistics \[Rx stack, Luos stack, Tx stack, Dropped messages, Loop delay, Send retry max number\] |
 
-Here is an example of a message sent by a potentiometer service containing the rotation angle of the associated potentiometer:
+Here is an exemple of a message sent by a Potentiometer service about the rotation angle of the associated potentiometer:
 
 ```json
 {
@@ -262,7 +242,7 @@ Here is an example of a message sent by a potentiometer service containing the r
 }
 ```
 
-Here is an example of a message sent by a gate service about Luos statistics:
+Here is an exemple of a message sent by a gate service about Luos statistic:
 
 ```json
 {
@@ -291,9 +271,9 @@ Some messages are specifically handled:
 Custom parameters can be defined and sent to services through the JSON API, either with Python (Pyluos) or any other programming language on a computer side.
 Here is an example of a C function that can be implemented in order to send commands to services in a Luos Network, through a gate:
 
-```c
+```C
 def sendCmd(s, cmd, sleep_time=0.5):
-    cmd = cmd + '\network'
+    cmd = cmd + '\r'
     print(cmd)
     s.write(cmd.encode())
     time.sleep(sleep_time)
@@ -310,23 +290,23 @@ sendCmd(s, '{"services": {"controller_moto": {"parameters": 2440}}}')
 
 Parameters are defined by a 16-bit bitfield.
 
-|   Object   |               Definition               |                                                                         Structure                                                                         |            Service(s)            |
-| :--------: | :------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------: |
-| parameters | enabling or disabling some measurement | [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31) | Stepper, Controller-motor, Servo |
-| parameters | enabling or disabling some measurement |             [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)             |               Imu                |
+|   Object   |               Definition               |                                                                         Structure                                                                         |                                                        Service(s)                                                        |
+| :--------: | :------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------: |
+| parameters | enabling or disabling some measurement | [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31) | [Stepper](./services_list/stepper), [Controller-motor](./services_list/controller-motor), [Servo](./services_list/servo) |
+| parameters | enabling or disabling some measurement |             [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)             |                                                [Imu](./services_list/imu)                                                |
 
 Other specific messages:
 
-|   Object   |                            Definition                            |      Service(s)       |
-| :--------: | :--------------------------------------------------------------: | :-------------------: |
-|  register  |   Motor memory register filed with \[register_number, value\]    |    Dynamixel, void    |
-|   set_id   |                         A set id command                         |    Dynamixel, void    |
-| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False |    Dynamixel, void    |
-|   delay    |                   reduce services refresh rate                   | [Gate](../tools/gate) |
+|   Object   |                            Definition                            |               Service(s)               |
+| :--------: | :--------------------------------------------------------------: | :------------------------------------: |
+|  register  |   Motor memory register filed with \[register_number, value\]    | [Dynamixel](./services_list/dxl), void |
+|   set_id   |                         A set id command                         | [Dynamixel](./services_list/dxl), void |
+| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False | [Dynamixel](./services_list/dxl), void |
+|   delay    |                   reduce services refresh rate                   |      [Gate](./services_list/gate)      |
 
 ### Services exclusion messages
 
-Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
+Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring#service-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this service is no longer available:
 
 ```json
 { "dead_service": "service_alias" }
@@ -334,7 +314,7 @@ Services can be excluded from the network if a problem occurs (see [self-healing
 
 ### Node assert messages
 
-Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 
 ```json
 {
@@ -348,13 +328,13 @@ Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitor
 
 ## Sending large binary data
 
-Binary data such as, for example, a motor trajectory can't be included in a JSON file if it is too large. In order to allow this type of transmission, the size of the binary data is sent through the JSON, followed by the actual data in binary format.
+Binary data such as, for example, a motor tarjectory can't be included into a JSON file if it is too large. In order to allow this type of transmission, the size of the binary data is sent through the JSON, then followed by the actual data in binary format.
 
-- If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [service's information messages section](#services-information-messages)), or as a table of several values (for example a motor trajectory).
+- If the data is short, it can be displayed inside the JSON as a regular value (see the different values in [Service's information messages section](#services-information-messages)), or as a table of several values (for example a motor trajectory).
 
-- If the data is large, the defined value must be a **table of one element**, containing only the size of the binary data to be transfered in bytes.
+- If the data is large, the defined value must be a **table of one element**, containing only the size of the binary data to be transfered, in bytes.
 
-The following example shows a transfer of binary data of 1024 bytes.
+The following example shows a transfert of a binary data of 1024 bytes.
 
 ```json
 {

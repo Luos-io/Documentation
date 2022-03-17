@@ -7,21 +7,13 @@ module.exports = {
         {
           type: 'category',
           label: 'Luos Technology',
+          link: { type: 'doc', id: 'luos-technology/luos_tech' },
           items: [
-            {
-              type: 'doc',
-              label: 'Definition',
-              id: 'luos-technology/luos_tech',
-            },
             {
               type: 'category',
               label: 'Basics',
+              link: { type: 'doc', id: 'luos-technology/basics/basics' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Basics',
-                  id: 'luos-technology/basics/basics',
-                },
                 {
                   type: 'doc',
                   label: 'Concept',
@@ -37,12 +29,8 @@ module.exports = {
             {
               type: 'category',
               label: 'Node',
+              link: { type: 'doc', id: 'luos-technology/node/node' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Definition',
-                  id: 'luos-technology/node/node',
-                },
                 {
                   type: 'doc',
                   label: 'Luos',
@@ -68,12 +56,8 @@ module.exports = {
             {
               type: 'category',
               label: 'Services',
+              link: { type: 'doc', id: 'luos-technology/services/services' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Definition',
-                  id: 'luos-technology/services/services',
-                },
                 {
                   type: 'doc',
                   label: 'Initialization',
@@ -104,12 +88,8 @@ module.exports = {
             {
               type: 'category',
               label: 'Message',
+              link: { type: 'doc', id: 'luos-technology/message/message' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Definition',
-                  id: 'luos-technology/message/message',
-                },
                 {
                   type: 'doc',
                   label: 'Send Message',
@@ -142,12 +122,11 @@ module.exports = {
         {
           type: 'category',
           label: 'Hardware Consideration',
+          link: {
+            type: 'doc',
+            id: 'hardware-consideration/hardware-consideration',
+          },
           items: [
-            {
-              type: 'doc',
-              label: 'Definition',
-              id: 'hardware-consideration/hardware-consideration',
-            },
             {
               type: 'doc',
               label: 'Minimum Requirement',
@@ -173,12 +152,8 @@ module.exports = {
         {
           type: 'category',
           label: 'Tools',
+          link: { type: 'doc', id: 'tools/tool' },
           items: [
-            {
-              type: 'doc',
-              label: 'List',
-              id: 'tools/tool',
-            },
             {
               type: 'doc',
               label: 'Gate',
@@ -209,12 +184,8 @@ module.exports = {
         {
           type: 'category',
           label: 'API',
+          link: { type: 'doc', id: 'api/list' },
           items: [
-            {
-              type: 'doc',
-              label: 'List',
-              id: 'api/list',
-            },
             {
               type: 'doc',
               label: 'JSON API',
