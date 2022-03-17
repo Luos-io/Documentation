@@ -12,11 +12,11 @@ Using the gate you can still detect the packages of the system and can retrieve 
 ### Possible explanation
 
 When you plug a gate in a Luos system, it will automatically asks to perform a detection, making the drivers' IDs to change. If you start a detection with another application the effect will be the same.
-When a detection occurs, Luos removes all auto-update automation, and doing so avoids any troubles regarding the destination movement. So the application is not able to retrieve data from the driver anymore.
+When a detection occurs, Luos engine removes all auto-update automation, and doing so avoids any troubles regarding the destination movement. So the application is not able to retrieve data from the driver anymore.
 
 If you already managed the re-detection on your app, the problem should come from the gate's configuration.
 By default a gate initiates an auto-update to all the services available on the network, improving its performance. But if you plan to have an application also using this feature on your network, you don't want the gate to make the auto-update anymore. You can avoid it by configuring your gate in `GATE_POLLING` mode.
-To do that, add `#define GATE_POLLING` in the file _node_config.h_. The entire list of gate's configuration is available in the [_gate_config.h_](https://github.com/Luos-io/Examples/blob/master/Apps/Gate/gate_config.h) file.
+To do that, add `#define GATE_POLLING` in the file _node_config.h_. The entire list of gate's configuration is available in the [_gate_config.h_](https://github.com/Luos-io/Luos/blob/main/Tool_services/Gate/gate_config.h) file.
 
 ### Resolution
 
