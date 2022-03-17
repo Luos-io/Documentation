@@ -13,7 +13,9 @@ import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Requirement from '../../components/school/article/requirement';
-import authors from '../../components/school/index/data/author';
+import content from '../../components/school/index/data/content';
+import data from '../../components/school/index/data/dataIntro';
+import authors from '../../components/school/index/data/authors';
 
 const LINK_CLASS_NAME = 'table-of-contents__link toc-highlight';
 const LINK_ACTIVE_CLASS_NAME = 'table-of-contents__link--active';
@@ -26,10 +28,17 @@ function TOC({ className, ...props }) {
   let author = {};
   let list = [];
   if (found) {
-    author = authors[parentName] ? authors[parentName].author : {};
-    if (authors[parentName] && authors[parentName].content) {
-      Object.keys(authors[parentName].content).forEach((key) => {
-        list.push(authors[parentName].content[key]);
+    let currentTutoId = null;
+    data['tuto'].forEach((tuto, id) => {
+      if (tuto.id === parentName) {
+        currentTutoId = id;
+      }
+    });
+    author =
+      currentTutoId !== null ? authors[data.tuto[currentTutoId].author] : {};
+    if (content[parentName] && content[parentName].content) {
+      Object.keys(content[parentName].content).forEach((key) => {
+        list.push(content[parentName].content[key]);
       });
     }
   }
@@ -53,7 +62,7 @@ function TOC({ className, ...props }) {
               </Grid>
               <Grid item md={3}>
                 <Avatar
-                  alt="Remy Sharp"
+                  alt={author.name !== 'nicoR' ? author.name : 'N'}
                   src={`/img/school/authors/${author.img}`}
                   sx={{ width: 56, height: 56, float: 'right' }}
                 />

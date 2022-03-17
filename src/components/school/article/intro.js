@@ -66,7 +66,7 @@ export const Introduction = (props) => {
             <Requirement
               title="Supported Hardware"
               list={props.ressources}
-              shortList={new Boolean(props.shortList)}
+              shortList={!!props.shortList}
               shortListSize={props.shortListSize}
               color="#f5f5f5"
             />
