@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 The purpose of this training is to create a full embedded application that detects all the services in the system and create a switcher that turns on or off a LED, depending on a button.
 
-Let’s code that and see how cool it is to do it with Luos!
+Let’s code that and see how cool it is to do it with Luos engine!
 
 ## 2. Add the package button
 
@@ -22,7 +22,7 @@ For now, there are tow packages in the project. In the next step, we will add th
 <TabItem value="Arduino" label="Arduino">
 
 ```c
-#include <luos.h>
+#include <luos_engine.h>
 #include "led.h"
 // the new line to copy and paste
 #include "button.h"
@@ -64,7 +64,7 @@ void loop()
 <TabItem value="Nucleo" label="Nucleo">
 
 ```c
-#include <luos.h>
+#include <luos_engine.h>
 #include "switcher.h"
 #include "led.h"
 // the new line to copy and paste
@@ -408,4 +408,4 @@ You can now detect all the services in your project and command them through an 
 
 Now try to move your switcher package on another board, and keep the button and led packages on the first one: everything should work the same way!
 
-Asking the value of the button every 10ms represents a not negligible portion of code. Luos provides an `update_time` command to simplify it, check the [documentation associated page](/docs/luos-technology/message/advanced-message) to learn more about it.
+Asking the value of the button every 10ms represents a not negligible portion of code. Luos engine provides an `update_time` command to simplify it, check the [documentation associated page](/docs/luos-technology/message/advanced-message) to learn more about it.

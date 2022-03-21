@@ -80,7 +80,7 @@ Throughout this tutorial, you will have to locate the right lines where to copy/
 
 ```c
 // the code to locate:
-#include <luos.h>
+#include <luos_engine.h>
 #include "blinker.h"
 #include "pipe.h"
 #include "gate.h"
@@ -286,7 +286,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 Compile and upload the project to the board. You should now see the LED blink at the frequency decided by the blinker service.
 
 :::tip
-The blinker service will send a message at the blink frequency you want the LED to change state (ON/OFF). When a message is sent to the LED service, Luos will call the message handler so that your code makes the LED react.
+The blinker service will send a message at the blink frequency you want the LED to change state (ON/OFF). When a message is sent to the LED service, Luos engine will call the message handler so that your code makes the LED react.
 
 :::
 

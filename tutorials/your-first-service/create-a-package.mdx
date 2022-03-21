@@ -41,7 +41,7 @@ Then in this folder create 2 files, _led.h_ (header file) and _led.c_ (main file
 In the header _led.h_ file, we declare functions allowing us to call the packages from the main file _led.c_. These functions are declared in the header files in order to give access to other functions in other files.
 
 ```c
-#include "luos.h"
+#include "luos_engine.h"
 
 void Led_Init(void);
 void Led_Loop(void);
@@ -186,7 +186,7 @@ extern "C"
 {
 #endif
 
-#include <luos.h>
+#include <luos_engine.h>
 #include "blinker.h"
 #include "pipe.h"
 #include "gate.h"
@@ -222,7 +222,7 @@ void loop()
 <TabItem value="Nucleo" label="Nucleo">
 
 ```c
-#include <luos.h>
+#include <luos_engine.h>
 #include "blinker.h"
 #include "pipe.h"
 #include "gate.h"
