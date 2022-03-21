@@ -1,13 +1,13 @@
 # Test your Robus configuration
 
 To adapt Luos engine to your board specificities, you need to configure it. This subject is covered in the [Luos engine configuration](./mcu).
-To validate your Robus network hardware configuration, you can use a Robus tool called selftest available in the <a href="https://github.com/Luos-io/Luos/tree/main/Network/Robus/SelfTest" target="_blank">Luos engine library<IconExternalLink width="10"></IconExternalLink></a>.
+To validate your Robus network's hardware configuration, you can use a Robus tool called _selftest_ available in the <a href="https://github.com/Luos-io/Luos/tree/main/Network/Robus/SelfTest" target="_blank">Luos engine's 'library<IconExternalLink width="10"></IconExternalLink></a>.
 
 ## Hardware test conditions
 
-In order to allow selftest to check everything, you need to have specific conditions for your board.
-To make this test, you need to have only one board isolated (unconnected) from the network.
-Tx and Rx pins must be connected together, or you have to be able to receive what you send. This is already the case in One Wire and RS485 configurations.
+In order to allow _selftest_ to check everything, you need to have specific conditions for your board.
+To make this test, only one board must be isolated (unconnected) from the network.
+Robus needs to be able to receive what it sends to check messages integrity and to catch collisions. To do that, you must have the TX and RX pins connected together, directly or through a driver. This is already the case in One Wire and RS485 configurations.
 You must also connect the PTP pins together.
 
 <div align="center">
@@ -19,11 +19,11 @@ You must also connect the PTP pins together.
 
 ## Software conditions
 
-To check the Robus access to the physical network, you need to create a specific binary file only containing the selftest program. This program will perform some checkups allowing you to validate your hardware configuration.
-To use the selftest tool, you have to define SELFTEST using "-D SELFTEST" GCC build flag.
+To check the Robus access to the physical network, you need to create a specific binary file containing only the _selftest_ program. This program will perform some checkups allowing you to validate your hardware configuration.
+To use the _selftest_ tool, you have to define SELFTEST using "-D SELFTEST" GCC build flag.
 
 :::info
-If you use platformio IDE, you must add a "-D SELFTEST" directive in the build_flags setting (this can be found in the file platformio.ini).
+If you use platformio IDE, you must add a "-D SELFTEST" directive in the build_flags setting (this can be found in the file _platformio.ini_).
 :::
 
 To finish, you need to add this in your main file:
@@ -71,4 +71,4 @@ It can be a PTP problem:
 
 1. Check your Pinout definition and IRQ for you PTP pin
 2. Check in dedicated files the handler for IRQ
-   :::
+:::

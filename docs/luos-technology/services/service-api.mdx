@@ -23,7 +23,7 @@ service_t* Luos_CreateService(void* callback, service_type_t type, char* default
 
 The returned `service_t*` is a service structure pointer that will be useful to make your service act in the network after this initialization.
 
-**callback** is a pointer to a callback function called by the Luos engine when a service receives messages from other services (see [messages](../message) for more details).
+**callback** is a pointer to a callback function called by Luos engine when a service receives messages from other services (see [messages](../message) for more details).
 This function needs to have a specific format:
 
 ```c
@@ -131,11 +131,11 @@ This doesn't change anything else on your service code as it allows external ser
 
 ## Messages
 
-The Luos engine enables sending and receiving messages from services with a straightforward API. More information about messages can be found in the [dedicated page](../message/basic-message).
+Luos engine enables sending and receiving messages from services with a straightforward API. More information about messages can be found in the [dedicated page](../message/basic-message).
 
-## Luos engine APIs
+## Luos engine's APIs
 
-The Luos engine includes the following tools to integrate more capabilities and functionalities to manage your messages:
+Luos engine includes the following tools to integrate more capabilities and functionalities to manage your messages:
 
 |                        Description                         |                                       Function                                        |               Return                |
 | :--------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :---------------------------------: |

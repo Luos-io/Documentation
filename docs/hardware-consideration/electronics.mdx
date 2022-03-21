@@ -15,8 +15,8 @@ To create and match with a default reference design, electronic boards must resp
 
 A Luos-friendly electronic board must contain _at least_ the following elements:
 
-- **1 microcontroller unit**: It hosts, as a node, the Luos engine based firmware along with the different <Tooltip def={customFields.service_def} >services</Tooltip> (drivers and apps).
-- **At least two connectors**(only for wired networks): They allow to link boards together into a Luos network and link them as a daisy-chain or star mounting. Through PTP pins, nodes know if there is another node connected to the connector. This is used when the user wants to make a topology detection of the system.
+- **1 microcontroller unit (MCU)**: It hosts, as a node, the Luos engine based firmware along with the different <Tooltip def={customFields.service_def} >services</Tooltip> (drivers and apps).
+- **At least two connectors** (only for wired networks): They allow to link boards together into a Luos network and link them as a daisy-chain or star mounting. Through PTP pins, the nodes know if there is another node connected to the connector. This is used when the user wants to make a topology detection of the system.
 
 # Robus reference designs
 
@@ -42,4 +42,4 @@ Robus' One-wire official connector is <a href="https://octopart.com/df11-4dp-2ds
 
 Robus' RS485 official connector is <a href="https://octopart.com/df11-8dp-2ds%2824%29-hirose-39521447" target="_blank">_DF11-8DP-2DS<IconExternalLink width="10"></IconExternalLink>_</a>.
 
-See the default pinout configuration in <a href="https://github.com/Luos-io/Luos/tree/main/Network/Robus/HAL" target="_blank">_luos_hal_config.h<IconExternalLink width="10"></IconExternalLink>_</a> file for chosen the MCU family.
+See the default pinout configuration in the <a href="https://github.com/Luos-io/Luos/tree/main/Network/Robus/HAL" target="_blank">_luos_hal_config.h<IconExternalLink width="10"></IconExternalLink>_</a> file, situated in the folder associated to the chosen MCU family.

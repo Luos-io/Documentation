@@ -47,7 +47,7 @@ pyluos-bootloader detect <SERIAL_PORT>
 ```
 
 :::info
-If no SERIAL_PORT is passed, pyluos-bootloader will try to find an available Gate on your system by itself.
+If no SERIAL_PORT is passed, pyluos-bootloader will try to find an available gate in your system by itself.
 :::
 
 In your case, you use COM3:
@@ -80,7 +80,7 @@ pyluos-bootloader flash COM3 -t 2 -b firmware_new.bin
 ```
 
 :::caution
-In the example above, `2` is the node's ID of _node 2_, not to be confused with the service _Pipe_mod_'s ID. You can't flash one service only but the entire node, so the target must always be a node,
+In the example above, `2` is the node's ID of _node 2_, not to be confused with the service _Pipe_mod_'s ID. You can't flash just one service, only the entire node. So the target must always be a node.
 :::
 
 Let's type this command, then you should see the following text on your screen:
@@ -159,23 +159,23 @@ Since Luos engine v2.0.0, the gate application handles bootloader commands.
 
 The bootloader runs in its own flash partition, which is completely isolated from the application. You have to flash it on your target before you can use the feature. Depending on your hardware, you can use an already available project or make your own bootloader.
 
-#### Did Luos engine already supports your target?
+#### Does Luos engine already support your target?
 
-The Luos engine bootloader is available for the following targets:
+The Luos engine's bootloader is available for the following targets:
 
 - STM32 F0 / F4 / G4 / L4 families
 - Microchip ATSAMD21J18
 
-Projects for each of these targets can be found in the [Luos engine example folder](https://github.com/Luos-io/Luos/tree/main/Examples/Projects). You can clone this repo and use projects for your application, or use them as examples to build your own bootloader for your specific target.
+Projects for each of these targets can be found in the [Luos engine's example folder](https://github.com/Luos-io/Luos/tree/main/Examples/Projects). You can clone this repo and use projects for your application, or use them as examples to build your own bootloader for your specific target.
 
 :::info
 Examples are available for several IDEs: L4 / F4 / G4 / F0 uses platformIO, and SAMD21 uses MPLAB.
 :::
 
-#### Luos engine does not support your target yet
+#### If Luos engine does not support your target yet
 
-If no project is already existing for your MCU, you will have to create your bootloader project.
-First of all, you have to **enable the bootloader feature** in the Luos engine. To do so, you have to add the **-D BOOTLOADER_CONFIG** parameter when you invoke your compiler. Then you have to run the library in your main() function as you would do for any project:
+If no project exists for your MCU, you will have to create your bootloader project.
+First of all, you have to **enable the bootloader feature** in Luos engine. To do so, you have to add the `-D BOOTLOADER_CONFIG` parameter when you invoke your compiler. Then you have to run the library in your `main()` function as you would do for any other project:
 
 ```C
 #include "luos_engine.h"
@@ -191,9 +191,11 @@ int main(void)
 }
 ```
 
-> **Warning**: Luos engine will now run the bootloader application. Be careful not to initialize any package or services. Luos engine can only run the bootloader app in bootloader mode, and your package will not be executed.
+:::warning
+Luos engine will now run the bootloader application. Be careful not to initialize any package or services. Luos engine can only run the bootloader app in bootloader mode, and your package will not be executed.
+:::
 
-Now you have to adjust your linker settings: your bootloader has to reserve a portion of the flash, and the remaining memory will be dedicated to the Luos engine applications. You can find the memory layout of the flash resumed in the following picture:
+Now you have to adjust your linker settings: the bootloader has to reserve a portion of the flash, and the remaining memory will be dedicated to the Luos engine's applications. You can find the memory layout of the flash resumed in the following picture:
 
 <div align="center">
   <Image src="/img/memory_layout.svg" darkSrc="/img/memory_layout-dark.svg" />
@@ -227,7 +229,7 @@ void SystemInit(void)
 ```
 
 :::info
-You can find application examples in [the Luos engine repository](https://github.com/Luos-io/Luos/tree/main/Examples/Projects).
+You can find application examples in [the Luos engine's repository](https://github.com/Luos-io/Luos/tree/main/Examples/Projects).
 :::
 
 ### How to deal with no VTOR

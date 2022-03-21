@@ -29,7 +29,7 @@ If Luos fails to reach its target using ID_ACK, it will retry 10 times. If the a
 
 :::
 
-## Luos engine statistics
+## Luos engine's statistics
 
 Luos engine monitors some values representing the sanity of your nodes and services.
 
@@ -47,7 +47,7 @@ This structure gives you access to several values:
 
 - **memory**: Memory statisctics information.
   - **rx_msg_stack_ratio**: Percentage of memory occupation of Rx message management tasks.
-  - **luos_stack_ratio**: Percentage of memory occupation of Luos engine tasks.
+  - **luos_stack_ratio**: Percentage of memory occupation of Luos engine's tasks.
   - **tx_msg_stack_ratio**: Percentage of memory occupation of Tx message management tasks.
   - **buffer_occupation_ratio**: Percentage of memory occupation of the message buffer.
   - **msg_drop_number**: Number of messages dropped due to a lack of memory (older messages are dropped to be replaced by new ones).
@@ -114,7 +114,7 @@ In order to facilitate the debugging process, Luos offers a more advanced monito
 
 The Inspector includes the functionalities of the sniffer, with the main difference that it is a common Luos service that works like any other service in the network. That is to say, the inspector service is detected, and can interact with the other services existing in the same network. Also, we have added some aditional functionalities, which enrich the capacities of monitoring the embedded systems.
 
-Inspector, exactly like the Gate, is a Luos engine [App service](../luos-technology/services#apps-guidelines), so it is able to be hosted in any MCU running Luos engine.
+Inspector, exactly like the Gate, is a Luos engine's [app service](../luos-technology/services#apps-guidelines), so it is able to be hosted in any MCU running Luos engine.
 
 In order to exploit the functionalities of the inspector app, we need to combine it with the communication driver service, which is called **pipe**.
 
@@ -124,9 +124,9 @@ The format of the messages that are transmitted serially form the inspector usin
 
 1. System's messages reception
 2. Routing table sharing
-3. Services' and Nodes' Statics occupation
-4. Services' and Nodes' firmware revision occupation
-5. Services' and Nodes' Luos engine revision
+3. Services' and nodes' statics occupation
+4. Services' and nodes' firmware revision occupation
+5. Services' and nodes' Luos engine's revision
 6. Verbose mode
 7. Assert messages occupation
 

@@ -38,7 +38,7 @@ When each service in the network has an attributed ID, the detection algorithm p
 
 Sometimes, multiple services in the network can have the same alias, which is not allowed to prevent service confusion. In this case, the detection algorithm will add a number after each alias instance on the routing table.
 
-At the end of the detection process, each service receives a message with the command of `END_DETECTION`, that can be used in your code in order to understand the exact moment that the detection has finished, and you can then reinitialize the behavior of your services (for example reinitialize the auto-updates, etc,). Also, you can check the detection status of your node, by using the dedicated Luos engine API:
+At the end of the detection process, each service receives a message with the command of `END_DETECTION`, that can be used in your code in order to understand the exact moment that the detection has finished, and you can then reinitialize the behavior of your services (for example reinitialize the auto-updates, etc,). Also, you can check the detection status of your node, by using the dedicated Luos engine's API:
 
 ```c
 Luos_IsNodeDetected();
@@ -113,7 +113,7 @@ This mode gives physical information about your devices.
 
 The **node_id** is the unique number that you can use to identify each one of your nodes. At the beginning (or when a reset detection is performed), all node IDs are set to 0. When the RoutingTB_DetectServices API is called, Luos engine assigns a unique ID to nodes and services in your system topology.
 
-The Luos node can be **certified** in your system to guaranteeing the security and integrity of your network by including the Luos licencing number in your product (feature in progress).
+The Luos node can be **certified** in your system to guarantee the security and integrity of your network, by including the Luos engine's licencing number in your product (feature in progress).
 
 The **port_table** allows sharing of topological information of your network. Each element of this table corresponds to a physical network port of the node and indicates which node is connected to it by sharing a node's `id`.
 

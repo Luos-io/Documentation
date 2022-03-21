@@ -9,14 +9,14 @@ import IconExternalLink from "@theme/IconExternalLink";
 
 # Luos engine
 
-The node's embedded code hosts the Luos's engine embedded code and the node's functionalities, stored in services. Luos engine is responsible for creating each node's identity, integrating the node to a network, locating it among the other nodes, communicating with each other, and managing all their services.
+The node's embedded code hosts the Luos engine's embedded code and the node's functionalities, stored in services. Luos engine is responsible for creating each node's identity, integrating the node to a network, locating it among the other nodes, communicating with each other, and managing all their services.
 
-## Luos engine Integration
+## Luos engine integration
 
-Luos engine works as a code library running on nodes. Luos engine can use several Network interfaces.
+Luos engine works as a code library running on nodes. It can use several network interfaces.
 
-To match the Luos engine library with your hardware, Luos engine offers an _Hardware Abstraction Layer_ for various devices in the <Tooltip def={customFields.luoshal_def}>Luos engine HAL</Tooltip>.
-There is also specific _Hardware Abstraction Layer_ for each Network layers.
+To match the Luos engine's library with your hardware, it offers an _Hardware Abstraction Layer_ for various devices in the <Tooltip def={customFields.luoshal_def}>Luos engine's HAL folder</Tooltip>.
+There is also specific _Hardware Abstraction Layers_ for each network layer.
 
 - <a href="https://github.com/Luos-io/Luos" target="_blank">
     Luos engine
@@ -26,14 +26,14 @@ There is also specific _Hardware Abstraction Layer_ for each Network layers.
 
 To make it work in your environment, you have to:
 
-- Include the Luos engine lib folders in your project compilation;
+- Include the Luos engine's library folders in your project compilation;
 - Include the right HAL for your device family;
-- If necessary, overload HAL default configuration with a `node_config.h` file describing specificities of your node. Luos Engine HAL provides default configurations for MCU family as examples, they can be modified to fit with your design (e.g. match pins with your design);
-- Include `luos_engine.h` on your main file.
+- If necessary, overload HAL default configuration with a _node_config.h_ file describing specificities of your node. Luos engine's HAL provides default configurations for MCU families as examples, they can be modified to fit with your design (e.g. match pins with your design);
+- Include _luos_engine.h_ in your main file.
 
-The Luos engine loop function need to run constantly on each node.
+The Luos engine's loop function needs to run constantly on each node.
 
-The engine is like a task that has to be run regularly. The primary Luos engine functions that should be called to be integrated into the embedded code of a node are `Luos_init()` and `Luos_loop()`. They should be added in the `main()` of your program.
+The engine is like a task that has to be run regularly. The primary Luos engine's functions that should be called to be integrated into the embedded code of a node are `Luos_init()` and `Luos_loop()`. They should be added in the `main()` of your program.
 
 Basically, your `main()` function will look like this:
 
@@ -63,11 +63,13 @@ The only information that should be put on the `main()` code are MCU's setup par
 
 At the node level, communication is achieved by receiving and sending [messages](../message) with the other [services](../services) of a Luos network. The nodes can communicate with each other thanks to the network layer.
 
-Luos will be able to find the physical destination to reach a specific service and defines the best way to make it (basically using localhost or using the network layer).
+Luos engine will be able to find the physical destination to reach a specific service and define the best way to make it (basically using localhost or using the network layer).
 
-> If you use Luos engine on only one board you don't need take care of the physical network, the engine will only use localhost. You can use it to deal with microservice developpement on IOT for example.
+:::info
+If you use Luos engine on only one board, you don't need to take care of the physical network, the engine will only use localhost. You can use it to deal with microservice developpement on IOT, for example.
+:::
 
-Robus executes a format control, and store messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos or sent to one or several [services](../services).
+Robus executes a format control, and stores messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos engine or sent to one or several [services](../services).
 
 <div align="center">
   <Image src="/img/NodeFlow.svg" darkSrc="/img/NodeFlow-dark.svg" />
@@ -93,9 +95,9 @@ You can use it to set all your custom configurations:
 |     MAX_MSG_NB     | 2\*MAX_SERVICE_NUMBER |                               Max number of messages that can be referenced by Luos.                               |
 |      NBR_PORT      |           2           | Number of PTP (port) on the node ( max 8). See [electronic design](../../hardware-consideration/electronics) page. |
 
-You will find the default configuration for Luos engine in the file <a href="https://github.com/Luos-io/Luos/blob/main/Network/Robus/inc/config.h" target="_blank">config.h<IconExternalLink width="10"></IconExternalLink></a>.
+You will find the default configuration for Luos engine in the file <a href="https://github.com/Luos-io/Luos/blob/main/Network/Robus/inc/config.h" target="_blank">_config.h<IconExternalLink width="10"></IconExternalLink>_</a>.
 
-Check the Luos_hal_config.h and your Network_hal_config.h of your MCU family to see parameters that can be changed to fit your design.
+Check the _Luos_hal_config.h_ and your _Network_hal_config.h_ of your MCU family to see parameters that can be changed to fit your design.
 
 > **Note:** [Every example](https://github.com/Luos-io/Luos/tree/main/Examples) provided by Luos has a _node_config.h_ file that can be used as a base to fit your project's needs.
 

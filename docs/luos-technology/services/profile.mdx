@@ -13,7 +13,7 @@ The profile handles messaging to share your variables with other services. Moreo
 > **Example:** If you want to make a servo-motor service, you have to select the servo-motor profile for your service and use variables of the profile structure to set the rotor current position measurement, or to get the current motor target in your code.
 
 Profiles are convenient for making your code clean and straightforward, complying with your development into a standard API, or sharing your service type with the community.
-Luos engine provides some common profile models that you can use; feel free to contribute and to add your own to the standard profile bank with a pull request on <a href="https://github.com/Luos-io" target="_blank">Luos engine' GitHub page &#8599;</a>.
+Luos engine provides some common profile models that you can use; feel free to contribute and to add your own to the standard profile bank with a pull request on <a href="https://github.com/Luos-io" target="_blank">Luos engine GitHub page &#8599;</a>.
 
 ## How to use a profile in your service
 
@@ -27,7 +27,7 @@ profile_servo_motor_t servo_motor; // create a motor profile structure
 
 Now your structure exists, you can access all variables it embeds. But it won't be updated by Luos engine as described above, for this one step remains: you have to create a service and tell Luos engine that you're using a profile and you want the platform handles it for you.
 
-As far, you learned to create a service with the **Luos_CreateService()** call, but we don't talk about give informations to the platform about the profile you instantiated. In fact, a function exist and can do this job for you. Every profile implementation for a specific type comes with a **Profile_CreateService()** function wich is very similar to the **Luos_CreateService()** routine. In fact it calls Luos_CreateService() and some other glue routine to register your profile structure in the platform. For the **motor profile** the dedicated routine is showed here after:
+As far, you learned to create a service with the **Luos_CreateService()** call, but we don't talk about give informations to the platform about the profile you instantiated. In fact, a function exist and can do this job for you. Every profile implementation for a specific type comes with a **Profile_CreateService()** function wich is very similar to the **Luos_CreateService()** routine. In fact it calls **Luos_CreateService()** and some other glue routine to register your profile structure in the platform. For the **motor profile** the dedicated routine is showed here:
 
 ```c
 service_t *ProfileServo_CreateService(profile_servo_motor_t *profile_servo_motor, SERVICE_CB callback, const char *alias, revision_t revision);
