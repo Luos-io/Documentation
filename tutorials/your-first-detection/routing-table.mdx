@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Introduction
 
-You just learned how to detect a Luos Engine network. But what is the point of making a detection if we have to count every service number in the network to find the ID corresponding to the service we want?
+You just learned how to detect a Luos engine network. But what is the point of making a detection if we have to count every service number in the network to find the ID corresponding to the service we want?
 
 <div align="center">
   <img
@@ -21,7 +21,7 @@ You just learned how to detect a Luos Engine network. But what is the point of m
 </div>
 
 Do not worry, this is why the routing table exists.
-Let’s discover how to dynamically find an ID using it!
+Let's discover how to dynamically find an ID using it!
 
 ## 2. Dynamic and scaling: how the routing table can make your code flexible
 
@@ -31,7 +31,7 @@ If an entity is moved inside your system, you have to update this list and proba
 
 But most importantly, all your code is specific to this particular configuration, and it is almost impossible to reuse any piece of your code in any other project.
 
-The Luos Engine detection dynamically assigns ID for you depending on the physical topology, and regroups all the information regarding services in a routing table.
+The Luos engine's detection dynamically assigns ID for you depending on the physical topology, and regroups all the information regarding services in a routing table.
 
 The routing table is kind of a database with all the nodes' and services' information available; and after detection, every service has access to it.
 
@@ -39,17 +39,17 @@ Instead of having defined IDs on your system, you can dynamically find them to m
 
 ## 3. Searching information in the routing table
 
-To find information on this routing table, Luos Engine provides some filtering functions allowing you to extract the services depending on various criteria. You can cumulate those filtering functions to create complex searches and find the perfect resource fitting your needs.
+To find information on this routing table, Luos engine provides some filtering functions allowing you to extract the services depending on various criteria. You can cumulate those filtering functions to create complex searches and find the perfect resource fitting your needs.
 
 :::info
 To learn more about routing table filters, feel free to check out [the related documentation page](/docs/luos-technology/services/routing-table).
 :::
 
-Instead of directly writing the ID of the led service at the end of the detection, let’s find it and see how we can scale it easily!
+Instead of directly writing the ID of the led service at the end of the detection, let's find it and see how we can scale it easily!
 
 One of the characteristics of our led service is its alias.
 
-In _Switcher.c_, on the `Switcher_MsgHandler` let’s find the service with the “led” alias to send a message to it.
+In _Switcher.c_, on the `Switcher_MsgHandler` let's find the service with the “led” alias to send a message to it.
 
 1. Create a variable where the ID of theled service will be saved:
 

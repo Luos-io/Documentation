@@ -20,7 +20,7 @@ There are two ways to receive a message, but what about sending one?
   />
 </div>
 
-Don’t worry, we will see how to do it step by step.
+Don't worry, we will see how to do it step by step.
 
 ## 2. Set up your hardware
 
@@ -136,7 +136,7 @@ The only reason why this function sends back a **FAILED** status is because ther
 
 ### Write it in the code
 
-Let’s fill in the information of the structure:
+Let's fill in the information of the structure:
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -192,7 +192,7 @@ void Button_Loop(void)
 </Tabs>
 
 The **STATE** button service now returns an **IO_STATE** value when a service asks for it!
-Let’s see if our service reacts as expected.
+Let's see if our service reacts as expected.
 
 <div align="center">
   <img
@@ -252,9 +252,9 @@ Out[2]: True
 
 ## 6. Exercise: control a LED depending on your button's state
 
-Let’s try a small exercise:
+Let's try a small exercise:
 
-> Make a LED turn on when the button's state is **TRUE** and off when it’s **FALSE**.
+> Make a LED turn on when the button's state is **TRUE** and off when it's **FALSE**.
 
 1. Add the led package created on the [previous tutorial](/tutorials/your-first-service) on your board.
 2. Compile and flash your board again.

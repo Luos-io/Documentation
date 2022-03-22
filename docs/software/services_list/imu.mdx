@@ -21,13 +21,13 @@ Imu services can measure:
 
 By default, the service will send only quaternions to keep a low number of data and avoid bus congestion. Retrieving any other types of measures requires to enable them first.
 
-The easiest way to enable a measure is by using it, as Pyluos automatically enables a called measure. For example, to retrieve the linear acceleration value when it’s disabled, you can execute:
+The easiest way to enable a measure is by using it, as Pyluos automatically enables a called measure. For example, to retrieve the linear acceleration value when it's disabled, you can execute:
 
 ```python
 device.Imu_mod.linear_acceleration
 ```
 
-This command doesn’t allow you to disable the value after using it in order to keep your device responsive. Another way to enable or disable a value is to set it to `True` or `False`. For example, if you want to disable the linear acceleration measure previously activated, you can execute:
+This command doesn't allow you to disable the value after using it in order to keep your device responsive. Another way to enable or disable a value is to set it to `True` or `False`. For example, if you want to disable the linear acceleration measure previously activated, you can execute:
 
 ```python
 device.Imu_mod.linear_acceleration = False
