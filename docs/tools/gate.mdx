@@ -8,7 +8,7 @@ import Image from "@site/src/components/Images.js";
 
 # Gate
 
-The Gate is a major tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([Json] most of the time) and to stream and receive those formated informations into any kind of communication way such as serial interface, wifi, bluetooth, Lora, ...
+The Gate is a major tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([JSON] most of the time) and to stream and receive those formated informations into any kind of communication way such as serial interface, wifi, bluetooth, Lora, ...
 
 You can use it to take control of any embedded service with [any languages](/docs/api/list) on any machine. For example we use it in [Pyluos](/docs/tools/pyluos) or [ROS](/docs/tools/ros)!
 
@@ -18,7 +18,7 @@ The Gate service must be used with a driver service called **pipe** that can be 
 
 ## Default Gate Process
 
-The default behavior of the Gate is optimized for system that only have drivers and control the entire behavior trough a distant machine.
+The default behavior of the Gate is optimized for system that only have drivers and control the entire behavior through a distant machine.
 
 1.  At power up, the Gate make a network detection to find a pipe service. _(Optional)_
 2.  The Gate wait to receive a detection message from a pipe.

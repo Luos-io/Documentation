@@ -7,40 +7,40 @@ import Image from '@site/src/components/Images.js';
 # RTOS with Luos engine
 
 :::info
-This tutorial use FreeRTOS, but the main concepts can be use for any other RTOS. The configurations option may vary depending on the RTOS API you are using.
+This tutorial uses FreeRTOS, but the main concepts can be used for any other RTOS. The configuration options may vary depending on the RTOS API you are using.
 :::
 
 :::caution
-This tutorial consider the reader as a FreeRTOS user. This is not a tutorial to learn how to use FreeRTOS.
+This tutorial considers the reader as a FreeRTOS user. This is not a tutorial to learn how to use FreeRTOS.
 :::
 
-In this tutorial we will see how to use Luos with an RTOS and discovers the benefits of this combination.
+In this tutorial, we will see how to use Luos with an RTOS and discover the benefits of this combination.
 
-## 1. Setup a PlatformIO project
+## 1. Set up a PlatformIO project
 
-On this tutorial we will use the examples availale on [the Luos engine repository](https://github.com/Luos-io/Luos/tree/main).
-You can [download](https://github.com/Luos-io/Luos/archive/refs/heads/main.zip) and unzip it or clone it using : 
+In this tutorial, we will use the examples available in [the Luos engine's repository](https://github.com/Luos-io/Luos/tree/main).
+You can [download](https://github.com/Luos-io/Luos/archive/refs/heads/main.zip) and unzip it or clone it using: 
 
 ```
 Git clone https://github.com/Luos-io/Luos_engine.git
 ```
 
-For a quick reminder, you will find in this project:
+As a quick reminder, you will find in this project:
 
-- a **src/** folder containing a **main.c** whose main purpose is to call **services** and **Luos** initialization functions. This folder also contains the file **stm32f0xx_it.c** in which we define interrupt handlers.
+- a **src/** folder containing a **main.c** whose main purpose is to call **services** and **Luos engine**'s initialization functions. This folder also contains the file _stm32f0xx_it.c_ in which we define interrupt handlers.
 - a **lib/** folder containing services source files.
 
 ## 2. Use FreeRTOS in your project
 
-Open Visual Studio Code and open a **Led** project corresponding to your marster board in **Luos_engine/Examples/Projects/YOUR_BOARD**.
+Open Visual Studio Code and open a **Led** project corresponding to your master board in **Luos_engine/Examples/Projects/YOUR_BOARD**.
 
 :::caution
 If you are not comfortable with the opening and compiling of a Luos engine project, please follow [the Luos Get started tutorial](../get-started) first.
 :::
 
-Now we need to import FreeRTOS source files in our project. To do that we will use the platformio registry and add a [dependancy to FreeRTOS])(https://registry.platformio.org/libraries/bojit/PlatformIO-FreeRTOS). Then at compilation time Platformio will download it and include it on our project.
+Now we need to import FreeRTOS source files in our project. To do that we will use the PlatformIO registry and add a [dependency to FreeRTOS])(https://registry.platformio.org/libraries/bojit/PlatformIO-FreeRTOS). Then at compilation time PlatformIO will download it and include it on our project.
 
-To do that open the `platformio.ini` file of your project and add a FreeRTOS dependancy : 
+To do that open the _platformio.ini_ file of your project and add a FreeRTOS dependency: 
 
 ```json
 lib_deps = 
@@ -49,14 +49,14 @@ lib_deps =
     bojit/PlatformIO-FreeRTOS
 ```
 
-To properly work this lib need to know wich MCU family you are working on (like Luos), so you have to add a compilation option to define your platform.
+To properly work, this lib needs to know which MCU family you are working on (like Luos engine), so you have to add a compilation option to define your platform.
 For example, for STM32F0 you have to add the compilation flag `-DSTM32F0`.
 
 :::info
-More details about it on [the pltaformio library readme](https://registry.platformio.org/libraries/bojit/PlatformIO-FreeRTOS).
+More details about it on [the PlatformIO library's readme](https://registry.platformio.org/libraries/bojit/PlatformIO-FreeRTOS).
 :::
 
-In this tutorial we will also use [CMSIS_RTOS_V2](https://arm-software.github.io/CMSIS_5/RTOS2/html/rtos_api2.html) to have a generic RTOS API. You will have to find the lib correponding to your provider and MCU. If you prefer to directly use FreeRTOS API you will have to adapt the code of this tutorial, no big deal...
+In this tutorial, we will also use [CMSIS_RTOS_V2](https://arm-software.github.io/CMSIS_5/RTOS2/html/rtos_api2.html) to have a generic RTOS API. You will have to find the lib corresponding to your provider's and MCU. If you prefer to directly use FreeRTOS API, you will have to adapt the code of this tutorial, no big deal...
 
 :::info
 You can find a ST version in [our FreeRTOS example](https://github.com/Luos-io/Luos/tree/main/Examples/Projects/l0/Button_FreeRTOS). 
@@ -64,7 +64,7 @@ You can find a ST version in [our FreeRTOS example](https://github.com/Luos-io/L
 
 ## 3. FreeRTOS configurations
 
-To work with Luos FreeRTOS don't need any specific configuration except one thing. So as you make it normally, you have to configure available options in the FreeRTOSConfig.h : FreeRTOS needs to handle three interrupters handlers (PendSV, SVC and Systick handlers) so you must not redefine these three handlers (For STM32 user they are in **stm32f0xx_it.c**).
+Working with Luos FreeRTOS doesn't require any specific configuration, except for one thing: you must configure the available options in the file _FreeRTOSConfig.h_. FreeRTOS needs to handle three interrupters handlers (PendSV, SVC and systick handlers), so you must not redefine these three handlers (For STM32 user they are in **stm32f0xx_it.c**).
 
 ```c
     #define vPortSVCHandler     SVC_Handler
@@ -73,12 +73,12 @@ To work with Luos FreeRTOS don't need any specific configuration except one thin
 ```
 
 :::info
-If you want more information about the options displayed in FreeRTOSConfig.h, please check the [dedicated page](https://www.freertos.org/a00110.html).
+If you want more information about the options displayed in _FreeRTOSConfig.h_, please check the [dedicated page](https://www.freertos.org/a00110.html).
 :::
 
-The only exception of this standard configuration is that Luos use the systick value provided by the HAL of your ship (allowing Luos to work in a bare metal configuration). By default FreeRTOS will pre-empt this systick and manage it's own. To keep Luos working we have to provide this systick value to the HAL level
+The only exception of this standard configuration is that Luos engine uses the systick value provided by the HAL of your ship (allowing Luos to work in a bare metal configuration). By default FreeRTOS will pre-empt this systick and manage it's own. To keep Luos working we have to provide this systick value to the HAL level
 
-You have 3 solutions to solve this :
+You have 3 solutions to solve this:
 
  - You write the systick IRQ handler by yourself increment the HAL systick then call the RTOS systick function. (We use this solution on our examples)
  - You can override the weak HAL systick function and use the RTOS systick instead of the HAL one.
@@ -202,13 +202,13 @@ One last thing, in each _task_ routine, we call the service loop then we _yield_
 
 To test your project you can add a Pipe and Gate packages (you can find [available packages on the `Gate_SerialCom` project corresponding to your board](https://github.com/Luos-io/Luos/tree/main/Examples/Projects)), add the code in the **lib/** folder and instanciate it by creating a new task in **freertos.c**.
 
-Now you can build your project in VSCode and load it to your board. Once the board is flashed, you can use the `pyluos-shell` command on your computer to control your led trough python.
+Now you can build your project in VSCode and load it to your board. Once the board is flashed, you can use the `pyluos-shell` command on your computer to control your led through python.
 
 ## 6. Main advantages
 
 From a developer using an RTOS point of view, Luos engine allow you to synchronize your features accross multiple tasks and multiple nodes. You can see it as a distributed IPC (Inter Process Communication).
 
-**Now you can have multiple Services across multiple nodes running in parallell on your favorite RTOS and synchronized trough Luos engine.**
+**Now you can have multiple Services across multiple nodes running in parallell on your favorite RTOS and synchronized through Luos engine.**
 
 Luos engine brought you APIs to develop distributed applications with ease:
 

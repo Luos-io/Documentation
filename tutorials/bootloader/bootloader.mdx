@@ -6,9 +6,9 @@ import Image from '@site/src/components/Images.js';
 
 # Bootloader
 
-## 1. Get what you need
+## 1. Acquire and set up your equipment
 
-To flash one or multiple boards using the Luos engine bootloader you need a master board that will manage the link between your computer and the Luos network. So the minimal setup you will need to have to use the bootloader is composed of two boards supported by Luos engine connected with a Luos network. We will use one of these nodes as "master" with a [gate](/docs/tools/gate) and the other will be able to be updated trough the Luos network by hosting a bootloader.
+To flash one or multiple boards using the Luos engine bootloader you need a master board that will manage the link between your computer and the Luos network. So the minimal setup you will need to have to use the bootloader is composed of two boards supported by Luos engine connected together with a Luos network. We will use one of these nodes as a "master" with a [gate](/docs/tools/gate) and the other will be able to be updated through the Luos network by hosting a bootloader.
 
 <div align="center">
   <Image
@@ -18,15 +18,15 @@ To flash one or multiple boards using the Luos engine bootloader you need a mast
 </div>
 
 :::caution
-If you are not comfortable with the Luos network creation and Luos engine firmware management and compiling please follow [the Luos Get started tutorial](../get-started) first.
+If you are not comfortable with the Luos network creation and Luos engine's firmware management and compiling, please follow [the Luos Get started tutorial](../get-started) first.
 :::
 
 :::caution
-It is not possible to update the firmware on the master board running the Gate using the bootloader feature. If you want to update it, you will have to flash it using a direct link (DFU, STLink, JTAG, ...) to the board.
+It is not possible to update the firmware on the master board running the gate using the bootloader feature. If you want to update it, you will have to flash it using a direct link (DFU, STLink, JTAG, ...) to the board.
 :::
 
-On this tutorial we will use the examples availale on [the Luos engine repository](https://github.com/Luos-io/Luos/tree/main).
-You can [download](https://github.com/Luos-io/Luos/archive/refs/heads/main.zip) and unzip it or clone it using : 
+On this tutorial, we will use the examples available in [the Luos engine's repository](https://github.com/Luos-io/Luos/tree/main).
+You can [download](https://github.com/Luos-io/Luos/archive/refs/heads/main.zip) and unzip it or clone it using: 
 
 ```
 Git clone https://github.com/Luos-io/Luos_engine.git
@@ -34,7 +34,7 @@ Git clone https://github.com/Luos-io/Luos_engine.git
 
 ## 2. Load the master board with a gate program
 
-Open Visual Studio Code and open the **Gate_SerialCom** project corresponding to your marster board in **Luos_engine/Examples/Projects/YOUR_BOARD**:
+Open Visual Studio Code and open the **Gate_SerialCom** project corresponding to your master board in **Luos_engine/Examples/Projects/YOUR_BOARD**:
 
 <div align="center">
   <Image src="/img/tutorials/bootloader/Gate_project.png" />
@@ -49,7 +49,7 @@ Click on **Upload** on the bottom left corner of the IDE. Wait for the compilati
 </div>
 
 :::info
-If this step fail, please verify you are properly connected to the USB port or try to follow [the Luos Get started tutorial](../get-started).
+If this step fails, please verify you are properly connected to the USB port or try to follow [the Luos Get started tutorial](../get-started).
 :::
 
 ## 3. Detect gate node with the CLI
@@ -64,7 +64,9 @@ pyluos-bootloader detect
   <Image src="/img/tutorials/bootloader/gate_detect.png" />
 </div>
 
-> COM6 is the identifier of the serial port used. It is unique for each shield; you can check yours with the `Device Manager` in Windows or `ls -l /dev/ | grep ttyUSB` on Linux. If you don't give it pyluos-bootloader will try to find an available Gate on your system.
+:::info
+COM6 is the identifier of the serial port used. It is unique for each shield; you can check yours with the `Device Manager` in Windows or `ls -l /dev/ | grep ttyUSB` on Linux. If you don't give it pyluos-bootloader will try to find an available gate on your system.
+:::
 
 ## 4. Load the bootloader
 
@@ -88,11 +90,11 @@ Connect your two nodes through the Luos network and connect your master board US
 
 ## 6. Compile an app compatible with the bootloader
 
-Most of the examples available on Luos engine folder are already compatible with the bootloader feature. You will be able to use them as template for your future applications.
-Follow the same process described in **Step 2** and **Step 4**, but this time open the **Button" example in **Luos_engine/Examples/Projects/YOUR_BOARD**.
+Most of the examples available in Luos engine's folder are already compatible with the bootloader's feature. You will be able to use them as templates for your future applications.
+Follow the same process described in **Step 2** and **Step 4**, but this time open the **Button** example in **Luos_engine/Examples/Projects/YOUR_BOARD**.
 
-Platformio is able to manage multiple build configurations. By default Luos engine examples are compiling normal firmware. If you want you application to be bootloader compatible you need to compile it in `with_bootloader` mode.
-To do that, when your button project is open you can click on the `Switch Platformio Project Environement` button at the bottom of the window then select the `with_bootloader` option on the list of choice apearing on the top of your screen.
+PlatformIO is able to manage multiple build configurations. By default, Luos engine's examples are compiling a firmware that can be loaded using the standard flash system. If you want your application to be bootloader-compatible, you need to compile it in `with_bootloader` mode.
+To do that, when your button project is open you can click on the `Switch PlatformIO Project Environment` button at the bottom of the window, then select the `with_bootloader` option on the list of choice appearing on the top of your screen.
 
 <div align="center">
   <Image src="/img/tutorials/bootloader/select_env.png" />
@@ -104,7 +106,7 @@ This time, click on **Build** instead of **Upload** as you don't want to upload 
   <Image src="/img/tutorials/bootloader/application_build.png" />
 </div>
 
-The generated binary file can be found in **Luos_engine/Examples/Projects/YOUR_BOARD/Button/.pio/build/*_with_bootloader** its name is **firmware.bin.**.
+The generated binary file can be found in **Luos_engine/Examples/Projects/YOUR_BOARD/Button/.pio/build/\*\_with\_bootloader** under the name _firmware.bin_.
 
 Now, you can use the bootloader to load it, for example:
 
@@ -113,11 +115,13 @@ cd Luos_engine/Examples/Projects/l0/Button/.pio/build/l0_with_bootloader
 pyluos-bootloader flash COM6 -t 2 -b firmware.bin
 ```
 
-> For further information on options used with the CLI, please read the dedicated [documentation page](/docs/tools/boot) or type the following command:
+:::info
+For further information on options used with the CLI, please read the dedicated [documentation page](/docs/tools/boot) or type the following command:
 
 ```bash
 pyluos-bootloader --help
 ```
+:::
 
 The following lines should appear after typing the command:
 
@@ -137,13 +141,13 @@ You can see that **boot_service** has been replaced by another alias such as **b
 
 ## 7. Update your app
 
-You also can update your app and reload it in the node.
-As an example, select a `Led` project and follows the same steps you just done with the `Button` example.
-Compile it using the `with_bootloader`environement then use the bootloader command to flash it.
+You can also update your app and reload it in the node.
+As an example, select a `Led` project and follow the previous steps with the `Button` example.
+Compile it using the `with_bootloader` environment, then use the bootloader command to flash it.
 You should see your updated service running in your node:
 
 <div align="center">
   <Image src="/img/tutorials/bootloader/detect_new_app.png" />
 </div>
 
-You have reached the end of this tutorial. You are now able to use the bootloader feature included in Luos engine. You know the basics, but you can find some more helpful information on the dedicated [documentation page](/docs/tools/boot).
+You have reached the end of this tutorial. You are now able to use the bootloader's feature included in Luos engine. You know the basics, but you can find some more helpful information on the dedicated [documentation page](/docs/tools/boot).
