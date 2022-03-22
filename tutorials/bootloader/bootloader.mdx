@@ -100,15 +100,15 @@ To do that, when your button project is open you can click on the `Switch Platfo
   <Image src="/img/tutorials/bootloader/select_env.png" />
 </div>
 
-This time, click on **Build** instead of **Upload** as you don't want to upload it to the node using standard USB: the bootloader will do it for you in the next step.
+Then, click on **Build**.
 
-<div align="center">
-  <Image src="/img/tutorials/bootloader/application_build.png" />
-</div>
+:::info
+If you click on the **Uplad** button, Platformio will use the Luos bootloader CLI to load your firmware. Please do this in command line for now instead...
+:::
 
 The generated binary file can be found in **Luos_engine/Examples/Projects/YOUR_BOARD/Button/.pio/build/\*\_with\_bootloader** under the name _firmware.bin_.
 
-Now, you can use the bootloader to load it, for example:
+Now, you can use the bootloader command line to load it, for example:
 
 ```bash
 cd Luos_engine/Examples/Projects/l0/Button/.pio/build/l0_with_bootloader
