@@ -49,7 +49,7 @@ Click on **Upload** on the bottom left corner of the IDE. Wait for the compilati
 </div>
 
 :::info
-If this step fails, please verify you are properly connected to the USB port or try to follow [the Luos Get started tutorial](../get-started).
+If this step fails, check that you are properly connected to the USB port, or try to follow [the Luos Get started tutorial](../get-started).
 :::
 
 ## 3. Detect gate node with the CLI
@@ -102,13 +102,13 @@ To do that, when your button project is open you can click on the `Switch Platfo
 
 Then, click on **Build**.
 
-:::info
-If you click on the **Uplad** button, Platformio will use the Luos bootloader CLI to load your firmware. Please do this in command line for now instead...
+:::caution
+If you click on the **Upload** button, PlatformIO will use the Luos bootloader CLI to load your firmware. For now, please be sure to do it in command line instead, like explained below.
 :::
 
 The generated binary file can be found in **Luos_engine/Examples/Projects/YOUR_BOARD/Button/.pio/build/\*\_with\_bootloader** under the name _firmware.bin_.
 
-Now, you can use the bootloader command line to load it, for example:
+Now, you can use the bootloader's command line to load it, for example:
 
 ```bash
 cd Luos_engine/Examples/Projects/l0/Button/.pio/build/l0_with_bootloader
@@ -116,7 +116,7 @@ pyluos-bootloader flash COM6 -t 2 -b firmware.bin
 ```
 
 :::info
-For further information on options used with the CLI, please read the dedicated [documentation page](/docs/tools/boot) or type the following command:
+For further information on the options used with the CLI, please read the dedicated [documentation page](/docs/tools/boot), or type the following command:
 
 ```bash
 pyluos-bootloader --help
@@ -129,7 +129,9 @@ The following lines should appear after typing the command:
   <Image src="/img/tutorials/bootloader/application_load.png" />
 </div>
 
-> If any problem occurs during the loading process, please reboot your system and retry to type the command (you can also find information [here](/docs/tools/boot)).
+:::warning
+If any problem occurs during the loading process, please reboot your system and retry typing the command (you can also find information [here](/docs/tools/boot)).
+:::
 
 Then relaunch a detection (as done in **Step 3**):
 
