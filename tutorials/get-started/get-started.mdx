@@ -1,7 +1,7 @@
 ---
 hide_table_of_contents: true
 custom_edit_url: null
-title: Your first service
+title: 'Get Started'
 ---
 
 import Introduction from '/src/components/school/article/intro.js';
@@ -9,19 +9,13 @@ import Introduction from '/src/components/school/article/intro.js';
 #
 
 <Introduction
-  title="Your First Service"
+  title="Get Started"
   time="1 hour"
-  level="Confirmed"
+  level="Beginner"
   category="Trainings"
-  desc="You just finished the Get started and you want to go further with Luos? This tutorial is made for you!"
-  tags={['Package', 'Handler', 'Gate', 'Pipe']}
-  requierements={[
-    { label: 'Luos Get Started', link: '/tutorials/get-started' },
-    {
-      label: 'Training repository',
-      link: 'https://github.com/Luos-io/Training',
-    },
-  ]}
+  desc="In this Get started tutorial you we will make a led blink (the embedded hello world 😉) and discover all the different possibilities you have to control it. At the end, you will have a complete working environment and a network of board interacting together."
+  tags={['Board', 'MCU', 'Service', 'Network', 'Distributed system']}
+  requierements={[]}
   shortList="true"
   shortListSize="2"
   ressources={[
@@ -60,14 +54,19 @@ import Introduction from '/src/components/school/article/intro.js';
   ]}
   summary={[
     {
-      label: 'Part 1: Luos service',
-      desc: 'How to create your first service with Luos Engine step by step',
-      link: '/tutorials/your-first-service/luos-service',
+      label: 'Part 1: Your first Luos Project',
+      desc: 'The embedded part, where you will have all the tools you need to easily develop using Luos in your embedded target and your first blink.',
+      link: '/tutorials/get-started/get-started1',
     },
     {
-      label: 'Part 2: Create a package',
-      desc: 'How to make your project structure ready for a modular architecture',
-      link: '/tutorials/your-first-service/create-a-package',
+      label: 'Part 2: Take the control',
+      desc: 'The remote control part, where you will have all the tools you need to take control of the blinking led.',
+      link: '/tutorials/get-started/get-started2',
+    },
+    {
+      label: 'Part 3: Unleash your code',
+      desc: 'The last part will guide you to create your first Luos network allowing you to deal with a multiple-boards system.',
+      link: '/tutorials/get-started/get-started3',
     },
   ]}
 />

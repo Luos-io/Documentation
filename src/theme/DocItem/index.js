@@ -4,20 +4,19 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import clsx from "clsx";
-import DocPaginator from "@theme/DocPaginator";
-import DocVersionBanner from "@theme/DocVersionBanner";
-import DocVersionBadge from "@theme/DocVersionBadge";
-import Seo from "@theme/Seo";
-import DocItemFooter from "@theme/DocItemFooter";
-import TOC from "@theme/TOC";
-import TOCCollapsible from "@theme/TOCCollapsible";
-import Heading from "@theme/Heading";
-import { ThemeClassNames, useWindowSize } from "@docusaurus/theme-common";
-import ContactUs from "@site/src/components/ContactUs";
-
-import styles from "./styles.module.css";
+import React from 'react';
+import clsx from 'clsx';
+import DocPaginator from '@theme/DocPaginator';
+import DocVersionBanner from '@theme/DocVersionBanner';
+import DocVersionBadge from '@theme/DocVersionBadge';
+import Seo from '@theme/Seo';
+import DocItemFooter from '@theme/DocItemFooter';
+import TOC from '@theme/TOC';
+import TOCCollapsible from '@theme/TOCCollapsible';
+import Heading from '@theme/Heading';
+import { ThemeClassNames, useWindowSize } from '@docusaurus/theme-common';
+import ContactUs from '@site/src/components/ContactUs';
+import styles from './styles.module.css';
 
 export default function DocItem(props) {
   const { content: DocContent } = props;
@@ -35,12 +34,16 @@ export default function DocItem(props) {
   // - the markdown content does not already contain a top-level h1 heading
 
   const shouldAddTitle =
-    !hideTitle && typeof DocContent.contentTitle === "undefined";
+    !hideTitle && typeof DocContent.contentTitle === 'undefined';
   const windowSize = useWindowSize();
   const canRenderTOC =
     !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
   const renderTocDesktop =
-    canRenderTOC && (windowSize === "desktop" || windowSize === "ssr");
+    canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
+
+  const link = DocContent.metadata.permalink;
+  const regex = /tutorials/g;
+  const found = link.match(regex);
   return (
     <>
       <Seo
@@ -55,11 +58,12 @@ export default function DocItem(props) {
       <div className="row">
         <div
           className={clsx(
-            "col",
+            'col',
             {
-              [styles.docItemCol]: !hideTableOfContents,
+              [styles.docItemCol]: !hideTableOfContents && !found,
+              [styles.docItemColTuto]: !hideTableOfContents && found,
             },
-            "custom_mobile_col"
+            'custom_mobile_col',
           )}
         >
           <DocVersionBanner />
@@ -74,13 +78,13 @@ export default function DocItem(props) {
                   maxHeadingLevel={tocMaxHeadingLevel}
                   className={clsx(
                     ThemeClassNames.docs.docTocMobile,
-                    styles.tocMobile
+                    styles.tocMobile,
                   )}
                 />
               )}
 
               <div
-                className={clsx(ThemeClassNames.docs.docMarkdown, "markdown")}
+                className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}
               >
                 {/*
                 Title can be declared inside md content or declared through front matter and added manually
@@ -104,12 +108,14 @@ export default function DocItem(props) {
           </div>
         </div>
         {renderTocDesktop && (
-          <div className="col col--3">
+          <div className={found ? 'col col--4' : 'col col--3'}>
             <TOC
               toc={DocContent.toc}
               minHeadingLevel={tocMinHeadingLevel}
               maxHeadingLevel={tocMaxHeadingLevel}
               className={ThemeClassNames.docs.docTocDesktop}
+              link={DocContent.metadata.permalink}
+              parentName={DocContent.metadata.sourceDirName}
             />
           </div>
         )}

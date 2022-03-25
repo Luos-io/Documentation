@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
-import {useColorMode} from '@docusaurus/theme-common';
+import { useColorMode } from '@docusaurus/theme-common';
 import 'react-image-lightbox/style.css';
 
 const Image = (props) => {
@@ -19,6 +19,7 @@ const Image = (props) => {
         src={source}
         onClick={() => setIsOpen(true)}
         height={height}
+        alt={props.alt ? props.alt : 'luos_img'}
       />
       {isOpen && (
         <Lightbox

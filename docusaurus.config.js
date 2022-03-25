@@ -50,7 +50,7 @@ module.exports = {
           dropdownActiveClassDisabled: true,
         },
         {
-          to: '/get-started/get-started',
+          to: '/tutorials/get-started',
           label: 'Get Started',
           position: 'right',
         },
@@ -178,15 +178,6 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'get-started',
-        path: 'get-started',
-        routeBasePath: 'get-started',
-        sidebarPath: require.resolve('./sidebarsGetStarted.js'),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'tutorials',
         path: 'tutorials',
         routeBasePath: 'tutorials',
@@ -199,7 +190,6 @@ module.exports = {
         id: 'faq',
         path: 'faq',
         routeBasePath: 'faq',
-        sidebarPath: require.resolve('./sidebarsFaq.js'),
       },
     ],
     [
