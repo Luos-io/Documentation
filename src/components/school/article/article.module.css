@@ -11,7 +11,7 @@ html[data-theme='dark'] .introContainer {
 
 html[data-theme='dark'] .chip {
   color: white !important;
-  border: 1px solid #ddaa3a;
+  border: 1px solid #75dbc7;
 }
 
 html[data-theme='dark'] .listItem p {
@@ -74,7 +74,7 @@ html[data-theme='dark'] .listItem p {
 .requirement {
   width: 100%;
   padding: 20px;
-  border-left: 3px solid #ddaa3a;
+  border-left: 3px solid #75dbc7;
   min-height: 185px;
   margin-bottom: 10px;
 }
@@ -90,10 +90,18 @@ html[data-theme='dark'] .requirement {
 
 .separator {
   border: none;
-  border-top: 2px solid #ddaa3a;
+  border-top: 2px solid #75dbc7;
   color: #333;
   overflow: visible;
   margin: 0px;
+}
+
+html[data-theme='light'] .separator {
+  border-top: 2px solid #227c6a;
+}
+
+html[data-theme='light'] .requirement {
+  border-left: 3px solid #227c6a;
 }
 
 .requirement a {
@@ -110,4 +118,53 @@ html[data-theme='dark'] .requirement {
 
 .showMoreBtn:hover {
   background: none !important;
+}
+
+.difficultyContainer {
+  background: rgba(149, 143, 174, 0.2);
+  width: 150px;
+  margin: 15px 0px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-family: 'Roboto Mono', sans-serif;
+  text-transform: capitalize;
+  float: right;
+}
+
+@media screen and (max-width: 800px) {
+  .difficultyContainer {
+    float: left;
+  }
+}
+
+.difficultyContainer span {
+  font-size: 16px !important;
+}
+
+.difficulty {
+  height: 0.75rem;
+  width: 0.25rem;
+  display: inline-block;
+  margin-right: 1.25rem;
+  background: #a8b6d1;
+  box-shadow: 6px 0 0 #a8b6d1, 12px 0 0 #a8b6d1;
+}
+
+.levelTxt {
+  padding-right: 5px;
+  font-size: 14px !important;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.chipCustom {
+  border-radius: 4px !important;
+  padding: 15px 0px !important;
+  background-color: #eae9ee !important;
+}
+
+.expandBtn {
+  color: #75dbc7;
+}
+html[data-theme='light'] .expandBtn {
+  color: #227c6a;
 }

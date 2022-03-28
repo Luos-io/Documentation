@@ -121,3 +121,11 @@ html[data-theme='dark'] .card {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+
+.link:hover .cardTitle {
+  text-decoration: underline;
+}
+
+.link:hover .cardDesc {
+  text-decoration: underline;
+}

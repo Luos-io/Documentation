@@ -51,7 +51,11 @@ export const Requirement = (props) => {
           className={styles.showMoreBtn}
           disableRipple
         >
-          {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+          {open ? (
+            <ExpandLessIcon className={styles.expandBtn} />
+          ) : (
+            <ExpandMoreIcon className={styles.expandBtn} />
+          )}
         </Button>
       ) : null}
     </div>
