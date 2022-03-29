@@ -13,6 +13,9 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
+
+
+
   customFields: {
     node_def:
       'Hardware element (MCU) hosting and running Luos and hosting one or several services.',
@@ -29,6 +32,9 @@ module.exports = {
     last_version_luos: ' 2.0.1',
     gh_path: 'github.com/Luos-io/doc/tree/master/src',
   },
+
+
+
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
@@ -37,6 +43,9 @@ module.exports = {
       applicationId: '2480203',
     },
     hideableSidebar: true,
+    
+    
+    
     navbar: {
       logo: {
         alt: 'Luos Logo',
@@ -60,12 +69,21 @@ module.exports = {
           docId: 'luos-technology/luos_tech',
           position: 'right',
         },
-        { to: '/tutorials/tutorials', label: 'Tutorials', position: 'right' },
+        { 
+          to: '/tutorials/tutorials',
+          label: 'Tutorials',
+          position: 'right',
+        },
         {
           to: '/faq/list',
           label: 'Troubleshooting',
           position: 'right',
           id: 'link__header__faq',
+        },
+        {
+          to: 'blog',
+          label: 'Blog',
+          position: 'right'
         },
         {
           href: 'https://www.luos.io',
@@ -80,6 +98,9 @@ module.exports = {
         },
       ],
     },
+
+
+
     footer: {
       style: 'dark',
       links: [
@@ -125,10 +146,16 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Luos, built with Docusaurus.`,
     },
+
+
+
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+
+
+
     algolia: {
       appId: 'K3VMDT0LOA',
       apiKey: '9394b39227bc70e30ff8a34bc6489a3f',
@@ -136,6 +163,9 @@ module.exports = {
       contextualSearch: true,
     },
   },
+
+
+
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -150,23 +180,29 @@ module.exports = {
             },
           },
         },
+
         blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl: 'https://github.com/luos-io/Documentation',
+          //sidebarPath: require.resolve('./sidebarsBlog.js'),
+          blogTitle: 'Luos Blog',
+          blogDescription: 'A blog about microservices and CI/CD in Edge and Embedded systems',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+          showReadingTime: true, // When set to false, the "x min read" won't be shown
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
         },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-        gtag: {
-          trackingID: 'GTM-M73ZRR4',
-        },
-        googleAnalytics: {
-          trackingID: 'UA-153509818-3',
-        },
+
+        theme: { customCss: require.resolve('./src/css/custom.css'), },
+        gtag: { trackingID: 'GTM-M73ZRR4', },
+        googleAnalytics: { trackingID: 'UA-153509818-3', },
+
       },
     ],
   ],
+
+
+
   plugins: [
     [
       'docusaurus2-dotenv',
