@@ -1,0 +1,73 @@
+---
+custom_edit_url: null
+---
+
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "@site/src/components/Tooltip.js";
+import Image from "@site/src/components/Images.js";
+
+# Inspector
+
+The Inspector is a major tool of the Luos eco-system. It's allowing you to link low level (embedded Luos Services) and Luos SAAS, throught serial binary protocol. Inspector catch all the information that pass through a Luos network and send to high level to display the topology or to monitor the network.  Contrary to the Gate application which became a “master” when it’s in a network, The Inspector application is completly transparent for you embbeded application!
+
+You can use it to catch any informations on the Luos network and visualise information in the Luos SAAS.
+
+The Inspector is a simple embedded [App service](../luos-technology/services/service-api#apps-guidelines), so it can work on any MCU running Luos without any modification. The Inspector service must be used with a driver service called **pipe** allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.). Before you may use the inspector a topology detection must be perform!
+
+## Default Inspector Process
+
+The default behavior of the Inspector is transparency. this service doesn’t do anything until it received some special command dedicated to inspector
+
+1. At power up, the inspector is quiet and only reponse to a topology detection procedure. It’s possible to configure the inspector to perform at power up a topology detection (optionnal)
+2. The inspector wait to receive a “ask presency” message from a pipe.
+3. If response ok, High level can ask information from the inspector such as
+    1. Routing Table
+    2. Statistic of a node
+    3. message pass through the network
+
+## Inspector and pipe
+
+In that configuration you put 2 services in the node like below.
+
+```c
+#include "luos.h"
+#include "pipe.h"
+#include "inspector.h"
+
+int main(void)
+{
+  Luos_Init();
+  Pipe_Init();
+  Inspector_Init();
+
+  while (1)
+  {
+    Luos_Loop();
+    Pipe_Loop();
+    Inspector_Loop();
+  }
+}
+```
+
+## The Gate configurations
+
+The default process described above can be changed using different configurations that you can use on [your node_config.h](/docs/luos-technology/basics/orga#configuration).
+
+You could need to change it if you have Apps on you Luos embedded system.
+
+|   Parameters   | Defaults value |                            Description                             |
+| :------------: | :------------: | :----------------------------------------------------------------: |
+|  NODETECTION   |  NOT DEFINED   |            Inspector do not make detection a power up              |
+
+If you have an App service on your device managing detections you should define **NODETECTION** avoiding useless detection from the Inspector at boot.
+
+## Inspector Vs Gate
+
+As for gate, Inspector need a pipe to tranferts information outside of the Luos network. Pipe and Inspector can be hosted into the same or on differents **node** of the network . It’s recommanded to have an inspector and pipe on the same node to not overload the Luos newtork with msg that can be handle localy on the node. (see Gate)
+
+Inspector can be use with The Gate on a network, Gate taking control of the sensor and Inspector displaying all the informations for exemple
+
+:::caution
+A gate and an Inspector can’t share a pipe!
+So in the same network, you must have one pipe for each service preferably place on the same node
+:::
