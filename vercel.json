@@ -32,5 +32,11 @@
       "destination": "/docs/luos-technology/package/package",
       "statusCode": 301
     }
+  ],
+  "rewrites": [
+    {
+      "source": "https://blog.luos.io/blog/:path*",
+      "destination": "https://docs.luos.io/blog/:path*"
+    }
   ]
 }
