@@ -25,6 +25,11 @@ module.exports = {
               label: 'Part 3: Unleash your code',
               id: 'get-started/get-started3',
             },
+            {
+              type: 'doc',
+              label: 'Part 4: Connect to the Network Display tool',
+              id: 'get-started/get-started4',
+            },
           ],
         },
         {
