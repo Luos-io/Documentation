@@ -85,7 +85,7 @@
       "author": "thomas"
     },
     {
-      "title": "How to use Luos with FeeRTos",
+      "title": "How to use Luos with FreeRTOS",
       "id": "freertos",
       "category": "Tutorials",
       "toc": 30,
