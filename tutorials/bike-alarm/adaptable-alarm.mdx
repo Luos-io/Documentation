@@ -1,0 +1,234 @@
+---
+custom_edit_url: null
+---
+
+import Image from '@site/src/components/Images.js';
+
+# Make our alarm adaptable and hot-pluggable
+We have now our basic alarm working, but it is not really usable as a bike alarm yet.
+We will have to add some functionalities and make this app usable by any other app that could come complete our alarm.
+
+By following this tutorial and applying these pieces of advice to all of your apps, you will be able to easily reuse all your developments out-of-the box.
+
+To check if your app is already easy to be used with other ones, you have to ask yourself two questions:
+
+ - Is my app ready to accept another one to run a detections?
+ - Is my app controllable by any other app in a standard way?
+
+## Detection consideration
+In the basic version of the alarm app, when we initialized the function we made the app run a detection.
+But some other apps may performs concurrent detection.
+
+If another app runs a detection after yours, you will have to catch the event in order to be prepared to any needs of reconfiguration. This can happen if a new app is hot-plugged in the network and need to be included into the routing table.
+
+To be prepared for those situations, Luos provide an event as a message you can catch on your `AlarmController_MsgHandler` to deal with services configurations.
+
+Let's manage this event and add our auto-update configuration in it:
+
+```c
+void AlarmController_MsgHandler(service_t *service, msg_t *msg)
+{
+    if (msg->header.cmd == GYRO_3D)
+    {
+        // this is IMU information
+        float value[3];
+        memcpy(value, msg->data, msg->header.size);
+        if ((value[0] > 300) || (value[1] > 300) || (value[2] > 300))
+        {
+            // There is movement
+            blink_state = 1;
+        }
+        return;
+    }
+    if (msg->header.cmd == END_DETECTION)
+    {
+        // Try to find a IMU service and set parameters to disable quaternions data format and send back Gyro acceleration data format.
+        search_result_t result;
+        imu_report_t report;
+        report.gyro = 1;
+        report.quat = 0;
+        RTFilter_Type(RTFilter_Reset(&result), IMU_TYPE);
+        if (result.result_nbr > 0)
+        {
+            // We find a service, prepare a message with parameters, and send it.
+            msg_t msg;
+            msg.header.cmd         = PARAMETERS;
+            msg.header.size        = sizeof(imu_report_t);
+            msg.header.target      = result.result_table[0]->id;
+            msg.header.target_mode = IDACK;
+            memcpy(msg.data, &report, sizeof(imu_report_t));
+            Luos_SendMsg(app, &msg);
+
+            // Setup auto update each 10ms on IMU
+            time_luos_t time = TimeOD_TimeFrom_ms(UPDATE_PERIOD_MS);
+            TimeOD_TimeToMsg(&time, &msg);
+            msg.header.cmd = UPDATE_PUB;
+            Luos_SendMsg(app, &msg);
+        }
+    }
+}
+```
+
+Now on the init function we can remove the configuration management:
+
+```c
+void AlarmController_Init(void)
+{
+    revision_t revision = {.major = 1, .minor = 0, .build = 0};
+    // Create App
+    app = Luos_CreateService(AlarmController_MsgHandler, ALARM_CONTROLLER_APP, "alarm_control", revision);
+
+    // Detect all services of your network and create a routing_table
+    Luos_Detect(app);
+}
+```
+
+To finish, we have to prevent any loop execution if our services is currently not detected or under detection:
+
+You can add this code into your loop to manage it:
+
+```c
+void AlarmController_Loop(void)
+{
+    staticuint8_t blink       = 0;
+    staticuint8_t blink_nb    = BLINK_NUMBER * 2; // For each blink we need to turn ON then OFF that's why we do *2
+    staticuint32_t last_blink = 0;
+    search_result_t result;
+    if (Luos_IsNodeDetected())
+    {
+        // ********** non blocking blink ************
+        if (blink_state)
+        {
+            // Init variables to blink
+            blink_state = 0;
+            blink_nb = 0;
+            blink = 0;
+        }
+        if (blink_nb < (BLINK_NUMBER*2))
+        {
+            // Blink is not finished
+            RTFilter_Type(RTFilter_Reset(&result), COLOR_TYPE);
+            if (result.result_nbr > 0)
+            {
+                // we get a led alarm, set color
+                color_t color;
+                color.r = 0;
+                color.g = 0;
+                color.b = 0;
+                if (!blink)
+                {
+                    // turn led red
+                    color.r = LIGHT_INTENSITY;
+                }
+                msg_t msg;
+                msg.header.target      = result.result_table[0]->id;
+                msg.header.target_mode = IDACK;
+                IlluminanceOD_ColorToMsg(&color, &msg);
+                Luos_SendMsg(app, &msg);
+            }
+        }
+    }
+}
+```
+
+## Control consideration
+You have to try to be prepared of any usage of your app by preparing messages reception that can be useful. This is the API part of your app, so try to think it clean and flexible by using Luos Object Dictionary (OD) as much as possible.
+
+There is one thing each app should have => **The capability to be stopped by any other**.
+In our case, this is critical because, for now, the alarm can’t be shut down: the only way is to power it down. We have to provide a way for other apps to stop it!
+Luos engine provide a standard structure and command dedicated to this, called `control_mode`.
+This command works like play, pause, stop, and record commands of your music player. This kind of command can be used on drivers to control data stream such as trajectories on motors for examples, or they can be used to control app’s running state.
+
+Each app should have a global variable representing the running state of the app. To manage it in our alarm app, I add this global variable:
+
+```c
+volatile control_t control_app;
+```
+
+Then I put it on PLAY by default on the init:
+
+```c
+void AlarmController_Init(void)
+{
+    revision_t revision = {.major = 1, .minor = 0, .build = 0};
+    // Create App
+    app = Luos_CreateService(AlarmController_MsgHandler, ALARM_CONTROLLER_APP, "alarm_control", revision);
+    Luos_Detect(app);
+    // By default this app is running
+    control_app.flux = PLAY;
+}
+```
+
+Then I add the possibility to receive a control mode in my AlarmController_MsgHandler:
+
+```c
+if (msg->header.cmd == CONTROL)
+{
+    ControlOD_ControlFromMsg((control_t *)&control_app, msg);
+    return;
+}
+```
+
+Now I can use this control_mode to make my app run or not by using :
+```c
+if (control_app.flux == PLAY)
+{
+    // Do app things
+}
+```
+For this alarm app, I use it as a condition to execute the non-blocking blink on the loop function and for the IMU data reception.
+Finally, my complete callback reception looks like that:
+
+```c
+void AlarmController_MsgHandler(service_t *service, msg_t *msg)
+{
+    if (msg->header.cmd == GYRO_3D)
+    {
+        // This is IMU information
+        if (control_app.flux == PLAY)
+        {
+            float value[3];
+            memcpy(value, msg->data, msg->header.size);
+            if ((value[0] > 300) || (value[1] > 300) || (value[2] > 300))
+            {
+                // There is movement
+                blink_state = 1;
+            }
+        }
+        return;
+    }
+    if (msg->header.cmd == END_DETECTION)
+    {
+        // Try to find a IMU service and set parameters to disable quaternions data format and send back Gyro acceleration data format.
+        search_result_t result;
+        imu_report_t report;
+        report.gyro = 1;
+        report.quat = 0;
+        RTFilter_Type(RTFilter_Reset(&result), IMU_TYPE);
+        if (result.result_nbr > 0)
+        {
+            // We find a service, prepare a message with parameters, and send it.
+            msg_t msg;
+            msg.header.cmd         = PARAMETERS;
+            msg.header.size        = sizeof(imu_report_t);
+            msg.header.target      = result.result_table[0]->id;
+            msg.header.target_mode = IDACK;
+            memcpy(msg.data, &report, sizeof(imu_report_t));
+            Luos_SendMsg(app, &msg);
+
+            // Setup auto update each 10ms on IMU
+            time_luos_t time = TimeOD_TimeFrom_ms(UPDATE_PERIOD_MS);
+            TimeOD_TimeToMsg(&time, &msg);
+            msg.header.cmd = UPDATE_PUB;
+            Luos_SendMsg(app, &msg);
+        }
+    }
+    if (msg->header.cmd == CONTROL)
+    {
+        ControlOD_ControlFromMsg((control_t *)&control_app, msg);
+        return;
+    }
+}
+```
+
+Nice! Our app is now clean, and ready to properly work with any other app! Let's add a new one!
