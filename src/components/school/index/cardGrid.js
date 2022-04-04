@@ -38,7 +38,11 @@ const cardGrid = (props) => {
     <Grid container spacing={2}>
       {filtered.map((x, y) => (
         <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
-          <a href={x.link} className={styles.link}>
+          <a
+            href={x.link}
+            className={styles.link}
+            style={{ textDecoration: 'none' }}
+          >
             <Paper className={styles.card} elevation={1}>
               <img
                 src={`/img/school/${x.img}.svg`}

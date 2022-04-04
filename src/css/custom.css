@@ -607,12 +607,12 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 }
 
 .Confirmed {
-  background: #15c9ff !important;
-  box-shadow: 6px 0 0 #15c9ff, 12px 0 0 #a8b6d1 !important;
+  background: #edf569 !important;
+  box-shadow: 6px 0 0 #edf569, 12px 0 0 #a8b6d1 !important;
 }
 
 .Beginner {
-  background: #03c273 !important;
+  background: #75dbc7 !important;
   box-shadow: 6px 0 0 #a8b6d1, 12px 0 0 #a8b6d1 !important;
 }
 
@@ -626,4 +626,12 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 }
 .gif_tutorial {
   width: 300px !important;
+}
+
+.MuiListItemText-primary {
+  color: black !important;
+}
+
+html[data-theme='dark'] .MuiListItemText-primary {
+  color: white !important;
 }
