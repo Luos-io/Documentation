@@ -6,7 +6,7 @@ module.exports = {
   title: 'Luos',
   tagline:
     'Open source and real-time orchestrator for distributed architectures',
-  url: 'https://luos.io',
+  url: 'https://docs.luos.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
@@ -33,11 +33,8 @@ module.exports = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
-    googleAnalytics: {
-      trackingID: 'UA-153509818-3',
-    },
-    gtag: {
-      trackingID: 'GTM-M73ZRR4',
+    hotjar: {
+      applicationId: '2480203',
     },
     hideableSidebar: true,
     navbar: {
@@ -53,7 +50,7 @@ module.exports = {
           dropdownActiveClassDisabled: true,
         },
         {
-          to: '/get-started/get-started',
+          to: '/tutorials/get-started',
           label: 'Get Started',
           position: 'right',
         },
@@ -132,6 +129,12 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    algolia: {
+      appId: 'K3VMDT0LOA',
+      apiKey: '9394b39227bc70e30ff8a34bc6489a3f',
+      indexName: 'docs-luos',
+      contextualSearch: true,
+    },
   },
   presets: [
     [
@@ -140,22 +143,26 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          editUrl: 'https://github.com/luos-io/Documentation',
           versions: {
             current: {
-              label: '2.1.0-beta 🚧',
+              label: '2.3.0-beta 🚧',
             },
           },
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          editUrl: 'https://github.com/luos-io/Documentation',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        gtag: {
+          trackingID: 'GTM-M73ZRR4',
+        },
+        googleAnalytics: {
+          trackingID: 'UA-153509818-3',
         },
       },
     ],
@@ -166,15 +173,6 @@ module.exports = {
       {
         systemvars: true, // Set to true if you would rather load all system variables as well (useful for CI purposes)
         safe: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'get-started',
-        path: 'get-started',
-        routeBasePath: 'get-started',
-        sidebarPath: require.resolve('./sidebarsGetStarted.js'),
       },
     ],
     [
@@ -192,7 +190,6 @@ module.exports = {
         id: 'faq',
         path: 'faq',
         routeBasePath: 'faq',
-        sidebarPath: require.resolve('./sidebarsFaq.js'),
       },
     ],
     [
@@ -209,5 +206,6 @@ module.exports = {
         fromExtensions: ['html'],
       },
     ],
+    ['./plugins/hotjar', {}],
   ],
 };

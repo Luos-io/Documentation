@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 import 'react-image-lightbox/style.css';
 
 const Image = (props) => {
   const [isOpen, setIsOpen] = useState();
-  const { isDarkTheme } = useThemeContext();
+  const { isDarkTheme } = useColorMode();
   const source = isDarkTheme
     ? props.darkSrc === undefined
       ? props.src
@@ -19,6 +19,7 @@ const Image = (props) => {
         src={source}
         onClick={() => setIsOpen(true)}
         height={height}
+        alt={props.alt ? props.alt : 'luos_img'}
       />
       {isOpen && (
         <Lightbox

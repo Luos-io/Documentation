@@ -9,13 +9,14 @@
 .cache-loader
 
 # Misc
+.act
 .DS_Store
 .env
 .env.development
 .env.test
 .env.production
+.vercel
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.act

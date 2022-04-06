@@ -1,0 +1,17 @@
+.error {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+  min-height: 500px;
+  font-family: 'Roboto Mono';
+  text-align: center;
+  border-radius: 2px;
+}
+
+.error input {
+  display: block;
+}
+
+.container {
+  margin: 70px auto;
+}

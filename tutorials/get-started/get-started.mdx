@@ -1,0 +1,72 @@
+---
+hide_table_of_contents: true
+custom_edit_url: null
+title: 'Get Started'
+---
+
+import Introduction from '/src/components/school/article/intro.js';
+
+#
+
+<Introduction
+  title="Get Started"
+  time="1 hour"
+  level="Beginner"
+  category="Trainings"
+  desc="In this Get started tutorial you we will make a led blink (the embedded hello world 😉) and discover all the different possibilities you have to control it. At the end, you will have a complete working environment and a network of board interacting together."
+  tags={['Board', 'MCU', 'Service', 'Network', 'Distributed system']}
+  requierements={[]}
+  shortList="true"
+  shortListSize="2"
+  ressources={[
+    {
+      label: 'Arduino zero',
+      link: 'https://www.arduino.cc/en/Main/ArduinoBoardZero&',
+    },
+    {
+      label: 'MKRzero',
+      link: 'https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data',
+    },
+    {
+      label: 'MKR1000',
+      link: 'https://store.arduino.cc/collections/boards/products/arduino-mkr1000-wifi',
+    },
+    {
+      label: 'STM32L432KC',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-l432kc.html',
+    },
+    {
+      label: 'STM32F072RB',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-f072rb.html',
+    },
+    {
+      label: 'STM32F401RE',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-f401re.html',
+    },
+    {
+      label: 'STM32F410RB',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-f410rb.html',
+    },
+    {
+      label: 'STM32G431KB',
+      link: 'https://www.st.com/en/evaluation-tools/nucleo-g431kb.html',
+    },
+  ]}
+  summary={[
+    {
+      label: 'Part 1: Your first Luos Project',
+      desc: 'The embedded part, where you will have all the tools you need to easily develop using Luos in your embedded target and your first blink.',
+      link: '/tutorials/get-started/get-started1',
+    },
+    {
+      label: 'Part 2: Take the control',
+      desc: 'The remote control part, where you will have all the tools you need to take control of the blinking led.',
+      link: '/tutorials/get-started/get-started2',
+    },
+    {
+      label: 'Part 3: Unleash your code',
+      desc: 'The last part will guide you to create your first Luos network allowing you to deal with a multiple-boards system.',
+      link: '/tutorials/get-started/get-started3',
+    },
+  ]}
+/>

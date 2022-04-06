@@ -11,7 +11,7 @@ import Image from '/src/components/Images.js';
 
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formatted data</a> is common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with your device easily.
 
-To do that, you must add a specific app service called a [gate](../tools/gate.md) on your device.
+To do that, you must add a specific app service called a [gate](../tools/gate) on your device.
 
 ## How to start using the JSON API
 
@@ -28,7 +28,7 @@ This command asks the gate to start a topological detection, create a routing ta
 ## Routing table messages
 
 :::caution
-Make sure to read and understand how the [routing table](../luos-technology/node/topology.md) works before reading this part.
+Make sure to read and understand how the [routing table](../luos-technology/node/topology) works before reading this part.
 :::
 
 After the gate starts, the first message you receive is a routing table.
@@ -79,7 +79,7 @@ Each listed node of the network has basic node information and a list of hosted 
 ```
 
 :::tip
-To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](../luos-technology/node/topology.md).
+To understand the meanings of _uuid_ and _port_table_, please refer to the [routing table page](../luos-technology/node/topology).
 :::
 
 #### Services
@@ -96,7 +96,7 @@ Each listed service of a node has basic services information:
 ```
 
 :::tip
-To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](../luos-technology/services/services.md).
+To understand the meanings of _type_, _id_ and _alias_, please refer to the [service page](../luos-technology/services).
 :::
 
 #### Full routing table example
@@ -313,16 +313,16 @@ Parameters are defined by a 16-bit bitfield.
 
 Other specific messages:
 
-|   Object   |                            Definition                            |        Service(s)        |
-| :--------: | :--------------------------------------------------------------: | :----------------------: |
-|  register  |   Motor memory register filed with \[register_number, value\]    |     Dynamixel, void      |
-|   set_id   |                         A set id command                         |     Dynamixel, void      |
-| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False |     Dynamixel, void      |
-|   delay    |                   reduce services refresh rate                   | [Gate](../tools/gate.md) |
+|   Object   |                            Definition                            |      Service(s)       |
+| :--------: | :--------------------------------------------------------------: | :-------------------: |
+|  register  |   Motor memory register filed with \[register_number, value\]    |    Dynamixel, void    |
+|   set_id   |                         A set id command                         |    Dynamixel, void    |
+| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False |    Dynamixel, void    |
+|   delay    |                   reduce services refresh rate                   | [Gate](../tools/gate) |
 
 ### Services exclusion messages
 
-Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring.md) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
+Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
 
 ```json
 { "dead_service": "service_alias" }
@@ -330,7 +330,7 @@ Services can be excluded from the network if a problem occurs (see [self-healing
 
 ### Node assert messages
 
-Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring.md) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 
 ```json
 {

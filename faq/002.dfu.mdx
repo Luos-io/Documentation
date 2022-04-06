@@ -1,0 +1,84 @@
+---
+custom_edit_url: null
+---
+
+import Image from "@site/src/components/Images.js";
+
+# I can't flash my board using DFU or STLink
+
+## Symptom(s)
+
+When you try to update a board using DFU or STLink, an error message appears on PlatformiO:
+
+<div align="center">
+  <Image src="/img/faq/pio-dfu-error-screen.png" />
+</div>
+
+<div align="center">
+  <Image src="/img/faq/pio-dfu-error-screen-zoomed.png" />
+</div>
+
+## Possible explanation
+
+Your USB drivers are not up-to-date on your computer.
+
+## Resolution
+
+### If you have this problem with an USB Gate board
+
+First thing to check is that the USB cable is properly plugged into the right USB port of your board. You need to use the DFU programming port and not the serial one.
+
+### Update your USB driver
+
+You may need to update you USB driver. The process depends on your OS:
+
+#### Windows
+
+You need to install and run **Zadig** by following <a href="https://github.com/profezzorn/ProffieOS/wiki/zadig" target="blank_">**this tutorial**</a> on GitHub.
+
+Installing the drivers:
+
+For DFU :
+
+<div align="center">
+  <Image src="/img/faq/zadig-installing-drivers.png" />
+</div>
+
+For STLink :
+
+<div align="center">
+  <Image src="/img/faq/zadig-installing-drivers_stlink.png" />
+</div>
+
+PlatformIO's screen after successful driver installation:
+
+<div align="center">
+  <Image src="/img/faq/pio-dfu-success-screen.png" />
+</div>
+
+<div align="center">
+  <Image src="/img/faq/pio-dfu-success-screen-zoomed.png" />
+</div>
+
+#### Linux
+
+You need permissions to access the device for non-root users:
+
+```bash
+echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", GROUP="plugdev", MODE="0666"' > /etc/udev/rules.d/60-luos.rules
+```
+
+#### MacOS
+
+You need to install **libusb**:
+
+```bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+brew install libusb
+```
+
+---
+
+> **Associated documentation page(s):**
+>
+> - [Gate](/docs/tools/gate)

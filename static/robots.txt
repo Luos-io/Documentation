@@ -1,0 +1,4 @@
+# Algolia-Crawler-Verif: EFE9592C11382AAA
+
+User-agent: *
+Sitemap: https://docs.luos.io/sitemap.xml

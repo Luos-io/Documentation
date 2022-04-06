@@ -1,0 +1,54 @@
+---
+hide_table_of_contents: true
+custom_edit_url: null
+---
+
+# Timestamp
+
+**Timestamp** is a feature that enables you to track the date at which an event occurs. You can track as many events as you want, timing information is saved in the system with the value associated to events.
+
+## How to timestamp data
+
+Let's take an example with a button driver: each time we read the button state, we want to timestamp this event. First, we must create a global variable called a **token**,  used to track our event in the system:
+
+```C
+#include "timestamp.h"
+
+timestamp_token_t button_timestamp;
+```
+
+Then, we can **tag** the data related to the button event with this token:
+
+```C
+ll_button_read(&button.state);
+Timestamp_Tag(&button_timestamp, &button.state);
+```
+The function **Timestamp_Tag** links the token to the data. This enables several features:
+- If you use `button.state` in an another function in your service, you can check if there is a timestamp linked to the data and get it from the token with **Timestamp_GetToken** and **Timestamp_GetTimeFromToken** functions.
+- If you send `button.state` through a Luos message, the timestamp will be copied into the message. Then you can get it from the message in the receiving service with the **Timestamp_DecodeMsg** function.
+
+## How to create a timestamped event
+
+Timestamp API also allows you to tag an event instead of data. The idea is to create a command, attach a timestamp information to it, and send it to a service.
+
+The service which receives this information can **execute** the command at the date specified by the timestamp. This is a really interesting feature if you want to execute actions at precise dates. It also releases the constraints on messages exchanged on the network, as you can send them by batch: each message carries a timestamped event which will be processed at the defined date.
+
+In the API, **Timestamp_CreateEvent** enables you to use this feature. You have to give to this function the same arguments that you give to **timestamp_tag**, plus an argument called **relative_date**. This last one carries information about when the event has to be processed, with unit in **nanoseconds**. If you want your event to be processed in 1 second, put 1000000000 in this argument.
+
+All **timestamp** API's functions can be found in *Luos/Robus/inc/timestamp.h*. You can also find [examples](https://github.com/Luos-io/Examples/blob/master/Projects/l0/) that are using this feature. For now, the examples using timestamp are the following: 
+- button
+- distance
+- light sensor
+- potentiometer
+
+## Timestamp API
+
+|                        Description                         |                                       Function                                        |      Return      |
+| :--------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :--------------: |
+|   Tag data with a token    |   `Timestamp_Tag(timestamp_token_t *token, void *target)`    |   `void`  |
+|   Get a token from data     |   `Timestamp_GetToken(void *target)` | `timestamp_token_t *` |
+|   Check if a message is timestamped     |   `Timestamp_IsTimestampMsg(msg_t *msg)` | `bool` |
+|   Update the timestamp in a message     |   `Timestamp_TagMsg(msg_t *msg)` | `void` |
+|   Encode a message with the timestamp protocol     |   `Timestamp_EncodeMsg(msg_t *msg, void *target)` | `void` |
+|   Decode a timestamped message     |   `Timestamp_DecodeMsg(msg_t *msg, uint64_t *timestamp)` | `void` |
+|   Create a timestamped event     |   `Timestamp_CreateEvent(int64_t relative_date, timestamp_token_t *token, void *target)` | `void` |

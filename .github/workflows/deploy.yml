@@ -42,10 +42,3 @@ jobs:
           REACT_APP_EMAIL_JS_TEMPLATE_ID: ${{ secrets.REACT_APP_EMAIL_JS_TEMPLATE_ID }}
           REACT_APP_EMAIL_JS_USER_ID: ${{ secrets.REACT_APP_EMAIL_JS_USER_ID }}
           REACT_APP_TYPEFORM_ID: ${{ secrets.REACT_APP_TYPEFORM_ID }}
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.DEPLOY_KEY }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
