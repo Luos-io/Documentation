@@ -18,11 +18,11 @@ In this tutorial, we will see how to use Luos with an RTOS and discover the bene
 
 ## 1. Set up a PlatformIO project
 
-In this tutorial, we will use the examples available in [the Luos engine's repository](https://github.com/Luos-io/Luos/tree/main).
-You can [download](https://github.com/Luos-io/Luos/archive/refs/heads/main.zip) and unzip it or clone it using: 
+In this tutorial, we will use the examples available in [the Luos engine's repository](https://github.com/Luos-io/luos_engine/tree/main).
+You can [download](https://github.com/Luos-io/luos_engine/archive/refs/heads/main.zip) and unzip it or clone it using: 
 
 ```
-Git clone https://github.com/Luos-io/Luos_engine.git
+Git clone https://github.com/Luos-io/luos_engine.git
 ```
 
 As a quick reminder, you will find in this project:
@@ -59,7 +59,7 @@ More details about it on [the PlatformIO library's readme](https://registry.plat
 In this tutorial, we will also use [CMSIS_RTOS_V2](https://arm-software.github.io/CMSIS_5/RTOS2/html/rtos_api2.html) to have a generic RTOS API. You will have to find the lib corresponding to your provider's and MCU. If you prefer to directly use FreeRTOS API, you will have to adapt the code of this tutorial, no big deal...
 
 :::info
-You can find a ST version in [our FreeRTOS example](https://github.com/Luos-io/Luos/tree/main/Examples/Projects/l0/Button_FreeRTOS). 
+You can find a ST version in [our FreeRTOS example](https://github.com/Luos-io/luos_engine/tree/main/Examples/Projects/l0/Button_FreeRTOS). 
 :::
 
 ## 3. FreeRTOS configurations
@@ -200,7 +200,7 @@ One last thing, in each _task_ routine, we call the service loop then we _yield_
 
 ## 5. Test your project
 
-To test your project you can add a Pipe and Gate packages (you can find [available packages on the `Gate_SerialCom` project corresponding to your board](https://github.com/Luos-io/Luos/tree/main/Examples/Projects)), add the code in the **lib/** folder and instanciate it by creating a new task in **freertos.c**.
+To test your project you can add a Pipe and Gate packages (you can find [available packages on the `Gate_SerialCom` project corresponding to your board](https://github.com/Luos-io/luos_engine/tree/main/Examples/Projects)), add the code in the **lib/** folder and instanciate it by creating a new task in **freertos.c**.
 
 Now you can build your project in VSCode and load it to your board. Once the board is flashed, you can use the `pyluos-shell` command on your computer to control your led through python.
 
