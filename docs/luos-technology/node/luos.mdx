@@ -18,7 +18,7 @@ Luos engine works as a code library running on nodes. It can use several network
 To match the Luos engine's library with your hardware, it offers an _Hardware Abstraction Layer_ for various devices in the <Tooltip def={customFields.luoshal_def}>Luos engine's HAL folder</Tooltip>.
 There is also specific _Hardware Abstraction Layers_ for each network layer.
 
-- <a href="https://github.com/Luos-io/Luos" target="_blank">
+- <a href="https://github.com/Luos-io/luos_engine" target="_blank">
     Luos engine
     <IconExternalLink width="10"></IconExternalLink>
   </a>
@@ -95,11 +95,11 @@ You can use it to set all your custom configurations:
 |     MAX_MSG_NB     | 2\*MAX_SERVICE_NUMBER |                               Max number of messages that can be referenced by Luos.                               |
 |      NBR_PORT      |           2           | Number of PTP (port) on the node ( max 8). See [electronic design](../../hardware-consideration/electronics) page. |
 
-You will find the default configuration for Luos engine in the file <a href="https://github.com/Luos-io/Luos/blob/main/Network/Robus/inc/config.h" target="_blank">_config.h<IconExternalLink width="10"></IconExternalLink>_</a>.
+You will find the default configuration for Luos engine in the file <a href="https://github.com/Luos-io/luos_engine/blob/main/Network/Robus/inc/config.h" target="_blank">_config.h<IconExternalLink width="10"></IconExternalLink>_</a>.
 
 Check the _Luos_hal_config.h_ and your _Network_hal_config.h_ of your MCU family to see parameters that can be changed to fit your design.
 
-> **Note:** [Every example](https://github.com/Luos-io/Luos/tree/main/Examples) provided by Luos has a _node_config.h_ file that can be used as a base to fit your project's needs.
+> **Note:** [Every example](https://github.com/Luos-io/luos_engine/tree/main/Examples) provided by Luos has a _node_config.h_ file that can be used as a base to fit your project's needs.
 
 ## Luos Statistics
 

@@ -12,11 +12,11 @@ import TabItem from '@theme/TabItem';
 Luos engine can manage any type of microcontrollers as long as they have a HAL. If your microcontroller is not supported yet, please contact us:
 
 - by mail <a href="mailto:hello@luos.io">hello&#x40;luos.io</a>
-- on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
+- on <a href="https://github.com/Luos-io/luos_engine/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
-Check the list of MCU families Luos engine cover:<a href="https://github.com/Luos-io/Luos/tree/main/Engine/HAL" target="_blank">Hardware Abstraction Layers for MCU families</a>,
+Check the list of MCU families Luos engine cover:<a href="https://github.com/Luos-io/luos_engine/tree/main/Engine/HAL" target="_blank">Hardware Abstraction Layers for MCU families</a>,
 
-> Depending on what network you have, you may also configure the specific HAL of your network. By default, Luos engine uses the Robus network layer with <a href="https://github.com/Luos-io/Luos/tree/main/Network/Robus/HAL" target="_blank">Robus HAL</a>.
+> Depending on what network you have, you may also configure the specific HAL of your network. By default, Luos engine uses the Robus network layer with <a href="https://github.com/Luos-io/luos_engine/tree/main/Network/Robus/HAL" target="_blank">Robus HAL</a>.
 
 ## Default Configurations
 
@@ -24,7 +24,7 @@ Luos engine is made to run on MCU and use the hardware peripherals of the MCU to
 
 ## Luos engine's HAL configuration
 
-To match pinout and fonctionality with your design, you can create or use the file _node_config.h_ (see [Luos examples](https://github.com/Luos-io/Luos/tree/main/Examples)).
+To match pinout and fonctionality with your design, you can create or use the file _node_config.h_ (see [Luos examples](https://github.com/Luos-io/luos_engine/tree/main/Examples)).
 Based on the default configuration defined in _luos_hal_config.h_, you can define in the _file node_config.h_, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer, etc.
 
 This way, you are able to change the default hardware configuration so it needs to be called in the preprossessor variable section of your IDE to be taken into consideration for your project.
