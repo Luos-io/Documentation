@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  background-color: white;
+}
+
+.underline:after {
+  content: '_';
+  color: #be99ff;
+}
+
+.title {
+  font-family: 'Roboto Mono', sans-serif;
+  margin: 0 auto;
+  font-size: 30px !important;
+  text-align: center;
+  padding: 15px 250px;
+}
+
+.img {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 0 auto;
+}
+
+.label {
+  display: block;
+  font-family: 'Roboto Mono', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}

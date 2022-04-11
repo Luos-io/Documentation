@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  background-color: white;
+}
+
+.leftLines {
+  background-image: url('/static/img/index/left-lines.svg');
+  background-size: cover;
+}
+
+.rightLines {
+  background-image: url('/static/img/index/right-lines.svg');
+  background-size: cover;
+}
+
+.integrations {
+  background-image: url('/static/img/index/vscode-white.svg');
+  background-size: cover;
+  min-height: 470px;
+}
+
+.title {
+  font-family: 'Roboto Mono', sans-serif;
+  margin: 0 auto;
+  font-size: 30px !important;
+  margin-left: 20%;
+}
+
+.img {
+  width: 48px;
+}
+
+.label {
+  display: block;
+  font-family: 'Roboto Mono', sans-serif;
+  font-weight: 300;
+}
+
+.underline:after {
+  content: '_';
+  color: #be99ff;
+}
