@@ -404,8 +404,8 @@ html[data-theme='dark'] .cust_landing_seperator {
 }
 
 .cust_img_rot {
-  transform: translate(15px) rotate(35deg);
-  height: 80px;
+  transform: translate(5px) rotate(35deg);
+  height: 80px !important;
 }
 
 .cust_tooltip {
