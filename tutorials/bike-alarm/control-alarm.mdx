@@ -5,20 +5,22 @@ custom_edit_url: null
 import Image from '@site/src/components/Images.js';
 
 # Add another app controlling the alarm
-Our alarm is ready to work with any other apps. So now we can develop a new app that provide other functions for our bike!
-To keep it simple, I will add a mono-stable push button board to the network and create a new app that monitors it to activate or deactivate the alarm app we created on the last part of this tutorial.
 
-This app is really similar to the alarm app, so if you understood everything from the beginning of this tutorial, this part will be easy. let's call this application `"Start_controller"`.
+Our alarm is ready to work with any other app. We can now develop a new app that provides other functions for our bike alarm.
+To keep it simple, we will add a mono-stable push button board to the network, and create a new app that monitors this button to activate or deactivate the alarm app we created on the last part of this tutorial.
 
-To start my app, I follow the same steps than the previous one:
+This app is really similar to the alarm app, so if you understood everything from the beginning of this tutorial, this part will be easy. We will call this application "start_control".
 
- 1. App folder creation (I called it start_controller)
- 2. .c and .h files creation in the folder
- 3. Service creation by writing the init and loop functions
- 4. Detection event management with initialization of the Button to return a state value each 10ms
+To start the app, we follow the same steps that the previous ones:
+
+ 1. App folder creation (we call it start_controller).
+ 2. *.c* and *.h* files creation in the folder.
+ 3. Service creation by writing the init and loop functions.
+ 4. Detection event management with initialization of the button to return a state value each 10 ms.
  5. Loop conditional execution if `control_app` is `PLAY` and `Luos_IsNodeDetected()` is `true`.
 
-Your `start_controller.c` file should looks like this :
+Your `start_controller.c` file should look like this:
+
 ```c
 service_t *app;
 volatile control_t control_app;
@@ -38,7 +40,7 @@ void StartController_Loop(void)
     // Check if the app is detected
     if ((Luos_IsNodeDetected()) & (control_app.flux == PLAY))
     {
-        // Do App things
+        // Do app things
     }
 }
 
@@ -56,7 +58,7 @@ static void StartController_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-As you can see, I created a new type called START_CONTROLLER_APP. I added this app to the structure I already made for the first one:
+As you can see, we created a new type called START_CONTROLLER_APP. We added this app to the structure we already made for the first one: 
 
 ```c
 typedef enum
@@ -66,13 +68,14 @@ typedef enum
 } alarm_t;
 ```
 :::info
-Those custom types are product level information. Following our [Luos project code organization](https://docs.luos.io/docs/next/luos-technology/basics/orga) you should create the `alarm_t` enum into the `product_config.h`.
+Those custom types are product level information. Following the [Luos project code organization](https://docs.luos.io/docs/next/luos-technology/basics/orga), you should create the `alarm_t` enum into the `product_config.h`.
 :::
 
 ## Manage button updates
-This app need to get Button information to do things. Let's add an auto-update on the `END_DETECTION` event and manage Button informations reception.
 
-I choose to search the button service using its alias, instead of using the type like we did in the ‘alarm_controller’ app. This way you can choose witch button do what depending on it's alias and manage as many button you want in you bike.
+This app needs to get the button's information to do things. Let us add an auto-update on the `END_DETECTION` event and manage button information reception.
+
+We choose to search for the button service using its **alias**, instead of using its *type* like we did in the 'alarm_controller' app. This way, you can choose which button do what depending on its alias, and manage as many buttons you want on your bike for future new features.
 
 ```c
 void StartController_MsgHandler(service_t *service, msg_t *msg)
@@ -108,14 +111,14 @@ void StartController_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-Now I can receive a data each 10ms that I can use to control my alarm from a button service called lock.
-In my reception callback I have to deal differently whether the data come from a button or not, because buttons are (most of the time) mono-stable. I need to detect a push event in order to control the alarm, and with a mono-stable button a push give me 0->1->0. In this App we want to switch the state and not go back to the default state (0) each time, so I have to get the 0->1->0 event to switch the state of a variable.
+We can now receive a data each 10 ms, that is used to control the alarm from a button service called "lock".
+In the reception callback, we have to deal differently whether the data comes from a button or not, because buttons are (most of the time) mono-stable. We need to detect a push event in order to control the alarm, and with a mono-stable button a push gives 0->1->0. In this app, we want to switch the buttons state instead of going back to the default state (0) each time, so we have to get the 0->1->0 event to switch the state of a variable.
 
 :::info
-If the sender is not a button, I can take the state without any filtering.
+If the sender is not a button, we can take the state without any filtering.
 :::
 
-On `rx_start_controller_cb` you can add :
+In `rx_start_controller_cb` you can add:
 
 ```c
     if (msg->header.cmd == IO_STATE)
@@ -148,7 +151,7 @@ On `rx_start_controller_cb` you can add :
     }
 ```
 
-Now I have all I need to shut down the alarm app at each button push and turn the LED green to display the alarm state on the loop:
+We now have all we need to shut down the alarm app at every button push, and turn the LED green to display the alarm state in the loop:
 
 ```c
 void StartController_Loop(void)
@@ -206,8 +209,10 @@ void StartController_Loop(void)
 }
 ```
 
-Now to finish this app, I have to put it into a project. I will put this service in the button board so I duplicate the button project, add the start_controller folder in the build path, and call the init and loop functions in the main function.
-We are ready to test !
+Now to finish this app, we have to put it into a project. We will put this service in the button board, so we duplicate the button project, add the start_controller folder in the build path, and call the init and loop functions in the main function.
+
+We are ready to test!
+
 <div align="center">
   <iframe
     className="player_iframe"

@@ -5,25 +5,28 @@ custom_edit_url: null
 import Image from '@site/src/components/Images.js';
 
 # Make our alarm adaptable and hot-pluggable
-We have now our basic alarm working, but it is not really usable as a bike alarm yet.
-We will have to add some functionalities and make this app usable by any other app that could come complete our alarm.
 
+We now have our basic alarm working, but it is not really usable as a bike alarm yet.
+We will need to add some functionalities and make this app usable by any other app that could come later to complement our alarm.
+
+:::info
 By following this tutorial and applying these pieces of advice to all of your apps, you will be able to easily reuse all your developments out-of-the box.
+:::
 
-To check if your app is already easy to be used with other ones, you have to ask yourself two questions:
+To check if your app is already ready to be used with other ones, you have to ask yourself two questions:
 
- - Is my app ready to accept another one to run a detections?
- - Is my app controllable by any other app in a standard way?
+ - Is the app ready to accept another app to run a detection?
+ - Is the app controllable by any other app in a standard way?
 
 ## Detection consideration
-In the basic version of the alarm app, when we initialized the function we made the app run a detection.
-But some other apps may performs concurrent detection.
+
+In the basic version of the alarm app, we made the app run a detection when we initialized the function. But other apps may perform concurrent detections.
 
 If another app runs a detection after yours, you will have to catch the event in order to be prepared to any needs of reconfiguration. This can happen if a new app is hot-plugged in the network and need to be included into the routing table.
 
-To be prepared for those situations, Luos provide an event as a message you can catch on your `AlarmController_MsgHandler` to deal with services configurations.
+To be prepared for those situations, Luos engine provides an event as a message you can catch on your `AlarmController_MsgHandler` to deal with services configurations.
 
-Let's manage this event and add our auto-update configuration in it:
+Let us manage this event and add our auto-update configuration into it:
 
 ```c
 void AlarmController_MsgHandler(service_t *service, msg_t *msg)
@@ -69,7 +72,7 @@ void AlarmController_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-Now on the init function we can remove the configuration management:
+We can now remove the configuration management in the init function:
 
 ```c
 void AlarmController_Init(void)
@@ -83,9 +86,9 @@ void AlarmController_Init(void)
 }
 ```
 
-To finish, we have to prevent any loop execution if our services is currently not detected or under detection:
+To finish, we have to prevent any loop execution if our service is currently not detected or is under detection:
 
-You can add this code into your loop to manage it:
+You can add this code into the loop to manage it:
 
 ```c
 void AlarmController_Loop(void)
@@ -132,20 +135,21 @@ void AlarmController_Loop(void)
 ```
 
 ## Control consideration
-You have to try to be prepared of any usage of your app by preparing messages reception that can be useful. This is the API part of your app, so try to think it clean and flexible by using Luos Object Dictionary (OD) as much as possible.
 
-There is one thing each app should have => **The capability to be stopped by any other**.
-In our case, this is critical because, for now, the alarm can’t be shut down: the only way is to power it down. We have to provide a way for other apps to stop it!
-Luos engine provide a standard structure and command dedicated to this, called `control_mode`.
-This command works like play, pause, stop, and record commands of your music player. This kind of command can be used on drivers to control data stream such as trajectories on motors for examples, or they can be used to control app’s running state.
+You should get ready of any usage of your app by preparing messages reception that can be useful. This is the API part of your app, so try to think it clean and flexible by using Luos Object Dictionary (OD) as much as possible.
 
-Each app should have a global variable representing the running state of the app. To manage it in our alarm app, I add this global variable:
+There is one characteristic each app should have: **The capability to be stopped by any other**.
+In our case, this is critical because the alarm cannot be shut down for now: the only way is to power it down. So we need to provide a way for other apps to stop it.
+Luos engine provides a standard structure and command dedicated to this, called `control_mode`.
+This command works like play, pause, stop, and record controls in your music player. This kind of command can be used on drivers to control data stream, such as trajectories on motors for examples, or they can be used to control app's running state.
+
+Each app should have a global variable representing the running state of the app. To manage it in our alarm app, we add this global variable:
 
 ```c
 volatile control_t control_app;
 ```
 
-Then I put it on PLAY by default on the init:
+Then, we put it on PLAY by default on the init:
 
 ```c
 void AlarmController_Init(void)
@@ -159,7 +163,7 @@ void AlarmController_Init(void)
 }
 ```
 
-Then I add the possibility to receive a control mode in my AlarmController_MsgHandler:
+Then, we add the possibility to receive a control mode in `AlarmController_MsgHandler`:
 
 ```c
 if (msg->header.cmd == CONTROL)
@@ -169,15 +173,15 @@ if (msg->header.cmd == CONTROL)
 }
 ```
 
-Now I can use this control_mode to make my app run or not by using :
+Now we can use this control_mode to make the app run or not by using:
 ```c
 if (control_app.flux == PLAY)
 {
     // Do app things
 }
 ```
-For this alarm app, I use it as a condition to execute the non-blocking blink on the loop function and for the IMU data reception.
-Finally, my complete callback reception looks like that:
+In the case of this alarm app, we use it as a condition to execute the non-blocking blink in the loop function and for the IMU data reception.
+Finally, the complete callback reception looks like this:
 
 ```c
 void AlarmController_MsgHandler(service_t *service, msg_t *msg)
@@ -231,4 +235,4 @@ void AlarmController_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-Nice! Our app is now clean, and ready to properly work with any other app! Let's add a new one!
+Nice! Our app is now clean, and ready to properly work with any other app. Let us add a new one!

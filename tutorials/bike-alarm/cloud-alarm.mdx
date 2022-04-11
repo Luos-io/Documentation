@@ -5,28 +5,30 @@ custom_edit_url: null
 import Image from '@site/src/components/Images.js';
 
 # Connect our system to the cloud
-This entire system is a lot more than a simple alarm and it could be used as a base to make a free-floating bike system, or a connected bike.
-If you followed this tutorial from the start, you should know how to make one, the only step missing being the cloud connectivity part.
-Because we made a clean base of code, your bike is already ready to be a connected bike.
 
-Luos provides a specific app called Gate. This app converts Luos services’ messages into a JSON stream. You can output and input this JSON stream using the medium you want (USB, Bluetooth, 4G, WiFi, …).
-You can directly use this JSON stream with your favorite language on a server or a computer and take control of your entire bike or a fleet of several bikes.
+This entire system is a lot more than a simple alarm, and it could be used as a base to make a free-floating bike system, or a connected bike.
 
-In this last step I won’t show you how to make a mobile or computer application, but I will show you what you can do with the JSON API out-of-the-box using a Gate app service and Pyluos (our standard Python library). After this last step, you should be ready to make your connected product by doing your software or UI as you want.
+If you followed this tutorial from the start, you should know how to make one, the only step missing being the cloud connectivity part. And because we made a clean base of code, your bike is already ready to be a connected bike.
 
-## How to connect my bike
-To connect my bike, I will use a USB board (because I have one) but you can use a more convenient one the same way, such as a Bluetooth or WiFi board.
-I just have to add this USB board in my network with the Gate app loaded on it and to connect it to my computer using a USB cable. Now I can use Pyluos to control my bike.
+Luos engine provides a specific app called **gate**. This app converts Luos services' messages into a JSON stream. You can output and input this JSON stream using the medium you want (USB, Bluetooth, 4G, WiFi, …).
+You can directly use this JSON stream with your favorite language on a server or a computer and take control of your entire bike, or of an entire fleet of bikes.
+
+In this last step, we will not show you how to make a mobile or computer application, but rather what you can do with the JSON API out-of-the-box using a gate app service and Pyluos (our standard Python library). After this last step, you should be ready to make your connected product by doing your software or UI as you want.
+
+## How to connect the bike
+
+To connect the bike, we use a USB board (because we own one) but you can use a more convenient one the same way, such as a Bluetooth or WiFi board.
+We just have to add this USB board in the network with the gate app loaded on it, and to connect it to the computer using a USB cable. We can now use Pyluos to control the bike.
 
 :::info
-For more information about Pyluos, you should follow our [Get-started tutorial](/tutorials/get-started).
+For more information about Pyluos, you can follow our [Get-started tutorial](/tutorials/get-started).
 :::
 
 :::info
-You can use Pyluos to rename your services. It can be really useful to distinguish similar services types with different purposes. For example, here we have two State type services, but one is a button (“lock”) and the other one is a power switch (“horn”). In our case it is mandatory because apps use aliases to find services on routing tables.
+You can use Pyluos to rename your services. It can be really useful to distinguish similar services' types with different purposes. For example, we have here two State type services, but one is a button (“lock”) and the other one is a power switch (“horn”). In our case, it is mandatory because apps use aliases to find services in routing tables.
 :::
 
-Here is a basic code example to connect and list services of my bike:
+Here is a basic code example to connect and list services of the bike:
 
 ```python
 from pyluos import Device
@@ -35,7 +37,8 @@ from pyluos import Device
 bike = Device('/dev/cu.usbserial-DN05NM1H')
 print(bike.services)
 ```
-This gives me :
+This gives us:
+
 ```text
 Connected to "/dev/cu.usbserial-DN05NM1H".
 Sending detection signal.
@@ -53,7 +56,8 @@ State               lock                6
 Unknown             start_control       7
 ```
 
-As you can see here, I have listed the services of my bike. Services with Unknown types are the apps we made in the previous steps. Indeed, because we create new service types for our apps, Pyluos see them as Unknown, but don’t worry: unknown service types still have access to standard Luos message types.
+As you can see here, I have listed the services of the bike. Services with Unknown types are the apps we made in the previous steps. Indeed, because we created new service types for our apps, Pyluos see them as Unknown, but fortunately Unknown service types still have access to standard Luos message types.
+
 By using these standard messages, we can take control of everything:
 
 ```python
@@ -74,12 +78,17 @@ bike.start_control.state = True
 ```
 
 Using this JSON stream, you are now able to check on your bike anywhere.
-I added a ipython_notebook script with a Python code example into this Github tutorial project folder.
 
-## Conclusion of this entire tutorial
-In this tutorial we discover how to create a behavior using a Luos network by creating apps from scratch. We make them flexible and ready to be compatible with any other apps in any use case. Then we see how to take control of this network and apps from a computer.
-Now you have all you need to create your how project from electronics to cloud interface.
-What will you make with it?
+:::tip
+We added a ipython_notebook script with a Python code example into this Github tutorial project folder.
+:::
+
+## Conclusion of the bike alarm tutorial series
+
+In this tutorial, we discovered how to create a behavior using a Luos network by creating apps from scratch. We made them flexible and ready to be compatible with any other apps in any use case. Then we see how to take control of this network and apps from a computer.
+
+Now you have all you need to create your own project from electronics to cloud interface. What will you create with it?
+
 <div align="center">
   <iframe
     className="player_iframe"

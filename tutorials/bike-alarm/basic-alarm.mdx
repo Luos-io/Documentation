@@ -5,13 +5,19 @@ custom_edit_url: null
 import Image from '@site/src/components/Images.js';
 
 # Make a basic alarm
-The purpose of our bike alarm is to constantly measure bike movements and raise an alarm if the bike is moving.
-To make it work I will use an IMU board to measure the bike motions and, for now, an RGB led board to display an alarm using a red blinky LED.
-For this tutorial I'm going to use [L0 board examples available on Luos examples](https://github.com/Luos-io/Luos/tree/main/Examples/Projects/l0).
-I’m going to use IMU and LED drivers examples without any modifications and just add an embedded app to control them.
-This embedded App service will control the behavior of the alarm. This App can work on any node. I choose the LED node because there is plenty of memory space in it.
 
-To summarize, my setup will looks like this:
+The purpose of the bike alarm is to create an alarm that constantly measures a bike's movements while activated, and raise an alarm if the bike is moving.
+
+To make it work, we will use an IMU board to measure the bike's motions and, for now, an RGB LED board to display an alarm using a red blinky LED.
+For this tutorial, we are going to use [L0 board examples available in Luos examples](https://github.com/Luos-io/Luos/tree/main/Examples/Projects/l0).
+We are going to use IMU and LED drivers examples without any modifications and just add an embedded app to control them.
+This embedded app service will control the behavior of the alarm. This app can work on any node. 
+
+:::tip
+We chose the LED node because there is plenty of memory space in it.
+:::
+
+To summarize, the setup will looks like this:
 
 ```
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -28,7 +34,8 @@ To summarize, my setup will looks like this:
 ```
 
 ## Alarm controller app creation
-Our app service will be hosted on a package, so first I organize my code by creating a folder and the associated files:
+
+Our app service will be hosted in a package, so first we need to organize the code by creating a folder and the associated files:
 
 ```
 Alarm_controller
@@ -54,29 +61,30 @@ void AlarmController_Loop(void);
 For more details about Luos code organization, please read the [Luos project organization page](https://docs.luos.io/docs/next/luos-technology/basics/orga).
 :::
 
-Now we have to fill both of the functions on the C file.
+Now we have to fill both functions in the C file.
 
 ## Alarm controller init
-Our init code have to be on the `alarm_controller_init()` function of `alarm_controller.c` file.
 
-Lets create the service:
+Our init code has to be in the `alarm_controller_init()` function of `alarm_controller.c` file.
+
+Let us create the service:
 
 ```c
 void AlarmController_Init(void)
 {
     revision_t revision = {.major = 1, .minor = 0, .build = 0};
-    // Create App
+    // Create app
     app = Luos_CreateService(AlarmController_MsgHandler, ALARM_CONTROLLER_APP, "alarm_control", revision);
 }
 ```
 
-As you can see, my app default alias will be `"alarm_control"`, and I created a custom services types.
+As you can see, our app default alias will be `"alarm_control"`, and we created a custom service type.
 
 :::info
-For more information about service creation read the [Create Luos service page](https://docs.luos.io/docs/next/luos-technology/services/service-api).
+For more information about service creation, read the [Create Luos service page](https://docs.luos.io/docs/next/luos-technology/services/service-api).
 :::
 
-To declare to others this custom services types I need to add an enum on my C file:
+To declare to others this custom service type, we need to add an enum in the C file:
 
 ```c
 typedef enum
@@ -85,10 +93,10 @@ typedef enum
 } alarm_t;
 ```
 
-For now there is only one custom type dedicated to our app, but later on this tutorial we will have to add another one…
+For now, there is only one custom type dedicated to our app, but later on this tutorial we will have to add another one. 
 
-In order to measure motion of the bike, our app will need to receive gyroscopic data from IMU and put an alarm flag if there is motion. To manage it I created a message reception callback `AlarmController_MsgHandler.
-Here is how I made this function:
+In order to measure bike's motion, our app will need to receive gyroscopic data from IMU and put an alarm flag if motion is detected. To manage it, we created a message reception callback `AlarmController_MsgHandler`.
+Here is how we made this function:
 
 ```c
 void AlarmController_MsgHandler(service_t *service, msg_t *msg)
@@ -108,23 +116,23 @@ void AlarmController_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-Now we have to be able to get data from the IMU. To do that, our app will need a routing table. Routing tables are auto-generated and shared to all services during detection.
+Now we have to be able to get data from the IMU. To do that, our app will need a routing table. Routing tables are auto-generated and shared to all services in the network during detection.
 
 :::info
-For more information, read our [routing table page](https://docs.luos.io/docs/next/luos-technology/services/routing-table).
+For more information, read the [routing table page](https://docs.luos.io/docs/next/luos-technology/services/routing-table).
 :::
 
-Because this app is stand-alone, it has to run a detection to create the routing table, and configure the IMU to send gyro data each 10ms.
+Because this app is stand-alone, it has to run a detection to create the routing table and configure the IMU to send gyro data each 10ms.
 
-The UPDATE_PUB command is a specific Luos engine command asking a service to send back an update each X time. Thank’s to this command the target container just will receive an update request at a given frequency. Those auto-generated messages never transit into the real network and are generated locally for the container to save resources.
+The `UPDATE_PUB` command is a specific Luos engine command asking to a service to send back an update each X milliseconds. Thanks to this command, the target container will receive an update request at a given frequency. These auto-generated messages never transit into the real network and are generated locally for the container to save resources.
 
-In the init code I added:
+In the init code we added:
 
 ```c
 void AlarmController_Init(void)
 {
     revision_t revision = {.major = 1, .minor = 0, .build = 0};
-    // Create App
+    // Create app
     app = Luos_CreateService(AlarmController_MsgHandler, ALARM_CONTROLLER_APP, "alarm_control", revision);
 
     // Detect all services of your network and create a routing_table
@@ -160,8 +168,9 @@ void AlarmController_Init(void)
 Now the IMU service will automatically send gyroscopic data to your app each 10ms.
 
 ## Alarm controller loop
-Thanks to the initialization your app will receive gyroscopic data in the `AlarmController_MsgHandler` function we made and raise the ‘blink_state’ flag accordingly to movements.
-In the loop we just need to manage a non-blocking blink code when the ‘blink_state’ flag changes:
+
+Thanks to the initialization, your app will receive gyroscopic data in the `AlarmController_MsgHandler` function we made and raise the 'blink_state' flag accordingly to movements.
+We just need to manage a non-blocking blink code in the loop when the 'blink_state' flag changes:
 
 ```c
 void AlarmController_Loop(void)
@@ -208,10 +217,11 @@ void AlarmController_Loop(void)
 Done! Our app is finished.
 
 ## Assemble services on nodes, compile, and flash.
-Now we have a ready-to-work app. We need to load it into a node.
-As I said previously, I planned to put this app on a LED board node because LED service is really light and there is plenty of space available for our app to execute. So basically, I duplicate the Led project available on Luos_engine examples, add the alarm_controller app folder into the compiler include path, and add the init and loop functions on the main of the project.
 
-**(on platformio) platformio.ini:**
+We now have a ready-to-work app. We need to load it into a node.
+As explained previously, we planned to put this app on a LED board's node because LED service is really light and there is plenty of space available for our app to execute. So we first duplicate the Led project available on Luos_engine examples, then we add the alarm_controller app folder into the compiler's include path, and finally add the init and loop functions in the main function of the project.
+
+**platformio.ini (in PlatformIO):**
 
 ```
 lib_extra_dirs =
@@ -241,9 +251,10 @@ while (1)
 ```
 
 :::info
-There is no management of IMU init and loop functions here because we are doing the LED node firmware. The Imu init and loop functions are running on the IMU board.
+There is no management of IMU's init and loop functions here because we are working on the LED's node firmware. The IMU init and loop functions are running on the IMU board.
 :::
-After that, you have to flash the IMU board with the Luos IMU example and the LED board with your custom project we just create.
+
+After that, you have to flash the IMU board with the Luos IMU example and the LED board with the custom project we just created.
 
 <div align="center">
   <iframe

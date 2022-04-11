@@ -5,10 +5,10 @@ custom_edit_url: null
 import Image from '@site/src/components/Images.js';
 
 # Make our alarm evolve using a truck horn and more
-For now our alarm doesn’t make any noise, which is sad for an alarm. Let’s make some noise.
 
-To do that, I will add another board to my setup with a relay switch.
-In this power switch, I put a 12V truck horn producing 150db.
+For now, our alarm does not make any noise, which is sad for an alarm. Let us make some noise.
+
+To do that, we will add another board to the setup with a relay switch. In this power switch, we put a 12V truck horn producing 150db.
 
 <div align="center">
   <Image
@@ -16,10 +16,11 @@ In this power switch, I put a 12V truck horn producing 150db.
   />
 </div>
 
-To control it I will simply have to manage it on my apps and use the standard power_switch driver.
+To control it, we will simply have to manage it on the apps and use the standard power_switch driver.
 
 ## Add the truck horn on alarm_controller app
-I simply want the horn to turn on at the same time the red LED is blinking. So I add a small message after the LED’s one in the loop of the app :
+
+We simply want the horn to turn on at the same time the red LED is blinking. So we add a small message after the LED's one in the app's loop:
 
 ```c
 RTFilter_Alias(RTFilter_Reset(&result), "horn");
@@ -42,21 +43,23 @@ if (result.result_nbr > 0)
 }
 ```
 
-As you can see, I call the power_switch driver “horn”. When you use alias to get ID of a service, always make sure to rename it.
+As you can see, we call the power_switch driver “horn”. When you use alias to get ID of a service, always make sure to rename it.
 
 :::info
-The simplest way to rename a service is to use a Gate and Pyluos.
+The simplest way to rename a service is to use a gate and Pyluos.
 :::
 
 ## Add the truck horn on start_controller app
-In this app, I add a small “BIP” when locking or unlocking the bike. In order to add it, I have to add more code than in the previous app to manage time properly.
-I let you consult [the final code](https://github.com/Luos-io/Luos/tree/main/Examples/Apps/Start_controller).
 
-I took advantage of this code modification to add some fancy animation on the LED, allowing it to be used as bicycle headlight.
+In this app, we add a small "BIP" when locking or unlocking the bike. In order to add it, we have to add more code than in the previous app to manage time properly.
+You consult [the final code here](https://github.com/Luos-io/Luos/tree/main/Examples/Apps/Start_controller).
+
+We took advantage of this code modification to add some fancy animation on the LED, allowing it to be used as bicycle headlight.
 
 ## Improvement clue
-To make it usable in real life, we should probably select something less noisy than a truck horn which is really painful for the ears.
-Also we should add a real locking system able to lock the bike wheel using a motor and a mechanism like this one made by my friends from [pony](https://getapony.com/):
+
+To make it usable in real life, we should probably select something less noisy than a truck horn which can be really painful for the ears.
+We also should add a real locking system which would be able to lock the bike wheel using a motor and a mechanism, like this one made by our friends from [Pony](https://getapony.com/):
 
 <div align="center">
   <Image
@@ -64,4 +67,4 @@ Also we should add a real locking system able to lock the bike wheel using a mot
   />
 </div>
 
-We can also add connectivity to set up the bike using a mobile app or something. This part is interesting, so let’s talk about that on the next chapter.
+We can also add connectivity to set the bike up using a mobile app or something similar. This part is interesting, so let us talk about that on the next chapter.
