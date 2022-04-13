@@ -404,8 +404,8 @@ html[data-theme='dark'] .cust_landing_seperator {
 }
 
 .cust_img_rot {
-  transform: translate(15px) rotate(35deg);
-  height: 80px;
+  transform: translate(5px) rotate(35deg);
+  height: 80px !important;
 }
 
 .cust_tooltip {
@@ -634,4 +634,12 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 
 html[data-theme='dark'] .MuiListItemText-primary {
   color: white !important;
+}
+
+.breadcrumbs__link {
+  font-weight: normal !important;
+}
+
+.breadcrumbs__link span {
+  font-size: inherit !important;
 }

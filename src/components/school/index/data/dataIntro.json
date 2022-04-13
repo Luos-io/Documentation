@@ -95,6 +95,18 @@
       "tags": ["RTOS", "Distributed System"],
       "link": "/tutorials/freertos/intro",
       "author": "nicoC"
+    },
+    {
+      "title": "Bike Alarm",
+      "id": "bike-alarm",
+      "category": "Tutorials",
+      "toc": 120,
+      "level": 3,
+      "img": "Bike_Alarm",
+      "desc": "In this tutorial series I’m going to show you how to make your own Luos app using a fully modular bike alarm as example.",
+      "tags": ["Board", "Application", "Detection", "Product", "Service", "Network", "Distributed System"],
+      "link": "/tutorials/bike-alarm",
+      "author": "nicoR"
     }
   ]
 }

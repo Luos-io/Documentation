@@ -25,6 +25,11 @@ module.exports = {
               label: 'Part 3: Unleash your code',
               id: 'get-started/get-started3',
             },
+            {
+              type: 'doc',
+              label: 'Part 4: Connect to the Network Display tool',
+              id: 'get-started/get-started4',
+            },
           ],
         },
         {
@@ -144,6 +149,42 @@ module.exports = {
               type: 'doc',
               label: 'ROS 1 retro-compatibility with Luos',
               id: 'luos-integration/ros1-retrocompatibility',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Bike alarm',
+          link: {
+            type: 'doc',
+            id: 'bike-alarm/bike-alarm',
+          },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: Make a basic alarm',
+              id: 'bike-alarm/basic-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Part 2: Make our alarm adaptable and hot-plug-gable',
+              id: 'bike-alarm/adaptable-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Part 3: Add another app controlling the alarm',
+              id: 'bike-alarm/control-alarm',
+            },
+            {
+              type: 'doc',
+              label :
+                  'Part 4: Make our alarm evolve using a truck horn and more',
+              id: 'bike-alarm/evolve-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Part 5: Connect our system to the cloud',
+              id: 'bike-alarm/cloud-alarm',
             },
           ],
         },
