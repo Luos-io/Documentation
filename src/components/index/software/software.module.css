@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  background-image: url('/static/img/index/NEBULA.svg');
+  background-size: cover;
+  color: white;
+  padding: 30px;
+}
+
+.title {
+  font-family: 'Roboto Mono', sans-serif;
+  margin: 0 auto;
+  font-size: 30px !important;
+  text-align: center;
+  padding: 0 250px 15px;
+}
+
+.subtitle {
+  font-size: 18px !important;
+  padding-right: 10px;
+}
+
+.green {
+  border-left: 5px solid #75dbc7;
+  padding-top: 0px !important;
+}
+
+.purple {
+  border-left: 5px solid #be99ff;
+  padding-top: 0px !important;
+}
+
+.orange {
+  border-left: 5px solid #ff5200;
+  padding-top: 0px !important;
+}
+
+.yellow {
+  border-left: 5px solid #edf568;
+  padding-top: 0px !important;
+}
+
+.underline:after {
+  content: '_';
+  color: #be99ff;
+}
