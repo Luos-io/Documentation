@@ -55,41 +55,66 @@ module.exports = {
       items: [
         {
           type: 'docsVersionDropdown',
-          position: 'right',
+          position: 'left',
           dropdownActiveClassDisabled: true,
         },
         {
           to: '/tutorials/get-started',
-          label: 'Get Started',
+          label: 'Technology',
           position: 'right',
         },
         {
           type: 'doc',
-          label: 'Documentation',
+          label: 'Tools',
           docId: 'luos-technology/luos_tech',
           position: 'right',
         },
-        { 
-          to: '/tutorials/tutorials',
-          label: 'Tutorials',
-          position: 'right',
+        {
+        type: 'dropdown',
+        label: 'Ressources',
+        position: 'right',
+        items: [
+            { 
+              to: '/tutorials/get-started',
+              label: 'Get started',
+            },
+            { 
+              to: '/docs/luos-technology/luos_tech',
+              label: 'Documentation',
+            },
+            { 
+              to: '/tutorials/tutorials',
+              label: 'Tutorials',
+            },
+            { 
+              to: '/blog',
+              label: 'Blog',
+            },
+            { 
+              to: '/faq/list',
+              label: 'Troubleshooting',
+            },
+          ],
         },
         {
-          to: '/faq/list',
-          label: 'Troubleshooting',
+          type: 'dropdown',
+          label: 'Community',
           position: 'right',
-          id: 'link__header__faq',
-        },
-        {
-          to: 'blog',
-          label: 'Blog',
-          position: 'right'
-        },
-        {
-          href: 'https://www.luos.io',
-          label: 'Luos.io',
-          position: 'right',
-        },
+          items: [
+              { 
+                to: 'https://discord.gg/luos',
+                label: 'Discord',
+              },
+              { 
+                to: 'https://www.reddit.com/r/Luos/',
+                label: 'Reddit',
+              },
+              { 
+                to: 'https://github.com/luos-io',
+                label: 'Github',
+              },
+            ],
+          },
         {
           href: 'https://github.com/luos-io',
           className: 'header-github-link',
