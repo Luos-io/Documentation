@@ -196,6 +196,11 @@ module.exports = {
               label: 'JSON API',
               id: 'api/api-json',
             },
+            {
+              type: 'doc',
+              label: 'Luos engine API',
+              id: 'api/luos-engine-api',
+            },
           ],
         },
         {
