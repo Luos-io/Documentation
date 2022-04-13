@@ -146,7 +146,7 @@ module.exports = {
           editUrl: 'https://github.com/luos-io/Documentation',
           versions: {
             current: {
-              label: '2.3.0-beta 🚧',
+              label: '2.4.0-beta 🚧',
             },
           },
         },

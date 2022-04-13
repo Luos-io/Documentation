@@ -1,0 +1,221 @@
+---
+custom_edit_url: null
+---
+
+import Image from '@site/src/components/Images.js';
+import IconExternalLink from '@theme/IconExternalLink';
+
+# Part 4: Connect to the Network Display tool
+
+## 1. Introduction
+
+In the previous parts of the [Get started tutorial](/tutorials/get-started/), we used Luos Python SDK (pyluos) to be able to code the behavior of your embedded device from your computer. This SDK needs the gate application to translate JSON to Luos and Luos to JSON.
+
+The gate translates everything on JSON allowing you to take control of your device from any language.
+
+Luos also provides various web tools to manage your products. Let’s try one of them!
+
+To deal with these SaaS tools, you will need an application different than the gate, called the inspector. The inspector will be directly sending binary data instead of JSON.
+
+<div align="center">
+  <Image
+    src="/img/get-started/get-started-4-1.png"
+    darkSrc="/img/get-started/get-started-4-1.png"
+  />
+</div>
+
+In this part, we will learn how to add an inspector to your system, interface it with the Luos tools, and visualize some information on your browser.
+
+## 2. Add an inspector to your project
+
+:::warning
+We will use the same board from the first three parts. You can do this part if you have only one board.
+:::
+
+
+:::info
+If you have just finish the Get started Part 3, replace the gate with the inspector on the board connected to your Serial USB. 
+**Leave your setup as it is and just unplug the USB cable!**
+:::
+
+1. In VS Code, open the folder *Get_started ****project* corresponding to the board you use.
+2. From the left panel, find and open the file *src/main.c* or *src/Arduino.ino*.
+3. Replace the header gate file `gate.h` by the inspector file `inspector.h`:
+    
+    ```c
+    ...
+    #include "blinker.h"
+    //#include "gate.h" <== comment this line
+    **#include "inspector.h"** 
+    #include "led.h"
+    #include "luos.h"
+    #include "pipe.h"
+    ...
+    ```
+    
+4. Comment the two lines `Gate_Init();` and `Gate_Loop();` to remove the gate service from this board, and add the inspector service function `Inspector_Init();` and `Inspector_Loop();`:
+    
+    ```c
+    ...
+        Luos_Init();
+        Led_Init();
+        Pipe_Init();
+        Inspector_Init();
+    		//Gate_Init();<== comment this line
+        Blinker_Init();
+    ...
+        Luos_Loop();
+        Led_Loop();
+        Pipe_Loop();
+        Inspector_Loop();
+    		//Gate_Loop();<== comment this line
+        Blinker_Loop();
+    ```
+    
+:::info
+Those lines trigger the initialization and loop execution of all the packages in your project.
+:::
+    
+5. Check if the proper board environment is selected depending on your board:
+
+<div align="center">
+  <Image
+    src="/img/get-started/get-started-4-2.png"
+    darkSrc="/img/get-started/get-started-4-2.png"
+  />
+</div>
+
+6. Build and flash by clicking on the right arrow button in the bottom left in VS Code. 
+
+## 3. Connect to Luos Network Display
+
+1. Open the tool Luos Network Display
+    
+    [Luos Dashboard](https://app.luos.io/)
+    
+:::warning
+Use Microsoft Edge or Google Chrome as a browser, Firefox is **NOT COMPATIBLE YET**.   
+:::
+    
+2. Click on **Network Display** to visualize your project
+    
+:::warning
+You may need to log in to use the **Network Display** feature.
+:::
+    
+3. Click on **Launch Detection**:
+
+<div align="center">
+  <Image
+    src="/img/get-started/get-started-4-3.png"
+    darkSrc="/img/get-started/get-started-4-3.png"
+  />
+</div>
+
+
+    
+4. You should see a selection menu appear. Select The Serial COM where the USB cable is plugged into the board, and click on the **Connexion** button.
+
+<div align="center">
+  <Image
+    src="/img/get-started/get-started-4-4.png"
+    darkSrc="/img/get-started/get-started-4-4.png"
+  />
+</div>
+
+    
+5. Click again on **Launch Detection**.
+6. The Network interface recovers the information from the inspector and displays your nodes and services. Click on the node to see all services in it:
+
+<div align="center">
+  <Image
+    src="/img/get-started/get-started-4-5.png"
+    darkSrc="/img/get-started/get-started-4-5.png"
+  />
+</div>
+
+## 4. Check your Luos network using the Luos Network Display tool
+
+:::tip
+At this point, you must have 2 boards connected through a Luos Network. If this is not the case, check the Part 3 of the Get started and ensure you followed the steps properly.
+:::
+
+### Flash the board 1
+
+1. In VS Code, open the folder Get_started *****project* corresponding to your board 1: `file/open folder`.
+2. From the left panel, find and open the file *src/main.c* or *src/Arduino.ino*.
+3. Comment the lines `Blinker_Init();` and `Blinker_Loop();` to remove the blinker service from this board: 
+
+```c
+...
+    Luos_Init();
+    Led_Init();
+    Pipe_Init();
+    Inspector_Init();
+		//Gate_Init();
+    //Blinker_Init();<== comment this line
+...
+    Luos_Loop();
+    Led_Loop();
+    Pipe_Loop();
+    Inspector_Loop();
+		//Gate_Loop();
+    //Blinker_Loop();<== comment this line
+```
+
+1. Check if the proper board environment is selected depending on your board
+2. Build and flash *board 1* by clicking on the right arrow button in the bottom left in VS Code. 
+
+### Flash the board 2
+
+:::tip
+If you finished Part 3, Just reconnect GND wire on your second board. **To Prevent any mistakes, unplug the USB cables of the boards before wiring 😉**
+:::
+
+Now unplug the USB cable of Board 1 and connect the USB cable of board 2. Then follow these steps: 
+
+1. In VS Code, open the folder Get_started *****project* corresponding to your board 1: `file/open folder`.
+2. From the left panel, find and open the file *src/main.c* or *src/Arduino.ino*.
+3. Comment the lines `Blinker_Init();` and `Blinker_Loop();` to remove the blinker service from this board:
+
+```c
+...
+    Luos_Init();
+    //Led_Init();<== comment this line
+    //Pipe_Init();<== comment this line
+    //Inspector_Init();<== comment this line
+		//Gate_Init();<== comment this line
+    Blinker_Init();
+...
+    Luos_Loop();
+    //Led_Loop();<== comment this line
+    //Pipe_Loop();<== comment this line
+    //Inspector_Loop();<== comment this line
+		//Gate_Loop();<== comment this line
+    Blinker_Loop();
+```
+
+1. Check if the proper board environment is selected depending on your board
+2. Build and flash *board 2* by clicking on the right arrow button in the bottom left in VS Code. 
+
+### Detect with Luos Network Display:
+
+1. Go back to the Luos Network Display tool on your browser.
+2. Refresh the page. That should clear your previous topology.
+3. Click on **Launch Detection** again.
+4. Your COM port should already be set. If not, select the serial COM where the USB cable is plugged to the board. Then click on connexion.
+
+<div align="center">
+  <Image
+    src="/img/get-started/get-started-4-6.png"
+    darkSrc="/img/get-started/get-started-4-6.png"
+  />
+</div>
+
+## Conclusion
+
+**Congratulation, you succeed to visualize your network on the *Luos Network Display* tool!**
+
+You can check out our [tutorials](/tutorials/tutorials) in our Academy section to learn more about Luos and understand how to use the features of Luos technology. We also invite you to check out our [documentation](/docs/luos-technology/luos_tech) to learn more about the core concepts of Luos.
+
+⭐ If you liked this tutorial, feel free to star our [Luos repository](https://github.com/Luos-io/Luos) ⭐
