@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './howItsWork.module.css';
+import styles from './howitswork.module.css';
 import Grid from '@mui/material/Grid';
 
 const HowItsWork = (props) => {
