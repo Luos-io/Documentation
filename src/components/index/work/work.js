@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './howitswork.module.css';
+import styles from './work.module.css';
 import Grid from '@mui/material/Grid';
 
-const HowItsWork = (props) => {
+const Howitswork = (props) => {
   return (
     <div className={styles.container}>
       <h1 className={`${styles.title} ${styles.underline}`}>How its work</h1>
@@ -37,4 +37,4 @@ const HowItsWork = (props) => {
     </div>
   );
 };
-export default HowItsWork;
+export default Howitswork;
