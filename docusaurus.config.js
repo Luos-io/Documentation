@@ -59,14 +59,13 @@ module.exports = {
           dropdownActiveClassDisabled: true,
         },
         {
-          to: '/tutorials/get-started',
+          to: '/',
           label: 'Technology',
           position: 'right',
         },
         {
-          type: 'doc',
+          to: 'https://app.luos.io',
           label: 'Tools',
-          docId: 'luos-technology/luos_tech',
           position: 'right',
         },
         {
