@@ -670,5 +670,9 @@ html[data-theme='dark'] .footer__title {
 }
 
 .DocSearch-Button {
-  background: #1E1E1E !important;
+  background: #F5F5F5 !important;
+}
+
+html[data-theme='dark'] .DocSearch-Button {
+  background: #565758 !important;
 }
