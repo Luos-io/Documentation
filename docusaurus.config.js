@@ -59,7 +59,7 @@ module.exports = {
           dropdownActiveClassDisabled: true,
         },
         {
-          to: '/',
+          to: 'https://www.luos.io',
           label: 'Technology',
           position: 'right',
         },
@@ -78,20 +78,20 @@ module.exports = {
               label: 'Get started',
             },
             { 
-              to: '/docs/luos-technology/luos_tech',
-              label: 'Documentation',
-            },
-            { 
               to: '/tutorials/tutorials',
               label: 'Tutorials',
             },
             { 
-              to: '/blog',
-              label: 'Blog',
+              to: '/docs/luos-technology/luos_tech',
+              label: 'Documentation',
             },
             { 
               to: '/faq/list',
               label: 'Troubleshooting',
+            },
+            { 
+              to: 'https://www.luos.io/blog',
+              label: 'Blog',
             },
           ],
         },
