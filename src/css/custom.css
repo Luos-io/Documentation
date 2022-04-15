@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 :root {
-  --ifm-color-primary: #BD99FF;
+  --ifm-color-primary: #bd99ff;
   --ifm-color-primary-dark: #a370ff;
   --ifm-color-primary-darker: #955cff;
   --ifm-color-primary-darkest: #6e1fff;
@@ -30,10 +30,10 @@
 }
 
 html[data-theme='dark'] {
-  --ifm-background-color: #1E1E1E;
+  --ifm-background-color: #1e1e1e;
   --ifm-navbar-background-color: #323334;
   --ifm-menu-background-color: white;
-  --ifm-color-primary: #BD99FF;
+  --ifm-color-primary: #bd99ff;
 }
 
 a {
@@ -368,7 +368,7 @@ html[data-theme='dark'] .cust_landing_title {
   padding-bottom: 5px;
 }
 html[data-theme='dark'] .cust_landing_text {
-  color: #BD99FF;
+  color: #bd99ff;
 }
 
 html[data-theme='dark'] .cust_landing_seperator {
@@ -596,8 +596,10 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 
 .footer {
   padding: 20px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   color: black;
+  z-index: 200;
+  border-top: 2px solid #e2e2e2;
 }
 
 html[data-theme='dark'] footer {
@@ -656,6 +658,7 @@ html[data-theme='dark'] .MuiListItemText-primary {
 
 .footer__link-item {
   color: black;
+  font-weight: 400 !important;
 }
 
 html[data-theme='dark'] .footer__link-item {
@@ -670,7 +673,7 @@ html[data-theme='dark'] .footer__title {
 }
 
 .DocSearch-Button {
-  background: #F5F5F5 !important;
+  background: #f5f5f5 !important;
 }
 
 html[data-theme='dark'] .DocSearch-Button {
