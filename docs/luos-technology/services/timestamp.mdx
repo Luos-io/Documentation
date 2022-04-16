@@ -5,28 +5,32 @@ custom_edit_url: null
 
 # Timestamp
 
-**Timestamp** is a feature that enables you to track the date at which an event occurs. You can track as many events as you want, timing informations are saved in the system with the value associated to events.
+**Timestamp** is a feature that enables you to track the date at which an event occurs.
 
-Let's take an example with a button driver: each time we read the button state, we want to timestamp this event. First we have to create a global variable called a **token**, it's used to track our event in the system:
+Let's take an example with a button driver: each time we read the button state, we want to timestamp this event.
+To do that we have to save a time information representing our timestamp.
 
 ```C
 #include "timestamp.h"
 
-timestamp_token_t button_timestamp;
+time_luos_t button_timestamp;
 ```
 
-Then we can **tag** our data related to the button event with this token:
+Then we can save our timestamp date when we read the state of the button:
 
 ```C
 ll_button_read(&button.state);
-Timestamp_Tag(&button_timestamp, &button.state);
+button_timestamp = Timestamp_now();
 ```
-**Timestamp_Tag** links the token to the data. This enables several features:
-- if you use button.state in an another function in your service, you can check if there is a timestamp linked to the data and get it from the token with **Timestamp_GetToken** and **Timestamp_GetTimeFromToken** functions.
-- if you send button.state through a Luos message, the timestamp will be copied in the message. Then you can get it from the message in the receiving service with the **Timestamp_DecodeMsg** function.
 
-All **timestamp** API functions can be found in Luos/Robus/inc/timestamp.h. You can also find [examples](https://github.com/Luos-io/luos_engine/tree/main/Examples/Projects/l0/) which are using this feature. For now, examples using timestamp are : 
-- button
+After retrieving timestamp value you can do some calculation on it to include constant delay before measurement, or by adding a specific amount of time to manage future timestamp date.
+
+Then you can send a message with your button value using `Luos_SendTimestampMsg`:
+```C
+Luos_SendTimestampMsg(button_service, button_msg, button_timestamp);
+```
+
+All **timestamp** API functions can be found in Luos_engine/engine/core/inc/timestamp.h. You can also find [examples](https://github.com/Luos-io/Examples/blob/master/Projects/l0/) which are using this feature. For now, examples using timestamp are :
 - distance
 - light sensor
 - potentiometer
@@ -35,9 +39,6 @@ All **timestamp** API functions can be found in Luos/Robus/inc/timestamp.h. You 
 
 |                        Description                         |                                       Function                                        |      Return      |
 | :--------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :--------------: |
-|   Tag a data  with a token    |   `Timestamp_Tag(timestamp_token_t *token, void *target);`    |   `void`  |
-|   Get a token from a data     |   `Timestamp_GetToken(void *target);` | `timestamp_token_t *` |
+|   Get the present timestamp    |   `Timestamp_now(void);`    |   `time_luos_t`  |
 |   Check if a message is timestamped     |   `Timestamp_IsTimestampMsg(msg_t *msg);` | `bool` |
-|   Update the timestamp in a message     |   `Timestamp_TagMsg(msg_t *msg);` | `void` |
-|   Encode a message with the timestamp protocol     |   `Timestamp_EncodeMsg(msg_t *msg, void *target);` | `void` |
-|   Decode a timestamped message     |   `Timestamp_DecodeMsg(msg_t *msg, uint64_t *timestamp);` | `void` |
+|   Get a message timestamp     |   `Timestamp_GetTimestamp(msg_t *msg);` | `time_luos_t` |
