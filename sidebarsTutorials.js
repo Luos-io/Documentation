@@ -12,22 +12,22 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Part 1: Your first Luos service',
+              label: 'Part 1: set up your project',
               id: 'get-started/get-started1',
             },
             {
               type: 'doc',
-              label: 'Part 2: Take the control',
+              label: 'Part 2: take the control',
               id: 'get-started/get-started2',
             },
             {
               type: 'doc',
-              label: 'Part 3: Unleash your code',
+              label: 'Part 3: unleash your code',
               id: 'get-started/get-started3',
             },
             {
               type: 'doc',
-              label: 'Part 4: Connect to the Network Display tool',
+              label: 'Part 4: connect to a web app',
               id: 'get-started/get-started4',
             },
           ],
@@ -98,7 +98,7 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Part 1: Use Luos with Arduino IDE',
+              label: 'Part 1: use Luos with Arduino IDE',
               id: 'arduino/arduino',
             },
           ],
@@ -110,7 +110,7 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Part 1: Use Luos with FreeRTos',
+              label: 'Part 1: use Luos with FreeRTos',
               id: 'freertos/freertos',
             },
           ],
@@ -122,7 +122,7 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Part 1: Use Luos Bootloader',
+              label: 'Part 1: use Luos Bootloader',
               id: 'bootloader/bootloader',
             },
           ],
@@ -154,7 +154,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Bike alarm',
+          label: 'Develop a connected bike alarm',
           link: {
             type: 'doc',
             id: 'bike-alarm/bike-alarm',
@@ -162,28 +162,28 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Part 1: Make a basic alarm',
+              label: 'Part 1: make a basic alarm',
               id: 'bike-alarm/basic-alarm',
             },
             {
               type: 'doc',
-              label: 'Part 2: Make our alarm adaptable and hot-plug-gable',
+              label: 'Part 2: make our alarm adaptable and hot-plug-gable',
               id: 'bike-alarm/adaptable-alarm',
             },
             {
               type: 'doc',
-              label: 'Part 3: Add another app controlling the alarm',
+              label: 'Part 3: add another app controlling the alarm',
               id: 'bike-alarm/control-alarm',
             },
             {
               type: 'doc',
               label :
-                  'Part 4: Make our alarm evolve using a truck horn and more',
+                  'Part 4: make our alarm evolve using a truck horn and more',
               id: 'bike-alarm/evolve-alarm',
             },
             {
               type: 'doc',
-              label: 'Part 5: Connect our system to the cloud',
+              label: 'Part 5: connect our system to the cloud',
               id: 'bike-alarm/cloud-alarm',
             },
           ],
