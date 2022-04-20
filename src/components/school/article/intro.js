@@ -72,7 +72,7 @@ export const Introduction = (props) => {
       </Paper>
       <Grid container mt={3}>
         <Grid item xs={12}>
-          <Requirement title="Summary" color="#FFF9E6" list={props.summary} />
+          <Requirement title="Summary" color="#FFFFFF" list={props.summary} />
         </Grid>
       </Grid>
     </div>
