@@ -70,7 +70,7 @@ module.exports = {
         },
         {
         type: 'dropdown',
-        label: 'Ressources',
+        label: 'Resources',
         position: 'right',
         items: [
             { 
