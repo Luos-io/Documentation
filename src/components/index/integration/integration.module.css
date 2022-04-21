@@ -40,3 +40,22 @@
   content: '_';
   color: #be99ff;
 }
+
+.pinkBtn {
+  margin-right: 30px !important;
+  background-color: #be99ff !important;
+  color: white !important;
+  border-radius: 2px !important;
+  text-transform: uppercase;
+}
+
+.pinkBtn:hover {
+  background-color: white !important;
+  color: #be99ff !important;
+}
+
+.btnContainer {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}

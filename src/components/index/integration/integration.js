@@ -1,74 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './integration.module.css';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 const Integration = (props) => {
-  const integrations = [
-    {
-      name: 'Eclipse',
-      img: 'eclipse.svg',
-    },
-    {
-      name: 'VS Code',
-      img: 'vscodeico.svg',
-    },
-    {
-      name: 'PlatformIO',
-      img: 'pio.svg',
-    },
-    {
-      name: 'ESP32',
-      img: 'esp.svg',
-    },
-    {
-      name: 'STM32',
-      img: 'stm.svg',
-    },
-    {
-      name: 'Microship',
-      img: 'microship.svg',
-    },
-    {
-      name: 'Arduino',
-      img: 'arduino.svg',
-    },
-    {
-      name: 'Raspberry PI',
-      img: 'raspberry.svg',
-    },
-    {
-      name: 'Mirco-ROS',
-      img: 'microros.svg',
-    },
-    {
-      name: 'FreeRTOS',
-      img: 'freertos.svg',
-    },
-    {
-      name: 'SimpleFOC',
-      img: 'simplefoc.svg',
-    },
-    {
-      name: 'Python',
-      img: 'python.svg',
-    },
-    {
-      name: 'C/C++',
-      img: 'c.svg',
-    },
-    {
-      name: 'Freedom Robotics',
-      img: 'freedom.svg',
-    },
-    {
-      name: 'ROS',
-      img: 'ros.svg',
-    },
-  ];
+  const [currentImage, setCurrentImage] = useState('mcu');
+  const integrations = ['mcu', 'os', 'api', 'sdk'];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImage(
+        integrations[Math.floor(Math.random() * integrations.length)],
+      );
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className={styles.container}>
       <Grid container spacing={3}>
-        <Grid item md={4} className={styles.leftLines}></Grid>
+        <Grid item md={4}>
+          {' '}
+          <img src="img/index/left-lines.svg" />
+        </Grid>
         <Grid item md={4}>
           <h1 className={`${styles.title} ${styles.underline}`}>
             Integrations
@@ -77,25 +32,21 @@ const Integration = (props) => {
       </Grid>
       <Grid container spacing={3} sx={{ padding: '30px' }}>
         <Grid item md={2}></Grid>
-        <Grid item md={8} className={styles.integrations}>
-          <Grid container sx={{ marginLeft: '30px', marginTop: ' 30px' }}>
-            {integrations.map((item, i) => (
-              <Grid
-                item
-                md={3}
-                sx={{ marginBottom: '15px', textAlign: 'center' }}
-              >
-                <img src={`/img/index/${item.img}`} className={styles.img} />
-                <span className={styles.label}>{item.name}</span>
-              </Grid>
-            ))}
-          </Grid>
+        <Grid item md={8}>
+          <img src={`img/index/integration/${currentImage}.svg`} />
+          <div className={styles.btnContainer}>
+            <Button variant="contained" className={styles.pinkBtn}>
+              Learn more about integrations
+            </Button>
+          </div>
         </Grid>
         <Grid item md={2}></Grid>
       </Grid>
       <Grid container spacing={3}>
         <Grid item md={8}></Grid>
-        <Grid item md={4} className={styles.rightLines}></Grid>
+        <Grid item md={4}>
+          <img src="img/index/right-lines.svg" />
+        </Grid>
       </Grid>
     </div>
   );

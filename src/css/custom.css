@@ -8,6 +8,7 @@
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('http://fonts.cdnfonts.com/css/roboto');
 
 :root {
   --ifm-color-primary: #227c6a;
@@ -642,4 +643,9 @@ html[data-theme='dark'] .MuiListItemText-primary {
 
 .breadcrumbs__link span {
   font-size: inherit !important;
+}
+
+.MuiListItemText-primary {
+  font-family: 'Roboto Mono', sans-serif !important;
+  font-size: 18px !important;
 }

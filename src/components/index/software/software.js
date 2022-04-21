@@ -8,7 +8,7 @@ const Software = (props) => {
       <h1 className={`${styles.title} ${styles.underline}`}>
         Develop your Edge and Embedded distributed software scalable
       </h1>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} mb={5}>
         <Grid item md={1}></Grid>
         <Grid item md={10}>
           <Grid container spacing={3}>
@@ -55,6 +55,7 @@ const Software = (props) => {
         </Grid>
         <Grid item md={1}></Grid>
       </Grid>
+      <img src="/img/index/how-its-work.svg" />
     </div>
   );
 };
