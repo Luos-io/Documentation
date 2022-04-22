@@ -1,4 +1,81 @@
 .container {
   width: 100%;
   margin-bottom: 10px;
+  background-image: url('/static/img/index/powered/nebula.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 15px;
+}
+
+.left {
+  background-image: url('/static/img/index/header/vscode-left.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 75px;
+  padding-top: 50px;
+  width: 100%;
+  height: 300px;
+}
+
+.right {
+  background-image: url('/static/img/index/header/vscode-right.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 65px;
+  margin-top: -150px !important;
+  width: 100%;
+  z-index: 9;
+  height: 400px;
+}
+.text {
+  font-family: 'Roboto Mono';
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.btnContainer {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.pinkBtn {
+  margin-right: 30px !important;
+  background-color: #be99ff !important;
+  color: white !important;
+  border-radius: 2px !important;
+  width: 200px;
+  text-transform: uppercase;
+}
+
+.pinkBtn:hover {
+  background-color: white !important;
+  color: #be99ff !important;
+}
+
+.whiteBtn {
+  margin-right: 30px !important;
+  background-color: white !important;
+  color: #be99ff !important;
+  border-radius: 2px !important;
+  width: 220px;
+  text-transform: uppercase;
+}
+
+.whiteBtn:hover {
+  background-color: #be99ff !important;
+  color: white !important;
+}
+
+.whiteBtn::after {
+  content: url('/static/img/index/powered/discord.svg');
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.whiteBtn:hover::after {
+  content: url('/static/img/index/powered/discord-white.svg');
+  margin-top: 3px;
+  margin-left: 10px;
 }

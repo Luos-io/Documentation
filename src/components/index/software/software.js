@@ -11,6 +11,7 @@ const Software = (props) => {
       <Grid container spacing={3} mb={5}>
         <Grid item md={1}></Grid>
         <Grid item md={10}>
+          <Grid item md={1}></Grid>
           <Grid container spacing={3}>
             <Grid item md={3} className={styles.green}>
               <h3 className={`${styles.subtitle} ${styles.underline}`}>
@@ -21,7 +22,7 @@ const Software = (props) => {
                 uhecbhu”ecb uhebche”cb”heucbbbbc
               </p>
             </Grid>
-
+            <Grid item md={1}></Grid>
             <Grid item md={3} className={styles.purple}>
               <h3 className={`${styles.subtitle} ${styles.underline}`}>
                 Portable and scalable code
@@ -31,20 +32,10 @@ const Software = (props) => {
                 uhecbhu”ecb uhebche”cb”heucbbbbc
               </p>
             </Grid>
-
+            <Grid item md={1}></Grid>
             <Grid item md={3} className={styles.orange}>
               <h3 className={`${styles.subtitle} ${styles.underline}`}>
                 Encapsulate features into services
-              </h3>
-              <p>
-                Text de blablablab lablabla bla bloubloublouh bhbduehbce
-                uhecbhu”ecb uhebche”cb”heucbbbbc
-              </p>
-            </Grid>
-
-            <Grid item md={3} className={styles.yellow}>
-              <h3 className={`${styles.subtitle} ${styles.underline}`}>
-                Team work and collaboration
               </h3>
               <p>
                 Text de blablablab lablabla bla bloubloublouh bhbduehbce
@@ -55,7 +46,7 @@ const Software = (props) => {
         </Grid>
         <Grid item md={1}></Grid>
       </Grid>
-      <img src="/img/index/how-its-work.svg" />
+      <img src="/img/index/how-its-work.svg" className={styles.work} />
     </div>
   );
 };

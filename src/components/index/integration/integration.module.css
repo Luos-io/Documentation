@@ -59,3 +59,11 @@
   margin-top: 20px;
   text-align: center;
 }
+
+.imgLeft {
+  margin-top: -50px !important;
+}
+
+.imgRight {
+  margin-bottom: -30px !important;
+}

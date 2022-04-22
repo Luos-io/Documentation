@@ -649,3 +649,10 @@ html[data-theme='dark'] .MuiListItemText-primary {
   font-family: 'Roboto Mono', sans-serif !important;
   font-size: 18px !important;
 }
+
+.react-typewriter-text {
+  text-align: left;
+  font-family: 'Roboto Mono';
+  font-size: 30px !important;
+  margin-bottom: 15px !important;
+}

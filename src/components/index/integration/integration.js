@@ -7,11 +7,11 @@ const Integration = (props) => {
   const [currentImage, setCurrentImage] = useState('mcu');
   const integrations = ['mcu', 'os', 'api', 'sdk'];
 
+  let index = 0;
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentImage(
-        integrations[Math.floor(Math.random() * integrations.length)],
-      );
+      setCurrentImage(integrations[index]);
+      index = ++index % integrations.length;
     }, 3000);
 
     return () => clearInterval(intervalId);
@@ -22,7 +22,7 @@ const Integration = (props) => {
       <Grid container spacing={3}>
         <Grid item md={4}>
           {' '}
-          <img src="img/index/left-lines.svg" />
+          <img src="img/index/left-lines.svg" className={styles.imgLeft} />
         </Grid>
         <Grid item md={4}>
           <h1 className={`${styles.title} ${styles.underline}`}>
@@ -45,7 +45,7 @@ const Integration = (props) => {
       <Grid container spacing={3}>
         <Grid item md={8}></Grid>
         <Grid item md={4}>
-          <img src="img/index/right-lines.svg" />
+          <img src="img/index/right-lines.svg" className={styles.imgRight} />
         </Grid>
       </Grid>
     </div>
