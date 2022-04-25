@@ -4,14 +4,14 @@
 }
 
 html[data-theme='dark'] .introContainer {
-  background-color: #393f58;
-  border: 0.5px solid #c4c4c4;
+  background-color: #323334;
+  border: 0.5px solid #323334;
   color: white !important;
 }
 
 html[data-theme='dark'] .chip {
   color: white !important;
-  border: 1px solid #ddaa3a;
+  border: 1px solid #BD99FF;
 }
 
 html[data-theme='dark'] .listItem p {
@@ -74,13 +74,13 @@ html[data-theme='dark'] .listItem p {
 .requirement {
   width: 100%;
   padding: 20px;
-  border-left: 3px solid #ddaa3a;
+  border-left: 3px solid #BD99FF;
   min-height: 185px;
   margin-bottom: 10px;
 }
 
 html[data-theme='dark'] .requirement {
-  background-color: #282d3f !important;
+  background-color: #323334 !important;
 }
 
 .titleRequirement {
@@ -90,10 +90,18 @@ html[data-theme='dark'] .requirement {
 
 .separator {
   border: none;
-  border-top: 2px solid #ddaa3a;
+  border-top: 2px solid #BD99FF;
   color: #333;
   overflow: visible;
   margin: 0px;
+}
+
+html[data-theme='light'] .separator {
+  border-top: 2px solid #BD99FF;
+}
+
+html[data-theme='light'] .requirement {
+  border-left: 3px solid #BD99FF;
 }
 
 .requirement a {
@@ -110,4 +118,62 @@ html[data-theme='dark'] .requirement {
 
 .showMoreBtn:hover {
   background: none !important;
+}
+
+.difficultyContainer {
+  background: #F5F5F5;
+  width: 150px;
+  margin: 15px 0px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-family: 'Roboto Mono', sans-serif;
+  text-transform: capitalize;
+  float: right;
+}
+
+html[data-theme='dark'] .difficultyContainer{
+  background: #565758;
+}
+
+@media screen and (max-width: 800px) {
+  .difficultyContainer {
+    float: left;
+  }
+}
+
+.difficultyContainer span {
+  font-size: 16px !important;
+}
+
+.difficulty {
+  height: 0.75rem;
+  width: 0.25rem;
+  display: inline-block;
+  margin-right: 1.25rem;
+  background: #F5F5F5;
+  box-shadow: 6px 0 0 #F5F5F5, 8px 0 0 #F5F5F5;
+}
+
+html[data-theme='dark'] .difficulty{
+  background: #565758;
+  box-shadow: 6px 0 0 #565758, 8px 0 0 #323334;
+}
+
+.levelTxt {
+  padding-right: 5px;
+  font-size: 14px !important;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.chipCustom {
+  border-radius: 4px !important;
+  padding: 15px 0px !important;
+  background-color: #eae9ee !important;
+}
+
+.expandBtn {
+  color: #BD99FF;
+}
+html[data-theme='light'] .expandBtn {
+  color: #BD99FF;
 }

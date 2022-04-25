@@ -30,14 +30,11 @@ export const Introduction = (props) => {
                   src="/img/school/clock.svg"
                 />
               </span>
-              <span className={styles.counter}>{props.time}</span>
-              <span>
-                <img
-                  className={styles.materialIcons}
-                  src="/img/school/level.svg"
-                />
-              </span>
-              <span className={styles.lastCounter}>{props.level}</span>
+              <span className={styles.lastCounter}>{props.time}</span>
+            </div>
+            <div className={`${styles.difficultyContainer}`}>
+              <span className={`${styles.difficulty} ${props.level}`}></span>
+              <span>{props.level}</span>
             </div>
           </Grid>
         </Grid>
@@ -48,7 +45,7 @@ export const Introduction = (props) => {
             <Chip
               key={index}
               label={element}
-              className={styles.chip}
+              className={styles.chipCustom}
               size="small"
             />
           ))}
@@ -75,7 +72,7 @@ export const Introduction = (props) => {
       </Paper>
       <Grid container mt={3}>
         <Grid item xs={12}>
-          <Requirement title="Summary" color="#FFF9E6" list={props.summary} />
+          <Requirement title="Summary" color="#FFFFFF" list={props.summary} />
         </Grid>
       </Grid>
     </div>

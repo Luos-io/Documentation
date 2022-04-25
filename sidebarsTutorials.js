@@ -25,6 +25,11 @@ module.exports = {
                             label: 'Part 3: Unleash your code',
                             id: 'get-started/get-started3',
                         },
+                        {
+                            type: 'doc',
+                            label: 'Part 4: connect to a web app',
+                            id: 'get-started/get-started4',
+                        },
                     ],
                 },
                 {
