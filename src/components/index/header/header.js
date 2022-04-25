@@ -4,13 +4,14 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Writer from '@site/src/components/writer';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Header = (props) => {
   return (
     <div className={styles.container}>
       {' '}
       <Grid container>
-        <Grid item md={9} className={styles.left}>
+        <Grid item md={7} className={styles.left}>
           <Writer
             textStyle={{
               color: '#BD99FF',
@@ -45,11 +46,43 @@ const Header = (props) => {
             </Button>
           </div>
         </Grid>
-        <Grid item md={3}></Grid>
+        <Grid item md={5}></Grid>
       </Grid>
       <Grid container>
         <Grid item md={6}></Grid>
-        <Grid item md={6} className={styles.right}></Grid>
+        <Grid
+          item
+          md={6}
+          mt={-10}
+          style={{ zIndex: '9', borderBottom: '15px solid #81c8be' }}
+        >
+          <div className={styles.head}>
+            {' '}
+            <img
+              src="img/index/header/buttons.svg"
+              style={{ padding: '15px' }}
+            />
+          </div>
+          <Grid container>
+            <Grid item md={1} className={styles.docs}>
+              <img src="img/index/header/docs.svg" />
+              <img src="img/index/header/zoom.svg" />
+            </Grid>
+            <Grid item md={2} className={styles.video}>
+              <span>
+                <KeyboardArrowDownIcon className={styles.cardIcons} /> Video
+              </span>
+              <div className={styles.engine}>What is Luos Engine?</div>
+            </Grid>
+            <Grid item md={9} className={styles.player}>
+              <iframe
+                className="player_iframe"
+                src="https://www.youtube.com/embed/ujh0xNE3TZ8?feature=oembed"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              ></iframe>
+            </Grid>
+          </Grid>
+        </Grid>
       </Grid>
     </div>
   );
