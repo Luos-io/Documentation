@@ -1,0 +1,112 @@
+{
+  "title": "Tutorials",
+  "introText": "Here you can find all of our trainings and tutorials.",
+  "filters": {
+    "toc": [
+      { "id": 1, "label": "Less than 1 hours", "duration": 60 },
+      { "id": 2, "label": "Less than 3 hours", "duration": 180 },
+      { "id": 3, "label": "Less than 6 hours", "duration": 360 },
+      { "id": 4, "label": "More than 6 hours", "duration": 361 }
+    ],
+    "hardware": ["arduino", "l0", "nucleo"],
+    "category": ["Tutorials", "Trainings", "Codelab", "Use Case"]
+  },
+  "tuto": [
+    {
+      "title": "Get Started",
+      "id": "get-started",
+      "category": "Trainings",
+      "toc": 60,
+      "level": 1,
+      "img": "Get_Started_Luos",
+      "desc": "The Get started allows you to build, flash, run, and control your very first Luos project.",
+      "tags": ["Board", "MCU", "Service", "Network", "Distributed system"],
+      "link": "/tutorials/get-started/",
+      "author": "nicoR"
+    },
+    {
+      "title": "Your First Service",
+      "id": "your-first-service",
+      "category": "Trainings",
+      "toc": 60,
+      "level": 2,
+      "img": "Your_first_service_Luos",
+      "desc": "You just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
+      "tags": ["Service", "Package", "Handler", "Gate", "Pipe"],
+      "link": "/tutorials/your-first-service/",
+      "author": "thomas"
+    },
+    {
+      "title": "Your First Message",
+      "id": "your-first-message",
+      "category": "Trainings",
+      "toc": 60,
+      "level": 2,
+      "img": "Your_first_message_Luos",
+      "desc": "Luos aim to exchange information between services by sending messages. In this tutorial we will learn the message structure and how to send it to another services.",
+      "tags": ["Luos Message", "Service", "Polling", "Message Handler"],
+      "link": "/tutorials/your-first-message/",
+      "author": "nicoC"
+    },
+    {
+      "title": "Your First Topology detection",
+      "id": "your-first-detection",
+      "category": "Trainings",
+      "toc": 60,
+      "level": 3,
+      "img": "Your_First_Topology_detection_Luos",
+      "desc": "Since the beginning of this training, we discover how to create services, deal with messages and control them using Pyluos. But we never create any embedded application service using other services.",
+      "tags": ["Service", "Topology", "Detection", "Application"],
+      "link": "/tutorials/your-first-detection/",
+      "author": "viktoria"
+    },
+    {
+      "title": "Luos with Arduino IDE",
+      "id": "arduino",
+      "category": "Tutorials",
+      "toc": 30,
+      "level": 2,
+      "img": "Luos_and_Arduino",
+      "desc": "In this tutorial, you will how to set up a Luos-Arduino project on Arduino IDE.",
+      "tags": ["Board", "MCU", "Service", "Network", "Distributed System"],
+      "link": "/tutorials/arduino/intro",
+      "author": "nicoR"
+    },
+    {
+      "title": "Bootloader",
+      "id": "bootloader",
+      "category": "Tutorials",
+      "toc": 30,
+      "level": 2,
+      "img": "Bootloader_Luos",
+      "desc": "In this tutorial, you will learn to use the bootloader feature offered by Luos technology.",
+      "tags": ["Board", "MCU", "Service", "Network", "Distributed System"],
+      "link": "/tutorials/bootloader/intro",
+      "author": "thomas"
+    },
+    {
+      "title": "How to use Luos with FreeRTOS",
+      "id": "freertos",
+      "category": "Tutorials",
+      "toc": 30,
+      "level": 2,
+      "img": "Luos_and_FreeRTOS",
+      "desc": "If you're used to develop your embedded system with FreeRTOS, you can leverage Luos features without changing the way you design your system. Indeed, Luos fits well with FreeRTOS and this tutorial aims to help you setup your project.",
+      "tags": ["RTOS", "Distributed System"],
+      "link": "/tutorials/freertos/intro",
+      "author": "nicoC"
+    },
+    {
+      "title": "Develop a connected bike alarm",
+      "id": "bike-alarm",
+      "category": "Tutorials",
+      "toc": 120,
+      "level": 3,
+      "img": "Bike_Alarm",
+      "desc": "In this tutorial series I’m going to show you how to make your own Luos app using a fully modular bike alarm as example.",
+      "tags": ["Board", "Application", "Detection", "Product", "Service", "Network", "Distributed System"],
+      "link": "/tutorials/bike-alarm",
+      "author": "nicoR"
+    }
+  ]
+}

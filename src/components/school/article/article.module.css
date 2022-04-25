@@ -1,0 +1,179 @@
+.introContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+html[data-theme='dark'] .introContainer {
+  background-color: #323334;
+  border: 0.5px solid #323334;
+  color: white !important;
+}
+
+html[data-theme='dark'] .chip {
+  color: white !important;
+  border: 1px solid #BD99FF;
+}
+
+html[data-theme='dark'] .listItem p {
+  color: white !important;
+}
+
+.title {
+  font-size: 26px !important;
+  font-family: 'Roboto Mono', sans-serif;
+  margin-bottom: 15px !important;
+}
+
+.navigation {
+  padding-top: 25px;
+  font-family: 'Roboto Mono', sans-serif;
+}
+@media screen and (min-width: 900px) {
+  .navigation {
+    float: right;
+  }
+}
+
+.navigation .counter {
+  font-size: 13px;
+  line-height: 21px;
+  vertical-align: top;
+  padding: 0px 7px 2px 0px;
+  border-right: 1px solid black;
+}
+
+.navigation .lastCounter {
+  font-size: 13px;
+  line-height: 21px;
+  vertical-align: top;
+  padding: 0px 7px 2px 0px;
+}
+
+.navigation span {
+  padding-bottom: 0px;
+  display: inline-block;
+}
+.navigation .materialIcons {
+  font-size: 21px;
+  vertical-align: top;
+  padding: 2px 7px;
+}
+
+.navigation .categoryIcons {
+  font-size: 21px;
+  vertical-align: top;
+  padding: 0px 7px;
+}
+
+.subtitle {
+  font-size: 20px !important;
+  font-family: 'Roboto Mono', sans-serif;
+  margin-bottom: 25px !important;
+}
+
+.requirement {
+  width: 100%;
+  padding: 20px;
+  border-left: 3px solid #BD99FF;
+  min-height: 185px;
+  margin-bottom: 10px;
+}
+
+html[data-theme='dark'] .requirement {
+  background-color: #323334 !important;
+}
+
+.titleRequirement {
+  font-size: 18px !important;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.separator {
+  border: none;
+  border-top: 2px solid #BD99FF;
+  color: #333;
+  overflow: visible;
+  margin: 0px;
+}
+
+html[data-theme='light'] .separator {
+  border-top: 2px solid #BD99FF;
+}
+
+html[data-theme='light'] .requirement {
+  border-left: 3px solid #BD99FF;
+}
+
+.requirement a {
+  padding: 0px 16px !important;
+}
+
+.showMoreBtn {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  margin-bottom: -20px !important;
+  width: 100%;
+}
+
+.showMoreBtn:hover {
+  background: none !important;
+}
+
+.difficultyContainer {
+  background: #F5F5F5;
+  width: 150px;
+  margin: 15px 0px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-family: 'Roboto Mono', sans-serif;
+  text-transform: capitalize;
+  float: right;
+}
+
+html[data-theme='dark'] .difficultyContainer{
+  background: #565758;
+}
+
+@media screen and (max-width: 800px) {
+  .difficultyContainer {
+    float: left;
+  }
+}
+
+.difficultyContainer span {
+  font-size: 16px !important;
+}
+
+.difficulty {
+  height: 0.75rem;
+  width: 0.25rem;
+  display: inline-block;
+  margin-right: 1.25rem;
+  background: #F5F5F5;
+  box-shadow: 6px 0 0 #F5F5F5, 8px 0 0 #F5F5F5;
+}
+
+html[data-theme='dark'] .difficulty{
+  background: #565758;
+  box-shadow: 6px 0 0 #565758, 8px 0 0 #323334;
+}
+
+.levelTxt {
+  padding-right: 5px;
+  font-size: 14px !important;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.chipCustom {
+  border-radius: 4px !important;
+  padding: 15px 0px !important;
+  background-color: #eae9ee !important;
+}
+
+.expandBtn {
+  color: #BD99FF;
+}
+html[data-theme='light'] .expandBtn {
+  color: #BD99FF;
+}

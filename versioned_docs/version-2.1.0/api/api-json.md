@@ -20,7 +20,7 @@ Before using your device through JSON, you have to be connected to the communica
 Then you can start the gate by sending:
 
 ```json
-{"detection": {}}\r
+{"detection": {}}\n
 ```
 
 This command asks the gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
@@ -289,7 +289,7 @@ Here is an example of a C function that can be implemented in order to send comm
 
 ```c
 def sendCmd(s, cmd, sleep_time=0.5):
-    cmd = cmd + '\r'
+    cmd = cmd + '\n'
     print(cmd)
     s.write(cmd.encode())
     time.sleep(sleep_time)

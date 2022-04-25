@@ -1,0 +1,34 @@
+{
+  "get-started": {
+    "content": {
+      "1": {
+        "label": "Get started Repository",
+        "link": "https://github.com/Luos-io/Get_started"
+      }
+    }
+  },
+  "your-first-service": {
+    "content": {
+      "1": {
+        "label": "Your first service Repository",
+        "link": "https://github.com/Luos-io/Training/tree/main/1_First_Service"
+      }
+    }
+  },
+  "your-first-message": {
+    "content": {
+      "1": {
+        "label": "Your first message Repository",
+        "link": "https://github.com/Luos-io/Training/tree/main/2_First-Message"
+      }
+    }
+  },
+  "your-first-detection": {
+    "content": {
+      "1": {
+        "label": "Your first detection Repository",
+        "link": "https://github.com/Luos-io/Training/tree/main/3_First_Detection"
+      }
+    }
+  }
+}

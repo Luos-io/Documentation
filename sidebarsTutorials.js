@@ -3,47 +3,40 @@ module.exports = {
     {
       type: 'category',
       label: 'Tutorials',
+      link: { type: 'doc', id: 'tutorials' },
       items: [
         {
-          type: 'doc',
-          label: 'Tutorials',
-          id: 'tutorials',
-        },
-        {
           type: 'category',
-          label: 'Luos and tools',
+          label: 'Get Started',
+          link: { type: 'doc', id: 'get-started/get-started' },
           items: [
             {
               type: 'doc',
-              label: 'List',
-              id: 'luos-and-tools/list',
+              label: 'Part 1: set up your project',
+              id: 'get-started/get-started1',
             },
             {
               type: 'doc',
-              label: 'Bootloader',
-              id: 'luos-and-tools/bootloader',
+              label: 'Part 2: take the control',
+              id: 'get-started/get-started2',
             },
             {
               type: 'doc',
-              label: 'Use Luos with Arduino IDE',
-              id: 'luos-and-tools/arduino',
+              label: 'Part 3: unleash your code',
+              id: 'get-started/get-started3',
             },
             {
               type: 'doc',
-              label: 'FreeRTOS',
-              id: 'luos-and-tools/freertos',
+              label: 'Part 4: connect to a web app',
+              id: 'get-started/get-started4',
             },
           ],
         },
         {
           type: 'category',
           label: 'Your first service',
+          link: { type: 'doc', id: 'your-first-service/your-first-service' },
           items: [
-            {
-              type: 'doc',
-              label: 'Your first service',
-              id: 'your-first-service/your-first-service',
-            },
             {
               type: 'doc',
               label: 'Luos service',
@@ -59,12 +52,8 @@ module.exports = {
         {
           type: 'category',
           label: 'Your first message',
+          link: { type: 'doc', id: 'your-first-message/your-first-message' },
           items: [
-            {
-              type: 'doc',
-              label: 'Your first message',
-              id: 'your-first-message/your-first-message',
-            },
             {
               type: 'doc',
               label: 'Receiving Message',
@@ -80,12 +69,11 @@ module.exports = {
         {
           type: 'category',
           label: 'Your First Topology detection',
+          link: {
+            type: 'doc',
+            id: 'your-first-detection/your-first-detection',
+          },
           items: [
-            {
-              type: 'doc',
-              label: 'Your First Topology detection',
-              id: 'your-first-detection/your-first-detection',
-            },
             {
               type: 'doc',
               label: 'The topology of your system',
@@ -105,13 +93,48 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Luos integration',
+          label: 'Arduino',
+          link: { type: 'doc', id: 'arduino/intro' },
           items: [
             {
               type: 'doc',
-              label: 'List',
-              id: 'luos-integration/list',
+              label: 'Part 1: use Luos with Arduino IDE',
+              id: 'arduino/arduino',
             },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'FreeRTos',
+          link: { type: 'doc', id: 'freertos/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: use Luos with FreeRTos',
+              id: 'freertos/freertos',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Bootloader',
+          link: { type: 'doc', id: 'bootloader/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: use Luos Bootloader',
+              id: 'bootloader/bootloader',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Luos integration',
+          link: {
+            type: 'doc',
+            id: 'luos-integration/list',
+          },
+          items: [
             {
               type: 'doc',
               label: 'Install ROS 2',
@@ -126,6 +149,42 @@ module.exports = {
               type: 'doc',
               label: 'ROS 1 retro-compatibility with Luos',
               id: 'luos-integration/ros1-retrocompatibility',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Develop a connected bike alarm',
+          link: {
+            type: 'doc',
+            id: 'bike-alarm/bike-alarm',
+          },
+          items: [
+            {
+              type: 'doc',
+              label: 'Part 1: make a basic alarm',
+              id: 'bike-alarm/basic-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Part 2: make our alarm adaptable and hot-plug-gable',
+              id: 'bike-alarm/adaptable-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Part 3: add another app controlling the alarm',
+              id: 'bike-alarm/control-alarm',
+            },
+            {
+              type: 'doc',
+              label :
+                  'Part 4: make our alarm evolve using a truck horn and more',
+              id: 'bike-alarm/evolve-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Part 5: connect our system to the cloud',
+              id: 'bike-alarm/cloud-alarm',
             },
           ],
         },

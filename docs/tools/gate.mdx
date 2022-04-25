@@ -8,13 +8,13 @@ import Image from "@site/src/components/Images.js";
 
 # Gate
 
-The gate is a major tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([JSON] most of the time) and to stream and receive those formated informations into any kind of communication way such as serial interface, wifi, bluetooth, Lora, ...
+The Gate is a major tool of the Luos ecosystem. It is allowing you to translate any Luos architecture into a more convenient format for standard software ([JSON] most of the time) and to stream and receive this formatted information into any kind of communication way such as serial interface, WiFi, Bluetooth, Lora, ...
 
-You can use it to take control of any embedded service with [any languages](/docs/api/list) on any machine. For example we use it in [Pyluos](/docs/tools/pyluos) or [ROS](/docs/tools/ros)!
+You can use it to take control of any embedded service with [any languages](/docs/api/list) on any machine. For example, we use it in [Pyluos](/docs/tools/pyluos) or [ROS](/docs/tools/ros).
 
-Gate is a simple embedded [App service](../luos-technology/services/service-api#apps-guidelines), so it can work on any MCU running Luos without any modification.
+The Gate is a simple embedded [app service](../luos-technology/services/service-api#apps-guidelines), so it can work on any MCU running Luos without any modification.
 
-The gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <Tooltip def={customFields.node_def}>node</Tooltip> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.)
+The gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <Tooltip def={customFields.node_def}>node</Tooltip> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.).
 
 ## Default Gate Process
 
@@ -33,9 +33,10 @@ The gate service refreshes sensors informations as fast as it can, so that can b
 
 The gate and the pipe are two separate services, they can be put on the same node or on separate node.
 
+
 ## A Gate and a Pipe on the same node
 
-In that configuration you put 2 services in the node like below.
+In that configuration, you put two services in the node as shown below:
 
 ```c
 #include "luos_engine.h"
@@ -61,7 +62,7 @@ int main(void)
   <Image src="/img/gate_pipe.svg" darkSrc="/img/gate_pipe_dark.svg" />
 </div>
 
-In that configuration formated messages don't pass through the Luos network and stay in localhost.
+In that configuration formatted messages don't pass through the Luos network and stay in *localhost*.
 
 ## A Gate and a Pipe on separate node
 
@@ -76,16 +77,17 @@ When the gate and the pipe are on separate nodes, formated messages transit into
 
 ## The gate configurations
 
-The default process described above can be changed using different configurations that you can use on [your node_config.h](/docs/luos-technology/basics/orga#configuration).
+The default process described above can be changed using different configurations that you can use in [the file *node_config.h*](/docs/luos-technology/basics/orga#configuration).
 
-You could need to change it if you have Apps on you Luos embedded system.
+You could need to change it if you have apps on your Luos embedded system.
 
 |   Parameters   | Defaults value |                            Description                             |
 | :------------: | :------------: | :----------------------------------------------------------------: |
 | GATE_BUFF_SIZE |      1024      |                 Maximum size of 1 formatted Data.                  |
-|  GATE_POLLING  |  NOT DEFINED   | No autorefresh always ask data (more intensive to Luos bandwidth.) |
-|  NODETECTION   |  NOT DEFINED   |               Gate do not make detection a power up                |
+|  GATE_POLLING  |  NOT DEFINED   | No auto-refresh, always ask for data (more intensive to Luos bandwidth). |
+|  NODETECTION   |  NOT DEFINED   |               Gate does not make detection at power up.                |
 
-If you have an App service on your device managing detections you should define **NODETECTION** avoiding useless detection from the gate at boot.
+If you have an app service on your device managing detections you should define **NODETECTION** avoiding useless detection from the gate at boot.
 
-If you have an App service on your device using auto-update you should define **GATE_POLLING** avoiding the gate to take the lead on the services your App is using.
+If you have an app service on your device using auto-update you should define **GATE_POLLING** avoiding the gate to take the lead on the services your App is using.
+

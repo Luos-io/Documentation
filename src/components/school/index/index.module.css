@@ -1,0 +1,140 @@
+.introContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+html[data-theme='dark'] .introContainer {
+  background-color: #323334;
+  border: 0.5px solid #323334;
+  color: white;
+}
+
+html[data-theme='dark'] .select {
+  color: white !important;
+}
+
+html[data-theme='dark'] .lvlBtn button {
+  color: #c4c4c4;
+}
+
+.stats {
+  margin-top: 10px;
+  display: block;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 13px;
+  float: right;
+}
+
+.introText {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.filterBtn select {
+  text-indent: 5px;
+}
+
+.lvlBtn {
+  margin-left: 6px;
+  margin-top: 10px;
+  display: block;
+  float: right;
+}
+
+.lvlBtn button {
+  border-color: #c4c4c4;
+  font-size: 13px;
+  color: black;
+  height: 40px;
+}
+
+.cardContainer {
+  margin-top: 20px !important;
+}
+
+.card {
+  padding: 10px;
+  min-height: 450px;
+}
+
+html[data-theme='dark'] .card {
+  background-color: #323334;
+  border: 0.5px solid #323334;
+  color: white;
+}
+
+.cardTitle {
+  font-size: 20px !important;
+  margin-bottom: 10px;
+}
+
+.cardIcons {
+  float: left !important;
+  width: 24px;
+  margin-top: 6px;
+  padding-right: 5px;
+}
+
+.cardDesc {
+  font-size: 12px !important;
+  line-height: 18px;
+  margin: 15px 0px;
+}
+
+.cardTag span {
+  font-size: 12px;
+  line-height: 15px !important;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.difficultyContainer {
+  background: #F5F5F5;
+  width: 150px;
+  margin: 15px 0px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-family: 'Roboto Mono', sans-serif;
+  text-transform: capitalize;
+  float: right;
+}
+
+html[data-theme='dark'] .difficultyContainer{
+  background: #565758;
+}
+
+.difficultyContainer span {
+  font-size: 16px !important;
+}
+
+.difficulty {
+  height: 0.75rem;
+  width: 0.25rem;
+  display: inline-block;
+  margin-right: 1.25rem;
+  background: #F5F5F5;
+  box-shadow: 6px 0 0 #F5F5F5, 8px 0 0 #F5F5F5;
+}
+
+html[data-theme='dark'] .difficulty{
+  background: #565758;
+  box-shadow: 6px 0 0 #565758, 8px 0 0 #323334;
+}
+
+.levelTxt {
+  padding-right: 5px;
+  font-size: 14px !important;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.tag {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.link:hover .cardTitle {
+  text-decoration: underline;
+}
+
+.link:hover .cardDesc {
+  text-decoration: underline;
+}

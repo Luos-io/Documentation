@@ -8,14 +8,6 @@ import TabItem from '@theme/TabItem';
 
 # Part 2: Create a Package
 
-# Summary
-
-1. How to make your services easy to move and share
-2. How to create a package
-3. Put the led service into your package
-4. Test your new package
-5. Exercise
-
 ## 1. How to make your services easy to move and share
 
 If we want to be able to easily move our led service from one project to another, it’s really more convenient to have something similar to the other services we have on the project (Pipe, Gate, Blinker) to prevent us from copying and pasting multiple pieces of code.
@@ -31,13 +23,19 @@ Packages also allow you to have plenty of code in your project while keeping it 
 First, you will have to create a dedicated folder on your _lib_ folder and call it _Led_:
 
 <div align="center">
-  <Image src="/img/your-first-service/luos-service-2.png" darkSrc="/img/your-first-service/luos-service-2.png"/>
+  <Image
+    src="/img/your-first-service/luos-service-2.png"
+    darkSrc="/img/your-first-service/luos-service-2.png"
+  />
 </div>
 
 Then in this folder create 2 files, _led.h_ (header file) and _led.c_ (main file) :
 
 <div align="center">
-  <Image src="/img/your-first-service/luos-service-2-1.png" darkSrc="/img/your-first-service/luos-service-2-1.png"/>
+  <Image
+    src="/img/your-first-service/luos-service-2-1.png"
+    darkSrc="/img/your-first-service/luos-service-2-1.png"
+  />
 </div>
 
 In the header _led.h_ file, we declare functions allowing us to call the packages from the main file _led.c_. These functions are declared in the header files in order to give access to other functions in other files.
@@ -280,4 +278,4 @@ Then, use `pyluos-shell` to make a detection and you should see the following ro
 
 ## 5. Exercise
 
-Now try to move your led package on another board. Keep only the led package on this second board, and keep Pipe, Gate, and Blinker into the first one. Then wire a OneWire network as you learned in [Part 3 in the _Get started_](/get-started/get-started3).
+Now try to move your led package on another board. Keep only the led package on this second board, and keep Pipe, Gate, and Blinker into the first one. Then wire a OneWire network as you learned in [Part 3 in the _Get started_](/tutorials/get-started/get-started3).

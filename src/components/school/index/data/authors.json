@@ -1,0 +1,32 @@
+{
+  "nicoR": {
+    "name": "Nicolas Rabault",
+    "job": "CEO at Luos",
+    "desc": "Former roboticist, research engineer in real-time embedded systems and founder of Pollen Robotics; Nicolas Rabault is CEO of Luos. Nicolas dedicated his life to develop tools making embedded things work together and simplifying reusability.",
+    "img": "nicoR.png"
+  },
+  "thomas": {
+    "name": "Thomas Salembier",
+    "job": "CTO at Luos",
+    "desc": "Today CTO of Luos, Thomas as a background of Electronic and embedded software engineer with more than 12 years of experience in various fields of industry such as space, aeronautics, automotive and the medical.",
+    "img": "thomas.png"
+  },
+  "viktoria": {
+    "name": "Viktoria",
+    "job": "Engineer at Luos",
+    "desc": "Embedded system engineer at Luos, MSc in Embedded Real-Time Systems. Originated from Greece, Viktoria wishes to effectively advocate the presence of women in Engineering.",
+    "img": "viktoria.png"
+  },
+  "nicoC": {
+    "name": "Nicolas C.",
+    "job": "Embedded Engineer",
+    "desc": "Experienced engineer in embedded software and hardware engineering with strong skills in embedded Linux, digital and analog hardware and radiocommunication.",
+    "img": "nicoC.png"
+  },
+  "jerome": {
+    "name": "Jerome Galan",
+    "job": "QA at Luos",
+    "desc": "After various hard/soft developments and integrations in real-time embedded systems for robotics, railway and radio communications, Jérôme Galan now works on Luos Software Quality Assurance.",
+    "img": "jerome.png"
+  }
+}
