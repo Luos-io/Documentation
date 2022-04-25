@@ -11,7 +11,7 @@ const Anatomy = (props) => {
   return (
     <div className={styles.container}>
       <Grid container mt={3}>
-        <Grid item md={6} pl={7} pr={3}>
+        <Grid item md={6} lg={6} pl={7} pr={3}>
           <h1 className={`${styles.title} ${styles.underline}`}>
             Anatomy of Luos
           </h1>
@@ -69,16 +69,16 @@ const Anatomy = (props) => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} lg={6}>
           <img src="/img/index/anatomy-1.svg" />
         </Grid>
       </Grid>
 
       <Grid container mt={3}>
-        <Grid item md={6}>
+        <Grid item md={6} lg={6}>
           <img src="/img/index/anatomy-2.svg" />
         </Grid>
-        <Grid item md={6} pl={3} pr={7}>
+        <Grid item md={6} lg={6} pl={3} pr={7}>
           <List sx={{ width: '100%', marginTop: '50px' }}>
             <ListItem alignItems="flex-start" sx={{ marginBottom: '50px' }}>
               <ListItemAvatar>

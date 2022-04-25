@@ -19,7 +19,7 @@ const Powered = (props) => {
         </h1>
       </div>
       <Grid container mt={3} mb={5}>
-        <Grid item md={6} pl={7} pr={3}>
+        <Grid item md={6} lg={6} pl={7} pr={3}>
           <List sx={{ width: '100%' }}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
@@ -73,7 +73,7 @@ const Powered = (props) => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} lg={6}>
           <List sx={{ width: '100%' }}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
@@ -129,7 +129,7 @@ const Powered = (props) => {
         </Grid>
       </Grid>
       <Grid container>
-        <Grid item md={6} className={styles.nebula}>
+        <Grid item md={6} lg={6} className={styles.nebula}>
           <h1 className={`${styles.title} ${styles.underline}`}>
             Develop and scale your edge and embedded distributed software now
           </h1>
@@ -146,7 +146,7 @@ const Powered = (props) => {
             </Button>
           </div>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} lg={6}>
           <img src="/img/index/powered/vscode.svg" className={styles.vscode} />
         </Grid>
       </Grid>

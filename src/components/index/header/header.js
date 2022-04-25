@@ -11,7 +11,7 @@ const Header = (props) => {
     <div className={styles.container}>
       {' '}
       <Grid container>
-        <Grid item md={7} className={styles.left}>
+        <Grid item md={7} lg={7} className={styles.left}>
           <Writer
             textStyle={{
               color: '#BD99FF',
@@ -46,10 +46,10 @@ const Header = (props) => {
             </Button>
           </div>
         </Grid>
-        <Grid item md={5}></Grid>
+        <Grid item md={5} lg={5}></Grid>
       </Grid>
       <Grid container>
-        <Grid item md={6}></Grid>
+        <Grid item md={6} lg={6}></Grid>
         <Grid
           item
           md={6}
@@ -64,17 +64,17 @@ const Header = (props) => {
             />
           </div>
           <Grid container>
-            <Grid item md={1} className={styles.docs}>
+            <Grid item md={1} lg={1} className={styles.docs}>
               <img src="img/index/header/docs.svg" />
               <img src="img/index/header/zoom.svg" />
             </Grid>
-            <Grid item md={2} className={styles.video}>
+            <Grid item md={2} lg={2} className={styles.video}>
               <span>
                 <KeyboardArrowDownIcon className={styles.cardIcons} /> Video
               </span>
               <div className={styles.engine}>What is Luos Engine?</div>
             </Grid>
-            <Grid item md={9} className={styles.player}>
+            <Grid item md={9} lg={9} className={styles.player}>
               <iframe
                 className="player_iframe"
                 src="https://www.youtube.com/embed/ujh0xNE3TZ8?feature=oembed"

@@ -20,19 +20,19 @@ const Integration = (props) => {
   return (
     <div className={styles.container}>
       <Grid container spacing={3}>
-        <Grid item md={4}>
+        <Grid item md={4} lg={4}>
           {' '}
           <img src="img/index/left-lines.svg" className={styles.imgLeft} />
         </Grid>
-        <Grid item md={4}>
+        <Grid item md={4} lg={4}>
           <h1 className={`${styles.title} ${styles.underline}`}>
             Integrations
           </h1>
         </Grid>
       </Grid>
       <Grid container spacing={3} sx={{ padding: '30px' }}>
-        <Grid item md={2}></Grid>
-        <Grid item md={8}>
+        <Grid item md={2} lg={2}></Grid>
+        <Grid item md={8} lg={8}>
           <img src={`img/index/integration/${currentImage}.svg`} />
           <div className={styles.btnContainer}>
             <Button variant="contained" className={styles.pinkBtn}>
@@ -40,11 +40,11 @@ const Integration = (props) => {
             </Button>
           </div>
         </Grid>
-        <Grid item md={2}></Grid>
+        <Grid item md={2} lg={2}></Grid>
       </Grid>
       <Grid container spacing={3}>
-        <Grid item md={8}></Grid>
-        <Grid item md={4}>
+        <Grid item md={8} lg={8}></Grid>
+        <Grid item md={4} lg={4}>
           <img src="img/index/right-lines.svg" className={styles.imgRight} />
         </Grid>
       </Grid>
