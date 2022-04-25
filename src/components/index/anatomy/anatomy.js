@@ -70,16 +70,23 @@ const Anatomy = (props) => {
           </List>
         </Grid>
         <Grid item md={6} lg={6}>
-          <img src="/img/index/anatomy-1.svg" />
+          <img
+            src="/img/index/anatomy-1.svg"
+            style={{ float: 'right', width: '100%' }}
+          />
         </Grid>
       </Grid>
 
       <Grid container mt={3}>
         <Grid item md={6} lg={6}>
-          <img src="/img/index/anatomy-2.svg" />
+          <img src="/img/index/anatomy-2.svg" style={{ width: '100%' }} />
         </Grid>
         <Grid item md={6} lg={6} pl={3} pr={7}>
-          <List sx={{ width: '100%', marginTop: '50px' }}>
+          <List
+            sx={{ width: '100%', marginTop: '50px' }}
+            display="flex"
+            justifyContent="flex-end"
+          >
             <ListItem alignItems="flex-start" sx={{ marginBottom: '50px' }}>
               <ListItemAvatar>
                 <Avatar

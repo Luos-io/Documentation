@@ -45,5 +45,7 @@
 }
 
 .work {
-  margin-bottom: -50px !important;
+  display: block;
+  margin: 0 auto -50px !important;
+  width: 90%;
 }

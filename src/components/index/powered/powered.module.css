@@ -99,3 +99,9 @@
   margin-top: -40px;
   width: 100%;
 }
+
+@media screen and (min-width: 1441px) {
+  .vscode {
+    margin-top: -70px;
+  }
+}

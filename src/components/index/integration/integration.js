@@ -32,7 +32,7 @@ const Integration = (props) => {
       </Grid>
       <Grid container spacing={3} sx={{ padding: '30px' }}>
         <Grid item md={2} lg={2}></Grid>
-        <Grid item md={8} lg={8}>
+        <Grid item md={8} lg={8} style={{ textAlign: 'center' }}>
           <img src={`img/index/integration/${currentImage}.svg`} />
           <div className={styles.btnContainer}>
             <Button variant="contained" className={styles.pinkBtn}>

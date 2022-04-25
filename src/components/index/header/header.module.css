@@ -17,6 +17,13 @@
   height: 300px;
 }
 
+@media screen and (min-width: 1441px) {
+  .left {
+    padding-left: 100px;
+    padding-top: 80px;
+  }
+}
+
 .right {
   background-image: url('/static/img/index/header/vscode-right.svg');
   background-repeat: no-repeat;
@@ -91,6 +98,7 @@
 
 .player {
   border-right: 2px solid black;
+  background-color: #323334;
 }
 
 .docs {
