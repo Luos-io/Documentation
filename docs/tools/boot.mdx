@@ -192,7 +192,7 @@ int main(void)
 ```
 
 :::warning
-Luos engine will now run the bootloader application. Be careful not to initialize any package or services. Luos engine can only run the bootloader app in bootloader mode, and your package will not be executed.
+Luos engine will now run the bootloader application. Be careful not to initialize any package or service. Luos engine can only run the bootloader app in bootloader mode, and your package will not be executed.
 :::
 
 Now you have to adjust your linker settings: the bootloader has to reserve a portion of the flash, and the remaining memory will be dedicated to the Luos engine's applications. You can find the memory layout of the flash resumed in the following picture:
