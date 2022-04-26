@@ -7,14 +7,14 @@ You can find basic information about PID control here: <a href="https://medium.c
 
 Its type has access to all common capabilities.
 
-### services’s type settings:
+### services's type settings:
 
 > **Warning:** This service doesn't save any of the following parameters, they must be set each time your service reboots.
 
 Before using your Controller-motor service, you have to setup the resolution, motor reduction and eventually the wheel size, if you plan to use translation modes. To check the configuration, just make a complete turn on the motor shaft with your hand and check if the rotation position value is OK.
 
-Both PID’s values have to be set accordingly to the motor-reducer plugged to the board. Each different motor-reducer will have different PID’s values for position and speed control, and you have to define them by yourself.
-The default values `[0, 0, 0]` won’t have any effect on the motor, and must be changed if you plan to use any position or speed control mode.
+Both PID's values have to be set accordingly to the motor-reducer plugged to the board. Each different motor-reducer will have different PID's values for position and speed control, and you have to define them by yourself.
+The default values `[0, 0, 0]` won't have any effect on the motor, and must be changed if you plan to use any position or speed control mode.
 To setup your PID please refer to the example at the end of this page.
 
 > **Warning:** PID for position and speed must be set in your code as an initialization before starting to use your service with position or speed control.
