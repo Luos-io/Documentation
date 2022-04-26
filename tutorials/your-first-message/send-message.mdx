@@ -20,7 +20,7 @@ There are two ways to receive a message, but what about sending one?
   />
 </div>
 
-Don’t worry, we will see how to do it step by step.
+Don't worry, we will see how to do it step by step.
 
 ## 2. Set up your hardware
 
@@ -71,7 +71,7 @@ Now everything is ready to send back the button's value in a message.
 
 ## 3. Send back the button's value
 
-> By learning how to catch messages from the previous page of this tutorial, we already know that they contain some interesting information allowing you to understand the meaning of the transmitted data.
+By learning how to catch messages from the previous page of this tutorial, we already know that they contain some interesting information allowing you to understand the meaning of the transmitted data.
 
 Any message contains two main parts:
 
@@ -98,23 +98,22 @@ In this button service, we want to reply to a request coming from another servic
 
 To do that, we will need to configure the following information:
 
-- **target_mode** as **IDACK** ⇒ because we target only one service and want to be sure it gets the message
+- `target_mode` as `IDACK` ⇒ because we target only one service and want to be sure it gets the message
 
-- **target** as the requested message **source** ⇒ because we want to target the service sending the request.
+- `target` as the requested source message ⇒ because we want to target the service sending the request.
 
 ### Message data meaning
 
 To send the message, we also need to explain the meaning of the data.
 
-In this button service, we want to send an **IO_STATE**, so data **size** will be a byte because it just needs to send 1 or 0.
-
+In this button service, we want to send an `IO_STATE`, so data `size` will be a byte because it just needs to send `1` or `0`.
 To do that, we will need to configure the following information:
 
-- **cmd** as **IO_STATE** ⇒ to define the type of transmited data
+- `cmd` as `IO_STATE` ⇒ to define the type of transmited data
 
-- **size** as **1** ⇒ because only 1 byte is sent
+- `size` as `1` ⇒ because only 1 byte is sent
 
-- **data** as the button's state ⇒ this will be the actual data.
+- `data` as the button's state ⇒ this will be the actual data.
 
 :::info
 On the message request filtering you previously made, we did not look at the message size. This is because a request does not need any data. most of the time, a message where `size = 0` is equivalent to a “get” command. If `size != 0`, it means that you want to set something by sending a value.
@@ -136,7 +135,7 @@ The only reason why this function sends back a **FAILED** status is because ther
 
 ### Write it in the code
 
-Let’s fill in the information of the structure:
+Let's fill in the information of the structure:
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">
@@ -192,7 +191,7 @@ void Button_Loop(void)
 </Tabs>
 
 The **STATE** button service now returns an **IO_STATE** value when a service asks for it!
-Let’s see if our service reacts as expected.
+Let's see if our service reacts as expected.
 
 <div align="center">
   <img
@@ -252,9 +251,9 @@ Out[2]: True
 
 ## 6. Exercise: control a LED depending on your button's state
 
-Let’s try a small exercise:
+Let's try a small exercise:
 
-> Make a LED turn on when the button's state is **TRUE** and off when it’s **FALSE**.
+> Make a LED turn on when the button's state is **TRUE** and off when it's **FALSE**.
 
 1. Add the led package created on the [previous tutorial](/tutorials/your-first-service) on your board.
 2. Compile and flash your board again.

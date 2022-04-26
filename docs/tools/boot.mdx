@@ -8,7 +8,7 @@ import Image from "@site/src/components/Images.js";
 
 The bootloader feature allows updating the firmware of any node in a Luos network. It's useful for quickly upgrading your application software without using specific programming tools and without physically accessing your boards.
 
-This page first explains how the bootloader works from a high-level perspective, then how to use it on already supported targets (STM32 L4/F4/G4/F0, ATSAMD21).
+This page first explains how the bootloader works from a high-level perspective, then how to use it on already supported targets (STM32 L4/F4/G4/F0, ATSAMD21, ...).
 
 A third section details the requested changes to make a Luos application compatible with this bootloader.
 
@@ -46,6 +46,10 @@ Let's assume that you already have a network with a bootloader flashed in each n
 pyluos-bootloader detect <SERIAL_PORT>
 ```
 
+:::info
+If no SERIAL_PORT is passed, pyluos-bootloader will try to find an available gate in your system by itself.
+:::
+
 In your case, you use COM3:
 
 ```c
@@ -63,7 +67,7 @@ We can see two nodes in our network:
 - Node 1 containing the gate app
 - Node 2 containing one service
 
-Your goal is to update the **button_old** service. To do that, you need to flash a new firmware in **node 2** (we suppose it is called **firmware_new.bin** and that it has been saved in a known location on the user computer). You can then call the following command:
+Your goal is to update the **button_old** service. To do that, you need to flash a new firmware in **node 2** (we suppose it is called _firmware_new.bin_ and that it has been saved in a known location on the user computer). You can then call the following command:
 
 ```c
 pyluos-bootloader flash <SERIAL_PORT> -t <target1 target2 ...> -b <file.bin>
@@ -76,7 +80,7 @@ pyluos-bootloader flash COM3 -t 2 -b firmware_new.bin
 ```
 
 :::caution
-In the example above, `2` is the node's ID of _node 2_, not to be confused with the service _Pipe_mod_'s ID. The target must always be a node.
+In the example above, `2` is the node's ID of _node 2_, not to be confused with the service _Pipe_mod_'s ID. You can't flash just one service, only the entire node. So the target must always be a node.
 :::
 
 Let's type this command, then you should see the following text on your screen:
@@ -139,47 +143,60 @@ pyluos-bootloader flash COM3 -b firmware_new.bin
 ```
 
 :::tip
-No matter what problem you encounter during the loading process, you have to power-off / power-on your network to see all the nodes running in bootloader mode. Once you get there, you have to use **pyluos-bootloader detect** / **flash** tools to load applications and make it work fine.
+No matter what problem you encounter during the loading process, you have to power-off / power-on your network to see all the nodes running in bootloader mode. Once you get there, you have to use `pyluos-bootloader detect` / `flash` tools to load applications and make it work fine.
 :::
 
 ## How to add the bootloader feature in your project
 
 ### CLI tool
 
-The **pyluos-bootloader** CLI is included in pyluos since v2.0.0. So it's packed with the package when you install it with `pip`.
+The `pyluos-bootloader` CLI is included in pyluos since v2.0.0. So it's packed with the package when you install it with `pip`.
 
 ### Gate
 
-Since Luos v2.0.0, the gate application handles bootloader commands.
+Since Luos engine v2.0.0, the gate application handles bootloader commands.
 
-### Bootloader binary
+### Install a Bootloader in your node
 
-The bootloader runs in its own flash partition, which is completely isolated from the application. You have to flash it on your target before you can use the feature. Depending on your hardware, you can use an already available project or make your own bootloader:
+The bootloader runs in its own flash partition, which is completely isolated from the application. You have to flash it on your target before you can use the feature. Depending on your hardware, you can use an already available project or make your own bootloader.
 
-#### Luos already supports your target:
+#### Does Luos engine already support your target?
 
-The Luos bootloader is available for the following targets:
+The Luos engine's bootloader is available for the following targets:
 
 - STM32 F0 / F4 / G4 / L4 families
 - Microchip ATSAMD21J18
 
-Projects for each of these targets can be found in this repo: [https://github.com/ncros3/Luos_bootloader.git](https://github.com/ncros3/Luos_bootloader.git). You can clone this repo and use projects for your application, or use them as examples to build your own bootloader for your specific target.
+Projects for each of these targets can be found in the [Luos engine's example folder](https://github.com/Luos-io/luos_engine/tree/main/Examples/Projects). You can clone this repo and use projects for your application, or use them as examples to build your own bootloader for your specific target.
 
 :::info
-Examples are available for several IDEs: L4 / F4 / F0 uses platformIO, G4 uses SW4STM32 (an Eclipse-based IDE) and SAMD21 uses MPLAB.
+Examples are available for several IDEs: L4 / F4 / G4 / F0 uses platformIO, and SAMD21 uses MPLAB.
 :::
 
-#### Luos does not yet support your target:
+#### If Luos engine does not support your target yet
 
-First of all, you have to **enable the bootloader feature** in the Luos library. To do so, you have to add the **-D BOOTLOADER_CONFIG** parameter when you invoke your compiler. Then you have to run the library in your main() function as you would do for any project:
+If no project exists for your MCU, you will have to create your bootloader project.
+First of all, you have to **enable the bootloader feature** in Luos engine. To do so, you have to add the `-D BOOTLOADER_CONFIG` parameter when you invoke your compiler. Then you have to run the library in your `main()` function as you would do for any other project:
 
-<div align="center">
-  <Image src="/img/main_bootloader.png" />
-</div>
+```C
+#include "luos_engine.h"
 
-> **Warning**: Luos will now run the bootloader application. Be careful not to initialize any package with the **ADD_PACKAGE()** macro. Luos can only run the bootloader app in bootloader mode, and your package will not be executed.
+int main(void)
+{
+    Luos_Init();
+    while(1)
+    {
+        Luos_Loop();
+    }
+    return 0;
+}
+```
 
-Now you have to adjust your linker settings: your bootloader has to reserve a portion of the flash, and the remaining memory will be dedicated to the Luos application. You can find the memory layout of the flash resumed in the following picture:
+:::warning
+Luos engine will now run the bootloader application. Be careful not to initialize any package or service. Luos engine can only run the bootloader app in bootloader mode, and your package will not be executed.
+:::
+
+Now you have to adjust your linker settings: the bootloader has to reserve a portion of the flash, and the remaining memory will be dedicated to the Luos engine's applications. You can find the memory layout of the flash resumed in the following picture:
 
 <div align="center">
   <Image src="/img/memory_layout.svg" darkSrc="/img/memory_layout-dark.svg" />
@@ -199,7 +216,7 @@ As for the bootloader, you have to modify your linker file in the application if
   <Image src="/img/linker_app.png" />
 </div>
 
-You also have to set up the **VTOR** register to the APP_ADDRESS. This feature exists in most modern ARM CPUs and allows to jump to applications saved at any address in flash. On STM32L4, this register is set in **SystemInit()** function:
+You also have to set up the `VTOR` register to the APP_ADDRESS. This feature exists in most modern ARM CPUs and allows to jump to applications saved at any address in flash. On STM32L4, this register is set in `SystemInit()` function:
 
 ```c
 #define VECT_TAB_OFFSET  0xC800
@@ -213,7 +230,7 @@ void SystemInit(void)
 ```
 
 :::info
-You can find application examples in [https://github.com/ncros3/luos_bootloader_app.git](https://github.com/ncros3/luos_bootloader_app.git).
+You can find application examples in [the Luos engine's repository](https://github.com/Luos-io/luos_engine/tree/main/Examples/Projects).
 :::
 
 ### How to deal with no VTOR
@@ -239,7 +256,7 @@ Then, we initialize an empty vector table in this section:
 static volatile _RSVD uint32_t VectorTable[48];
 ```
 
-Now we copy the application vector table in RAM in the **main()** function:
+Now we copy the application vector table in RAM in the `main()` function:
 
 ```c
 for (i = 0; i < 48; i++)
