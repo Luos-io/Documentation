@@ -98,7 +98,7 @@ module.exports = {
                     items: [
                         {
                             type: 'doc',
-                            label: 'Part 1: Use Luos with Arduino IDE',
+                            label: 'Use Luos with Arduino IDE',
                             id: 'arduino/arduino',
                         },
                     ],
@@ -110,7 +110,7 @@ module.exports = {
                     items: [
                         {
                             type: 'doc',
-                            label: 'Part 1: Use Luos with an RTOS',
+                            label: 'Use Luos with an RTOS',
                             id: 'freertos/freertos',
                         },
                     ],
@@ -122,7 +122,7 @@ module.exports = {
                     items: [
                         {
                             type: 'doc',
-                            label: 'Part 1: Use Luos Bootloader',
+                            label: 'Use Luos Bootloader',
                             id: 'bootloader/bootloader',
                         },
                     ],

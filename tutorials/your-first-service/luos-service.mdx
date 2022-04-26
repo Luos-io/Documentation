@@ -32,7 +32,7 @@ Let us demystify it by helping you to make first service code!
 
 Clone or download the [training repository](https://github.com/Luos-io/Training).
 
-In PlatformIO IDE, open the folder corresponding to your board in `Training/1_First_Service/Work_base` from the repository you just cloned or downloaded, and connect the board to your computer with a USB cable.
+In PlatformIO IDE, open the folder corresponding to your board in _Training/1_First_Service/Work_base_ from the repository you just cloned or downloaded, and connect the board to your computer with a USB cable.
 
 1. Check that the right environment is selected, then compile and upload the project to the board (right arrow button in the bottom left of the window).
 2. Using a terminal and the `pyluos-shell` command, you should see:
@@ -69,7 +69,7 @@ In the case of a simple LED, your service will have one input with the state of 
   />
 </div>
 
-In your service code, you will have to give the order to turn the LED on or off depending on the received IO state message. So you need a function to be called when another service sends a message, so that this function deals with the LED; this type of function is called a _callback_.
+In your service code, you will have to give the order to turn the LED on or off depending on the received IO state message. So you need a function to be called when another service sends a message, so that this function deals with the LED; this type of function is called a **callback**.
 
 You can now declare your LED callback functions at the beginning of the file main file located in the _/src/_ folder (we will see later how to deal with this function).
 
@@ -94,7 +94,7 @@ So that your service can be recognized by other services, you will need to expos
 
 - The service type, which defines the capabilities and the purpose of your service. You can find the list of all the [Luos types in this page](https://github.com/Luos-io/luos_engine/blob/master/inc/luos_list.h). Our new service fits with the **STATE_TYPE** (boolean 1 or 0).
 - The service alias, which is the default name of your service. Let's name our LED “**led**”.
-- The service revision, which is the firmware version of your service. Let's say our firmware has the version **1.0.0**; we have to make a _revision_t_ variable to send it.
+- The service revision, which is the firmware version of your service. Let's say our firmware has the version **1.0.0**; we have to make a `revision_t` variable to send it.
 
 Now that we have everything we need to create our service, we will begin by creating the LED service directly after the initialization of the other services, into the initialization of your code and using the `Luos_CreateService` function:
 
@@ -236,13 +236,13 @@ int main(void)
 
 As we mentioned previously, our LED service needs to react at the reception of an IO state message. To do that, we created earlier a callback function (**`Led_MsgHandler`**) called by Luos engine when another service sends a message. So to make the LED service work, we simply have to complete the `Led_MsgHandler` of our service (see below). This will allow the LED service to use the messages sent by the blinker service.
 
-There are two arguments in the callback function **`Led_MsgHandler`**:
+There are two arguments in the callback function `Led_MsgHandler`:
 
 - A service pointer (the LED service): We will not use it in this tutorial, but keep it in mind for later.
 
 - A message pointer (msg): This is the actual message you receive with all the information the other service wants to give you. You will be able to get the LED state from the data of this message.
 
-To control the LED depending on the message data, you can fill the content of the callback function `Led_MsgHandler` where you pasted it at the beginning of your main file (Arduino.ino or main.c)
+To control the LED depending on the message data, you can fill the content of the callback function `Led_MsgHandler` where you pasted it at the beginning of your main file (_Arduino.ino_ or _main.c_)
 
 <Tabs>
 <TabItem value="Arduino" label="Arduino">

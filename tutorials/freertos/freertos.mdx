@@ -27,12 +27,12 @@ Git clone https://github.com/Luos-io/luos_engine.git
 
 As a quick reminder, you will find in this project:
 
-- a **src/** folder containing a **main.c** whose main purpose is to call **services** and **Luos engine**'s initialization functions. This folder also contains the file _stm32f0xx_it.c_ in which we define interrupt handlers.
-- a **lib/** folder containing services source files.
+- a _src/_ folder containing a _main.c_ whose main purpose is to call services and Luos engine's initialization functions. This folder also contains the file _stm32f0xx_it.c_ in which we define interrupt handlers.
+- a _lib/_ folder containing services source files.
 
 ## 2. Use FreeRTOS in your project
 
-Open Visual Studio Code and open a **Led** project corresponding to your master board in **Luos_engine/Examples/Projects/YOUR_BOARD**.
+Open Visual Studio Code and open a **Led** project corresponding to your master board in _Luos_engine/Examples/Projects/YOUR_BOARD_.
 
 :::caution
 If you are not comfortable with the opening and compiling of a Luos engine project, please follow [the Luos Get started tutorial](../get-started) first.
@@ -64,7 +64,7 @@ You can find a ST version in [our FreeRTOS example](https://github.com/Luos-io/l
 
 ## 3. FreeRTOS configurations
 
-Working with Luos FreeRTOS doesn't require any specific configuration, except for one thing: you must configure the available options in the file _FreeRTOSConfig.h_. FreeRTOS needs to handle three interrupters handlers (PendSV, SVC and systick handlers), so you must not redefine these three handlers (For STM32 user they are in **stm32f0xx_it.c**).
+Working with Luos FreeRTOS doesn't require any specific configuration, except for one thing: you must configure the available options in the file _FreeRTOSConfig.h_. FreeRTOS needs to handle three interrupters handlers (PendSV, SVC and systick handlers), so you must not redefine these three handlers (For STM32 user they are in _stm32f0xx_it.c_).
 
 ```c
     #define vPortSVCHandler     SVC_Handler
@@ -76,18 +76,18 @@ Working with Luos FreeRTOS doesn't require any specific configuration, except fo
 If you want more information about the options displayed in _FreeRTOSConfig.h_, please check the [dedicated page](https://www.freertos.org/a00110.html).
 :::
 
-The only exception of this standard configuration is that Luos engine uses the systick value provided by the HAL of your ship (allowing Luos to work in a bare metal configuration). By default FreeRTOS will pre-empt this systick and manage it's own. To keep Luos working we have to provide this systick value to the HAL level
+The only exception of this standard configuration is that Luos engine uses the systick value provided by the HAL of your ship (allowing Luos to work in a bare metal configuration). By default FreeRTOS will pre-empt this systick and manage its own. To keep Luos working we have to provide this systick value to the HAL level
 
-You have 3 solutions to solve this:
+You have three solutions to solve this:
 
  - You write the systick IRQ handler by yourself increment the HAL systick then call the RTOS systick function. (We use this solution on our examples)
  - You can override the weak HAL systick function and use the RTOS systick instead of the HAL one.
  - You can use the [RTOS hook](https://www.freertos.org/a00016.html) option calling a callback at each systick allowing you to increment the HAL systick manualy.
 
-Now we have to call the kernel routines from our **main** function. We could directly use FreeRTOS functions, but ARM defined a standard API to interface with RTOS capabilities called [CMSIS_RTOS_V2](https://arm-software.github.io/CMSIS_5/RTOS2/html/rtos_api2.html) and we will use it.
+Now we have to call the kernel routines from our `main()` function. We could directly use FreeRTOS functions, but ARM defined a standard API to interface with RTOS capabilities called [CMSIS_RTOS_V2](https://arm-software.github.io/CMSIS_5/RTOS2/html/rtos_api2.html) and we will use it.
 
 In our main, we have to remove all the Luos and services functions, becaus e we will transform them into tasks.
-Then we can call the OS API in our **main.c** file:
+Then we can call the OS API in our _main.c_ file:
 
 ```c
     #include "cmsis_os.h"
@@ -104,20 +104,20 @@ Then we can call the OS API in our **main.c** file:
     }
 ```
 
-**osKernelInitialize()** sets some FreeRTOS internal variables and **osKernelStart()** launches the scheduler by calling **vTaskStartScheduler()**.
+`osKernelInitialize()` sets some FreeRTOS internal variables and `osKernelStart()` launches the scheduler by calling `vTaskStartScheduler()`.
 
 **Let's recall what we've done so far:**
 
-- We have used a Luos led example as a base project.
-- We imported FreeRTOS sources, configured them and started the kernel from the **main** function.
+- We have used a Luos LED example as a base project.
+- We imported FreeRTOS sources, configured them and started the kernel from the `main()` function.
 
-If you compile and load this code in the target, nothing will happen for a simple reason: we launched the scheduler but the kernel has nothing to schedule because we don't make a task running our led. Let's fix that by creating some tasks .
+If you compile and load this code in the target, nothing will happen for a simple reason: we launched the scheduler but the kernel has nothing to schedule because we don't make a task running our LED. Let's fix that by creating some tasks.
 
 ## 4. Create Luos tasks
 
-Because we based our code on a LED project, on the `lib` folder, you should have a led service ready to be used.
+Because we based our code on a LED project, on the _lib/_ folder, you should have a led service ready to be used.
 
-Lets create a new file called `freertos.c` on your `src` folder. We will use this file to creates some tasks for our led.
+Lets create a new file called _freertos.c_ on your _src/_ folder. We will use this file to creates some tasks for our LED.
 
 `freertos.c`:
 ```c
@@ -183,26 +183,26 @@ Lets create a new file called `freertos.c` on your `src` folder. We will use thi
     }
 ```
 
-First, we included files we need to call the RTOS and Luos engine APIs. Then we created 2 structures: **LuosTask_attributes** and **LedTask_attributes**. Those structures are used by RTOS to configure **heap** size and **priority** for each task.
+First, we included files we need to call the RTOS and Luos engine APIs. Then we created 2 structures: `LuosTask_attributes` and `LedTask_attributes`. Those structures are used by RTOS to configure **heap** size and **priority** for each task.
 
 Here we have 2 tasks:
 
-- Luos task: it's used to manage the messages passing between services and to orchestrate them.
-- Led task: it's used to drive a simple LED you can access from any other service.
+- Luos task: it is used to manage the messages passing between services and to orchestrate them.
+- Led task: it is used to drive a simple LED you can access from any other service.
 
-These tasks are initialized in **RTOS_Init()** with the **osThreadNew()** routine. Notice that we called **Luos_Init()** and **Led_Init()** just before creating threads allow Luos engine and the led service to be properly setup to run.
+These tasks are initialized in `RTOS_Init()` with the `osThreadNew()` routine. Notice that we called `Luos_Init()` and `Led_Init()` just before creating threads allow Luos engine and the led service to be properly setup to run.
 
-We've created 2 threads for 1 services because the first one is dedicated to handle **Luos engine**. The 2 threads have the _same priority_ and that's important because the scheduler will place them in the _same queue_, running one after the other.
+We've created 2 threads for 1 services because the first one is dedicated to handle Luos engine. The 2 threads have the _same priority_ and that's important because the scheduler will place them in the _same queue_, running one after the other.
 
 Of course you can create as many threads you want inside your service and deal with your code as you want.
 
-One last thing, in each _task_ routine, we call the service loop then we _yield_ to the next threads. Indeed, FreeRTOS scheduler can be called in preemptive or cooperative mode. The systick will call the scheduler each milliseconds, but this implies that you will switch from one thread to the other at this period. This can be way too slow for most applications and we can improve the reactivity of the system by calling **taskYield** after each service loop routine.
+One last thing, in each task routine, we call the service loop then we yield to the next threads. Indeed, FreeRTOS scheduler can be called in preemptive or cooperative mode. The systick will call the scheduler each milliseconds, but this implies that you will switch from one thread to the other at this period. This can be way too slow for most applications and we can improve the reactivity of the system by calling `taskYield` after each service loop routine.
 
 ## 5. Test your project
 
-To test your project you can add a Pipe and Gate packages (you can find [available packages on the `Gate_SerialCom` project corresponding to your board](https://github.com/Luos-io/luos_engine/tree/main/Examples/Projects)), add the code in the **lib/** folder and instanciate it by creating a new task in **freertos.c**.
+To test your project you can add a Pipe and Gate packages (you can find [available packages on the _Gate_SerialCom_ project corresponding to your board](https://github.com/Luos-io/luos_engine/tree/main/Examples/Projects)), add the code in the _lib/_ folder and instanciate it by creating a new task in _freertos.c_.
 
-Now you can build your project in VSCode and load it to your board. Once the board is flashed, you can use the `pyluos-shell` command on your computer to control your led through python.
+Now you can build your project in VSCode and load it to your board. Once the board is flashed, you can use the `pyluos-shell` command on your computer to control your LED through python.
 
 ## 6. Main advantages
 

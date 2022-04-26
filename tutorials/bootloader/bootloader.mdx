@@ -8,7 +8,7 @@ import Image from '@site/src/components/Images.js';
 
 ## 1. Acquire and set up your equipment
 
-To flash one or multiple boards using the Luos engine bootloader you need a master board that will manage the link between your computer and the Luos network. So the minimal setup you will need to have to use the bootloader is composed of two boards supported by Luos engine connected together with a Luos network. We will use one of these nodes as a "master" with a [gate](/docs/tools/gate) and the other will be able to be updated through the Luos network by hosting a bootloader.
+To flash one or multiple boards using the Luos engine's bootloader, you need a master board that will manage the link between your computer and the Luos network. So the minimal setup needed to use the bootloader is composed of two boards supported by Luos engine connected together with a Luos network. We will use one of these nodes as a "master" with a [gate](/docs/tools/gate) and the other will be able to be updated through the Luos network by hosting a bootloader.
 
 <div align="center">
   <Image
@@ -34,7 +34,7 @@ Git clone https://github.com/Luos-io/luos_engine.git
 
 ## 2. Load the master board with a gate program
 
-Open Visual Studio Code and open the **Gate_SerialCom** project corresponding to your master board in **Luos_engine/Examples/Projects/YOUR_BOARD**:
+Open VS Code and open the _Gate_SerialCom_ project corresponding to your master board in _Luos_engine/Examples/Projects/YOUR_BOARD_:
 
 <div align="center">
   <Image src="/img/tutorials/bootloader/Gate_project.png" />
@@ -52,7 +52,7 @@ Click on **Upload** on the bottom left corner of the IDE. Wait for the compilati
 If this step fails, check that you are properly connected to the USB port, or try to follow [the Luos Get started tutorial](../get-started).
 :::
 
-## 3. Detect gate node with the CLI
+## 3. Detect the gate's node with the CLI
 
 Now you should be able to detect your master node with the CLI using the following command in a terminal:
 
@@ -65,12 +65,12 @@ pyluos-bootloader detect
 </div>
 
 :::info
-COM6 is the identifier of the serial port used. It is unique for each shield; you can check yours with the `Device Manager` in Windows or `ls -l /dev/ | grep ttyUSB` on Linux. If you don't give it pyluos-bootloader will try to find an available gate on your system.
+COM6 is the identifier of the serial port used. It is unique for each shield; you can check yours with the Device Manager in Windows or `ls -l /dev/ | grep ttyUSB` on Linux. If you do not provide it, pyluos-bootloader will try to find an available gate in your system.
 :::
 
 ## 4. Load the bootloader
 
-Now, you will load the bootloader in the second node. Follow the same process as described in **Step 2**, but this time open the **Bootloader" example in **Luos_engine/Examples/Projects/YOUR_BOARD**.
+Now, you will load the bootloader in the second node. Follow the same process as described in **Step 2**, but this time open the Bootloader example in _Luos_engine/Examples/Projects/YOUR_BOARD_.
 
 Connect the second node with the USB programming port and click on **Upload**; you should see the following:
 
@@ -86,12 +86,12 @@ Connect your two nodes through the Luos network and connect your master board US
   <Image src="/img/tutorials/bootloader/detect_bootloader.png" />
 </div>
 
-**boot_service** indicates there is a bootloader running on your node. You are now able to communicate with it through the gate and load any application.
+`boot_service` indicates there is a bootloader running on your node. You are now able to communicate with it through the gate and load any application.
 
 ## 6. Compile an app compatible with the bootloader
 
 Most of the examples available in Luos engine's folder are already compatible with the bootloader's feature. You will be able to use them as templates for your future applications.
-Follow the same process described in **Step 2** and **Step 4**, but this time open the **Button** example in **Luos_engine/Examples/Projects/YOUR_BOARD**.
+Follow the same process described in **Step 2** and **Step 4**, but this time open the Button example in _Luos_engine/Examples/Projects/YOUR_BOARD_.
 
 PlatformIO is able to manage multiple build configurations. By default, Luos engine's examples are compiling a firmware that can be loaded using the standard flash system. If you want your application to be bootloader-compatible, you need to compile it in `with_bootloader` mode.
 To do that, when your button project is open you can click on the `Switch PlatformIO Project Environment` button at the bottom of the window, then select the `with_bootloader` option on the list of choice appearing on the top of your screen.
@@ -106,7 +106,7 @@ Then, click on **Build**.
 If you click on the **Upload** button, PlatformIO will use the Luos bootloader CLI to load your firmware. For now, please be sure to do it in command line instead, like explained below.
 :::
 
-The generated binary file can be found in **Luos_engine/Examples/Projects/YOUR_BOARD/Button/.pio/build/\*\_with\_bootloader** under the name _firmware.bin_.
+The generated binary file can be found in _Luos_engine/Examples/Projects/YOUR_BOARD/Button/.pio/build/\*\_with\_bootloader_ under the name _firmware.bin_.
 
 Now, you can use the bootloader's command line to load it, for example:
 
@@ -139,12 +139,12 @@ Then relaunch a detection (as done in **Step 3**):
   <Image src="/img/tutorials/bootloader/detect_old_app.png" />
 </div>
 
-You can see that **boot_service** has been replaced by another alias such as **button**, which is the name of the service running in your app: the bootloader switched to application mode and launched your freshly written app.
+You can see that `boot_service` has been replaced by another alias such as **button**, which is the name of the service running in your app: the bootloader switched to application mode and launched your freshly written app.
 
 ## 7. Update your app
 
 You can also update your app and reload it in the node.
-As an example, select a `Led` project and follow the previous steps with the `Button` example.
+As an example, select a `Led` project and follow the previous steps with the Button example.
 Compile it using the `with_bootloader` environment, then use the bootloader command to flash it.
 You should see your updated service running in your node:
 

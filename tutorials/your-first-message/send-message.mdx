@@ -71,7 +71,7 @@ Now everything is ready to send back the button's value in a message.
 
 ## 3. Send back the button's value
 
-> By learning how to catch messages from the previous page of this tutorial, we already know that they contain some interesting information allowing you to understand the meaning of the transmitted data.
+By learning how to catch messages from the previous page of this tutorial, we already know that they contain some interesting information allowing you to understand the meaning of the transmitted data.
 
 Any message contains two main parts:
 
@@ -98,23 +98,22 @@ In this button service, we want to reply to a request coming from another servic
 
 To do that, we will need to configure the following information:
 
-- **target_mode** as **IDACK** ⇒ because we target only one service and want to be sure it gets the message
+- `target_mode` as `IDACK` ⇒ because we target only one service and want to be sure it gets the message
 
-- **target** as the requested message **source** ⇒ because we want to target the service sending the request.
+- `target` as the requested source message ⇒ because we want to target the service sending the request.
 
 ### Message data meaning
 
 To send the message, we also need to explain the meaning of the data.
 
-In this button service, we want to send an **IO_STATE**, so data **size** will be a byte because it just needs to send 1 or 0.
-
+In this button service, we want to send an `IO_STATE`, so data `size` will be a byte because it just needs to send `1` or `0`.
 To do that, we will need to configure the following information:
 
-- **cmd** as **IO_STATE** ⇒ to define the type of transmited data
+- `cmd` as `IO_STATE` ⇒ to define the type of transmited data
 
-- **size** as **1** ⇒ because only 1 byte is sent
+- `size` as `1` ⇒ because only 1 byte is sent
 
-- **data** as the button's state ⇒ this will be the actual data.
+- `data` as the button's state ⇒ this will be the actual data.
 
 :::info
 On the message request filtering you previously made, we did not look at the message size. This is because a request does not need any data. most of the time, a message where `size = 0` is equivalent to a “get” command. If `size != 0`, it means that you want to set something by sending a value.
