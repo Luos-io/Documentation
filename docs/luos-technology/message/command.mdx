@@ -10,12 +10,12 @@ import IconExternalLink from "@theme/IconExternalLink";
 
 Each message includes a command value that defines the content's type of the message's data.
 
-Another feature included in Luos technology is the [Object Dictionary (OD)](/docs/luos-technology/message/object-dictionary), which aims to maintain interoperability of data format and command's type between <Tooltip def={customFields.service_def}>services</Tooltip>.
+Another feature included in Luos engine is the [Object Dictionary (OD)](/docs/luos-technology/message/object-dictionary), which aims to maintain interoperability of data format and command's type between <Tooltip def={customFields.service_def}>services</Tooltip>.
 
 ## Commands
 
 Commands is a simple enum list from 0 to N allowing you to choose the data format you want to use on your message.
-Internally, Luos also uses some messages to manage and detect your system That's why Luos has some reserved commands at the begining of this list.
+Internally, Luos engine also uses some messages to manage and detect your system. That's why Luos engine has some reserved commands at the begining of this list.
 User's commands start at `LUOS_LAST_RESERVED_CMD`.
 
 ### Common registers for all services
@@ -94,6 +94,6 @@ User's commands start at `LUOS_LAST_RESERVED_CMD`.
 | PARAMETERS | depends on the service. It can be: servo_parameters_t, imu_report_t, motor_mode_t |
 | ERROR_CMD  |                                                                                   |
 
-You can find the complete list of commands <a href="https://github.com/Luos-io/Luos/blob/master/inc/luos_list.h" target = "_blank">here<IconExternalLink width="10"></IconExternalLink></a>.
+You can find the complete list of commands <a href="https://github.com/Luos-io/luos_engine/blob/main/Engine/Core/inc/luos_list.h" target = "_blank">here<IconExternalLink width="10"></IconExternalLink></a>.
 
 If you want to create new commands for your custom services, you can create and add your own starting at `LUOS_LAST_STD_CMD`. [See how](/tutorials/tutorials).

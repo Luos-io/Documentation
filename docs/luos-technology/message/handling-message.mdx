@@ -6,7 +6,7 @@ custom_edit_url: null
 
 Message callbacks of services can be difficult to use when a project has high real-time constraints.
 
-Luos provides two different configurations allowing you to choose the best way for you to deal with messages.
+Luos engine provides two different configurations allowing you to choose the best way for you to deal with messages.
 The message handling configuration is set during the [initialization of a service](../services/service-api).
 
 |                 Configuration                 |  execution type  |
@@ -18,7 +18,7 @@ The following sections detail how the different configurations work.
 
 ## Callback configuration
 
-This configuration is the default and most common setup. In this configuration, Luos directly calls the service callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `luos_loop()` function execution frequency.
+This configuration is the default and most common setup. In this configuration, Luos engine directly calls the service callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `Luos_loop()` function execution frequency.
 
 With this configuration you have no real constraints on the callback's time of execution, you can then reply to a message directly on the callback.
 

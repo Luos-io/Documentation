@@ -21,7 +21,7 @@ This feature is particularly used by app services to find other services they ne
 
 ## Detection
 
-The routing table is automatically generated when a service demands Luos to initiate a network detection. It is then shared with other services at the end of the detection. Any service can demand a detection, but driver services should not do it; this features should be only used with app services by including routingTable.h and using this routing table API.
+The routing table is automatically generated when a service requires Luos engine to initiate a network detection. It is then shared with other services at the end of the detection. Any service can require a detection, but driver services should not do it; this features should be only used with app services by including _routingTable.h_ and using this routing table API.
 
 To run a detection, type:
 
@@ -31,35 +31,35 @@ Luos_Detect(app);
 
 where `app` is the `service_t` pointer running the detection.
 
-A non-detected service (not in the routing table) has a specific ID of `0`. At the beginning of the detection, Luos erases each service's ID in the network, so all of them will have ID `0` during this operation. You can use it on your services code to act consequently to this detection if you need it (for example, a service can monitor its ID to detect if a detection has been made and if it has to reconfigure its auto-update).
+A non-detected service (not in the routing table) has a specific ID of `0`. At the beginning of the detection, Luos engine erases each service's ID in the network, so all of them will have ID `0` during this operation. You can use it on your services' code to act consequently to this detection if you need it (for example, a service can monitor its ID to detect if a detection has been made and if it has to reconfigure its auto-update).
 
-Then the service running the detection will have ID `1`, and the other services will have an ID between `2` and `4096`, depending on their position from the service detector. IDs are attributed to the services according to their position from the detector service, and to the branch they are in. ID attribution begins first to the PTPA port, then PTPB, etc.
+Then the service running the detection will have ID `1`, and the other services will have an ID between `2` and `4096`, depending on their position from the service detector. IDs are attributed to the services according to their position from the detector service, and to the branch they are in. IDs' attribution begins first to the PTPA port, then PTPB, etc.
 When each service in the network has an attributed ID, the detection algorithm proceeds to create the routing table and shares it with every service (saved only one time per node).
 
-Sometimes, multiple services in the network can have the same alias, which is not allowed to prevent service confusion. In this case, the detection algorithm will add a number after each alias instance on the routing table.
+Sometimes, multiple services in the network can have the same alias, which is not allowed to prevent service confusion. In this case, the detection algorithm will add an incremented number after each alias instance in the routing table.
 
-At the end of the detection process, each service receives a message with the command of `END_DETECTION`, that can be used in your code in order to understand the exact moment that the detection has finished, and you can then reinitialize the behavior of your services (for example reinitialize the auto-updates, etc,). Also, you can check the detection status of your node, by using the dedicated Luos API:
+At the end of the detection process, each service receives a message with the command of `END_DETECTION`, that can be used in your code in order to understand the exact moment when the detection has finished, and you can then reinitialize the behavior of your services (for example reinitialize the auto-updates, etc.). Also, you can check the detection status of your node, by using the dedicated Luos engine's API:
 
 ```c
 Luos_IsNodeDetected();
 ```
 
-that returns `true` or `false` depending on whether this node is detected or not.
+It returns `true` or `false` depending on whether this node is detected or not.
 
-:::caution Warnings
-
-1. Be careful that a service can change ID during a detection depending on the service running this detection.
+:::caution 
+Warnings:
+1. Be careful that a service's ID can change during a detection depending on the service running this detection.
 2. Do not consider your service's ID fixed.
 3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
-4. Make sure that by the creation of your services you specify a callback pointer for each of them, so that the messages arriving to them, concerning the detection do not stay stored in your node's memory.
-   :::
+4. Make sure that by the creation of your services you specified a callback pointer for each of them, so that the messages arriving to them concerning the detection do not stay stored in your node's memory.
+:::
 
 ## Modes
 
 Nodes can host multiple services. To get the topology of your device, the routing table references physical connections between the nodes and lists all the services in each one of them.
 
 The routing table is a table of a `routing_table_t` structure containing nodes or services information.
-The precompilation constant MAX_SERVICES_NUMBER manages the maximum number of services (set to 40 by default).
+The precompilation constant `MAX_SERVICES_NUMBER` manages the maximum number of services (set to 40 by default).
 
 ```c
 routing_table_t routing_table[MAX_SERVICES_NUMBER];
@@ -111,11 +111,11 @@ You can read the [services page](../services) for more information about what se
 
 This mode gives physical information about your devices.
 
-The **node_id** is the unique number that you can use to identify each one of your nodes. At the beginning (or when a reset detection is performed), all node IDs are set to 0. When the RoutingTB_DetectServices API is called, Luos assigns a unique ID to nodes and services in your system topology.
+The **node_id** is the unique number that you can use to identify each one of your nodes. At the beginning (or when a reset detection is performed), all node IDs are set to 0. When the `RoutingTB_DetectServices` API is called, Luos engine assigns a unique ID to nodes and services in your system topology.
 
-The **certified** Luos node can be certified for your system by including the Luos licencing number in your product (feature in progress).
+The Luos node can be **certified** in your system to guarantee the security and integrity of your network, by including the Luos engine's licencing number in your product (feature in progress).
 
-The **port_table** allows sharing of topological information of your network. Each element of this table corresponds to a physical Luos port of the node and indicates which node is connected to it by sharing a node's `id`.
+The **port_table** allows the sharing of topological information of your network. Each element of this table corresponds to a physical network port of the node and indicates which node is connected to it by sharing a node's `id`.
 
 Here is an example:
 
@@ -123,7 +123,7 @@ Here is an example:
   <Image src="/img/routing-table.svg" darkSrc="/img/routing-table-dark.svg" />
 </div>
 
-As shown on this image, elements of the `port_table` indicate the first or last service id of the connected node through a given port.
+As shown on this image, elements of the `port_table` indicate the first or last service's ID of the connected node through a given port.
 
 Specific values can be taken by `port_table`:
 
@@ -149,7 +149,7 @@ typedef struct
 } search_result_t;
 ```
 
-First of all we need to reset the filtering result in order to contain all the services existing in the routing table. Afterwords, we can filter the routing table entries, depending on a specific characteristic of the services, like the type, the alias etc.
+First of all, we need to reset the filtering result in order to contain all the services existing in the routing table. Afterwords, we can filter the routing table entries, depending on a specific characteristic of the services like the type, the alias, etc.
 
 Here is an example:
 
@@ -158,9 +158,7 @@ Here is an example:
 </div>
 <br />
 
-Having access to the different service information existing in the filtering result, is as easy as this: `result.result_table[i]->id` or `result.result_table[i]->type`
-
-as each `result_table[]` is a routing table entry.
+Having access to the different services' information existing in the filtering result is done with the code `result.result_table[i]->id` or `result.result_table[i]->type`, as each `result_table[]` is a routing table entry.
 
 All the filtering APIs are listed below:
 
