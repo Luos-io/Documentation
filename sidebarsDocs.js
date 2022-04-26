@@ -179,6 +179,11 @@ module.exports = {
             },
             {
               type: 'doc',
+              label: 'Inspector',
+              id: 'tools/inspector',
+            },
+            {
+              type: 'doc',
               label: 'Pyluos',
               id: 'tools/pyluos',
             },
