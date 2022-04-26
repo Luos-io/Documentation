@@ -33,7 +33,7 @@ The gate service refreshes sensors informations as fast as it can, so that can b
 
 The gate and the pipe are two separate services, they can be put on the same node or on separate node.
 
-## A Gate and a Pipe on the same node
+## A Gate and a pipe on the same node
 
 In that configuration you put 2 services in the node like below.
 
@@ -63,7 +63,7 @@ int main(void)
 
 In that configuration formated messages don't pass through the Luos network and stay in localhost.
 
-## A Gate and a Pipe on separate node
+## A Gate and a pipe on separate node
 
 When the gate and the pipe are on separate nodes, formated messages transit into the network and use even more bandwidth on the network and add latency.
 

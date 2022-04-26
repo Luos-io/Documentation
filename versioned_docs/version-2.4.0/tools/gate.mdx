@@ -12,13 +12,13 @@ The gate is a major tool of the Luos ecosystem. It is allowing you to translate 
 
 You can use it to take control of any embedded service with [any languages](/docs/api/list) on any machine. For example, we use it in [Pyluos](/docs/tools/pyluos) or [ROS](/docs/tools/ros).
 
-The Gate is a simple embedded [app service](../luos-technology/services/service-api#apps-guidelines), so it can work on any MCU running Luos without any modification.
+The gate is a simple embedded [app service](../luos-technology/services/service-api#apps-guidelines), so it can work on any MCU running Luos without any modification.
 
 The gate service must be used with a driver service called **pipe** that can be hosted into different kinds of <Tooltip def={customFields.node_def}>node</Tooltip> allowing you to choose the communication way fitting with your project (USB, Wifi, Bluetooth, etc.).
 
 ## Default Gate Process
 
-The default behavior of the Gate is optimized for system that only have drivers and control the entire behavior through a distant machine.
+The default behavior of the gate is optimized for system that only have drivers and control the entire behavior through a distant machine.
 
 1.  At power up, the gate make a network detection to find a pipe service. _(Optional)_
 2.  The gate wait to receive a detection message from a pipe.
@@ -34,7 +34,7 @@ The gate service refreshes sensors informations as fast as it can, so that can b
 The gate and the pipe are two separate services, they can be put on the same node or on separate node.
 
 
-## A Gate and a Pipe on the same node
+## A Gate and a pipe on the same node
 
 In that configuration, you put two services in the node as shown below:
 
@@ -64,7 +64,7 @@ int main(void)
 
 In that configuration formatted messages don't pass through the Luos network and stay in *localhost*.
 
-## A Gate and a Pipe on separate node
+## A Gate and a pipe on separate node
 
 When the gate and the pipe are on separate nodes, formated messages transit into the network and use even more bandwidth on the network and add latency.
 

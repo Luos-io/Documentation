@@ -31,25 +31,25 @@ As an open-source solution, Luos aims to be wildly distributed and used by as ma
 
 This is the sixth release of Luos. We described below the various features and fixes that it provides.
 
-<h3> 🆕 Feature: Manage Pipe type and command </h3>
+<h3> 🆕 Feature: Manage pipe type and command </h3>
 
-The Gate in a Luos environment is something tremendously important and used to check or control a Luos network, and (teaser...) it will be even more important for the next revision! 😉
+The gate in a Luos environment is something tremendously important and used to check or control a Luos network, and (teaser...) it will be even more important for the next revision! 😉
 
 Basically, its task is to share the entire machine capabilities to the outer world by translating Luos things into a standard format easy to use with standard software languages such as Python, JS, Ruby, C++, etc.
 
-On the previous version of the Gate example, you needed to modify the code to adapt it to your project's specificities, and it was an arduous task. Then we decided to make it simple and portable for you.
+On the previous version of the gate example, you needed to modify the code to adapt it to your project's specificities, and it was an arduous task. Then we decided to make it simple and portable for you.
 
 We split it into 2 parts, the main Gate App and a Driver:
 
-*   Now the Gate is an App. Meaning it doesn't have any code related to hardware. It's a basic ANSI C that you can compile directly for any MCU or CPU without any additional configuration! This way, you can easily add it to your setup.
+*   Now the gate is an App. Meaning it doesn't have any code related to hardware. It's a basic ANSI C that you can compile directly for any MCU or CPU without any additional configuration! This way, you can easily add it to your setup.
 
-We also added a build option allowing you to select the output format managed by the Gate or create your own easily. For now, we have 2 Json options, the one we use on the previous version (cJSON), and a new one (TinyJSON) that doesn't make any dynamic allocation.
+We also added a build option allowing you to select the output format managed by the gate or create your own easily. For now, we have 2 Json options, the one we use on the previous version (cJSON), and a new one (TinyJSON) that doesn't make any dynamic allocation.
 
 The **Pipe** is the driver part: This Driver allows sending or receiving data from the outer world and converting those data to the Luos side. A Pipe can be USB, serial, Wifi, Bluetooth, an SD card, or anything allowing to send and receive information to/from another machine.
 
-This new type of driver can be used for different purposes, and the Gate App needs it to exchange information and share its output format.
+This new type of driver can be used for different purposes, and the gate App needs it to exchange information and share its output format.
 
-As a Gate user, you will only have to adapt this Pipe driver to your needs. The Gate will deal with it.
+As a gate user, you will only have to adapt this Pipe driver to your needs. The gate will deal with it.
 
 More details about this can be found in the [Gate](https://docs.luos.io/docs/tools/gate) section of our [documentation](https://docs.luos.io/).
 
@@ -151,7 +151,7 @@ You will find below the [original changelog](https://github.com/Luos-io/Luos/rel
 
 **Luos 1.3.0:**
 
-🆕 Feature: Manage Pipe type and command  
+🆕 Feature: Manage pipe type and command  
 🆕 Feature: Add access management to container  
 🆕 Feature: Template Creation for State, Voltage, Motor, Servo  
 🆕 Feature: Add some research API in the routing table  
