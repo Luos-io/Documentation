@@ -10,19 +10,19 @@ To do that, you must add a specific app service called a [Gate](./services_list/
 ## How to start using the JSON API
 
 Before using your device through JSON, you have to be connected to the communication flow depending on the node type hosting your Gate service.<br/>
-Then you can start the Gate by sending:
+Then you can start the gate by sending:
 
 ```json
 {"detection": {}}\r
 ```
 
-This command asks the Gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
+This command asks the gate to start a topological detection, create a routing table, convert it into JSON and send it back to you.
 
 ## Routing table messages
 
 > **Warning:** Make sure to read and understand how [routing table](../luos-technology/services/routing-table) works before reading this part.
 
-After the Gate starts, the first message you receive is a routing table.<br/>
+After the gate starts, the first message you receive is a routing table.<br/>
 This first message is really important, because it contains all the information allowing you to create a code object for your device, containing all its features.
 
 ### Routing table structure
@@ -158,7 +158,7 @@ Below is a visual representation of this routing table:
 
 ### Service's information messages
 
-When the JSON routing table is transmitted, the Gate starts to update and stream your network data with **services information**.
+When the JSON routing table is transmitted, the gate starts to update and stream your network data with **services information**.
 
 This JSON is a "service" object listing all the services by their alias and the values they send:
 
@@ -306,7 +306,7 @@ Other specific messages:
 
 ### Services exclusion messages
 
-Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring#service-exclusion) for more information). In this case, the Gate sends an exclusion message indicating that this service is no longer available:
+Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring#service-exclusion) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
 
 ```json
 { "dead_service": "service_alias" }
@@ -314,7 +314,7 @@ Services can be excluded from the network if a problem occurs (see [self-healing
 
 ### Node assert messages
 
-Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring) for more information). In this case, the Gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 
 ```json
 {

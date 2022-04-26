@@ -13,7 +13,7 @@ import Image from '@site/src/components/Images.js';
   </a>
 </h1>
 
-The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formatted data</a> is common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with your device easily.
+The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formatted data</a> is common and widely used by many programming languages. Gate services allow you to convert Luos engine information into JSON objects, enabling conventional programming languages to interact with your device easily.
 
 To do that, you must add a specific app service called a [gate](../tools/gate) on your device.
 
@@ -247,8 +247,8 @@ Here is the list of all values that services can use:
 |        heading        |                                                        Heading                                                         |
 |       pedometer       |                                                   Steps number value                                                   |
 |       walk_time       |                                                    Walk time value                                                     |
-|     luos_revision     |                                                     Luos's version                                                     |
-|    luos_statistics    | Luos's memory usage statistics \[Rx stack, Luos stack, Tx stack, Dropped messages, Loop delay, Send retry max number\] |
+|     luos_revision     |                                                     Luos engine's version                                                     |
+|    luos_statistics    | Luos engine's memory usage statistics \[Rx stack, Luos engine stack, Tx stack, Dropped messages, Loop delay, Send retry max number\] |
 
 Here is an example of a message sent by a potentiometer service containing the rotation angle of the associated potentiometer:
 
@@ -262,7 +262,7 @@ Here is an example of a message sent by a potentiometer service containing the r
 }
 ```
 
-Here is an example of a message sent by a gate service about Luos statistics:
+Here is an example of a message sent by a gate service about Luos engine's statistics:
 
 ```json
 {
@@ -312,8 +312,8 @@ Parameters are defined by a 16-bit bitfield.
 
 |   Object   |               Definition               |                                                                         Structure                                                                         |            Service(s)            |
 | :--------: | :------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------: |
-| parameters | enabling or disabling some measurement | [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31) | Stepper, Controller-motor, Servo |
-| parameters | enabling or disabling some measurement |             [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)             |               Imu                |
+| parameters | enabling or disabling some measurement | [Link to structure (GitHub)](https://github.com/Luos-io/luos_engine/tree/main/Examples/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31) | Stepper, Controller-motor, Servo |
+| parameters | enabling or disabling some measurement |             [Link to structure (GitHub)](https://github.com/Luos-io/luos_engine/tree/main/Examples/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)             |               Imu                |
 
 Other specific messages:
 

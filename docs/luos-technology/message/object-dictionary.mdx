@@ -10,7 +10,7 @@ An object dictionary (OD) allows various developers of different services to mak
 
 An object dictionary defines a set of typical objects that can be transmitted through Luos messages. It allows to send these objects with a unit and to use it in any other units, in other services.
 
-Luos defines objects based on physical values following the SI standard.
+Luos engine defines objects based on physical values following the SI standard.
 
 ## Objects and types
 
@@ -21,7 +21,7 @@ Each object in the Object Dictionary has a specific Type. For example:
 angular_position_t angular_position;
 ```
 
-You can create your variables using these objects but **never set OD variables directly with a value**. Instead, you have to use functions available on the Luos OD:
+You can create your variables using these objects but **never set OD variables directly with a value**. Instead, you have to use functions available on the Luos engine's OD:
 
 ```c
 // Set object angular_position
