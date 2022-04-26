@@ -1,0 +1,77 @@
+---
+custom_edit_url: null
+---
+
+import Image from '/src/components/Images.js';
+
+# MCUs and demo boards compatibility
+
+Luos engine uses MCU's resources to create a network. This is already configured in the LuosHAL file for many MCUs, so that they are plug-and-play.
+Below is the list of the MCUs directly compatible with Luos engine:
+
+### ST
+
+|      Family      |                MCU                  |                       Description                       |
+| :--------------: | :---------------------------------: |-------------------------------------------------------: |
+|     STM32F0      |             STM32F0X0               |                                                         |
+|                  |             STM32F0X1               |                                                         |
+|                  |             STM32F0X2               |     HAL default configuration on NUCLEO-F072RB          |
+|                  |             STM32F0X8               |                                                         |
+|     STM32F4      |             STM32F401               |                 Example on NUCLEO-F401RE                |
+|                  |           STM32F405/415             |                                                         |
+|                  |           STM32F407/417             |                                                         |
+|                  |             STM32F410               |     HAL default configuration on NUCLEO-F410RB          |
+|                  |             STM32F411               |                                                         |
+|                  |             STM32F412               |                                                         |
+|                  |           STM32F413/423             |                                                         |
+|                  |           STM32F427/437             |                                                         |
+|                  |           STM32F429/439             |                                                         |
+|                  |             STM32F446               |                                                         |
+|                  |           STM32F469/479             |                                                         |
+|     STM32G4      |             STM32G4X1               |     HAL default configuration on NUCLEO-G431KB          |
+|                  |             STM32G4X3               |                                                         |
+|                  |             STM32G4X4               |                Example on NUCLEO-G474KE                 |
+|     STM32L4      |             STM32L4x1               |                                                         |
+|                  |             STM32L4x2               |     HAL default configuration on NUCLEO-L432KC          |
+|                  |             STM32L4x3               |                                                         |
+|                  |             STM32L4x5               |                                                         |
+|                  |             STM32L4x6               |                                                         |
+
+### Atmel/Microship
+
+|      Family      |                MCU                  |                       Description                       |
+| :--------------: | :---------------------------------: |-------------------------------------------------------: |
+|      ATSAMD      |             ATSAMD21Exx             |                                                         |
+|                  |             ATSAMD21Gxx             |                                                         |
+|                  |             ATSAMD21Jxx             |      HAL default configuration on SAMDJ18A              |
+
+### Demo boards
+
+|                Board                 |                                 Description                               |
+| :----------------------------------: |-------------------------------------------------------------------------: |
+|             NUCLEO-F030R8            |                                                                           |
+|             NUCLEO-F031K6            |                                                                           |
+|             NUCLEO-F042K6            |                                                                           |
+|             NUCLEO-F070RB            |                                                                           |
+|             NUCLEO-F072RB            |                             Example with Luos engine                      |
+|             NUCLEO-F401RE            |                             Example with Luos engine                      |
+|             NUCLEO-F410RB            |                             Example with Luos engine                      |
+|             NUCLEO-F411RE            |                                                                           |
+|             NUCLEO-G431KB            |                             Example with Luos engine                      |
+|             NUCLEO-G474KE            |                             Example with Luos engine                      |
+|             NUCLEO-L412KB            |                                                                           |
+|             NUCLEO-L432KC            |                             Example with Luos engine                      |
+|             NUCLEO-L433RC            |                                                                           |
+|             NUCLEO-L452RE            |                                                                           |
+|          ARDUINO_SAMD_ZERO           |                 HAL default configuration on ARDUINO                      |
+|       ARDUINO_SAMD_MKRZERO           |                                                                           |
+|       ARDUINO_SAMD_MKR1000           |                                                                           |
+|     ARDUINO_SAMD_MKRWIFI1010         |                                                                           |
+|     ARDUINO_SAMD_MKRFox1200          |                                                                           |
+|     ARDUINO_SAMD_MKRWAN1300          |                                                                           |
+|     ARDUINO_SAMD_MKRWAN1310          |                                                                           |
+|     ARDUINO_SAMD_MKRGSM1400          |                                                                           |
+|      ARDUINO_SAMD_MKRNB1500          |                                                                           |
+|     ARDUINO_SAMD_NANO_33_IOT         |                                                                           |
+|     ARDUINO_SAMD_MKRVIDOR4000        |                                                                           |
+

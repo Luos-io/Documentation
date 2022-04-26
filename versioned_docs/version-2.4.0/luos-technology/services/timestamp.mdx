@@ -1,0 +1,44 @@
+---
+hide_table_of_contents: true
+custom_edit_url: null
+---
+
+# Timestamp
+
+**Timestamp** is a feature that enables you to track the date at which an event occurs.
+
+For example with a button driver: each time we read the button's state, we want to timestamp this event. To do that, we have to save a time information representing our timestamp.
+
+```C
+#include "timestamp.h"
+
+time_luos_t button_timestamp;
+```
+
+Then we can save our timestamp's date when we read the state of the button:
+
+```C
+ll_button_read(&button.state);
+button_timestamp = Timestamp_now();
+```
+After retrieving the timestamp's value, you can do some calculation on it. For example, you can include a constant delay before measurement, or add a specific amount of time to manage future timestamp's date.
+
+Then you can send a message with your button's value using `Luos_SendTimestampMsg`:
+
+```C
+Luos_SendTimestampMsg(button_service, button_msg, button_timestamp);
+```
+
+All **timestamp** API functions can be found in *Luos_engine/engine/core/inc/timestamp.h*. You can also find [examples](https://github.com/Luos-io/Examples/blob/master/Projects/l0/) that are using this feature. The examples using timestamp are:
+- distance,
+- light sensor,
+- potentiometer.
+
+
+## Timestamp API
+
+|                        Description                         |                                       Function                                        |      Return      |
+| :--------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :--------------: |
+|   Get the present timestamp    |   `Timestamp_now(void);`    |   `time_luos_t`  |
+|   Check if a message is timestamped     |   `Timestamp_IsTimestampMsg(msg_t *msg);` | `bool` |
+|   Get a message timestamp     |   `Timestamp_GetTimestamp(msg_t *msg);` | `time_luos_t` |

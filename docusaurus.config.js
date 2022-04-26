@@ -4,8 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Luos',
-  tagline:
-    'Open source and real-time orchestrator for distributed architectures',
+  tagline: 'Open source and real-time orchestrator for distributed architectures',
   url: 'https://docs.luos.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -13,8 +12,6 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
-
-
 
   customFields: {
     node_def:
@@ -26,14 +23,11 @@ module.exports = {
     microservices_def:
       'Microservices are a software development technique that arranges an application as a collection of loosely coupled services.',
     robus_def: 'Bus communication protocol used by Luos.',
-    luoshal_def:
-      'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
+    luoshal_def: 'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
     last_version_pyluos: '2.0.0',
     last_version_luos: ' 2.0.1',
     gh_path: 'github.com/Luos-io/doc/tree/master/src',
   },
-
-
 
   themeConfig: {
     colorMode: {
@@ -43,9 +37,7 @@ module.exports = {
       applicationId: '2480203',
     },
     hideableSidebar: true,
-    
-    
-    
+
     navbar: {
       logo: {
         alt: 'Luos Logo',
@@ -69,27 +61,27 @@ module.exports = {
           position: 'right',
         },
         {
-        type: 'dropdown',
-        label: 'Resources',
-        position: 'right',
-        items: [
-            { 
+          type: 'dropdown',
+          label: 'Resources',
+          position: 'right',
+          items: [
+            {
               to: '/tutorials/get-started',
               label: 'Get started',
             },
-            { 
+            {
               to: '/tutorials/tutorials',
               label: 'Tutorials',
             },
-            { 
+            {
               to: '/docs/luos-technology/luos_tech',
               label: 'Documentation',
             },
-            { 
+            {
               to: '/faq/list',
               label: 'Troubleshooting',
             },
-            { 
+            {
               to: 'https://www.luos.io/blog',
               label: 'Blog',
             },
@@ -100,20 +92,20 @@ module.exports = {
           label: 'Community',
           position: 'right',
           items: [
-              { 
-                to: 'https://discord.gg/luos',
-                label: 'Discord',
-              },
-              { 
-                to: 'https://www.reddit.com/r/Luos/',
-                label: 'Reddit',
-              },
-              { 
-                to: 'https://github.com/luos-io',
-                label: 'Github',
-              },
-            ],
-          },
+            {
+              to: 'https://discord.gg/luos',
+              label: 'Discord',
+            },
+            {
+              to: 'https://www.reddit.com/r/Luos/',
+              label: 'Reddit',
+            },
+            {
+              to: 'https://github.com/luos-io',
+              label: 'Github',
+            },
+          ],
+        },
         {
           href: 'https://github.com/luos-io',
           className: 'header-github-link',
@@ -122,8 +114,6 @@ module.exports = {
         },
       ],
     },
-
-
 
     footer: {
       style: 'dark',
@@ -171,14 +161,10 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Luos, built with Docusaurus.`,
     },
 
-
-
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
-
-
 
     algolia: {
       appId: 'K3VMDT0LOA',
@@ -187,8 +173,6 @@ module.exports = {
       contextualSearch: true,
     },
   },
-
-
 
   presets: [
     [
@@ -200,7 +184,7 @@ module.exports = {
           editUrl: 'https://github.com/luos-io/Documentation',
           versions: {
             current: {
-              label: '2.4.0-beta 🚧',
+              label: '2.5.0-beta 🚧',
             },
           },
         },
@@ -213,19 +197,16 @@ module.exports = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           showReadingTime: true, // When set to false, the "x min read" won't be shown
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
         },
 
-        theme: { customCss: require.resolve('./src/css/custom.css'), },
-        gtag: { trackingID: 'GTM-M73ZRR4', },
-        googleAnalytics: { trackingID: 'UA-153509818-3', },
-
+        theme: { customCss: require.resolve('./src/css/custom.css') },
+        gtag: { trackingID: 'GTM-M73ZRR4' },
+        googleAnalytics: { trackingID: 'UA-153509818-3' },
       },
     ],
   ],
-
-
 
   plugins: [
     [
