@@ -10,17 +10,15 @@ import Avatar from '@mui/material/Avatar';
 const Anatomy = (props) => {
   return (
     <div className={styles.container}>
-      <Grid container mt={3}>
-        <Grid item md={6} lg={6} pl={7} pr={3}>
-          <h1 className={`${styles.title} ${styles.underline}`}>
-            Anatomy of Luos
-          </h1>
-          <p className={styles.text}>
-            Luos gives you access to multiple features developed by developers
-            for developers. Some of the features come from community needs.
-          </p>
+      <h1 className={`${styles.title} ${styles.underline}`}>Anatomy of Luos</h1>
+      <p className={styles.text}>
+        Luos gives you access to multiple features developed by developers for
+        developers. Some of the features come from community needs.
+      </p>
+      <Grid container mt={5} mb={5}>
+        <Grid item md={4} lg={4} pl={7} pr={3}>
           <List sx={{ width: '100%' }}>
-            <ListItem alignItems="flex-start" sx={{ marginBottom: '50px' }}>
+            <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar
                   alt="table tree icon"
@@ -36,7 +34,7 @@ const Anatomy = (props) => {
               />
             </ListItem>
 
-            <ListItem alignItems="flex-start" sx={{ marginBottom: '50px' }}>
+            <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar
                   alt="cubes icon"
@@ -69,25 +67,9 @@ const Anatomy = (props) => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item md={6} lg={6}>
-          <img
-            src="/img/index/anatomy-1.svg"
-            style={{ float: 'right', width: '100%' }}
-          />
-        </Grid>
-      </Grid>
-
-      <Grid container mt={3}>
-        <Grid item md={6} lg={6}>
-          <img src="/img/index/anatomy-2.svg" style={{ width: '100%' }} />
-        </Grid>
-        <Grid item md={6} lg={6} pl={3} pr={7}>
-          <List
-            sx={{ width: '100%', marginTop: '50px' }}
-            display="flex"
-            justifyContent="flex-end"
-          >
-            <ListItem alignItems="flex-start" sx={{ marginBottom: '50px' }}>
+        <Grid item md={4} lg={4} pl={7} pr={3}>
+          <List sx={{ width: '100%' }} display="flex" justifyContent="flex-end">
+            <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar
                   alt="bootloader icon"
@@ -103,7 +85,7 @@ const Anatomy = (props) => {
               />
             </ListItem>
 
-            <ListItem alignItems="flex-start" sx={{ marginBottom: '50px' }}>
+            <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar
                   alt="timestamp icon"
@@ -135,6 +117,12 @@ const Anatomy = (props) => {
               />
             </ListItem>
           </List>
+        </Grid>
+        <Grid item md={4} lg={4}>
+          <img
+            src="/img/index/anatomy-1.svg"
+            style={{ float: 'right', width: '100%' }}
+          />
         </Grid>
       </Grid>
     </div>

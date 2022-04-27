@@ -18,8 +18,8 @@ const Software = (props) => {
                 Network agnostic data format
               </h3>
               <p>
-                Text de blablablab lablabla bla bloubloublouh bhbduehbce
-                uhecbhu”ecb uhebche”cb”heucbbbbc
+                Luos engine provides a network agnostic multimaster data format.
+                No matter how specific your network is.
               </p>
             </Grid>
             <Grid item md={1} lg={1}></Grid>
@@ -28,8 +28,9 @@ const Software = (props) => {
                 Portable and scalable code
               </h3>
               <p>
-                Text de blablablab lablabla bla bloubloublouh bhbduehbce
-                uhecbhu”ecb uhebche”cb”heucbbbbc
+                Luos engine allows you to create packages and make them portable
+                and scalable. You can share them with your team or the
+                community.
               </p>
             </Grid>
             <Grid item md={1} lg={1}></Grid>
@@ -38,8 +39,8 @@ const Software = (props) => {
                 Encapsulate features into services
               </h3>
               <p>
-                Text de blablablab lablabla bla bloubloublouh bhbduehbce
-                uhecbhu”ecb uhebche”cb”heucbbbbc
+                Luos engine encapsulates embedded features in services with
+                APIs. This allows you to have direct access to the hardware.
               </p>
             </Grid>
           </Grid>

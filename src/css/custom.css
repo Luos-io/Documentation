@@ -656,3 +656,7 @@ html[data-theme='dark'] .MuiListItemText-primary {
   font-size: 30px !important;
   margin-bottom: 15px !important;
 }
+
+.MuiRadio-root {
+  display: none !important;
+}

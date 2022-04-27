@@ -6,6 +6,8 @@
   font-family: 'Roboto Mono', sans-serif;
   margin: 30px auto 5px !important;
   font-size: 30px !important;
+  width: 100%;
+  text-align: center;
 }
 
 .underline:after {
@@ -17,4 +19,5 @@
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 20px;
+  text-align: center;
 }
