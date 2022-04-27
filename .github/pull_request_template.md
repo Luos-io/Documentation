@@ -29,4 +29,4 @@ Remember the content must be readable and understandable by someone else than yo
 - "Luos engine" has a upper case on the **L** for "Luos" and lower case on the **e** for "engine".
 - We call it "Luos engine" as a proper name, and ***not*** "the Luos engine".
 - Following that fashion, anything that's owned by "Luos engine" implies that we must use `'s` as the standard English rule to show the possessive case, e.g. "Luos engine's API".
-- The names pipe, gate, inspector, siniffer, app or application, driver, etc. have a lower case and can be refered with the determiner `the`. E.g.: The inspector.
+- The names pipe, gate, inspector, sniffer, app or application, driver, etc. have a lower case and can be refereed with the determiner `the`. E.g.: The inspector.

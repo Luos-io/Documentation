@@ -11,22 +11,20 @@ To help you in your development journey, Luos provides monitoring and debugging 
 ## Luos self-healing capabilities
 
 :::caution
-Make sure to read and understand how to create Luos services(./create-project) before reading this page.
+Make sure to read and understand how to create Luos [services](../luos-technology/services/) before reading this page.
 :::
 
 Finding, understanding, and managing bugs on multiple boards running multiple services can be hard. To make your life easier, Luos engine allows you to get some basic information about any problems in your system, allowing you to adapt to them.
 
 ## Service exclusion
 
-Luos engine includes an acknowledgment management using the **ID_ACK** target_mode. This mode guarantees the proper reception of critical messages.
+Luos engine includes an acknowledgment management using the `ID_ACK` target_mode. This mode guarantees the proper reception of critical messages.
 
 If Luos fails to reach its target using ID_ACK, it will retry 10 times. If the acknowledgment still fails, the targeted service is declared excluded. Excluded services are removed from the routing table to avoid messaging from any services, preserving bandwidth for the rest of the system.
 
 :::note
-
-- Gates services can report service exclusion through JSON. <br/> <br/>
+- Gates services can report service exclusion through JSON.
 - Pyluos can report service exclusion through gates.
-
 :::
 
 ## Luos engine's statistics
@@ -34,10 +32,8 @@ If Luos fails to reach its target using ID_ACK, it will retry 10 times. If the a
 Luos engine monitors some values representing the sanity of your nodes and services.
 
 :::note
-
-- Gates services can report statistics through JSON.<br/><br/>
+- Gates services can report statistics through JSON.
 - Pyluos can display statistics through gates.
-
 :::
 
 ### Node statistics
@@ -45,13 +41,13 @@ Luos engine monitors some values representing the sanity of your nodes and servi
 Inside any service, you can access the host node's statistics values using the `luos_stats_t` structure.
 This structure gives you access to several values:
 
-- **memory**: Memory statisctics information.
-  - **rx_msg_stack_ratio**: Percentage of memory occupation of Rx message management tasks.
-  - **luos_stack_ratio**: Percentage of memory occupation of Luos engine's tasks.
-  - **tx_msg_stack_ratio**: Percentage of memory occupation of Tx message management tasks.
-  - **buffer_occupation_ratio**: Percentage of memory occupation of the message buffer.
-  - **msg_drop_number**: Number of messages dropped due to a lack of memory (older messages are dropped to be replaced by new ones).
-- **max_loop_time_ms**: Maximum time in ms between Luos_loop executions.
+- `memory`: Memory statisctics information.
+- `rx_msg_stack_ratio`: Percentage of memory occupation of Rx message management tasks.
+- `luos_stack_ratio`: Percentage of memory occupation of Luos engine's tasks.
+- `tx_msg_stack_ratio`: Percentage of memory occupation of Tx message management tasks.
+- `buffer_occupation_ratio`: Percentage of memory occupation of the message buffer.
+- `msg_drop_number`: Number of messages dropped due to a lack of memory (older messages are dropped to be replaced by new ones).
+- `max_loop_time_ms`: Maximum time in ms between Luos_loop executions.
 
 You can access to node statistics by using `service.node_statistics`.
 
@@ -60,7 +56,7 @@ You can access to node statistics by using `service.node_statistics`.
 In any service, you have access to statistics values using the `service_stats_t` structure.
 This structure gives you access to a specific service's statistic value:
 
-- **max_retry**: Maximum number of sent retries due to a NAK or collision with another service.
+- `max_retry`: Maximum number of sent retries due to a NAK or collision with another service.
 
 You can access node statistics by using `service.statistics`.
 
@@ -77,10 +73,8 @@ For example:
 In this case, if `arg_ptr` is not initialized, Luos engine will crash the entire node and send a message to all other services with the file and line where the crash occurred. All other nodes will remove all the services from the crashed node from the routing table.
 
 :::note
-
-- Gates services can [report asserting of other nodes through JSON].<br/><br/>
+- Gates services can [report asserting of other nodes through JSON].
 - Pyluos can display assert through gates.
-
 :::
 
 ## Sniffer
@@ -132,9 +126,7 @@ The format of the messages that are transmitted serially from the inspector usin
 The inspector and the pipe are two separate services, they can be placed on the same node or on separate nodes. However, if they are placed on the same node, they charge the network with additional messages, so it can have an impact on the normal behavior of the other services.
 
 :::note
-
 The inspector does not receive the messages that regard the detection, as it is a normal service which is not yet detected.
-
 :::
 
 :::info
