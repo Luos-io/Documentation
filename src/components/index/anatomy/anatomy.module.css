@@ -21,3 +21,9 @@
   line-height: 20px;
   text-align: center;
 }
+
+@media screen and (min-width: 1441px) {
+  .list {
+    margin-top: 30% !important;
+  }
+}

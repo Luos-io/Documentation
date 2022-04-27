@@ -64,12 +64,12 @@ const Integration = (props) => {
         </Grid>
       </Grid>
       <Grid container spacing={3} sx={{ padding: '30px' }}>
-        <Grid item md={2} lg={2} xl={4}></Grid>
+        <Grid item md={2} lg={2} xl={3.5}></Grid>
         <Grid
           item
           md={8}
           lg={8}
-          xl={4}
+          xl={5}
           style={{
             borderBottom: '15px solid #81c8be',
             minHeight: '400px',
@@ -167,7 +167,7 @@ const Integration = (props) => {
             Learn more about integrations
           </Button>
         </div>
-        <Grid item md={2} lg={2} xl={4}></Grid>
+        <Grid item md={2} lg={2} xl={3.5}></Grid>
       </Grid>
       <Grid container spacing={3}>
         <Grid item md={8} lg={8}></Grid>

@@ -146,8 +146,22 @@ const Powered = (props) => {
             </Button>
           </div>
         </Grid>
-        <Grid item md={6} lg={6}>
-          <img src="/img/index/powered/vscode.svg" className={styles.vscode} />
+        <Grid item md={6} lg={6} style={{ marginTop: '-50px' }}>
+          <div className={styles.head}>
+            {' '}
+            <img
+              src="img/index/header/buttons.svg"
+              style={{ padding: '15px' }}
+            />
+          </div>
+          <Grid container style={{ height: '100%' }}>
+            <Grid item md={1} lg={1} className={styles.docs}>
+              <img src="img/index/header/docs.svg" />
+              <img src="img/index/header/zoom.svg" />
+              <img src="img/index/header/luos.svg" />
+            </Grid>
+            <Grid item md={11} lg={11} className={styles.player}></Grid>
+          </Grid>
         </Grid>
       </Grid>
     </div>

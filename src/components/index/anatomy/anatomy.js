@@ -17,7 +17,7 @@ const Anatomy = (props) => {
       </p>
       <Grid container mt={5} mb={5}>
         <Grid item md={4} lg={4} pl={7} pr={3}>
-          <List sx={{ width: '100%' }}>
+          <List sx={{ width: '100%' }} className={styles.list}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar
@@ -68,7 +68,7 @@ const Anatomy = (props) => {
           </List>
         </Grid>
         <Grid item md={4} lg={4} pl={7} pr={3}>
-          <List sx={{ width: '100%' }} display="flex" justifyContent="flex-end">
+          <List sx={{ width: '100%' }} display="flex" className={styles.list}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar
