@@ -73,7 +73,7 @@ const Header = (props) => {
           md={6}
           mt={-10}
           style={{
-            zIndex: '9',
+            zIndex: '4',
             borderBottom: '15px solid #81c8be',
             paddingLeft: '0 !important',
           }}
