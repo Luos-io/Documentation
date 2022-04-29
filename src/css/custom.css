@@ -633,10 +633,6 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   color: black !important;
 }
 
-html[data-theme='dark'] .MuiListItemText-primary {
-  color: white !important;
-}
-
 .breadcrumbs__link {
   font-weight: normal !important;
 }
@@ -659,4 +655,12 @@ html[data-theme='dark'] .MuiListItemText-primary {
 
 .MuiRadio-root {
   display: none !important;
+}
+
+.react-typewriter-text-luos {
+  color: white;
+}
+
+html[data-theme='light'] .react-typewriter-text-luos {
+  color: black !important;
 }

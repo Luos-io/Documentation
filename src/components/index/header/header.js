@@ -5,8 +5,10 @@ import Button from '@mui/material/Button';
 import Writer from '@site/src/components/writer';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { useColorMode } from '@docusaurus/theme-common';
 
 const Header = (props) => {
+  const { isDarkTheme } = useColorMode();
   return (
     <div className={styles.container}>
       {' '}
@@ -20,16 +22,36 @@ const Header = (props) => {
             />
           </div>
           <Grid container>
-            <Grid item md={1} lg={1} className={styles.docs}>
-              <img src="img/index/header/docs.svg" />
-              <img src="img/index/header/zoom.svg" />
-              <img src="img/index/header/luos.svg" />
+            <Grid item xs={2} md={1} lg={1} className={styles.docs}>
+              {isDarkTheme ? (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs.svg" />
+                  <img src="img/index/header/zoom.svg" />
+                  <img src="img/index/header/luos.svg" />{' '}
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs-white.svg" />
+                  <img src="img/index/header/zoom-white.svg" />
+                  <img src="img/index/header/luos-white.svg" />{' '}
+                </>
+              )}
             </Grid>
 
-            <Grid item md={11} lg={11} pl={3} className={styles.player}>
+            <Grid
+              item
+              xs={10}
+              md={11}
+              lg={11}
+              pl={3}
+              className={styles.playerLeft}
+            >
               <Writer
                 textStyle={{
                   color: '#BD99FF',
+                  height: '70px',
                 }}
                 startDelay={0}
                 cursorColor="#BD99FF"
@@ -45,7 +67,7 @@ const Header = (props) => {
                   'a project toolset_',
                   'a community_',
                 ]}
-                multiTextDelay={3000}
+                multiTextDelay={2000}
                 typeSpeed={100}
               />{' '}
               <p className={styles.text}>
@@ -66,7 +88,7 @@ const Header = (props) => {
 
         <Grid item md={5} lg={5}></Grid>
       </Grid>
-      <Grid container>
+      <Grid container className={styles.mobileNone}>
         <Grid item md={6} lg={6}></Grid>
         <Grid
           item
@@ -87,9 +109,21 @@ const Header = (props) => {
           </div>
           <Grid container>
             <Grid item md={1} lg={1} className={styles.docs}>
-              <img src="img/index/header/docs.svg" />
-              <img src="img/index/header/zoom.svg" />
-              <img src="img/index/header/luos.svg" />
+              {isDarkTheme ? (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs.svg" />
+                  <img src="img/index/header/zoom.svg" />
+                  <img src="img/index/header/luos.svg" />{' '}
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs-white.svg" />
+                  <img src="img/index/header/zoom-white.svg" />
+                  <img src="img/index/header/luos-white.svg" />{' '}
+                </>
+              )}
             </Grid>
             <Grid item md={2} lg={2} className={styles.video}>
               <span>

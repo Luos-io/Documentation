@@ -8,8 +8,10 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import { useColorMode } from '@docusaurus/theme-common';
 
 const Powered = (props) => {
+  const { isDarkTheme } = useColorMode();
   return (
     <div className={styles.container}>
       <div className={styles.containerTitle}>
@@ -19,7 +21,7 @@ const Powered = (props) => {
         </h1>
       </div>
       <Grid container mt={3} mb={5}>
-        <Grid item md={6} lg={6} pl={7} pr={3}>
+        <Grid item xs={12} md={6} lg={6}>
           <List sx={{ width: '100%' }}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
@@ -73,7 +75,7 @@ const Powered = (props) => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item md={6} lg={6}>
+        <Grid item xs={12} md={6} lg={6}>
           <List sx={{ width: '100%' }}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
@@ -129,7 +131,7 @@ const Powered = (props) => {
         </Grid>
       </Grid>
       <Grid container>
-        <Grid item md={6} lg={6} className={styles.nebula}>
+        <Grid item xs={12} md={6} lg={6} className={styles.nebula}>
           <h1 className={`${styles.title} ${styles.underline}`}>
             Develop and scale your edge and embedded distributed software now
           </h1>
@@ -146,7 +148,13 @@ const Powered = (props) => {
             </Button>
           </div>
         </Grid>
-        <Grid item md={6} lg={6} style={{ marginTop: '-50px' }}>
+        <Grid
+          item
+          md={6}
+          lg={6}
+          style={{ marginTop: '-50px' }}
+          className={styles.mobileNone}
+        >
           <div className={styles.head}>
             {' '}
             <img
@@ -156,9 +164,21 @@ const Powered = (props) => {
           </div>
           <Grid container style={{ height: '100%' }}>
             <Grid item md={1} lg={1} className={styles.docs}>
-              <img src="img/index/header/docs.svg" />
-              <img src="img/index/header/zoom.svg" />
-              <img src="img/index/header/luos.svg" />
+              {isDarkTheme ? (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs.svg" />
+                  <img src="img/index/header/zoom.svg" />
+                  <img src="img/index/header/luos.svg" />{' '}
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs-white.svg" />
+                  <img src="img/index/header/zoom-white.svg" />
+                  <img src="img/index/header/luos-white.svg" />{' '}
+                </>
+              )}
             </Grid>
             <Grid item md={11} lg={11} className={styles.player}></Grid>
           </Grid>

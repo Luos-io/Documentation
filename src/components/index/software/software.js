@@ -1,15 +1,17 @@
 import React from 'react';
 import styles from './software.module.css';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 const Software = (props) => {
   return (
     <div className={styles.container}>
+      <h4 style={{ textAlign: 'center' }}>Split the monolith: </h4>
       <h1 className={`${styles.title} ${styles.underline}`}>
         Develop your Edge and Embedded distributed software scalable
       </h1>
       <Grid container spacing={3} mb={5}>
-        <Grid item md={1} lg={1}></Grid>
+        <Grid item md={1.5} lg={1.5} xl={1.5}></Grid>
         <Grid item md={10} lg={10}>
           <Grid item md={1} lg={1}></Grid>
           <Grid container spacing={3}>
@@ -45,8 +47,12 @@ const Software = (props) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item md={1} lg={1}></Grid>
       </Grid>
+      <div className={styles.btnContainer}>
+        <Button variant="contained" className={styles.whiteBtn}>
+          UNLEASH EMBEDDED SYSTEMS
+        </Button>
+      </div>
       <img src="/img/index/how-its-work.svg" className={styles.work} />
     </div>
   );

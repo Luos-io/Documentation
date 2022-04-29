@@ -3,6 +3,25 @@
   background-color: white;
 }
 
+@media screen and (max-width: 1023px) {
+  .vscode {
+    display: none !important;
+  }
+  .vscodeMobile {
+    display: initial !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .vscode {
+    display: initial !important;
+  }
+
+  .vscodeMobile {
+    display: none !important;
+  }
+}
+
 .leftLines {
   background-image: url('/static/img/index/left-lines.svg');
   background-size: cover;
@@ -24,6 +43,7 @@
   margin: 0 auto;
   font-size: 30px !important;
   text-align: center;
+  color: black !important;
 }
 
 .img {
@@ -42,7 +62,6 @@
 }
 
 .pinkBtn {
-  margin-right: 30px !important;
   background-color: #be99ff !important;
   color: white !important;
   border-radius: 2px !important;
@@ -82,6 +101,7 @@
   border-right: 2px solid black;
   background-color: white;
   padding-left: 7px;
+  color: black !important;
 }
 
 .docs {
@@ -138,6 +158,10 @@
 }
 
 .vscode {
+  padding: 0 !important;
+}
+
+.vscodeMobile {
   padding: 0 !important;
 }
 

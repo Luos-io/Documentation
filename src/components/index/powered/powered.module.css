@@ -3,6 +3,23 @@
   background-color: #1e1e1e;
   color: white;
 }
+@media screen and (max-width: 1023px) {
+  .mobileNone {
+    display: none !important;
+  }
+  .pinkBtn {
+    margin-bottom: 15px !important;
+  }
+
+  .whiteBtn {
+    margin-bottom: 15px !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mobileNone {
+    display: initial !important;
+  }
+}
 
 .title {
   font-family: 'Roboto Mono', sans-serif;
@@ -14,10 +31,6 @@
 
 .containerTitle {
   width: 100%;
-  background-image: url('/static/img/index/powered/header.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 145px;
 }
 
 .underline:after {
@@ -60,6 +73,7 @@
   color: white !important;
   border-radius: 2px !important;
   width: 200px;
+  height: 40px;
   text-transform: uppercase;
 }
 
@@ -74,6 +88,7 @@
   color: #be99ff !important;
   border-radius: 2px !important;
   width: 220px;
+  height: 40px;
   text-transform: uppercase;
 }
 
@@ -132,6 +147,7 @@
   padding-top: 15px;
   margin: 0 auto;
   display: block;
+  width: 30px;
 }
 
 .video {
@@ -154,4 +170,21 @@
   padding: 5px;
   font-size: 12px;
   font-family: 'Roboto Mono';
+}
+
+html[data-theme='light'] .head {
+  background-color: #f5f8fa !important;
+}
+
+html[data-theme='light'] .docs {
+  background-color: #f7f8fa !important;
+}
+
+html[data-theme='light'] .video {
+  background-color: #f7f8fa !important;
+  color: black !important;
+}
+
+html[data-theme='light'] .player {
+  background-color: #fafafa !important;
 }

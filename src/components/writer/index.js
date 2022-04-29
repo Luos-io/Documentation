@@ -139,7 +139,12 @@ class TypeWriterEffect extends Component {
           style={{ ...this.props.textStyle }}
           className="react-typewriter-text"
         >
-          <span style={{ color: 'white', fontSize: '30px' }}>Luos is</span>{' '}
+          <span
+            className="react-typewriter-text-luos"
+            style={{ fontSize: '30px' }}
+          >
+            Luos is
+          </span>{' '}
           {this.state.text}
           <div
             className={`react-typewriter-pointer ${

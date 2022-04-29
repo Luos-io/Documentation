@@ -7,6 +7,30 @@
   padding: 30px 15px;
 }
 
+@media screen and (max-width: 1023px) {
+  .mobileNone {
+    display: none !important;
+  }
+
+  .text {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobileNone {
+    display: flex !important;
+  }
+
+  .playerLeft {
+    height: 335px !important;
+  }
+
+  .btnContainer {
+    margin: 50px 0;
+  }
+}
+
 .left {
   background-image: url('/static/img/index/header/vscode-left.svg');
   background-repeat: no-repeat;
@@ -24,22 +48,13 @@
   }
 }
 
-.right {
-  background-image: url('/static/img/index/header/vscode-right.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-left: 65px;
-  margin-top: -150px !important;
-  width: 100%;
-  z-index: 4;
-  height: 400px;
-}
 .text {
   font-family: 'Roboto Mono';
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 30px;
   color: white;
+  padding-right: 10px;
 }
 
 .btnContainer {
@@ -53,7 +68,22 @@
   color: white !important;
   border-radius: 2px !important;
   width: 200px;
+  height: 40px;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 1023px) {
+  .pinkBtn {
+    margin-bottom: 15px !important;
+  }
+
+  .whiteBtn {
+    margin-bottom: 15px !important;
+  }
+
+  .container {
+    padding: 90px 15px;
+  }
 }
 
 .pinkBtn:hover {
@@ -67,6 +97,7 @@
   color: #be99ff !important;
   border-radius: 2px !important;
   width: 220px;
+  height: 40px;
   text-transform: uppercase;
 }
 
@@ -87,6 +118,30 @@
   margin-left: 10px;
 }
 
+html[data-theme='light'] .head {
+  background-color: #f5f8fa !important;
+}
+
+html[data-theme='light'] .docs {
+  background-color: #f7f8fa !important;
+}
+
+html[data-theme='light'] .video {
+  background-color: #f7f8fa !important;
+  color: black !important;
+}
+
+html[data-theme='light'] .player {
+  background-color: #fafafa !important;
+}
+html[data-theme='light'] .playerLeft {
+  background-color: #fafafa !important;
+}
+
+html[data-theme='light'] .text {
+  color: black !important;
+}
+
 .head {
   width: 100%;
   height: 50px;
@@ -98,7 +153,12 @@
 
 .player {
   border-right: 2px solid black;
-  background-color: #323334;
+  background-color: #1e1e1e;
+}
+
+.playerLeft {
+  border-right: 2px solid black;
+  background-color: #1e1e1e;
 }
 
 .docs {
@@ -111,10 +171,11 @@
   padding-top: 15px;
   margin: 0 auto;
   display: block;
+  width: 30px;
 }
 
 .video {
-  background-color: #323334;
+  background-color: #1e1e1e;
   color: white !important;
   border-right: 2px solid black;
 }
@@ -127,7 +188,7 @@
 }
 
 .engine {
-  color: white;
+  color: black;
   background-color: #81c8be;
   border: 2px solid white;
   padding: 5px;

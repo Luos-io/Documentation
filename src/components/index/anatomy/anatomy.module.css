@@ -1,13 +1,16 @@
 .container {
   width: 100%;
+  background-color: white !important;
 }
 
 .title {
   font-family: 'Roboto Mono', sans-serif;
-  margin: 30px auto 5px !important;
+  padding: 30px 0 5px 55px !important;
   font-size: 30px !important;
+  margin: 0 !important;
+  color: black !important;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .underline:after {
@@ -18,12 +21,121 @@
 .text {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  padding-left: 55px;
   line-height: 20px;
-  text-align: center;
+  text-align: left;
+  color: black !important;
 }
 
-@media screen and (min-width: 1441px) {
-  .list {
-    margin-top: 30% !important;
+@media screen and (max-width: 1023px) {
+  .title {
+    padding-left: 20px !important;
   }
+
+  .text {
+    padding-left: 20px !important;
+  }
+}
+
+.lines {
+  margin-bottom: -120px !important;
+}
+
+.head {
+  width: 100%;
+  height: 50px;
+  border: 2px solid black;
+  border-right: none;
+  background-color: #f5f8fa;
+  border-top-left-radius: 10px;
+}
+
+.player {
+  background-size: cover;
+}
+
+.docs {
+  background-color: #f5f8fa;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.docs img {
+  padding-top: 15px;
+  margin: 0 auto;
+  display: block;
+  width: 25px;
+}
+
+.video {
+  background-color: #f5f8fa;
+  color: black !important;
+  border-right: 2px solid black;
+}
+
+.cardIcons {
+  float: left !important;
+  width: 24px;
+  margin-top: 3px;
+  padding-right: 5px;
+}
+
+.engine {
+  color: black !important;
+  padding: 7px;
+  font-size: 12px;
+  font-family: 'Roboto Mono', sans-serif !important;
+  width: 100%;
+  margin-left: 0 !important;
+  word-break: break-word;
+}
+
+.engine span {
+  font-family: 'Roboto Mono', sans-serif !important;
+}
+
+.engineActive span {
+  font-family: 'Roboto Mono', sans-serif !important;
+}
+
+.engineActive {
+  color: black;
+  background-color: #81c8be;
+  border: 2px solid white;
+  padding: 7px;
+  font-size: 12px;
+  font-family: 'Roboto Mono', sans-serif !important;
+  width: 100%;
+  margin-left: 0 !important;
+  word-break: break-word;
+}
+
+.vscode {
+  padding: 0 !important;
+  border-bottom: 15px solid #81c8be;
+}
+
+.icoText {
+  font-family: 'Roboto Mono', sans-serif !important;
+}
+
+.list span {
+  color: black !important;
+}
+
+html[data-theme='dark'] .head {
+  background-color: #323334 !important;
+}
+
+html[data-theme='dark'] .docs {
+  background-color: #323334 !important;
+}
+
+html[data-theme='dark'] .video {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+html[data-theme='dark'] .engine {
+  color: white !important;
 }
