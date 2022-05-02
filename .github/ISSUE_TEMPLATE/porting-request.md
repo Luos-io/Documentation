@@ -19,7 +19,7 @@ Don't hesitate to post a schematic.
 
 **Ensure that every box bellow is checked:**
  - [ ] The MCU is not in the [compatible list](https://docs.luos.io/pages/embedded/hardware_topics/electronic-design.html#compatible-mcus) in the documentation.
- - [ ] The MCU is not already in an existing [porting issue](https://github.com/Luos-io/Luos/issues).
+ - [ ] The MCU is not already in an existing [porting issue](https://github.com/Luos-io/luos_engine/issues).
  - [x] The issue has the label `porting`.
  - [ ] The issue is added to the [Porting](https://github.com/orgs/Luos-io/projects/3) project.
 

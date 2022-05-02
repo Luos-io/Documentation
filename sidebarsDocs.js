@@ -6,13 +6,19 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Luos Technology',
-          link: { type: 'doc', id: 'luos-technology/luos_tech' },
+          label: 'Luos engine',
+          link: {
+            type: 'doc',
+            id: 'luos-technology/luos_tech',
+          },
           items: [
             {
               type: 'category',
               label: 'Basics',
-              link: { type: 'doc', id: 'luos-technology/basics/basics' },
+              link: {
+                type: 'doc',
+                id: 'luos-technology/basics/basics',
+              },
               items: [
                 {
                   type: 'doc',
@@ -29,16 +35,19 @@ module.exports = {
             {
               type: 'category',
               label: 'Node',
-              link: { type: 'doc', id: 'luos-technology/node/node' },
+              link: {
+                type: 'doc',
+                id: 'luos-technology/node/node',
+              },
               items: [
                 {
                   type: 'doc',
-                  label: 'Luos',
+                  label: 'Luos engine',
                   id: 'luos-technology/node/luos',
                 },
                 {
                   type: 'doc',
-                  label: 'Luos HAL',
+                  label: 'Luos engine HAL',
                   id: 'luos-technology/node/luos-hal',
                 },
                 {
@@ -56,7 +65,10 @@ module.exports = {
             {
               type: 'category',
               label: 'Services',
-              link: { type: 'doc', id: 'luos-technology/services/services' },
+              link: {
+                type: 'doc',
+                id: 'luos-technology/services/services',
+              },
               items: [
                 {
                   type: 'doc',
@@ -88,7 +100,10 @@ module.exports = {
             {
               type: 'category',
               label: 'Message',
-              link: { type: 'doc', id: 'luos-technology/message/message' },
+              link: {
+                type: 'doc',
+                id: 'luos-technology/message/message',
+              },
               items: [
                 {
                   type: 'doc',
@@ -134,7 +149,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Luos configuration',
+              label: 'Luos engine configuration',
               id: 'hardware-consideration/mcu',
             },
             {
@@ -144,7 +159,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Test Your Configuration',
+              label: 'Test your Robus Configuration',
               id: 'hardware-consideration/test-your-configuration',
             },
           ],
@@ -152,7 +167,10 @@ module.exports = {
         {
           type: 'category',
           label: 'Tools',
-          link: { type: 'doc', id: 'tools/tool' },
+          link: {
+            type: 'doc',
+            id: 'tools/tool',
+          },
           items: [
             {
               type: 'doc',
@@ -189,7 +207,10 @@ module.exports = {
         {
           type: 'category',
           label: 'API',
-          link: { type: 'doc', id: 'api/list' },
+          link: {
+            type: 'doc',
+            id: 'api/list',
+          },
           items: [
             {
               type: 'doc',
@@ -216,6 +237,10 @@ module.exports = {
         },
       ],
     },
-    { type: 'link', label: 'Go to Luos.io', href: 'https://www.luos.io/' },
+    {
+      type: 'link',
+      label: 'Go to Luos.io',
+      href: 'https://www.luos.io/',
+    },
   ],
 };

@@ -5,11 +5,11 @@ custom_edit_url: null
 import Image from '@site/src/components/Images.js';
 import IconExternalLink from '@theme/IconExternalLink';
 
-# Part 4: Connect to the Network Display tool
+# Part 4: connect to a web app
 
 ## 1. Introduction
 
-In the previous parts of the [Get started tutorial](/tutorials/get-started/), we used Luos Python SDK (pyluos) to be able to code the behavior of your embedded device from your computer. This SDK needs the gate application to translate JSON to Luos and Luos to JSON.
+In the previous parts of the [Get started tutorial](/tutorials/get-started/), we used Luos Python SDK (Pyluos) to be able to code the behavior of your embedded device from your computer. This SDK needs the gate application to translate JSON to Luos and Luos to JSON.
 
 The gate translates everything on JSON allowing you to take control of your device from any language.
 
@@ -38,7 +38,7 @@ If you have just finish the Get started Part 3, replace the gate with the inspec
 **Leave your setup as it is and just unplug the USB cable!**
 :::
 
-1. In VS Code, open the folder *Get_started ****project* corresponding to the board you use.
+1. In VS Code, open the folder *Get_started*'s project corresponding to the board you use.
 2. From the left panel, find and open the file *src/main.c* or *src/Arduino.ino*.
 3. Replace the header gate file `gate.h` by the inspector file `inspector.h`:
     
@@ -142,7 +142,7 @@ At this point, you must have 2 boards connected through a Luos Network. If this 
 
 ### Flash the board 1
 
-1. In VS Code, open the folder Get_started *****project* corresponding to your board 1: `file/open folder`.
+1. In VS Code, open the folder *Get_started*'s project corresponding to your board 1: `file/open folder`.
 2. From the left panel, find and open the file *src/main.c* or *src/Arduino.ino*.
 3. Comment the lines `Blinker_Init();` and `Blinker_Loop();` to remove the blinker service from this board: 
 
@@ -174,7 +174,7 @@ If you finished Part 3, Just reconnect GND wire on your second board. **To Preve
 
 Now unplug the USB cable of Board 1 and connect the USB cable of board 2. Then follow these steps: 
 
-1. In VS Code, open the folder Get_started *****project* corresponding to your board 1: `file/open folder`.
+1. In VS Code, open the folder *Get_started*'s project corresponding to your board 1: `file/open folder`.
 2. From the left panel, find and open the file *src/main.c* or *src/Arduino.ino*.
 3. Comment the lines `Blinker_Init();` and `Blinker_Loop();` to remove the blinker service from this board:
 
