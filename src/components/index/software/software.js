@@ -2,8 +2,41 @@ import React from 'react';
 import styles from './software.module.css';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import { useColorMode } from '@docusaurus/theme-common';
+import Carousel from 'react-material-ui-carousel';
+import Paper from '@mui/material/Paper';
 
 const Software = (props) => {
+  const { isDarkTheme } = useColorMode();
+
+  let items = [
+    {
+      name: '1. ENCAPSULATION',
+      description: 'Luos engine translates your embedded features into APIs.',
+      file: 'STEP_1.c',
+      img: 'step1',
+    },
+    {
+      name: '2. EXPOSITION',
+      description: 'Luos makes these APIs accessible from anywhere.',
+      file: 'STEP_2.py',
+      img: 'step2',
+    },
+    {
+      name: '3. EXPLOITATION',
+      description:
+        'Luos provides you with integrations and tools to design the software architectures of your dreams.',
+      file: 'STEP_3.js',
+      img: 'step3',
+    },
+  ];
+
+  const anArrayOfNumbers = [
+    <img src="img/index/software/icons/step1.svg" />,
+    <img src="img/index/software/icons/step2.svg" />,
+    <img src="img/index/software/icons/step3.svg" />,
+  ];
+
   return (
     <div className={styles.container}>
       <h4 style={{ textAlign: 'center' }}>Split the monolith: </h4>
@@ -53,8 +86,179 @@ const Software = (props) => {
           UNLEASH EMBEDDED SYSTEMS
         </Button>
       </div>
-      <img src="/img/index/how-its-work.svg" className={styles.work} />
+
+      <Grid container className={styles.mobileNone}>
+        <Grid md={1} lg={1} xl={1}></Grid>
+        <Grid
+          md={10}
+          lg={10}
+          xl={10}
+          style={{ borderBottom: '15px solid #81c8be', marginBottom: '-50px' }}
+        >
+          <div className={styles.head}>
+            {' '}
+            <img
+              src="img/index/header/buttons.svg"
+              style={{ padding: '15px' }}
+            />
+          </div>
+          <Grid container>
+            <Grid item md={1} lg={1} xl={1} className={styles.docs}>
+              {isDarkTheme ? (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs.svg" />
+                  <img src="img/index/header/zoom.svg" />
+                  <img src="img/index/header/luos.svg" />{' '}
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs-white.svg" />
+                  <img src="img/index/header/zoom-white.svg" />
+                  <img src="img/index/header/luos-white.svg" />{' '}
+                </>
+              )}
+            </Grid>
+
+            <Grid item md={11} lg={11} className={styles.playerLeft}>
+              <Grid container>
+                <Grid item md={4} lg={4} xl={4} className={styles.step}>
+                  <div className={styles.file}>
+                    <div className={styles.fileName}>step_1.c</div>
+                  </div>
+                  <img
+                    src={
+                      isDarkTheme
+                        ? `img/index/software/step1.svg`
+                        : `img/index/software/step1-dark.svg`
+                    }
+                    className={styles.carousselImgDesktop}
+                  />
+                  <h2 className={styles.carousselTitle}>1. ENCAPSULATION</h2>
+                  <p className={styles.carousselText}>
+                    Luos engine translates your embedded features into APIs.
+                  </p>
+                </Grid>
+                <Grid item md={4} lg={4} xl={4} className={styles.step}>
+                  <div className={styles.file}>
+                    <div className={styles.fileName}>step_2.py</div>
+                  </div>
+                  <img
+                    src={
+                      isDarkTheme
+                        ? `img/index/software/step2.svg`
+                        : `img/index/software/step2-dark.svg`
+                    }
+                    className={styles.carousselImgDesktop}
+                  />
+                  <h2 className={styles.carousselTitle}>2. EXPOSITION</h2>
+                  <p className={styles.carousselText}>
+                    Luos makes these APIs accessible from anywhere.
+                  </p>
+                </Grid>
+                <Grid item md={4} lg={4} xl={4}>
+                  <div className={styles.file}>
+                    <div className={styles.fileName}>step_3.js</div>
+                  </div>
+                  <img
+                    src={
+                      isDarkTheme
+                        ? `img/index/software/step3.svg`
+                        : `img/index/software/step3-dark.svg`
+                    }
+                    className={styles.carousselImgDesktop}
+                  />
+                  <h2 className={styles.carousselTitle}>3. EXPLOITATION</h2>
+                  <p className={styles.carousselText}>
+                    Luos provides you with integrations and tools to design the
+                    software architectures of your dreams.
+                  </p>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid md={1} lg={1} xl={1}></Grid>
+      </Grid>
+
+      <Grid containe className={styles.howitsworkMobile}>
+        <Grid item xs={12}>
+          <div className={styles.head}>
+            {' '}
+            <img
+              src="img/index/header/buttons.svg"
+              style={{ padding: '15px' }}
+            />
+          </div>
+          <Grid container>
+            <Grid item xs={2} className={styles.docs}>
+              {isDarkTheme ? (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs.svg" />
+                  <img src="img/index/header/zoom.svg" />
+                  <img src="img/index/header/luos.svg" />{' '}
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs-white.svg" />
+                  <img src="img/index/header/zoom-white.svg" />
+                  <img src="img/index/header/luos-white.svg" />{' '}
+                </>
+              )}
+            </Grid>
+
+            <Grid item xs={10} className={styles.player}>
+              <Carousel
+                IndicatorIcon={anArrayOfNumbers}
+                indicatorIconButtonProps={{
+                  style: {
+                    padding: '10px', // 1
+                    filter: 'brightness(50%)',
+                  },
+                }}
+                activeIndicatorIconButtonProps={{
+                  style: {
+                    filter: 'brightness(100%)',
+                  },
+                }}
+              >
+                {items.map((item, i) => (
+                  <Item key={i} item={item} />
+                ))}
+              </Carousel>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} className={styles.footer}>
+            {' '}
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
   );
 };
+
+function Item(props) {
+  const { isDarkTheme } = useColorMode();
+  return (
+    <Paper className={styles.caroussel}>
+      <div className={styles.file}>
+        <div className={styles.fileName}>{props.item.file}</div>
+      </div>
+      <img
+        src={
+          isDarkTheme
+            ? `img/index/software/${props.item.img}.svg`
+            : `img/index/software/${props.item.img}-dark.svg`
+        }
+        className={styles.carousselImg}
+      />
+      <h2 className={styles.carousselTitle}>{props.item.name}</h2>
+      <p className={styles.carousselText}>{props.item.description}</p>
+    </Paper>
+  );
+}
+
 export default Software;

@@ -10,6 +10,17 @@
   .vscodeMobile {
     display: initial !important;
   }
+  .mobileNone {
+    display: none !important;
+  }
+
+  .btnContainer {
+    display: none !important;
+  }
+
+  .btnContainerMobile {
+    display: initial !important;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -17,7 +28,18 @@
     display: initial !important;
   }
 
+  .mobileNone {
+    display: flex !important;
+  }
+
   .vscodeMobile {
+    display: none !important;
+  }
+  .btnContainer {
+    display: initial !important;
+  }
+
+  .btnContainerMobile {
     display: none !important;
   }
 }
@@ -40,10 +62,11 @@
 
 .title {
   font-family: 'Roboto Mono', sans-serif;
-  margin: 0 auto;
+  margin: 0 auto !important;
   font-size: 30px !important;
   text-align: center;
   color: black !important;
+  margin-bottom: 30px !important;
 }
 
 .img {
@@ -74,6 +97,12 @@
 }
 
 .btnContainer {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btnContainerMobile {
   width: 100%;
   margin-top: 20px;
   text-align: center;
