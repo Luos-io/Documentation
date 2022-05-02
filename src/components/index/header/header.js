@@ -93,9 +93,9 @@ const Header = (props) => {
         <Grid
           item
           md={6}
-          mt={-10}
+          mt={-13}
           style={{
-            zIndex: '4',
+            zIndex: '3',
             borderBottom: '15px solid #81c8be',
             paddingLeft: '0 !important',
           }}
@@ -133,7 +133,7 @@ const Header = (props) => {
             </Grid>
             <Grid item md={9} lg={9} className={styles.player}>
               <iframe
-                className="player_iframe"
+                className={styles.player_iframe}
                 src="https://www.youtube.com/embed/ujh0xNE3TZ8?feature=oembed"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               ></iframe>

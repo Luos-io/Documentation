@@ -11,7 +11,6 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useColorMode } from '@docusaurus/theme-common';
-
 const Anatomy = (props) => {
   const { isDarkTheme } = useColorMode();
   const img = {
@@ -37,7 +36,7 @@ const Anatomy = (props) => {
         developers. Some of the features come from community needs.
       </p>
       <Grid container mt={5} mb={5}>
-        <Grid item md={4} lg={4} xl={4.5}>
+        <Grid item md={3} lg={3} xl={4.5}>
           <List sx={{ width: '100%' }} className={styles.list}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
@@ -88,7 +87,7 @@ const Anatomy = (props) => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item md={4} lg={4} xl={4.5}>
+        <Grid item md={3} lg={3} xl={4.5}>
           <List sx={{ width: '100%' }} display="flex" className={styles.list}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
@@ -140,7 +139,7 @@ const Anatomy = (props) => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item xs={12} md={4} lg={4} xl={3} className={styles.vscode}>
+        <Grid item xs={12} md={6} lg={6} xl={3} className={styles.vscode}>
           <div className={styles.head}>
             {' '}
             <img
@@ -243,6 +242,9 @@ const Anatomy = (props) => {
                 backgroundImage: `url('/img/index/anatomy/illu/${currentImageTmp}.svg')`,
               }}
             ></Grid>
+          </Grid>
+          <Grid item xs={12} className={styles.footer}>
+            {' '}
           </Grid>
         </Grid>
       </Grid>

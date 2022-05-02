@@ -6,6 +6,10 @@
   padding: 30px;
 }
 
+html[data-theme='light'] .container {
+  background-image: url('/static/img/index/header/nebula-light.svg');
+}
+
 @media screen and (max-width: 1023px) {
   .mobileNone {
     display: none !important;
@@ -203,10 +207,10 @@
 }
 
 html[data-theme='light'] .head {
-  background-color: #cacbce !important;
+  background-color: #f7f8fa !important;
 }
 html[data-theme='light'] .file {
-  background-color: #cacbce !important;
+  background-color: #f7f8fa !important;
 }
 html[data-theme='light'] .fileName {
   background-color: #fafafa !important;
@@ -221,7 +225,7 @@ html[data-theme='light'] .carousselTitle {
 }
 
 html[data-theme='light'] .docs {
-  background-color: #cacbce !important;
+  background-color: #f7f8fa !important;
 }
 html[data-theme='light'] .player {
   background-color: #fafafa !important;

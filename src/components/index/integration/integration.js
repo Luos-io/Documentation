@@ -5,9 +5,8 @@ import Button from '@mui/material/Button';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Typography from '@mui/material/Typography';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Avatar } from '@mui/material';
+import { useColorMode } from '@docusaurus/theme-common';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
@@ -15,6 +14,7 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 // DO NOT REMOVE WIP INTEGRATION BLOCK
 
 const Integration = (props) => {
+  const { isDarkTheme } = useColorMode();
   const img = {
     mcu: [
       ['esp', 'ESP32'],
@@ -73,14 +73,13 @@ const Integration = (props) => {
         sx={{ padding: '30px' }}
         className={styles.mobileNone}
       >
-        <Grid item xs={1} md={2} lg={2} xl={3.5}></Grid>
+        <Grid item xs={1} md={2} lg={2} xl={2}></Grid>
         <Grid
           item
           md={8}
           lg={8}
-          xl={5}
+          xl={8}
           style={{
-            borderBottom: '15px solid #81c8be',
             minHeight: '400px',
           }}
           className={styles.vscode}
@@ -94,9 +93,21 @@ const Integration = (props) => {
           </div>
           <Grid container style={{ height: '87%' }}>
             <Grid item md={1} lg={1} className={styles.docs}>
-              <img src="img/index/integration/docs.svg" />
-              <img src="img/index/integration/zoom.svg" />
-              <img src="img/index/integration/luos.svg" />
+              {isDarkTheme ? (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs.svg" />
+                  <img src="img/index/header/zoom.svg" />
+                  <img src="img/index/header/luos.svg" />{' '}
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <img src="img/index/header/docs-white.svg" />
+                  <img src="img/index/header/zoom-white.svg" />
+                  <img src="img/index/header/luos-white.svg" />{' '}
+                </>
+              )}
             </Grid>
             <Grid item md={2} lg={2} className={styles.video}>
               <span>
@@ -162,6 +173,9 @@ const Integration = (props) => {
               </ImageList>
             </Grid>
           </Grid>
+          <Grid item xs={12} className={styles.footer}>
+            {' '}
+          </Grid>
         </Grid>
 
         <div className={styles.btnContainer}>
@@ -169,7 +183,7 @@ const Integration = (props) => {
             Learn more about integrations
           </Button>
         </div>
-        <Grid item md={2} lg={2} xl={3.5}></Grid>
+        <Grid item md={2} lg={2} xl={2}></Grid>
       </Grid>
 
       <Grid container>

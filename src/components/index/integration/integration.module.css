@@ -44,6 +44,17 @@
   }
 }
 
+@media screen and (min-width: 1441px) {
+  .vscode {
+    height: 600px;
+  }
+}
+.footer {
+  width: 100%;
+  height: 15px;
+  background-color: #81c8be;
+}
+
 .leftLines {
   background-image: url('/static/img/index/left-lines.svg');
   background-size: cover;
@@ -143,6 +154,7 @@
   padding-top: 15px;
   margin: 0 auto;
   display: block;
+  width: 30px;
 }
 
 .video {
@@ -178,7 +190,6 @@
 .engineActive {
   color: white;
   background-color: #81c8be;
-  border: 2px solid white;
   padding: 7px;
   font-size: 12px;
   font-family: 'Roboto Mono', sans-serif !important;
@@ -196,4 +207,26 @@
 
 .icoText {
   font-family: 'Roboto Mono', sans-serif !important;
+}
+
+html[data-theme='dark'] .head {
+  background-color: #323334 !important;
+}
+
+html[data-theme='dark'] .docs {
+  background-color: #323334 !important;
+}
+
+html[data-theme='dark'] .video {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+html[data-theme='dark'] .engine {
+  color: white !important;
+}
+
+html[data-theme='dark'] .player {
+  background-color: #1e1e1e !important;
+  color: white !important;
 }

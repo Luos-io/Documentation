@@ -7,6 +7,10 @@
   padding: 30px 15px;
 }
 
+html[data-theme='light'] .container {
+  background-image: url('/static/img/index/header/nebula-light.svg');
+}
+
 @media screen and (max-width: 1023px) {
   .mobileNone {
     display: none !important;
@@ -23,7 +27,7 @@
   }
 
   .playerLeft {
-    height: 335px !important;
+    height: 250px !important;
   }
 
   .btnContainer {
@@ -190,8 +194,15 @@ html[data-theme='light'] .text {
 .engine {
   color: black;
   background-color: #81c8be;
-  border: 2px solid white;
   padding: 5px;
   font-size: 12px;
   font-family: 'Roboto Mono';
+}
+
+.player_iframe {
+  width: 100%;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+  border: none;
 }
