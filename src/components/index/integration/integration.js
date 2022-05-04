@@ -10,6 +10,8 @@ import { useColorMode } from '@docusaurus/theme-common';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import SearchIcon from '@mui/icons-material/Search';
 
 // DO NOT REMOVE WIP INTEGRATION BLOCK
 
@@ -59,7 +61,10 @@ const Integration = (props) => {
       <Grid container spacing={3}>
         <Grid item md={4} lg={4}>
           {' '}
-          <img src="img/index/left-lines.svg" className={styles.imgLeft} />
+          <img
+            src="img/index/integration/line-left.svg"
+            className={styles.imgLeft}
+          />
         </Grid>
         <Grid item xs={12} md={4} lg={4}>
           <h1 className={`${styles.title} ${styles.underline}`}>
@@ -88,23 +93,21 @@ const Integration = (props) => {
             {' '}
             <img
               src="img/index/header/buttons.svg"
-              style={{ padding: '15px' }}
+              style={{ padding: '15px', width: '100px' }}
             />
           </div>
           <Grid container style={{ height: '87%' }}>
             <Grid item md={1} lg={1} className={styles.docs}>
+              <FileCopyIcon fontSize="large" className={styles.icons} />
+              <SearchIcon fontSize="large" className={styles.icons} />
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/docs.svg" />
-                  <img src="img/index/header/zoom.svg" />
                   <img src="img/index/header/luos.svg" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/docs-white.svg" />
-                  <img src="img/index/header/zoom-white.svg" />
                   <img src="img/index/header/luos-white.svg" />{' '}
                 </>
               )}
@@ -177,12 +180,6 @@ const Integration = (props) => {
             {' '}
           </Grid>
         </Grid>
-
-        <div className={styles.btnContainer}>
-          <Button variant="contained" className={styles.pinkBtn}>
-            Learn more about integrations
-          </Button>
-        </div>
         <Grid item md={2} lg={2} xl={2}></Grid>
       </Grid>
 
@@ -201,7 +198,7 @@ const Integration = (props) => {
             {' '}
             <img
               src="img/index/header/buttons.svg"
-              style={{ padding: '15px' }}
+              style={{ padding: '15px', width: '100px' }}
             />
           </div>
           <Grid container style={{ height: '87%' }}>
@@ -285,9 +282,26 @@ const Integration = (props) => {
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid item xs={8} md={8} lg={8}></Grid>
+        <Grid item xs={4} md={4} lg={4}></Grid>
+        <Grid
+          item
+          xs={4}
+          md={4}
+          lg={4}
+          alignItems="center"
+          className={styles.gridBtn}
+        >
+          <div className={styles.btnContainer}>
+            <Button variant="contained" className={styles.pinkBtn}>
+              Learn more about integrations
+            </Button>
+          </div>
+        </Grid>
         <Grid item xs={4} md={4} lg={4}>
-          <img src="img/index/right-lines.svg" className={styles.imgRight} />
+          <img
+            src="img/index/integration/line-right.svg"
+            className={styles.imgRight}
+          />
         </Grid>
       </Grid>
     </div>

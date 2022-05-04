@@ -1,18 +1,24 @@
 .container {
   width: 100%;
-  background-color: white !important;
+  background-color: #323334 !important;
+}
+
+html[data-theme='light'] .container {
+  background-color: #f5f5f5 !important;
 }
 
 .title {
   font-family: 'Roboto Mono', sans-serif;
-  padding: 30px 0 5px 55px !important;
+  padding: 60px 0 5px 55px !important;
   font-size: 30px !important;
   margin: 0 !important;
   color: black !important;
   width: 100%;
   text-align: left;
 }
-
+html[data-theme='dark'] .title {
+  color: white !important;
+}
 .underline:after {
   content: '_';
   color: #be99ff;
@@ -25,6 +31,9 @@
   line-height: 20px;
   text-align: left;
   color: black !important;
+}
+html[data-theme='dark'] .text {
+  color: white !important;
 }
 
 @media screen and (max-width: 1023px) {
@@ -61,10 +70,15 @@
 }
 
 .docs img {
-  padding-top: 15px;
-  margin: 0 auto;
+  margin: 15px auto !important;
   display: block;
-  width: 25px;
+  width: 30px;
+}
+
+.icons {
+  margin: 15px auto !important;
+  margin: 0 auto;
+  display: block !important;
 }
 
 .video {
@@ -121,6 +135,18 @@
   color: black !important;
 }
 
+.list p {
+  text-align: justify;
+}
+
+html[data-theme='dark'] .list span {
+  color: white !important;
+}
+
+html[data-theme='dark'] .list p {
+  color: white !important;
+}
+
 html[data-theme='dark'] .head {
   background-color: #323334 !important;
 }
@@ -136,6 +162,10 @@ html[data-theme='dark'] .video {
 
 html[data-theme='dark'] .engine {
   color: white !important;
+}
+
+html[data-theme='dark'] .listIcon {
+  fill: white !important;
 }
 
 .footer {

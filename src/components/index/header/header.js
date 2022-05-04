@@ -6,6 +6,8 @@ import Writer from '@site/src/components/writer';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useColorMode } from '@docusaurus/theme-common';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Header = (props) => {
   const { isDarkTheme } = useColorMode();
@@ -18,23 +20,21 @@ const Header = (props) => {
             {' '}
             <img
               src="img/index/header/buttons.svg"
-              style={{ padding: '15px' }}
+              style={{ padding: '15px', width: '100px' }}
             />
           </div>
           <Grid container>
             <Grid item xs={2} md={1} lg={1} className={styles.docs}>
+              <FileCopyIcon fontSize="large" className={styles.icons} />
+              <SearchIcon fontSize="large" className={styles.icons} />
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/docs.svg" />
-                  <img src="img/index/header/zoom.svg" />
                   <img src="img/index/header/luos.svg" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/docs-white.svg" />
-                  <img src="img/index/header/zoom-white.svg" />
                   <img src="img/index/header/luos-white.svg" />{' '}
                 </>
               )}
@@ -104,23 +104,21 @@ const Header = (props) => {
             {' '}
             <img
               src="img/index/header/buttons.svg"
-              style={{ padding: '15px' }}
+              style={{ padding: '15px', width: '100px' }}
             />
           </div>
           <Grid container>
             <Grid item md={1} lg={1} className={styles.docs}>
+              <FileCopyIcon fontSize="large" className={styles.icons} />
+              <SearchIcon fontSize="large" className={styles.icons} />
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/docs.svg" />
-                  <img src="img/index/header/zoom.svg" />
                   <img src="img/index/header/luos.svg" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/docs-white.svg" />
-                  <img src="img/index/header/zoom-white.svg" />
                   <img src="img/index/header/luos-white.svg" />{' '}
                 </>
               )}

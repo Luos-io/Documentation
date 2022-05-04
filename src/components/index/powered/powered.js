@@ -9,6 +9,14 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { useColorMode } from '@docusaurus/theme-common';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import SearchIcon from '@mui/icons-material/Search';
+import ExploreIcon from '@mui/icons-material/Explore';
+import CachedIcon from '@mui/icons-material/Cached';
+import AbcIcon from '@mui/icons-material/Abc';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 const Powered = (props) => {
   const { isDarkTheme } = useColorMode();
@@ -16,8 +24,16 @@ const Powered = (props) => {
     <div className={styles.container}>
       <div className={styles.containerTitle}>
         {' '}
-        <h1 className={`${styles.title} ${styles.underline}`}>
-          Powered by Luos
+        <h1 className={`${styles.title}`}>
+          Powered by{' '}
+          <img
+            src={
+              isDarkTheme
+                ? 'img/index/powered/luos.svg'
+                : 'img/index/powered/luos-dark.svg'
+            }
+            style={{ verticalAlign: 'middle', width: '100px' }}
+          />
         </h1>
       </div>
       <Grid container mt={3} mb={5}>
@@ -25,11 +41,7 @@ const Powered = (props) => {
           <List sx={{ width: '100%' }}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="table tree icon"
-                  src="/img/index/powered/detection.svg"
-                  variant="square"
-                />
+                <ExploreIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 className={styles.text}
@@ -42,11 +54,7 @@ const Powered = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="cubes icon"
-                  src="/img/index/powered/data.svg"
-                  variant="square"
-                />
+                <CachedIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 className={styles.text}
@@ -59,11 +67,7 @@ const Powered = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="files icon"
-                  src="/img/index/powered/service.svg"
-                  variant="square"
-                />
+                <AbcIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 className={styles.text}
@@ -79,11 +83,7 @@ const Powered = (props) => {
           <List sx={{ width: '100%' }}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="bootloader icon"
-                  src="/img/index/powered/object.svg"
-                  variant="square"
-                />
+                <MenuBookIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 className={styles.text}
@@ -96,11 +96,7 @@ const Powered = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="timestamp icon"
-                  src="/img/index/powered/event.svg"
-                  variant="square"
-                />
+                <EventNoteIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 className={styles.text}
@@ -113,11 +109,7 @@ const Powered = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="glass icon"
-                  src="/img/index/powered/multimaster.svg"
-                  variant="square"
-                />
+                <PeopleAltIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 className={styles.text}
@@ -159,23 +151,21 @@ const Powered = (props) => {
             {' '}
             <img
               src="img/index/header/buttons.svg"
-              style={{ padding: '15px' }}
+              style={{ padding: '15px', width: '100px' }}
             />
           </div>
           <Grid container style={{ height: '100%' }}>
             <Grid item md={1} lg={1} className={styles.docs}>
+              <FileCopyIcon fontSize="large" className={styles.icons} />
+              <SearchIcon fontSize="large" className={styles.icons} />
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/docs.svg" />
-                  <img src="img/index/header/zoom.svg" />
                   <img src="img/index/header/luos.svg" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/docs-white.svg" />
-                  <img src="img/index/header/zoom-white.svg" />
                   <img src="img/index/header/luos-white.svg" />{' '}
                 </>
               )}

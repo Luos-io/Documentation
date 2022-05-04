@@ -604,6 +604,7 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 }
 
 html[data-theme='dark'] footer {
+  border-top: 2px solid #1e1e1e;
   background-color: #323334;
   color: white;
 }

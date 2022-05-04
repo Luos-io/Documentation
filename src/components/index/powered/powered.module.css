@@ -1,8 +1,13 @@
 .container {
   width: 100%;
-  background-color: #1e1e1e;
+  background-color: #323334;
   color: white;
 }
+
+html[data-theme='light'] .container {
+  background-color: #f5f5f5;
+}
+
 @media screen and (max-width: 1023px) {
   .mobileNone {
     display: none !important;
@@ -45,6 +50,23 @@
 .text p {
   color: white !important;
   padding-right: 30px;
+  text-align: justify;
+}
+
+html[data-theme='light'] .listIcon {
+  fill: black !important;
+}
+
+html[data-theme='light'] .text span {
+  color: black !important;
+}
+
+html[data-theme='light'] .text p {
+  color: black !important;
+}
+
+html[data-theme='light'] .title {
+  color: black !important;
 }
 
 .nebula {
@@ -54,7 +76,8 @@
 }
 
 html[data-theme='light'] .nebula {
-  background-image: url('/static/img/index/header/nebula-light.svg');
+  background-image: url('/static/img/index/powered/nebula-light.svg');
+  color: black;
 }
 
 .textGs {
@@ -139,6 +162,7 @@ html[data-theme='light'] .nebula {
   background-image: url('/static/img/index/powered/lines.svg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 15px 15px;
 }
 
 .docs {
@@ -148,10 +172,18 @@ html[data-theme='light'] .nebula {
 }
 
 .docs img {
-  padding-top: 15px;
-  margin: 0 auto;
+  margin: 15px auto !important;
   display: block;
   width: 30px;
+}
+
+.icons {
+  margin: 15px auto !important;
+  display: block !important;
+}
+
+html[data-theme='light'] .icons {
+  fill: black !important;
 }
 
 .video {

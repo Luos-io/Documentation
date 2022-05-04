@@ -1,6 +1,9 @@
 .container {
   width: 100%;
-  background-color: white;
+  background-color: #323334;
+}
+html[data-theme='light'] .container {
+  background-color: #f5f5f5;
 }
 
 @media screen and (max-width: 1023px) {
@@ -36,7 +39,7 @@
     display: none !important;
   }
   .btnContainer {
-    display: initial !important;
+    display: flex !important;
   }
 
   .btnContainerMobile {
@@ -73,11 +76,14 @@
 
 .title {
   font-family: 'Roboto Mono', sans-serif;
-  margin: 0 auto !important;
+  margin: 30px auto !important;
   font-size: 30px !important;
   text-align: center;
   color: black !important;
-  margin-bottom: 30px !important;
+}
+
+html[data-theme='dark'] .title {
+  color: white !important;
 }
 
 .img {
@@ -100,6 +106,9 @@
   color: white !important;
   border-radius: 2px !important;
   text-transform: uppercase;
+  height: 40px;
+  display: block !important;
+  margin: 0 auto !important;
 }
 
 .pinkBtn:hover {
@@ -107,10 +116,14 @@
   color: #be99ff !important;
 }
 
+.gridBtn {
+  padding-top: 0 !important;
+}
 .btnContainer {
   width: 100%;
-  margin-top: 20px;
   text-align: center;
+  height: 100%;
+  align-items: center;
 }
 
 .btnContainerMobile {
@@ -151,10 +164,14 @@
 }
 
 .docs img {
-  padding-top: 15px;
-  margin: 0 auto;
+  margin: 15px auto !important;
   display: block;
   width: 30px;
+}
+
+.icons {
+  margin: 15px auto !important;
+  display: block !important;
 }
 
 .video {

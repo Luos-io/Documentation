@@ -5,6 +5,8 @@ import Button from '@mui/material/Button';
 import { useColorMode } from '@docusaurus/theme-common';
 import Carousel from 'react-material-ui-carousel';
 import Paper from '@mui/material/Paper';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Software = (props) => {
   const { isDarkTheme } = useColorMode();
@@ -97,25 +99,35 @@ const Software = (props) => {
         >
           <div className={styles.head}>
             {' '}
-            <img
-              src="img/index/header/buttons.svg"
-              style={{ padding: '15px' }}
-            />
+            <Grid container>
+              <Grid item md={4} lg={4} xl={4}>
+                {' '}
+                <img
+                  src="img/index/header/buttons.svg"
+                  style={{ padding: '15px', width: '100px' }}
+                />
+              </Grid>
+              <Grid item md={4} lg={4} xl={4} style={{ textAlign: 'center' }}>
+                {' '}
+                <span className={`${styles.hiwTitle} ${styles.underline}`}>
+                  /How its work
+                </span>
+              </Grid>
+              <Grid item md={4} lg={4} xl={4}></Grid>
+            </Grid>
           </div>
           <Grid container>
             <Grid item md={1} lg={1} xl={1} className={styles.docs}>
+              <FileCopyIcon fontSize="large" className={styles.icons} />
+              <SearchIcon fontSize="large" className={styles.icons} />
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/docs.svg" />
-                  <img src="img/index/header/zoom.svg" />
                   <img src="img/index/header/luos.svg" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/docs-white.svg" />
-                  <img src="img/index/header/zoom-white.svg" />
                   <img src="img/index/header/luos-white.svg" />{' '}
                 </>
               )}
@@ -185,26 +197,37 @@ const Software = (props) => {
       <Grid containe className={styles.howitsworkMobile}>
         <Grid item xs={12}>
           <div className={styles.head}>
-            {' '}
-            <img
-              src="img/index/header/buttons.svg"
-              style={{ padding: '15px' }}
-            />
+            <Grid container>
+              <Grid item xs={4}>
+                {' '}
+                <img
+                  src="img/index/header/buttons.svg"
+                  style={{ padding: '15px', width: '100px' }}
+                />
+              </Grid>
+              <Grid item xs={8} style={{}}>
+                {' '}
+                <span
+                  className={`${styles.hiwTitle} ${styles.underline}`}
+                  style={{ marginLeft: '10px' }}
+                >
+                  /How its work
+                </span>
+              </Grid>
+            </Grid>
           </div>
           <Grid container>
             <Grid item xs={2} className={styles.docs}>
+              <FileCopyIcon fontSize="large" className={styles.icons} />
+              <SearchIcon fontSize="large" className={styles.icons} />
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/docs.svg" />
-                  <img src="img/index/header/zoom.svg" />
                   <img src="img/index/header/luos.svg" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/docs-white.svg" />
-                  <img src="img/index/header/zoom-white.svg" />
                   <img src="img/index/header/luos-white.svg" />{' '}
                 </>
               )}

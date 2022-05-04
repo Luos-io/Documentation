@@ -7,7 +7,8 @@
 }
 
 html[data-theme='light'] .container {
-  background-image: url('/static/img/index/header/nebula-light.svg');
+  background-image: url('/static/img/index/software/nebula-light.svg');
+  color: black !important;
 }
 
 @media screen and (max-width: 1023px) {
@@ -131,10 +132,30 @@ html[data-theme='light'] .container {
 }
 
 .docs img {
-  padding-top: 15px;
-  margin: 0 auto;
+  margin: 15px auto !important;
   display: block;
   width: 30px;
+}
+
+.icons {
+  margin: 15px auto !important;
+  display: block !important;
+}
+
+html[data-theme='light'] .icons {
+  fill: black !important;
+}
+
+.hiwTitle {
+  color: black;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 18px !important;
+  font-weight: bold;
+  padding-top: 7px;
+  display: block;
+}
+html[data-theme='dark'] .hiwTitle {
+  color: white;
 }
 
 .video {
@@ -192,7 +213,7 @@ html[data-theme='light'] .container {
 }
 
 .carousselText {
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px !important;
   padding-left: 15px;
   line-height: normal !important;
@@ -204,6 +225,7 @@ html[data-theme='light'] .container {
 
 .step {
   border-right: 2px solid #fafafa;
+  height: 330px;
 }
 
 html[data-theme='light'] .head {

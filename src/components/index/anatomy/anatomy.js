@@ -11,6 +11,14 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useColorMode } from '@docusaurus/theme-common';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import SearchIcon from '@mui/icons-material/Search';
+import MemoryIcon from '@mui/icons-material/Memory';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import ComputerIcon from '@mui/icons-material/Computer';
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+
 const Anatomy = (props) => {
   const { isDarkTheme } = useColorMode();
   const img = {
@@ -40,11 +48,7 @@ const Anatomy = (props) => {
           <List sx={{ width: '100%' }} className={styles.list}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="table tree icon"
-                  src="/img/index/anatomy/table-tree.svg"
-                  variant="square"
-                />
+                <MemoryIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 primary="Topology and routing table"
@@ -56,10 +60,9 @@ const Anatomy = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="cubes icon"
-                  src="/img/index/anatomy/cubes.svg"
-                  variant="square"
+                <MiscellaneousServicesIcon
+                  fontSize="large"
+                  className={styles.listIcon}
                 />
               </ListItemAvatar>
               <ListItemText
@@ -72,11 +75,7 @@ const Anatomy = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="files icon"
-                  src="/img/index/anatomy/files.svg"
-                  variant="square"
-                />
+                <ComputerIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 primary="Remote control"
@@ -91,11 +90,7 @@ const Anatomy = (props) => {
           <List sx={{ width: '100%' }} display="flex" className={styles.list}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="bootloader icon"
-                  src="/img/index/anatomy/bootloader.svg"
-                  variant="square"
-                />
+                <AccountTreeIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 style={{ color: 'black !important' }}
@@ -108,10 +103,9 @@ const Anatomy = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="timestamp icon"
-                  src="/img/index/anatomy/timestamp.svg"
-                  variant="square"
+                <CalendarMonthIcon
+                  fontSize="large"
+                  className={styles.listIcon}
                 />
               </ListItemAvatar>
               <ListItemText
@@ -124,11 +118,7 @@ const Anatomy = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar
-                  alt="glass icon"
-                  src="/img/index/anatomy/glass.svg"
-                  variant="square"
-                />
+                <SearchIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 primary="Monitoring"
@@ -144,23 +134,21 @@ const Anatomy = (props) => {
             {' '}
             <img
               src="img/index/header/buttons.svg"
-              style={{ padding: '15px' }}
+              style={{ padding: '15px', width: '100px' }}
             />
           </div>
           <Grid container style={{ height: '87%' }}>
             <Grid item xs={2} md={2} lg={1} className={styles.docs}>
+              <FileCopyIcon fontSize="large" className={styles.icons} />
+              <SearchIcon fontSize="large" className={styles.icons} />
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/docs.svg" />
-                  <img src="img/index/header/zoom.svg" />
                   <img src="img/index/header/luos.svg" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/docs-white.svg" />
-                  <img src="img/index/header/zoom-white.svg" />
                   <img src="img/index/header/luos-white.svg" />{' '}
                 </>
               )}
