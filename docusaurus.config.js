@@ -30,6 +30,7 @@ module.exports = {
   },
 
   themeConfig: {
+    image: 'img/thumbnail-luos.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
