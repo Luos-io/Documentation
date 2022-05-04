@@ -8,12 +8,12 @@ authors:
     url: https://github.com/nicolas-rabault
     image_url: https://github.com/nicolas-rabault.png
 tags: [startup journey, luos]
-image: https://i.imgur.com/mErPwqL.png
+image: /img/blog/connect-electronic-outside-luos.png
 hide_table_of_contents: false
 date: 2022-04-12T10:00
 ---
 
-![img alt](/img/blog/28.png)
+![img alt](/img/blog/connect-electronic-outside-luos.png)
 
 <h2> Introduction </h2>
 
@@ -43,7 +43,7 @@ What we did is we developed a tool called _Gate_ which is able to translate the 
 
 To summarize, we chose to make an embedded translation software allowing to use it with any language having a JSON library.
 
-![](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/62558cd3dd662d17c185c26d_Luos_Electronic_device_with_gate.png)
+![](/img/blog/translation-json-luos.png)
 
 At this time we had the embedded working, and a better vision about how things should work on the embedded side than on the outside world. So that choice of an embedded translation software was the obvious way.
 
@@ -80,7 +80,7 @@ This also required us to create a “kind of Luos” on the computer side, which
 
 Here is what we have today:
 
-![](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/62558ce2a7c8e916b990303a_Luos_Electronic_device_with_outside_world.png)
+![](/img/blog/sketchy-protocol-luos.png)
 
 As you can see, things are becoming sketchy... This is actually working, but we have to find a better way to simplify usability, maintainability, and to offer better performances.
 
@@ -92,7 +92,7 @@ Luos engine already exchanges information between features with a specific API, 
 
 Soon, we will be able to use Luos engine with any kind of physical network. On top of it, if Luos engine can use multiple networks, this could allow us to exchange information with the outside world the exact same way we are exchanging information between the electronic boards. The only difference would be the physical way of transporting the information.
 
-![](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/62558cf2d80ca439aaf70445_Luos_Electronic_device_by_feature.png)
+![](/img/blog/next-protocol-luos.png)
 
 This means that we will have to run a Luos instance on the computer linked to the electronic device. Then we will be able to run and test embedded applications (non-related to hardware) directly on the computer or on the electronic boards, without any differences.
 
@@ -113,6 +113,6 @@ We still need to make a lot of progress to reach it, but this is the way (until 
 
 And if we did it, you can make it too...
 
-[Get Started with Luos](https://docs.luos.io/get-started/get-started)
+[Get Started with Luos](https://docs.luos.io/tutorials/get-started)
 
 [Nicolas Rabault](https://github.com/nicolas-rabault)[](#)

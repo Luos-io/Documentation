@@ -8,14 +8,14 @@ authors:
     url: https://github.com/jlangbridge
     image_url: https://github.com/jlangbridge.png
 tags: [embedded, edge]
-image: https://i.imgur.com/mErPwqL.png
+image: /img/blog/embedded-services-luos.png
 hide_table_of_contents: false
 date: 2021-07-13T10:00
 ---
 
 # Embedded Services: how to get the most out of it
 
-![img alt](/img/blog/19.png)
+![img alt](/img/blog/embedded-services-luos.png)
 
 Let's talk about Embedded Services.
 
@@ -27,7 +27,7 @@ Developing for such a scenario was difficult, but the world of web development c
 
 Embedded systems haven't yet caught up, but we're getting there.
 
-![Embedded services with Luos](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/60922bcbc4a2dd8c7813fae8_Luos_04_03c%20(1).jpeg)
+![Embedded services with Luos](/img/blog/embedded-services-2-luos.jpeg)
 
 <h2> Simple ideas, complicated solutions </h2>
 
@@ -41,7 +41,7 @@ The program used to control this situation is pretty simple: program the primary
 
 Your hugely complex machine will be running much more code than just a temperature sensor. It might be an industrial 3D printer, or maybe even something to help send the next space probe to Mars. However, deep inside this code, there will still be the temperature sensor routine, something that electronically checks the temperature component to get that information. Since one microcontroller will be busy with other important tasks, maybe this task can be offloaded to another microcontroller? There is an advantage; the code on this microcontroller is nice and lightweight. Disadvantage? Now you have to write code to communicate (remember that the "main" microcontroller is also going to need the temperature to display on that fancy LCD screen so that the operator knows what is going on).
 
-![Splitting up code with Luos](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/60922bdf214e767d3b4b614d_Luos_04_02c_(1).jpeg)
+![Splitting up code with Luos](/img/blog/complex-machine-luos.jpeg)
 
 <h2> Simplifying code </h2> 
 
@@ -49,9 +49,9 @@ So what is the best thing to do? Who gets the temperature sensor? Even worse, is
 
 By creating one single program that controls not only the fans and heater, but also the laser engraver, hydraulic press, or some other complex system, we make the code more and more complex. The more code becomes complex, the more errors can hide inside, and the bigger the board. When does complex become too complex? By separating the code, we make it easier to maintain, but we also need to add in communication code to be able to communicate with other boards. Win some, lose some.
 
-![Simplifying code with Luos](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/60922bee7c0db41a1c83e693_Luos_04_01c%20(1).jpeg)
+![Simplifying code with Luos](/img/blog/agility-service-luos.jpeg)
 
-Don't hesitate to bookmark our blog and [follow us on Reddit](https://bit.ly/JoinLuosReddit) if you like these topics!
+Don't hesitate to bookmark our blog and [follow us on Reddit](https://www.reddit.com/r/Luos/) if you like these topics!
 
 <h2> Boxes of code </h2> 
 
@@ -67,6 +67,6 @@ Embedded services have a lot of advantages over traditional code. You can write 
 
 At Luos, we have designed a library that is easy to integrate into an existing project, that helps you separate your code into services, and that handles all of the communications for you. Have a look at our [documentation pages](https://docs.luos.io/) to discover step by step Luos!
 
-[Get Started with Luos](https://docs.luos.io/get-started/get-started)
+[Get Started with Luos](https://docs.luos.io/tutorials/get-started)
 
 [James Langbridge](#)[David Pellet](https://davelhan.artstation.com/)

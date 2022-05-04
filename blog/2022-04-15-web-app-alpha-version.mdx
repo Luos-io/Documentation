@@ -8,12 +8,12 @@ authors:
     url: https://github.com/K0rdan
     image_url: https://github.com/K0rdan.png
 tags: [startup journey, luos]
-image: https://i.imgur.com/mErPwqL.png
+image: /img/blog/luos-web-app-alpha-version.png
 hide_table_of_contents: false
 date: 2022-04-15T10:00
 ---
 
-![img alt](/img/blog/29.png)
+![img alt](/img/blog/luos-web-app-alpha-version.png)
 
 <h2> Introduction </h2>
 
@@ -72,7 +72,7 @@ This part is about the implementation of the Web Serial API. This API gives us t
 
 We use the same protocol as the Luos engine embedded systems to read and write data.
 
-![(1) Illustration of the exchange of data between Luos and Luos Engine](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6259793dbddc4081d82ce80e_Illustration_of_the_exchange_of_data_between_Luos_and_Luos_Engine.png)
+![(1) Illustration of the exchange of data between Luos and Luos Engine](/img/blog/web-app-protocol-luos.png)
 
 (1) Illustration of the exchange of data between Luos and Luos Engine
 
@@ -93,17 +93,17 @@ The first feature we decided to implement is the network topology. This feature 
 
 We first get the list of the nodes and services in our network. Then we query each service of each node to get their properties like their type (Motor, Led, Gate, ...), their firmware revision, and their memory statistics.
 
-![Illustration of the routing table data](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6259797c32e8e75fd107891a_Illustration_of_the_routing_table_data.png)
+![Illustration of the routing table data](/img/blog/routing-table-data-luos.png)
 
 Illustration of the routing table data
 
-![](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/62597995554c18dbd4c22015_Services_data.png)
+![](/img/blog/service-data-luos.png)
 
 Service’s data
 
 We finally gathered all those data in a graph using the [D3JS](https://observablehq.com/@d3/gallery) library:
 
-![Network Display of Luos web app](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/625979ba694083b48af2a748_Network_Display_Luos.png)
+![Network Display of Luos web app](/img/blog/network-display-luos.png)
 
 Network Display of Luos web app
 
@@ -127,6 +127,6 @@ So please take a look at our alpha version of Luos web app, stay tuned and make 
 
 [Discover Luos Web App](https://app.luos.io/)
 
-[Get Started with Luos](https://docs.luos.io/get-started/get-started)
+[Get Started with Luos](https://docs.luos.io/tutorials/get-started/)
 
 [Benjamin Christau](https://github.com/K0rdan)[](#)

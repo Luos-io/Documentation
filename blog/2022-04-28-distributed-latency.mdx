@@ -8,12 +8,12 @@ authors:
     url: https://github.com/nicolas-rabault
     image_url: https://github.com/nicolas-rabault.png
 tags: [embedded, edge]
-image: https://i.imgur.com/mErPwqL.png
+image: /img/blog/distributed-latency-luos.png
 hide_table_of_contents: false
 date: 2022-04-28T10:00
 ---
 
-![img alt](/img/blog/30.png)
+![img alt](/img/blog/distributed-latency-luos.png)
 
 <h2> What is the problem here? </h2>
 
@@ -131,7 +131,7 @@ To place the _dataGenerationDate_ in local timeline, we can do as following:
 
 dataGenerationDate = communicationDate - (sourceLatency + networkLatency)
 
-![](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/626941646045843329ee2b69_Datagenerationdate_Luos.png)
+![](/img/blog/target-latency-luos.png)
 
 <h2> Event vs. Generation </h2>
 
@@ -143,7 +143,7 @@ To know if the event is in the past or the future, we need **Delta** to be a sig
 
 An example of an event in the past:
 
-![](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/62694174d7d83faf841577de_Event_past_luos.png)
+![](/img/blog/event-vs-generation-luos.png)
 
 At the TX **communication’s** date, we compute the signed Delta value and send it:
 
@@ -157,10 +157,10 @@ At the RX Communication’s date, we just have to do:
 
 An example of an event in the future:
 
-![](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/62694183a9b7e7362825830f_Event_Generation_Luos.png)
+![](/img/blog/event-in-future-luos.png)
 
 In this case, Delta will be positive.
 
-[Get Started with Luos](https://docs.luos.io/get-started/get-started)
+[Get Started with Luos](https://docs.luos.io/tutorials/get-started)
 
 [Nicolas Rabault](https://github.com/nicolas-rabault)[](#)
