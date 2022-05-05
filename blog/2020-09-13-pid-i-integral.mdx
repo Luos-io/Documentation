@@ -13,8 +13,6 @@ hide_table_of_contents: false
 date: 2020-09-13T10:00
 ---
 
-# PID: The I, as in integral
-
 ![img alt](/img/blog/9.png)
 
 We go on with the PID letters. This post deals with the I. You can visit the first posts of this series, the [introduction to PID](https://www.luos.io/blog/an-introduction-to-pid-control-with-dc-motor), and the [proportional post](https://www.luos.io/blog/pid-the-p-as-in-proportional).
@@ -37,10 +35,10 @@ The changing environment can be, for example, a dynamic charge or something slow
 
 I remind you of the must-known vocabulary you will need to go on reading:
 
-*   **Setpoint:** the user-defined value to be reached by the actuator (a speed, a torque, etc.).
-*   **Process variable:** the real actuator’s value, retrieved by the sensor in real-time.
-*   **Error:** the difference between the setpoint and the process variable.
-*   **Steady-state:** when the system stops oscillating and finds its full balance.
+*   **Setpoint:** the user-defined value to be reached by the actuator (a speed, a torque, etc.).
+*   **Process variable:** the real actuator’s value, retrieved by the sensor in real-time.
+*   **Error:** the difference between the setpoint and the process variable.
+*   **Steady-state:** when the system stops oscillating and finds its full balance.
 
 Unlike the proportional part of a PID, the integral part can’t be used alone, as it wouldn’t have any effect. Instead, the integral is either proportional (PI) or proportional and derivative (PID). The proportional part P is always used in a PID control.
 
@@ -52,7 +50,7 @@ Now, to the point:
 
 What does that even mean?
 
-In the last post, [the P-post](https://www.luos.io/blog/pid-the-p-as-in-proportional), you thought you casually took the computed error and that you multiplied it by a chosen constant, P. But what you did is that you multiplied P by the _calculated last mistake_. At each loop, its value changes:
+In the last post, [the P-post](https://www.luos.io/blog/pid-the-p-as-in-proportional), you thought you casually took the computed error and that you multiplied it by a chosen constant, P. But what you did is that you multiplied P by the _calculated last mistake_. At each loop, its value changes:
 
 *   The system is running. The process variable evolves at each loop.
 *   However, the setpoint stays the same unless you want to change it.
@@ -60,7 +58,7 @@ In the last post, [the P-post](https://www.luos.io/blog/pid-the-p-as-in-proport
 
 Then the error must not be seen as a variable anymore but as a function of time. Let’s call it ε(t).
 
-Let’s get back to the _integral_ thing. Integration is a mathematical operation applied to a function continuous into a given interval. Let me write the method of calculation down here, just for fun:
+Let’s get back to the _integral_ thing. Integration is a mathematical operation applied to a function continuous into a given interval. Let me write the method of calculation down here, just for fun:
 
 ![Method of calculation](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030df0a31f7c0869167fe34_1*GhVOaX7zywwx5N6S7M5A0w.png)
 
@@ -68,7 +66,7 @@ f(x) is the function, and it’s integrated from x = a to x = b. You can express
 
 ![Graphical representation](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030df0ad368ac174867a122_1*Z3iHT4MCVtcrjxttPd8CsA.png)
 
-Thinking of area, integrating a function — although it’s not _too_ difficult if you know how to use the method — may seem like pain: it’s like dividing the area into a bunch of really thin rectangles (the thinner, the better), calculating their area, and adding them together. It results only in an approximation because the upper side of a rectangle doesn’t quite follow a curve:
+Thinking of area, integrating a function — although it’s not _too_ difficult if you know how to use the method — may seem like pain: it’s like dividing the area into a bunch of really thin rectangles (the thinner, the better), calculating their area, and adding them together. It results only in an approximation because the upper side of a rectangle doesn’t quite follow a curve:
 
 ![Luos graphics](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030df0a96cdf20cdd79816e_1*9hg_AZGNAEfoqsrlSZ0YWg.png)
 
@@ -77,13 +75,13 @@ Let’s breathe a moment. There are not only maths in life. There is nature too.
 
 ![Nature - Mountain](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030df0a8e9d96a7e5bae140_1*85cOgiKGnWLt1uPLGSRAbg.jpeg)
 
-And today we are lucky: we are writing a PID in programming code, meaning that **all the values of the error function ε(t)** during a set of loops **are known** and can be written down in a finite number of them, as many as the times the loop iterates. That means the error function ε(t) is discretized.
+And today we are lucky: we are writing a PID in programming code, meaning that **all the values of the error function ε(t)** during a set of loops **are known** and can be written down in a finite number of them, as many as the times the loop iterates. That means the error function ε(t) is discretized.
 
 No. Infinite. Number. No. Complicated. Maths.
 
 Still, the question remains: How to integrate ε(t)?
 
-It’s easy: You add together all the previous values of the error function. It’s like adding all the thin rectangles under the error curve.
+It’s easy: You add together all the previous values of the error function. It’s like adding all the thin rectangles under the error curve.
 
 Then you multiply the total by a constant called KI, which will allow you to control the power of an integral part. For example, if KI is very small, like KI = 0.005, the essential part will have very few effects on the command. KI, like KP, is a value you will want to set to tweak your final PID.
 
@@ -95,7 +93,7 @@ Here is how you want to express it: you declare a variable, let’s call it sum\
 
 ![Command PID formula - Luos](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030df0b31f7c0823667fe35_1*aoZI9dqx0OTsWC4fc6ilEA.png)
 
-_Note:_ _When you program a control loop feedback, at the beginning of the actual PID loop code and just after defining the error e = set\_point -process\_variable, the line sum\_e += e is essential, so that in the following passage into the loop sum\_e would evolve._
+_Note:_ _When you program a control loop feedback, at the beginning of the actual PID loop code and just after defining the error e = set\_point -process\_variable, the line sum\_e += e is essential, so that in the following passage into the loop sum\_e would evolve._
 
 Visually, after many loops, the operations made by the integral command look like this on the system:
 
@@ -105,9 +103,9 @@ In this example, the expression of fI(e) at t = 4.5s is fI(e) = KI.(45 -60 + 40 
 
 It’s almost time for you to implement an integral part of your code. But before you do that, let’s figure out the effect of an integral part on a feedback loop control.
 
-Don't hesitate to start with Luos and discover our tutorials by following our [get started](https://docs.luos.io/get-started/get-started) step by step!
+Don't hesitate to start with Luos and discover our tutorials by following our [get started](https://docs.luos.io/tutorials/get-started) step by step!
 
-[Get Started with Luos](https://docs.luos.io/get-started/get-started)
+[Get Started with Luos](https://docs.luos.io/tutorials/get-started)
 
 <h2> The effects of I </h2>
 
@@ -117,12 +115,12 @@ With an integral part, it’s as if the command had a memory: it knows the previ
 
 The integral looks into the past of the system.
 
-*   Adding an integral command will **correct the static error** induced by a proportional command set alone. Indeed, as long as there is an error, i.e., ε(t) ≠ 0, even if ε(t) is small enough to have no effect on the proportional part, it will still impact the system with its residual value.
+*   Adding an integral command will **correct the static error** induced by a proportional command set alone. Indeed, as long as there is an error, i.e., ε(t) ≠ 0, even if ε(t) is small enough to have no effect on the proportional part, it will still impact the system with its residual value.
 
 You now have two parameters to tune, KP and KI. You can program a proportional control for your system and refine it with an integral control, making it a PI.
 
 In the next post, we will see the last letter of PID, the D.
 
-[Get Started with Luos](https://docs.luos.io/get-started/get-started)
+[Get Started with Luos](https://docs.luos.io/tutorials/get-started)
 
-[Simon Baudry](https://www.linkedin.com/in/simon-the-baudry/)
+<a rel="external nofollow" href="https://github.com/Simonbdy" target="_blank">Simon Baudry</a>
