@@ -12,7 +12,6 @@ image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 date: 2020-01-13T10:00
 ---
-# How to lift a banana: a guide to motors in robotics
 
 ![img alt](/img/blog/1.png)
 
@@ -72,9 +71,9 @@ I chose to present them this way. Here is a list of motors' categories:
 But before digging into these, we need some basics.
 
 Did you know that Luos connects every motor to build your robot easily and quickly?  
-You can [get started](https://docs.luos.io/get-started/get-started) with us and our technology step by step!
+You can [Get started](https://docs.luos.io/tutorials/get-started) with us and our technology step by step!
 
-[Get Started with Luos](https://docs.luos.io/get-started/get-started)
+[Get Started with Luos](https://docs.luos.io/tutorials/get-started)
 
 <h2> How do electric motors work? </h2>
 
@@ -98,7 +97,7 @@ Congrats, you just made an electric motor. Now, be advised that the configuratio
 
 > _Note: Both torque and speed are critical data to know on a motor because they define how much weight a robotic arm can lift (for example) and at which speed it can do that. Some bananas can be heavy, be careful. Along with them, other concepts like rated voltage, torque constant, or no-load current are critical when choosing a motor, but these can be talked about on another more precise post._
 
-![An example of a running electric motor. Wow, and it’s moving. ](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacd457b6b5c0992af2d_1*CmHoCh7mZBdzNwM4F0cWhg.gif)
+![An example of a running electric motor. Wow, and it’s moving.](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacd457b6b5c0992af2d_1*CmHoCh7mZBdzNwM4F0cWhg.gif)
 
 Some of these words will help us understand the next part of this post:
 
@@ -133,9 +132,9 @@ A small recipe to explain how it basically works:
 
 ![A brushed DC motor](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacee07d0e63920c92c3_1*x6Ip2l1z434R44lUhF3OcQ.gif)
 
-There is a subcategory of brushed DC motors called coreless motor, which rotor is composed only of a winding without armature, _i.e._, with no iron core, _i.e._, coreless. The magnets are situated in the center of the motor, instead of the inner side of the housing like on regular brushed DC motors. This is a standard technology in tiny brushed DC motors and offers these pros: high accelerations and high dynamism (because of lower inertia of the rotor), fewer electrical noises, and higher efficiency.
+There is a subcategory of brushed DC motors called coreless motor, which rotor is composed only of a winding without armature, _i.e._, with no iron core, _i.e._, coreless. The magnets are situated in the center of the motor, instead of the inner side of the housing like on regular brushed DC motors. This is a standard technology in tiny brushed DC motors and offers these pros: high accelerations and high dynamism (because of lower inertia of the rotor), fewer electrical noises, and higher efficiency.
 
-The brushed DC motor is the most common motor in robotics and the most used mainly because of its easiness to produce, and hence its ridiculous price on the market. These are **pros**, as is their easiness and many ways to control.
+The brushed DC motor is the most common motor in robotics and the most used mainly because of its easiness to produce, and hence its ridiculous price on the market. These are **pros**, as is their easiness and many ways to control.
 
 > _Note: We will be coming back another day to explain the different ways of controlling a brushed DC motor._
 
@@ -165,13 +164,13 @@ The recipe:
 
 That type of motor can be controlled in several ways. In some cases, if needed, the position of the rotor can be extracted with different solutions. You will find more details in a future post.
 
-The first pro is clear regarding **pros** and **cons**: no brushes mean no contact, no friction, so no wear; that implies the best reliability and best efficiency (friction means loss of energy as heat).
+The first pro is clear regarding **pros** and **cons**: no brushes mean no contact, no friction, so no wear; that implies the best reliability and best efficiency (friction means loss of energy as heat).
 
 The in-runners BLDC will provide more speed than torque because of their rotor's inertia. On the contrary, out-runners BLDC will have more torque and less speed. Depending on the desired function, this may be a pro or cons.
 
-A significant con is the price, more expensive than their cousins brushed motors. It's explained by many factors (winding construction, magnets, some electronic parts, _etc._).
+A significant con is the price, more expensive than their cousins brushed motors. It's explained by many factors (winding construction, magnets, some electronic parts, _etc._).
 
-Another con is that BLDC is trickier to control and needs an electronic control board most of the time. Also, as for brushed motors, their possible high speed may imply the use of a **reducer** device at the motors' output to lower the speed and increase the torque. This invariably means a loss of efficiency, but it is very often used.
+Another con is that BLDC is trickier to control and needs an electronic control board most of the time. Also, as for brushed motors, their possible high speed may imply the use of a **reducer** device at the motors' output to lower the speed and increase the torque. This invariably means a loss of efficiency, but it is very often used.
 
 ![A small part of gearbox for reducing the speed of a motor.](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacef4915e6097c7ffce_1*Z9bLIA83FVddGqEOY-Mnjw.jpeg)
 
@@ -182,6 +181,14 @@ Many famous robots have brushless DC motors as well as brushed motors. However, 
 So, if we talk about the price of the motors in your overall thinking about the design of your robot: DC motors can be the motors we want for our robot because they are the cheapest and simplest to use. They come in different shapes and sizes and can be found in almost any electronic device.
 
 So, choosing the most used electric motors in robotics is the best way to optimize your robot and make it scalable when you think about industrialization. In the same way, we have created a little video to explain how Luos can easily manage your robot project and scalability:
+
+<div align="center">
+  <iframe
+    className="player_iframe"
+    src="https://www.youtube.com/embed/ujh0xNE3TZ8"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+  ></iframe>
+</div>
 
 <h2> Before switching to the next category </h2>
 
@@ -199,9 +206,9 @@ This actuator is widely used in robotics because it provides control of the angu
 
 For example, imagine this application on your one-armed-banana-lifting robot: you can choose a precise angle for the arm to be reached while lifting the yellow fruit. If the banana happens to be eaten simultaneously, the weight will change, but the arm will stay at the same position, thanks to the closed-loop and the constant correction of work.
 
-**Pros** are the well-integrated functions fitting in a small box, making it very easy to assemble into a more significant mechanical part; also, the control exists already and does not imply to design a new one, which saves both time and money.
+**Pros** are the well-integrated functions fitting in a small box, making it very easy to assemble into a more significant mechanical part; also, the control exists already and does not imply to design a new one, which saves both time and money.
 
-**Cons** are that some of them won't fit the application you chose. Also, many servomotors have bad quality and poor control.
+**Cons** are that some of them won't fit the application you chose. Also, many servomotors have bad quality and poor control.
 
 Any DC motor could be made a servomotor at the condition you add the sensor, reduction, and control functions. Now you know that it already exists as a whole. Neat.
 
@@ -212,15 +219,23 @@ The three robots Poppy, Ergo Jr., and Reach, highly linked to the French company
 Actually, servo motors are more often used for personal robotic projects. Why is that? Because a servomotor is cheap compared to all the functions it provides (motorization, reduction, sensor, closed-loop control). You may not happen to have a lot of money to carry on personal projects and find yourself facing this choice:
 
 *   find a DC motor, design a reduction, and dig yourself deep into the jungle of motor control, which can take weeks, if not months; or
-*   Buy yourself a servomotor to be able to lift that banana of yours **on the same day you buy them** _(not quite sure you'd find both the servomotor and the banana in the same shop, though)._
+*   Buy yourself a servomotor to be able to lift that banana of yours **on the same day you buy them** _(not quite sure you'd find both the servomotor and the banana in the same shop, though)._
 
 The choice is obvious.
 
-Additionally, famous and cheap tools (like electronic boards Arduino, Raspberry Pi, _etc._) allow people who are not professional to gain accessible robotics by controlling many kinds of motors, including servo motors.
+Additionally, famous and cheap tools (like electronic boards Arduino, Raspberry Pi, _etc._) allow people who are not professional to gain accessible robotics by controlling many kinds of motors, including servo motors.
 
 [Our tutorials](https://docs.luos.io/docs/luos-technology/services/profile) help you discover how to control your servo motor with Luos.
 
 By the way, we developed a little video showing a few command lines to make a servo motor work:
+
+<div align="center">
+  <iframe
+    className="player_iframe"
+    src="https://www.youtube.com/embed/ula16zdZgDk"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+  ></iframe>
+</div>
 
 <h2> Motors Category 3: other motors </h2>
 
@@ -254,11 +269,11 @@ There are three different types of steppers (permanent magnet, variable reluctan
 
 These motors are widely used in machines that need to move things in very precise positions, like regular printers or 3D printers. While the first one is not what I call a robot, the second one is interesting, and some industrial robots have the same functions.
 
-<h3>  **Piezoelectric motors: </h3>
+<h3>  Piezoelectric motors: </h3>
 
 With piezoelectric (or piezo-) motors, we lose the electromagnetism magic. This technology uses specific properties of piezoelectric materials (non-conductive) that can change their shape while being exposed to an electric field.
 
-![This is not a giant finger holding a regular-sized piezomotor, this is a regular finger holding a very tiny piezomotor. ](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacf01eb7877943c6b66_1*A9Y3A9EqdQ46iAgQCpFvcg.jpeg)
+![This is not a giant finger holding a regular-sized piezomotor, this is a regular finger holding a very tiny piezomotor.](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacf01eb7877943c6b66_1*A9Y3A9EqdQ46iAgQCpFvcg.jpeg)
 
 How do piezoelectric motors works? Well, I’ve hoped for a second that you wouldn’t ask this one. But let’s go.
 
@@ -301,7 +316,7 @@ There is a wide range of reduction ratios available for gear motors. This ratio 
 
 A gear motor is a motor with a built-in reduction. This reduction allows the motor to spin slower while providing more torque. Motors alone do not have this reduction and can only spin at a certain range of speed.
 
-If you want to know more about Luos or help us with this beautiful project, [follow us on Reddit](https://bit.ly/JoinLuosReddit), [join our fantastic community](https://discord.gg/luos), or [star our Luos repository](https://github.com/Luos-io/Luos) on Github.
+If you want to know more about Luos or help us with this beautiful project, <a rel="external nofollow" href="https://www.reddit.com/r/Luos/" target="_blank">follow us on Reddit</a>, <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">join our fantastic community</a>, or <a rel="external nofollow" href="https://github.com/Luos-io/Luos" target="_blank">star our Luos repository</a> on Github.
 
 <h2> Now, how do I choose my motor in this mess? </h2>
 
@@ -356,11 +371,11 @@ In these following articles, we will talk about DC motors: [how to control a DC 
 
 Are you ready now to choose the suitable motor for your robot? If yes, congrats, let's dance on Robot Rock!
 
-![](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/62208c54b19093d7d9ffc4e6_robot-luos.gif)
+![Robot Rock](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/62208c54b19093d7d9ffc4e6_robot-luos.gif)
 
 Thank you for reading.
 
-— If you liked what you read, please clap the hell out of it and [join us on Discord!](https://discord.com/invite/MRPxBnrRkM)
+— If you liked what you read, please clap the hell out of it and [join us on Discord!](https://discord.gg/luos)
 
 ![A banana](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacfe770b800bbc3e011_1*6zvW1fdWqC2K9417Hq58PA.png)
 
@@ -380,6 +395,6 @@ Thank you for reading.
 
 **Linear actuator:** A linear actuator is a type of electric motor that creates linear motion instead of rotational motion.
 
-[Get Started with Luos](https://docs.luos.io/get-started/get-started)
+[Get Started with Luos](https://docs.luos.io/tutorials/get-started)
 
-[Simon Baudry](https://www.linkedin.com/in/simon-the-baudry/)
+<a rel="external nofollow" href="https://github.com/Simonbdy" target="_blank">Simon Baudry</a>

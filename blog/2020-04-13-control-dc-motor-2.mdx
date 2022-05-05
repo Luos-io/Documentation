@@ -13,11 +13,9 @@ hide_table_of_contents: false
 date: 2020-04-13T10:00
 ---
 
-# How to stop being controlled by your DC motor: reverse the roles! Part 2
-
 ![img alt](/img/blog/4.png)
 
-[Part 1](https://www.luos.io/blog/how-to-stop-being-controlled-by-your-dc-motor-reverse-the-roles) of this topic was about direction control of your DC motor. Today it's time to have a look at speed control. Everyone curious about robotic motorization basics can read this post, but I suggest you begin with the [guide to motors in robotics](https://www.luos.io/blog/how-to-lift-a-banana-a-guide-to-motors-in-robotics), as well as part 1 of this post first.
+[Part 1](https://www.luos.io/blog/how-to-stop-being-controlled-by-your-dc-motor-reverse-the-roles) of this topic was about direction control of your DC motor. Today it's time to have a look at speed control. Everyone curious about robotic motorization basics can read this post, but I suggest you begin with the [guide to motors in robotics](https://www.luos.io/blog/how-to-lift-a-banana-a-guide-to-motors-in-robotics), as well as part 1 of this post first.
 
 I also wrote a small post to summarize the different topics where I discuss motors.
 
@@ -25,7 +23,7 @@ I also wrote a small post to summarize the different topics where I discuss moto
 
 All the words "motor" refer to "brushed DC motor" in the following.
 
-This is it. You can choose the rotating direction _whenever you want_—what a sweet sensation. You feel like you almost have complete control… but you want more already.
+This is it. You can choose the rotating direction _whenever you want_—what a sweet sensation. You feel like you almost have complete control… but you want more already.
 
 Ok. Let's see how you can control the speed of your motor.
 
@@ -33,7 +31,7 @@ Ok. Let's see how you can control the speed of your motor.
 
 An electric motor works with electric power — i.e., voltage and current — provided at the input through wires. While inverting these wires results in changing the rotation direction, we also can adjust the voltage and the present to see changes in the motor's output.
 
-The voltage at the terminals, in particular, is **proportional to the speed** of the motor. That means the more voltage you provide at the input, the faster the motor will rotate at the output.
+The voltage at the terminals, in particular, is **proportional to the speed** of the motor. That means the more voltage you provide at the input, the faster the motor will rotate at the output.
 
 _Note: If you try to increase the voltage at high ranges without checking its datasheet, you'll likely burn it down. Each motor has a specific voltage — and current — it can bear according to its parts, and going below these values is not a good idea._
 
@@ -65,11 +63,11 @@ PWM (Pulse Width Modulation) is a way of providing voltage, but instead of being
 
 Applying to a motor it's like switching it ON and OFF a lot of times and very fast.
 
-*   The ON phases are called **pulses**.
-*   The short time of one pulse of HIGH is called the **duty cycle** (in seconds — for now).
-*   One pulse of HIGH and one fraction of time of LOW is called the **period** (also in seconds).
-*   The high value of the pulse is called the **amplitude** (in Volt).
-*   Hertz's **frequency** (f) is the inverse of the period (T).
+*   The ON phases are called **pulses**.
+*   The short time of one pulse of HIGH is called the **duty cycle** (in seconds — for now).
+*   One pulse of HIGH and one fraction of time of LOW is called the **period** (also in seconds).
+*   The high value of the pulse is called the **amplitude** (in Volt).
+*   Hertz's **frequency** (f) is the inverse of the period (T).
 
 ![Formula: frequency (f) in Hertz, is the inverse of the period (T).](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc00feee201549e156310_1*PioEr9xltl-24DV1-qj7YQ.jpeg)
 
@@ -77,9 +75,9 @@ Let's have a look at the illustration of a PWM signal:
 
 ![Illustration of a PWM signal](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc00f3e54e0c28a1795e6_1*mteCgbJXj1x3NGBaMiCb0g.jpeg)
 
-As for the time scale, a PWM frequency chosen for controlling a motor can vary (_very_) roughly between some Hertz and some kilo-Hertz. Applying the last formula, it means that for a PWM frequency of **f = 10 kHz**, we have a period of **T = 1/10,000 = 0.0001 s**. So in that example, every pulse lasts less than 0.1 milliseconds. That's not much.
+As for the time scale, a PWM frequency chosen for controlling a motor can vary (_very_) roughly between some Hertz and some kilo-Hertz. Applying the last formula, it means that for a PWM frequency of **f = 10 kHz**, we have a period of **T = 1/10,000 = 0.0001 s**. So in that example, every pulse lasts less than 0.1 milliseconds. That's not much.
 
-When generating a PWM signal, it will only be defined by its **frequency**, in Hertz and its **duty cycle**, in % of the period.
+When generating a PWM signal, it will only be defined by its **frequency**, in Hertz and its **duty cycle**, in % of the period.
 
 Continue to learn more about DC motors and many other subjects on [our documentation!](https://docs.luos.io/) Several tutorials and videos are waiting for you:
 
@@ -87,7 +85,7 @@ Continue to learn more about DC motors and many other subjects on [our documenta
 
 <h3> How is PWM created? </h3>
 
-You can use various electronic components to make a circuit that provides a PWM signal, but you will find it easier with a microcontroller. The microcontroller carries a tiny internal clock that paces the system according to its frequency. It's called a clock. _How original_. And still, inside, they are some other clocks — this time, they are called timers — which can generate the PWM signal.
+You can use various electronic components to make a circuit that provides a PWM signal, but you will find it easier with a microcontroller. The microcontroller carries a tiny internal clock that paces the system according to its frequency. It's called a clock. _How original_. And still, inside, they are some other clocks — this time, they are called timers — which can generate the PWM signal.
 
 While writing a program for your microcontroller, you can choose the specs of your PWM: frequency and duty cycle. The voltage inside the microprocessor defines the amplitude. It's a HIGH value.
 
@@ -114,13 +112,13 @@ Of course, the motor does not stop after each pulse when the PWM signal is LOW. 
 
 This is how you use PWM. But maybe you can sleep on it first before finishing reading this post. That's a lot to process. See you tomorrow then. Sleep tight.
 
-Hi. I know that you didn't sleep because you still don't know when the speed is _actually_ controlled. Since the beginning of this post, we only replaced a simple enough flat voltage circuit with a too complex with Qs and Ds and Rs PWM voltage circuit. But still no speed control? Come on!
+Hi. I know that you didn't sleep because you still don't know when the speed is _actually_ controlled. Since the beginning of this post, we only replaced a simple enough flat voltage circuit with a too complex with Qs and Ds and Rs PWM voltage circuit. But still no speed control? Come on!
 
 Right, this is how you control the speed:
 
 <h2> Speed control. Finally. </h2>
 
-Viewed from the motor, it's another kind of PWM incoming at its terminals. The transistor closes and opens fast, alternatively letting the current flow and stopping it, so it receives steps of Vcc (which is the value of your battery). **This is the power signal**.
+Viewed from the motor, it's another kind of PWM incoming at its terminals. The transistor closes and opens fast, alternatively letting the current flow and stopping it, so it receives steps of Vcc (which is the value of your battery). **This is the power signal**.
 
 Let's go back to the command signal. As I said earlier, PWM is defined by its frequency and duty cycle. For example, this duty cycle is originally a time, in seconds, but it is mostly expressed as a percentage of the total period.
 
@@ -158,16 +156,15 @@ Regarding the evolution of the speed, it looks roughly like that:
 *   EMI noises can be generated.
 *   The frequency must be chosen wisely (this will be the subject of a future post).
 
-That was a tough one. But look at you now. You can control both the direction and the speed of your DC motor. This _is freakin' robotics!_
+That was a tough one. But look at you now. You can control both the direction and the speed of your DC motor. This _is freakin' robotics!_
 
 And we haven't finished yet. This is only the beginning. Have you heard about torque? No? You will.
 
 Thank you for reading.
 
-— If you liked what you read, please **_clap the hell out of it_** and follow us
+— If you liked what you read, please **_clap the hell out of it_** and follow us on Reddit!
 
-By the way, if you want to discover some exciting projects created with Luos and exchange with different people every day, don't hesitate to join our community: [Join us on Discord](https://discord.gg/luos).
+By the way, if you want to discover some exciting projects created with Luos and exchange with different people every day, don't hesitate to join our community: <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">Join us on Discord</a>
 
-[Get Started with Luos](https://docs.luos.io/get-started/get-started)
-
-[Simon Baudry](https://www.linkedin.com/in/simon-the-baudry/)
+[Get Started with Luos](https://docs.luos.io/tutorials/get-started)
+<a rel="external nofollow" href="https://github.com/Simonbdy" target="_blank">Simon Baudry</a>
