@@ -46,7 +46,7 @@ const Anatomy = (props) => {
           </h1>
           <p className={styles.text}>
             Luos gives you access to multiple features developed by developers
-            for developers. Some of the features come from community needs.
+            for developers. Some of the features come from the community needs.
           </p>
         </Grid>
       </Grid>
@@ -61,7 +61,7 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Topology and routing table"
                 secondary={
-                  'Luos detects every services in your system and locates them. Allowing you to access and adapt to any feature from anywhere.'
+                  'Luos detects every services in your system and locates them. This allows you to access and adapt to any feature from anywhere.'
                 }
               />
             </ListItem>
@@ -74,7 +74,7 @@ const Anatomy = (props) => {
                 style={{ color: 'black !important' }}
                 primary="Bootloader"
                 secondary={
-                  'Luos Engine allows you to update any firmware of your device, from anywhere.'
+                  'Luos engine allows you to update any firmware of your device, from anywhere.'
                 }
               />
             </ListItem>
@@ -86,7 +86,7 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Remote control"
                 secondary={
-                  'You can access the topology and the routing table anywhere, even your computer, another machine or a cloud application.'
+                  'You can access the topology and the routing table from anywhere, even from your computer, another machine or a cloud application.'
                 }
               />
             </ListItem>
@@ -104,7 +104,7 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Microservice architecture"
                 secondary={
-                  'Luos follows the microservice philosophy. Luos Engine is a library allowing you to think your features into small independant and loosly coupled bricks.'
+                  'Luos follows the microservice philosophy. Luos engine is a library allowing you to think your features into small independant and loosely-coupled bricks.'
                 }
               />
             </ListItem>
@@ -131,7 +131,7 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Monitoring"
                 secondary={
-                  'You can control and monitor your device with several SDK (Python, TS, Browser app, and others soon)'
+                  'You can control and monitor your device with several SDK (Python, TS, Browser app, and others soon).'
                 }
               />
             </ListItem>

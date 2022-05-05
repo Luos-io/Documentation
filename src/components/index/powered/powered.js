@@ -61,7 +61,7 @@ const Powered = (props) => {
                 className={styles.text}
                 primary="Data auto-update"
                 secondary={
-                  'Luos provides you a way to get back automatically values, you don’t have to poll them anymore.'
+                  'Luos provides a way to retrieve values automatically, you don’t have to poll them anymore.'
                 }
               />
             </ListItem>
@@ -90,7 +90,7 @@ const Powered = (props) => {
                 className={styles.text}
                 primary="Event-based"
                 secondary={
-                  'You can choose to poll or to wait for a callback for each event received by you service.'
+                  'You can choose to poll or to wait for a callback for each event received by your service.'
                 }
               />
             </ListItem>
