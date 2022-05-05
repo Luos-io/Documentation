@@ -38,11 +38,19 @@ const Anatomy = (props) => {
   };
   return (
     <div className={styles.container}>
-      <h1 className={`${styles.title} ${styles.underline}`}>Anatomy of Luos</h1>
-      <p className={styles.text}>
-        Luos gives you access to multiple features developed by developers for
-        developers. Some of the features come from community needs.
-      </p>
+      <Grid container>
+        <Grid item xs={12} md={6} lg={6} xl={6}>
+          {' '}
+          <h1 className={`${styles.title} ${styles.underline}`}>
+            Anatomy of Luos
+          </h1>
+          <p className={styles.text}>
+            Luos gives you access to multiple features developed by developers
+            for developers. Some of the features come from community needs.
+          </p>
+        </Grid>
+      </Grid>
+
       <Grid container mt={5} mb={5}>
         <Grid item md={3} lg={3} xl={4.5}>
           <List sx={{ width: '100%' }} className={styles.list}>
@@ -60,15 +68,13 @@ const Anatomy = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <MiscellaneousServicesIcon
-                  fontSize="large"
-                  className={styles.listIcon}
-                />
+                <AccountTreeIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
-                primary="Microservice architecture"
+                style={{ color: 'black !important' }}
+                primary="Bootloader"
                 secondary={
-                  'Luos follows the microservice philosophy. Luos Engine is a library allowing you to think your features into small independant and loosly coupled bricks.'
+                  'Luos Engine allows you to update any firmware of your device, from anywhere.'
                 }
               />
             </ListItem>
@@ -90,13 +96,15 @@ const Anatomy = (props) => {
           <List sx={{ width: '100%' }} display="flex" className={styles.list}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <AccountTreeIcon fontSize="large" className={styles.listIcon} />
+                <MiscellaneousServicesIcon
+                  fontSize="large"
+                  className={styles.listIcon}
+                />
               </ListItemAvatar>
               <ListItemText
-                style={{ color: 'black !important' }}
-                primary="Bootloader"
+                primary="Microservice architecture"
                 secondary={
-                  'Luos Engine allows you to update any firmware of your device, from anywhere.'
+                  'Luos follows the microservice philosophy. Luos Engine is a library allowing you to think your features into small independant and loosly coupled bricks.'
                 }
               />
             </ListItem>
@@ -237,13 +245,16 @@ const Anatomy = (props) => {
         </Grid>
       </Grid>
       <Grid container>
-        <Grid item md={4} lg={4} xl={4} className={styles.lines}>
-          <img src="/img/index/anatomy/line-left.svg" />
-        </Grid>
-        <Grid item md={4} lg={4} xl={4}></Grid>
-        <Grid item md={4} lg={4} xl={4} className={styles.lines}>
+        <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
           <img
-            src="/img/index/anatomy/line-right.svg"
+            src="img/index/integration/line-right.svg"
+            style={{ transform: 'rotateY(180deg)' }}
+          />
+        </Grid>
+        <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
+        <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
+          <img
+            src="img/index/integration/line-right.svg"
             style={{ float: 'right' }}
           />
         </Grid>

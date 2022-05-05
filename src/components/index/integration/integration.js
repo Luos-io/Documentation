@@ -59,10 +59,10 @@ const Integration = (props) => {
   return (
     <div className={styles.container}>
       <Grid container spacing={3}>
-        <Grid item md={4} lg={4}>
+        <Grid item xs={6} md={4} lg={4}>
           {' '}
           <img
-            src="img/index/integration/line-left.svg"
+            src="img/index/integration/line-right.svg"
             className={styles.imgLeft}
           />
         </Grid>
@@ -78,12 +78,12 @@ const Integration = (props) => {
         sx={{ padding: '30px' }}
         className={styles.mobileNone}
       >
-        <Grid item xs={1} md={2} lg={2} xl={2}></Grid>
+        <Grid item xs={1} md={1} lg={1} xl={1}></Grid>
         <Grid
           item
-          md={8}
-          lg={8}
-          xl={8}
+          md={10}
+          lg={10}
+          xl={10}
           style={{
             minHeight: '400px',
           }}
@@ -112,7 +112,7 @@ const Integration = (props) => {
                 </>
               )}
             </Grid>
-            <Grid item md={2} lg={2} className={styles.video}>
+            <Grid item md={2.5} lg={2} xl={2} className={styles.video}>
               <span>
                 <KeyboardArrowDownIcon className={styles.cardIcons} />{' '}
                 Integrations
@@ -160,7 +160,7 @@ const Integration = (props) => {
                 />
               </RadioGroup>
             </Grid>
-            <Grid item md={9} lg={9} className={styles.player}>
+            <Grid item md={8.5} lg={9} xl={9} className={styles.player}>
               <ImageList cols={4} style={{ padding: '15px' }}>
                 {currentImageTmp.map((element, index) => (
                   <ImageListItem key={index}>
@@ -180,7 +180,7 @@ const Integration = (props) => {
             {' '}
           </Grid>
         </Grid>
-        <Grid item md={2} lg={2} xl={2}></Grid>
+        <Grid item md={1} lg={1} xl={1}></Grid>
       </Grid>
 
       <Grid container>
@@ -189,7 +189,6 @@ const Integration = (props) => {
           item
           xs={11}
           style={{
-            borderBottom: '15px solid #81c8be',
             minHeight: '400px',
           }}
           className={styles.vscodeMobile}
@@ -271,6 +270,9 @@ const Integration = (props) => {
               </ImageList>
             </Grid>
           </Grid>
+          <Grid item xs={12} className={styles.footer}>
+            {' '}
+          </Grid>
         </Grid>
         <Grid item xs={0.5}></Grid>
 
@@ -282,7 +284,7 @@ const Integration = (props) => {
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid item xs={4} md={4} lg={4}></Grid>
+        <Grid item xs={2} md={4} lg={4}></Grid>
         <Grid
           item
           xs={4}
@@ -297,7 +299,7 @@ const Integration = (props) => {
             </Button>
           </div>
         </Grid>
-        <Grid item xs={4} md={4} lg={4}>
+        <Grid item xs={6} md={4} lg={4}>
           <img
             src="img/index/integration/line-right.svg"
             className={styles.imgRight}

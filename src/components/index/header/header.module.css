@@ -19,6 +19,9 @@ html[data-theme='light'] .container {
   .text {
     margin-top: 100px;
   }
+  .left {
+    margin-top: -60px !important;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -35,16 +38,6 @@ html[data-theme='light'] .container {
   }
 }
 
-.left {
-  background-image: url('/static/img/index/header/vscode-left.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-left: 75px;
-  padding-top: 50px;
-  width: 100%;
-  height: 300px;
-}
-
 @media screen and (min-width: 1441px) {
   .left {
     padding-left: 100px;
@@ -59,6 +52,14 @@ html[data-theme='light'] .container {
   margin-bottom: 30px;
   color: white;
   padding-right: 10px;
+}
+.footer {
+  width: 100%;
+  height: 15px;
+  background-color: #81c8be;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
 
 .btnContainer {

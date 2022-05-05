@@ -36,18 +36,19 @@ const Powered = (props) => {
           />
         </h1>
       </div>
-      <Grid container mt={3} mb={5}>
-        <Grid item xs={12} md={6} lg={6}>
+      <Grid container mt={10} mb={10}>
+        <Grid item md={2} lg={2} xl={2}></Grid>
+        <Grid item xs={12} md={4} lg={4} xl={4}>
           <List sx={{ width: '100%' }}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <ExploreIcon fontSize="large" className={styles.listIcon} />
+                <PeopleAltIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 className={styles.text}
-                primary="Detection, hotplug & selfhealing"
+                primary="Multimaster"
                 secondary={
-                  'Luos Engine manages all your services during every steps: creation, detection, hotplug, usage, sanity check, and exclusion in case of issues.'
+                  'Any service can control any other allowing you to have a complete distributed approach, or not...'
                 }
               />
             </ListItem>
@@ -79,21 +80,8 @@ const Powered = (props) => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item xs={12} md={6} lg={6}>
+        <Grid item xs={12} md={4} lg={4} xl={4}>
           <List sx={{ width: '100%' }}>
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <MenuBookIcon fontSize="large" className={styles.listIcon} />
-              </ListItemAvatar>
-              <ListItemText
-                className={styles.text}
-                primary="Object dictionnary"
-                secondary={
-                  'Luos is able to convert any unit on the fly, to avoid any trouble regarding data units.'
-                }
-              />
-            </ListItem>
-
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <EventNoteIcon fontSize="large" className={styles.listIcon} />
@@ -109,22 +97,36 @@ const Powered = (props) => {
 
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <PeopleAltIcon fontSize="large" className={styles.listIcon} />
+                <MenuBookIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 className={styles.text}
-                primary="Multimaster"
+                primary="Object dictionnary"
                 secondary={
-                  'Any service can control any other allowing you to have a complete distributed approach, or not...'
+                  'Luos is able to convert any unit on the fly, to avoid any trouble regarding data units.'
+                }
+              />
+            </ListItem>
+
+            <ListItem alignItems="flex-start">
+              <ListItemAvatar>
+                <ExploreIcon fontSize="large" className={styles.listIcon} />
+              </ListItemAvatar>
+              <ListItemText
+                className={styles.text}
+                primary="Detection, hotplug & selfhealing"
+                secondary={
+                  'Luos Engine manages all your services during every steps: creation, detection, hotplug, usage, sanity check, and exclusion in case of issues.'
                 }
               />
             </ListItem>
           </List>
         </Grid>
+        <Grid item md={2} lg={2} xl={2}></Grid>
       </Grid>
       <Grid container>
         <Grid item xs={12} md={6} lg={6} className={styles.nebula}>
-          <h1 className={`${styles.title} ${styles.underline}`}>
+          <h1 className={`${styles.titleFooter} ${styles.underline}`}>
             Develop and scale your edge and embedded distributed software now
           </h1>
           <p className={styles.textGs}>

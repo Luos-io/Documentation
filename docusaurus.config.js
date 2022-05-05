@@ -4,7 +4,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Luos',
-  tagline: 'Open source and real-time orchestrator for distributed architectures',
+  tagline:
+    'Open source and real-time orchestrator for distributed architectures',
   url: 'https://docs.luos.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -23,7 +24,8 @@ module.exports = {
     microservices_def:
       'Microservices are a software development technique that arranges an application as a collection of loosely coupled services.',
     robus_def: 'Bus communication protocol used by Luos.',
-    luoshal_def: 'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
+    luoshal_def:
+      'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
     last_version_pyluos: '2.0.0',
     last_version_luos: ' 2.0.1',
     gh_path: 'github.com/Luos-io/doc/tree/master/src',
@@ -192,7 +194,8 @@ module.exports = {
         blog: {
           //sidebarPath: require.resolve('./sidebarsBlog.js'),
           blogTitle: 'Luos Blog',
-          blogDescription: 'A blog about microservices and CI/CD in Edge and Embedded systems',
+          blogDescription:
+            'A blog about microservices and CI/CD in Edge and Embedded systems',
           postsPerPage: 'ALL',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',

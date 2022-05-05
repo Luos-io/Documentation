@@ -15,7 +15,7 @@ const Header = (props) => {
     <div className={styles.container}>
       {' '}
       <Grid container>
-        <Grid item md={7} style={{ borderBottom: '15px solid #81c8be' }}>
+        <Grid item md={7} className={styles.left}>
           <div className={styles.head}>
             {' '}
             <img
@@ -52,6 +52,7 @@ const Header = (props) => {
                 textStyle={{
                   color: '#BD99FF',
                   height: '70px',
+                  marginTop: '15px',
                 }}
                 startDelay={0}
                 cursorColor="#BD99FF"
@@ -84,6 +85,9 @@ const Header = (props) => {
               </div>
             </Grid>
           </Grid>
+          <Grid item xs={12} md={12} lg={12} xl={12} className={styles.footer}>
+            {' '}
+          </Grid>
         </Grid>
 
         <Grid item md={5} lg={5}></Grid>
@@ -96,7 +100,6 @@ const Header = (props) => {
           mt={-13}
           style={{
             zIndex: '3',
-            borderBottom: '15px solid #81c8be',
             paddingLeft: '0 !important',
           }}
         >
@@ -136,6 +139,9 @@ const Header = (props) => {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               ></iframe>
             </Grid>
+          </Grid>
+          <Grid item md={12} lg={12} xl={12} className={styles.footer}>
+            {' '}
           </Grid>
         </Grid>
       </Grid>

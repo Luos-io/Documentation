@@ -113,6 +113,9 @@ html[data-theme='light'] .container {
   width: 100%;
   height: 15px;
   background-color: #81c8be;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
 
 .player {
@@ -215,7 +218,8 @@ html[data-theme='dark'] .hiwTitle {
 .carousselText {
   font-family: 'Roboto', sans-serif;
   font-size: 14px !important;
-  padding-left: 15px;
+  padding: 15px;
+  text-align: justify;
   line-height: normal !important;
 }
 

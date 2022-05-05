@@ -41,7 +41,9 @@ const Software = (props) => {
 
   return (
     <div className={styles.container}>
-      <h4 style={{ textAlign: 'center' }}>Split the monolith: </h4>
+      <h4 style={{ textAlign: 'center', marginTop: '30px' }}>
+        Split the monolith:{' '}
+      </h4>
       <h1 className={`${styles.title} ${styles.underline}`}>
         Develop your Edge and Embedded distributed software scalable
       </h1>
@@ -54,7 +56,7 @@ const Software = (props) => {
               <h3 className={`${styles.subtitle} ${styles.underline}`}>
                 Network agnostic data format
               </h3>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 Luos engine provides a network agnostic multimaster data format.
                 No matter how specific your network is.
               </p>
@@ -64,7 +66,7 @@ const Software = (props) => {
               <h3 className={`${styles.subtitle} ${styles.underline}`}>
                 Portable and scalable code
               </h3>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 Luos engine allows you to create packages and make them portable
                 and scalable. You can share them with your team or the
                 community.
@@ -75,7 +77,7 @@ const Software = (props) => {
               <h3 className={`${styles.subtitle} ${styles.underline}`}>
                 Encapsulate features into services
               </h3>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 Luos engine encapsulates embedded features in services with
                 APIs. This allows you to have direct access to the hardware.
               </p>
@@ -91,12 +93,7 @@ const Software = (props) => {
 
       <Grid container className={styles.mobileNone}>
         <Grid md={1} lg={1} xl={1}></Grid>
-        <Grid
-          md={10}
-          lg={10}
-          xl={10}
-          style={{ borderBottom: '15px solid #81c8be', marginBottom: '-50px' }}
-        >
+        <Grid md={10} lg={10} xl={10} style={{ marginBottom: '-50px' }}>
           <div className={styles.head}>
             {' '}
             <Grid container>
@@ -188,6 +185,9 @@ const Software = (props) => {
                   </p>
                 </Grid>
               </Grid>
+            </Grid>
+            <Grid item md={12} lg={12} xl={12} className={styles.footer}>
+              {' '}
             </Grid>
           </Grid>
         </Grid>
