@@ -45,8 +45,7 @@ const Anatomy = (props) => {
             Anatomy of Luos
           </h1>
           <p className={styles.text}>
-            Luos gives you access to multiple features developed by developers
-            for developers. Some of the features come from the community needs.
+            Luos gives you access to multiple features created by developers for developers. Many of these features are based on the needs of the community.
           </p>
         </Grid>
       </Grid>
@@ -61,7 +60,7 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Topology and routing table"
                 secondary={
-                  'Luos detects every services in your system and locates them. This allows you to access and adapt to any feature from anywhere.'
+                  'Luos detects all the services in your system and locates them. It allows you to access and adapt to any feature from anywhere.'
                 }
               />
             </ListItem>
@@ -86,7 +85,7 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Remote control"
                 secondary={
-                  'You can access the topology and the routing table from anywhere, even from your computer, another machine or a cloud application.'
+                  'You can access the topology and routing table anywhere, even on your computer, another machine, or a cloud application.'
                 }
               />
             </ListItem>
@@ -104,7 +103,7 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Microservice architecture"
                 secondary={
-                  'Luos follows the microservice philosophy. Luos engine is a library allowing you to think your features into small independant and loosely-coupled bricks.'
+                  'Luos follows the microservices philosophy. Luos engine is a library that allows you to conceptualize your features using small, independent and loosely coupled bricks.'
                 }
               />
             </ListItem>
@@ -119,7 +118,7 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Timestamp"
                 secondary={
-                  'Luos Engine provides you a distributed timestamp management system.'
+                  'Luos engine provides you with a distributed timestamp management system.'
                 }
               />
             </ListItem>
@@ -131,7 +130,7 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Monitoring"
                 secondary={
-                  'You can control and monitor your device with several SDK (Python, TS, Browser app, and others soon).'
+                  'You can control and monitor your device with several SDKs (Python, TS, Browser app, and others - coming soon).'
                 }
               />
             </ListItem>
