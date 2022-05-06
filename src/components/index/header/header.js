@@ -8,9 +8,10 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useColorMode } from '@docusaurus/theme-common';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import SearchIcon from '@mui/icons-material/Search';
-
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 const Header = (props) => {
   const { isDarkTheme } = useColorMode();
+  console.log(isDarkTheme);
   return (
     <div className={styles.container}>
       {' '}
@@ -76,11 +77,26 @@ const Header = (props) => {
                 distributed software.
               </p>
               <div className={styles.btnContainer}>
-                <Button variant="contained" className={styles.pinkBtn}>
+                <Button
+                  variant="contained"
+                  className={styles.pinkBtn}
+                  href="/tutorials/get-started"
+                >
                   Get started <RocketLaunchIcon />
                 </Button>
-                <Button variant="contained" className={styles.whiteBtn}>
+                <Button
+                  variant="contained"
+                  className={styles.whiteBtn}
+                  href="https://discord.gg/luos"
+                >
                   Join the community
+                </Button>
+                <Button
+                  variant="contained"
+                  className={styles.videoBtn}
+                  href="https://www.youtube.com/watch?v=ujh0xNE3TZ8"
+                >
+                  Watch our video <PlayArrowIcon />
                 </Button>
               </div>
             </Grid>

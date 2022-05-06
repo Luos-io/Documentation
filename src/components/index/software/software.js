@@ -86,7 +86,11 @@ const Software = (props) => {
         </Grid>
       </Grid>
       <div className={styles.btnContainer}>
-        <Button variant="contained" className={styles.whiteBtn}>
+        <Button
+          variant="contained"
+          className={styles.pinkBtn}
+          href="/blog/a-way-to-unleash-embedded-systems"
+        >
           UNLEASH EMBEDDED SYSTEMS
         </Button>
       </div>

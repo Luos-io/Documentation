@@ -86,18 +86,19 @@ html[data-theme='light'] .container {
   text-align: center;
   margin-bottom: 40px;
 }
-
-.whiteBtn {
-  background-color: white !important;
-  color: #be99ff !important;
+.pinkBtn {
+  margin-right: 30px !important;
+  background-color: #be99ff !important;
+  color: white !important;
   border-radius: 2px !important;
+
   height: 40px;
   text-transform: uppercase;
 }
 
-.whiteBtn:hover {
-  background-color: #be99ff !important;
-  color: white !important;
+.pinkBtn:hover {
+  background-color: white !important;
+  color: #be99ff !important;
 }
 
 .head {

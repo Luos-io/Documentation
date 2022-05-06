@@ -36,6 +36,9 @@ html[data-theme='light'] .container {
   .btnContainer {
     margin: 50px 0;
   }
+  .videoBtn {
+    display: none !important;
+  }
 }
 
 @media screen and (min-width: 1441px) {
@@ -67,6 +70,32 @@ html[data-theme='light'] .container {
   margin-bottom: 50px;
 }
 
+@media screen and (max-width: 1023px) {
+  .pinkBtn {
+    margin-bottom: 15px !important;
+    width: 90% !important;
+  }
+
+  .whiteBtn {
+    margin-bottom: 15px !important;
+    width: 90% !important;
+  }
+
+  .container {
+    padding: 90px 15px;
+  }
+}
+
+.videoBtn {
+  border: 2px solid #be99ff !important;
+  background-color: transparent !important;
+  color: white !important;
+  border-radius: 2px !important;
+  width: 90%;
+  height: 40px;
+  text-transform: uppercase;
+}
+
 .pinkBtn {
   margin-right: 30px !important;
   background-color: #be99ff !important;
@@ -75,20 +104,6 @@ html[data-theme='light'] .container {
   width: 200px;
   height: 40px;
   text-transform: uppercase;
-}
-
-@media screen and (max-width: 1023px) {
-  .pinkBtn {
-    margin-bottom: 15px !important;
-  }
-
-  .whiteBtn {
-    margin-bottom: 15px !important;
-  }
-
-  .container {
-    padding: 90px 15px;
-  }
 }
 
 .pinkBtn:hover {

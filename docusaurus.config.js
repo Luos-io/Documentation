@@ -53,7 +53,7 @@ module.exports = {
           dropdownActiveClassDisabled: true,
         },
         {
-          to: 'https://www.luos.io',
+          to: '/',
           label: 'Technology',
           position: 'right',
         },
@@ -84,7 +84,7 @@ module.exports = {
               label: 'Troubleshooting',
             },
             {
-              to: 'https://www.luos.io/blog',
+              to: '/blog',
               label: 'Blog',
             },
           ],

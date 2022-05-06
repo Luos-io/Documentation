@@ -5,7 +5,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { useColorMode } from '@docusaurus/theme-common';
@@ -17,6 +16,7 @@ import AbcIcon from '@mui/icons-material/Abc';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import Link from '@mui/material/Link';
 
 const Powered = (props) => {
   const { isDarkTheme } = useColorMode();
@@ -53,6 +53,23 @@ const Powered = (props) => {
               />
             </ListItem>
 
+            <ListItem
+              alignItems="flex-start"
+              component={Link}
+              href="/docs/luos-technology/services#service-properties"
+              className={styles.listLink}
+            >
+              <ListItemAvatar>
+                <AbcIcon fontSize="large" className={styles.listIcon} />
+              </ListItemAvatar>
+              <ListItemText
+                className={`${styles.text} ${styles.textLink}`}
+                primary="Service aliases management"
+                secondary={
+                  'Every services can have a convenient alias allowing you to easily find and use them.'
+                }
+              />
+            </ListItem>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <CachedIcon fontSize="large" className={styles.listIcon} />
@@ -65,23 +82,10 @@ const Powered = (props) => {
                 }
               />
             </ListItem>
-
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <AbcIcon fontSize="large" className={styles.listIcon} />
-              </ListItemAvatar>
-              <ListItemText
-                className={styles.text}
-                primary="Service aliases management"
-                secondary={
-                  'Every services can have a convenient alias allowing you to easily find and use them.'
-                }
-              />
-            </ListItem>
           </List>
         </Grid>
         <Grid item xs={12} md={4} lg={4} xl={4}>
-          <List sx={{ width: '100%' }}>
+          <List sx={{ width: '100%' }} className={styles.secondList}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <EventNoteIcon fontSize="large" className={styles.listIcon} />
@@ -95,7 +99,12 @@ const Powered = (props) => {
               />
             </ListItem>
 
-            <ListItem alignItems="flex-start">
+            <ListItem
+              alignItems="flex-start"
+              component={Link}
+              href="/docs/luos-technology/message/object-dictionary"
+              className={styles.listLink}
+            >
               <ListItemAvatar>
                 <MenuBookIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
@@ -108,7 +117,12 @@ const Powered = (props) => {
               />
             </ListItem>
 
-            <ListItem alignItems="flex-start">
+            <ListItem
+              alignItems="flex-start"
+              component={Link}
+              href="/docs/luos-technology/services/routing-table#detection"
+              className={styles.listLink}
+            >
               <ListItemAvatar>
                 <ExploreIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
@@ -134,10 +148,18 @@ const Powered = (props) => {
             with your IDE and build your first embedded microservice.
           </p>
           <div className={styles.btnContainer}>
-            <Button variant="contained" className={styles.pinkBtn}>
+            <Button
+              variant="contained"
+              className={styles.pinkBtn}
+              href="/tutorials/get-started"
+            >
               Get started <RocketLaunchIcon />
             </Button>
-            <Button variant="contained" className={styles.whiteBtn}>
+            <Button
+              variant="contained"
+              className={styles.whiteBtn}
+              href="https://discord.gg/luos"
+            >
               Join the community
             </Button>
           </div>

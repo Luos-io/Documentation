@@ -17,6 +17,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const Integration = (props) => {
   const { isDarkTheme } = useColorMode();
+
   const img = {
     mcu: [
       ['esp', 'ESP32'],
@@ -29,15 +30,15 @@ const Integration = (props) => {
       ['vscodeico', 'VS Code'],
     ],
     os: [
-      ['ros', 'ROS-1 & ROS-2'],
-      ['freertos', 'FreeRTOS'],
-      ['microros', 'Micro-ROS'],
+      ['ros', 'ROS-1 & ROS-2', 'ros-white'],
+      ['freertos', 'FreeRTOS', 'freertos-white'],
+      ['microros', 'Micro-ROS', 'microros-white'],
     ],
     api: [
       ['simplefoc', 'SimpleFOC'],
-      ['zappier', 'Zappier (soon)'],
-      ['ifttt', 'IFTTT (soon)'],
-      ['freedom', 'Freedom Robotics (soon)'],
+      ['zappier', 'Zappier '],
+      ['ifttt', 'IFTTT ', 'ifttt-white'],
+      ['freedom', 'Freedom Robotics '],
     ],
     sdk: [
       ['c', 'C/C++'],
@@ -46,6 +47,9 @@ const Integration = (props) => {
       ['ts', 'Typescript'],
     ],
   };
+
+  const soon = ['zappier', 'ifttt', 'freedom'];
+
   const [currentImageTmp, setCurrentImageTmp] = useState(img['mcu']);
   const [currentInt, setCurrentInt] = React.useState('mcu');
 
@@ -165,12 +169,22 @@ const Integration = (props) => {
                 {currentImageTmp.map((element, index) => (
                   <ImageListItem key={index}>
                     <img
-                      src={`img/index/integration/icons/${element[0]}.svg`}
+                      src={
+                        isDarkTheme
+                          ? element[2]
+                            ? `img/index/integration/icons/${element[2]}.svg`
+                            : `img/index/integration/icons/${element[0]}.svg`
+                          : `img/index/integration/icons/${element[0]}.svg`
+                      }
                       alt={element[1]}
                       loading="lazy"
                       style={{ width: '64px' }}
                     />
-                    <ImageListItemBar title={element[1]} position="below" />
+                    <ImageListItemBar
+                      title={element[1]}
+                      subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
+                      position="below"
+                    />
                   </ImageListItem>
                 ))}
               </ImageList>
@@ -264,7 +278,11 @@ const Integration = (props) => {
                       loading="lazy"
                       style={{ width: '48px' }}
                     />
-                    <ImageListItemBar title={element[1]} position="below" />
+                    <ImageListItemBar
+                      title={element[1]}
+                      subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
+                      position="below"
+                    />
                   </ImageListItem>
                 ))}
               </ImageList>
@@ -277,7 +295,11 @@ const Integration = (props) => {
         <Grid item xs={0.5}></Grid>
 
         <div className={styles.btnContainerMobile}>
-          <Button variant="contained" className={styles.pinkBtn}>
+          <Button
+            variant="contained"
+            className={styles.pinkBtn}
+            href="/tutorials/luos-integration/list"
+          >
             Learn more about integrations
           </Button>
         </div>
@@ -294,7 +316,11 @@ const Integration = (props) => {
           className={styles.gridBtn}
         >
           <div className={styles.btnContainer}>
-            <Button variant="contained" className={styles.pinkBtn}>
+            <Button
+              variant="contained"
+              className={styles.pinkBtn}
+              href="/tutorials/luos-integration/list"
+            >
               Learn more about integrations
             </Button>
           </div>

@@ -5,7 +5,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
+import Link from '@mui/material/Link';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -54,7 +54,12 @@ const Anatomy = (props) => {
       <Grid container mt={5} mb={5}>
         <Grid item md={3} lg={3} xl={4.5}>
           <List sx={{ width: '100%' }} className={styles.list}>
-            <ListItem alignItems="flex-start">
+            <ListItem
+              alignItems="flex-start"
+              component={Link}
+              href="/tutorials/your-first-detection/"
+              className={styles.listLink}
+            >
               <ListItemAvatar>
                 <MemoryIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
@@ -66,7 +71,12 @@ const Anatomy = (props) => {
               />
             </ListItem>
 
-            <ListItem alignItems="flex-start">
+            <ListItem
+              alignItems="flex-start"
+              component={Link}
+              href="/tutorials/bootloader/intro"
+              className={styles.listLink}
+            >
               <ListItemAvatar>
                 <AccountTreeIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
@@ -79,7 +89,12 @@ const Anatomy = (props) => {
               />
             </ListItem>
 
-            <ListItem alignItems="flex-start">
+            <ListItem
+              alignItems="flex-start"
+              component={Link}
+              href="/docs/luos-technology/basics#introduction-to-luos"
+              className={styles.listLink}
+            >
               <ListItemAvatar>
                 <ComputerIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
@@ -93,8 +108,17 @@ const Anatomy = (props) => {
           </List>
         </Grid>
         <Grid item md={3} lg={3} xl={4.5}>
-          <List sx={{ width: '100%' }} display="flex" className={styles.list}>
-            <ListItem alignItems="flex-start">
+          <List
+            sx={{ width: '100%' }}
+            display="flex"
+            className={`${styles.list} ${styles.secondList}`}
+          >
+            <ListItem
+              alignItems="flex-start"
+              component={Link}
+              href="/docs/luos-technology/basics#introduction-to-luos"
+              className={styles.listLink}
+            >
               <ListItemAvatar>
                 <MiscellaneousServicesIcon
                   fontSize="large"
@@ -109,7 +133,12 @@ const Anatomy = (props) => {
               />
             </ListItem>
 
-            <ListItem alignItems="flex-start">
+            <ListItem
+              alignItems="flex-start"
+              component={Link}
+              href="/docs/luos-technology/services/timestamp"
+              className={styles.listLink}
+            >
               <ListItemAvatar>
                 <CalendarMonthIcon
                   fontSize="large"
@@ -124,7 +153,12 @@ const Anatomy = (props) => {
               />
             </ListItem>
 
-            <ListItem alignItems="flex-start">
+            <ListItem
+              alignItems="flex-start"
+              component={Link}
+              href="/tutorials/get-started/get-started2"
+              className={styles.listLink}
+            >
               <ListItemAvatar>
                 <SearchIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>

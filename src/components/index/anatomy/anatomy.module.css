@@ -44,6 +44,22 @@ html[data-theme='dark'] .text {
   .text {
     padding-left: 20px !important;
   }
+
+  .vscode {
+    padding: 0 30px !important;
+  }
+
+  .head {
+    border-top-right-radius: 10px !important;
+    border-right: 2px solid black !important;
+  }
+
+  .player {
+    border-right: 2px solid black !important;
+  }
+  .secondList {
+    margin-top: -20px !important;
+  }
 }
 
 .lines {
@@ -106,10 +122,12 @@ html[data-theme='dark'] .text {
 
 .engine span {
   font-family: 'Roboto Mono', sans-serif !important;
+  font-size: 13px !important;
 }
 
 .engineActive span {
   font-family: 'Roboto Mono', sans-serif !important;
+  font-size: 13px !important;
 }
 
 .engineActive {
@@ -123,16 +141,12 @@ html[data-theme='dark'] .text {
   word-break: break-word;
 }
 
-.vscode {
-  padding: 0 !important;
-}
-
 .icoText {
   font-family: 'Roboto Mono', sans-serif !important;
 }
 
 .list span {
-  color: black !important;
+  color: black;
 }
 
 .list p {
@@ -140,11 +154,11 @@ html[data-theme='dark'] .text {
 }
 
 html[data-theme='dark'] .list span {
-  color: white !important;
+  color: white;
 }
 
 html[data-theme='dark'] .list p {
-  color: white !important;
+  color: white;
 }
 
 html[data-theme='dark'] .head {
@@ -175,4 +189,14 @@ html[data-theme='dark'] .listIcon {
   border-bottom: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;
+}
+
+.listLink {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.listLink:hover * {
+  color: #be99ff !important;
+  fill: #be99ff !important;
 }

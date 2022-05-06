@@ -14,10 +14,16 @@ html[data-theme='light'] .container {
   }
   .pinkBtn {
     margin-bottom: 15px !important;
+    width: 90% !important;
   }
 
   .whiteBtn {
     margin-bottom: 15px !important;
+    width: 90% !important;
+  }
+
+  .secondList {
+    margin-top: -20px !important;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -53,11 +59,11 @@ html[data-theme='light'] .container {
 }
 
 .text span {
-  color: white !important;
+  color: white;
 }
 
 .text p {
-  color: white !important;
+  color: white;
   padding-right: 30px;
   text-align: justify;
 }
@@ -67,11 +73,11 @@ html[data-theme='light'] .listIcon {
 }
 
 html[data-theme='light'] .text span {
-  color: black !important;
+  color: black;
 }
 
 html[data-theme='light'] .text p {
-  color: black !important;
+  color: black;
 }
 
 html[data-theme='light'] .title {
@@ -233,4 +239,14 @@ html[data-theme='light'] .video {
 
 html[data-theme='light'] .player {
   background-color: #fafafa !important;
+}
+
+.listLink {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.listLink:hover * {
+  color: #be99ff !important;
+  fill: #be99ff !important;
 }
