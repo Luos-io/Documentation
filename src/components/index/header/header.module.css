@@ -89,7 +89,7 @@ html[data-theme='light'] .container {
 .videoBtn {
   border: 2px solid #be99ff !important;
   background-color: transparent !important;
-  color: white !important;
+  color: #be99ff !important;
   border-radius: 2px !important;
   width: 90%;
   height: 40px;

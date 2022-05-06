@@ -87,7 +87,6 @@ html[data-theme='light'] .container {
   margin-bottom: 40px;
 }
 .pinkBtn {
-  margin-right: 30px !important;
   background-color: #be99ff !important;
   color: white !important;
   border-radius: 2px !important;

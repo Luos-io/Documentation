@@ -105,6 +105,7 @@ html[data-theme='dark'] .title {
   border-radius: 2px !important;
   text-transform: uppercase;
   height: 40px;
+  width: 90%;
   display: block !important;
   margin: 0 auto !important;
 }

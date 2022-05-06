@@ -282,6 +282,7 @@ const Anatomy = (props) => {
           <img
             src="img/index/integration/line-right.svg"
             style={{ transform: 'rotateY(180deg)' }}
+            className={styles.linesImg}
           />
         </Grid>
         <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
@@ -289,6 +290,7 @@ const Anatomy = (props) => {
           <img
             src="img/index/integration/line-right.svg"
             style={{ float: 'right' }}
+            className={styles.linesImg}
           />
         </Grid>
       </Grid>

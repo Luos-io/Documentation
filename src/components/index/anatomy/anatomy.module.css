@@ -60,6 +60,10 @@ html[data-theme='dark'] .text {
   .secondList {
     margin-top: -20px !important;
   }
+
+  .linesImg {
+    margin-top: -20px;
+  }
 }
 
 .lines {
