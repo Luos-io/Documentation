@@ -74,7 +74,7 @@ const Header = (props) => {
               />{' '}
               <p className={styles.text}>
                 Luos makes it easy to develop and scale your edge and embedded
-                distributed software.
+                distributed software. It's open source.
               </p>
               <div className={styles.btnContainer}>
                 <Button

@@ -45,8 +45,9 @@ const Anatomy = (props) => {
             Anatomy of Luos
           </h1>
           <p className={styles.text}>
-            Luos gives you access to multiple features developed by developers
-            for developers. Some of the features come from community needs.
+            Luos gives you access to multiple features created by developers for
+            developers. Many of these features are based on the needs of the
+            community.
           </p>
         </Grid>
       </Grid>
@@ -57,16 +58,16 @@ const Anatomy = (props) => {
             <ListItem
               alignItems="flex-start"
               component={Link}
-              href="/tutorials/your-first-detection/"
+              href="/docs/luos-technology/basics#introduction-to-luos"
               className={styles.listLink}
             >
               <ListItemAvatar>
-                <MemoryIcon fontSize="large" className={styles.listIcon} />
+                <ComputerIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
-                primary="Topology and routing table"
+                primary="Remote control"
                 secondary={
-                  'Luos detects every services in your system and locates them. Allowing you to access and adapt to any feature from anywhere.'
+                  'You can access the topology and routing table anywhere, even on your computer, another machine, or a cloud application.'
                 }
               />
             </ListItem>
@@ -84,24 +85,23 @@ const Anatomy = (props) => {
                 style={{ color: 'black !important' }}
                 primary="Bootloader"
                 secondary={
-                  'Luos Engine allows you to update any firmware of your device, from anywhere.'
+                  'Luos engine allows you to update any firmware of your device, from anywhere.'
                 }
               />
             </ListItem>
-
             <ListItem
               alignItems="flex-start"
               component={Link}
-              href="/docs/luos-technology/basics#introduction-to-luos"
+              href="/tutorials/your-first-detection/"
               className={styles.listLink}
             >
               <ListItemAvatar>
-                <ComputerIcon fontSize="large" className={styles.listIcon} />
+                <MemoryIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
-                primary="Remote control"
+                primary="Topology and routing table"
                 secondary={
-                  'You can access the topology and the routing table anywhere, even your computer, another machine or a cloud application.'
+                  'Luos detects all the services in your system and locates them. It allows you to access and adapt to any feature from anywhere.'
                 }
               />
             </ListItem>
@@ -116,19 +116,16 @@ const Anatomy = (props) => {
             <ListItem
               alignItems="flex-start"
               component={Link}
-              href="/docs/luos-technology/basics#introduction-to-luos"
+              href="/tutorials/get-started/get-started2"
               className={styles.listLink}
             >
               <ListItemAvatar>
-                <MiscellaneousServicesIcon
-                  fontSize="large"
-                  className={styles.listIcon}
-                />
+                <SearchIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
-                primary="Microservice architecture"
+                primary="Monitoring"
                 secondary={
-                  'Luos follows the microservice philosophy. Luos Engine is a library allowing you to think your features into small independant and loosly coupled bricks.'
+                  'You can control and monitor your device with several SDKs (Python, TS, Browser app, and others - coming soon).'
                 }
               />
             </ListItem>
@@ -148,24 +145,26 @@ const Anatomy = (props) => {
               <ListItemText
                 primary="Timestamp"
                 secondary={
-                  'Luos Engine provides you a distributed timestamp management system.'
+                  'Luos engine provides you with a distributed timestamp management system.'
                 }
               />
             </ListItem>
-
             <ListItem
               alignItems="flex-start"
               component={Link}
-              href="/tutorials/get-started/get-started2"
+              href="/docs/luos-technology/basics#introduction-to-luos"
               className={styles.listLink}
             >
               <ListItemAvatar>
-                <SearchIcon fontSize="large" className={styles.listIcon} />
+                <MiscellaneousServicesIcon
+                  fontSize="large"
+                  className={styles.listIcon}
+                />
               </ListItemAvatar>
               <ListItemText
-                primary="Monitoring"
+                primary="Microservice architecture"
                 secondary={
-                  'You can control and monitor your device with several SDK (Python, TS, Browser app, and others soon)'
+                  'Luos follows the microservices philosophy. Luos engine is a library that allows you to conceptualize your features using small, independent and loosely coupled bricks.'
                 }
               />
             </ListItem>

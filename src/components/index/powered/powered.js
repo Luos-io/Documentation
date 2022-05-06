@@ -25,7 +25,7 @@ const Powered = (props) => {
       <div className={styles.containerTitle}>
         {' '}
         <h1 className={`${styles.title}`}>
-          Powered by{' '}
+          More features powered by{' '}
           <img
             src={
               isDarkTheme
@@ -48,7 +48,7 @@ const Powered = (props) => {
                 className={styles.text}
                 primary="Multimaster"
                 secondary={
-                  'Any service can control any other allowing you to have a complete distributed approach, or not...'
+                  'Any service can control any other, which allows you to have a fully distributed approach, or not...'
                 }
               />
             </ListItem>
@@ -66,7 +66,7 @@ const Powered = (props) => {
                 className={`${styles.text} ${styles.textLink}`}
                 primary="Service aliases management"
                 secondary={
-                  'Every services can have a convenient alias allowing you to easily find and use them.'
+                  'Luos provides you with a way to automatically retrieve values, so you don’t need to poll them.'
                 }
               />
             </ListItem>
@@ -78,7 +78,7 @@ const Powered = (props) => {
                 className={styles.text}
                 primary="Data auto-update"
                 secondary={
-                  'Luos provides you a way to get back automatically values, you don’t have to poll them anymore.'
+                  'Each service can have a convenient alias, allowing you to find and use it easily.'
                 }
               />
             </ListItem>
@@ -94,7 +94,7 @@ const Powered = (props) => {
                 className={styles.text}
                 primary="Event-based"
                 secondary={
-                  'You can choose to poll or to wait for a callback for each event received by you service.'
+                  'You can choose to poll or wait for a callback for each event received by your service.'
                 }
               />
             </ListItem>
@@ -112,7 +112,7 @@ const Powered = (props) => {
                 className={styles.text}
                 primary="Object dictionnary"
                 secondary={
-                  'Luos is able to convert any unit on the fly, to avoid any trouble regarding data units.'
+                  'Luos is able to convert any unit on the fly, so there are no problems with data units.'
                 }
               />
             </ListItem>
@@ -130,7 +130,7 @@ const Powered = (props) => {
                 className={styles.text}
                 primary="Detection, hotplug & selfhealing"
                 secondary={
-                  'Luos Engine manages all your services during every steps: creation, detection, hotplug, usage, sanity check, and exclusion in case of issues.'
+                  'Luos engine manages all your services at every step: creation, detection, hotplug, usage, sanity check, and exclusion in case of problems.'
                 }
               />
             </ListItem>
