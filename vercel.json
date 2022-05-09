@@ -38,6 +38,11 @@
       "statusCode": 301
     },
     {
+      "source": "/tutorials/tutorials(.*)",
+      "destination": "/tutorials",
+      "statusCode": 301
+    },
+    {
       "source": "/tutorials/demo-boards(.*)",
       "destination": "/docs/compatibility/mcu_demoboard",
       "statusCode": 301
@@ -84,7 +89,7 @@
     },
     {
       "source": "/pages/tutorials/tutorials(.*)",
-      "destination": "/tutorials/tutorials",
+      "destination": "/tutorials",
       "statusCode": 301
     },
     {
