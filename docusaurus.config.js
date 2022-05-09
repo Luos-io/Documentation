@@ -38,8 +38,11 @@ module.exports = {
     hotjar: {
       applicationId: '2480203',
     },
-    hideableSidebar: true,
-
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     navbar: {
       logo: {
         alt: 'Luos Logo',
