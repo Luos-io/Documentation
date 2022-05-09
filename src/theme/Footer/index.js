@@ -68,7 +68,7 @@ function Footer() {
     >
       <div className="container">
         <div className="joinUsContainer">
-          <h3>Join us on</h3>
+          <h3>Join the community</h3>
           <a href="https://discord.gg/luos">
             <img src="/img/discord.png" className="rsLogo"></img>
           </a>
