@@ -124,7 +124,7 @@
     },
     {
       "source": "/pages/api/api(.*)",
-      "destination": "/docs/api/list",
+      "destination": "/docs/api",
       "statusCode": 301
     },
     {

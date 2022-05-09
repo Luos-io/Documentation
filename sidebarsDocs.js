@@ -209,7 +209,7 @@ module.exports = {
           label: 'API',
           link: {
             type: 'doc',
-            id: 'api/list',
+            id: 'api/index',
           },
           items: [
             {
