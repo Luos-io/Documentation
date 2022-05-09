@@ -4,9 +4,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Luos',
-  tagline:
-    'Open source and real-time orchestrator for distributed architectures',
-  url: 'https://docs.luos.io',
+  tagline: 'Open source and real-time orchestrator for distributed architectures',
+  url: 'https://www.luos.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
