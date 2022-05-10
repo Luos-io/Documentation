@@ -45,7 +45,7 @@ const Software = (props) => {
         Split the monolith:{' '}
       </h4>
       <h1 className={`${styles.title} ${styles.underline}`}>
-        Develop scalable edge and embedded distributed softwares
+        Develop scalable edge and embedded distributed software
       </h1>
       <Grid container spacing={3} mb={5}>
         <Grid item md={1.5} lg={1.5} xl={1.5}></Grid>
