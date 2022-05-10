@@ -192,6 +192,11 @@
       "statusCode": 301
     },
     {
+      "source": "/us/pricing",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/us/technology",
       "destination": "/",
       "statusCode": 301
