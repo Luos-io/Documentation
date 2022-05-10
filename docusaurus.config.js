@@ -31,6 +31,7 @@ module.exports = {
   },
 
   themeConfig: {
+    metadata: [{name: 'description', content: 'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.'}],
     image: 'img/thumbnail-luos.png',
     colorMode: {
       respectPrefersColorScheme: true,
