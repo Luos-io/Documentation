@@ -146,7 +146,7 @@ const Header = (props) => {
               <span>
                 <KeyboardArrowDownIcon className={styles.cardIcons} /> Video
               </span>
-              <div className={styles.engine}>What is Luos Engine?</div>
+              <div className={styles.engine}>What is Luos engine?</div>
             </Grid>
             <Grid item md={9} lg={9} className={styles.player}>
               <iframe
