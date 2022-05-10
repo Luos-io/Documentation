@@ -129,7 +129,7 @@
     },
     {
       "source": "/pages/software/containers_list/color(.*)",
-      "destination": "/docs/software/services_list/color#variables",
+      "destination": "/docs/luos-technology/services",
       "statusCode": 301
     },
     {
