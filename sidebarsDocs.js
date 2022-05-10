@@ -169,7 +169,7 @@ module.exports = {
           label: 'Tools',
           link: {
             type: 'doc',
-            id: 'tools/tool',
+            id: 'tools/index',
           },
           items: [
             {
