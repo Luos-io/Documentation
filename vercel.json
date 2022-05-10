@@ -175,6 +175,11 @@
       "source": "/tutorials/tutorials(.*)",
       "destination": "/tutorials",
       "statusCode": 301
+    },
+    {
+      "source": "/us",
+      "destination": "/",
+      "statusCode": 301
     }
   ]
 }
