@@ -3,6 +3,10 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/community",
+      "destination": "https://discord.gg/luos"
+    },
+    {
       "source": "/docs/get-started/getting-started",
       "destination": "/tutorials/get-started",
       "statusCode": 301
