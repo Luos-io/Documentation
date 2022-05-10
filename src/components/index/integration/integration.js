@@ -48,7 +48,7 @@ const Integration = (props) => {
     ],
   };
 
-  const soon = ['zappier', 'ifttt', 'freedom'];
+  const soon = ['zappier', 'ifttt', 'freedom', 'microros'];
 
   const [currentImageTmp, setCurrentImageTmp] = useState(img['mcu']);
   const [currentInt, setCurrentInt] = React.useState('mcu');
@@ -142,7 +142,7 @@ const Integration = (props) => {
                     currentInt == 'os' ? styles.engineActive : styles.engine
                   }
                   control={<Radio />}
-                  label="OS & Frameworks"
+                  label="OS & frameworks"
                 />
                 <FormControlLabel
                   value="api"
