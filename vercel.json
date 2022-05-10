@@ -29,7 +29,7 @@
     },
     {
       "source": "/pages/hardware-consideration/hardware-consideration(.*)",
-      "destination": "/docs/hardware-consideration/hardware-consideration",
+      "destination": "/docs/hardware-consideration",
       "statusCode": 301
     },
     {
