@@ -9,7 +9,7 @@ module.exports = {
           label: 'Luos engine',
           link: {
             type: 'doc',
-            id: 'luos-technology/luos_tech',
+            id: 'luos-technology/index',
           },
           items: [
             {

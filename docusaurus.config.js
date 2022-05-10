@@ -79,7 +79,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: '/docs/luos-technology/luos_tech',
+              to: '/docs/luos-technology',
               label: 'Documentation',
             },
             {
@@ -128,7 +128,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/docs/luos-technology/luos_tech',
+              to: '/docs/luos-technology',
             },
             {
               label: 'Contact us',

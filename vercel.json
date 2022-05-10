@@ -99,7 +99,7 @@
     },
     {
       "source": "/pages/embedded/embedded(.*)",
-      "destination": "/docs/luos-technology/luos_tech",
+      "destination": "/docs/luos-technology",
       "statusCode": 301
     },
     {
