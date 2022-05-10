@@ -8,6 +8,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/how-to-make-embedded-sytems-skyrocket",
+      "destination": "/blog/how-to-make-embedded-systems-skyrocket",
+      "statusCode": 301
+    },
+    {
       "source": "/community",
       "destination": "https://discord.gg/luos"
     },
