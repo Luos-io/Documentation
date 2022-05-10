@@ -83,7 +83,7 @@ module.exports = {
               label: 'Documentation',
             },
             {
-              to: '/faq/list',
+              to: '/faq',
               label: 'Troubleshooting',
             },
             {
