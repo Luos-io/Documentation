@@ -182,6 +182,11 @@
       "statusCode": 301
     },
     {
+      "source": "/us/community",
+      "destination": "https://discord.gg/luos",
+      "statusCode": 301
+    },
+    {
       "source": "/us/technology",
       "destination": "/",
       "statusCode": 301
