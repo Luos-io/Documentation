@@ -7,6 +7,11 @@
       "destination": "https://discord.gg/luos"
     },
     {
+      "source": "/docs/demo_boards/boards_list/powerswitch(.*)",
+      "destination": "/docs/compatibility/mcu_demoboard",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/get-started/getting-started",
       "destination": "/tutorials/get-started",
       "statusCode": 301
