@@ -159,7 +159,7 @@
     },
     {
       "source": "/pages/luos-technology/package/package(.*)",
-      "destination": "/docs/luos-technology/package/package",
+      "destination": "/docs/luos-technology/package",
       "statusCode": 301
     }
   ]

@@ -60,7 +60,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'Package',
-              id: 'luos-technology/package/package',
+              id: 'luos-technology/package/index',
             },
             {
               type: 'category',
