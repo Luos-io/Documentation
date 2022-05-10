@@ -15,7 +15,7 @@ date: 2020-06-13T10:00
 
 ![img alt](/img/blog/6.png)
 
-This post is the follow-up of the Motors-in-robotics series. Although what I will present you here is still basic notions and can be addressed to anyone keen on knowing more about it, don't hesitate to have a look at the previous posts ([types of motors in robotics](/blog/2020-01-13-lift-banana-motors), DC motor [direction](/blog/2020-03-13-control-dc-motor-1), and [speed](/blog/2020-04-13-control-dc-motor-2) control, [how to read a datasheet](/blog/2020-05-13-read-datasheet)), they will help you expand your knowledge about electric motors and start on a reasonable basis.
+This post is the follow-up of the Motors-in-robotics series. Although what I will present you here is still basic notions and can be addressed to anyone keen on knowing more about it, don't hesitate to have a look at the previous posts ([types of motors in robotics](/2020-01-13-lift-banana-motors.mdx), DC motor [direction](/2020-03-13-control-dc-motor-1.mdx), and [speed](/2020-04-13-control-dc-motor-2.mdx) control, [how to read a datasheet](/2020-05-13-read-datasheet.mdx)), they will help you expand your knowledge about electric motors and start on a reasonable basis.
 
 <!--truncate-->
 
@@ -23,7 +23,7 @@ Your DC brushed motor is full of surprises: you think feeding it with some elect
 
 But that's not quite _everything._
 
-Remember this image I put in [one of the first posts](/blog/2020-01-13-lift-banana-motors) about motors?
+Remember this image I put in [one of the first posts](/2020-01-13-lift-banana-motors.mdx) about motors?
 
 ![The electrical energy is the input of the motor, and the mechanical energy is the output](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacd9736082452c7c863_1*IM8uHsEVAm-gaeC3HC_RYg.jpeg)
 
@@ -38,7 +38,7 @@ We begin with the basics. Both these outputs are the most important because they
 
 _What are they?_ **Torque** is the force applied at a distance to an object's pivot —hence it's a _Force_ time a _Distance —_, allowing the object to rotate. The International System of Units measure is represented in Newton-meter (_N.m_) _(1)_. Applied to your motor, torque is also the rotational force provided by the rotor.
 
-**Speed** is the rotational speed of the rotor. Nothing much to say about it, because you already know from a previous post that [you can control that speed with easy electronics](/blog/2020-04-13-control-dc-motor-2) and PWM. You can express it in _radians per second_ (_rad/s_), or most of the time, in _revolutions per minute_ (_rpm_) _(1)_.
+**Speed** is the rotational speed of the rotor. Nothing much to say about it, because you already know from a previous post that [you can control that speed with easy electronics](/2020-04-13-control-dc-motor-2.mdx) and PWM. You can express it in _radians per second_ (_rad/s_), or most of the time, in _revolutions per minute_ (_rpm_) _(1)_.
 
 Let me remind you that in a DC motor, high speed means low torque and inversely. On the characteristic curve, it looks like this:
 
@@ -50,7 +50,7 @@ The following function represents this curve:
 
 ![Formula of a curve representation](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc09e9f38e233fd86b9f8_1*Vs0u-PFivGFqjf_q5K9sYA.jpeg)
 
-We already discussed this in a [previous post](/blog/2020-05-13-read-datasheet), but it's attractive to be precise that this linear curve is theoretical. In your real world, it may look like that:
+We already discussed this in a [previous post](/2020-05-13-read-datasheet.mdx), but it's attractive to be precise that this linear curve is theoretical. In your real world, it may look like that:
 
 ![Linear curve](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d31a1d9951e9f8fc4246_1*ZYOyos5mv5L4YuQhkgOc0g.jpeg)
 
@@ -84,7 +84,7 @@ Torque (T) (in N.m) is equal to moment of inertia (I) (in kg.m²) times angular 
 
 Also called counter electromotive force, back-EMF, or CEMF. Back-EMF is a voltage (in V), a difference of potential. In the coils of a motor, it appears while electrons are moving through the wires while under a motion of magnetic field (<a rel="external nofollow" href="https://en.wikipedia.org/wiki/Lenz%27s_law" target="_blank">Lenz's law</a>) may explain it better than me).
 
-This one is tricky because **_electromotive force_** _and_ **_back electromotive force_** _are the same phenomena_. Only one of them (back-EMF) exerts a mechanical force opposing the motion of the motor, while the other is giving a rotation to the motor (you already know [the process](/blog/2020-01-13-lift-banana-motors), by the way).
+This one is tricky because **_electromotive force_** _and_ **_back electromotive force_** _are the same phenomena_. Only one of them (back-EMF) exerts a mechanical force opposing the motion of the motor, while the other is giving a rotation to the motor (you already know [the process](/2020-01-13-lift-banana-motors.mdx), by the way).
 
 A back-EMF can be measured by a voltage generated at the output of the motor, which, in certain cases, can damage the electronic circuits.
 
@@ -122,7 +122,7 @@ This was the third thing that comes out of a motor, and wait here. There is more
 
 <h2> Magnetic field </h2>
 
-Of course, you remember this one from [a guide to motors in robotics.](/blog/2020-01-13-lift-banana-motors) Most electric motors run with a magnetic field — not black magic.
+Of course, you remember this one from [a guide to motors in robotics.](/2020-01-13-lift-banana-motors.mdx) Most electric motors run with a magnetic field — not black magic.
 
 _The electricity runs through the winding, generating a magnetic field and motioning electrically-induced or permanent magnets._ One sentence to summarize how a motor works! Sweet.
 

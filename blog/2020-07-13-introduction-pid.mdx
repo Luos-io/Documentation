@@ -15,7 +15,7 @@ date: 2020-07-13T10:00
 
 ![img alt](/img/blog/7.png)
 
-This post will introduce the basics of PID control and why it comes in handy for robotic applications. Discover here an introduction to PID control with DC motor. You don't need much background to read this, but knowing the basics of motors is always a good idea: my previous posts on this subject are listed here: [Welcome to the jungle](/blog/2020-02-13-dc-motor-jungle).
+This post will introduce the basics of PID control and why it comes in handy for robotic applications. Discover here an introduction to PID control with DC motor. You don't need much background to read this, but knowing the basics of motors is always a good idea: my previous posts on this subject are listed here: [Welcome to the jungle](/2020-02-13-dc-motor-jungle.mdx).
 
 Now it's time for serious business.
 
@@ -54,7 +54,7 @@ If I summarized, you need to give a purpose to your robot and put a brain inside
 
 We can now talk about **control loop feedback system**.
 
-> **_Note:_** _Here, I use the same word — control — that in the post_ **_How to stop being controlled by your DC motor: reverse the roles!_** _(_[_part 1: direction_](/blog/2020-03-13-control-dc-motor-1) _and_ [_part 2: speed_](/blog/2020-04-13-control-dc-motor-2)_). Control is a generic word, and the control I'm talking about today is closer than engineering control, which is more complex than giving a simple speed order to a motor._
+> **_Note:_** _Here, I use the same word — control — that in the post_ **_How to stop being controlled by your DC motor: reverse the roles!_** _(_[_part 1: direction_](/2020-03-13-control-dc-motor-1.mdx) _and_ [_part 2: speed_](/2020-04-13-control-dc-motor-2.mdx)_). Control is a generic word, and the control I'm talking about today is closer than engineering control, which is more complex than giving a simple speed order to a motor._
 
 Let's first define the **system** as:
 
@@ -150,19 +150,19 @@ Viewed on a curve, it will look like this:
 
 We see that the curve — the motor speed versus the time — is trying to reach the set point value 1. Don't worry; we will discuss more in the next following posts about PID control. To access directly, follow these links:
 
-*   [PID: the P, as in Proportional](/blog/pid-the-p-as-in-proportional)
-*   [PID: the I, as in Integral](/blog/pid-the-i-as-in-integral)
-*   [PID: D, as in Derivative](/blog/pid-d-as-in-derivative)
+*   [PID: the P, as in Proportional](/2020-08-13-pid-p-proportional.mdx)
+*   [PID: the I, as in Integral](/2020-09-13-pid-i-integral.mdx)
+*   [PID: D, as in Derivative](/2020-10-13-pid-d-derivative.mdx)
 
 That's all for now.
 
 To summarize, keep in mind that a PID controller is a widely used control loop feedback system — written as a code most of the time — that allows your motor to reach a set point value (of position, speed, etc.) and to keep it that way as long as you don't change this value. It uses a maximum of three main functions to correct the command — **P**roportional, **I**ntegrate, **D**erivative — which values change in function of the error between the set point and the actual measure.
 
-We will dig in these [proportional](/blog/2020-08-13-pid-p-proportional), [integral](/blog/2020-09-13-pid-i-integral), and [derivative](/blog/2020-10-13-pid-d-derivative) components on the following posts. We'll look at the maths behind PID control and how to adjust the three constants to get the desired behavior from our motor.
+We will dig in these [proportional](/2020-08-13-pid-p-proportional.mdx), [integral](/2020-09-13-pid-i-integral.mdx), and [derivative](/2020-10-13-pid-d-derivative.mdx) components on the following posts. We'll look at the maths behind PID control and how to adjust the three constants to get the desired behavior from our motor.
 
 PID control and many other projects are waiting for you on our blog, so don't hesitate to bookmark our content and <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">join our Discord community</a>
 
-Still on the same subject, read now the following article on the [PID: the P as in Proportional](/blog/2020-08-13-pid-p-proportional).
+Still on the same subject, read now the following article on the [PID: the P as in Proportional](/blog/2020-08-13-pid-p-proportional.mdx).
 
 <h2> Glossary </h2>
 

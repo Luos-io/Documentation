@@ -15,7 +15,7 @@ date: 2020-09-13T10:00
 
 ![img alt](/img/blog/9.png)
 
-We go on with the PID letters. This post deals with the I. You can visit the first posts of this series, the [introduction to PID](/blog/2020-03-13-control-dc-motor-1), and the [proportional post](/blog/2020-08-13-pid-p-proportional).
+We go on with the PID letters. This post deals with the I. You can visit the first posts of this series, the [introduction to PID](/2020-03-13-control-dc-motor-1.mdx), and the [proportional post](/2020-08-13-pid-p-proportional.mdx).
 
 <!--truncate-->
 
@@ -50,7 +50,7 @@ Now, to the point:
 
 What does that even mean?
 
-In the last post, [the P-post](/blog/2020-08-13-pid-p-proportional), you thought you casually took the computed error and that you multiplied it by a chosen constant, P. But what you did is that you multiplied P by the _calculated last mistake_. At each loop, its value changes:
+In the last post, [the P-post](/2020-08-13-pid-p-proportional.mdx), you thought you casually took the computed error and that you multiplied it by a chosen constant, P. But what you did is that you multiplied P by the _calculated last mistake_. At each loop, its value changes:
 
 *   The system is running. The process variable evolves at each loop.
 *   However, the setpoint stays the same unless you want to change it.
@@ -104,8 +104,6 @@ In this example, the expression of fI(e) at t = 4.5s is fI(e) = KI.(45 -60 + 40 
 It’s almost time for you to implement an integral part of your code. But before you do that, let’s figure out the effect of an integral part on a feedback loop control.
 
 Don't hesitate to start with Luos and discover our tutorials by following our [get started](/tutorials/get-started) step by step!
-
-[Get Started with Luos](/tutorials/get-started)
 
 <h2> The effects of I </h2>
 
