@@ -17,7 +17,7 @@ module.exports = {
               label: 'Basics',
               link: {
                 type: 'doc',
-                id: 'luos-technology/basics/basics',
+                id: 'luos-technology/basics/index',
               },
               items: [
                 {

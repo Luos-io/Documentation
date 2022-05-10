@@ -14,7 +14,7 @@
     },
     {
       "source": "/pages/luos-technology/basics/archi(.*)",
-      "destination": "/docs/luos-technology/basics/basics",
+      "destination": "/docs/luos-technology/basics",
       "statusCode": 301
     },
     {
