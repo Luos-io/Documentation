@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/blog/hello-world",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
       "source": "/community",
       "destination": "https://discord.gg/luos"
     },
@@ -193,8 +198,7 @@
     },
     {
       "source": "/us/community",
-      "destination": "https://discord.gg/luos",
-      "statusCode": 301
+      "destination": "https://discord.gg/luos"
     },
     {
       "source": "/us/pricing",
