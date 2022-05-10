@@ -103,6 +103,11 @@
       "statusCode": 301
     },
     {
+      "source": "/pages/low/electronic-design(.*)",
+      "destination": "/docs/compatibility/mcu_demoboard",
+      "statusCode": 301
+    },
+    {
       "source": "/pages/luos-technology/basics/archi(.*)",
       "destination": "/docs/luos-technology/basics",
       "statusCode": 301
