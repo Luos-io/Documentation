@@ -67,7 +67,7 @@ module.exports = {
               label: 'Services',
               link: {
                 type: 'doc',
-                id: 'luos-technology/services/services',
+                id: 'luos-technology/services/index',
               },
               items: [
                 {
