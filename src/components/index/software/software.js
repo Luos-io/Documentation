@@ -45,7 +45,7 @@ const Software = (props) => {
         Split the monolith:{' '}
       </h4>
       <h1 className={`${styles.title} ${styles.underline}`}>
-        Develop scalable edge and embedded distributed softwares
+        Develop scalable edge and embedded distributed software
       </h1>
       <Grid container spacing={3} mb={5}>
         <Grid item md={1.5} lg={1.5} xl={1.5}></Grid>
@@ -91,7 +91,7 @@ const Software = (props) => {
           className={styles.pinkBtn}
           href="/blog/a-way-to-unleash-embedded-systems"
         >
-          Read a blog post about added values
+          Read our blog posts
         </Button>
       </div>
 
@@ -111,7 +111,7 @@ const Software = (props) => {
               <Grid item md={4} lg={4} xl={4} style={{ textAlign: 'center' }}>
                 {' '}
                 <span className={`${styles.hiwTitle} ${styles.underline}`}>
-                  /How its work
+                  /How it works
                 </span>
               </Grid>
               <Grid item md={4} lg={4} xl={4}></Grid>
