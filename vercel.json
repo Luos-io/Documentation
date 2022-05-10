@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/software/services_list(.*)",
+      "destination": "/docs/luos-technology/services",
+      "statusCode": 301
+    },
+    {
       "source": "/pages/tools/boot(.*)",
       "destination": "/docs/tools/boot",
       "statusCode": 301
