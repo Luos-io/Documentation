@@ -57,6 +57,11 @@
       "statusCode": 301
     },
     {
+      "source": "/faq/list",
+      "destination": "/faq",
+      "statusCode": 301
+    },
+    {
       "source": "/get-started(.*)",
       "destination": "/tutorials/get-started",
       "statusCode": 301
