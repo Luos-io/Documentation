@@ -10,7 +10,7 @@ import Image from '/src/components/Images.js';
 
 The gate is a major tool of the Luos eco-system. It's allowing you to translate any Luos achitecture into a more convenient format for standard software ([JSON] most of the time) and to stream and receive those formated informations into any kind of communication way such as serial interface, wifi, bluetooth, Lora, ...
 
-You can use it to take control of any embedded service with [any languages](/docs/api/list) on any machine. For example we use it in [Pyluos](/docs/tools/pyluos) or [ROS](/docs/tools/ros)!
+You can use it to take control of any embedded service with [any languages](/docs/api) on any machine. For example we use it in [Pyluos](/docs/tools/pyluos) or [ROS](/docs/tools/ros)!
 
 Gate is a simple embedded [App service](../luos-technology/services#apps-guidelines), so it can work on any MCU running Luos without any modification.
 

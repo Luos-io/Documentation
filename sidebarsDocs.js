@@ -9,7 +9,7 @@ module.exports = {
           label: 'Luos engine',
           link: {
             type: 'doc',
-            id: 'luos-technology/luos_tech',
+            id: 'luos-technology/index',
           },
           items: [
             {
@@ -17,7 +17,7 @@ module.exports = {
               label: 'Basics',
               link: {
                 type: 'doc',
-                id: 'luos-technology/basics/basics',
+                id: 'luos-technology/basics/index',
               },
               items: [
                 {
@@ -60,14 +60,14 @@ module.exports = {
             {
               type: 'doc',
               label: 'Package',
-              id: 'luos-technology/package/package',
+              id: 'luos-technology/package/index',
             },
             {
               type: 'category',
               label: 'Services',
               link: {
                 type: 'doc',
-                id: 'luos-technology/services/services',
+                id: 'luos-technology/services/index',
               },
               items: [
                 {
@@ -139,7 +139,7 @@ module.exports = {
           label: 'Hardware Consideration',
           link: {
             type: 'doc',
-            id: 'hardware-consideration/hardware-consideration',
+            id: 'hardware-consideration/index',
           },
           items: [
             {
@@ -169,7 +169,7 @@ module.exports = {
           label: 'Tools',
           link: {
             type: 'doc',
-            id: 'tools/tool',
+            id: 'tools/index',
           },
           items: [
             {
@@ -209,7 +209,7 @@ module.exports = {
           label: 'API',
           link: {
             type: 'doc',
-            id: 'api/list',
+            id: 'api/index',
           },
           items: [
             {
