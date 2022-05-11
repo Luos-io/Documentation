@@ -22,6 +22,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/api/list",
+      "destination": "/docs/api",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/demo_boards/boards_list/powerswitch(.*)",
       "destination": "/docs/compatibility/mcu_demoboard",
       "statusCode": 301
