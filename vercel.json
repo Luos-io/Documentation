@@ -3,112 +3,31 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/pages/tools/boot(.*)",
-      "destination": "/docs/tools/boot",
+      "source": "/blog/hello-world",
+      "destination": "/blog",
       "statusCode": 301
     },
     {
-      "source": "/pages/luos-technology/basics/archi(.*)",
-      "destination": "/docs/luos-technology/basics/basics",
+      "source": "/blog/how-to-make-embedded-sytems-skyrocket",
+      "destination": "/blog/how-to-make-embedded-systems-skyrocket",
       "statusCode": 301
     },
     {
-      "source": "/pages/tools/pyluos(.*)",
-      "destination": "/docs/tools/pyluos",
+      "source": "/community",
+      "destination": "https://discord.gg/luos"
+    },
+    {
+      "source": "/docs",
+      "destination": "/docs/luos-technology",
       "statusCode": 301
     },
     {
-      "source": "/pages/tools/gate(.*)",
-      "destination": "/docs/tools/gate",
+      "source": "/docs/api/list",
+      "destination": "/docs/api",
       "statusCode": 301
     },
     {
-      "source": "/pages/hardware-consideration/hardware-consideration(.*)",
-      "destination": "/docs/hardware-consideration/hardware-consideration",
-      "statusCode": 301
-    },
-    {
-      "source": "/docs/tools/freertos(.*)",
-      "destination": "/tutorials/freertos/intro",
-      "statusCode": 301
-    },
-    {
-      "source": "/get-started(.*)",
-      "destination": "/tutorials/get-started",
-      "statusCode": 301
-    },
-    {
-      "source": "/tutorials/demo-boards(.*)",
-      "destination": "/docs/compatibility/mcu_demoboard",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/high/containers_list/servo(.*)",
-      "destination": "/docs/compatibility/mcu_demoboard",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/embedded/tools/gate(.*)",
-      "destination": "/docs/tools/gate",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/software/pyluos(.*)",
-      "destination": "/docs/tools/pyluos",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/embedded/containers/streaming(.*)",
-      "destination": "/docs/luos-technology/message/advanced-message#streaming",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/high/pyluos(.*)",
-      "destination": "/docs/tools/pyluos",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/embedded/containers/examples(.*)",
-      "destination": "/docs/luos-technology/message/advanced-message#example",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/demo_boards/boards_list/light(.*)",
-      "destination": "/docs/compatibility/mcu_demoboard",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/get_started/get_started(.*)",
-      "destination": "/tutorials/get-started",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/tutorials/tutorials(.*)",
-      "destination": "/tutorials/tutorials",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/embedded/dev_env/arduino(.*)",
-      "destination": "/tutorials/arduino/intro",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/embedded/embedded(.*)",
-      "destination": "/docs/luos-technology/luos_tech",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/demo_boards/boards_list/led-strip(.*)",
-      "destination": "/docs/compatibility/mcu_demoboard",
-      "statusCode": 301
-    },
-    {
-      "source": "/pages/tools/monitoring(.*)",
-      "destination": "/docs/tools/monitoring",
-      "statusCode": 301
-    },
-    {
-      "source": "/_pages/prototyping_boards/boards_list/servo(.*)",
+      "source": "/docs/demo_boards/boards_list/powerswitch(.*)",
       "destination": "/docs/compatibility/mcu_demoboard",
       "statusCode": 301
     },
@@ -118,22 +37,42 @@
       "statusCode": 301
     },
     {
-      "source": "/pages/api/api(.*)",
-      "destination": "/docs/api/list",
+      "source": "/docs/luos-technology/package/package",
+      "destination": "/docs/luos-technology/package",
       "statusCode": 301
     },
     {
-      "source": "/pages/software/containers_list/color(.*)",
-      "destination": "/docs/software/services_list/color#variables",
+      "source": "/docs/luos-technology/services/services",
+      "destination": "/docs/luos-technology/services",
       "statusCode": 301
     },
     {
-      "source": "/pages/software/json-api(.*)",
-      "destination": "/docs/api/api-json",
+      "source": "/docs/software/services_list(.*)",
+      "destination": "/docs/luos-technology/services",
       "statusCode": 301
     },
     {
-      "source": "/pages/hardware-consideration/minimum-requirement(.*)",
+      "source": "/docs/tools/freertos(.*)",
+      "destination": "/tutorials/freertos/intro",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq/list",
+      "destination": "/faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/get-started(.*)",
+      "destination": "/tutorials/get-started",
+      "statusCode": 301
+    },
+    {
+      "source": "/_pages/prototyping_boards/boards_list/gpio(.*)",
+      "destination": "/docs/compatibility/mcu_demoboard",
+      "statusCode": 301
+    },
+    {
+      "source": "/_pages/prototyping_boards/boards_list/servo(.*)",
       "destination": "/docs/compatibility/mcu_demoboard",
       "statusCode": 301
     },
@@ -143,13 +82,162 @@
       "statusCode": 301
     },
     {
-      "source": "/_pages/prototyping_boards/boards_list/gpio(.*)",
+      "source": "/pages/api/api(.*)",
+      "destination": "/docs/api",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/demo_boards/boards_list/led-strip(.*)",
       "destination": "/docs/compatibility/mcu_demoboard",
       "statusCode": 301
     },
     {
+      "source": "/pages/demo_boards/boards_list/light(.*)",
+      "destination": "/docs/compatibility/mcu_demoboard",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/embedded/containers/examples(.*)",
+      "destination": "/docs/luos-technology/message/advanced-message#example",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/embedded/containers/streaming(.*)",
+      "destination": "/docs/luos-technology/message/advanced-message#streaming",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/embedded/dev_env/arduino(.*)",
+      "destination": "/tutorials/arduino/intro",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/embedded/embedded(.*)",
+      "destination": "/docs/luos-technology",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/embedded/tools/gate(.*)",
+      "destination": "/docs/tools/gate",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/get_started/get_started(.*)",
+      "destination": "/tutorials/get-started",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/hardware-consideration/hardware-consideration(.*)",
+      "destination": "/docs/hardware-consideration",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/hardware-consideration/minimum-requirement(.*)",
+      "destination": "/docs/compatibility/mcu_demoboard",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/high/containers_list/servo(.*)",
+      "destination": "/docs/compatibility/mcu_demoboard",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/high/pyluos(.*)",
+      "destination": "/docs/tools/pyluos",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/low/electronic-design(.*)",
+      "destination": "/docs/compatibility/mcu_demoboard",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/luos-technology/basics/archi(.*)",
+      "destination": "/docs/luos-technology/basics",
+      "statusCode": 301
+    },
+    {
       "source": "/pages/luos-technology/package/package(.*)",
-      "destination": "/docs/luos-technology/package/package",
+      "destination": "/docs/luos-technology/package",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/software/containers_list/color(.*)",
+      "destination": "/docs/luos-technology/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/software/json-api(.*)",
+      "destination": "/docs/api/api-json",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/software/pyluos(.*)",
+      "destination": "/docs/tools/pyluos",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/tools/boot(.*)",
+      "destination": "/docs/tools/boot",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/tools/gate(.*)",
+      "destination": "/docs/tools/gate",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/tools/monitoring(.*)",
+      "destination": "/docs/tools/monitoring",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/tools/pyluos(.*)",
+      "destination": "/docs/tools/pyluos",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/tutorials/tutorials(.*)",
+      "destination": "/tutorials",
+      "statusCode": 301
+    },
+    {
+      "source": "/technology",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/demo-boards(.*)",
+      "destination": "/docs/compatibility/mcu_demoboard",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/tutorials(.*)",
+      "destination": "/tutorials",
+      "statusCode": 301
+    },
+    {
+      "source": "/us",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/us/appstore",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/us/community",
+      "destination": "https://discord.gg/luos"
+    },
+    {
+      "source": "/us/pricing",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/us/technology",
+      "destination": "/",
       "statusCode": 301
     }
   ]
