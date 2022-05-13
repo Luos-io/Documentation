@@ -1,0 +1,130 @@
+---
+title: "Luos Web App: Alpha Version"
+description: Luos enabled you to connect an embedded application with the outside world, this article takes place as an example of what you could do with it.
+slug: luos-web-app-alpha-version
+authors:
+  - name: Benjamin Christau
+    title: Architect @ Luos
+    url: https://github.com/K0rdan
+    image_url: https://github.com/K0rdan.png
+tags: [startup journey, luos]
+image: /img/blog/luos-web-app-alpha-version.png
+hide_table_of_contents: false
+date: 2022-04-15T10:00
+---
+
+![img alt](/img/blog/luos-web-app-alpha-version.png)
+
+<h2> Introduction </h2>
+
+Who hasn’t struggled to install lousy software to run a camera, a printer, or any other device?
+
+<!--truncate-->
+
+We all made it many times in the past years. Each of these programs answered a particular problem, from a simple update tool to a way to interact with you.
+
+With the Luos engine capabilities, we can quickly provide all those features and many more without any installation!
+
+Our path to achieving it wasn’t straightforward, so we will tell you how we achieved it...
+
+<h2> Early stages </h2>
+
+<h3> Gate </h3>
+
+With our first try to connect embedded systems with a Javascript app, we based our development on the <a rel="external nofollow" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API" target="_blank">Web Serial API</a>, a “living document” described by the W3C Incubator Community Group (WICG).
+
+This normative-like document is near the _Web Bluetooth API_ and _Web USB API_, among other things. This promises us great compatibility if it works fine!
+
+On the other side, we developed an application service called [Gate](/docs/tools/gate), which was intended to convert the Luos “generic software representation” into a JSON format.
+
+The main advantages of the Gate were:
+
+- The simplicity of communicating with external systems.
+- The ability to act remotely on a system.
+
+But it came with drawbacks. Here are some of them:
+
+*   Our conversion layer takes the number of resources (CPU and memory).
+*   The maintainability of two APIs for the same features (the internal one and the JSON one).
+
+<h3> Sniffer 👃 </h3>
+
+In the second iteration of our connectivity between a Javascript app and an embedded system, we worked on the way to gather all the messages emitted into a Luos network and then transmit them to our app.
+
+To do that, we created a tool called [Sniffer](/docs/tools/monitoring#sniffer). The Sniffer tool came with a new communication protocol closer to the embedded one but also with drawbacks, and one of them was the design itself; a Sniffer can’t act on the embedded system!
+
+<h2> The solution 📐 </h2>
+
+Our third iteration came naturally a few times after as an Inspector. This solution gave the Luos web app the advantages of both the Gate and the Sniffer, without their drawbacks.
+
+Our early works weren’t wasted, and we reused our firsts concepts! The high-level communication layer from our work with the Gate was the same, and we also reused most of our communication protocol from the Sniffer.
+
+<h3> High-level communication layer </h3>
+
+This part is about the implementation of the Web Serial API. This API gives us the ability to:
+
+*   Get the list of available serial ports to communicate with.
+*   Open/close the serial connection stream.
+*   **Read/write data on the stream.**
+*   Handle errors.
+
+<h3> Protocol </h3>
+
+We use the same protocol as the Luos engine embedded systems to read and write data.
+
+![(1) Illustration of the exchange of data between Luos and Luos Engine](/img/blog/web-app-protocol-luos.png)
+
+(1) Illustration of the exchange of data between Luos and Luos Engine
+
+As you can see in figure 1, the data is encapsulated in a “Luos Frame” described as:
+
+*   Preamble: Detection of the start of a frame.
+*   Target: Targeted node ID of the message.
+*   Mode: Broadcast or targeted.
+*   Source: Source of the message.
+*   Size: Size of the data transmitted.
+*   Data: The data we want to send.
+
+<h2> Front-end 🌈 </h2>
+
+Now that we have set up this new way to communicate with the embedded world, the next step will be to give our users all the features implemented all over the years in <a rel="external nofollow" href="https://github.com/Luos-io/luos_engine" target="_blank">Luos engine</a> from a web perspective.
+
+The first feature we decided to implement is the network topology. This feature is a graphical representation of the Luos [routing table](/docs/luos-technology/services/routing-table).
+
+We first get the list of the nodes and services in our network. Then we query each service of each node to get their properties like their type (Motor, Led, Gate, ...), their firmware revision, and their memory statistics.
+
+![Illustration of the routing table data](/img/blog/routing-table-data-luos.png)
+
+Illustration of the routing table data
+
+![Illustration of the service's data](/img/blog/service-data-luos.png)
+
+Service’s data
+
+We finally gathered all those data in a graph using the <a rel="external nofollow" href="https://observablehq.com/@d3/gallery" target="_blank">D3JS</a> library:
+
+![Network Display of Luos web app](/img/blog/network-display-luos.png)
+
+Network Display of Luos web app
+
+<h2> What’s next? </h2>
+
+The communication between web and embedded will continue to evolve. Take a look at [this article](/2022-04-12-connect-electronic-outside.mdx) by Nicolas to learn more about how this will work!
+
+Now that we solved the browser to embedded connection, Luos can afford web connectivity to any embedded devices.
+
+It’s opening a wide variety of new possible features like:
+
+*   High-level integrations with IFTT, Zapier, ...
+*   Monitoring system
+*   Continuous Integration and Delivery (CICD)
+*   Debugging
+*   ...
+
+\[Spoiler Alert\] Some of them are already in development!
+
+So please take a look at our alpha version of Luos web app, stay tuned and make your suggestions by sending us a message on our <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">Discord</a> community!  
+
+[Discover Luos Web App](https://app.luos.io/)
+
+[Get Started with Luos](/tutorials/get-started)
