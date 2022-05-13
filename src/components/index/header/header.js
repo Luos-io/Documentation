@@ -65,7 +65,7 @@ const Header = (props) => {
                   'a distributed IPC_',
                   'a message broker_',
                   'an ecosystem_',
-                  'a SDK_',
+                  'an SDK_',
                   'a project toolset_',
                   'a community_',
                 ]}
