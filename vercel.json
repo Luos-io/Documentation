@@ -37,6 +37,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/luos-technology/luos_tech",
+      "destination": "/docs/luos-technology",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/luos-technology/package/package",
       "destination": "/docs/luos-technology/package",
       "statusCode": 301
@@ -44,6 +49,11 @@
     {
       "source": "/docs/luos-technology/services/services",
       "destination": "/docs/luos-technology/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/next/luos-technology/luos_tech",
+      "destination": "/docs/next/luos-technology",
       "statusCode": 301
     },
     {
@@ -57,8 +67,18 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/2.0.1/tools/tool",
+      "destination": "/docs/2.0.1/tools/",
+      "statusCode": 301
+    },
+    {
       "source": "/faq/list",
       "destination": "/faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq/application-compile",
+      "destination": "/faq/application-does-not-compile",
       "statusCode": 301
     },
     {

@@ -13,9 +13,7 @@ Luos is an open-source lightweight library that can be used on any MCU, leading 
 
 Most of the embedded developments are made from scratch. By using Luos, you will be able to capitalize on the development you, your company, or the Luos community already did. The re-usability of features encapsulated in Luos services will fasten the time your products reach the market and reassure the robustness and the universality of your applications.
 
-You can visit the <a href="https://www.reddit.com/r/Luos/" target ="_blank">Luos community on Reddit</a>.
-
-Need dedicated help with your project? <a href="https://www.luos.io/support" target ="_blank">Check out Luos' support packages</a>.
+Need dedicated help for your project? You can join the Luos community on <a href="https://discord.gg/luos" target ="_blank" rel="external nofollow">Discord</a> or <a href="https://www.reddit.com/r/Luos/" target ="_blank" rel="external nofollow">Reddit</a>.
 
 ## Good practices with Luos
 

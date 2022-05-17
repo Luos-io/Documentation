@@ -15,13 +15,13 @@ The node's embedded code hosts the Luos's embedded code and the node's various f
 
 Luos works as a code library running on nodes. To match the Luos library with your hardware, Luos offers a _Hardware Abstraction Layer_ for various devices in <Tooltip def={customFields.luoshal_def}>LuosHAL</Tooltip>.
 
-- <a href="https://github.com/Luos-io/LuosHAL" target="_blank">
+- <a href="https://github.com/Luos-io/LuosHAL" target="_blank" rel="external nofollow">
     LuosHAL
     <IconExternalLink width="10"></IconExternalLink>
   </a>
   : This repository provides a list of family devices covered to match the Luos library
   with your hardware.
-- <a href="https://github.com/Luos-io/Luos" target="_blank">
+- <a href="https://github.com/Luos-io/Luos" target="_blank" rel="external nofollow">
     Luos
     <IconExternalLink width="10"></IconExternalLink>
   </a>
@@ -94,11 +94,11 @@ You can use it to set all your custom configurations:
 |     MAX_MSG_NB     | 2\*MAX_SERVICE_NUMBER |                               Max number of messages that can be referenced by Luos.                               |
 |      NBR_PORT      |           2           | Number of PTP (port) on the node ( max 8). See [electronic design](../../hardware-consideration/electronics) page. |
 
-You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/Luos/tree/master/Robus/inc/config.h" target="_blank">config.h<IconExternalLink width="10"></IconExternalLink></a>,
+You will find the default configuration for Luos Library in the file <a href="https://github.com/Luos-io/luos_engine/blob/main/network/robus/inc/config.h" target="_blank" rel="external nofollow">config.h<IconExternalLink width="10"></IconExternalLink></a>,
 
 Check the Luos_hal_config.h of your MCU family to see parameters that can be changed to fit your design.
 
-> **Note:** [Every example](https://github.com/Luos-io/Examples) provided by Luos has a _node_config.h_ file that can be used as a base to fit your project's needs.
+> **Note:** <a href="https://github.com/Luos-io/luos_engine/tree/main/examples" target="_blank" rel="external nofollow">Every example</a> provided by Luos has a _node_config.h_ file that can be used as a base to fit your project's needs.
 
 ## Luos Statistics
 
