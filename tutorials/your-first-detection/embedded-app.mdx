@@ -5,6 +5,7 @@ custom_edit_url: null
 import Image from '/src/components/Images.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Form from '/src/components/typeform/index.js';
 
 # Part 3: Full embedded application
 
@@ -341,7 +342,8 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 
 At this point, everytime you receive a message from the button service, you will turn on the LED.
 
-#### 3. To finish, we simply need to send to the LED the state of the button. 
+#### 3. To finish, we simply need to send to the LED the state of the button.
+
 This button's value is recovered in the first case of the tab data of the button's message:
 
 ```c
@@ -380,7 +382,10 @@ This way, your button control your LED.
 To simulate a press button, connect a wire between the BTN_PIN (Pin 8) and GND.
 
 <div align="center">
-  <Image src="/img/your-first-message/your-first-message-2-1.png" darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"/>
+  <Image
+    src="/img/your-first-message/your-first-message-2-1.png"
+    darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"
+  />
 </div>
 
 </TabItem>
@@ -416,3 +421,7 @@ You can now detect all the services in your project and command them through an 
 Now try to move your switcher package on another board, and keep the button and led packages on the first one: everything should work the same way!
 
 Asking the value of the button every 10ms represents a not negligible portion of code. Luos engine provides an `update_time` command to simplify it, check the [documentation associated page](/docs/luos-technology/message/advanced-message) to learn more about it.
+
+## Test your skills
+
+<Form id="RafOVrdv" />

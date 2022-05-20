@@ -2,9 +2,9 @@ import { Widget } from '@typeform/embed-react';
 import React from 'react';
 import '@typeform/embed/build/css/widget.css';
 
-const Form = () => (
+const Form = (props) => (
   <div>
-    <Widget id="uAfY4YhI" style={{ height: '500px' }} />
+    <Widget id={props.id} style={{ height: '500px' }} />
   </div>
 );
 
