@@ -1,0 +1,116 @@
+---
+title: "How to connect electronic boards to the outside world"
+description: Who never complains about a messy and unstable software they have to install to communicate with with an electronic board?
+slug: how-to-connect-electronic-boards-to-the-outside-world
+authors:
+  - name: Nicolas Rabault
+    title: CEO @ Luos
+    url: https://github.com/nicolas-rabault
+    image_url: https://github.com/nicolas-rabault.png
+tags: [startup journey, luos]
+image: /img/blog/connect-electronic-outside-luos.png
+hide_table_of_contents: false
+date: 2022-04-12T10:00
+---
+
+![img alt](/img/blog/connect-electronic-outside-luos.png)
+
+<h2> Introduction </h2>
+
+In this blog post, I’m going to talk to you about my experience of connecting electronic devices to the outside world.
+
+<!--truncate-->
+
+Who never complains about a messy and unstable software they have to install to communicate with an electronic board?
+
+Today, everything is connected, so this can seem trivial! But the fact is, for each device developers spend a lot of time finding a good way to “talk” to the outside world. And sometimes they fail.
+
+I will share with you my experience and talk to you about the pros and cons we were/are facing about this and how we work for an universal solution with Luos engine.
+
+<h2> History </h2>
+
+At Luos, we are working on an embedded solution to transform ANY electronic system into a **generic software representation** —even multi-board devices.
+
+A few years ago, when we finally had the first version of this “generic software representation” working on the embedded side, we strongly felt the need to be able to use this representation directly from a computer.
+
+Luos is API-based, but this API is particularly optimized for embedded, and for most of us using 3-bit variables on Python or Javascript is not easy...
+
+To make it, we needed a way to send that information and use it easily in the **outside world** (as opposed with the **embedded side**).
+
+Here was the first result:
+
+What we did is we developed a tool called _Gate_ which is able to translate the Luos “generic software representation” into JSON format, and update the information in both directions. With it, we developed a Python library called _Pyluos_, able to create objects from JSON “generic software representation” data.
+
+To summarize, we chose to make an embedded translation software allowing to use it with any language having a JSON library.
+
+![Translation_of_Luos_to_JSON](/img/blog/translation-json-luos.png)
+
+At this time we had the embedded working, and a better vision about how things should work on the embedded side than on the outside world. So that choice of an embedded translation software was the obvious way.
+
+That wasn’t a bad decision because this same technology is still massively used today with almost no change.
+
+But today, a few years later, with the technological advances we made, we faced some limitations.
+
+<h2> Limitations of our embedded translation layer </h2>
+
+- To properly work, the Gate’s firmware on the electronic device has to continuously update the different values, and translate them into massive JSON data. This is not free and it needs a significant amount of CPU time and memory to run.
+- We chose JSON because this is the most standard and human-readable format. We wanted to have users using it directly in their software. But a few years later, almost all our users directly use Pyluos.
+- Because of the polling update, the Gate naturally takes the lead of all the resources of the system. If you didn’t want it to be the master, it wasn’t so easy.
+- Because of the Gate’s JSON translation, the outside world could not be considered in the Luos “generic software representation”.
+- Because of the Gate’s translation, the outside world didn’t have direct access to the new features we developed in our technology. For each new feature, we had to develop a specific code on the gate’s side, then another one on Pyluos’ side.
+- For each new feature of Luos engine, we had to update the Gate and Pyluos to the JSON format. This was a big maintainability issue.
+
+Discover our Alpha version of Luos App.  
+Use this very first version to discover the new possibilities we are working on and make your suggestions by sending a message to our community:  
+
+[Discover Luos App](https://app.luos.io/)
+
+<h2> How did we get around it? </h2>
+
+First, we tried to make the Gate tighter:
+
+- To do that, we used an auto-update mechanism allowing to divide by two the Gate polling impact.
+- We made the translation interchangeable, allowing to select a different data format than heavy JSON (but we never made a new one).
+
+Then we needed to have non-intrusive feedback from the system for testing, debugging, and generating traces of the device. Those features will be needed by Luos, our SaaS tools.
+
+So we created a new firmware that doesn’t translate Luos messages and just passes everything to the computer, called Inspector.
+
+This also required us to create a “kind of Luos” on the computer side, which would be able to understand the information. We developed it in Javascript to avoid compatibility issues and to make it work directly on the browser.
+
+Here is what we have today:
+
+![Luos_electronic_device_to_the_outside_world](/img/blog/sketchy-protocol-luos.png)
+
+As you can see, things are becoming sketchy... This is actually working, but we have to find a better way to simplify usability, maintainability, and to offer better performances.
+
+<h2> How we plan to do better </h2>
+
+With our tech evolution, we are always pushing further the frontiers and limitations of embedded software.
+
+Luos engine already exchanges information between features with a specific API, but it is just optimized for embedded and not easy to use directly on a computer.
+
+Soon, we will be able to use Luos engine with any kind of physical network. On top of it, if Luos engine can use multiple networks, this could allow us to exchange information with the outside world the exact same way we are exchanging information between the electronic boards. The only difference would be the physical way of transporting the information.
+
+![Luos_electronic_device_to_the_outside_world_2](/img/blog/next-protocol-luos.png)
+
+This means that we will have to run a Luos instance on the computer linked to the electronic device. Then we will be able to run and test embedded applications (non-related to hardware) directly on the computer or on the electronic boards, without any differences.
+
+Of course, this will require an installation and mean no direct use of a SaaS tool on a browser. To avoid this problem, we could consider compiling Luos engine in web-assembly, allowing any Javascript browser program to be considered as a normal Luos service.
+
+Discover our Alpha version of Luos App.  
+Use this very first version to discover the new possibilities we are working on and make your suggestions by sending a message to our community:  
+
+[Discover Luos App](https://app.luos.io/)
+
+<h2> Conclusion </h2>
+
+There are so many ways to achieve a connection. After all these years of experience, I think the best is to avoid as many customs development as possible to manage your connections. It means integrating the connection directly into your architecture, and avoid to build something specific for it.
+
+This thinking was inconceivable a few years ago at Luos, but today we found how to make it happen.
+
+We still need to make a lot of progress to reach it, but this is the way (until we find a better one).
+
+And if we did it, you can make it too...
+
+[Get Started with Luos](/tutorials/get-started)

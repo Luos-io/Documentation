@@ -8,6 +8,7 @@
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('http://fonts.cdnfonts.com/css/roboto');
 
 :root {
   --ifm-color-primary: #bd99ff;
@@ -603,6 +604,7 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 }
 
 html[data-theme='dark'] footer {
+  border-top: 2px solid #1e1e1e;
   background-color: #323334;
   color: white;
 }
@@ -641,11 +643,7 @@ html[data-theme='dark'] footer {
 }
 
 .MuiListItemText-primary {
-  color: black !important;
-}
-
-html[data-theme='dark'] .MuiListItemText-primary {
-  color: white !important;
+  color: black;
 }
 
 .breadcrumbs__link {
@@ -656,6 +654,29 @@ html[data-theme='dark'] .MuiListItemText-primary {
   font-size: inherit !important;
 }
 
+.MuiListItemText-primary {
+  font-family: 'Roboto Mono', sans-serif !important;
+  font-size: 18px !important;
+}
+
+.react-typewriter-text {
+  text-align: left;
+  font-family: 'Roboto Mono';
+  font-size: 30px !important;
+  margin-bottom: 15px !important;
+}
+
+.MuiRadio-root {
+  display: none !important;
+}
+
+.react-typewriter-text-luos {
+  color: white;
+}
+
+html[data-theme='light'] .react-typewriter-text-luos {
+  color: black !important;
+}
 .footer__link-item {
   color: black;
   font-weight: 400 !important;

@@ -9,7 +9,7 @@ import Image from '/src/components/Images.js';
 
 <h1><a href="#json-api" className="header" id="json-api"><img src="/img/json-logo.png" width="80px" /> / JSON API</a></h1>
 
-The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_">JSON formatted data</a> is common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with your device easily.
+The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_" rel="external nofollow">JSON formatted data</a> is common and widely used by many programming languages. Luos allows you to convert low-level Luos information into JSON objects, enabling conventional programming languages to interact with your device easily.
 
 To do that, you must add a specific app service called a [gate](../tools/gate) on your device.
 
@@ -308,8 +308,8 @@ Parameters are defined by a 16-bit bitfield.
 
 |   Object   |               Definition               |                                                                         Structure                                                                         |            Service(s)            |
 | :--------: | :------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------: |
-| parameters | enabling or disabling some measurement | [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Controller_motor/lib/Controller_motor/controller_motor.h#L7-L31) | Stepper, Controller-motor, Servo |
-| parameters | enabling or disabling some measurement |             [Link to structure (GitHub)](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Imu/lib/Imu/mpu_configuration.h#L37-L56)             |               Imu                |
+| parameters | enabling or disabling some measurement | [Link to structure (GitHub)](https://github.com/Luos-io/luos_engine/tree/main/examples/projects/l0/controller_motor) | Stepper, Controller-motor, Servo |
+| parameters | enabling or disabling some measurement |             [Link to structure (GitHub)](https://github.com/Luos-io/luos_engine/tree/main/examples/projects/l0/imu/lib/Imu)             |               Imu                |
 
 Other specific messages:
 

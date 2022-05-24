@@ -67,7 +67,7 @@
               "label": "Services",
               "link": {
                 "type": "doc",
-                "id": "luos-technology/services/services"
+                "id": "luos-technology/services/index"
               },
               "items": [
                 {
@@ -169,7 +169,7 @@
           "label": "Tools",
           "link": {
             "type": "doc",
-            "id": "tools/tool"
+            "id": "tools/index"
           },
           "items": [
             {
