@@ -32,7 +32,7 @@
     "prism-react-renderer": "^1.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-github-btn": "^1.2.2",
+    "react-github-btn": "^1.3.0",
     "react-image-lightbox": "^5.1.4",
     "react-material-ui-carousel": "^3.3.3",
     "react-typewriter-effect": "^1.1.0",
@@ -53,7 +53,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.0.0-beta.18",
     "@tsconfig/docusaurus": "^1.0.5",
-    "@types/react": "^17.0.44",
+    "@types/react": "^17.0.45",
     "@types/react-helmet": "^6.1.5",
     "@types/react-router-dom": "^5.3.1",
     "typescript": "^4.6.4",
