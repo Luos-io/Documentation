@@ -247,6 +247,7 @@ module.exports = {
         fromExtensions: ['html'],
       },
     ],
+    ['./plugins/dotenv', {}],
     ['./plugins/hotjar', {}],
   ],
 };
