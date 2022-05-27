@@ -26,15 +26,13 @@
     "@svgr/webpack": "^6.2.1",
     "clsx": "^1.1.1",
     "@emailjs/browser": "^3.2.0",
-    "file-loader": "^6.2.0",
     "prism-react-renderer": "^1.3.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-github-btn": "^1.3.0",
     "react-image-lightbox": "^5.1.4",
     "react-material-ui-carousel": "^3.3.3",
-    "react-typewriter-effect": "^1.1.0",
-    "url-loader": "^4.1.1"
+    "react-typewriter-effect": "^1.1.0"
   },
   "browserslist": {
     "production": [
