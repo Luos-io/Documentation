@@ -26,10 +26,10 @@
     ]
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.20",
-    "@docusaurus/plugin-client-redirects": "^2.0.0-beta.20",
-    "@docusaurus/plugin-google-analytics": "^2.0.0-beta.20",
-    "@docusaurus/preset-classic": "^2.0.0-beta.20",
+    "@docusaurus/core": "^2.0.0-beta.21",
+    "@docusaurus/plugin-client-redirects": "^2.0.0-beta.21",
+    "@docusaurus/plugin-google-analytics": "^2.0.0-beta.21",
+    "@docusaurus/preset-classic": "^2.0.0-beta.21",
     "@emailjs/browser": "^3.2.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
@@ -47,7 +47,7 @@
     "react-typewriter-effect": "^1.1.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.20",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.21",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/react": "^17.0.45",
     "@types/react-helmet": "^6.1.5",
