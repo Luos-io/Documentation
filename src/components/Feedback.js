@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
