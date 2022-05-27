@@ -1,0 +1,23 @@
+---
+custom_edit_url: null
+---
+
+import Image from "@site/src/components/Images.js";
+
+# I am unable to flash my board with Luos bootloader, when using ST-Link connected gate
+
+## Symptom(s)
+
+When you try to update a card using Luos bootloader, in a network connected with your computer using ST-Link, the process fails in the last step of flashing.
+
+## Possible explanation
+
+This is possibly a bug of the ST-Link driver, that arrives with a specific size of messages, so with a specific size of binary files.
+
+## Resolution
+
+Try to connect your gate to your computer using an other protocol like FTDI, or try to resize the .bin file you want to flash, by slightly changing your application's code.
+
+
+
+
