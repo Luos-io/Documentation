@@ -8,7 +8,7 @@
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
-@import url('http://fonts.cdnfonts.com/css/roboto');
+@import url('https://fonts.cdnfonts.com/css/roboto');
 
 :root {
   --ifm-color-primary: #bd99ff;
