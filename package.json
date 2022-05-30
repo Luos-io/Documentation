@@ -13,31 +13,6 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },
-  "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.18",
-    "@docusaurus/plugin-client-redirects": "^2.0.0-beta.18",
-    "@docusaurus/plugin-google-analytics": "^2.0.0-beta.18",
-    "@docusaurus/preset-classic": "^2.0.0-beta.18",
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@mdx-js/react": "^1.6.22",
-    "@mui/icons-material": "^5.8.0",
-    "@mui/material": "^5.8.1",
-    "@svgr/webpack": "^6.2.1",
-    "clsx": "^1.1.1",
-    "docusaurus-gtm-plugin": "^0.0.2",
-    "docusaurus2-dotenv": "^1.4.0",
-    "emailjs-com": "^3.2.0",
-    "file-loader": "^6.2.0",
-    "prism-react-renderer": "^1.3.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-github-btn": "^1.3.0",
-    "react-image-lightbox": "^5.1.4",
-    "react-material-ui-carousel": "^3.3.3",
-    "react-typewriter-effect": "^1.1.0",
-    "url-loader": "^4.1.1"
-  },
   "browserslist": {
     "production": [
       ">0.5%",
@@ -50,12 +25,34 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-beta.21",
+    "@docusaurus/plugin-client-redirects": "^2.0.0-beta.21",
+    "@docusaurus/plugin-google-analytics": "^2.0.0-beta.21",
+    "@docusaurus/preset-classic": "^2.0.0-beta.21",
+    "@emailjs/browser": "^3.2.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mdx-js/react": "^1.6.22",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.8.1",
+    "@svgr/webpack": "^6.2.1",
+    "clsx": "^1.1.1",
+    "prism-react-renderer": "^1.3.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-github-btn": "^1.3.0",
+    "react-image-lightbox": "^5.1.4",
+    "react-material-ui-carousel": "^3.4.1"
+  },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.18",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.21",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/react": "^17.0.45",
     "@types/react-helmet": "^6.1.5",
     "@types/react-router-dom": "^5.3.1",
+    "dotenv-vault": "^1.1.0",
+    "dotenv-webpack": "^7.1.0",
     "typescript": "^4.7.2",
     "vercel": "^24.2.4"
   }
