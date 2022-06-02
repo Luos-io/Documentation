@@ -50,7 +50,7 @@ html[data-theme='light'] .container {
 
 .text {
   font-family: 'Roboto';
-  font-size: 14px;
+  font-size: 18px;
   line-height: 20px;
   margin-bottom: 30px;
   color: white;
@@ -174,7 +174,6 @@ html[data-theme='light'] .text {
 .player {
   border-right: 2px solid black;
   background-color: #1e1e1e;
-  height: 250px;
 }
 
 .playerLeft {

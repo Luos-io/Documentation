@@ -43,7 +43,7 @@ a {
 
 h1 {
   font-size: 43px !important;
-  margin-bottom: 60px !important;
+  margin-bottom: 30px !important;
 }
 
 h2 {
@@ -102,6 +102,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   text-align: center;
   padding: 25px 0px;
   color: black;
+}
+
+.footer__items {
+  padding-left: 0;
 }
 
 html[data-theme='dark'] footer__links {
@@ -603,7 +607,7 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   border-top: 2px solid #e2e2e2;
 }
 
-html[data-theme='dark'] footer {
+html[data-theme='dark'] .footer {
   border-top: 2px solid #1e1e1e;
   background-color: #323334;
   color: white;

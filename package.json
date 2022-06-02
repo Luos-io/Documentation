@@ -20,6 +20,7 @@
     "@docusaurus/preset-classic": "^2.0.0-beta.18",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@justinribeiro/lite-youtube": "^1.3.1",
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.6.2",
     "@mui/material": "^5.8.0",
@@ -35,7 +36,6 @@
     "react-github-btn": "^1.3.0",
     "react-image-lightbox": "^5.1.4",
     "react-material-ui-carousel": "^3.3.3",
-    "react-typewriter-effect": "^1.1.0",
     "url-loader": "^4.1.1"
   },
   "browserslist": {

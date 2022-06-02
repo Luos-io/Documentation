@@ -26,6 +26,7 @@ function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
+            rel: 'nofollow',
           }
         : {
             to: toUrl,
@@ -69,16 +70,16 @@ function Footer() {
       <div className="container">
         <div className="joinUsContainer">
           <h3>Join the community</h3>
-          <a href="https://discord.gg/luos">
+          <a href="https://discord.gg/luos" rel="nofollow">
             <img src="/img/discord.png" className="rsLogo"></img>
           </a>
-          <a href="https://www.reddit.com/r/Luos/">
+          <a href="https://www.reddit.com/r/Luos/" rel="nofollow">
             <img src="/img/reddit.png" className="rsLogo"></img>
           </a>
-          <a href="https://twitter.com/Luos_io">
+          <a href="https://twitter.com/Luos_io" rel="nofollow">
             <img src="/img/twitter.png" className="rsLogo"></img>
           </a>
-          <a href="https://www.linkedin.com/company/luos">
+          <a href="https://www.linkedin.com/company/luos" rel="nofollow">
             <img src="/img/linkedin.png" className="rsLogo"></img>
           </a>
         </div>
@@ -95,7 +96,7 @@ function Footer() {
                 {linkItem.items != null &&
                 Array.isArray(linkItem.items) &&
                 linkItem.items.length > 0 ? (
-                  <ul className="footer__items">
+                  <ul className="footer__items" style={{ listStyle: 'none' }}>
                     {linkItem.items.map((item, key) =>
                       item.html ? (
                         <li

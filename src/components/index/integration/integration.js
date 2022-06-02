@@ -71,9 +71,9 @@ const Integration = (props) => {
           />
         </Grid>
         <Grid item xs={12} md={4} lg={4}>
-          <h1 className={`${styles.title} ${styles.underline}`}>
+          <h2 className={`${styles.title} ${styles.underline}`}>
             Integrations
-          </h1>
+          </h2>
         </Grid>
       </Grid>
       <Grid
@@ -94,11 +94,22 @@ const Integration = (props) => {
           className={styles.vscode}
         >
           <div className={styles.head}>
-            {' '}
-            <img
-              src="img/index/header/buttons.svg"
-              style={{ padding: '15px', width: '100px' }}
-            />
+            <Grid container>
+              <Grid item md={4} lg={4} xl={4}>
+                {' '}
+                <img
+                  src="img/index/header/buttons.svg"
+                  style={{ padding: '15px', width: '100px' }}
+                />
+              </Grid>
+              <Grid item md={4} lg={4} xl={4} style={{ textAlign: 'center' }}>
+                {' '}
+                <h2 className={`${styles.hiwTitle} ${styles.underline}`}>
+                  Integrations
+                </h2>
+              </Grid>
+              <Grid item md={4} lg={4} xl={4}></Grid>
+            </Grid>
           </div>
           <Grid container style={{ height: '87%' }}>
             <Grid item md={1} lg={1} className={styles.docs}>
@@ -167,7 +178,7 @@ const Integration = (props) => {
             <Grid item md={8.5} lg={9} xl={9} className={styles.player}>
               <ImageList cols={4} style={{ padding: '15px' }}>
                 {currentImageTmp.map((element, index) => (
-                  <ImageListItem key={index}>
+                  <ImageListItem key={index} alignitems="center">
                     <img
                       src={
                         isDarkTheme
@@ -178,13 +189,26 @@ const Integration = (props) => {
                       }
                       alt={element[1]}
                       loading="lazy"
-                      style={{ width: '64px' }}
+                      style={{
+                        width: '64px',
+                        objectFit: 'initial',
+                        margin: '0 auto',
+                      }}
                     />
-                    <ImageListItemBar
-                      title={element[1]}
-                      subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
-                      position="below"
-                    />
+                    <div>
+                      <ImageListItemBar
+                        title={element[1]}
+                        subtitle={
+                          soon.indexOf(element[0]) != -1 ? '(soon)' : ''
+                        }
+                        position="below"
+                        style={{
+                          width: '150px',
+                          margin: '0 auto',
+                          textAlign: 'center',
+                        }}
+                      />
+                    </div>
                   </ImageListItem>
                 ))}
               </ImageList>
@@ -276,12 +300,21 @@ const Integration = (props) => {
                       src={`img/index/integration/icons/${element[0]}.svg`}
                       alt={element[1]}
                       loading="lazy"
-                      style={{ width: '48px' }}
+                      style={{
+                        width: '48px',
+                        objectFit: 'initial',
+                        margin: '0 auto',
+                      }}
                     />
                     <ImageListItemBar
                       title={element[1]}
                       subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
                       position="below"
+                      style={{
+                        width: '150px',
+                        margin: '0 auto',
+                        textAlign: 'center',
+                      }}
                     />
                   </ImageListItem>
                 ))}
@@ -312,7 +345,7 @@ const Integration = (props) => {
           xs={4}
           md={4}
           lg={4}
-          alignItems="center"
+          alignitems="center"
           className={styles.gridBtn}
         >
           <div className={styles.btnContainer}>

@@ -41,9 +41,9 @@ const Anatomy = (props) => {
       <Grid container>
         <Grid item xs={12} md={6} lg={6} xl={6}>
           {' '}
-          <h1 className={`${styles.title} ${styles.underline}`}>
+          <h2 className={`${styles.title} ${styles.underline}`}>
             Anatomy of Luos
-          </h1>
+          </h2>
           <p className={styles.text}>
             Luos gives you access to multiple features created by developers for
             developers. Many of these features are based on the needs of the
@@ -56,7 +56,7 @@ const Anatomy = (props) => {
         <Grid item md={3} lg={3} xl={4.5}>
           <List sx={{ width: '100%' }} className={styles.list}>
             <ListItem
-              alignItems="flex-start"
+              alignitems="flex-start"
               component={Link}
               href="/docs/luos-technology/basics#introduction-to-luos"
               className={styles.listLink}
@@ -73,7 +73,7 @@ const Anatomy = (props) => {
             </ListItem>
 
             <ListItem
-              alignItems="flex-start"
+              alignitems="flex-start"
               component={Link}
               href="/tutorials/bootloader/intro"
               className={styles.listLink}
@@ -90,7 +90,7 @@ const Anatomy = (props) => {
               />
             </ListItem>
             <ListItem
-              alignItems="flex-start"
+              alignitems="flex-start"
               component={Link}
               href="/tutorials/your-first-detection/"
               className={styles.listLink}
@@ -114,7 +114,7 @@ const Anatomy = (props) => {
             className={`${styles.list} ${styles.secondList}`}
           >
             <ListItem
-              alignItems="flex-start"
+              alignitems="flex-start"
               component={Link}
               href="/tutorials/get-started/get-started2"
               className={styles.listLink}
@@ -131,7 +131,7 @@ const Anatomy = (props) => {
             </ListItem>
 
             <ListItem
-              alignItems="flex-start"
+              alignitems="flex-start"
               component={Link}
               href="/docs/luos-technology/services/timestamp"
               className={styles.listLink}
@@ -150,7 +150,7 @@ const Anatomy = (props) => {
               />
             </ListItem>
             <ListItem
-              alignItems="flex-start"
+              alignitems="flex-start"
               component={Link}
               href="/docs/luos-technology/basics#introduction-to-luos"
               className={styles.listLink}
@@ -194,7 +194,7 @@ const Anatomy = (props) => {
                 </>
               )}
             </Grid>
-            <Grid item xs={4} md={4} lg={3} className={styles.video}>
+            <Grid item xs={4} md={4} lg={3} xl={3} className={styles.video}>
               <span>
                 <KeyboardArrowDownIcon className={styles.cardIcons} /> Anatomy
               </span>
@@ -266,6 +266,7 @@ const Anatomy = (props) => {
               xs={6}
               md={6}
               lg={8}
+              xl={8}
               className={styles.player}
               style={{
                 backgroundImage: `url('/img/index/anatomy/illu/${currentImageTmp}.svg')`,

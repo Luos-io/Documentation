@@ -1,0 +1,12 @@
+.sidebarItemTitle {
+  font-size: var(--ifm-h3-font-size);
+  font-weight: var(--ifm-font-weight-bold);
+}
+.titleLink {
+  color: black !important;
+}
+
+.titleLink:hover {
+  color: #be99ff !important;
+  text-decoration: none;
+}
