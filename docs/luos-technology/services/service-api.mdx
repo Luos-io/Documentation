@@ -140,6 +140,7 @@ Luos engine includes the following tools to integrate more capabilities and func
 |                        Description                         |                                       Function                                        |               Return                |
 | :--------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :---------------------------------: |
 |                    Send a Luos message                     |                    `Luos_SendMsg(service_t *service, msg_t *msg);`                    |          `error_return_t`           |
+|              Send a timestamped Luos message               |    `Luos_SendTimestampMsg(service_t *service, msg_t *msg, time_luos_t timestamp);`    |          `error_return_t`           |
 |                    Read a Luos message                     |               `Luos_ReadMsg(service_t *service, msg_t **returned_msg);`               |          `error_return_t`           |
 |      Send the remaining data in case of long messages      |    `Luos_SendData(service_t *service, msg_t *msg, void *bin_data, uint16_t size);`    |               `void`                |
 |    Receive the remaining data in case of long messages     |          `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);`          | `data size at the end of reception` |
@@ -147,3 +148,6 @@ Luos engine includes the following tools to integrate more capabilities and func
 |           Receive data from a streaming channel            | `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` |          `error_return_t`           |
 |                  Share network's baudrate                  |              `Luos_SendBaudrate(service_t *service, uint32_t baudrate);`              |               `void`                |
 | Get the total ticks number since the initialization        |                               `Luos_GetSystick(void);`                                |             `uint32_t`              |
+|       Subscribe to a new topic for MULTICAST messages      |               `Luos_TopicSubscribe(service_t *service, uint16_t topic);`              |          `error_return_t`           |
+|       Unsubscribe from a topic for MULTICAST messages      |              `Luos_TopicUnsubscribe(service_t *service, uint16_t topic);`             |          `error_return_t`           |
+| Activate/Deactivate message filtering for global reception |               `Luos_SetFilterState(uint8_t state, service_t *service);`               |               `void`                |
