@@ -30,5 +30,17 @@
         "link": "https://github.com/Luos-io/Training/tree/main/3_First_Detection"
       }
     }
+  },
+  "pio": {
+    "content": {
+      "1": {
+        "label": "Github",
+        "link": "https://github.com/Luos-io/Mooc/tree/main/Morse_Encoder"
+      },
+      "2": {
+        "label": "Nucleo Board",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f072rb.html"
+      }
+    }
   }
 }

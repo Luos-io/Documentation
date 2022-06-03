@@ -1,0 +1,348 @@
+---
+custom_edit_url: null
+---
+
+import Image from '/src/components/Images.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Part 1: Project Creation
+
+## 1. Introduction
+
+Beginning with a project can be painful and a long process! New environment, new tools, ..., you may abandon before starting.
+
+But don’t worry we will guide you through the process! You will learn how to set up a Platformio environment and how to make a good project structure
+
+This tutorial uses VSCode as IDE, before jumping in the code, let's set up your project with Plateformio
+
+:::caution
+If Platformio is not already installed on your computer please follow our [get started tutorial](/tutorials/get-started/).
+:::
+
+In this tutorial we will use a ST NUCLEO F072RB board for a project creation with ST board (e)and Arduino MKRZero board for project creation with Arduino board.
+
+## 2. Create a new Project
+
+### 1- Create a new project
+
+<div align="center">
+  <Image src="/img/tutorials/pio/pio-1-1.png" />
+  <Image src="/img/tutorials/pio/pio-1-2.png" />
+</div>
+
+<Tabs>
+  <TabItem value="ST" label="ST">
+    <div align="center">
+      <Image src="/img/tutorials/pio/pio-1-3.png" />
+    </div>
+  </TabItem>
+  <TabItem value="Arduino" label="Arduino">
+    <div align="center">
+      <Image src="/img/tutorials/pio/pio-1-4.png" />
+    </div>
+  </TabItem>
+</Tabs>
+
+:::info
+Choose the default location of your projet on your computer.
+:::
+
+We will use the STM32 Framework HAL for this project.
+
+At this step, Plateformio creates for you a complete project:
+
+- Folder “include”: put project header files.
+- Folder “src”: put project source files.
+- Folder “lib”: this is where you will put your Luos Services
+- plateformio.ini: this is the Plateformio project entry point
+
+### 2- Click on finish
+
+<div align="center">
+  <Image src="/img/tutorials/pio/pio-1-5.png" />
+</div>
+
+### 2- Yes accept
+
+## 3. Node Config Files creation
+
+Luos project uses a file, placed at the root of the folder, called node_config.h that allows you to configure Luos Library and match your hardware configuration with Luos default configuration.
+
+1. Right click on Project name
+2. New Files → node_config.h
+3. Copy below and save
+
+```c
+/******************************************************************************
+ * @file node_config.h
+ * @brief This file allow you to use standard preprocessor definitions to
+ *        configure your project, Luos and Luos HAL libraries
+ * @author Yourself
+ * @version 0.0.0
+ ******************************************************************************/
+#ifndef _NODE_CONFIG_H_
+#define _NODE_CONFIG_H_
+
+#endif /* _NODE_CONFIG_H_ */
+```
+
+:::info
+In this example we will use default configuration of Luos HAL for ST and Arduino, so nothing to change right now 😅
+:::
+
+## 4. Configure Plateformio.ini to use your project
+
+Plateformio.ini is the project configuration file. you must fill the file with the information relative to your project.
+
+<Tabs>
+<TabItem value="ST" label="ST">
+
+```c
+build_unflags = -Os
+build_flags =
+		-O1
+    -include node_config.h
+debug_tool = stlink
+upload_protocol = stlink
+```
+
+Define for STM32 Frameworks
+
+- USE_HAL_DRIVER → possibility to use HAL file of STM32 Framworks
+- USE_FULL_LL_DRIVER → possibility to use Low Level file of STM32 Framworks
+
+<div align="center">
+  <Image src="/img/tutorials/pio/pio-1-6.png" />
+</div>
+
+</TabItem>
+<TabItem value="Arduino" label="Arduino">
+
+```c
+build_unflags = -Os
+build_flags =
+		-O1
+    -include node_config.h
+```
+
+- Modifying compilation flag -Os to -O1
+- Include the Node_config.h file
+- Setup tools to upload or debug program if necessary
+
+<div align="center">
+  <Image src="/img/tutorials/pio/pio-1-7.png" />
+</div>
+
+</TabItem>
+</Tabs>
+
+## 5. Create Main Files
+
+The main file of your project is your entry point! let’s fill this files with basic needs
+
+<Tabs>
+<TabItem value="ST" label="ST">
+
+1. src → New Files → main.c
+2. Fill the main file
+
+```c
+/******************************************************************************
+ * @file main
+ * @brief main file of the project
+ * @author Yourself
+ * @version 0.0.0
+ ******************************************************************************/
+
+#include "stm32f0xx_hal.h"
+
+/*******************************************************************************
+ * Definitions
+ ******************************************************************************/
+
+/*******************************************************************************
+ * Variables
+ ******************************************************************************/
+
+/*******************************************************************************
+ * Function
+ ******************************************************************************/
+
+/******************************************************************************
+ * @brief main function
+ * @param None
+ * @return None
+ ******************************************************************************/
+int main(void)
+{
+		// Init
+    HAL_Init();
+
+
+		// Loop
+    while (1)
+    {
+
+    }
+}
+```
+
+3. the include "stm32f0xx_hal.h" must be adapte to the STM familly MCU you choose. in our case ST NUCLEO STM32F072RB → F0 family
+
+:::tip
+You can modify the clock frequency of you MCU! we recommand to do it with CubeMx!
+:::
+
+</TabItem>
+<TabItem value="Arduino" label="Arduino">
+ In Arduino the main file is automaticly create and fill with 2 function.
+
+```c
+#include <Arduino.h>
+
+void setup() {
+  // put your setup code here, to run once:
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+}
+```
+
+</TabItem>
+</Tabs>
+
+## 6. Create Interruption Files Handler
+
+For many MCU you have acces to IRQ handler fonction. Those functions are called when an interruption happen (exception and peripherial interruption). You have to declare those function dependending on the framworks you use.
+
+<Tabs>
+<TabItem value="ST" label="ST">
+
+1. src → New Files → stm32f0xx_it.c
+
+```c
+/******************************************************************************
+ * @file stm32f0xx_it
+ * @brief Interrupt Service Routines.
+ * @author Yourself
+ * @version 0.0.0
+ ******************************************************************************/
+#include "stm32f0xx_hal.h"
+#include "stm32f0xx_it.h"
+
+/*******************************************************************************
+ * Definitions
+ ******************************************************************************/
+
+/*******************************************************************************
+ * Variables
+ ******************************************************************************/
+
+/*******************************************************************************
+ * Function
+ ******************************************************************************/
+
+/******************************************************************************/
+/*           Cortex-M0 Processor Interruption and Exception Handlers          */
+/******************************************************************************/
+void NMI_Handler(void)
+{
+}
+
+void HardFault_Handler(void)
+{
+  while (1)
+  {
+  }
+}
+
+void SVC_Handler(void)
+{
+}
+
+void PendSV_Handler(void)
+{
+}
+
+void SysTick_Handler(void)
+{
+  HAL_IncTick();
+}
+
+/******************************************************************************/
+/* STM32F0xx Peripheral Interrupt Handlers                                    */
+/* Add here the Interrupt Handlers for the used peripherals.                  */
+/* For the available peripheral interrupt handler names,                      */
+/* please refer to the startup file (startup_stm32f0xx.s).                    */
+/******************************************************************************/
+```
+
+2. include→ New Files → stm32f0xx_it.h
+
+```c
+/******************************************************************************
+ * @file stm32f0xx_it
+ * @brief Interrupt Service Routines.
+ * @author Yourself
+ * @version 0.0.0
+ ******************************************************************************/
+#ifndef __STM32F0XX_IT_H
+#define __STM32F0XX_IT_H
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+/*******************************************************************************
+ * Definitions
+ ******************************************************************************/
+
+/*******************************************************************************
+ * Variables
+ ******************************************************************************/
+
+/*******************************************************************************
+ * Function
+ ******************************************************************************/
+void NMI_Handler(void);
+void HardFault_Handler(void);
+void SVC_Handler(void);
+void PendSV_Handler(void);
+void SysTick_Handler(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __STM32F0XX_IT_H*/
+```
+
+</TabItem>
+<TabItem value="Arduino" label="Arduino">
+When you choose to use arduino framworks there is no need to declate IRQ function.
+
+</TabItem>
+</Tabs>
+
+## 7. Compile your First project
+
+<Tabs>
+<TabItem value="ST" label="ST">
+
+<div align="center">
+  <Image src="/img/tutorials/pio/pio-1-8.png" />
+</div>
+
+</TabItem>
+<TabItem value="Arduino" label="Arduino">
+
+<div align="center">
+  <Image src="/img/tutorials/pio/pio-1-9.png" />
+</div>
+
+</TabItem>
+</Tabs>
+
+Now we have a complete functional environment, but what about Luos?

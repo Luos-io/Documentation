@@ -1,0 +1,182 @@
+---
+custom_edit_url: null
+---
+
+import Image from '/src/components/Images.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Part 2: Include Luos to your project
+
+## 1. Include Luos lib in your project
+
+The plateformio.ini files in your project describes precompiler variables and library depencies of your project.
+
+In our case we want to use Luos as Library. Put in Luos and LuosHAL in lib_deps will download from PIO registry Luos library and will build and link Luos to your project.
+
+Fill the plateformio.ini of your project :
+
+<Tabs>
+<TabItem value="ST" label="ST">
+
+```c
+build_unflags = -Os
+build_flags =
+		-O1
+    -include node_config.h
+    -DUSE_HAL_DRIVER
+    -DUSE_FULL_LL_DRIVER
+    -DLUOSHAL=STM32F0
+lib_deps =
+    luos_engine
+debug_tool = stlink
+upload_protocol = stlink
+```
+
+LUOSHAL=STM32F0 → select Luos HAL for MCU Family (here we use STM32F072Rb so F0 family
+
+</TabItem>
+<TabItem value="Arduino" label="Arduino">
+
+```c
+build_unflags = -Os
+build_flags =
+		-O1
+    -include node_config.h
+    -DUSE_HAL_DRIVER
+    -DUSE_FULL_LL_DRIVER
+    -DLUOSHAL=ATSAMD21_ARDUINO
+lib_deps =
+    luos_engine
+```
+
+LUOSHAL=ATSAMD21_ARDUINO→ select Luos HAL for MCU Family (here we use Arduino MKRZero
+
+</TabItem>
+</Tabs>
+
+:::info
+You can fix a minimal version that you want for your Library
+Luos@^X.Y.Z → Minimal version of Luos (put nothing will download the last one)
+LuosHAL@^X.Y.Z → Minimal version of LuosHAL (put nothing will dowload the last one)
+:::
+
+## 2. Include Luos in your main files
+
+At the top of the files you add #include "Luos.h". with this line you add Luos Library to your project and it will be possible for you to use Luos API.
+
+<Tabs>
+<TabItem value="ST" label="ST">
+
+```c
+#include "stm32f0xx_hal.h"
+#include "luos_engine.h"
+
+...
+
+int main(void)
+{
+    // Init
+    HAL_Init();
+		Luos_Init();
+
+    // Loop
+    while (1)
+    {
+			Luos_Loop();
+    }
+}
+
+...
+```
+
+</TabItem>
+<TabItem value="Arduino" label="Arduino">
+
+```c
+#include <Arduino.h>
+#include "luos_engine.h"
+
+void setup()
+{
+  Luos_Init();
+}
+
+void loop()
+{
+  Luos_Loop();
+}
+```
+
+</TabItem>
+</Tabs>
+
+Luos Lib, and future Luos package that you will create, have 2 special functions: Init and Loop.
+
+. Init function is called one time at MCU reset.
+
+. Loop function will be called sequentially in a loop.
+
+:::info
+Each API begins with the name of the files where it’s declared! A simple rule of coding but very convenient.
+:::
+
+## 3. Include Luos PTP interruption
+
+In the case that you have a network, you need a way to detect other MCU on the network. with Luos network we use 2 pins (see [topology and network for more information](/docs/luos-technology/node/topology)).
+
+Those special pins call PTP are necessary for topology detection. These 2 pins need an interruption handler to work on Luos Network.
+
+<Tabs>
+<TabItem value="ST" label="ST">
+
+1. Open the file stm32xx_it.c
+2. fill the file at the end
+
+```c
+/******************************************************************************/
+/* STM32F0xx Peripheral Interrupt Handlers                                    */
+/* Add here the Interrupt Handlers for the used peripherals.                  */
+/* For the available peripheral interrupt handler names,                      */
+/* please refer to the startup file (startup_stm32f0xx.s).                    */
+/******************************************************************************/
+void EXTI4_15_IRQHandler(void)
+{
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+
+}
+```
+
+:::info
+This is the default configuration of F0 Family used for the STM32F072RB (see [LuosHAL_Config.h](https://github.com/Luos-io/LuosHAL)). if you need to adapte you hardware put your change in the node_config.h file of your project.
+:::
+
+</TabItem>
+<TabItem value="Arduino" label="Arduino">
+For Arduino Luos fill this information for you!
+
+:::info
+You have to follow pin out declare in file LuosHAL_Config.h for ATSAMD21_ARDUINO in [LuosHAL repository](https://github.com/Luos-io/LuosHAL).
+:::
+
+</TabItem>
+</Tabs>
+
+## 4. Compile your Luos project
+
+As you can see in the terminal when you build your project, Plateformio will download the last version of Luos Library from his registry and add it as a lib to your project.
+
+<div align="center">
+  <Image src="/img/tutorials/pio/pio-2-1.png" />
+</div>
+
+Upload the code to you MCU by clicking on the arrow at the bottom of the IDE.
+
+<div align="center">
+  <Image src="/img/tutorials/pio/pio-2-2.png" />
+</div>
+
+Now you have create a Project with ST framwork and Arduino framwork and configure evreyting to begin with Luos.
+
+Rename your project and add package like in training, to make great project with Luos!!! [Check a solution](https://github.com/Luos-io/Mooc/tree/main/Basic_Project).

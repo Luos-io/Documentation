@@ -104,9 +104,29 @@
       "level": 3,
       "img": "Bike_Alarm",
       "desc": "In this tutorial series I’m going to show you how to make your own Luos app using a fully modular bike alarm as example.",
-      "tags": ["Board", "Application", "Detection", "Product", "Service", "Network", "Distributed System"],
+      "tags": [
+        "Board",
+        "Application",
+        "Detection",
+        "Product",
+        "Service",
+        "Network",
+        "Distributed System"
+      ],
       "link": "/tutorials/bike-alarm",
       "author": "nicoR"
+    },
+    {
+      "title": "Create Luos project with PlatformIo",
+      "id": "pio",
+      "category": "Tutorials",
+      "toc": 30,
+      "level": 1,
+      "img": "Bike_Alarm",
+      "desc": "You heard about Luos, or you have just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
+      "tags": ["Project", "Creation", "ST", "Arduino", "Service"],
+      "link": "/tutorials/pio",
+      "author": "thomas"
     }
   ]
 }
