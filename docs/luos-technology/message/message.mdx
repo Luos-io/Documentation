@@ -35,9 +35,9 @@ here is the `header_t` structure:
 ```c
 typedef struct{
     uint16_t protocol : 4;    /*!< Protocol version. */
-    uint16_t target : 12;     /*!< Target address, it can be (ID, Multicast/Broadcast, Type). */
-    uint16_t target_mode : 4; /*!< Select targeting mode (ID, ID+ACK, Multicast/Broadcast, Type). */
-    uint16_t source : 12;     /*!< Source address, it can be (ID, Multicast/Broadcast, Type). */
+    uint16_t target : 12;     /*!< Target address, it can be (ID, Topic,Broadcast, Type). */
+    uint16_t target_mode : 4; /*!< Select targeting mode (ID, ID+ACK, Topic, Broadcast, Type). */
+    uint16_t source : 12;     /*!< Source address, it can be (ID, Topic, Broadcast, Type). */
     uint8_t cmd;              /*!< msg definition. */
     uint16_t size;            /*!< Size of the data field. */
 }header_t;
@@ -48,8 +48,9 @@ typedef struct{
 - **Target_mode (4 bits)**: This field indicates the addressing mode and how to understand the _Target_ field. It can take different values:
   - **ID**: This mode allows to communicate with a unique service using its ID **without** acknowledgment return.
   - **IDACK**: This mode allows to communicate with a unique service using its ID **with** acknowledgment return.
-  - **Type**: This mode sends a message to all services with a given type, e.g. all "Sharp digital distance sensor".
-  - **Multicast/Broadcast**: This mode allows multiple services to catch a message. In this case, the message contains a type of data used by multiple services.
+  - **TYPE**: This mode sends a message to all services with a given type, e.g. all "Sharp digital distance sensor".
+  - **BROADCAST**: This mode allows all the services in the network to catch a message. In this case, the message contains a type of data used by multiple services.
+  - **TOPIC**: Publisher/Subscriber mode, allows multiple services to catch a message depending on the topic that they are subscribed to. 
   - **NODEID**: This mode allows to send a message to all the services of a specific node **without** acknowledgment return.
   - **NODEIDACK**: This mode allows to send a message to all the services of a specific node **with** acknowledgment return.
 - **Source (12 bits)**: The unique ID of the transmitter service.
