@@ -134,11 +134,23 @@
       "category": "Tutorials",
       "toc": 60,
       "level": 2,
-      "img": "Bike_Alarm",
+      "img": "Morse_encoder_Luos",
       "desc": "We will go through and explain Luos main API through a simple and fun project called Morse encoder. At the end of this tutorial, you will understand how a Luos project is structured, Luos API creation of service, and topology detection.",
       "tags": ["Service", "Topology", "Led", "Morse encoder", "USART"],
       "link": "/tutorials/morse",
       "author": "viktoria"
+    },
+    {
+      "title": "Luos On ESP32 : ESP IDF and Espressif IDE Setup",
+      "id": "esp",
+      "category": "Tutorials",
+      "toc": 60,
+      "level": 2,
+      "img": "Luos_and_ESP32",
+      "desc": "You want to use luos_engine and take advantage of luos network on an ESP32 MCU. In this tutorial, you will learn how to use a simple package button with ESP32 Family.",
+      "tags": ["Service", "Package", "ESP32"],
+      "link": "/tutorials/esp",
+      "author": "thomas"
     }
   ]
 }
