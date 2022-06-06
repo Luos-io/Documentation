@@ -13,7 +13,7 @@ const Image = (props) => {
     : props.src;
   const height = props.height === undefined ? '100%' : props.height;
   return (
-    <div>
+    <div style={{ display: 'inline', marginRight: '15px' }}>
       <img
         className="imgPreview"
         src={source}

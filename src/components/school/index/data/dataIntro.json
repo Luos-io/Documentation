@@ -127,6 +127,18 @@
       "tags": ["Project", "Creation", "ST", "Arduino", "Service"],
       "link": "/tutorials/pio",
       "author": "thomas"
+    },
+    {
+      "title": "How to make a Morse Encoder",
+      "id": "morse",
+      "category": "Tutorials",
+      "toc": 60,
+      "level": 2,
+      "img": "Bike_Alarm",
+      "desc": "We will go through and explain Luos main API through a simple and fun project called Morse encoder. At the end of this tutorial, you will understand how a Luos project is structured, Luos API creation of service, and topology detection.",
+      "tags": ["Service", "Topology", "Led", "Morse encoder", "USART"],
+      "link": "/tutorials/morse",
+      "author": "viktoria"
     }
   ]
 }
