@@ -6887,10 +6887,10 @@ react-loadable-ssr-addon-v5-slorber@^1.0.1:
   dependencies:
     "@babel/runtime" "^7.10.3"
 
-react-material-ui-carousel@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/react-material-ui-carousel/-/react-material-ui-carousel-3.3.3.tgz#77f83e5262769ee1ae2a377704506620e6aeb326"
-  integrity sha512-pIojUKfu6s2r5icE5cQYUfEUTa9BT2dc/gw+gdBp32rJVfKlrOglb7Wdrho+hsdKDba2KQxnmYWixGKRbbMVaA==
+react-material-ui-carousel@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/react-material-ui-carousel/-/react-material-ui-carousel-3.4.2.tgz#3db3b4719859960284f262470b304fecad89fa18"
+  integrity sha512-jUbC5aBWqbbbUOOdUe3zTVf4kMiZFwKJqwhxzHgBfklaXQbSopis4iWAHvEOLcZtSIJk4JAGxKE0CmxDoxvUuw==
   dependencies:
     "@emotion/react" "^11.7.1"
     "@emotion/styled" "^11.6.0"
@@ -6898,8 +6898,6 @@ react-material-ui-carousel@^3.3.3:
     "@mui/material" "^5.4.1"
     "@mui/system" "^5.4.1"
     framer-motion "^4.1.17"
-    react "^17.0.2"
-    react-dom "^17.0.2"
 
 react-modal@^3.11.1:
   version "3.15.1"
