@@ -122,7 +122,7 @@
       "category": "Tutorials",
       "toc": 30,
       "level": 1,
-      "img": "Bike_Alarm",
+      "img": "Luos_and_PlatformIO",
       "desc": "You heard about Luos, or you have just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
       "tags": ["Project", "Creation", "ST", "Arduino", "Service"],
       "link": "/tutorials/pio",
