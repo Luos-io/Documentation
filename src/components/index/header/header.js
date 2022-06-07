@@ -19,10 +19,7 @@ const Header = (props) => {
         <Grid item md={7} className={styles.left}>
           <div className={styles.head}>
             {' '}
-            <img
-              src="img/index/header/buttons.svg"
-              style={{ padding: '15px', width: '100px' }}
-            />
+            <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
           </div>
           <Grid container>
             <Grid item xs={2} md={1} lg={1} className={styles.docs}>
@@ -41,14 +38,7 @@ const Header = (props) => {
               )}
             </Grid>
 
-            <Grid
-              item
-              xs={10}
-              md={11}
-              lg={11}
-              pl={3}
-              className={styles.playerLeft}
-            >
+            <Grid item xs={10} md={11} lg={11} pl={3} className={styles.playerLeft}>
               <Writer
                 textStyle={{
                   color: '#BD99FF',
@@ -73,8 +63,8 @@ const Header = (props) => {
                 typeSpeed={100}
               />{' '}
               <p className={styles.text}>
-                Luos makes it easy to develop and scale your edge and embedded
-                distributed software. It's open source.
+                Luos makes it easy to develop and scale your edge and embedded distributed software.
+                It's open source.
               </p>
               <div className={styles.btnContainer}>
                 <Button
@@ -124,10 +114,7 @@ const Header = (props) => {
           >
             <div className={styles.head}>
               {' '}
-              <img
-                src="img/index/header/buttons.svg"
-                style={{ padding: '15px', width: '100px' }}
-              />
+              <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
             </div>
             <Grid container>
               <Grid item md={1} lg={1} className={styles.docs}>
