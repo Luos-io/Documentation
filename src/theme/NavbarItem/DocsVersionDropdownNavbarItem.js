@@ -15,8 +15,6 @@ export default function DocsVersionDropdownNavbarItem({
   ...props
 }) {
   const location = useLocation();
-  console.log(location);
-
   const regex = /docs/g;
   const found = location.pathname.match(regex);
 
