@@ -5,7 +5,7 @@ import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 export default function BlogSidebarDesktop({ sidebar }) {
   return (
-    <aside className="col col--3">
+    <aside className={clsx(styles.sidebarContainer, 'col col--3')}>
       <nav
         className={clsx(styles.sidebar, 'thin-scrollbar')}
         aria-label={translate({

@@ -58,3 +58,8 @@ html[data-theme='light'] .sidebarItemLink {
   color: #be99ff !important;
   text-decoration: none;
 }
+
+.sidebarContainer {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}

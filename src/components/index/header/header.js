@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserView } from 'react-device-detect';
-import '@justinribeiro/lite-youtube';
 import styles from './header.module.css';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -11,6 +10,10 @@ import { useColorMode } from '@docusaurus/theme-common';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import SearchIcon from '@mui/icons-material/Search';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+
 const Header = (props) => {
   const { isDarkTheme } = useColorMode();
   return (
@@ -139,11 +142,11 @@ const Header = (props) => {
                 <div className={styles.engine}>What is Luos engine?</div>
               </Grid>
               <Grid item md={9} lg={9} className={styles.player}>
-                <lite-youtube
+                <LiteYouTubeEmbed
                   className={styles.player_iframe}
-                  videoid="ujh0xNE3TZ8"
+                  id="ujh0xNE3TZ8"
                   videotitle="What is Luos"
-                ></lite-youtube>
+                ></LiteYouTubeEmbed>
               </Grid>
             </Grid>
             <Grid item md={12} lg={12} xl={12} className={styles.footer}>
