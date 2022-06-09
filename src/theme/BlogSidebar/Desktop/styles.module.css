@@ -3,6 +3,7 @@
   overflow-y: auto;
   position: sticky;
   top: calc(var(--ifm-navbar-height) + 2rem);
+  font-family: 'Roboto Mono';
 }
 
 .sidebarItemTitle {
