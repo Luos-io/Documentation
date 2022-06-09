@@ -583,13 +583,6 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   width: 50%;
 }
 
-.joinUsContainer {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
 .rsLogo {
   width: 32px;
   margin: 15px 10px;

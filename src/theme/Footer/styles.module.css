@@ -13,3 +13,118 @@
 .footerLogoLink:hover {
   opacity: 1;
 }
+
+.title {
+  font-size: 28px !important;
+  font-weight: bold;
+  font-family: 'Roboto Mono';
+  margin-bottom: 20px !important;
+}
+
+.titleCommunity {
+  font-size: 28px !important;
+  font-weight: bold;
+  font-family: 'Roboto Mono';
+  margin-bottom: 0px !important;
+}
+
+.subtitle {
+  font-size: 18px !important;
+  font-family: 'Roboto Mono';
+  margin-bottom: 15px !important;
+  color: #7e7f80;
+}
+
+.joinUsContainer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link {
+  font-size: 14px !important;
+  word-break: break-word;
+  display: block;
+  font-family: 'Roboto Mono';
+  color: white;
+  margin-bottom: 10px;
+}
+
+html[data-theme='light'] .link {
+  color: black;
+}
+
+.link:hover {
+  color: #bd99ff !important;
+}
+
+.blog {
+  text-decoration: underline #81c8be;
+  text-underline-offset: 5px;
+  margin-bottom: 30px !important;
+}
+
+.blog:hover {
+  color: #81c8be;
+}
+
+.tuto {
+  text-decoration: underline #bd99ff;
+  text-underline-offset: 5px;
+  margin-bottom: 30px !important;
+}
+
+.tuto:hover {
+  color: #bd99ff;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.span {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  word-break: break-word;
+  display: block;
+  font-family: 'Roboto Mono';
+  color: white;
+  margin-bottom: 10px;
+}
+.list {
+  list-style: none;
+}
+
+.mbZero {
+  margin-bottom: 0px !important;
+}
+
+.mbTen {
+  margin-bottom: 10px !important;
+}
+
+.ressources {
+  text-decoration: underline #ff5200;
+  text-underline-offset: 5px;
+  margin-bottom: 0 !important;
+}
+
+html[data-theme='light'] .ressources {
+  color: black;
+}
+
+.ressourcesLink:hover {
+  color: #ff5200 !important;
+}
+
+.community {
+  text-decoration: underline #edf568;
+  text-underline-offset: 5px;
+  margin-bottom: 0 !important;
+}
+html[data-theme='light'] .community {
+  color: black;
+}
+.communityLink:hover {
+  color: #edf568 !important;
+}
