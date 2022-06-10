@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './integration.module.css';
 import Grid from '@mui/material/Grid';
+import Link from '@docusaurus/Link';
 import Button from '@mui/material/Button';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -50,6 +51,28 @@ const Integration = (props) => {
 
   const soon = ['zappier', 'ifttt', 'freedom', 'microros'];
 
+  const links = {
+    esp: '',
+    stm: '',
+    microship: '',
+    raspberry: '',
+    arduino: '',
+    pio: '',
+    eclipse: '',
+    vscodeico: '',
+    ros: '',
+    freertos: '',
+    microros: '',
+    simplefoc: '',
+    zappier: '',
+    ifttt: '',
+    freedom: '',
+    c: '',
+    python: '',
+    js: '',
+    ts: '',
+  };
+
   const [currentImageTmp, setCurrentImageTmp] = useState(img['mcu']);
   const [currentInt, setCurrentInt] = React.useState('mcu');
 
@@ -65,23 +88,13 @@ const Integration = (props) => {
       <Grid container spacing={3}>
         <Grid item xs={6} md={4} lg={4}>
           {' '}
-          <img
-            src="img/index/integration/line-right.svg"
-            className={styles.imgLeft}
-          />
+          <img src="img/index/integration/line-right.svg" className={styles.imgLeft} />
         </Grid>
         <Grid item xs={12} md={4} lg={4}>
-          <h2 className={`${styles.title} ${styles.underline}`}>
-            Integrations
-          </h2>
+          <h2 className={`${styles.title} ${styles.underline}`}>Integrations</h2>
         </Grid>
       </Grid>
-      <Grid
-        container
-        spacing={3}
-        sx={{ padding: '30px' }}
-        className={styles.mobileNone}
-      >
+      <Grid container spacing={3} sx={{ padding: '30px' }} className={styles.mobileNone}>
         <Grid item xs={1} md={1} lg={1} xl={1}></Grid>
         <Grid
           item
@@ -104,9 +117,7 @@ const Integration = (props) => {
               </Grid>
               <Grid item md={4} lg={4} xl={4} style={{ textAlign: 'center' }}>
                 {' '}
-                <h2 className={`${styles.hiwTitle} ${styles.underline}`}>
-                  Integrations
-                </h2>
+                <h2 className={`${styles.hiwTitle} ${styles.underline}`}>Integrations</h2>
               </Grid>
               <Grid item md={4} lg={4} xl={4}></Grid>
             </Grid>
@@ -129,8 +140,7 @@ const Integration = (props) => {
             </Grid>
             <Grid item md={2.5} lg={2} xl={2} className={styles.video}>
               <span>
-                <KeyboardArrowDownIcon className={styles.cardIcons} />{' '}
-                Integrations
+                <KeyboardArrowDownIcon className={styles.cardIcons} /> Integrations
               </span>
 
               <RadioGroup
@@ -141,34 +151,26 @@ const Integration = (props) => {
               >
                 <FormControlLabel
                   value="mcu"
-                  className={
-                    currentInt == 'mcu' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'mcu' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="MCU & IDE"
                 />
                 <FormControlLabel
                   value="os"
-                  className={
-                    currentInt == 'os' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'os' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="OS & frameworks"
                 />
                 <FormControlLabel
                   value="api"
-                  className={
-                    currentInt == 'api' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'api' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="APIs & 
                   integrations"
                 />
                 <FormControlLabel
                   value="sdk"
-                  className={
-                    currentInt == 'sdk' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'sdk' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="SDK & 
                   languages"
@@ -178,38 +180,38 @@ const Integration = (props) => {
             <Grid item md={8.5} lg={9} xl={9} className={styles.player}>
               <ImageList cols={4} style={{ padding: '15px' }}>
                 {currentImageTmp.map((element, index) => (
-                  <ImageListItem key={index} alignitems="center">
-                    <img
-                      src={
-                        isDarkTheme
-                          ? element[2]
-                            ? `img/index/integration/icons/${element[2]}.svg`
+                  <a href={links[element[0]]}>
+                    <ImageListItem key={index} alignitems="center">
+                      <img
+                        src={
+                          isDarkTheme
+                            ? element[2]
+                              ? `img/index/integration/icons/${element[2]}.svg`
+                              : `img/index/integration/icons/${element[0]}.svg`
                             : `img/index/integration/icons/${element[0]}.svg`
-                          : `img/index/integration/icons/${element[0]}.svg`
-                      }
-                      alt={element[1]}
-                      loading="lazy"
-                      style={{
-                        width: '64px',
-                        objectFit: 'initial',
-                        margin: '0 auto',
-                      }}
-                    />
-                    <div>
-                      <ImageListItemBar
-                        title={element[1]}
-                        subtitle={
-                          soon.indexOf(element[0]) != -1 ? '(soon)' : ''
                         }
-                        position="below"
+                        alt={element[1]}
+                        loading="lazy"
                         style={{
-                          width: '150px',
+                          width: '64px',
+                          objectFit: 'initial',
                           margin: '0 auto',
-                          textAlign: 'center',
                         }}
                       />
-                    </div>
-                  </ImageListItem>
+                      <div>
+                        <ImageListItemBar
+                          title={element[1]}
+                          subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
+                          position="below"
+                          style={{
+                            width: '150px',
+                            margin: '0 auto',
+                            textAlign: 'center',
+                          }}
+                        />
+                      </div>
+                    </ImageListItem>
+                  </a>
                 ))}
               </ImageList>
             </Grid>
@@ -233,21 +235,12 @@ const Integration = (props) => {
         >
           <div className={styles.head}>
             {' '}
-            <img
-              src="img/index/header/buttons.svg"
-              style={{ padding: '15px', width: '100px' }}
-            />
+            <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
           </div>
           <Grid container style={{ height: '87%' }}>
-            <Grid
-              item
-              xs={4}
-              className={styles.video}
-              style={{ borderLeft: '2px solid black' }}
-            >
+            <Grid item xs={4} className={styles.video} style={{ borderLeft: '2px solid black' }}>
               <span style={{ fontSize: '16px' }}>
-                <KeyboardArrowDownIcon className={styles.cardIcons} />{' '}
-                Integrations
+                <KeyboardArrowDownIcon className={styles.cardIcons} /> Integrations
               </span>
 
               <RadioGroup
@@ -258,34 +251,26 @@ const Integration = (props) => {
               >
                 <FormControlLabel
                   value="mcu"
-                  className={
-                    currentInt == 'mcu' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'mcu' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="MCU & IDE"
                 />
                 <FormControlLabel
                   value="os"
-                  className={
-                    currentInt == 'os' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'os' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="OS & Frameworks"
                 />
                 <FormControlLabel
                   value="api"
-                  className={
-                    currentInt == 'api' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'api' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="APIs & 
                   integrations"
                 />
                 <FormControlLabel
                   value="sdk"
-                  className={
-                    currentInt == 'sdk' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'sdk' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="SDK & 
                   languages"
@@ -295,28 +280,30 @@ const Integration = (props) => {
             <Grid item xs={8} lg={9} className={styles.player}>
               <ImageList cols={2} style={{ padding: '10px' }}>
                 {currentImageTmp.map((element, index) => (
-                  <ImageListItem key={index}>
-                    <img
-                      src={`img/index/integration/icons/${element[0]}.svg`}
-                      alt={element[1]}
-                      loading="lazy"
-                      style={{
-                        width: '48px',
-                        objectFit: 'initial',
-                        margin: '0 auto',
-                      }}
-                    />
-                    <ImageListItemBar
-                      title={element[1]}
-                      subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
-                      position="below"
-                      style={{
-                        width: '150px',
-                        margin: '0 auto',
-                        textAlign: 'center',
-                      }}
-                    />
-                  </ImageListItem>
+                  <a href={links[element[0]]}>
+                    <ImageListItem key={index}>
+                      <img
+                        src={`img/index/integration/icons/${element[0]}.svg`}
+                        alt={element[1]}
+                        loading="lazy"
+                        style={{
+                          width: '48px',
+                          objectFit: 'initial',
+                          margin: '0 auto',
+                        }}
+                      />
+                      <ImageListItemBar
+                        title={element[1]}
+                        subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
+                        position="below"
+                        style={{
+                          width: '150px',
+                          margin: '0 auto',
+                          textAlign: 'center',
+                        }}
+                      />
+                    </ImageListItem>
+                  </a>
                 ))}
               </ImageList>
             </Grid>
@@ -326,43 +313,13 @@ const Integration = (props) => {
           </Grid>
         </Grid>
         <Grid item xs={0.5}></Grid>
-
-        <div className={styles.btnContainerMobile}>
-          <Button
-            variant="contained"
-            className={styles.pinkBtn}
-            href="/tutorials/luos-integration/list"
-          >
-            Learn more about integrations
-          </Button>
-        </div>
       </Grid>
 
       <Grid container spacing={3}>
         <Grid item xs={2} md={4} lg={4}></Grid>
-        <Grid
-          item
-          xs={4}
-          md={4}
-          lg={4}
-          alignitems="center"
-          className={styles.gridBtn}
-        >
-          <div className={styles.btnContainer}>
-            <Button
-              variant="contained"
-              className={styles.pinkBtn}
-              href="/tutorials/luos-integration/list"
-            >
-              Learn more about integrations
-            </Button>
-          </div>
-        </Grid>
+        <Grid item xs={4} md={4} lg={4}></Grid>
         <Grid item xs={6} md={4} lg={4}>
-          <img
-            src="img/index/integration/line-right.svg"
-            className={styles.imgRight}
-          />
+          <img src="img/index/integration/line-right.svg" className={styles.imgRight} />
         </Grid>
       </Grid>
     </div>
