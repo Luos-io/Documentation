@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
@@ -29,11 +29,13 @@ function Footer() {
 
   const [lastCommits, setLastCommits] = useState([]);
 
-  fetch('https://api.github.com/repos/Luos-io/luos_engine/commits')
-    .then((res) => res.json())
-    .then((result) => {
-      setLastCommits(result.slice(0, 3));
-    });
+  useEffect(() => {
+    fetch('https://api.github.com/repos/Luos-io/luos_engine/commits')
+      .then((res) => res.json())
+      .then((result) => {
+        setLastCommits(result.slice(0, 3));
+      });
+  }, []);
 
   return (
     <footer className={clsx('footer')} style={{ padding: '50px' }}>
