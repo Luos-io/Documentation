@@ -55,6 +55,6 @@
     "dotenv-vault": "^1.2.3",
     "dotenv-webpack": "^7.1.0",
     "typescript": "^4.7.2",
-    "vercel": "^25.0.0"
+    "vercel": "^25.1.0"
   }
 }
