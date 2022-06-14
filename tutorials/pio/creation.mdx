@@ -6,23 +6,23 @@ import Image from '/src/components/Images.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Part 1: Project Creation
+# Part 1: Project creation
 
 ## 1. Introduction
 
-Beginning with a project can be painful and a long process! New environment, new tools, ..., you may abandon before starting.
+Beginning with a project can be painful and a long process! New environment, new tools, ..., you may want to abandon before starting.
 
-But don’t worry we will guide you through the process! You will learn how to set up a Platformio environment and how to make a good project structure
+But don't worry, we will guide you through the process! You will learn how to set up a PlatformIO environment and how to make a good project structure.
 
-This tutorial uses VSCode as IDE, before jumping in the code, let's set up your project with Plateformio
+This tutorial uses VSCode as an IDE. Before jumping into the code, let's set up your project with PlatformIO.
 
 :::caution
-If Platformio is not already installed on your computer please follow our [get started tutorial](/tutorials/get-started/).
+If PlatformIO is not already installed on your computer, please follow our [Get started tutorial](/tutorials/get-started/).
 :::
 
-In this tutorial we will use a ST NUCLEO F072RB board for a project creation with ST board (e)and Arduino MKRZero board for project creation with Arduino board.
+In this tutorial, we will use a ST NUCLEO F072RB board for a project creation with ST board (e)and an Arduino MKRZero board for project creation with Arduino board.
 
-## 2. Create a new Project
+## 2. Create a new project
 
 ### 1- Create a new project
 
@@ -50,12 +50,12 @@ Choose the default location of your projet on your computer.
 
 We will use the STM32 Framework HAL for this project.
 
-At this step, Plateformio creates for you a complete project:
+At this step, PlatformIO creates for you a complete project:
 
-- Folder “include”: put project header files.
-- Folder “src”: put project source files.
-- Folder “lib”: this is where you will put your Luos Services
-- plateformio.ini: this is the Plateformio project entry point
+- Folder *include*: where you put the project header files.
+- Folder *src*: where you put the put project source files.
+- Folder *lib*: where you put the Luos services.
+- *plateformio.ini*: the PlatformIO project entry point.
 
 ### 2- Click on finish
 
@@ -63,15 +63,15 @@ At this step, Plateformio creates for you a complete project:
   <Image src="/img/tutorials/pio/pio-1-5.png" />
 </div>
 
-### 2- Yes accept
+### 3- Yes accept
 
 ## 3. Node Config Files creation
 
-Luos project uses a file, placed at the root of the folder, called node_config.h that allows you to configure Luos Library and match your hardware configuration with Luos default configuration.
+Luos project uses a file, placed at the root of the folder, called *node_config.h*. This file allows you to configure Luos library and match your hardware configuration with Luos default configuration.
 
-1. Right click on Project name
-2. New Files → node_config.h
-3. Copy below and save
+1. Right click on "Project name".
+2. **New Files** → *node_config.h*.
+3. Copy the code below and save.
 
 ```c
 /******************************************************************************
@@ -88,12 +88,12 @@ Luos project uses a file, placed at the root of the folder, called node_config.h
 ```
 
 :::info
-In this example we will use default configuration of Luos HAL for ST and Arduino, so nothing to change right now 😅
+In this example, we will use the default configuration of Luos HAL for ST and Arduino, so nothing to change right now 😅.
 :::
 
-## 4. Configure Plateformio.ini to use your project
+## 4. Configure *platformio.ini* to use your project
 
-Plateformio.ini is the project configuration file. you must fill the file with the information relative to your project.
+*platformio.ini* is the project configuration file. You must fill in the file with the information relative to your project.
 
 <Tabs>
 <TabItem value="ST" label="ST">
@@ -107,10 +107,10 @@ debug_tool = stlink
 upload_protocol = stlink
 ```
 
-Define for STM32 Frameworks
+Defined for STM32 Frameworks:
 
-- USE_HAL_DRIVER → possibility to use HAL file of STM32 Framworks
-- USE_FULL_LL_DRIVER → possibility to use Low Level file of STM32 Framworks
+- `USE_HAL_DRIVER` → possibility to use HAL file of STM32 Framworks.
+- `USE_FULL_LL_DRIVER` → possibility to use low Level file of STM32 Framworks.
 
 <div align="center">
   <Image src="/img/tutorials/pio/pio-1-6.png" />
@@ -126,9 +126,9 @@ build_flags =
     -include node_config.h
 ```
 
-- Modifying compilation flag -Os to -O1
-- Include the Node_config.h file
-- Setup tools to upload or debug program if necessary
+- Modifying compilation flag `-Os` to `-O1`.
+- Include the *node_config.h* file.
+- Setup tools to upload or debug the program if necessary.
 
 <div align="center">
   <Image src="/img/tutorials/pio/pio-1-7.png" />
@@ -137,15 +137,15 @@ build_flags =
 </TabItem>
 </Tabs>
 
-## 5. Create Main Files
+## 5. Create main file
 
-The main file of your project is your entry point! let’s fill this files with basic needs
+The main file of your project is your entry point! let's fill in this file with our basic needs.
 
 <Tabs>
 <TabItem value="ST" label="ST">
 
-1. src → New Files → main.c
-2. Fill the main file
+1. In *src* → **New Files** → *main.c*
+2. Fill in the *main.c* file with the following code:
 
 ```c
 /******************************************************************************
@@ -188,15 +188,15 @@ int main(void)
 }
 ```
 
-3. the include "stm32f0xx_hal.h" must be adapte to the STM familly MCU you choose. in our case ST NUCLEO STM32F072RB → F0 family
+3. The include of *stm32f0xx_hal.h* must be adapted to the STM familly MCU you chose. In our case, ST NUCLEO STM32F072RB → F0 family.
 
 :::tip
-You can modify the clock frequency of you MCU! we recommand to do it with CubeMx!
+You can modify the clock frequency of you MCU. We recommand to do it with CubeMx.
 :::
 
 </TabItem>
 <TabItem value="Arduino" label="Arduino">
- In Arduino the main file is automaticly create and fill with 2 function.
+In Arduino, the main file is automatically created and filled with two functions.
 
 ```c
 #include <Arduino.h>
@@ -213,14 +213,14 @@ void loop() {
 </TabItem>
 </Tabs>
 
-## 6. Create Interruption Files Handler
+## 6. Create interruption files handler
 
-For many MCU you have acces to IRQ handler fonction. Those functions are called when an interruption happen (exception and peripherial interruption). You have to declare those function dependending on the framworks you use.
+For many MCUs, you have acces to an IRQ handler fonction. These functions are called when an interruption happens (exception and peripherial interruption). You have to declare these functions depending on the frameworks you use.
 
 <Tabs>
 <TabItem value="ST" label="ST">
 
-1. src → New Files → stm32f0xx_it.c
+1. In *src* → **New Files** → *stm32f0xx_it.c*, add this code:
 
 ```c
 /******************************************************************************
@@ -279,7 +279,7 @@ void SysTick_Handler(void)
 /******************************************************************************/
 ```
 
-2. include→ New Files → stm32f0xx_it.h
+2. In *Include* → **New File** → *stm32f0xx_it.h*, add this code:
 
 ```c
 /******************************************************************************
@@ -321,12 +321,12 @@ void SysTick_Handler(void);
 
 </TabItem>
 <TabItem value="Arduino" label="Arduino">
-When you choose to use arduino framworks there is no need to declate IRQ function.
+When you choose to use Arduino framworks, there is no need to declare the IRQ function.
 
 </TabItem>
 </Tabs>
 
-## 7. Compile your First project
+## 7. Compile your first project
 
 <Tabs>
 <TabItem value="ST" label="ST">
@@ -345,4 +345,4 @@ When you choose to use arduino framworks there is no need to declate IRQ functio
 </TabItem>
 </Tabs>
 
-Now we have a complete functional environment, but what about Luos?
+You now have a complete functional environment, but what about Luos? Let's find out in the next steps.
