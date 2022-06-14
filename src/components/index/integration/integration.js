@@ -23,7 +23,7 @@ const Integration = (props) => {
     mcu: [
       ['esp', 'ESP32'],
       ['stm', 'STM32'],
-      ['microship', 'Microship'],
+      ['microship', 'Microchip'],
       ['raspberry', 'Raspberry Pi'],
       ['arduino', 'Arduino'],
       ['pio', 'Platform IO'],
@@ -32,7 +32,7 @@ const Integration = (props) => {
     ],
     os: [
       ['ros', 'ROS-1 & ROS-2', 'ros-white'],
-      ['freertos', 'FreeRTOS', 'freertos-white'],
+      ['freertos-white', 'FreeRTOS', 'freertos-white'],
       ['microros', 'Micro-ROS', 'microros-white'],
     ],
     api: [
@@ -53,22 +53,22 @@ const Integration = (props) => {
 
   const links = {
     esp: '',
-    stm: '',
-    microship: '',
+    stm: '/docs/compatibility/mcu_demoboard#st',
+    microship: '/docs/compatibility/mcu_demoboard',
     raspberry: '',
-    arduino: '',
-    pio: '',
-    eclipse: '',
-    vscodeico: '',
-    ros: '',
-    freertos: '',
+    arduino: '/tutorials/arduino/intro',
+    pio: '/tutorials/get-started/get-started1#2-set-up-your-development-environment',
+    eclipse: '/docs/luos-technology/basics/orga#luos-engines-levels',
+    vscodeico: '/docs/luos-technology/basics/orga#luos-engines-levels',
+    ros: '/docs/tools/ros',
+    freertos: '/docs/tools/ros',
     microros: '',
     simplefoc: '',
     zappier: '',
     ifttt: '',
     freedom: '',
     c: '',
-    python: '',
+    python: '/docs/tools/pyluos#required-installing-python-and-pip',
     js: '',
     ts: '',
   };
@@ -180,7 +180,10 @@ const Integration = (props) => {
             <Grid item md={8.5} lg={9} xl={9} className={styles.player}>
               <ImageList cols={4} style={{ padding: '15px' }}>
                 {currentImageTmp.map((element, index) => (
-                  <a href={links[element[0]]}>
+                  <a
+                    href={links[element[0]]}
+                    className={links[element[0]] !== '' ? styles.imgLink : styles.imgLinkDesible}
+                  >
                     <ImageListItem key={index} alignitems="center">
                       <img
                         src={
@@ -280,7 +283,7 @@ const Integration = (props) => {
             <Grid item xs={8} lg={9} className={styles.player}>
               <ImageList cols={2} style={{ padding: '10px' }}>
                 {currentImageTmp.map((element, index) => (
-                  <a href={links[element[0]]}>
+                  <a href={links[element[0]]} className={styles.imgLink}>
                     <ImageListItem key={index}>
                       <img
                         src={`img/index/integration/icons/${element[0]}.svg`}

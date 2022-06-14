@@ -32,10 +32,6 @@ html[data-theme='light'] .container {
   .playerLeft {
     height: 250px !important;
   }
-
-  .btnContainer {
-    margin: 50px 0;
-  }
   .videoBtn {
     display: none !important;
   }
@@ -54,7 +50,7 @@ html[data-theme='light'] .container {
   line-height: 20px;
   margin-bottom: 30px;
   color: white;
-  padding-right: 10px;
+  padding-right: 60px;
 }
 .footer {
   width: 100%;

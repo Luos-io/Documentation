@@ -272,3 +272,27 @@ html[data-theme='dark'] .player {
   background-color: #1e1e1e !important;
   color: white !important;
 }
+
+.imgLink {
+  color: black;
+}
+.imgLink:hover {
+  text-decoration: none;
+}
+
+html[data-theme='dark'] .imgLink {
+  color: white;
+}
+
+.imgLinkDesible {
+  color: black;
+  cursor: default;
+  pointer-events: none;
+}
+.imgLinkDesible:hover {
+  color: black;
+  text-decoration: none;
+}
+html[data-theme='dark'] .imgLinkDesible {
+  color: white;
+}
