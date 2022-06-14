@@ -10,38 +10,38 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Introduction
 
-The first step is to create your first Luos service. You can start with the [project](https://github.com/Luos-io/Mooc/tree/main/Basic_Project)
+The first step is to create your first Luos service. You can start with the [project](https://github.com/Luos-io/Mooc/tree/main/Basic_Project).
 
 Until now, you have learned how to create your first project, how to integrate Luos into it, and how to upload the code to your MCU. However, in order to specify the functionality of your MCU, as well as to use the features of Luos technology, you need to create services.
 
 :::info
-A service is a block of code which will provide functionality. Services are able to communicate with any other service present in the Luos network.
+A service is a block of code which provides a functionality. Services are able to communicate with any other service present in the Luos network.
 :::
 
-A service, can be a driver of a hardware component that you want to use, or an application, that defines only the software-oriented functionalities of your system.
+A service can be the driver of an hardware component that you want to use, or an application that defines only the software-oriented functionalities of your system.
 
-You can fit multiple services in a single MCU.
+You can fit multiple services into a single MCU.
 
-The first service for this tutorial will be a Led Driver. After this step you will have integrated to your project a service that drives the Led existing on your Nucleo STM32F072RB board.
+The first service for this tutorial will be a Led driver. After this step, you will have integrated to your project a service that drives the LED on your Nucleo STM32F072RB board.
 
 ## 2. Create your source files
 
 First, you need to create the code files in which you will write the code of your driver.
 
-Create a folder named “Led” into the lib folder of your project. There, you will put all the source files of your driver. This folder, in Luos terms is called a package.
+Create a folder named “Led” into the lib folder of your project where you will put all your driver's source files. This folder is called a package.
 
 :::info
-Package is a set of blocks of code that handle one or a group of functionalities, independent from the rest of the system. A package can have one or more services.
+A package is a set of blocks of code that handles one or a group of functionalities, independent from the rest of the system. A package can have one or more services.
 :::
 
-Afterwards, create 4 new files into the Led folder, with names, “led.c”, “led.h”, “led_drv.c” and “led_drv.h”.
+Afterwards, you have to create four new files into the Led folder, with the following names *led.c*, *led.h*, *led_drv.c* and *led_drv.h*.
 
 <div align="center">
   <Image src="/img/tutorials/morse/morse-1-1.png" height="300px" />
   <Image src="/img/tutorials/morse/morse-1-2.png" height="300px" />
 </div>
 
-So we now have our Led library source files:
+We now have our Led library source files:
 
 <div align="center">
   <Image src="/img/tutorials/morse/morse-1-3.png" height="300px" />
@@ -49,11 +49,11 @@ So we now have our Led library source files:
 
 ## 3. Create your first service
 
-Now, you can go on, with the creation of your first service!
+Now, you can go on with the creation of your first service.
 
-The main functions of your service will be kept in the led.c source file. Each service, as implied previously by the luos methodology, has 2 principal functions in order to be integrated in your Luos project. These functions are an Init() and a Loop() function.
+The main functions of your service will be kept in the *led.c* source file. Each service, as previously implied by the Luos methodology, includes two principal functions in order to be integrated in a Luos project. These functions are an `Init()` and a `Loop()` function.
 
-### Step 1: Create the main functions of your Led Driver in led.c file.
+### Step 1: Create the main functions of your Led Driver in the *led.c* file.
 
 ```c
 /******************************************************************************
@@ -94,10 +94,10 @@ void Led_Loop(void)
 }
 ```
 
-<b>So now, let’s work in the Led_Init() function.</b>
+So now, let’s work in the `Led_Init()` function.
 
 :::tip
-The services’ initialization function, should include the creation of the service, and every other variable that needs to be initialized. It is only called once, at the beginning of the execution of the node.
+The services’ initialization function should include the creation of the service along with every other variables that need to be initialized. It is only called once, at the beginning of the execution of the node.
 :::
 
 The function which creates a service is the following:
@@ -116,16 +116,16 @@ service_t *Luos_CreateService(SERVICE_CB service_cb, uint8_t type, const char *a
 
 :::info
 
-- The service callback, is a function that is called when a new message which is destined for this service arrives.
-- Type is a parameter that defines a set of characteristics, shared among the services of the same type. You can find the list of all the Luos created types here, or you can define your own custom type, locally in your package code.
-- Alias is the name of your service. The alias is a characteristic which is unique for each service and gives you the opportunity of searching a specific service, when knowing its name (this feature will be explained later in this tutorial).
-- Revision is the firmware version of our service. This can be used to verify that the version of each service in the network are up to date.
+- The service callback is a function that is called when a new message, destined for this service, arrives.
+- `type` is a parameter that defines a set of characteristics, shared among the services of the same type. You can find the list of all the Luos created types here, or you can define your own custom type, locally in your package code.
+- `alias` is the name of your service. The alias is a characteristic which is unique for each service and gives you the opportunity of searching a specific service by its name (this feature will be explained later in this tutorial).
+- `revision` is the firmware's version of our service. This can be used to check that the versions of each service in the network are up to date.
 
 :::
 
-In our case, we will create the function, Led_MsgHandler() that will be used as a callback to the service. This function will have as arguments, the pointer to our service, and a pointer to the new message received.
+In our case, we will create the function called `Led_MsgHandler()` that will be used as a callback to the service. This function will have as arguments the pointer to our service, and a pointer to the new message received.
 
-<b>Write the Led_MsgHandler() function in the end of your luos.c file.</b>
+Insert the `Led_MsgHandler()` function in the end of your `luos.c` file:
 
 ```c
 /******************************************************************************
@@ -141,7 +141,7 @@ static void Led_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-In order to use it in Led_Init() which is defined earlier in luos.c, we need to declare this function in the very beginning of our file.
+In order to use it in `Led_Init()`, which is defined earlier in _luos.c_, we need to declare this function in the very beginning of our file:
 
 ```c
 /*******************************************************************************
@@ -150,7 +150,7 @@ In order to use it in Led_Init() which is defined earlier in luos.c, we need to 
 static void Led_MsgHandler(service_t *service, msg_t *msg);
 ```
 
-<b> Now, we are ready to create our service. </b>
+Now, we are ready to create our new service. 
 
 ```c
 void Led_Init(void)
@@ -162,15 +162,15 @@ void Led_Init(void)
 }
 ```
 
-We defined the type of our service as a **STATE_TYPE**, as the values that the led light of our Nucleo board can take is 1 for light the Led ON and 0 for light it OFF.
+We defined the type of our service as a **STATE_TYPE**, because the two values that the Nucleo board's LED can take is 1 for the LED ON and 0 for the LED OFF.
 
-Finally **“led_service”** is the alias of our service, and **revision**, its previously specified firmware revision.
+Finally **“led_service”** is the alias of our service, and **revision** is its previously specified firmware revision.
 
-In this service, we do not have any algorithmic part so, **we leave Led_Loop() empty for the moment.**
+In this service, we do not have any algorithmic part so **we must leave `Led_Loop()` empty for the moment.**
 
-The last step is to **declare the 2 fundamental functions in the header file, “led.h”**, in order to be used by the main files of our project later.
+The last step is to declare the two fundamental functions in the header file _led.h_, so that it can be used later by the main files of our project.
 
-In “led.h”:
+In *led.h*:
 
 ```c
 /******************************************************************************
@@ -201,19 +201,19 @@ void Led_Loop(void);
 #endif /* LED_H */
 ```
 
-As seen above, we need also to include “luos.h” so that we will be able to use the Luos APIs.
+As seen above, we also need to include *luos.h* so that we are able to use the Luos APIs.
 
 ### Step 2: Create the hardware driving functions
 
-Until now, we have created a new Luos service, that is capable of being integrated to a Luos network, as well as communicating with the other services existing in the same network. Nevertheless, our service is not yet in the position of driving the Led light of our board. For this reason, we need to **specify the driver’s functions, in the source file “led_drv.c”.**
+Until now, we have created a new Luos service that is capable of being integrated to a Luos network, as well as communicating with the other services existing in the same network. Nevertheless, our service is not yet in the position of driving the LED's light of our board. For this reason, we need to **specify the driver's functions, in the source file *led_drv.c*.**
 
-First of all we need to **specify the GPIO Pin and Port of the Led** existing in our Nucleo STM32F072RB board, in the file “led_drv.h” file.
+First of all, we need to **specify the GPIO pin and port of the LED** on the Nucleo STM32F072RB board, in the file *led_drv.h*.
 
-The GPIO Port corresponding to our Led port will be GPIOA and the Pin corresponding to our Led pin will be GPIO_PIN_5.
+The GPIO port corresponding to our LED port will be `GPIOA` and the pin corresponding to our LED pin will be `GPIO_PIN_5`.
 
-If you are curious for more information about the hardware configuration method, check this [page](https://docs.luos.io/docs/hardware-consideration/mcu). 🧐
+If you are curious to learn more information about the hardware configuration method, check this [page](https://docs.luos.io/docs/hardware-consideration/mcu) 🧐.
 
-The 2 functions that we will use for our Led driver which should be declared in led_drv.h file are:
+The two functions that we will use for our Led driver and that should be declared in the _led_drv.h_ file are:
 
 ```c
 // initializes led driver
@@ -222,7 +222,7 @@ void LedDrv_Init();
 void LedDrv_Write(uint8_t value);
 ```
 
-<b>Write the following code into the led_drv.h file:</b>
+**Write the following code into the *led_drv.h* file:**
 
 ```c
 /******************************************************************************
@@ -256,7 +256,7 @@ void LedDrv_Write(uint8_t value);
 #endif /* LED_DRV_H */
 ```
 
-Open led_driver.c and include its header file called “led_drv.h”
+Open *led_driver.c* and include its header file called *led_drv.h*:
 
 ```c
 /******************************************************************************
@@ -279,7 +279,7 @@ Open led_driver.c and include its header file called “led_drv.h”
  ******************************************************************************/
 ```
 
-Create a new function that initializes Led Driver in led_drv.c. In this function we will first **enable the clock** that we will use and then we will initialize the GPIO struct with the information that correspond to our Led light:
+Create a new function that initializes the Led sriver in *led_drv.c*. In this function, we will first **enable the clock** that will be used and then we will initialize the GPIO struct with the information that corresponds to the LED light:
 
 ```c
 /******************************************************************************
@@ -303,9 +303,9 @@ void LedDrv_Init(void)
 }
 ```
 
-After, we need to **create the LedDrv_Write() function**. This function is responsible of writing the value 1 or 0 on the Led pin in order to light or close the Led respectively.
+Then, we need to **create the `LedDrv_Write()` function**. This function is responsible of writing the value 1 or 0 on the LED pin in order to respectively light on or turn off the LED.
 
-**Add the led write function in the end of your led_drv.c file**:
+**Add the LED write function in the end of your *led_drv.c* file:**
 
 ```c
 /******************************************************************************
@@ -319,11 +319,11 @@ void LedDrv_Write(uint8_t value)
 }
 ```
 
-### Step 3: Use the Led Driver Functions into led.c source file.
+### Step 3: Use the Led driver's functions into the *led.c* source file.
 
-You can now use the functions created in the previous step, into our fundamental led functions.
+You can now use the functions created in the previous step into our fundamental LED functions.
 
-**Return to led.c file and include the led_drv.h header file:**
+**Return to *led.c* file and include the *led_drv.h* header file:**
 
 ```c
 /******************************************************************************
@@ -339,7 +339,7 @@ You can now use the functions created in the previous step, into our fundamental
  ******************************************************************************/
 ```
 
-**Call the driver initialization function LedDrv_Init() into the Led_Init() function:**
+**Call the driver initialization function `LedDrv_Init()` into the `Led_Init()` function:**
 
 ```c
 void Led_Init(void)
@@ -353,7 +353,7 @@ void Led_Init(void)
 }
 ```
 
-The last thing that we need to do, in order to change our led value, is to write the value to our led pin each time we receive a message that demands the change of the led state, by using LedDrv_Write() function.
+The last thing that we need to do, in order to change the LED's value, is to write the value to the LED pin each time we receive a message that demands the change of the LED state, by using `LedDrv_Write()` function.
 
 As previously said, the services of a Luos network can communicate with each other by exchanging messages.
 
@@ -385,17 +385,17 @@ typedef struct{
 }header_t;
 ```
 
-For more information about the message structure see this [doc page](/docs/luos-technology/message).
+For more information about the message structure, see this [documentation page](/docs/luos-technology/message).
 
 :::
 
-In our project, and particularly the Led service, can treat the messages of the command IOSTATE. This command shows that the message received, contains 1 byte of data, with a value true or false (1 or 0), depending on the value the we want to write to the Led Pin.
+In our project, the Led service can treat the messages of the command `IOSTATE`. This command shows that the message received contains 1 byte of data, with a value true or false (1 or 0), depending on the value the we want to write to the LED pin.
 
-_Example: if someone wants to light the Led, we will receive a message of command IOSTATE, targeting our led, with data equal to the value 1._
+_For example: if someone wants to turn on the LED, they will receive a message of command `IOSTATE` targeting the LED, with data equal to the value 1._
 
-Its now time to treat the messages received by the Led service.
+It is now time to treat the messages received by the Led service.
 
-**Add the following code into Led_MsgHandler() function in led.c file**:
+**Add the following code into `Led_MsgHandler()` function in *led.c* file:**
 
 ```c
 static void Led_MsgHandler(service_t *service, msg_t *msg)
@@ -416,7 +416,7 @@ You have now a Led Driver ready to be used in your first Luos project!
 
 Following to the creation of the new service, you need to call its prior functions in your project’s main files.
 
-Go back to the main.c file created into the src folder, and **include the led.h header file** in the beginning of your file:
+Go back to the *main.c* file created into the *src* folder, and **include the *led.h* header file** at the beginning of your file:
 
 ```c
 /******************************************************************************
@@ -431,7 +431,7 @@ Go back to the main.c file created into the src folder, and **include the led.h 
 #include "led.h"
 ```
 
-Call the Led_Init() and Led_Loop() functions, right after the corresponding Luos functions into your main():
+Call the `Led_Init()` and `Led_Loop()` functions, right after the corresponding Luos functions into the `main()` function:
 
 ```c
 /******************************************************************************
@@ -456,13 +456,13 @@ int main(void)
 }
 ```
 
-Finally, add the lib folder, as an extra library dependency into platformio.ini file:
+Finally, add the *lib* folder as an extra library dependency into the *platformio.ini* file:
 
 ```
 lib_extra_dirs = lib/
 ```
 
-So after this addition your platformio.ini file will look like this:
+After this addition, the file *platformio.ini* will look like this:
 
 ```
 [env:nucleo_f072rb]
@@ -487,7 +487,5 @@ upload_protocol = stlink
 
 Build your project and make sure that you have no errors.
 
-<b>
-  Congratulations! You have successfully created your first Luos service and
-  integrated it into your Project!
-</b>
+**Congratulations! You have successfully created your first Luos service and integrated it into your project!**
+
