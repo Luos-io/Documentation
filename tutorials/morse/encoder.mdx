@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Introduction
 
-Now that we have a led driver, we will develop the encoder service. The goal is to receive a message from a serial service containing a word with few letters, translate these letters into Morse sequences and send these sequences to the Led.
+Now that we have a Led driver, we will develop the encoder service. The goal is to receive a message from a serial service containing a word with few letters, translate these letters into Morse sequences, and send these sequences to the LED.
 
 <div align="center">
   <Image
@@ -19,9 +19,9 @@ Now that we have a led driver, we will develop the encoder service. The goal is 
   />
 </div>
 
-## 2. Create the Encoder service
+## 2. Create the encoder service
 
-First create a dedicated folder in the /lib repository with two blanked files:
+First, create a dedicated folder in the */lib* repository with two blanked files:
 
 ```bash
 cd ./lib/
@@ -30,13 +30,13 @@ cd Encoder/
 touch encoder.c encoder.h
 ```
 
-You can also create it by click right and **new_file** on the **Encoder** folder in the project explorer in VSCode:
+You can also create it by click right and **new_file** in the *Encoder* folder, in the project explorer of VSCode:
 
 <div align="center">
   <Image src="/img/tutorials/morse/morse-2-2.png" />
 </div>
 
-Then open encoder.h and copy the following code:
+Then open *encoder.h* and copy the following code:
 
 ```c
 /******************************************************************************
@@ -68,7 +68,7 @@ void Encoder_Loop(void);
 #endif /* ENCODER_H */
 ```
 
-We just declared two functions used to run the service as we did for the Led. Now we will create two implementations for them. Open the encoder.c file and copy the following code:
+We just declared two functions used to run the service as we did for the LED. Now we will create two implementations for them. Open the file *encoder.c* and copy the following code:
 
 ```c
 /******************************************************************************
@@ -127,7 +127,7 @@ void Encoder_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-All this code is very similar to the previous chapter, we will not take time to explain it. You can run this new service by calling its API in the **main** file:
+All this code is very similar to the previous chapter, you can check its steps for more information. You can run this new service by calling its API in the **main** file:
 
 ```c
 /******************************************************************************
@@ -156,7 +156,7 @@ int main(void)
 
 ## 3. Send a Luos message
 
-Now we will create Morse sequences from letters and send them to the Led service. But first we need a function to create and send luos messages. Open encoder.c and add the following in function section:
+Now, we will create Morse sequences from letters and send them to the Led service. We first need a function to create and send Luos messages. Open *encoder.c* and add the following in the function section:
 
 ```c
 /*******************************************************************************
@@ -189,23 +189,23 @@ void Encoder_SendMorse(bool state)
 }
 ```
 
-The argument **state** is used to light **ON/OFF** the led, then we create a **msg_t** variable which we will fill with several informations:
+The argument **state** is used to light **ON/OFF** the LED, then we create a **msg_t** variable which will be filled with several pieces of information:
 
-- Target: all services have an **ID** and here we will give the ID of message target.
-- Cmd: this field gives information about the data we send
-- Target_mode: some low-level luos internal stuff, it gives informations about how the message will be managed.
-- Size: the size of sended data
-- Data[128]: an array which is used to store data to send
+- `target`: all services have an **ID**. We will give here the ID of the message target.
+- `cmd`: this field gives information about the data we send.
+- `target_mode`: low-level Luos internal command, giving information about how the message will be managed.
+- `size`: the size of the sent data.
+- `data[128]`: an array used to store data to send.
 
-Once the message is created we can send it with the **Luos_SendMsg** routine. It only needs a pointer to the sending service and the message to send.
+Once the message is created, we can send it with the `Luos_SendMsg` routine. It only needs a pointer to the sending service and the message to send.
 
-One problem remaining, how can we find the ID of the target service ? Luos gives you a routine to do this too: the Routing table Filtering method. You will further explain this mechanism in the next steps, when we will define the _led_id_.
+There is one remaining problem: how can we find the ID of the target service? Luos gives you a routine to do this too, called the routing table filtering method. We will explain this mechanism in the next steps, when defining the `led_id`.
 
-## 4. Play a morse letter
+## 4. Play a Morse letter
 
-Now we will use our new function to create morse sequences for each letter in the alphabet. In morse, each letter can be broken down in several ON / OFF LED states and the duration of these states is defined in the [Morse code - Wikipedia](https://en.wikipedia.org/wiki/Morse_code).
+Now we will use our new function to create Morse sequences for each letter in the alphabet. In Morse code, each letter can be broken down in several ON / OFF LED states and the duration of these states can be found in the page [Morse code - Wikipedia](https://en.wikipedia.org/wiki/Morse_code).
 
-We will create structures to store these states for each letter. First add this in **encoder.h**:
+We will create structures to store these states for each letter. First, add the following code in *encoder.h*:
 
 ```c
 /*******************************************************************************
@@ -243,13 +243,13 @@ typedef struct MorseLetter
 } MorseLetter;
 ```
 
-Then, add a new file in **/lib/encoder**:
+Then, add a new file in */lib/encoder*:
 
 ```bash
 touch dictionnary.h
 ```
 
-And copy the following code in it:
+Ccopy the following code in it:
 
 ```c
 /******************************************************************************
@@ -306,7 +306,7 @@ MorseLetter c_letter = {
 ...
 ```
 
-You can find the complete code in the github repository. Now add the following function in encoder.c:
+You can find the complete code in the github repository. Now, add the following function in the file *encoder.c*:
 
 ```c
 uint8_t morse_state          = false;
@@ -352,13 +352,13 @@ void Encoder_PlayLetter(MorseLetter *letter)
 }
 ```
 
-We will not dig in this code too much because it’s not the purpose of this tutorial. Just notice that this function iterates over each line contained in letter and it stops when it detects the LETTER_END constant.
+We will not dig into this code too much because it is not the purpose of this tutorial. Just notice that this function iterates over each line contained in the letter and stops when it detects the `LETTER_END` constant.
 
-## 5. Play a morse word
+## 5. Play a Morse word
 
-The next step is straightforward, we will use **Encoder_PlayLetter** to create sequences for words.
+The next step is straightforward, we will use `Encoder_PlayLetter` to create sequences for words.
 
-First, create the word structure, into **encoder.h** file:
+First, create the word's structure into the file *encoder.h*:
 
 ```c
 ...
@@ -368,7 +368,7 @@ typedef struct MorseWord
 } MorseWord;
 ```
 
-Add this in dictionnary.h:
+Add the following in *dictionnary.h*:
 
 ```c
 /*******************************************************************************
@@ -389,7 +389,7 @@ MorseLetter end_letter = {
 };
 ```
 
-end_letter is used to wait between two words. WORD_END is used to detect the end of a word in Encoder_PlayWord routine which we will add in encoder.c:
+`end_letter` is used to wait between two words. `WORD_END` is used to detect the end of a word in the `Encoder_PlayWord()` routine, which we will add in *encoder.c*:
 
 ```c
 ...
@@ -434,10 +434,10 @@ void Encoder_PlayWord(MorseWord *morse_word)
 
 ## 6. Detect serial service
 
-Now we will add this **Encoder_PlayWord** routine in **Encoder_Loop**. Our service will have two operating modes:
+We will now add this `Encoder_PlayWord()` routine in `Encoder_Loop`. Our service will have two operating modes:
 
-1. If it detects the presence of the serial service, it will play morse words received from it.
-2. If not, it will play the sequence S.O.S
+1. If it detects the presence of the serial service, it will play the Morse words received from it.
+2. If not, it will play the S.O.S. sequence.
 
 To do this, we will use Luos functions:
 
@@ -477,10 +477,10 @@ void Encoder_Loop(void)
 ```
 
 :::info
-Notice that we use Luos_IsNodeDetected: this function checks if the node is connected on the luos network. We use this function to not run the service loop function if the node is not connected.
+Notice that we use `Luos_IsNodeDetected()`: this function checks if the node is connected to the Luos network. We use this function to avoid running the service's `loop()` function if the node is not connected.
 :::
 
-All services have to be connected on the luos network to send and receive messages. For services to be connected and recognized in the network, we have to launch a detection. We do that by adding the following line in the Encoder_Init function:
+All services have to be connected to the Luos network to send and receive messages. For services to be connected and recognized in the network, we have to launch a detection. We do that by adding the following line in the `Encoder_Init()` function:
 
 ```c
 void Encoder_Init(void)
@@ -503,13 +503,13 @@ void Encoder_Init(void)
 }
 ```
 
-**Luos_Detect** launches the detection and its end can be detected with **Luos_IsConnected**: once the node is connected, the function returns **true**. After that, all services can send and receive messages.
+`Luos_Detect()` launches the detection, and its end can be detected with `Luos_IsConnected()`: once the node is connected, the function returns **True**. After that, all services can send and receive messages.
 
 We added some initialization code too to set default values for variables.
 
-## 7. Receive a custom message from Serial service
+## 7. Receive a custom message from serial service
 
-One last thing, we have to manage messages received from the serial service to update the received_word variable. As seen in the tutorial for the LED service, messages received by the Encoder are handled by Encoder_MsgHandler. Let’s add the following code in encoder.c:
+One last thing, we have to manage the messages received from the serial service to update the `received_word` variable. As seen in the tutorial for the LED service, messages received by the encoder are handled by `Encoder_MsgHandler()`. Let's add the following code in *encoder.c*:
 
 ```c
 /******************************************************************************
@@ -560,21 +560,21 @@ void Encoder_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-First, please pay attention to the second **if** statement. Here we use the **END_DETECTION** message received at the end of the detection process to set **serial_detected** variable.
+First, please pay attention to the second `if` statement. Here we use the `END_DETECTION` message received at the end of the detection process to set the `serial_detected` variable.
 
-Also, after the END_DETECTION message, we do a research into the routing table.
+Also, after the `END_DETECTION` message, we do a research into the routing table.
 
 :::info
-The routing table is a structure that has all the information about the nodes and services that exist in a system. Each service can recognize the ocharacteristics of the others, by filtering the data of the routing table, and find the services that it wants to communicate.
+The routing table is a structure that has all the information about the nodes and services that exist in a system. Each service can recognize the characteristics of the others, by filtering the data of the routing table, and find the services that it wants to communicate with.
 :::
 
-So here we need to keep the id of a led, so we search in the routing table for the alias of the led, “led_service” and then the pipe, by filtering the services of type “PIPE”.
+Here, we need to keep the id of a LED, so we search in the routing table for the alias of the LED, `led_service`, and then the pipe's alias by filtering the services of type `PIPE`.
 
-Next to that, the code is pretty straightforward, we receive an array filled with letters to encode and we iterate on this array to encode each letter. We can detect the end of the word with the character **\r**.
+Then, the code is pretty straightforward: we receive an array filled with letters to be encoded, and we iterate on this array to encode each letter. We can detect the end of the word with the character `\r`.
 
-Notice that we created a specific **CMD** to manage these datas, its used to filter messages in the handler and only process this type of messages.
+Notice that we created a specific `CMD` to manage this data; it is used to filter messages in the handler and process this type of messages only.
 
-The **Encode_DecodeLetter** routine is a simple **switch / case** used to match received characters with morse sequences:
+The `Encode_DecodeLetter()` routine is a simple **switch / case** used to match the received characters with morse sequences:
 
 ```c
 MorseLetter *Encoder_DecodeLetter(char letter);
@@ -648,6 +648,6 @@ MorseLetter *Encoder_DecodeLetter(char letter)
 
 ## Next Step
 
-Here we are, we finished the decoder service. If you don’t add a service pipe and build this project, you should see **S.O.S** sequence blinking on your board.
+Here we are, we finished the decoder service. If you don't add a pipe service and build this project, you should see the **S.O.S.** sequence blinking on your board.
 
-In the next step, you will integrate a Pipe service, and you will send your own words, to encode them in morse code.
+In the next step, you will integrate a pipe service, and you will send your own words to be encoded in Morse code.

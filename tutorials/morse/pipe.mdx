@@ -6,11 +6,11 @@ import Image from '/src/components/Images.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Part 3: Serial Communication Driver : Pipe
+# Part 3: Serial Communication Driver: pipe
 
 ## 1. Introduction
 
-You may have noticed from the beginning, that initially we had a package folder into /lib folder, which is called Pipe.
+You may have noticed from the beginning, that initially we had a package folder into the */lib* folder, which is called *Pipe*.
 
 Finally! Now is the time to use it!
 
@@ -24,11 +24,11 @@ Finally! Now is the time to use it!
 
 The final part of this tutorial is the integration of a Serial Communication Driver service, in order to be able to communicate with your Luos network using your computer. This will give the opportunity of sending specific characters for their encoding into Morse code. In the end of this part, we will have our complete Morse project, and we will try to send some words so as to see the encoded result in Morse code.
 
-This last part contains the integration of a Luos service called Pipe, that will serve as a driver, for the serial port of our Nucleo STM32F072RB.
+This last part contains the integration of a Luos service called pipe, that will serve as a driver, for the serial port of our Nucleo STM32F072RB.
 
-## 2. Explore the Pipe driver utilty
+## 2. Explore the pipe driver utility
 
-The Pipe is a Luos prespecified driver which is responsible for serially receiving and sending data, from and to a computer/rpi etc. Its only responsability is to pass the data received from the embedded system to the higher level and to pass the data received from the high level to the embedded system.
+The pipe is a Luos prespecified driver which is responsible for serially receiving and sending data, from and to a computer, an RPI, etc. Its only responsability is to pass the data received from the embedded system to the highe level, and to pass the data received from the high level to the embedded system.
 
 <div align="center">
   <Image
@@ -37,22 +37,22 @@ The Pipe is a Luos prespecified driver which is responsible for serially receivi
   />
 </div>
 
-The Pipe service is a part of the embedded network like any other Luos service.
+The pipe service is a part of the embedded network, like any other Luos service.
 
-For this reason it has the same basic functions like any other service: Pipe_Init() and Pipe_Loop(). Each time it receives a frame of data it stores to a buffer, and waits for an other service to demand it. When a service demands the data (GET_CMD message) the pipe sends the data that it has stored to the service that demanded it (SET_CMD command).
+For this reason, it has the same basic functions like any other service: `Pipe_Init()` and `Pipe_Loop()`. Each time, it receives a frame of data that it stores to a buffer, and waits for another service to demand it. When a service demands the data (`GET_CMD` message), the pipe sends the data that it has stored to the service that demanded it (`SET_CMD` command).
 
-In our project (if your remember well from the previous step), the Encoder application demanded to the Pipe to be updated every 10ms. So the moment that we will integrate the pipe to the project, it will sends the data (if they exist) to the encoder, every 10ms.
+In our project (if your remember well from the previous steps), the encoder application demanded to the pipe to be updated every 10 milliseconds. So the moment that we will integrate the pipe to the project, it will sends the data (if it exists) to the encoder, every 10 milliseconds.
 
 :::info
 
-- If you want more information about Pipe you can check [Luos Docs](/docs/tools/gate).
-- You can explore all the Luos Services Examples that we have created for you [here](https://github.com/Luos-io/Examples).
+- If you want more information about the pipe, you can check the [Luos documentation](/docs/tools/gate).
+- You can explore all the Luos services examples that we have created for you [here](https://github.com/Luos-io/Examples).
 
 :::
 
-## 3. Integrate Pipe service into our Morse Encoder
+## 3. Integrate the pipe service into our Morse Encoder
 
-You will now need to integrate the pipe into your Luos project. Open main.c file and call the Pipe_Init() and Pipe_Loop() functions exactly like you did for all the other services:
+You will now need to integrate the pipe into your Luos project. Open *main.c* file and call the `Pipe_Init()` and `Pipe_Loop(`) functions exactly like you did for all the other services:
 
 ```c
 int main(void)
@@ -76,7 +76,7 @@ int main(void)
 }
 ```
 
-Also, include the pipe header file “pipe.h” in the beginning of main.c:
+Also, include the pipe header file *pipe.h* in the beginning of *main.c*:
 
 ```c
 /******************************************************************************
@@ -93,21 +93,21 @@ Also, include the pipe header file “pipe.h” in the beginning of main.c:
 #include "pipe.h"
 ```
 
-**Compile your project and verify that you have no errors.**
+**Compile your project and check that you have no errors.**
 
 **You are ready!**
 
-## 4. Encode your words to Morse Code
+## 4. Encode your words to Morse code
 
-You are now ready to send some characters in your Mcu, and see the encoded Morse result, in the Led of your board.
+You are now ready to send some characters in your MCU, and see the encoded Morse result through the LED of your board.
 
-### Specify port configuration parameters:
+### Specify port configuration parameters
 
 In order to send characters, we will use the monitoring console provided by PlatformIO.
 
-First we need to **define the baudrate of our serial usb port and to configure the monitoring parameters in platformio.ini file.**
+First, we need to **define the baudrate of our serial USB port and configure the monitoring parameters in the file *platformio.ini*.**
 
-After adding the monitoring part in the end of platformio.ini file, it will look like this:
+After adding the monitoring part in the end of the file *platformio.ini*, it will look like this:
 
 ```c
 ; PlatformIO Project Configuration File
@@ -148,13 +148,13 @@ monitor_flags=
     CRLF
 ```
 
-It is now time to compile your project and flash your mcu with your code. Click on the upload button of platformio. You should finally see that your code is uploaded successfully.
+It is now time to compile your project and flash your MCU with your code. Click on the upload button of PlatformIO. You should finally see that your code is uploaded successfully.
 
 <div align="center">
   <Image src="/img/tutorials/morse/morse-3-2.png" />
 </div>
 
-Then **click to the Serial Monitor button** in platformIO:
+Then, **click to the Serial Monitor button** in PlatformIO:
 
 <div align="center">
   <Image src="/img/tutorials/morse/morse-3-3.png" />
@@ -170,7 +170,7 @@ Below you can see an example of sending the word “hello”.
   <Image src="/img/tutorials/morse/morse-3-4.png" />
 </div>
 
-**Congratulations!!! You have arrived at the end of this Project. You can now communicate in Morse Code with everybody existing on this earth (or not 👽).**
+**Congratulations! You have arrived at the end of this project. You can now communicate in Morse code with everybody living on Earth (or not 👽).**
 
 <div align="center">
   <img
