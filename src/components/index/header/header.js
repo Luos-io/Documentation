@@ -75,7 +75,7 @@ const Header = (props) => {
                   className={styles.pinkBtn}
                   href="/tutorials/get-started"
                 >
-                  Get started <RocketLaunchIcon />
+                  Get started <RocketLaunchIcon style={{ marginLeft: '10px' }} />
                 </Button>
                 <Button
                   variant="contained"
