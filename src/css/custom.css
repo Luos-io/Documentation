@@ -583,13 +583,6 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   width: 50%;
 }
 
-.joinUsContainer {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
 .rsLogo {
   width: 32px;
   margin: 15px 10px;
@@ -599,7 +592,7 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   padding: 20px;
   background-color: #f5f5f5;
   color: black;
-  z-index: 200;
+  z-index: 2;
   border-top: 2px solid #e2e2e2;
 }
 
