@@ -27,11 +27,7 @@ const Powered = (props) => {
         <h2 className={`${styles.title}`}>
           More features powered by{' '}
           <img
-            src={
-              isDarkTheme
-                ? 'img/index/powered/luos.svg'
-                : 'img/index/powered/luos-dark.svg'
-            }
+            src={isDarkTheme ? 'img/index/powered/luos.svg' : 'img/index/powered/luos-dark.svg'}
             style={{ verticalAlign: 'middle', width: '100px' }}
           />
           <span style={{ display: 'none' }}>Luos</span>
@@ -145,16 +141,12 @@ const Powered = (props) => {
             Develop and scale your edge and embedded distributed software now
           </h2>
           <p className={styles.textGs}>
-            Get started with Luos by setting up your development environment
-            with your IDE and build your first embedded microservice.
+            Get started with Luos by setting up your development environment with your IDE and build
+            your first embedded microservice.
           </p>
           <div className={styles.btnContainer}>
-            <Button
-              variant="contained"
-              className={styles.pinkBtn}
-              href="/tutorials/get-started"
-            >
-              Get started <RocketLaunchIcon />
+            <Button variant="contained" className={styles.pinkBtn} href="/tutorials/get-started">
+              Get started <RocketLaunchIcon style={{ marginLeft: '10px' }} />
             </Button>
             <Button
               variant="contained"
@@ -166,19 +158,10 @@ const Powered = (props) => {
             </Button>
           </div>
         </Grid>
-        <Grid
-          item
-          md={6}
-          lg={6}
-          style={{ marginTop: '-50px' }}
-          className={styles.mobileNone}
-        >
+        <Grid item md={6} lg={6} style={{ marginTop: '-50px' }} className={styles.mobileNone}>
           <div className={styles.head}>
             {' '}
-            <img
-              src="img/index/header/buttons.svg"
-              style={{ padding: '15px', width: '100px' }}
-            />
+            <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
           </div>
           <Grid container style={{ height: '100%' }}>
             <Grid item md={1} lg={1} className={styles.docs}>

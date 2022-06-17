@@ -75,6 +75,7 @@ html[data-theme='light'] .container {
   .whiteBtn {
     margin-bottom: 15px !important;
     width: 90% !important;
+    font-size: 12px !important;
   }
 
   .container {
