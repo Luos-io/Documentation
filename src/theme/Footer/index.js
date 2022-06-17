@@ -81,7 +81,7 @@ function Footer() {
             <a href="https://twitter.com/Luos_io" rel="nofollow">
               <img src="/img/twitter.png" className="rsLogo"></img>
             </a>
-            <a href="https://www.linkedin.com/company/luos">
+            <a href="https://www.linkedin.com/company/luos" rel="nofollow">
               <img src="/img/linkedin.png" className="rsLogo"></img>
             </a>
             <a href="https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA" rel="nofollow">
@@ -135,7 +135,7 @@ function Footer() {
             Tools
           </Link>
           <span className={` ${styles.span} ${styles.ressources}`} to="/docs/luos-technology">
-            Ressource
+            Resources
           </span>
           <ul className={styles.list}>
             <li>
