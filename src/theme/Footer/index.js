@@ -95,7 +95,11 @@ function Footer() {
         <Grid item xs={12} md={4} lg={4} xl={4}>
           <h2 className={styles.subtitle}>Latest articles on our blog</h2>
           {lastBlogPosts.map((element, index) => (
-            <Link key={index} href={element.permalink} className={styles.link}>
+            <Link
+              key={index}
+              href={element.permalink}
+              className={`${styles.link} ${styles.blogArticle} `}
+            >
               {element.title}
             </Link>
           ))}

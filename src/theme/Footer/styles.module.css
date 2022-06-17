@@ -135,3 +135,11 @@ html[data-theme='light'] .community {
   color: #edf568 !important;
   text-decoration: none;
 }
+
+.blogArticle {
+  text-decoration: none;
+}
+
+.blogArticle:hover {
+  color: #81c8be !important;
+}
