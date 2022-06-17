@@ -592,7 +592,7 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   padding: 20px;
   background-color: #f5f5f5;
   color: black;
-  z-index: 200;
+  z-index: 2;
   border-top: 2px solid #e2e2e2;
 }
 
