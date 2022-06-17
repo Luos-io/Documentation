@@ -72,17 +72,20 @@ function Footer() {
         <Grid item xs={12} md={4} lg={4} xl={4}>
           <h1 className={styles.titleCommunity}>Join our community</h1>
           <div className={styles.joinUsContainer}>
-            <a href="https://discord.gg/luos">
+            <a href="https://discord.gg/luos" rel="nofollow">
               <img src="/img/discord.png" className="rsLogo"></img>
             </a>
-            <a href="https://www.reddit.com/r/Luos/">
+            <a href="https://www.reddit.com/r/Luos/" rel="nofollow">
               <img src="/img/reddit.png" className="rsLogo"></img>
             </a>
-            <a href="https://twitter.com/Luos_io">
+            <a href="https://twitter.com/Luos_io" rel="nofollow">
               <img src="/img/twitter.png" className="rsLogo"></img>
             </a>
             <a href="https://www.linkedin.com/company/luos">
               <img src="/img/linkedin.png" className="rsLogo"></img>
+            </a>
+            <a href="https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA" rel="nofollow">
+              <img src="/img/youtube.png" className="rsLogo"></img>
             </a>
           </div>
         </Grid>
@@ -112,7 +115,7 @@ function Footer() {
         <Grid item xs={12} md={4} lg={4} xl={4} pr={4}>
           <h2 className={styles.subtitle}>Latest commits on Luos repository</h2>
           {lastCommits.map((element, index) => (
-            <Link key={index} href={element.commit.url} className={styles.link}>
+            <Link key={index} href={element.commit.url} className={styles.link} rel="nofollow">
               {element.commit.message}
             </Link>
           ))}
@@ -132,7 +135,7 @@ function Footer() {
             Tools
           </Link>
           <span className={` ${styles.span} ${styles.ressources}`} to="/docs/luos-technology">
-            Ressources
+            Ressource
           </span>
           <ul className={styles.list}>
             <li>
@@ -190,6 +193,7 @@ function Footer() {
               <Link
                 className={`${styles.link} ${styles.communityLink} ${styles.mbZero}`}
                 href="https://discord.gg/luos"
+                rel="nofollow"
               >
                 Discord
               </Link>
@@ -199,6 +203,7 @@ function Footer() {
               <Link
                 className={`${styles.link} ${styles.communityLink} ${styles.mbZero}`}
                 href="https://www.reddit.com/r/Luos/"
+                rel="nofollow"
               >
                 Reddit
               </Link>
@@ -208,6 +213,7 @@ function Footer() {
               <Link
                 className={`${styles.link} ${styles.communityLink} ${styles.mbZero}`}
                 href="https://github.com/Luos-io"
+                rel="nofollow"
               >
                 Github
               </Link>

@@ -65,7 +65,7 @@ html[data-theme='light'] .link {
 }
 
 .blog:hover {
-  color: #81c8be;
+  color: #81c8be !important;
 }
 
 .tuto {
@@ -115,6 +115,7 @@ html[data-theme='light'] .ressources {
 
 .ressourcesLink:hover {
   color: #ff5200 !important;
+  text-decoration: none;
 }
 
 .community {
@@ -127,4 +128,5 @@ html[data-theme='light'] .community {
 }
 .communityLink:hover {
   color: #edf568 !important;
+  text-decoration: none;
 }
