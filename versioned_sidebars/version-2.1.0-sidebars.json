@@ -211,11 +211,6 @@
       ],
       "collapsible": true,
       "collapsed": true
-    },
-    {
-      "type": "link",
-      "label": "Go to Luos.io",
-      "href": "https://www.luos.io/"
     }
   ]
 }

@@ -40,7 +40,7 @@ module.exports = {
     ],
     image: 'img/thumbnail-luos.png',
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: 'light',
     },
     hotjar: {
       applicationId: '2480203',

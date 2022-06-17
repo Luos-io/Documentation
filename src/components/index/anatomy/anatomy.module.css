@@ -26,7 +26,7 @@ html[data-theme='dark'] .title {
 
 .text {
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   padding-left: 55px;
   line-height: 20px;
   text-align: left;
@@ -68,6 +68,14 @@ html[data-theme='dark'] .text {
 
 .lines {
   margin-bottom: -120px !important;
+}
+
+.linesImg {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .head {
@@ -155,6 +163,7 @@ html[data-theme='dark'] .text {
 
 .list p {
   text-align: justify;
+  font-size: 18px;
 }
 
 html[data-theme='dark'] .list span {
