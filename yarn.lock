@@ -1651,7 +1651,7 @@
     "@emotion/weak-memoize" "^0.2.5"
     hoist-non-react-statics "^3.3.1"
 
-"@emotion/serialize@^1.0.2", "@emotion/serialize@^1.0.3", "@emotion/serialize@^1.0.4":
+"@emotion/serialize@^1.0.2", "@emotion/serialize@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-1.0.4.tgz#ff31fd11bb07999611199c2229e152faadc21a3c"
   integrity sha512-1JHamSpH8PIfFwAMryO2bNka+y8+KA5yga5Ocf2d7ZEiJjb7xlLW7aknBGZqJLajuLOvJ+72vN+IBSwPlXD1Pg==
@@ -4364,10 +4364,10 @@ dotenv-defaults@^2.0.2:
   dependencies:
     dotenv "^8.2.0"
 
-dotenv-vault@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/dotenv-vault/-/dotenv-vault-1.7.0.tgz#67a036b4c2aa73b950d4a174c96d80c807469eed"
-  integrity sha512-qpXLMT2m3/+SxGQO/7MST2pDkw5FW7z+o1uj79CKcXJfmtpfuxJjoi3ovmdyTrALo2fHFKEGZlUIKdRfl6+81A==
+dotenv-vault@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/dotenv-vault/-/dotenv-vault-1.8.0.tgz#01be1bfa92bfb7bc35da4a380e0dc3420a4f5017"
+  integrity sha512-DPD/Z0ydbHpfKCaraFbKGAWTReJTs97VFIsXdY18b1VTTN6mDPi1/FCIQGuMhnTDxsoQBAfrOapV2kEAB5HUsw==
   dependencies:
     "@oclif/core" "^1"
     "@oclif/errors" "^1.3.5"
