@@ -8,7 +8,7 @@
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
-@import url('http://fonts.cdnfonts.com/css/roboto');
+@import url('https://fonts.cdnfonts.com/css/roboto');
 
 :root {
   --ifm-color-primary: #bd99ff;
@@ -43,7 +43,7 @@ a {
 
 h1 {
   font-size: 43px !important;
-  margin-bottom: 60px !important;
+  margin-bottom: 30px !important;
 }
 
 h2 {
@@ -102,6 +102,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   text-align: center;
   padding: 25px 0px;
   color: black;
+}
+
+.footer__items {
+  padding-left: 0;
 }
 
 html[data-theme='dark'] footer__links {
@@ -583,27 +587,26 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   width: 50%;
 }
 
-.joinUsContainer {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
 .rsLogo {
   width: 32px;
   margin: 15px 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .rsLogo {
+    margin: 15px 5px;
+  }
 }
 
 .footer {
   padding: 20px;
   background-color: #f5f5f5;
   color: black;
-  z-index: 200;
+  z-index: 2;
   border-top: 2px solid #e2e2e2;
 }
 
-html[data-theme='dark'] footer {
+html[data-theme='dark'] .footer {
   border-top: 2px solid #1e1e1e;
   background-color: #323334;
   color: white;

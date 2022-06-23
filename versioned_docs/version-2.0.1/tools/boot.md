@@ -166,11 +166,7 @@ Examples are available for several IDEs: L4 / F4 / F0 uses platformIO, G4 uses S
 
 #### Luos does not yet support your target:
 
-First of all, you have to **enable the bootloader feature** in the Luos library. To do so, you have to add the **-D BOOTLOADER_CONFIG** parameter when you invoke your compiler. Then you have to run the library in your main() function as you would do for any project:
-
-<div align="center">
-  <Image src="/img/main_bootloader.png"/>
-</div>
+First of all, you have to **enable the bootloader feature** in the Luos library. To do so, you have to add the **-D BOOTLOADER_CONFIG** parameter when you invoke your compiler. Then you have to run the library in your main() function as you would do for any project.
 
 > **Warning**: Luos will now run the bootloader application. Be careful not to initialize any package with the **ADD_PACKAGE()** macro. Luos can only run the bootloader app in bootloader mode, and your package will not be executed.
 

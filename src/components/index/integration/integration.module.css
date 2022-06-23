@@ -106,6 +106,7 @@ html[data-theme='dark'] .title {
   text-transform: uppercase;
   height: 40px;
   width: 90%;
+  padding: 8px !important;
   display: block !important;
   margin: 0 auto !important;
 }
@@ -134,11 +135,21 @@ html[data-theme='dark'] .title {
 .imgLeft {
   margin-top: -50px !important;
   transform: rotate(180deg);
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .imgRight {
   margin-bottom: -30px !important;
   float: right;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .head {
@@ -148,6 +159,18 @@ html[data-theme='dark'] .title {
   background-color: #f5f8fa;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+.hiwTitle {
+  color: black;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 18px !important;
+  font-weight: bold;
+  padding-top: 10px;
+  display: block;
+}
+
+html[data-theme='dark'] .hiwTitle {
+  color: white;
 }
 
 .player {
@@ -248,4 +271,28 @@ html[data-theme='dark'] .engine {
 html[data-theme='dark'] .player {
   background-color: #1e1e1e !important;
   color: white !important;
+}
+
+.imgLink {
+  color: black;
+}
+.imgLink:hover {
+  text-decoration: none;
+}
+
+html[data-theme='dark'] .imgLink {
+  color: white;
+}
+
+.imgLinkDesible {
+  color: black;
+  cursor: default;
+  pointer-events: none;
+}
+.imgLinkDesible:hover {
+  color: black;
+  text-decoration: none;
+}
+html[data-theme='dark'] .imgLinkDesible {
+  color: white;
 }

@@ -13,7 +13,7 @@ The profile handles messaging to share your variables with other services. Moreo
 > **Example:** If you want to make a servo-motor service, you have to select the servo-motor profile for your service and use variables of the profile structure to set the rotor current position measurement, or to get the current motor target in your code.
 
 Profiles are convenient for making your code clean and straightforward, complying with your development into a standard API, or sharing your service type with the community.
-Luos provides some common profile models that you can use; feel free to contribute and to add your own to the standard profile bank with a pull request on <a href="https://github.com/Luos-io" target="_blank">Luos' GitHub page &#8599;</a>.
+Luos provides some common profile models that you can use; feel free to contribute and to add your own to the standard profile bank with a pull request on <a href="https://github.com/Luos-io" target="_blank" rel="external nofollow">Luos' GitHub page &#8599;</a>.
 
 ## How to use a profile in your service
 
@@ -64,4 +64,4 @@ void Button_Loop(void) {
 }
 ```
 
-You can notice that you don't send any Luos message to share the button state: if an application wants to access this information, the state profile will share it for you. You only have to update the button state value in your code. Supported profiles are available in this [repository](https://github.com/Luos-io/Luos/tree/master/Profiles).
+You can notice that you don't send any Luos message to share the button state: if an application wants to access this information, the state profile will share it for you. You only have to update the button state value in your code. Supported profiles are available in this <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/profiles" target ="_blank" rel="external nofollow">repository</a>.

@@ -32,10 +32,6 @@ html[data-theme='light'] .container {
   .playerLeft {
     height: 250px !important;
   }
-
-  .btnContainer {
-    margin: 50px 0;
-  }
   .videoBtn {
     display: none !important;
   }
@@ -50,11 +46,11 @@ html[data-theme='light'] .container {
 
 .text {
   font-family: 'Roboto';
-  font-size: 14px;
+  font-size: 18px;
   line-height: 20px;
   margin-bottom: 30px;
   color: white;
-  padding-right: 10px;
+  padding-right: 60px;
 }
 .footer {
   width: 100%;
@@ -79,6 +75,7 @@ html[data-theme='light'] .container {
   .whiteBtn {
     margin-bottom: 15px !important;
     width: 90% !important;
+    font-size: 12px !important;
   }
 
   .container {
@@ -174,7 +171,6 @@ html[data-theme='light'] .text {
 .player {
   border-right: 2px solid black;
   background-color: #1e1e1e;
-  height: 250px;
 }
 
 .playerLeft {

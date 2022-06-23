@@ -11,10 +11,9 @@
 # Misc
 .act
 .DS_Store
-.env
-.env.development
-.env.test
-.env.production
+.env*
+!.env.example
+!.env.project
 .vercel
 
 npm-debug.log*

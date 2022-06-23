@@ -1,0 +1,101 @@
+---
+title: 'Release announcement v2.0.0'
+description: We are thrilled to share this new release note with you Luos v2.0.0 is out
+slug: luos-release-announcement-v2-0-0
+authors:
+  - name: Emanuel Allely
+    title: Co-founder & COO @ Luos
+    url: https://github.com/Emanuel-Allely
+    image_url: https://github.com/Emanuel-Allely.png
+tags: [release, luos]
+image: /img/blog/release-v-2-0-0-banner-luos.png
+hide_table_of_contents: false
+date: 2021-09-13T10:00
+---
+
+![img alt](/img/blog/release-v200-luos.png)
+
+No more container, but more profiles
+
+<!--truncate-->
+
+Hello everybody, we are thrilled to share this new release note with you: <a rel="external nofollow" href="https://github.com/Luos-io/luos_engine/releases/tag/2.0.0" target="_blank">Luos v2.0.0 is out</a>
+
+Like every young technology growing fast, Luos is going through an intense period of development. This means new critical features and many fixes at the same time, both into frequent releases. Fully dedicated to easing your life as an embedded developer, an electronic engineer, or a product manager, our R&D team is growing and working hard with passion for delivering a powerful technology to you.
+
+As an open-source solution, Luos aims to be wildly distributed and used by as many embedded developers as possible. Thanks to Luos, you can easily design, test and deploy embedded applications on multi-MCUs devices. Spread the word!
+
+<h2> What's new in this version? </h2>
+
+This is the seventh release of Luos. We described below the various features and fixes that it provides.
+
+<h2> Luos 2.0.0: </h2>
+
+<h3> 🆕 Feature: Profiles to simplify user API </h3>
+
+Profiles are predefined structures representing a service type. Since Luos 2.0.0 you can comply services to a specific profile allowing anyone to know how your feature work. For example, any kind of motor (stepper, brushless, Dynamixel, ...) can use the servo-motor profile, then you can control any of them exactly the same way. Profiles also simplify your motor driver development. Instead of dealing with messages, profiles give you input and output variables to interact with anything else (other services, cloud app, ...). You can easily create your own profiles and share them with the community or with your team as a feature API definition. [More information on our documentation](/docs/luos-technology/services/profile)
+
+<h3> 🆕 Feature: Packages to simplify portability </h3>
+
+Packages allow you to store your embedded code features on sharable folders. So you can move those easily from one project to another and share it with the community. We have big plans for this feature so keep in touch... [more information about packages](/docs/luos-technology/package)
+
+<h3> 🆕 Feature: Bootloader </h3>
+
+This feature is the big new one everyone has asked us for years. Now, you can compile luos in bootloader mode. By compiling it this way you can flash it to your board then use the Luos network through a gate to update your board firmware. This allows you to update any board anywhere on your device without having physical access to it. [More information about bootloader](/docs/tools/boot)
+
+🛠️ Fix: ATSAMD21 register typography
+
+🛠️ Fix: Address last page compute
+
+🛠️ Fix: Change pinout PTP for arduinoMKR board
+
+<h3> 🆕 Feature: Gate discovering </h3>
+
+Some of you sometimes struggle to find a device gate over USB or IP. We add a feature to gate allow you to list all the gates available on your system. From Pyluos
+
+<h3> 🆕 Feature: Pyluos shell </h3>
+
+pyluos-shell is a new command line coming with Pyluos allowing you to directly find and connect to a gate on your system and open an Ipython cession.
+
+This command line is extremely useful to make quick tests.
+
+<h3> 🆕 Feature: Selftest </h3>
+
+Selftest is a specific way of compiling Luos, and specially LuosHAL, allowing you to validate your entire hardware configuration. To make it work you have to connect your different connectors of the board together. Selftest will try to use different hardware resources configured for Luos and will check if everything is OK for you.
+
+🆕 Added: Unit tests
+
+🆕 Added: Miscellaneous code comment updates
+
+🆕 Changed: Luos API: Containers are renamed to services
+
+🆕 Changed: Luos API: Luos reserved commands and User commands are now separated
+
+🆕 Changed: Luos API: Luos list and routing table return names
+
+🛠️ Fix: During detection we reset msg_allocation outside IRQ
+
+🛠️ Fix : During detection we forbid tx from user messages
+
+🛠️ Fix: During detection we reset big data reception state
+
+🛠️ Fix: Routing table research function all return 0 if service is not found
+
+🛠️ Fix: Typography on OD_linear
+
+🛠️ Fix: Luos assert if too many services on the node
+
+<h3> Dependencies: </h3>
+
+*   LuosHAL version >= 0.4.0
+*   Pyluos version >= 2.0.0
+
+<h3> Package: </h3>
+
+*   Luos library
+*   Luos library for Arduino environment with example
+*   Luos gate library for Arduino environnement
+
+🎉 Try it, it's #opensource: <a rel="external nofollow" href="https://github.com/Luos-io/luos_engine/releases/tag/2.0.0" target="_blank">https://github.com/Luos-io/luos_engine/releases/tag/2.0.0</a>
+
+[Get Started with Luos](/tutorials/get-started)

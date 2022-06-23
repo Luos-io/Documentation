@@ -1,5 +1,6 @@
 ---
 custom_edit_url: null
+image: /img/Bike-alarm-Luos.png
 ---
 
 import Image from '@site/src/components/Images.js';
@@ -52,14 +53,14 @@ The simplest way to rename a service is to use a gate and Pyluos.
 ## Add the truck horn on start_controller app
 
 In this app, we add a small "BIP" when locking or unlocking the bike. In order to add it, we have to add more code than in the previous app to manage time properly.
-You consult [the final code here](https://github.com/Luos-io/Luos/tree/main/Examples/Apps/Start_controller).
+You consult <a href="https://github.com/Luos-io/luos_engine/tree/main/examples/apps/start_controller" target="_blank" rel="external nofollow">the final code here</a>.
 
 We took advantage of this code modification to add some fancy animation on the LED, allowing it to be used as bicycle headlight.
 
 ## Improvement clue
 
 To make it usable in real life, we should probably select something less noisy than a truck horn which can be really painful for the ears.
-We also should add a real locking system which would be able to lock the bike wheel using a motor and a mechanism, like this one made by our friends from [Pony](https://getapony.com/):
+We also should add a real locking system which would be able to lock the bike wheel using a motor and a mechanism, like this one made by our friends from <a href="https://getapony.com/" target="_blank" rel="external nofollow">Pony</a>:
 
 <div align="center">
   <Image

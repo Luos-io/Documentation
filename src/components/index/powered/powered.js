@@ -24,23 +24,20 @@ const Powered = (props) => {
     <div className={styles.container}>
       <div className={styles.containerTitle}>
         {' '}
-        <h1 className={`${styles.title}`}>
+        <h2 className={`${styles.title}`}>
           More features powered by{' '}
           <img
-            src={
-              isDarkTheme
-                ? 'img/index/powered/luos.svg'
-                : 'img/index/powered/luos-dark.svg'
-            }
+            src={isDarkTheme ? 'img/index/powered/luos.svg' : 'img/index/powered/luos-dark.svg'}
             style={{ verticalAlign: 'middle', width: '100px' }}
           />
-        </h1>
+          <span style={{ display: 'none' }}>Luos</span>
+        </h2>
       </div>
       <Grid container mt={10} mb={10}>
         <Grid item md={2} lg={2} xl={2}></Grid>
         <Grid item xs={12} md={4} lg={4} xl={4}>
           <List sx={{ width: '100%' }}>
-            <ListItem alignItems="flex-start">
+            <ListItem alignitems="flex-start">
               <ListItemAvatar>
                 <PeopleAltIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
@@ -54,7 +51,7 @@ const Powered = (props) => {
             </ListItem>
 
             <ListItem
-              alignItems="flex-start"
+              alignitems="flex-start"
               component={Link}
               href="/docs/luos-technology/services#service-properties"
               className={styles.listLink}
@@ -70,7 +67,7 @@ const Powered = (props) => {
                 }
               />
             </ListItem>
-            <ListItem alignItems="flex-start">
+            <ListItem alignitems="flex-start">
               <ListItemAvatar>
                 <CachedIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
@@ -86,7 +83,7 @@ const Powered = (props) => {
         </Grid>
         <Grid item xs={12} md={4} lg={4} xl={4}>
           <List sx={{ width: '100%' }} className={styles.secondList}>
-            <ListItem alignItems="flex-start">
+            <ListItem alignitems="flex-start">
               <ListItemAvatar>
                 <EventNoteIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
@@ -100,7 +97,7 @@ const Powered = (props) => {
             </ListItem>
 
             <ListItem
-              alignItems="flex-start"
+              alignitems="flex-start"
               component={Link}
               href="/docs/luos-technology/message/object-dictionary"
               className={styles.listLink}
@@ -118,7 +115,7 @@ const Powered = (props) => {
             </ListItem>
 
             <ListItem
-              alignItems="flex-start"
+              alignitems="flex-start"
               component={Link}
               href="/docs/luos-technology/services/routing-table#detection"
               className={styles.listLink}
@@ -140,43 +137,31 @@ const Powered = (props) => {
       </Grid>
       <Grid container>
         <Grid item xs={12} md={6} lg={6} className={styles.nebula}>
-          <h1 className={`${styles.titleFooter} ${styles.underline}`}>
+          <h2 className={`${styles.titleFooter} ${styles.underline}`}>
             Develop and scale your edge and embedded distributed software now
-          </h1>
+          </h2>
           <p className={styles.textGs}>
-            Get started with Luos by setting up your development environment
-            with your IDE and build your first embedded microservice.
+            Get started with Luos by setting up your development environment with your IDE and build
+            your first embedded microservice.
           </p>
           <div className={styles.btnContainer}>
-            <Button
-              variant="contained"
-              className={styles.pinkBtn}
-              href="/tutorials/get-started"
-            >
-              Get started <RocketLaunchIcon />
+            <Button variant="contained" className={styles.pinkBtn} href="/tutorials/get-started">
+              Get started <RocketLaunchIcon style={{ marginLeft: '10px' }} />
             </Button>
             <Button
               variant="contained"
               className={styles.whiteBtn}
               href="https://discord.gg/luos"
+              rel="nofollow"
             >
               Join the community
             </Button>
           </div>
         </Grid>
-        <Grid
-          item
-          md={6}
-          lg={6}
-          style={{ marginTop: '-50px' }}
-          className={styles.mobileNone}
-        >
+        <Grid item md={6} lg={6} style={{ marginTop: '-50px' }} className={styles.mobileNone}>
           <div className={styles.head}>
             {' '}
-            <img
-              src="img/index/header/buttons.svg"
-              style={{ padding: '15px', width: '100px' }}
-            />
+            <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
           </div>
           <Grid container style={{ height: '100%' }}>
             <Grid item md={1} lg={1} className={styles.docs}>

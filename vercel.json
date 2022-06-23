@@ -13,6 +13,21 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/a-new-way-to-design-embedded-app-using-luos-step-1",
+      "destination": "/blog/think-globally",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/a-new-way-to-design-embedded-app-using-luos-step-5",
+      "destination": "/blog/think-globally",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/a-new-way-to-design-embedded-app-using-luos-intro",
+      "destination": "/blog/think-globally",
+      "statusCode": 301
+    },
+    {
       "source": "/community",
       "destination": "https://discord.gg/luos"
     },
@@ -37,6 +52,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/luos-technology/luos_tech",
+      "destination": "/docs/luos-technology",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/luos-technology/package/package",
       "destination": "/docs/luos-technology/package",
       "statusCode": 301
@@ -44,6 +64,11 @@
     {
       "source": "/docs/luos-technology/services/services",
       "destination": "/docs/luos-technology/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/next/luos-technology/luos_tech",
+      "destination": "/docs/next/luos-technology",
       "statusCode": 301
     },
     {
@@ -57,8 +82,18 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/2.0.1/tools/tool",
+      "destination": "/docs/2.0.1/tools/",
+      "statusCode": 301
+    },
+    {
       "source": "/faq/list",
       "destination": "/faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq/application-compile",
+      "destination": "/faq/application-does-not-compile",
       "statusCode": 301
     },
     {
@@ -202,6 +237,16 @@
       "statusCode": 301
     },
     {
+      "source": "/pricing",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/product/nucleo-f0/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/technology",
       "destination": "/",
       "statusCode": 301
@@ -217,7 +262,27 @@
       "statusCode": 301
     },
     {
+      "source": "/support",
+      "destination": "https://discord.gg/luos",
+      "statusCode": 301
+    },
+    {
       "source": "/us",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/us/documentation/",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
+      "source": "/us/roi/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/us/roi-calculator/",
       "destination": "/",
       "statusCode": 301
     },
@@ -238,6 +303,11 @@
     {
       "source": "/us/technology",
       "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/support",
+      "destination": "https://discord.gg/luos",
       "statusCode": 301
     }
   ]

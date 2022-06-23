@@ -1,0 +1,72 @@
+---
+title: 'Why is standardized data so important in embedded systems?'
+description: Luos is designed to have software and hardware containers. Discover our article to discover why it is essential to standardize data in embedded systems.
+slug: why-is-standardized-data-so-important-in-embedded-systems
+authors:
+  - name: James Langbridge
+    title: Teacher, researcher, author
+    url: https://github.com/jlangbridge
+    image_url: https://github.com/jlangbridge.png
+tags: [embedded, edge]
+image: /img/blog/Why-is-standardized-data-so-important-in-embedded-systems-banner-luos.png
+hide_table_of_contents: false
+date: 2021-04-13T10:00
+---
+
+![img alt](/img/blog/infinity-beyond-luos.png)
+
+A 193,1 million USD loss because of a bad conversion
+
+<!--truncate-->
+
+December 11th, 1998. The Mars Climate Orbiter lifts off, starting a voyage of over 200 million kilometers to Mars. Its mission was to survey the red planet, both the atmospheric conditions and any surface changes due to climate. It was part of a project to send several missions to Mars, and was to pave the way for future landers.
+
+23rd of September 1999. After a long journey, the Mars Climate Orbiter begins a series of maneuvers to slow its speed, and to place itself into orbit. It had been flying on a course calculated with as much precision as possible, but we simply cannot send a probe to another planet without some sort of course correction from Earth.
+
+Communications via radio can take anywhere between 5 minutes and 21 minutes, depending on the distance to Earth. Corrective procedures had been previously calculated on the ground, and loaded into the onboard flight computer. Everything was ready. Mars Climate Orbiter prepared to burn its thrusters to slow down and enter a stable orbit, the final part of a long trip.
+
+During the procedure, it passed behind Mars, severing communications. 21 minutes later, it was supposed to exit the planetary occlusion and resume communications but was never heard from again. The mission was declared a loss two days later.
+
+![To infinity, and beyond!](/img/blog/infinity-beyond-luos.png)
+
+To infinite exchange with our Luos community, go beyond and <a rel="external nofollow" href="https://www.reddit.com/r/Luos/" target="_blank">follow us on Reddit!</a>
+
+<h2> An electrical voltage can represent any physical quantity... </h2>
+
+Most of us are used to switching between scales frequently. On a business trip to the US, my American colleague was in shock looking at the thermometer of the car, where the temperature showed 0. I shrugged it off, living in France, I am used to a winter temperature of 0. When I got out of the car, it hit me. He was talking about Fahrenheit when I am used to Celsius. His 0 Fahrenheit was -18 in my Celsius, far below what I was expecting, and far below the clothes that I brought for the occasion.
+
+The consequences were far less dramatic than the fate of the Mars Climate Orbiter, but it was still a mistake. While it is fairly easy to convert between Fahrenheit and Celsius (take your temperature in Fahrenheit, take away 32, and then divide the result by 1.8 to obtain the result in Celsius), there are other scales that are more complicated.
+
+What about your embedded design? If you are using an LM35 temperature sensor, then you are using a precision sensor that is calibrated for Celsius, one that will deliver 10 millivolts per degree Celsius. On the other hand, if you are using an LM34, then you are again using a precision sensor, but one that is calibrated in Fahrenheit, 10 millivolts per degree Fahrenheit. When you are using this in a design that you control, then it is up to you to make sure you are reading the right temperature.
+
+An investigation was ordered to understand what happened, and to make sure that whatever brought the mission down never happened again. On a project of this scale, several contractors were brought in, each handling a specific part of the **project**. It did not take too long to find the culprit, a simple mathematical equation.
+
+Ground-based computers ran calculations and fed the results directly to the spacecraft. The ground-based software delivered results in a US customary unit, and the spacecraft accepted those results in SI units. Instead of receiving the anticipated newton seconds, the results were in pound-force seconds, off by a factor of about 4.5, so the thrusters burned much longer than they should have.
+
+By simulating what would have happened using these values, it became clear that the angle of attack was too steep and would have brought the spacecraft too close to the surface. It was expected to come within 110 km of the surface, but was programmed to enter 57 km, over 20 kilometers below the minimum survivable altitude for the orbiter. It either burnt up in the atmosphere or bounced off the atmosphere and entered a heliocentric orbit, never to be heard from again. An entire mission was lost to a simple conversion.
+
+![It's all about units](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/604739213bb4cf427cd650cc_2.jpeg)
+
+<h2> Luos deals with your data units and their conversion </h2>
+
+Luos is designed to have **software** and **hardware** containers. You might have two containers on your **network**, one using an LM35, and another using an LM34. Both can identify themselves as a temperature sensor, but how do you know what temperature they are reading? Short answer, you don’t. And you don’t need to.
+
+Luos is used to transferring data in different scales, and interoperability is at the heart of what we do. We’ve got some routines in our API to help you out, and a philosophy that lets you do things the right way, right from the start. With Luos, you can set up a temperature sensor quickly, and set up your container.
+
+You can give it a name, and a class, and it will then live in a network with other container classes, like RGB LEDs, and stepper motor controllers. When your temperature sensor communicates on the **Luos network**, it will transmit the value, but also the unit, you know that your data is in Celsius.
+
+<h3> The benefits of Luos when you create your code </h3>
+
+This does force you to write one or two more lines of code to return the correct data and unit. When you read data from the sensor, you will be reading in millivolts, but you will have to convert this data previously into a known unit, you can’t return the data in millivolts. Well, technically you could, you can exchange millivolt data on the **Luos network**, but if we are talking with a temperature sensor, then we expect a temperature, not raw (and unreadable) data.
+
+If you look at your home weather station, it displays the temperature, in Celsius or Fahrenheit depending on which part of the planet you live in, but it doesn’t show millivolts. You, as the **system designer**, might know what sort of data to expect, but in a containerized world, containers expect to have real values with meaning. You won’t be converting the data to degrees inside your main app, you will be reading a temperature, and then using the value. You can also convert it back to other scales using the API.
+
+Another article shows how we [think globally](/2021-06-13-think-globally.mdx) when we start a project, write an application inside a container, and communicate with other containers.
+
+![](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6047392c3b744162439a30f3_3.jpeg)
+
+We live in a world where we mix and match scales and units. You can’t just use a number without a unit; 32 might be a nice warm temperature, or the freezing point of water. Without units, data is worthless, and that is something that simply cannot happen on a Luos network. Keep your mission up and running with us!
+
+Our community of experts on Luos and community members will be happy to exchange about projects and embedded systems, so don’t hesitate to <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">join us on Discord!</a>
+
+[Get Started with Luos](/tutorials/get-started)
