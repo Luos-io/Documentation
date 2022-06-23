@@ -70,6 +70,7 @@ html[data-theme='light'] .container {
   color: white;
   padding-right: 30px;
   text-align: justify;
+  font-size: 18px;
 }
 
 html[data-theme='light'] .listIcon {
@@ -101,7 +102,7 @@ html[data-theme='light'] .nebula {
 
 .textGs {
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 20px;
   margin-bottom: 30px;
   padding: 15px 40px;
