@@ -1,0 +1,91 @@
+---
+custom_edit_url: null
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Luos engine configuration
+
+## Compatible MCUs
+
+Luos engine can manage any type of microcontrollers as long as they have a HAL. If your microcontroller is not supported yet, please contact us:
+
+- by mail <a href="mailto:hello@luos.io">hello&#x40;luos.io</a>
+- on <a href="https://github.com/Luos-io/luos_engine/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
+
+Check the list of MCU families Luos engine cover:<a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank">Hardware Abstraction Layers for MCU families</a>,
+
+> Depending on what network you have, you may also configure the specific HAL of your network. By default, Luos engine uses the Robus network layer with <a href="https://github.com/Luos-io/luos_engine/tree/main/Network/Robus/HAL" target="_blank">Robus HAL</a>.
+
+## Default Configurations
+
+Luos engine is made to run on MCU and use the hardware peripherals of the MCU to complete communication between services. In order to configure this low-level part, Luos company provide, for many MCU families, a default configuration that can be followed to plug and play Luos engine with the chosen MCU family. The peripheral configuration is described in the _luos_hal_config.h_ files, and can be redefined in the _node_config.h_ file to fit with your design.
+
+## Luos engine's HAL configuration
+
+To match pinout and fonctionality with your design, you can create or use the file _node_config.h_ (see [Luos examples](https://github.com/Luos-io/luos_engine/tree/main/Examples)).
+Based on the default configuration defined in _luos_hal_config.h_, you can define in the _file node_config.h_, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer, etc.
+
+This way, you are able to change the default hardware configuration so it needs to be called in the preprossessor variable section of your IDE to be taken into consideration for your project.
+
+:::info 
+Each example provided by Luos has a _node_config.h_ file and includes the file _platformio.ini_.
+:::
+
+For example, you can redefine PTPA to fit with your design.
+
+in _luos_hal_config.h_, this is defined as followed:
+
+```c
+#ifndef PTPA_PIN
+#define PTPA_PIN                    GPIO_PIN_8
+#endif
+```
+
+in _node_config.h_ this should be redefined as followed:
+
+```c
+#define PTPA_PIN                    GPIO_PIN_11
+```
+
+There are many possible configurations that you can change, not all of them being necessary for your design:
+
+<Tabs>
+    <TabItem value="Pinout" label="Pinout">
+
+|              Function               |                    Description                    |             Comments             |
+| :---------------------------------: | :-----------------------------------------------: | :------------------------------: |
+|          PORT_CLOCK_ENABLE          |             Activates clock for GPIO              |         Depends on port          |
+|         RX_EN_PIN/TX_EN_PIN         |      Chooses pinout to activate Rx/Tx comms       |   Necessary for special comms    |
+|        COM_TX_PIN/COM_RX_PIN        |          Chooses pinout for Rx/Tx comms           | Adapts to the chosen serial bus  |
+| PTPX_PIN/PTPX_IRQ/PINOUT_IRQHANDLER | Chooses pinout, IRQ and callback for the PTP line | Necessary for topology detection |
+
+</TabItem>
+<TabItem value="Communication" label="Communication">
+
+|                 Function                  |             Description              |            Comments             |
+| :---------------------------------------: | :----------------------------------: | :-----------------------------: |
+|           LUOS_COM_CLOCK_ENABLE           |      Activates clock for serial      |      Depends on serial bus      |
+| LUOS_COM/LUOS_COM_IRQ/LUOS_COM_IRQHANDLER | Chooses serial bus, IRQ and callback | Adapts to the serial bus chosen |
+|           LUOS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for for Tx       |
+|             LUOS_DMA_CHANNEL              |           Chooses Channel            |             Send Tx             |
+
+</TabItem>
+<TabItem value="Timer" label="Timer">
+
+|                    Function                     |           Description           |       Comments        |
+| :---------------------------------------------: | :-----------------------------: | :-------------------: |
+|             LUOS_TIMER_CLOCK_ENABLE             |   Activates clock for Timeout   | Necessary for Timeout |
+| LUOS_TIMER/LUOS_TIMER_IRQ/LUOS_TIMER_IRQHANDLER | Chooses Timer, IRQ and callback | Necessary for Timeout |
+
+</TabItem>
+<TabItem value="Flash" label="Flash">
+
+|          Function          |           Description            |             Comments              |
+| :------------------------: | :------------------------------: | :-------------------------------: |
+| PAGE_SIZE/ADRESS_LAST_PAGE | Defines space in flash for alias | Necessary to rename service alias |
+
+</TabItem>
+
+</Tabs>

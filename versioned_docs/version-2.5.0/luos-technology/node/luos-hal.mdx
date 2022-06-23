@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+custom_edit_url: null
+---
+
+# Luos Hardware Abstraction Layer
+
+Luos engine can work on a single node using localhost communication or it can create a network for communication between services located on different nodes. This communication should be defined and hardware-configured to fit with the chosen MCU. The files _luos_hal.c_ and _luos_hal.h_ define all the functions needed by Luos engine. Then, there is a HAL depending on the network layer you use to send messages through the physical bus.
+
+The file _luos_hal_config.h_ contains a default configuration for an MCU family and can be redefined in a configuration file to fit your design. The configuration of Luos engine HAL is described [here](/docs/hardware-consideration/mcu).
+
+## Luos engine's HAL
+
+Luos engine need some peripheral access to properly work:
+
+- **TIMER**: Used for the systick and for the nanosecond precision timestamping of events.
+- **FLASH**: Stores services' aliases in the system and writes your firmware on bootloader mode.
+
+## Robus HAL
+
+Robus is the default network layer used by Luos engine. Here is a list of all the hardware peripherals used to drive the physical bus:
+
+- **PORT**: Defines necessary pins, PTP lines, Rx/Tx, enable/disable.
+- **TIMER**: Defines timeouts for communication.
+- **COM**: Serial bus.
+- **CRC**: Optionaly used to optimize the messages validation. CRC can be generated through hardware or software.
+- **DMA**: Optionaly used to optimize the communication.

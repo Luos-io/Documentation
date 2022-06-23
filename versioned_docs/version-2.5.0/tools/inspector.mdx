@@ -1,0 +1,76 @@
+---
+custom_edit_url: null
+description: The inspector is a major tool of the Luos ecosystem.
+---
+
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "@site/src/components/Tooltip.js";
+import Image from "@site/src/components/Images.js";
+import IconExternalLink from "@theme/IconExternalLink";
+
+
+# Inspector
+
+The inspector is a major tool of the Luos ecosystem. It is allowing you to link low-level (embedded Luos services) with the <a href="https://app.luos.io/network" target="_blank">Luos Network Display tool<IconExternalLink width="10"></IconExternalLink></a> through a serial binary protocol. The inspector catches all the information that passes through a Luos network and sends it to the high-level to display the topology or to monitor the network online. Contrary to the gate application which become a “master” when it is in a network, the inspector application is entirely transparent for your embedded application.
+
+You can use it to catch any information on the Luos network and visualize information in <a href="https://app.luos.io" target="_blank">Luos<IconExternalLink width="10"></IconExternalLink></a>.
+
+The inspector is a simple embedded [app service](../luos-technology/services/service-api#apps-guidelines), so it can work on any MCU running Luos engine without any modification. The inspector service must be used with a driver service called **pipe**, allowing you to choose the communication way fitting with your project (USB, WiFi, Bluetooth, etc.). A topology detection must be performed before you may use the inspector.
+
+## Default inspector Process
+
+The default behavior of the inspector is transparency. This service does not do anything until it receives some special command dedicated to itself.
+
+1. At power up, the inspector is quiet and only responds to a topology detection procedure. It is also possible to configure the inspector to perform a topology detection at power up (optional)
+2. The inspector waits to receive an "ask presence" message from a pipe.
+3. If the response is OK, the high-level can ask information from the inspector such as:
+    1. routing table,
+    2. statistics of a node,
+    3. message passing through the network.
+
+## Inspector and pipe
+
+In that configuration, you must put two services in the node as shown below:
+
+```c
+#include "luos.h"
+#include "pipe.h"
+#include "inspector.h"
+
+int main(void)
+{
+  Luos_Init();
+  Pipe_Init();
+  Inspector_Init();
+
+  while (1)
+  {
+    Luos_Loop();
+    Pipe_Loop();
+    Inspector_Loop();
+  }
+}
+```
+
+## The inspector configurations
+
+The default process described above can be changed using different configurations that you can use in [the file _node_config.h_](/docs/luos-technology/basics/orga#configuration).
+
+You could need to change it if you have apps on you Luos embedded system.
+
+|   Parameters   | Defaults value |                            Description                             |
+| :------------: | :------------: | :----------------------------------------------------------------: |
+|  NODETECTION   |  NOT DEFINED   |            Inspector does not make detection at power up              |
+
+If you have an app service on your device managing detection, you should define `NODETECTION` to avoid useless detections from the inspector at boot.
+
+## Inspector vs. gate
+
+As for the gate, the inspector needs a pipe to transfer information outside the Luos network. The pipe and inspector can be hosted into the same node or on different nodes in the network. It is recommended to have an inspector and a pipe on the same node to avoid overloading the Luos network with messages that can be handled locally on the node (see the [gate page](/docs/tools/gate) for more information).
+
+The inspector can be used with the gate in a network, the gate taking control of the sensors and the inspector displaying all the information, for example.
+
+:::caution
+A gate and an inspector can not share a pipe together.
+You must have one pipe for each service in the same network, preferably placed in the same node.
+:::
