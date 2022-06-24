@@ -1,0 +1,47 @@
+---
+custom_edit_url: null
+description: Luos aims to end the dictatorship of electronics
+---
+
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "@site/src/components/Tooltip.js";
+import Image from "@site/src/components/Images.js";
+import IconExternalLink from "@theme/IconExternalLink";
+
+# Luos aims to end the dictatorship of electronics
+
+Take most embedded systems software, you will find the same hardware oriented organization —**the dictatorship of electronics 😈**.
+
+Sensors, actuators, and other hardware resources will be mixed into the application managing the behavior of the product into a unique and monolithic software. Modifying, adding, or reusing something into such an architecture forces you to rethink the entire project.
+
+Sometimes, a design will have more than one microcontroller. In this case, you will need to implement an inter-device communication protocol using any bus available, and you will need to deal with instructions, messaging, error handling, collision, priority, latency, etc. In this case, the product will be even more difficult to maintain due to a significant portion of time spent on the network software development across all the boards.
+
+Luos is here to back you up and keep your projects clean and smooth to develop, modify and reuse 😇.
+
+## Introduction to Luos
+
+**Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank" rel="external nofollow">microservices<IconExternalLink width="10"></IconExternalLink></a> architecture for electronics.** It is a powerful modularity tool to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank" rel="external nofollow">single system image<IconExternalLink width="10"></IconExternalLink></a>.
+
+This guide contains all the basic notions you will need to use, create and understand Luos technology.
+
+Luos is a low-level software technology uploaded into every board's (<Tooltip def={customFields.node_def}>node</Tooltip>) of a device.
+You can use Luos as a **bare metal** library, or as a driver into your **embedded OS**.
+
+Luos is composed as well of **code subdivisions** called <Tooltip def={customFields.service_def}>services</Tooltip>. Services are distributed into every node in a network.
+
+<div align="center">
+  <Image
+    src="/img/feature-service-package-node-board.png"
+    darkSrc="/img/luos-layers-white.png"
+  />
+</div>
+
+## Introduction to embedded containerized platforms
+
+Luos aims to change the way you develop by containerizing your embedded features into services on your devices. A microcontroller can host a series of services, like data acquisition from sensors, actuators, or pieces of behavior for your devices. These features are placed inside <Tooltip def={customFields.service_def}>services</Tooltip>. Prepare your services and deploy them anywhere in a Luos network, and you will be able to access them directly with your services, no matter where they are in the network. Services can be dynamically connected and disconnected and can be detected and find by your application.
+
+:::tip Example
+Imagine an industrial device. It might contain several temperature sensors that will monitor specific parts of the system, and our system will need to know exactly what they monitor. When we read the temperature of the industrial motor, it is more convenient to get the information from the motor itself. These sensors are placed into services and clearly state which components they monitor. If the device encounters a problem, we need to notify anyone around of the incident. This could be a flashing light, a siren, or any other way of notifying people. In this case, it doesn't matter where the alarm peripherals are placed or even how many there are, Luos can notify all the services that identify as an alarm to activate them. Alarms can even be added to the Luos network while operating, and they will be recognized and used. Alarms also can be hosted or controled by computers or cloud applications.
+:::
+
+Finally, it doesn't matter where on the Luos network sensors or actuators are placed. You can wire the different elements together as you want, each element will be detected and you will be able to use all of your services, wherever they are.

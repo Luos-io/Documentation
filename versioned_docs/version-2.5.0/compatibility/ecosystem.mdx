@@ -1,0 +1,78 @@
+---
+custom_edit_url: null
+---
+
+import { customFields } from "/docusaurus.config.js";
+import Tooltip from "@site/src/components/Tooltip.js";
+import Image from "@site/src/components/Images.js";
+import IconExternalLink from "@theme/IconExternalLink";
+
+This page provides you with the different tools' compatibility information in the Luos ecosystem, and with the compatibility information between different versions of Luos engine in a same network.
+
+# Ecosystem Compatibility
+
+Luos provides several open source tools and API. Below is described the compatibility of Luos engine's versions with Luos HAL's and Pyluos' versions.
+
+## How to read a compatibility table?
+
+A compatibility table shows the compatibility of one version of a tool with other tools' versions. You read from left to right.
+
+:::tip
+Example:
+
+|   Luos engine  |     Luos HAL      |       PYLUOS      |
+| :------------: | :---------------: | :---------------: |
+| 2.0.0 | ≥ 0.4.0 | ≥ 2.0.0 <br /> < 2.0.2 | 
+
+In this extract of a table, we can read that Luos engine 2.0.0 is compatible with Luos HAL 0.4.0 and upper versions, and with versions of Pyluos between 2.0.0 (included) and 2.0.2 (not included).
+:::
+
+## Tools Compatibility with Luos engine
+
+### From version 2.4.0 of Luos engine
+
+From version 2.4.0 of Luos engine, Luos HAL is included into Luos engine's repository, making them automatically compatible. In the table below, Luos HAL is implicitely included into Luos engine.
+
+|   Luos engine  |      PYLUOS       |
+| :------------: | :---------------: |
+| 2.4.0 | ≥ 2.1.0 |
+
+
+### Before version 2.4.0 of Luos engine
+
+Before version 2.4.0 of Luos engine, Luos HAL's repository was separated from Luos engine's repository. The table below includes the compatibility with Luos HAL for versions older than 2.4.0. 
+
+|   Luos engine  |     Luos HAL      |       PYLUOS      | 
+| :------------: | :---------------: | :---------------: | 
+| 2.3.0 | 0.5.3 | ≥ 2.1.0 |
+| 2.2.0 | ≥ 0.5.0 | ≥ 2.0.3 | 
+| 2.1.0 | ≥ 0.5.0 | ≥ 2.0.3 | 
+| 2.0.1 | ≥ 0.4.1 | ≥ 2.0.2 | 
+| 2.0.0 | ≥ 0.4.0 | ≥ 2.0.0 <br /> < 2.0.2 | 
+| 1.3.0 | ≥ 0.3.0 | ≥ 1.5.0 <br /> < 2.0.0 | 
+| 1.2.0 | ≥ 0.3.0 | ≥ 1.4.2 <br /> < 2.0.0 | 
+| 1.1.1 | ≥ 0.2.0 | ≥ 1.3.0 <br /> < 2.0.0 | 
+| 1.1.0 | ≥ 0.2.0 | ≥ 1.3.0 <br /> < 2.0.0 | 
+| 1.0.1 | ≥ 0.2.0 | ≥ 1.3.0 <br /> < 2.0.0 | 
+| 1.0.0 | ≥ 0.1.0 | ≥ 1.3.0 <br /> < 2.0.0 | 
+
+
+# Network compatibility
+
+In a same network, nodes can have different versions of Luos engine. The main rule is that all the minor versions in a same major version are compatible.
+
+:::tip
+For example, a node with the version 1.3.0 and a node with the version 1.2.0 are compatible because they have the same major version (in this example, version 1).
+:::
+
+:::warning
+Despite this compatibility, some bugs may exist if you use different minor versions of a same major version. We advise you to use the same version of Luos engine in every nodes of a network.
+:::
+
+If you encounter a bug or a compatibility issue, please contact us through the <a href="https://discord.gg/luos" target="_blank">**Luos Community on Discord<IconExternalLink width="10"></IconExternalLink>**</a> or with the <a href="https://docs.luos.io/feedbacks/send" target="_blank">**contact form<IconExternalLink width="10"></IconExternalLink>**</a>.
+
+# Where to download Luos
+
+You can download or clone Luos engine, Luos HAL, Pyluos, and all the examples for free from the <a href="https://github.com/Luos-io" target="_blank">**Luos GitHub page<IconExternalLink width="10"></IconExternalLink>**</a>. 
+
+To know more about the installation and the first steps with Luos, visit the <a href="https://docs.luos.io/tutorials/get-started" target="_blank">**Get Started tutorial series<IconExternalLink width="10"></IconExternalLink>**</a>.
