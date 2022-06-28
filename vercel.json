@@ -57,6 +57,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/luos-technology/node/node",
+      "destination": "/docs/luos-technology/node",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/luos-technology/package/package",
       "destination": "/docs/luos-technology/package",
       "statusCode": 301
@@ -99,6 +104,11 @@
     {
       "source": "/get-started(.*)",
       "destination": "/tutorials/get-started",
+      "statusCode": 301
+    },
+    {
+      "source": "/legal-notice",
+      "destination": "/docs/luos-technology",
       "statusCode": 301
     },
     {
@@ -259,6 +269,11 @@
     {
       "source": "/tutorials/tutorials(.*)",
       "destination": "/tutorials",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/luos-and-tools/arduino",
+      "destination": "/tutorials/arduino/intro",
       "statusCode": 301
     },
     {
