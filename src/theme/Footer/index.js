@@ -43,7 +43,7 @@ function Footer() {
         <Grid item xs={12} md={4} lg={4} xl={4}>
           {' '}
           <img
-            src={isDarkTheme ? 'img/index/powered/luos.svg' : 'img/index/powered/luos-dark.svg'}
+            src={isDarkTheme ? '/img/index/powered/luos.svg' : '/img/index/powered/luos-dark.svg'}
             style={{ verticalAlign: 'middle', width: '150px' }}
           />
         </Grid>
