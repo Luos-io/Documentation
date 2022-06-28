@@ -59,7 +59,7 @@ function Footer() {
             </GitHubButton>
 
             <GitHubButton
-              href="https://github.com/luos-io/Luos"
+              href="https://github.com/luos-io/luos_engine"
               data-icon="octicon-star"
               aria-label="Star luos-io/documentation on GitHub"
               data-size="large"
@@ -119,7 +119,7 @@ function Footer() {
         <Grid item xs={12} md={4} lg={4} xl={4} pr={4}>
           <h2 className={styles.subtitle}>Latest commits on Luos repository</h2>
           {lastCommits.map((element, index) => (
-            <Link key={index} href={element.commit.url} className={styles.link} rel="nofollow">
+            <Link key={index} href={element.html_url} className={styles.link} rel="nofollow">
               {element.commit.message}
             </Link>
           ))}
