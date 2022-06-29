@@ -9,21 +9,21 @@ import Image from '@site/src/components/Images.js';
 
 Luos allows you to deal with service aliases. Aliases are much more practical than ids and allow developers to naturally find and access a specific service somewhere in the network.
 
-In some developments, you will need to duplicate the same service multiple times. For example, if you are making a robot with multiple motors you could have the exact same board running the exact same firmware at multiple times and at different places on your device.
+In some developments, you will need to duplicate the same service multiple times. For example, if you are making a robot with multiple motors you could have the exact same board running the exact same firmware multiple times and at different places on your device.
 
 But the same way an id needs to be unique, each alias needs to be different to be findable in your system.
 
 Luos allows you to avoid creating a new binary for all your boards and gives you the possibility to customize the aliases as you want, in a really practical way.
 
 :::info
-You can find an example of resilient aliases management here: TODO.
+You can find an example of resilient aliases management on our [NUCLEO-F401RE led driver](https://github.com/Luos-io/luos_engine/tree/main/examples/projects/NUCLEO-F401RE/led/lib).
 :::
 
 # How aliases are managed
 
 Every service needs an alias. Basically, when you create your service you will have to define your service default's alias.
 
-After this creation, your alias may be modified in different ways.
+After this creation, your alias can be modified in different ways.
 
 1. If you have the same service alias multiple times on a device, Luos will add a number at the end of your alias depending on their position from the node performing the detection. This guarantees aliases unicity. This modification is regenerated at each detection, so this new alias may change if another detection occurs from another node. This alias is not saved in the service, only in the routing table, and it is not persistent at all.
 
@@ -45,7 +45,7 @@ Let's see how to make it!
 
 In every case, you need to define a default alias at the service creation. This is mandatory, and this alias will be used as a backup if your custom alias is removed.
 
-Let's use a simple les service as an example. In the package inititalization, you need to create your service with the associated alias:
+Let's use a simple led service as an example. In the package inititalization, you need to create your service with the associated alias:
 
 ```c
 void Led_Init(void)
@@ -174,5 +174,5 @@ The main concept of Luos is to keep services and packages loosely coupled. This 
 If you have multiple packages on a node and if you want to be able to save your aliases on all those packages, you may want to have a common function used by all the packages to store aliases. In this case, we advise you to consider your memory management functions as a library and to make your packages dependent on this library.
 
 :::info
-You can find an example of resilient aliases management as a library here: TODO
+You can find an example of resilient aliases management on our [NUCLEO-F401RE led driver](https://github.com/Luos-io/luos_engine/tree/main/examples/projects/NUCLEO-F401RE/led/lib).
 :::
