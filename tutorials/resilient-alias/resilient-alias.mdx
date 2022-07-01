@@ -26,8 +26,54 @@ Every service needs an alias. Basically, when you create your service you will h
 After this creation, your alias can be modified in different ways.
 
 1. If you have the same service alias multiple times on a device, Luos will add a number at the end of your alias depending on their position from the node performing the detection. This guarantees aliases unicity. This modification is regenerated at each detection, so this new alias may change if another detection occurs from another node. This alias is not saved in the service, only in the routing table, and it is not persistent at all.
+```
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> Pipe                Pipe                2    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> State               led                 3    ┃
+    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ╚══ 0>┃1 ╭node 3            /!\ Not certified            ┃
+          ┃  │  Type                Alias               ID   ┃
+          ┃  ╰> Color               led1                4    ┃
+        ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+        ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+        ╚══ 0>┃1 ╭node 4            /!\ Not certified            ┃
+              ┃  │  Type                Alias               ID   ┃
+              ┃  ╰> State               led2                5    ┃
+             >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
 
 2. Users can choose to rename an existing service by sending a custom alias request from another service. This allows to keep the alias' name consistent even in the case of new detection, and to choose a practical alias name such as “left_motor” or “front_sensor”. This alias is saved in the service, but not in the routing table, and you will have to remake a detection to update the routing table with the new alias.
+```
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> Pipe                Pipe                2    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> State               left_led            3    ┃
+    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ╚══ 0>┃1 ╭node 3            /!\ Not certified            ┃
+          ┃  │  Type                Alias               ID   ┃
+          ┃  ╰> Color               front_led           4    ┃
+        ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+        ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+        ╚══ 0>┃1 ╭node 4            /!\ Not certified            ┃
+              ┃  │  Type                Alias               ID   ┃
+              ┃  ╰> State               right_led           5    ┃
+             >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
 
 In this second situation, the customization of the alias is less volatile, but this information is still not persistent to a hard reset or a power off.
 
