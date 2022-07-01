@@ -102,7 +102,7 @@
       "category": "Tutorials",
       "toc": 30,
       "level": 2,
-      "img": "clock",
+      "img": "Alias-Luos",
       "desc": "Luos provides a flexible way to deal with aliases. In this tutorial, we discover how to configure aliases and how to make the configuration resilient to boot and flash.",
       "tags": ["Alias", "Distributed System", "Flash", "ROM", "EEPROM"],
       "link": "/tutorials/resilient-alias/intro",
