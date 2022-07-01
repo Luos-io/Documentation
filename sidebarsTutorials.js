@@ -117,6 +117,46 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Luos project with PlatformIo',
+          link: {
+            type: 'doc',
+            id: 'pio/pio',
+          },
+          items: [
+            {
+              type: 'doc',
+              label: 'Project creation',
+              id: 'pio/creation',
+            },
+            {
+              type: 'doc',
+              label: 'Include Luos to your project',
+              id: 'pio/include',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Luos On ESP32',
+          link: {
+            type: 'doc',
+            id: 'esp/esp',
+          },
+          items: [
+            {
+              type: 'doc',
+              label: 'Environnement',
+              id: 'esp/env',
+            },
+            {
+              type: 'doc',
+              label: 'Connect EPS32 to network',
+              id: 'esp/connect',
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Bootloader',
           link: { type: 'doc', id: 'bootloader/intro' },
           items: [
