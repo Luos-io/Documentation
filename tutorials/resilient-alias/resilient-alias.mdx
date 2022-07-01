@@ -9,7 +9,7 @@ import Image from '@site/src/components/Images.js';
 
 Luos allows you to deal with service aliases. Aliases are much more practical than ids and allow developers to naturally find and access a specific service somewhere in the network.
 
-In some developments, you will need to duplicate the same service multiple times. For example, if you are making a robot with multiple motors you could have the exact same board running the exact same firmware multiple times and at different places on your device.
+In some developments, you will need to duplicate the same service multiple times. For example, if you are making a robot with multiple motors you could have the exact same boards running the exact same firmware multiple times and at different places on your device.
 
 But the same way an id needs to be unique, each alias needs to be different to be findable in your system.
 
@@ -21,7 +21,7 @@ You can find an example of resilient aliases management on our [NUCLEO-F401RE le
 
 # How aliases are managed
 
-Every service needs an alias. Basically, when you create your service you will have to define your service default's alias.
+Every service needs an alias. Basically, when you create your service you will have to define your service's default alias.
 
 After this creation, your alias can be modified in different ways.
 
@@ -35,7 +35,7 @@ In this tutorial, we will discover how to make an alias persistent to a reboot, 
 
 # Saving aliases
 
-To make an alias resilient, we will need to save the alias information in flash or EEPROM. Depending on your hardware specificities, you may have different ways to read and write into your memory. You can use this function to store some other parameters such as configuration or calibrations values for your project, have direct flash access, or use a file system.
+To make an alias resilient, we will need to save the alias information in flash memory or EEPROM. Depending on your hardware specificities, you may have different ways to read and write into your memory. You can use this function to store some other parameters such as configuration or calibrations values for your project, have direct flash access, or use a file system.
 
 Luos provides a flexible solution allowing you to optionally save your aliases in the best way possible for your project.
 
@@ -59,7 +59,7 @@ void Led_Init(void)
 
 As you can see here, we just created an on/off led service with the alias `led`.
 
-If you run this service somewhere, other services will be able to rename it using a `WRITE_ALIAS` command message containing a new alias. The easiest way to test it is to use a gate service connected with Pyluos. After running `pyluos-shell`, if you print `device.nodes` you should see:
+If you run this service somewhere, other services will be able to rename it using a `WRITE_ALIAS` command message containing a new alias. The easiest way to test it is to use a gate service connected with Pyluos. After running `pyluos-shell`, if you type `device.nodes` you should see:
 
 ```
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -85,7 +85,7 @@ Now, in your `pyluos-shell` console you can type:
 device.led.rename("custom led")
 ```
 
-Then relaunch `pyluos-shell` and print `device.nodes`. You should see:
+Then relaunch `pyluos-shell` and type `device.nodes`. You should see:
 
 ```
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -101,10 +101,10 @@ Then relaunch `pyluos-shell` and print `device.nodes`. You should see:
      >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
-As you can see, the service saved your alias and replace the space with the character `_`. Also, be aware that a too long alias (above 15 characters) will be truncated.
+As you can see, the service saved your alias and replaced the space with the character `_`. Also, be aware that a too long alias (above 15 characters) will be truncated.
 
 :::warning
-If your alias has characters different from A to z, 0 to 9, space or `_`, it will be rejected and won't be saved.
+If your alias has characters different from a-A to z-Z, 0 to 9, space or `_`, it will be rejected and won't be saved.
 :::
 
 Now, in your `pyluos-shell` console, type:
@@ -113,7 +113,7 @@ Now, in your `pyluos-shell` console, type:
 device.custom_led.rename("")
 ```
 
-Then relaunch `pyluos-shell` and print `device.nodes`. You should see: 
+Then relaunch `pyluos-shell` and type `device.nodes`. You should see: 
 
 ```
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -133,7 +133,7 @@ As you can see, your default alias is back! You can remove your custom alias by 
 
 ## How to save a custom alias
 
-When a service receives a `WRITE_ALIAS` command, Luos saves the alias then passes the message to the service. This means that you can get this message into the `Led_MsgHandler` callback to save this new alias somewhere (EEPROM, Flash, SD card, etc.).
+When a service receives a `WRITE_ALIAS` command, Luos saves the alias then passes the message to the service. This means that you can get this message into the `Led_MsgHandler` callback to save this new alias somewhere (EEPROM, Flash memory, SD card, etc.).
 
 For example:
 
