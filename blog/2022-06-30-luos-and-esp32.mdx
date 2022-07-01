@@ -71,14 +71,6 @@ Luos HAL is compatible with many MCU developed by Espressif:
 
 <h2>ESP32 Concept</h2>
 
-![ESP32 Concept explanation](/img/blog/ESP32-concept.png)
-
-1. A “project” is a directory that contains all the files and configuration to **build** a single “app” (executable), as well as additional supporting elements such as a partition table, data/filesystem partitions, and a bootloader.
-2. “Project configuration” is held in a single file called `sdkconfig` in the project's root directory.
-3. An “app” is an executable that ESP-IDF builds. A single project will usually **build** two apps, a “project app” and a “bootloader app”.
-4. “components” are modular pieces of standalone code that are compiled into static libraries (.a files) and linked into an app.
-5. “Target” is the hardware for which an application is built.
-
 ```AsciiDoc    
 - myProject/
              - CMakeLists.txt
@@ -97,21 +89,15 @@ Luos HAL is compatible with many MCU developed by Espressif:
              - build/
 ```
 
+1. A “project” is a directory that contains all the files and configuration to **build** a single “app” (executable), as well as additional supporting elements such as a partition table, data/filesystem partitions, and a bootloader.
+2. “Project configuration” is held in a single file called `sdkconfig` in the project's root directory.
+3. An “app” is an executable that ESP-IDF builds. A single project will usually **build** two apps, a “project app” and a “bootloader app”.
+4. “components” are modular pieces of standalone code that are compiled into static libraries (.a files) and linked into an app.
+5. “Target” is the hardware for which an application is built.
+
+![ESP32 Concept explanation](/img/blog/ESP32-concept.png)
+
 <h2>Luos Concept</h2>
-
-<div align="center">
-  <Image
-    src="/img/feature-service-package-node-board.png"
-    darkSrc="/img/luos-layers-white.png" alt="Luos Concept explaination"
-  />
-</div>
-
-1. **Product:** A node or a set of nodes that communicate with each other. This is where you will have the configurations and information intended for all your boards.
-2. **Product config:** This is a configuration file for your entire Product (*product_config.h*).
-3. **Node:** This is the board's code. This is your actual Eclipse, PlatformIO, IAR, or other projects.
-4. **Node config:** The configuration file for your node. Define here the specific needs for the node, like pinout or hardware peripheric in HAL (*node_config.h*).
-5. **Package:** A shareable folder containing code files managing one or more services.
-6. **Service:** Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can also be custom.
 
 ```AsciiDoc
  Project
@@ -152,11 +138,25 @@ Luos HAL is compatible with many MCU developed by Espressif:
 
 ```
 
+1. **Product:** A node or a set of nodes that communicate with each other. This is where you will have the configurations and information intended for all your boards.
+2. **Product config:** This is a configuration file for your entire Product (*product_config.h*).
+3. **Node:** This is the board's code. This is your actual Eclipse, PlatformIO, IAR, or other projects.
+4. **Node config:** The configuration file for your node. Define here the specific needs for the node, like pinout or hardware peripheric in HAL (*node_config.h*).
+5. **Package:** A shareable folder containing code files managing one or more services.
+6. **Service:** Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can also be custom.
+
+<div align="center">
+  <Image
+    src="/img/feature-service-package-node-board.png"
+    darkSrc="/img/luos-layers-white.png" alt="Luos Concept explaination"
+  />
+</div>
+
 <h2>Conclusion</h2>
 
 As we can see, Luos and Espressif have many concepts in common! 
 
-ESP32 target is a HAL compatibility for Luos. A project and its configuration can be linked to the product and nodes with their structure. 
+ESP32 target is a HAL compatibility for Luos. A project and its configuration can be linked to a product composed of nodes with the Espressif structure.
 
 Finally, the component will become a package in Luos. It is interesting to note that the component is an independent library that must be compiled and reused in another project. 
 
