@@ -1,52 +1,45 @@
 import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-export default function ContactUs(props) {
+export default function ContactUs() {
   const isBrowser = useIsBrowser();
   const [sending, isSending] = useState(false);
   const form = useRef();
-  let sourcePage;
-  let sendEmail = () => {};
+  const [sourcePage, setSourcePage] = useState('');
 
-  if (isBrowser) {
-    sourcePage = localStorage.getItem('prevPageContactUs');
-    let element = document.getElementById('response');
-    let elementContainer = document.getElementsByClassName(
-      'feedbackForm__response',
-    );
-
-    sendEmail = (e) => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+    if (isBrowser) {
       isSending(true);
-      e.preventDefault();
-      let form = document.getElementById('feedbackForm');
+      setSourcePage(localStorage.getItem('prevPageContactUs'));
       emailjs
         .sendForm(
           process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
           process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,
-          form,
+          document.getElementById('feedbackForm'),
           process.env.REACT_APP_EMAIL_JS_USER_ID,
         )
         .then(
           () => {
-            isSending(false);
-            elementContainer[0].classList.add('success');
-            element.innerText = 'Your feedback has been sent.';
+            document.getElementsByClassName('feedbackForm__response')[0].classList.add('success');
+            document.getElementById('response').innerText = 'Your feedback has been sent.';
             localStorage.setItem('prevPageContactUs', '');
-            form.reset();
           },
           (error) => {
-            isSending(false);
-            elementContainer[0].classList.add('error');
-            element.innerText = error.text;
-            form.reset();
+            document.getElementsByClassName('feedbackForm__response')[0].classList.add('error');
+            document.getElementById('response').innerText = error.text;
           },
-        );
-    };
-  }
+        )
+        .finally(() => {
+          isSending(false);
+          document.getElementById('feedbackForm').reset();
+        });
+    }
+  };
 
   return (
     <div className="row container-feedback">
@@ -54,8 +47,7 @@ export default function ContactUs(props) {
         <div className="row">
           <h1 className="col-info__title">Feedback and concerns</h1>
           <p className="col-info__p">
-            You didn't find our docs useful? Give us your feedback so we can
-            help you.
+            You didn't find our docs useful? Give us your feedback so we can help you.
           </p>
         </div>
         <div className="col-info__img__container">
@@ -63,18 +55,8 @@ export default function ContactUs(props) {
         </div>
       </div>
       <div className="col-form">
-        <form
-          className="feedbackForm"
-          id="feedbackForm"
-          ref={form}
-          onSubmit={sendEmail}
-        >
-          <input
-            name="user_page"
-            className="inputForm"
-            type="hidden"
-            value={sourcePage}
-          />
+        <form className="feedbackForm" id="feedbackForm" ref={form} onSubmit={sendEmail}>
+          <input name="user_page" className="inputForm" type="hidden" value={sourcePage} />
           <div className="feedbackForm__field">
             <label htmlFor="user_object">What's your headache? *</label>
             <input
@@ -96,17 +78,10 @@ export default function ContactUs(props) {
           </div>
           <div className="feedbackForm__field">
             <label htmlFor="user_name">Your Full Name</label>
-            <input
-              type="text"
-              className="inputForm"
-              placeholder="John Doe"
-              name="user_name"
-            />
+            <input type="text" className="inputForm" placeholder="John Doe" name="user_name" />
           </div>
           <div className="feedbackForm__field">
-            <label htmlFor="user_email">
-              Your Email * (to reach you with a solution)
-            </label>
+            <label htmlFor="user_email">Your Email * (to reach you with a solution)</label>
             <input
               className="inputForm"
               required

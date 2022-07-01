@@ -11,9 +11,7 @@ import styles from './article.module.css';
 export const Requirement = (props) => {
   const completeList = props.list;
   const shortList = props.list.slice(0, props.shortListSize);
-  const [displayList, setDisplayList] = useState(
-    props.shortList ? shortList : completeList,
-  );
+  const [displayList, setDisplayList] = useState(props.shortList ? shortList : completeList);
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -32,11 +30,7 @@ export const Requirement = (props) => {
       <hr className={styles.separator} />
       <List>
         {displayList.map((element, index) => (
-          <ListItem
-            key={index}
-            component={Link}
-            href={element.link ? element.link : null}
-          >
+          <ListItem key={index} component={Link} href={element.link ? element.link : null}>
             <ListItemText
               primary={element.label}
               secondary={element.desc ? element.desc : null}
@@ -46,11 +40,7 @@ export const Requirement = (props) => {
         ))}
       </List>
       {props.shortList == true ? (
-        <Button
-          onClick={handleOpen}
-          className={styles.showMoreBtn}
-          disableRipple
-        >
+        <Button onClick={handleOpen} className={styles.showMoreBtn} disableRipple>
           {open ? (
             <ExpandLessIcon className={styles.expandBtn} />
           ) : (
