@@ -54,14 +54,14 @@ export const Introduction = (props) => {
         <Grid container spacing={5}>
           <Grid item md={6} xs={12}>
             <Requirement
-              title="Pre-requisites"
+              title="Prerequisites"
               list={props.requierements}
               color="#f5f5f5"
             />
           </Grid>
           <Grid item md={6} xs={12}>
             <Requirement
-              title="Supported Hardware"
+              title="Supported hardware"
               list={props.ressources}
               shortList={!!props.shortList}
               shortListSize={props.shortListSize}

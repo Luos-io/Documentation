@@ -703,3 +703,8 @@ html[data-theme='dark'] .footer__title {
 html[data-theme='dark'] .DocSearch-Button {
   background: #565758 !important;
 }
+
+.arrayWithImg table {
+  display: inline-block !important;
+  margin-right: 15px;
+}

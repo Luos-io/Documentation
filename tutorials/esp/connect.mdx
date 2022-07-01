@@ -1,0 +1,147 @@
+---
+custom_edit_url: null
+---
+
+import Image from '/src/components/Images.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Part 2: Connect ESP32 to Network
+
+## 1. luos_engine in ESP32
+
+With this button exemple :
+
+- We create a Luos Service
+- Run luos_engine and button package on the ESP32
+- Being ready to be plug and play on luos network
+
+If you open the main.c file in the src folder of the example project, you will see:
+
+```c
+#include "luos_engine.h"
+#include "button.h"
+
+void app_main(void)
+{
+    Luos_Init();
+    Button_Init();
+
+    while (1)
+    {
+        Luos_Loop();
+        Button_Loop();
+    }
+}
+```
+
+To implement luos on a node and to be connected to a Luos network, you need:
+
+- luos_engine.h
+- Luos_Init()
+- Luos_Loop ()
+
+Through this network, called Robus, you may send and receive messages between services. Luos provides for ESP Familly an Hardware abstraction layer based on SDK ESP-IDF to be plug and play with ESP32 on a luos network.
+
+This HAL provide a systick, timestamping data API and a communication bus based on UART, TIMER and GPIO.
+
+This ESP32 become a “node” on luos network and must be connected with other node by a physical layer : one wire or RS485 bus: [see our documentation here](https://www.luos.io/docs/hardware-consideration/electronics).
+
+## 2. ESP32 Development Board Pin to use
+
+Depending on the development board you choose and the MCU on it, to make this tutorial you will have to adapt connection. In luos_engine there is a default configuration for each ESP32 familly alowing you be plug and play on the network!
+
+You can find this default configuration in luos_engine/network/HAL/ESP32.
+
+:::caution
+if you have to change default pinout, you will have to add node_config.h to you project and reconfigure default defined pins in this files.
+:::
+
+The needed pins for luos network
+
+- VCC and GND Pin
+- Rx and Tx pin (must be connected together in one wire mode)
+- At least 2 PTP pin
+- Tx enable pin (only for RS485)
+
+Default configuration :
+
+<Tabs>
+    <TabItem value="ESP32 series" label="ESP32 series" className="arrayWithImg">
+    <div align="center">
+
+| Pin Name   | Property    |
+| ---------- | ----------- |
+| PTPA_PIN   | GPIO_NUM_26 |
+| PTPB_PIN   | GPIO_NUM_27 |
+| TX_EN_PIN  | GPIO_NUM_25 |
+| COM_TX_PIN | GPIO_NUM_10 |
+| COM_RX_PIN | GPIO_NUM_9  |
+
+  <Image src="/img/tutorials/esp/esp-2-1.png" height="300px" />
+</div>
+</TabItem>
+    <TabItem value="ESP32 C3" label="ESP32 C3" className="arrayWithImg">
+    <div align="center">
+
+| Pin Name   | Property   |
+| ---------- | ---------- |
+| PTPA_PIN   | GPIO_NUM_6 |
+| PTPB_PIN   | GPIO_NUM_7 |
+| TX_EN_PIN  | GPIO_NUM_9 |
+| COM_TX_PIN | GPIO_NUM_4 |
+| COM_RX_PIN | GPIO_NUM_5 |
+
+  <Image src="/img/tutorials/esp/esp-2-2.png" height="300px" />
+</div>
+</TabItem>
+    <TabItem value="ESP32 S2 and S3" label="ESP32 S2 and S3" className="arrayWithImg">
+    <div align="center">
+
+| Pin Name   | Property    |
+| ---------- | ----------- |
+| PTPA_PIN   | GPIO_NUM_12 |
+| PTPB_PIN   | GPIO_NUM_13 |
+| TX_EN_PIN  | GPIO_NUM_14 |
+| COM_TX_PIN | GPIO_NUM_17 |
+| COM_RX_PIN | GPIO_NUM_18 |
+
+  <Image src="/img/tutorials/esp/esp-2-3.png" height="300px" />
+</div>
+</TabItem>
+</Tabs>
+
+## 3. Detect you network
+
+:::info
+Perform our [get started part 3](/tutorials/get-started/get-started3) by connecting the ESP board as second board with the pinout describ above.
+:::
+
+You can now use pyluos-shell in your terminal. You should see the following:
+
+```bash
+$ pyluos-shell
+Searching for a gate available
+Testing /dev/cu.usbserial-D308N885
+Testing /dev/cu.usbmodem13102
+Connected to "/dev/cu.usbmodem13102".
+Sending detection signal.
+Waiting for routing table...
+Device setup.
+
+ Hit Ctrl-D to exit this interpreter.
+
+Your luos device have been successfully mounted into a "device" object:
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Pipe                Pipe                2    ┃
+  ┃  ╰> Gate                gate                1    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ├> State               button              3    ┃
+     >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+```
