@@ -115,30 +115,6 @@
       ],
       "link": "/tutorials/bike-alarm",
       "author": "nicoR"
-    },
-    {
-      "title": "Create Luos project with PlatformIo",
-      "id": "pio",
-      "category": "Tutorials",
-      "toc": 30,
-      "level": 1,
-      "img": "Luos_and_PlatformIO",
-      "desc": "You heard about Luos, or you have just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
-      "tags": ["Project", "Creation", "ST", "Arduino", "Service"],
-      "link": "/tutorials/pio",
-      "author": "thomas"
-    },
-    {
-      "title": "Luos On ESP32 : ESP IDF and Espressif IDE Setup",
-      "id": "esp",
-      "category": "Tutorials",
-      "toc": 60,
-      "level": 2,
-      "img": "Luos_and_ESP32",
-      "desc": "You want to use luos_engine and take advantage of luos network on an ESP32 MCU. In this tutorial, you will learn how to use a simple package button with ESP32 Family.",
-      "tags": ["Service", "Package", "ESP32"],
-      "link": "/tutorials/esp",
-      "author": "thomas"
     }
   ]
 }
