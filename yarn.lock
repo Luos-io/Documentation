@@ -4368,10 +4368,10 @@ dotenv-vault@^1.9.1:
     chalk "^4.1.2"
     dotenv "^16.0.1"
 
-dotenv-webpack@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/dotenv-webpack/-/dotenv-webpack-7.1.0.tgz#211fefac6bf500bf3bb66b286e1b12a23a2a70c0"
-  integrity sha512-+aUOe+nqgLerA/n611oyC15fY79BIkGm2fOxJAcHDonMZ7AtDpnzv/Oe591eHAenIE0t6w03UyxDnLs/YUxx5Q==
+dotenv-webpack@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/dotenv-webpack/-/dotenv-webpack-7.1.1.tgz#ee8a699e1d736fd8eb9363fbc7054cfff1bd9dbf"
+  integrity sha512-xw/19VqHDkXALtBOJAnnrSU/AZDIQRXczAmJyp0lZv6SH2aBLzUTl96W1MVryJZ7okZ+djZS4Gj4KlZ0xP7deA==
   dependencies:
     dotenv-defaults "^2.0.2"
 
@@ -7559,10 +7559,10 @@ pretty-time@^1.1.0:
   resolved "https://registry.yarnpkg.com/pretty-time/-/pretty-time-1.1.0.tgz#ffb7429afabb8535c346a34e41873adf3d74dd0e"
   integrity sha512-28iF6xPQrP8Oa6uxE6a1biz+lWeTOAPKggvjB8HAs6nVMKZwf5bG++632Dx614hIWgUPkgivRfG+a8uAXGTIbA==
 
-prism-react-renderer@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.3.3.tgz#9b5a4211a6756eee3c96fee9a05733abc0b0805c"
-  integrity sha512-Viur/7tBTCH2HmYzwCHmt2rEFn+rdIWNIINXyg0StiISbDiIhHKhrFuEK8eMkKgvsIYSjgGqy/hNyucHp6FpoQ==
+prism-react-renderer@^1.3.3, prism-react-renderer@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.3.5.tgz#786bb69aa6f73c32ba1ee813fbe17a0115435085"
+  integrity sha512-IJ+MSwBWKG+SM3b2SUfdrhC+gu01QkV2KmRQgREThBfSQRoufqRfxfHUxpG1WcaFjP+kojcFyO9Qqtpgt3qLCg==
 
 prismjs@^1.28.0:
   version "1.28.0"
