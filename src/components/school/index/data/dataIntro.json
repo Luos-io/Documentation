@@ -135,7 +135,7 @@
       "toc": 60,
       "level": 2,
       "img": "Morse_encoder_Luos",
-      "desc": "You heard about Luos, you just finished the Luos Get started and Trainings and you want to go further: this tutorial is for you!",
+      "desc": "After the Luos Get started and Trainings, the Luos Morse encoder tutorial is a concrete and fun application of Luos technology.",
       "tags": ["Service", "Topology", "Morse Encoder", "Led", "Pipe"],
       "link": "/tutorials/morse",
       "author": "thomas"
