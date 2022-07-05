@@ -10,13 +10,13 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Luos engine in ESP32
 
-With this second part of the tutorial illustrated with a button:
+We will illsutrate this second part of the tutorial with a button example. The next steps are the following:
 
-- We will create a Luos service
-- Run Luos engine and button package on the ESP32
-- Ready to be plug and play on the luos network
+- Using a Luos service
+- Running Luos engine and the button package on ESP32
+- Getting ready to be plug-and-play on the Luos network
 
-If you open the file main.c in the src folder of the example project, you will see:
+The file *main.c* in the *src* folder of the example project is as followed:
 
 ```c
 #include "luos_engine.h"
@@ -35,33 +35,39 @@ void app_main(void)
 }
 ```
 
-To implement luos on a node and be connected to a Luos network, you need:
+The Luos service used here is the button service from the example.
 
-- luos_engine.h
-- Luos_Init()
-- Luos_Loop()
+:::tip
+If you want to create a new service, you can learn how to do it in the par one of the tutorial [Your first service](/tutorials/your-first-service/luos-service).
+:::
 
-Through this network, called Robus, you can send and receive messages between services. Luos provides ESP Familly with a hardware abstraction layer based on the ESP-IDF SDK to be plug and play with ESP32 on a Luos network.
+To implement Luos on a node and be connected to a Luos network, you need the following file and functions:
+
+- *luos_engine.h*
+- `Luos_Init()`
+- `Luos_Loop()`
+
+Through this network, called Robus, you can send and receive messages between services. Luos provides ESP Familly with a hardware abstraction layer (HAL) based on the ESP-IDF SDK so that it becomes plug-and-play with ESP32 on a Luos network.
 
 This HAL provides a systick, a timestamp data API and a communication bus based on UART, TIMER and GPIO.
 
-This ESP32 becomes a "node" on the luos network and must be connected with other nodes by a physical layer: a wire or an RS485 bus: [read our documentation](https://www.luos.io/docs/hardware-consideration/electronics).
+This ESP32 becomes a **node** on the Luos network and must be connected with other nodes by a physical layer: a wire or an RS485 bus. [Read our documentation for more information on hardware](https://www.luos.io/docs/hardware-consideration/electronics).
 
-## 2. Pin of the ESP32 development board to use
+## 2. ESP32 development board's pins
 
-Depending on the development board you choose and the MCU it contains, to do this tutorial you will have to adapt the connection. In Luos Engine there is a default configuration for each ESP32 family allowing you to be plug and play on the network !
+Depending on the development board you choose and on the MCU it contains, to do this tutorial you will have to adapt the connection. In Luos engine there is a default configuration for each ESP32 family, allowing it to be plug-and-play on the network.
 
-You can find this default configuration in luos_engine/network/HAL/ESP32.
+You can find this default configuration in *luos_engine/network/HAL/ESP32*.
 
-:::Caution
-If you need to change the default pinout, you will need to add node_config.h to your project and reconfigure the pins defined by default in this file.
+:::caution
+If you need to change the default pinout, you will need to add *node_config.h* to your project and reconfigure the pins defined by default in this file.
 :::
 
-Pins needed for the luos network
+Pins needed for the Luos network:
 
-- VCC and GND Pin
-- Rx and Tx pin (must be connected together in one wire mode)
-- At least 2 PTP pin
+- VCC and GND pins
+- Rx and Tx pins (must be connected together in one-wire mode)
+- At least two PTP pins
 - Tx enable pin (only for RS485)
 
 Default configuration:
@@ -111,10 +117,14 @@ Default configuration:
 </TabItem>
 </Tabs>
 
+You can now wire your ESP board to a Luos board containing a gate and a pipe services, so that it can interact and launch detections into the Luos network.
+
 ## 3. Detect your network
 
+Connect the network to the computer with a USB cable.
+
 :::info
-Run our [Get started: part 3](/tutorials/get-started/get-started3) by connecting the ESP board as a second board with the pinout described above.
+You can find more connection details in the tutorial [Get started: part 3](/tutorials/get-started/get-started3), where you connect the ESP board as a second board in a Luos network, with the pinout described in the section above.
 :::
 
 You can now use pyluos-shell in your terminal. You should see the following:
@@ -145,3 +155,5 @@ Your luos device have been successfully mounted into a "device" object:
      >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 ```
+
+Your ESP board is now fully connected to the Luos network, and is detected in pyluos-shell as the node 2 containing a button in this example. Congratulations!
