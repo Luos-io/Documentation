@@ -17,7 +17,7 @@ import Image from '/src/components/Images.js';
 
 ## 1. Introduction
 
-The first step of this tutorial is to create the application service that will encode words into morse signals. The final goal is to generate an output that will be the translation of an input word into morse code.
+The first step of this tutorial is to create the application service that will encode words into morse signals. The final goal will be to generate an output that will be the translation of an input word into morse code.
 
 <div align="center">
   <Image
@@ -30,32 +30,32 @@ The first step of this tutorial is to create the application service that will e
 
 The principle of a morse coder is to translate a character into morse code represented by a succession of dots and dashes, which is an high level state on a morse line during a certain time.
 
-Words are cut in letters and letters are cut in a succession of morse encoded elements
+Words are cut in letters, and letters are cut in a succession of morse encoded elements.
 
 <div align="center">
   <Image src="/img/tutorials/morse/morse-1-2.png" darkSrc="" />
 </div>
 
-In this application :
+In this application:
 
 - A word = 10 letters buffer
 - A letter = 10 elements buffer
-- An element = state ( 0 or 1) and time (short “.” or long “-”)
-  - short = 1 time to 1
-  - long = 3 times to 1
-  - between element = 1 time to 0
-  - between letter= 3 time to 0
-  - between word = 7 times to 0
+- An element = state information (0 or 1) and time information (short state = ".", long state "-")
+  - short state = state once to 1
+  - long state = state 3 times to 1
+  - between each element = state once to 0
+  - between each letter = state 3 times to 0
+  - between each word = state 7 times to 0
 
 ## 3. Encoder application operation
 
-First of all, we will create a new Luos service. A Luos service can be a driver or an application. Here we need to create an application that will contain not only an algorithm that encode strings into morse sequences, but also the logic to handle the link among the luos drivers which we will integrate afterwards.
+First of all, we will create a new Luos service. A Luos service can be a driver or an application (or app). Here we need to create an application that will contain not only an algorithm that encodes strings into morse sequences, but also the logic to handle the link among the Luos drivers which will be integrated afterwards.
 
 :::tip
-A Luos application doesn't depend on any hardware. It can be uploaded on any board without changing anything. Applications contains a piece of the “logic” of your project. As opposing to driver services, a Luos application can find, and take the initiative to send messages to another service.
+A Luos application doesn't depend on any hardware. It can be uploaded on any board without changing anything. Applications contains a piece of the “logic” of your project. As opposing to driver services, a Luos application can find and take the initiative to send messages to another service.
 :::
 
-Like any Luos services, The encoder app has 3 functions :
+Like any Luos services, The encoder app has 3 functions:
 
 - Init
 - Loop
@@ -79,22 +79,22 @@ Loop:
   />
 </div>
 
-Clone or download this [project](https://github.com/Luos-io/morse_encoder) and open it with VSCode:
+First, clone or download [this project](https://github.com/Luos-io/morse_encoder) and open it with VSCode:
 
 <div align="center">
   <Image src="/img/tutorials/morse/morse-1-5.png" darkSrc="" />
 </div>
 
-Let’s enter into the details of the application for a better understanding
+Next, let's enter into the details of the application for a better understanding...
 
-## 4. Encoder main feature
+## 4. Encoder's main feature
 
 ### a. Detection
 
 Our service will have two operating modes:
 
-1. Start a detection and if it detects the presence of an input service, it will create an output of the morse words received from it.
-2. If not, it will play the S.O.S sequence
+1. Start a detection, an input service is detected, create an output of the morse words received from it.
+2. If no input service detected, it will play the S.O.S sequence (`... --- ...`).
 
 ```c
 void Encoder_Init(void)
@@ -117,11 +117,11 @@ void Encoder_Init(void)
 }
 ```
 
-All services have to be connected on the luos network to send and receive messages. For services to be connected and recognized in the network, we have to launch a **detection**.
+All services have to be connected to the Luos network to send and receive messages. For services to be connected and recognized in the network, we have to launch a **detection**.
 
-**Luos_Detect** launches the detection and its end can be detected with **Luos_IsConnected**: once the node is connected, the function returns **true**. After that, all services can send and receive messages.
+`Luos_Detect()` launches the detection and its end can be detected with `Luos_IsNodeDetected()`: once the node is connected, the function returns `TRUE`. After that, all services can send and receive messages.
 
-We added some initialization code too to set default values for variables.
+We also added some initialization code to set default values for variables.
 
 ### b. Play a word
 
@@ -161,17 +161,17 @@ void Encoder_Loop(void)
 ```
 
 :::info
-Notice that we use Luos_IsNodeDetected: this function checks if the node is connected on the luos network. We use this function to not run the service loop function if the node is not connected.
+Notice that we use `Luos_IsNodeDetected()`: this function checks if the node is connected on the Luos network. We use this function to prevent running the service loop function if the node is not connected.
 :::
 
 ## 5. Encoder message handler
 
-Pay attention to the second **if** statement. Here we use the **END_DETECTION** message received at the end of the detection process to set **input_detected** variable.
+Pay attention to the second `if()` statement: here we use the `END_DETECTION` message received at the end of the detection process to set the `input_detected` variable.
 
-Also, after the END_DETECTION message, we do a research into the routing table.
+Also, after the `END_DETECTION` message, we do a research into the routing table.
 
 :::tip
-The routing table is a structure that has all the information about the nodes and services that exist in a system. Each service can recognize the characteristics of the others, by filtering the data of the routing table, and find the services that it wants to communicate.
+The routing table is a structure that has all the information about the nodes and services that exist in a system. Each service can recognize the characteristics of the others by filtering the data of the routing table, and find the services that it wants to communicate with.
 :::
 
 ```c
@@ -223,13 +223,13 @@ void Encoder_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-In the first **if** statement, notice that we created a specific **CMD** to manage this data, its used to filter messages in the handler and only process this type of messages.
+In the first `if()` statement, notice that we created a specific `CMD` to manage this data. It is used to filter messages in the handler and process only this type of messages.
 
-we receive an array filled with letters to encode and we iterate on this array to encode each letter. We can detect the end of the word with the character **\r**.
+We receive an array filled with letters to encode and we iterate on this array to encode each letter. We can detect the end of the word with the character `\r`.
 
 ## 6. Change output state with Luos message
 
-We create **Morse** sequences from letters and send them as outputs to the Luos network.
+We create a morse sequence from letters, and send them as outputs to the Luos network:
 
 ```c
 void Encoder_SendMorse(bool state)
@@ -248,13 +248,13 @@ void Encoder_SendMorse(bool state)
 }
 ```
 
-The argument **state** is used to send **ON/OFF** to the output service, then we create a **msg_t** variable which we will fill with needed informations.
+The argument `state` is used to send *ON/OFF* to the output service, then we create a `msg_t` variable which will be filled with needed information.
 
-Once the message is created we can send it with the **Luos_SendMsg** function.
+Once the message is created we can send it with the `Luos_SendMsg()` function.
 
 ## 7. Element and dictionnary
 
-We will use this function to create morse sequences for each letter in the alphabet. In morse, each letter can be broken down in several ON / OFF states and the duration of these states is defined in the [Morse code - Wikipedia](https://en.wikipedia.org/wiki/Morse_code).
+We will use this function to create morse sequences for each letter in the alphabet. In morse, each letter can be broken down in several ON/OFF states; the duration of these states is defined in the [Morse code's Wikipedia article](https://en.wikipedia.org/wiki/Morse_code).
 
 ```c
 /*******************************************************************************
@@ -292,7 +292,7 @@ typedef struct MorseLetter
 } MorseLetter;
 ```
 
-Use the [file dictionnary](https://github.com/Luos-io/morse_encoder/blob/main/Morse_Encoder/lib/Encoder/dictionnary.h) to encode character into morse sequences exemple:
+Use the [file dictionnary](https://github.com/Luos-io/morse_encoder/blob/main/Morse_Encoder/lib/Encoder/dictionnary.h) to encode characters into morse sequences exemple:
 
 ```c
 /******************************************************************************
@@ -351,7 +351,7 @@ MorseLetter c_letter = {
 
 ## 8. Play a morse letter and word
 
-When a complete word is received (/r) **Encoder_PlayWord** will use the function **Encoder_PlayLetter** to change the state of the output depending on the element (1 or 0) and wait a the right time depending on the element (”.” or “-”)
+When a complete word is received (`/r`), `Encoder_PlayWord()` will use the function `Encoder_PlayLetter()` to change the state of the output depending on the element (1 or 0), and wait the right time depending on the element ("." or "-").
 
 ```c
 
