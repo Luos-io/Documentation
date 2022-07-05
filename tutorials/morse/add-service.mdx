@@ -67,22 +67,22 @@ the pipe is integrated into your Luos project.
 
 int main(void)
 {
-    HAL_Init();
-    SystemClock_Config();
+  HAL_Init();
+  SystemClock_Config();
 
-    // Init
-    Luos_Init();
-    Led_Init();
-		Encoder_Init();
-    Pipe_Init();
-    while (1)
-    {
-        // Loop
-        Luos_Loop();
-        Led_Loop();
-				Encoder_Loop();
-        Pipe_Loop();
-    }
+  // Init
+  Luos_Init();
+  Led_Init();
+  Encoder_Init();
+  Pipe_Init();
+  while (1)
+  {
+    // Loop
+    Luos_Loop();
+    Led_Loop();
+    Encoder_Loop();
+    Pipe_Loop();
+  }
 }
 ```
 

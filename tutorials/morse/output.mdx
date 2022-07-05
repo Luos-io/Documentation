@@ -35,6 +35,7 @@ Now, we can go on, with the integration of the Led service into our project’s 
 In order to make the Led service work with your morse encoder, we should call the function Led_Init() after the initialization of your encoder application and Luos and then Led_Loop() after Luos_Loop() and Encoder_Loop(). Don’t forget to include your library’s header file “led.h”:
 
 ```c
+
 /******************************************************************************
  * @file main
  * @brief main file of the project
@@ -58,16 +59,17 @@ int main(void)
 
     // Init
     Luos_Init();
-		Encoder_Init();
+    Encoder_Init();
     Led_Init();
     while (1)
     {
-        // Loop
-        Luos_Loop();
-				Encoder_Loop();
-        Led_Loop();
+      // Loop
+      Luos_Loop();
+      Encoder_Loop();
+      Led_Loop();
     }
 }
+
 ```
 
 Because our led service is a service of type `STATE_TYPE`, the encoder service will find it and use it as an output by default. It will work the same way for any other `STATE_TYPE` driver such as a speaker or a relay.

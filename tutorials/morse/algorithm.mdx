@@ -4,7 +4,7 @@ custom_edit_url: null
 
 import Image from '/src/components/Images.js';
 
-# Part 1: Luos service
+# Part 1: Morse encoder algorythm
 
 <div align="center">
   <iframe
@@ -183,7 +183,7 @@ The routing table is a structure that has all the information about the nodes an
  ******************************************************************************/
 void Encoder_MsgHandler(service_t *service, msg_t *msg)
 {
-    uint16_t index          = 0;
+    uint16_t index = 0;
     uint8_t received_letter = 0;
 
     if (msg->header.cmd == SET_CMD)
@@ -193,7 +193,7 @@ void Encoder_MsgHandler(service_t *service, msg_t *msg)
             receive_word.morse_letter[index] = Encoder_DecodeLetter(msg->data[index]);
             index += 1;
         }
-        receive_word.morse_letter[index]     = &end_letter;
+        receive_word.morse_letter[index] = &end_letter;
         receive_word.morse_letter[index + 1] = &end_word_marker;
 
         end_of_word = false;
@@ -210,7 +210,7 @@ void Encoder_MsgHandler(service_t *service, msg_t *msg)
         {
             time_luos_t update_time = 0.01;
             msg_t update_msg;
-            update_msg.header.target      = result.result_table[0]->id;
+            update_msg.header.target = result.result_table[0]->id;
             update_msg.header.target_mode = IDACK;
             TimeOD_TimeToMsg(&update_time, &update_msg);
             update_msg.header.cmd = UPDATE_PUB;
@@ -264,8 +264,8 @@ We will use this function to create morse sequences for each letter in the alpha
 
 typedef enum WordLength
 {
-    SHORT      = SHORT_PERIOD,
-    LONG       = 3 * SHORT_PERIOD,
+    SHORT = SHORT_PERIOD,
+    LONG = 3 * SHORT_PERIOD,
     WORD_SPACE = 7 * SHORT_PERIOD,
 } WordLength;
 
@@ -315,34 +315,34 @@ Use the [file dictionnary](https://github.com/Luos-io/morse_encoder/blob/main/Mo
  * Variables
  ******************************************************************************/
 MorseLetter a_letter = {
-    .morse_element[0]       = {.state = true, .word_length = SHORT},
-    .morse_element[1]       = {.state = false, .word_length = SHORT},
-    .morse_element[2]       = {.state = true, .word_length = LONG},
-    .morse_element[3]       = {.state = false, .word_length = SHORT},
+    .morse_element[0] = {.state = true, .word_length = SHORT},
+    .morse_element[1] = {.state = false, .word_length = SHORT},
+    .morse_element[2] = {.state = true, .word_length = LONG},
+    .morse_element[3] = {.state = false, .word_length = SHORT},
     .morse_element[4].value = LETTER_END,
 };
 
 MorseLetter b_letter = {
-    .morse_element[0]       = {.state = true, .word_length = LONG},
-    .morse_element[1]       = {.state = false, .word_length = SHORT},
-    .morse_element[2]       = {.state = true, .word_length = SHORT},
-    .morse_element[3]       = {.state = false, .word_length = SHORT},
-    .morse_element[4]       = {.state = true, .word_length = SHORT},
-    .morse_element[5]       = {.state = false, .word_length = SHORT},
-    .morse_element[6]       = {.state = true, .word_length = SHORT},
-    .morse_element[7]       = {.state = false, .word_length = SHORT},
+    .morse_element[0] = {.state = true, .word_length = LONG},
+    .morse_element[1] = {.state = false, .word_length = SHORT},
+    .morse_element[2] = {.state = true, .word_length = SHORT},
+    .morse_element[3] = {.state = false, .word_length = SHORT},
+    .morse_element[4] = {.state = true, .word_length = SHORT},
+    .morse_element[5] = {.state = false, .word_length = SHORT},
+    .morse_element[6] = {.state = true, .word_length = SHORT},
+    .morse_element[7] = {.state = false, .word_length = SHORT},
     .morse_element[8].value = LETTER_END,
 };
 
 MorseLetter c_letter = {
-    .morse_element[0]       = {.state = true, .word_length = LONG},
-    .morse_element[1]       = {.state = false, .word_length = SHORT},
-    .morse_element[2]       = {.state = true, .word_length = SHORT},
-    .morse_element[3]       = {.state = false, .word_length = SHORT},
-    .morse_element[4]       = {.state = true, .word_length = LONG},
-    .morse_element[5]       = {.state = false, .word_length = SHORT},
-    .morse_element[6]       = {.state = true, .word_length = SHORT},
-    .morse_element[7]       = {.state = false, .word_length = SHORT},
+    .morse_element[0] = {.state = true, .word_length = LONG},
+    .morse_element[1] = {.state = false, .word_length = SHORT},
+    .morse_element[2] = {.state = true, .word_length = SHORT},
+    .morse_element[3] = {.state = false, .word_length = SHORT},
+    .morse_element[4] = {.state = true, .word_length = LONG},
+    .morse_element[5] = {.state = false, .word_length = SHORT},
+    .morse_element[6] = {.state = true, .word_length = SHORT},
+    .morse_element[7] = {.state = false, .word_length = SHORT},
     .morse_element[8].value = LETTER_END,
 };
 
