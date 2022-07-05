@@ -38,7 +38,7 @@ export const Introduction = (props) => {
             </div>
           </Grid>
         </Grid>
-        <h2 className={styles.subtitle}>What will you learn</h2>
+        <h2 className={styles.subtitle}>What you will learn:</h2>
         <p>{props.desc}</p>
         <Stack direction="row" spacing={1} marginBottom={2}>
           {keyword.map((element, index) => (
