@@ -141,6 +141,28 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Morse Encoder',
+          link: { type: 'doc', id: 'morse/morse' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Algorithm',
+              id: 'morse/algorithm',
+            },
+            {
+              type: 'doc',
+              label: 'Output',
+              id: 'morse/output',
+            },
+            {
+              type: 'doc',
+              label: 'Add service',
+              id: 'morse/add-service',
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Luos integration',
           link: {
             type: 'doc',
