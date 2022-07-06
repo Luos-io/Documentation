@@ -8,9 +8,7 @@ import Image from '/src/components/Images.js';
 
 ## 1. Introduction
 
-Do you want to encode your own words to communicate in morse code?
-
-Finally! Now is the time to do it!
+Now is the time to encode your own words to communicate in Morse code!
 
 <div align="center">
   <img
@@ -20,9 +18,9 @@ Finally! Now is the time to do it!
   />
 </div>
 
-The final part of this tutorial is the integration of a service, that will send the input words in order to be encoded into Morse code by the encoder application. We can use numerous types of services in order to create a string input, microphones, our computer or even an application that generates words. After this addition we will have the complete Morse project.
+The final part of this tutorial is the integration of a service that will send an input words in order to be encoded into Morse code, by the encoder application. We can use various types of services that provide the text input like, for example, a string input, microphones, our computer, or even an application that generates words. After this addition, we will have a complete Morse project.
 
-For this tutorial we decided to use a serial communication driver so that we could send words from the keyboard of our computer, which will be translated into morse code and displayed to a led light. This serial driver, is a commonly used component at Luos and it is called a Pipe.
+For this tutorial, we decided to use a serial communication driver so that we can send words from the keyboard of our computer, which will be translated into Morse code and displayed to a LED light on the electronic boards. This serial driver is a commonly used component at Luos and is called a pipe.
 
 <div align="center">
   <Image
@@ -31,9 +29,9 @@ For this tutorial we decided to use a serial communication driver so that we cou
   />
 </div>
 
-## 2. Explore the Pipe driver utilty:
+## 2. Explore the pipe driver utilty
 
-The Pipe is a Luos prespecified driver which is responsible for serially receiving and sending data, from and to a computer/rpi etc. Its only responsability is to pass the data received from the embedded system to the higher level and to pass the data received from the high level to the embedded system.
+The pipe is a Luos pre-specified driver which is responsible for serially receiving and sending data, from and to a computer, an RPI, etc. Its only responsability is to pass the data received from the embedded system to the higher level, and to pass the data received from the high level to the embedded system.
 
 <div align="center">
   <Image
@@ -42,23 +40,23 @@ The Pipe is a Luos prespecified driver which is responsible for serially receivi
   />
 </div>
 
-The Pipe service is a part of the embedded network like any other Luos service.
+The pipe service is a part of the embedded network like any other Luos service.
 
-For this reason it has the same basic functions like any other service: Pipe_Init() and Pipe_Loop(). Each time it receives a frame of data it stores to a buffer, and waits for an other service to demand it. When a service demands the data (GET_CMD message) the pipe sends the data that it has stored to the service that demanded it (SET_CMD command).
+For this reason it has the same basic functions that any other service: `Pipe_Init()` and `Pipe_Loop()`. Each time it receives a frame of data, it stores it to a buffer and waits for another service to ask for it. When a service asks for the data (`GET_CMD` message), the pipe sends the stored data to the requiring service (`SET_CMD` command).
 
-In our project (if your remember well from the previous step), the Encoder application demanded to the Pipe to be updated every 10ms. So the moment that we will integrate the pipe to the project, it will sends the data (if they exist) to the encoder, every 10ms.
+In our project (if your remember well from the previous steps), the encoder application demanded to the pipe to be updated every 10ms. So the moment that we will integrate the pipe to the project, it will send the data (if they exist) to the encoder, every 10ms.
 
 :::info
 If you want more information about the pipe, you can check the corresponding [documentation page](/docs/tools/gate).
 :::
 
 :::tip
-You can explore all the Luos Services Examples that we have created for you [here](https://github.com/Luos-io/Examples).
+You can explore all the Luos services examples that we have created for you [here](https://github.com/Luos-io/Examples).
 :::
 
-## 3. Integrate Pipe service into our Morse Encoder:
+## 3. Integrate the pipe service into our Morse encoder:
 
-the pipe is integrated into your Luos project.
+The pipe is integrated into your Luos project.
 
 ```c
 ...
@@ -86,23 +84,21 @@ int main(void)
 }
 ```
 
-**Compile your project and verify that you have no errors.**
+Compile your project and check that you have no errors.
 
-**You are ready!**
-
-Because the encoder app is looking for `Pipe` services as an input, this will directly work!
+You are ready: because the encoder app is looking for a `Pipe` services as an input, this will directly work!
 
 ## 7. Encode your words to Morse Code
 
-You are now ready to send some characters in your Mcu, and see the encoded Morse result, in the Led of your board.
+You are now ready to send some characters in your MCU, and see the encoded Morse result in the LED of your board.
 
-### Specify port configuration parameters:
+### Specify port configuration parameters
 
 In order to send characters, we will use the monitoring console provided by PlatformIO.
 
-First we need to **define the baudrate of our serial usb port and to configure the monitoring parameters in platformio.ini file.**
+First we need to define the baudrate of our serial USB port and to configure the monitoring parameters in the file *platformio.ini*.
 
-You could see an example of platformio.ini file, after adding the monitoring part.
+You cn see an example of the file `platformio.ini`, after adding the monitoring part.
 
 ```c
 ; PlatformIO Project Configuration File
@@ -143,7 +139,7 @@ monitor_flags=
     CRLF
 ```
 
-It is now time to compile your project and flash your mcu with your code. Click on the upload button of platformio. You should finally see that your code is uploaded successfully.
+It is now time to compile your project and flash your MCU with your code. Click on the upload button of PlatformIO. You should finally see that your code is uploaded successfully.
 
 <div align="center">
   <Image src="/img/tutorials/morse/morse-3-3.png" darkSrc="" />
@@ -157,7 +153,11 @@ Then click to the Serial Monitor button in platformIO:
 
 You should see a miniterm console open, which shows the configuration of your serial port.
 
-You can now send the sequence of the characters that you want to encode. **Do not forget to press the “Enter” button after the end of each of your words.**
+You can now send the sequence of the characters that you want to encode. 
+
+:::warning
+Do not forget to press the “Enter” button after the end of each of your words.
+:::
 
 Below you can see an example of sending the word “hello”.
 
@@ -165,7 +165,7 @@ Below you can see an example of sending the word “hello”.
   <Image src="/img/tutorials/morse/morse-3-5.png" darkSrc="" />
 </div>
 
-Congratulations!!! You have arrived at the end of this Project. You can now communicate in Morse Code with everybody existing on this earth (or not 👽).
+Congratulations! You have arrived at the end of this project. You can now communicate in Morse code with everybody existing on this earth (or not 👽).
 
 <div align="center">
   <img

@@ -17,7 +17,7 @@ import Image from '/src/components/Images.js';
 
 ## 1. Introduction
 
-The first step of this tutorial is to create the application service that will encode words into morse signals. The final goal will be to generate an output that will be the translation of an input word into morse code.
+The first step of this tutorial is to create the application service that will encode words into Morse signals. The final goal will be to generate an output that will be the translation of an input word into Morse code.
 
 <div align="center">
   <Image
@@ -26,11 +26,11 @@ The first step of this tutorial is to create the application service that will e
   />
 </div>
 
-## 2. A morse encoder principle
+## 2. A Morse encoder principle
 
-The principle of a morse coder is to translate a character into morse code represented by a succession of dots and dashes, which is an high level state on a morse line during a certain time.
+The principle of a Morse coder is to translate a character into Morse code represented by a succession of dots and dashes, which is an high level state on a Morse line during a certain time.
 
-Words are cut in letters, and letters are cut in a succession of morse encoded elements.
+Words are cut in letters, and letters are cut in a succession of Morse encoded elements.
 
 <div align="center">
   <Image src="/img/tutorials/morse/morse-1-2.png" darkSrc="" />
@@ -49,7 +49,7 @@ In this application:
 
 ## 3. Encoder application operation
 
-First of all, we will create a new Luos service. A Luos service can be a driver or an application (or app). Here we need to create an application that will contain not only an algorithm that encodes strings into morse sequences, but also the logic to handle the link among the Luos drivers which will be integrated afterwards.
+First of all, we will create a new Luos service. A Luos service can be a driver or an application (or app). Here we need to create an application that will contain not only an algorithm that encodes strings into Morse sequences, but also the logic to handle the link among the Luos drivers which will be integrated afterwards.
 
 :::tip
 A Luos application doesn't depend on any hardware. It can be uploaded on any board without changing anything. Applications contains a piece of the “logic” of your project. As opposing to driver services, a Luos application can find and take the initiative to send messages to another service.
@@ -93,7 +93,7 @@ Next, let's enter into the details of the application for a better understanding
 
 Our service will have two operating modes:
 
-1. Start a detection, an input service is detected, create an output of the morse words received from it.
+1. Start a detection, an input service is detected, create an output of the Morse words received from it.
 2. If no input service detected, it will play the S.O.S sequence (`... --- ...`).
 
 ```c
@@ -229,7 +229,7 @@ We receive an array filled with letters to encode and we iterate on this array t
 
 ## 6. Change output state with Luos message
 
-We create a morse sequence from letters, and send them as outputs to the Luos network:
+We create a Morse sequence from letters, and send them as outputs to the Luos network:
 
 ```c
 void Encoder_SendMorse(bool state)
@@ -254,7 +254,7 @@ Once the message is created we can send it with the `Luos_SendMsg()` function.
 
 ## 7. Element and dictionnary
 
-We will use this function to create morse sequences for each letter in the alphabet. In morse, each letter can be broken down in several ON/OFF states; the duration of these states is defined in the [Morse code's Wikipedia article](https://en.wikipedia.org/wiki/Morse_code).
+We will use this function to create Morse sequences for each letter in the alphabet. In Morse, each letter can be broken down in several ON/OFF states; the duration of these states is defined in the [Morse code's Wikipedia article](https://en.wikipedia.org/wiki/Morse_code).
 
 ```c
 /*******************************************************************************
@@ -292,7 +292,7 @@ typedef struct MorseLetter
 } MorseLetter;
 ```
 
-Use the [file dictionnary](https://github.com/Luos-io/morse_encoder/blob/main/Morse_Encoder/lib/Encoder/dictionnary.h) to encode characters into morse sequences exemple:
+Use the [file dictionnary](https://github.com/Luos-io/morse_encoder/blob/main/Morse_Encoder/lib/Encoder/dictionnary.h) to encode characters into Morse sequences exemple:
 
 ```c
 /******************************************************************************
@@ -349,7 +349,7 @@ MorseLetter c_letter = {
 ...
 ```
 
-## 8. Play a morse letter and word
+## 8. Play a Morse letter and word
 
 When a complete word is received (`/r`), `Encoder_PlayWord()` will use the function `Encoder_PlayLetter()` to change the state of the output depending on the element (1 or 0), and wait the right time depending on the element ("." or "-").
 
@@ -385,4 +385,4 @@ void Encoder_PlayLetter(MorseLetter *letter)
 
 Here we are, we finished the encoder service. The next step is to get the encoder output and use a Luos service to display it.
 
-In the final step, we will generate input words so that we could send our own words, to encode them in morse code.
+In the final step, we will generate input words so that we could send our own words, to encode them in Morse code.

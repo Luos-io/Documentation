@@ -4,13 +4,13 @@ custom_edit_url: null
 
 import Image from '/src/components/Images.js';
 
-# Part 2: How to display the Encoder output
+# Part 2: How to display the encoder output
 
 ## 1. Introduction
 
-After we have created our Morse encoder application, we need to integrate a service that will exploit the output of the morse Encoder. As explained previously, each time that a letter is encoded, a morse output is generated and the encoder application shares this output with the rest of the network. This output can be used by the display device of your preference (a speaker, a led etc.).
+After we have created our Morse encoder application, we need to integrate a service that will exploit the output of the Morse encoder. As explained previously, each time that a letter is encoded, a Morse output is generated and the encoder application shares this output with the rest of the network. This output can be used by the display device of your preference (a speaker, a LED, etc.).
 
-For this project we have decided to use a Led driver service in order to display the morse result on a simple Led light. Let’s see how it works.
+For this project, we have decided to use a Led driver service in order to display the Morse result on a simple LED light. Let’s see how it works.
 
 :::info
 To understand how to create a Luos driver service like the Led driver, make sure that you follow [Your first service tutorial](/tutorials/your-first-service).
@@ -18,21 +18,21 @@ To understand how to create a Luos driver service like the Led driver, make sure
 
 ## 2. Led service example
 
-In this tutorial we have chosen to use a simple Led to demonstrate the output of the encoder algorithm. The led will be able to blink each morse character that was created by the encoder application. At this step we have not yet created the input generator service, for this reason, by default, the output of the application will be the word S.O.S.
+In this tutorial, we have chosen to use a simple LED to demonstrate the output of the encoder algorithm. The LED will be able to blink each Morse character that was created by the encoder application. At this step, we have not yet created the input generator service, and for this reason, by default, the output of the application will be the word "S.O.S".
 
 ### a. Integrate your Led driver to your project
 
 The Led library creates a Luos service, that includes the driver for your board.
 
 :::info
-A service is a block of code which will provide functionality. Services are able to communicate with any other service present in the Luos network. A service, can be a driver of a hardware component that you want to use, or an application, that defines only the software-oriented functionalities of your system.
+A service is a block of code which will provide a functionality. Services are able to communicate with any other service present in the Luos network. A service can be a driver for a hardware component that you want to use, or an application that defines only the software-oriented functionalities of your system.
 :::
 
-### b. Add Led_Init() and Led_Loop() functions into your main.c
+### b. Add `Led_Init()` and `Led_Loop()` functions into *main.c*
 
-Now, we can go on, with the integration of the Led service into our project’s main file.
+Now, we can go on with the integration of the Led service into our project’s main file.
 
-In order to make the Led service work with your morse encoder, we should call the function Led_Init() after the initialization of your encoder application and Luos and then Led_Loop() after Luos_Loop() and Encoder_Loop(). Don’t forget to include your library’s header file “led.h”:
+In order to make the Led service work with your Morse encoder, we should call the function `Led_Init()` after the initialization of your encoder application and Luos, and then `Led_Loop()` after `Luos_Loop()` and `Encoder_Loop()`. Don’t forget to include your library’s header file `led.h`:
 
 ```c
 
@@ -72,12 +72,13 @@ int main(void)
 
 ```
 
-Because our led service is a service of type `STATE_TYPE`, the encoder service will find it and use it as an output by default. It will work the same way for any other `STATE_TYPE` driver such as a speaker or a relay.
+Because our Led service is a service of type `STATE_TYPE`, the encoder service will find it and use it as an output by default. It will work the same way for any other `STATE_TYPE` driver such as a speaker or a relay.
 
-In our Led service, we can treat the messages of the command IOSTATE. This command shows that the message received, contains 1 byte of data, with a value true or false (1 or 0), depending on the value the we want to write to the Led Pin.
+In our Led service, we can treat the messages of the command `IOSTATE`. This command shows that the message received contains 1 byte of data, with a value `TRUE` or `FALSE` (1 or 0), depending on the value we want to write to the LED pin.
 
-So now the encoder is able to light your Led!
+The encoder is now able to light your LED!
 
-## 3. Build and Upload your project
+## 3. Build and upload your project
 
-Now you are ready to build your project and upload it to your board. Finally you should see the message **S.O.S** encoded in Morse on your Led light.
+You are now ready to build your project and upload it to your board. Finally you should see the message **S.O.S** encoded in Morse on your LED light.
+Let's go to the last part!
