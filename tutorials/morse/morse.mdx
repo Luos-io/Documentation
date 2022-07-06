@@ -1,0 +1,44 @@
+---
+hide_title: true
+hide_table_of_contents: true
+custom_edit_url: null
+title: How to make a Morse Encoder
+---
+
+import Introduction from '/src/components/school/article/intro.js';
+
+#
+
+<Introduction
+  title="How to make a Morse Encoder "
+  time="1 hour"
+  level="Confirmed"
+  category="Tutorials"
+  desc="In this tutorial, we will go through the explanation of the Morse encoder algorithm and its encapsulation into a Luos service. Finally we will see, using examples, how we can exploit the output of the encoder algorithm, and how we can generate and share an input to be encoded by the application."
+  tags={['Service', 'Topology', 'Morse encoder', 'LED', 'Pipe']}
+  requierements={[
+    { label: 'Luos Get started', link: '/tutorials/get-started' },
+    {
+      label: 'Luos Trainings',
+      link: '/tutorials',
+    },
+  ]}
+  ressources={[]}
+  summary={[
+    {
+      label: 'Part 1: The Morse encoder algorithm',
+      desc: 'The first step of this tutorial is to create the application service that will encode words into Morse signals.',
+      link: '/tutorials/morse/algorithm',
+    },
+    {
+      label: 'Part 2: How to display the encoder output',
+      desc: 'After we created the Morse encoder application, we will integrate a service to exploit its output.',
+      link: '/tutorials/morse/output',
+    },
+    {
+      label: 'Part 3: How to add an input service',
+      desc: 'The final part of this tutorial is the integration of a service, that will send the input words in order to be encoded into Morse code.',
+      link: '/tutorials/morse/add-service',
+    },
+  ]}
+/>
