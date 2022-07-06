@@ -10,11 +10,11 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Include the Luos lib in your project
 
-The file *platformio.ini* in your project describes the precompiler variables and the library depencies of your project.
+The file _platformio.ini_ in your project describes the precompiler variables and the library depencies of your project.
 
 In our case, we want to use Luos as a library. Writing "Luos" and "LuosHAL" in the section `lib_deps` will download the Luos library from PIO registry and will build and link Luos to your project.
 
-Fill in the file *platformio.ini* accordingly:
+Fill in the file _platformio.ini_ accordingly:
 
 <Tabs>
 <TabItem value="ST" label="ST">
@@ -51,7 +51,6 @@ lib_deps =
 ```
 
 At the line `LUOSHAL=ATSAMD21_ARDUINO`, we selected Luos HAL for the chosen MCU family (as we use the board Arduino MKRZero, it means it is the ATSAMD21_ARDUINO family).
-
 
 </TabItem>
 </Tabs>
@@ -130,7 +129,7 @@ Those special pins called PTP are necessary for the topology detection. They nee
 <Tabs>
 <TabItem value="ST" label="ST">
 
-1. Open the file *stm32xx_it.c*
+1. Open the file _stm32xx_it.c_
 2. fill in at the end of the file with the following code:
 
 ```c
@@ -149,7 +148,7 @@ void EXTI4_15_IRQHandler(void)
 ```
 
 :::info
-This is the default configuration of F0 Family used for the STM32F072RB (see [*LuosHAL_Config.h*](https://github.com/Luos-io/LuosHAL)). If you need to adapt you hardware, put your changes in the file *node_config.h* in your project.
+This is the default configuration of F0 Family used for the STM32F072RB (see [_LuosHAL_Config.h_](https://github.com/Luos-io/LuosHAL)). If you need to adapt you hardware, put your changes in the file _node_config.h_ in your project.
 :::
 
 </TabItem>
@@ -157,7 +156,7 @@ This is the default configuration of F0 Family used for the STM32F072RB (see [*L
 For Arduino, Luos fills in this information for you.
 
 :::warning
-You have to follow the pinout declared in the file *LuosHAL_Config.h* for ATSAMD21_ARDUINO in the [LuosHAL repository](https://github.com/Luos-io/LuosHAL).
+You have to follow the pinout declared in the file _LuosHAL_Config.h_ for ATSAMD21_ARDUINO in the [LuosHAL repository](https://github.com/Luos-io/LuosHAL).
 :::
 
 </TabItem>

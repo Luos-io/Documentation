@@ -52,10 +52,10 @@ We will use the STM32 Framework HAL for this project.
 
 At this step, PlatformIO creates for you a complete project:
 
-- Folder *include*: where you put the project header files.
-- Folder *src*: where you put the put project source files.
-- Folder *lib*: where you put the Luos services.
-- *plateformio.ini*: the PlatformIO project entry point.
+- Folder _include_: where you put the project header files.
+- Folder _src_: where you put the put project source files.
+- Folder _lib_: where you put the Luos services.
+- _plateformio.ini_: the PlatformIO project entry point.
 
 ### 2- Click on finish
 
@@ -67,10 +67,10 @@ At this step, PlatformIO creates for you a complete project:
 
 ## 3. Node Config Files creation
 
-Luos project uses a file, placed at the root of the folder, called *node_config.h*. This file allows you to configure Luos library and match your hardware configuration with Luos default configuration.
+Luos project uses a file, placed at the root of the folder, called _node_config.h_. This file allows you to configure Luos library and match your hardware configuration with Luos default configuration.
 
 1. Right click on "Project name".
-2. **New Files** → *node_config.h*.
+2. **New Files** → _node_config.h_.
 3. Copy the code below and save.
 
 ```c
@@ -91,9 +91,9 @@ Luos project uses a file, placed at the root of the folder, called *node_config.
 In this example, we will use the default configuration of Luos HAL for ST and Arduino, so nothing to change right now 😅.
 :::
 
-## 4. Configure *platformio.ini* to use your project
+## 4. Configure _platformio.ini_ to use your project
 
-*platformio.ini* is the project configuration file. You must fill in the file with the information relative to your project.
+_platformio.ini_ is the project configuration file. You must fill in the file with the information relative to your project.
 
 <Tabs>
 <TabItem value="ST" label="ST">
@@ -127,7 +127,7 @@ build_flags =
 ```
 
 - Modifying compilation flag `-Os` to `-O1`.
-- Include the *node_config.h* file.
+- Include the _node_config.h_ file.
 - Setup tools to upload or debug the program if necessary.
 
 <div align="center">
@@ -144,8 +144,8 @@ The main file of your project is your entry point! let's fill in this file with 
 <Tabs>
 <TabItem value="ST" label="ST">
 
-1. In *src* → **New Files** → *main.c*
-2. Fill in the *main.c* file with the following code:
+1. In _src_ → **New Files** → _main.c_
+2. Fill in the _main.c_ file with the following code:
 
 ```c
 /******************************************************************************
@@ -188,7 +188,7 @@ int main(void)
 }
 ```
 
-3. The include of *stm32f0xx_hal.h* must be adapted to the STM familly MCU you chose. In our case, ST NUCLEO STM32F072RB → F0 family.
+3. The include of _stm32f0xx_hal.h_ must be adapted to the STM familly MCU you chose. In our case, ST NUCLEO STM32F072RB → F0 family.
 
 :::tip
 You can modify the clock frequency of you MCU. We recommand to do it with CubeMx.
@@ -220,7 +220,7 @@ For many MCUs, you have acces to an IRQ handler fonction. These functions are ca
 <Tabs>
 <TabItem value="ST" label="ST">
 
-1. In *src* → **New Files** → *stm32f0xx_it.c*, add this code:
+1. In _src_ → **New Files** → _stm32f0xx_it.c_, add this code:
 
 ```c
 /******************************************************************************
@@ -279,7 +279,7 @@ void SysTick_Handler(void)
 /******************************************************************************/
 ```
 
-2. In *Include* → **New File** → *stm32f0xx_it.h*, add this code:
+2. In _Include_ → **New File** → _stm32f0xx_it.h_, add this code:
 
 ```c
 /******************************************************************************
