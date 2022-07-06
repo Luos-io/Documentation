@@ -1,0 +1,98 @@
+---
+custom_edit_url: null
+description: Different levels on the embedded code are defined, corresponding to the different levels of information needed across your entire product.
+---
+
+import Image from "@site/src/components/Images.js";
+
+# Code organization
+
+Because Luos engine allows you to manage your features as sharable blocks of code, we organized the code in a specific way allowing to easily integrate and share packages from your projects with as little friction as possible.
+
+### Luos engine's levels
+
+Different levels on the embedded code are defined, corresponding to the different levels of information needed across your entire product.
+
+|  Level  |                                                                            Description                                                                            |
+| :-----: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Product | A node or a set of nodes that communicate with each other. This is the place where you will have the configurations and information intended for all your boards. |
+|  Node   |                                   This is the board's code. This is your actual Eclipse, PlatformIO, IAR, or any other project.                                   |
+| Package |                                              A sharable folder containing code files managing one or more services.                                               |
+| Service |                       Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can be custom too.                       |
+
+<div align="center">
+  <Image
+    src="/img/architecture.svg"
+    darkSrc="/img/architecture-dark.svg"
+  ></Image>
+</div>
+
+### Product code organization with Luos
+
+```AsciiDoc
+ Project
+  │
+  ├─── product_config.h
+  └─── Nodes
+        ├─── Node_1
+        │     ├─── node_config.h
+        │     ├─── main.c
+        │     └─── Packages
+        │             ├─── Package_1
+        │             │     ├─── package_1.c
+        │             │     └─── package_1.h
+        │             └─── Package_2
+        │                   ├─── package_2.c
+        │                   └─── package_2.h
+        ├─── Node_2
+        │     ├─── node_config.h
+        │     ├─── main.c
+        │     └─── Packages
+        │             └─── Package_3
+        │                   ├─── package_3.c
+        │                   └─── package_3.h
+        │
+        └─── Node_3
+                ├─── node_config.h
+                ├─── main.c
+                └─── Packages
+                        ├─── Package_4
+                        │     ├─── package_4.c
+                        │     └─── package_4.h
+                        ├─── Package_5
+                        │     ├─── package_5.c
+                        │     └─── package_5.h
+                        └─── Package_6
+                            ├─── package_6.c
+                            └─── package_6.h
+
+```
+
+- **Product level**
+
+  _product_config.h_: This file describes the general configuration for the product, such as baudrate, timeout duration, etc. It also groups the list of custom types, profiles, and commands that allow services to communicate together. This folder is the same for all the nodes of the same product and should be included at the node level.
+
+- **Node level**
+
+  _node_config.h_: This file describes the configuration of the board's pinout, USART for communication, timer, and DMA. It also configures the buffer size for Luos communication and the number of tasks.
+  
+  _main.c/.h_: The main files for the node that calls _luos.h_, initializes and calls the package (all the different Service_Init, Service_Loop).
+
+- **Package level**
+
+  _package.c/.h_: Contains the Service_Init, Service_Loop, and Service_Msg_Handler. In these files, you can create services dedicated to your functions with Luos API.
+
+- **Service level**
+
+  Uses Luos API and Service Profile in your package's code to create either a standard or a custom service that anybody can use.
+
+### Where is Luos engine?
+
+Luos engine's library is used at the node level. You will need to initialize the engine and call a loop function in your main program to be able to use the Luos engine API in your packages.
+
+<div align="center">
+  <Image
+    src="/img/luos_mcu_platform.svg"
+    darkSrc="/img/luos_mcu_platform-dark.svg"
+  />
+</div>

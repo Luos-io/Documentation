@@ -129,6 +129,18 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Alias',
+          link: { type: 'doc', id: 'resilient-alias/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Use resilient aliases',
+              id: 'resilient-alias/resilient-alias',
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Luos integration',
           link: {
             type: 'doc',
@@ -154,6 +166,5 @@ module.exports = {
         },
       ],
     },
-    { type: 'link', label: 'Go to Luos.io', href: 'https://www.luos.io/' },
   ],
 };

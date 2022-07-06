@@ -13,6 +13,21 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/a-new-way-to-design-embedded-app-using-luos-step-1",
+      "destination": "/blog/think-globally",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/a-new-way-to-design-embedded-app-using-luos-step-5",
+      "destination": "/blog/think-globally",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/a-new-way-to-design-embedded-app-using-luos-intro",
+      "destination": "/blog/think-globally",
+      "statusCode": 301
+    },
+    {
       "source": "/community",
       "destination": "https://discord.gg/luos"
     },
@@ -222,6 +237,16 @@
       "statusCode": 301
     },
     {
+      "source": "/pricing",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/product/nucleo-f0/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/technology",
       "destination": "/",
       "statusCode": 301
@@ -237,7 +262,27 @@
       "statusCode": 301
     },
     {
+      "source": "/support",
+      "destination": "https://discord.gg/luos",
+      "statusCode": 301
+    },
+    {
       "source": "/us",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/us/documentation/",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
+      "source": "/us/roi/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/us/roi-calculator/",
       "destination": "/",
       "statusCode": 301
     },

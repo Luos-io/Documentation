@@ -11,11 +11,15 @@ html[data-theme='dark'] .introContainer {
 
 html[data-theme='dark'] .chip {
   color: white !important;
-  border: 1px solid #BD99FF;
+  border: 1px solid #bd99ff;
 }
 
 html[data-theme='dark'] .listItem p {
-  color: white !important;
+  color: white;
+}
+
+html[data-theme='dark'] .listItem span {
+  color: white;
 }
 
 .title {
@@ -74,7 +78,7 @@ html[data-theme='dark'] .listItem p {
 .requirement {
   width: 100%;
   padding: 20px;
-  border-left: 3px solid #BD99FF;
+  border-left: 3px solid #bd99ff;
   min-height: 185px;
   margin-bottom: 10px;
 }
@@ -90,18 +94,18 @@ html[data-theme='dark'] .requirement {
 
 .separator {
   border: none;
-  border-top: 2px solid #BD99FF;
+  border-top: 2px solid #bd99ff;
   color: #333;
   overflow: visible;
   margin: 0px;
 }
 
 html[data-theme='light'] .separator {
-  border-top: 2px solid #BD99FF;
+  border-top: 2px solid #bd99ff;
 }
 
 html[data-theme='light'] .requirement {
-  border-left: 3px solid #BD99FF;
+  border-left: 3px solid #bd99ff;
 }
 
 .requirement a {
@@ -121,7 +125,7 @@ html[data-theme='light'] .requirement {
 }
 
 .difficultyContainer {
-  background: #F5F5F5;
+  background: #f5f5f5;
   width: 150px;
   margin: 15px 0px;
   padding: 3px 10px;
@@ -131,7 +135,7 @@ html[data-theme='light'] .requirement {
   float: right;
 }
 
-html[data-theme='dark'] .difficultyContainer{
+html[data-theme='dark'] .difficultyContainer {
   background: #565758;
 }
 
@@ -150,11 +154,11 @@ html[data-theme='dark'] .difficultyContainer{
   width: 0.25rem;
   display: inline-block;
   margin-right: 1.25rem;
-  background: #F5F5F5;
-  box-shadow: 6px 0 0 #F5F5F5, 8px 0 0 #F5F5F5;
+  background: #f5f5f5;
+  box-shadow: 6px 0 0 #f5f5f5, 8px 0 0 #f5f5f5;
 }
 
-html[data-theme='dark'] .difficulty{
+html[data-theme='dark'] .difficulty {
   background: #565758;
   box-shadow: 6px 0 0 #565758, 8px 0 0 #323334;
 }
@@ -172,8 +176,8 @@ html[data-theme='dark'] .difficulty{
 }
 
 .expandBtn {
-  color: #BD99FF;
+  color: #bd99ff;
 }
 html[data-theme='light'] .expandBtn {
-  color: #BD99FF;
+  color: #bd99ff;
 }

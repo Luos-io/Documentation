@@ -1,5 +1,5 @@
 ---
-title: "Distributed latency based time synchronization"
+title: 'Distributed latency based time synchronization'
 description: At Luos, we deal with distributed (multi-MCU) critical and real-time environments. Everything in our technology has been thought to be fast and lightweight.
 slug: distributed-latency-based-time-synchronization
 authors:
@@ -67,7 +67,10 @@ During the first part of this article, we talked about latency. We need to have 
 
 And if we can measure it, why maintain a typical timeline? We can use this latency value to know the real local date of an event: no more global timeline, just a delta between data generation and consumption.
 
-<h3> If we only measure latency without maintaining a timeline, can we still have real-time behavior? </h3>
+<h3>
+  {' '}
+  If we only measure latency without maintaining a timeline, can we still have real-time behavior?{' '}
+</h3>
 
 Yes, absolutely.
 
@@ -93,7 +96,13 @@ I don't know.
 
 I talked with Edward Lee from the University of Berkeley and learned they wrote a paper about these subjects. They are the only ones I know that work on this, and they don't do it for embedded systems (for now).
 
-<a rel="external nofollow" href="https://www.semanticscholar.org/paper/A-Programming-Model-for-Time-Synchronized-Real-Time-Zhao-Liu/dd0a4b93ac9a41444d303c38a10c25bf8e17a30e" target="_blank">[PDF] A Programming Model for Time-Synchronized Distributed Real-Time Systems | Semantic Scholar</a>
+<a
+  rel="external nofollow"
+  href="https://www.semanticscholar.org/paper/A-Programming-Model-for-Time-Synchronized-Real-Time-Zhao-Liu/dd0a4b93ac9a41444d303c38a10c25bf8e17a30e"
+  target="_blank"
+>
+  [PDF] A Programming Model for Time-Synchronized Distributed Real-Time Systems | Semantic Scholar
+</a>
 
 If you hear of anyone working there the way we do in Luos, let me know.
 
@@ -161,4 +170,6 @@ An example of an event in the future:
 
 In this case, Delta will be positive.
 
-[Get Started with Luos](/tutorials/get-started)
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get Started with Luos
+</a>

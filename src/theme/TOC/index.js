@@ -84,7 +84,7 @@ function TOC({ className, ...props }) {
               <img src="/img/linkedin.png" className="rsLogo"></img>
             </a>
           </Stack>
-          <Requirement title="Related Content" color="#FFFFFF" list={list} />
+          <Requirement title="Related content" color="#FFFFFF" list={list} />
         </div>
       ) : null}
     </div>
