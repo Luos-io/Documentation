@@ -129,6 +129,23 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'PlatformIo',
+          link: { type: 'doc', id: 'pio/pio' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Project creation',
+              id: 'pio/creation',
+            },
+            {
+              type: 'doc',
+              label: 'Include Luos to your project',
+              id: 'pio/include',
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Alias',
           link: { type: 'doc', id: 'resilient-alias/intro' },
           items: [

@@ -129,6 +129,18 @@
       "author": "nicoR"
     },
     {
+      "title": "Create Luos project with PlatformIo",
+      "id": "pio",
+      "category": "Tutorials",
+      "toc": 30,
+      "level": 1,
+      "img": "Luos_and_PlatformIO",
+      "desc": "You heard about Luos, or you have just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
+      "tags": ["Project", "Creation", "ST", "Arduino", "Service"],
+      "link": "/tutorials/pio",
+      "author": "thomas"
+    },
+    {
       "title": "How to make a Morse Encoder",
       "id": "morse",
       "category": "Tutorials",
