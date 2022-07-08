@@ -8,13 +8,13 @@ import TabItem from '@theme/TabItem';
 
 # Part 2: Include Luos to your project
 
-## 1. Include the Luos lib in your project
+## 1. Include the Luos library in your project
 
-The file _platformio.ini_ in your project describes the precompiler variables and the library depencies of your project.
+The file *platformio.ini* in your project describes the precompiler variables and the library depencies of your project.
 
 In our case, we want to use Luos as a library. Writing "Luos" and "LuosHAL" in the section `lib_deps` will download the Luos library from PIO registry and will build and link Luos to your project.
 
-Fill in the file _platformio.ini_ accordingly:
+Fill in the file *platformio.ini* accordingly:
 
 <Tabs>
 <TabItem value="ST" label="ST">
@@ -56,14 +56,14 @@ At the line `LUOSHAL=ATSAMD21_ARDUINO`, we selected Luos HAL for the chosen MCU 
 </Tabs>
 
 :::info
-You can fix a minimal version that you want for your Library:
+You can choose a minimal version that you want for your Library:
 `Luos@^X.Y.Z` → Minimal version of Luos (writing nothing here will download the last version).
 `LuosHAL@^X.Y.Z` → Minimal version of LuosHAL (writing nothing here will download the last version).
 :::
 
 ## 2. Include Luos in your main file
 
-At the top of the main file, add `#include "Luos.h".` With this line, you added Luos Library to your project so that you can use Luos API.
+At the top of the main file, add `#include "Luos.h".` With this line, you just added Luos Library to your project so that you can use Luos API.
 
 <Tabs>
 <TabItem value="ST" label="ST">
@@ -111,7 +111,7 @@ void loop()
 </TabItem>
 </Tabs>
 
-Luos library, and future Luos packages that you will create, have two special functions: `Init()` and `Loop()`.
+Either Luos library or any future Luos packages that you will create have two special functions: `Init()` and `Loop()`.
 
 -Init function is called once, at MCU reset.
 -Loop function will be called sequentially in a loop.
@@ -122,15 +122,15 @@ Each API begins with the name of the file where it is declared. A simple rule of
 
 ## 3. Include Luos PTP interruption
 
-In the case that you have a network, you need a way to detect other MCUs in this network. with Luos network, we use two pins (see the documentation page [topology and network](/docs/luos-technology/node/topology) for more information).
+In the case that you have a network, you need a way to detect other MCUs in this network. With the Luos network, we use two pins (see the documentation page [topology and network](/docs/luos-technology/node/topology) for more information).
 
-Those special pins called PTP are necessary for the topology detection. They need an interruption handler to work on a Luos network.
+Those special pins, called PTP pins, are necessary for the topology detection. They need an interruption handler to work on a Luos network.
 
 <Tabs>
 <TabItem value="ST" label="ST">
 
-1. Open the file _stm32xx_it.c_
-2. fill in at the end of the file with the following code:
+1. Open the file *stm32xx_it.c*
+2. fill in the end of the file with the following code:
 
 ```c
 /******************************************************************************/
@@ -148,7 +148,7 @@ void EXTI4_15_IRQHandler(void)
 ```
 
 :::info
-This is the default configuration of F0 Family used for the STM32F072RB (see [_LuosHAL_Config.h_](https://github.com/Luos-io/LuosHAL)). If you need to adapt you hardware, put your changes in the file _node_config.h_ in your project.
+This is the default configuration of F0 Family used for the STM32F072RB (see [*LuosHAL_Config.h*](https://github.com/Luos-io/LuosHAL)). If you need to adapt you hardware, put your changes in the file *node_config.h* in your project.
 :::
 
 </TabItem>
@@ -156,7 +156,7 @@ This is the default configuration of F0 Family used for the STM32F072RB (see [_L
 For Arduino, Luos fills in this information for you.
 
 :::warning
-You have to follow the pinout declared in the file _LuosHAL_Config.h_ for ATSAMD21_ARDUINO in the [LuosHAL repository](https://github.com/Luos-io/LuosHAL).
+You have to follow the pinout declared in the file *LuosHAL_Config.h* for ATSAMD21\*ARDUINO in the [LuosHAL repository](https://github.com/Luos-io/LuosHAL).
 :::
 
 </TabItem>
@@ -176,6 +176,6 @@ Upload the code to your MCU by clicking on the right arrow button at the bottom 
   <Image src="/img/tutorials/pio/pio-2-2.png" />
 </div>
 
-You have now created a project with an ST framework or with an Arduino framework, and configured evreyting to begin with Luos.
+You have now created a project with an ST framework or with an Arduino framework, and configured everyting to begin with Luos.
 
-Rename your project and add packages like in the trainings, in order to make great projects with Luos! [You check this solution](https://github.com/Luos-io/Mooc/tree/main/Basic_Project).
+Rename your project and add packages like in the trainings, in order to make great projects with Luos! [You can check the full solution here](https://github.com/Luos-io/Mooc/tree/main/Basic*Project).
