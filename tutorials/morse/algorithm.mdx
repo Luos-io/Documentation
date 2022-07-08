@@ -1,10 +1,11 @@
 ---
 custom_edit_url: null
+image: /img/Morse_encoder_Luos.png
 ---
 
 import Image from '/src/components/Images.js';
 
-# Part 1: Morse encoder algorythm
+# Part 1: Morse encoder algorithm
 
 <div align="center">
   <iframe
@@ -183,43 +184,43 @@ The routing table is a structure that has all the information about the nodes an
  ******************************************************************************/
 void Encoder_MsgHandler(service_t *service, msg_t *msg)
 {
-    uint16_t index = 0;
-    uint8_t received_letter = 0;
+  uint16_t index = 0;
+  uint8_t received_letter = 0;
 
-    if (msg->header.cmd == SET_CMD)
+  if (msg->header.cmd == SET_CMD)
+  {
+    while (msg->data[index] != '\r')
     {
-        while (msg->data[index] != '\r')
-        {
-            receive_word.morse_letter[index] = Encoder_DecodeLetter(msg->data[index]);
-            index += 1;
-        }
-        receive_word.morse_letter[index] = &end_letter;
-        receive_word.morse_letter[index + 1] = &end_word_marker;
-
-        end_of_word = false;
-        end_of_letter = false;
+      receive_word.morse_letter[index] = Encoder_DecodeLetter(msg->data[index]);
+      index += 1;
     }
+    receive_word.morse_letter[index] = &end_letter;
+    receive_word.morse_letter[index + 1] = &end_word_marker;
 
-		if (msg->header.cmd == END_DETECTION)
+    end_of_word = false;
+    end_of_letter = false;
+  }
+
+  if (msg->header.cmd == END_DETECTION)
+  {
+    search_result_t result;
+    RTFilter_Type(RTFilter_Reset(&result), STATE_TYPE);
+    output_id = result.result_table[0]->id;
+    RTFilter_Type(RTFilter_Reset(&result), PIPE_TYPE);
+    if (result.result_nbr > 0)
     {
-        search_result_t result;
-				RTFilter_Type(RTFilter_Reset(&result), STATE_TYPE);
-        output_id = result.result_table[0]->id;
-        RTFilter_Type(RTFilter_Reset(&result), PIPE_TYPE);
-        if (result.result_nbr > 0)
-        {
-            time_luos_t update_time = 0.01;
-            msg_t update_msg;
-            update_msg.header.target = result.result_table[0]->id;
-            update_msg.header.target_mode = IDACK;
-            TimeOD_TimeToMsg(&update_time, &update_msg);
-            update_msg.header.cmd = UPDATE_PUB;
-            Luos_SendMsg(service, &update_msg);
-            input_detected = true;
-            return;
-        }
-        input_detected = false;
+      time_luos_t update_time = 0.01;
+      msg_t update_msg;
+      update_msg.header.target = result.result_table[0]->id;
+      update_msg.header.target_mode = IDACK;
+      TimeOD_TimeToMsg(&update_time, &update_msg);
+      update_msg.header.cmd = UPDATE_PUB;
+      Luos_SendMsg(service, &update_msg);
+      input_detected = true;
+      return;
     }
+    input_detected = false;
+  }
 }
 ```
 
@@ -248,7 +249,7 @@ void Encoder_SendMorse(bool state)
 }
 ```
 
-The argument `state` is used to send *ON/OFF* to the output service, then we create a `msg_t` variable which will be filled with needed information.
+The argument `state` is used to send _ON/OFF_ to the output service, then we create a `msg_t` variable which will be filled with needed information.
 
 Once the message is created we can send it with the `Luos_SendMsg()` function.
 
