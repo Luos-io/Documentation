@@ -708,3 +708,8 @@ html[data-theme='dark'] .DocSearch-Button {
   display: inline-block !important;
   margin-right: 15px;
 }
+
+.dropdown-archived-versions {
+  font-size: 0.875rem;
+  padding: 0;
+}

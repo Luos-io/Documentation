@@ -28,8 +28,16 @@ function DocItemMetadata(props) {
   const { content: DocContent } = props;
   const { metadata, frontMatter, assets } = DocContent;
   const { keywords } = frontMatter;
-  const { description, title } = metadata;
+  let { description, title } = metadata;
   const image = assets.image ?? frontMatter.image;
+
+  if (metadata.version !== 'current') {
+    description = description + ' for version ' + metadata.version;
+    title = title + ' for version ' + metadata.version;
+  }
+
+  console.log(description);
+  console.log(title);
   return (
     <PageMetadata
       {...{
