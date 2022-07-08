@@ -139,6 +139,18 @@
       "tags": ["Project", "Creation", "ST", "Arduino", "Service"],
       "link": "/tutorials/pio",
       "author": "thomas"
+    },
+    {
+      "title": "How to make a Morse Encoder",
+      "id": "morse",
+      "category": "Tutorials",
+      "toc": 60,
+      "level": 2,
+      "img": "Morse_encoder_Luos",
+      "desc": "After the Luos Get started and Trainings, the Luos Morse encoder tutorial is a concrete and fun application of Luos technology.",
+      "tags": ["Service", "Topology", "Morse Encoder", "Led", "Pipe"],
+      "link": "/tutorials/morse",
+      "author": "thomas"
     }
   ]
 }
