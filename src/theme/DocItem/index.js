@@ -36,8 +36,6 @@ function DocItemMetadata(props) {
     title = title + ' for version ' + metadata.version;
   }
 
-  console.log(description);
-  console.log(title);
   return (
     <PageMetadata
       {...{
