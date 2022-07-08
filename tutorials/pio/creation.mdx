@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Introduction
 
-Beginning with a project can be painful and a long process! New environment, new tools, ..., you may want to abandon before starting.
+Beginning with a project can be painful and a long process! New environment, new tools, ... You may sometimes want to give up before starting.
 
 But don't worry, we will guide you through the process! You will learn how to set up a PlatformIO environment and how to make a good project structure.
 
@@ -20,7 +20,7 @@ This tutorial uses VSCode as an IDE. Before jumping into the code, let's set up 
 If PlatformIO is not already installed on your computer, please follow our [Get started tutorial](/tutorials/get-started/).
 :::
 
-In this tutorial, we will use a ST NUCLEO F072RB board for a project creation with ST board (e)and an Arduino MKRZero board for project creation with Arduino board.
+In this tutorial, we will use a ST NUCLEO F072RB board for a project creation with ST board, and an Arduino MKRZero board for project creation with Arduino board.
 
 ## 2. Create a new project
 
@@ -52,10 +52,10 @@ We will use the STM32 Framework HAL for this project.
 
 At this step, PlatformIO creates for you a complete project:
 
-- Folder _include_: where you put the project header files.
-- Folder _src_: where you put the put project source files.
-- Folder _lib_: where you put the Luos services.
-- _plateformio.ini_: the PlatformIO project entry point.
+- Folder *include*: where you put the project's header files.
+- Folder *src*: where you put the put project's source files.
+- Folder *lib*: where you put the Luos services.
+- *plateformio.ini*: the PlatformIO project entry point.
 
 ### 2- Click on finish
 
@@ -63,14 +63,14 @@ At this step, PlatformIO creates for you a complete project:
   <Image src="/img/tutorials/pio/pio-1-5.png" />
 </div>
 
-### 3- Yes accept
+### 3- Click on Yes accept
 
-## 3. Node Config Files creation
+## 3. Node's config files creation
 
-Luos project uses a file, placed at the root of the folder, called _node_config.h_. This file allows you to configure Luos library and match your hardware configuration with Luos default configuration.
+Luos project uses a file, placed at the root of the folder, called *node_config.h*. This file allows you to configure the Luos library and match your hardware's configuration with Luos's default configuration.
 
 1. Right click on "Project name".
-2. **New Files** → _node_config.h_.
+2. **New Files** → *node_config.h*.
 3. Copy the code below and save.
 
 ```c
@@ -91,9 +91,9 @@ Luos project uses a file, placed at the root of the folder, called _node_config.
 In this example, we will use the default configuration of Luos HAL for ST and Arduino, so nothing to change right now 😅.
 :::
 
-## 4. Configure _platformio.ini_ to use your project
+## 4. Configure *platformio.ini* to use your project
 
-_platformio.ini_ is the project configuration file. You must fill in the file with the information relative to your project.
+*platformio.ini* is the project configuration file. You must fill in the file with the information relative to your project. See the file definition in the table below, according to the board you have:
 
 <Tabs>
 <TabItem value="ST" label="ST">
@@ -127,7 +127,7 @@ build_flags =
 ```
 
 - Modifying compilation flag `-Os` to `-O1`.
-- Include the _node_config.h_ file.
+- Include the *node_config.h* file.
 - Setup tools to upload or debug the program if necessary.
 
 <div align="center">
@@ -137,15 +137,15 @@ build_flags =
 </TabItem>
 </Tabs>
 
-## 5. Create main file
+## 5. Create the main file
 
-The main file of your project is your entry point! let's fill in this file with our basic needs.
+The main file of your project is your entry point! Let's fill in this file with our basic needs:
 
 <Tabs>
 <TabItem value="ST" label="ST">
 
-1. In _src_ → **New Files** → _main.c_
-2. Fill in the _main.c_ file with the following code:
+1. In *src* → **New Files** → *main.c*
+2. Fill in the file *main.c* with the following code:
 
 ```c
 /******************************************************************************
@@ -188,7 +188,7 @@ int main(void)
 }
 ```
 
-3. The include of _stm32f0xx_hal.h_ must be adapted to the STM familly MCU you chose. In our case, ST NUCLEO STM32F072RB → F0 family.
+3. The include of *stm32f0xx_hal.h* must be adapted to the STM familly MCU you chose. In our case, ST NUCLEO STM32F072RB corresponds to the F0 family.
 
 :::tip
 You can modify the clock frequency of you MCU. We recommand to do it with CubeMx.
@@ -196,7 +196,7 @@ You can modify the clock frequency of you MCU. We recommand to do it with CubeMx
 
 </TabItem>
 <TabItem value="Arduino" label="Arduino">
-In Arduino, the main file is automatically created and filled with two functions.
+In Arduino, the main file is automatically created and filled with two functions:
 
 ```c
 #include <Arduino.h>
@@ -220,7 +220,7 @@ For many MCUs, you have acces to an IRQ handler fonction. These functions are ca
 <Tabs>
 <TabItem value="ST" label="ST">
 
-1. In _src_ → **New Files** → _stm32f0xx_it.c_, add this code:
+1. In *src* → **New Files** → *stm32f0xx_it.c*, add this code:
 
 ```c
 /******************************************************************************
@@ -279,7 +279,7 @@ void SysTick_Handler(void)
 /******************************************************************************/
 ```
 
-2. In _Include_ → **New File** → _stm32f0xx_it.h_, add this code:
+2. In *Include* → **New File** → *stm32f0xx_it.h*, add this code:
 
 ```c
 /******************************************************************************
@@ -321,7 +321,7 @@ void SysTick_Handler(void);
 
 </TabItem>
 <TabItem value="Arduino" label="Arduino">
-When you choose to use Arduino framworks, there is no need to declare the IRQ function.
+If you choose to use the Arduino framworks, there is no need to declare the IRQ function.
 
 </TabItem>
 </Tabs>
