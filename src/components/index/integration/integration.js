@@ -88,7 +88,11 @@ const Integration = (props) => {
       <Grid container spacing={3}>
         <Grid item xs={6} md={4} lg={4}>
           {' '}
-          <img src="img/index/integration/line-right.svg" className={styles.imgLeft} />
+          <img
+            src="img/index/integration/line-right.svg"
+            alt="line-right"
+            className={styles.imgLeft}
+          />
         </Grid>
         <Grid item xs={12} md={4} lg={4}>
           <h2 className={`${styles.title} ${styles.underline}`}>Integrations</h2>
@@ -113,6 +117,7 @@ const Integration = (props) => {
                 <img
                   src="img/index/header/buttons.svg"
                   style={{ padding: '15px', width: '100px' }}
+                  alt="buttons"
                 />
               </Grid>
               <Grid item md={4} lg={4} xl={4} style={{ textAlign: 'center' }}>
@@ -129,12 +134,12 @@ const Integration = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" />{' '}
+                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" />{' '}
+                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -238,7 +243,11 @@ const Integration = (props) => {
         >
           <div className={styles.head}>
             {' '}
-            <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
+            <img
+              src="img/index/header/buttons.svg"
+              alt="buttons"
+              style={{ padding: '15px', width: '100px' }}
+            />
           </div>
           <Grid container style={{ height: '87%' }}>
             <Grid item xs={4} className={styles.video} style={{ borderLeft: '2px solid black' }}>
@@ -322,7 +331,11 @@ const Integration = (props) => {
         <Grid item xs={2} md={4} lg={4}></Grid>
         <Grid item xs={4} md={4} lg={4}></Grid>
         <Grid item xs={6} md={4} lg={4}>
-          <img src="img/index/integration/line-right.svg" className={styles.imgRight} />
+          <img
+            src="img/index/integration/line-right.svg"
+            alt="line-right"
+            className={styles.imgRight}
+          />
         </Grid>
       </Grid>
     </div>

@@ -22,7 +22,11 @@ const Header = (props) => {
         <Grid item md={7} className={styles.left}>
           <div className={styles.head}>
             {' '}
-            <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
+            <img
+              src="img/index/header/buttons.svg"
+              alt="buttons"
+              style={{ padding: '15px', width: '100px' }}
+            />
           </div>
           <Grid container>
             <Grid item xs={2} md={1} lg={1} className={styles.docs}>
@@ -31,12 +35,12 @@ const Header = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" />{' '}
+                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" />{' '}
+                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -117,7 +121,11 @@ const Header = (props) => {
           >
             <div className={styles.head}>
               {' '}
-              <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
+              <img
+                src="img/index/header/buttons.svg"
+                alt="buttons"
+                style={{ padding: '15px', width: '100px' }}
+              />
             </div>
             <Grid container>
               <Grid item md={1} lg={1} className={styles.docs}>
@@ -126,12 +134,12 @@ const Header = (props) => {
                 {isDarkTheme ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" />{' '}
+                    <img src="img/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" />{' '}
+                    <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
