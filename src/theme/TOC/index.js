@@ -34,8 +34,7 @@ function TOC({ className, ...props }) {
         currentTutoId = id;
       }
     });
-    author =
-      currentTutoId !== null ? authors[data.tuto[currentTutoId].author] : {};
+    author = currentTutoId !== null ? authors[data.tuto[currentTutoId].author] : {};
     if (content[parentName] && content[parentName].content) {
       Object.keys(content[parentName].content).forEach((key) => {
         list.push(content[parentName].content[key]);
@@ -72,16 +71,16 @@ function TOC({ className, ...props }) {
           </Paper>
           <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
             <a href="https://discord.gg/luos">
-              <img src="/img/discord.png" className="rsLogo"></img>
+              <img src="/img/discord.png" className="rsLogo" atl="logo discord"></img>
             </a>
             <a href="https://www.reddit.com/r/Luos/">
-              <img src="/img/reddit.png" className="rsLogo"></img>
+              <img src="/img/reddit.png" className="rsLogo" atl="logo reddit"></img>
             </a>
             <a href="https://twitter.com/Luos_io">
-              <img src="/img/twitter.png" className="rsLogo"></img>
+              <img src="/img/twitter.png" className="rsLogo" atl="logo twitter"></img>
             </a>
             <a href="https://www.linkedin.com/company/luos">
-              <img src="/img/linkedin.png" className="rsLogo"></img>
+              <img src="/img/linkedin.png" className="rsLogo" atl="logo linkedin"></img>
             </a>
           </Stack>
           <Requirement title="Related content" color="#FFFFFF" list={list} />
