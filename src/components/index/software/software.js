@@ -42,9 +42,7 @@ const Software = (props) => {
 
   return (
     <div className={styles.container}>
-      <h4 style={{ textAlign: 'center', marginTop: '30px' }}>
-        Split the monolith:{' '}
-      </h4>
+      <h4 style={{ textAlign: 'center', marginTop: '30px' }}>Split the monolith: </h4>
       <h2 className={`${styles.title} ${styles.underline}`}>
         Develop scalable edge and embedded distributed software
       </h2>
@@ -58,8 +56,8 @@ const Software = (props) => {
                 Network agnostic data format
               </h3>
               <p style={{ textAlign: 'justify' }}>
-                Luos engine provides a network agnostic multimaster data format.
-                No matter how specific your network is.
+                Luos engine provides a network agnostic multimaster data format. No matter how
+                specific your network is.
               </p>
             </Grid>
             <Grid item md={1} lg={1}></Grid>
@@ -68,9 +66,8 @@ const Software = (props) => {
                 Portable and scalable code
               </h3>
               <p style={{ textAlign: 'justify' }}>
-                Luos engine allows you to create packages and make them portable
-                and scalable. You can share them with your team or the
-                community.
+                Luos engine allows you to create packages and make them portable and scalable. You
+                can share them with your team or the community.
               </p>
             </Grid>
             <Grid item md={1} lg={1}></Grid>
@@ -79,8 +76,8 @@ const Software = (props) => {
                 Encapsulate features into services
               </h3>
               <p style={{ textAlign: 'justify' }}>
-                Luos engine encapsulates embedded features in services with
-                APIs. This allows you to have direct access to the hardware.
+                Luos engine encapsulates embedded features in services with APIs. This allows you to
+                have direct access to the hardware.
               </p>
             </Grid>
           </Grid>
@@ -107,13 +104,12 @@ const Software = (props) => {
                   <img
                     src="img/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
+                    alt="buttons"
                   />
                 </Grid>
                 <Grid item md={4} lg={4} xl={4} style={{ textAlign: 'center' }}>
                   {' '}
-                  <h2 className={`${styles.hiwTitle} ${styles.underline}`}>
-                    /How it works
-                  </h2>
+                  <h2 className={`${styles.hiwTitle} ${styles.underline}`}>/How it works</h2>
                 </Grid>
                 <Grid item md={4} lg={4} xl={4}></Grid>
               </Grid>
@@ -125,12 +121,12 @@ const Software = (props) => {
                 {isDarkTheme ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" />{' '}
+                    <img src="img/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" />{' '}
+                    <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -147,6 +143,7 @@ const Software = (props) => {
                           ? `img/index/software/step1.svg`
                           : `img/index/software/step1-dark.svg`
                       }
+                      alt="step one"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
                     />
@@ -165,6 +162,7 @@ const Software = (props) => {
                           ? `img/index/software/step2.svg`
                           : `img/index/software/step2-dark.svg`
                       }
+                      alt="step two"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
                     />
@@ -183,13 +181,14 @@ const Software = (props) => {
                           ? `img/index/software/step3.svg`
                           : `img/index/software/step3-dark.svg`
                       }
+                      alt="step three"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
                     />
                     <h3 className={styles.carousselTitle}>3. EXPLOITATION</h3>
                     <p className={styles.carousselText}>
-                      Luos provides you with integrations and tools to design
-                      the software architectures of your dreams.
+                      Luos provides you with integrations and tools to design the software
+                      architectures of your dreams.
                     </p>
                   </Grid>
                 </Grid>
@@ -212,6 +211,7 @@ const Software = (props) => {
                   <img
                     src="img/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
+                    alt="buttons"
                   />
                 </Grid>
                 <Grid item xs={8} style={{}}>
@@ -232,12 +232,12 @@ const Software = (props) => {
                 {isDarkTheme ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" />{' '}
+                    <img src="img/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" />{' '}
+                    <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>

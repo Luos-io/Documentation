@@ -27,7 +27,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Part 4: connect to a web app',
+              label: 'Part 4: Connect to a web app',
               id: 'get-started/get-started4',
             },
           ],
@@ -56,19 +56,19 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Receiving Message',
+              label: 'Receiving a message',
               id: 'your-first-message/receiving-message',
             },
             {
               type: 'doc',
-              label: 'Send Message from button service',
+              label: 'Send a message from button service',
               id: 'your-first-message/send-message',
             },
           ],
         },
         {
           type: 'category',
-          label: 'Your First Topology detection',
+          label: 'Your first topology detection',
           link: {
             type: 'doc',
             id: 'your-first-detection/your-first-detection',
@@ -81,7 +81,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'How to use the routing Table',
+              label: 'How to use the routing table',
               id: 'your-first-detection/routing-table',
             },
             {
@@ -122,8 +122,25 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Use Luos Bootloader',
+              label: 'Use Luos bootloader',
               id: 'bootloader/bootloader',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'PlatformIo',
+          link: { type: 'doc', id: 'pio/pio' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Project creation',
+              id: 'pio/creation',
+            },
+            {
+              type: 'doc',
+              label: 'Include Luos to your project',
+              id: 'pio/include',
             },
           ],
         },
@@ -136,6 +153,28 @@ module.exports = {
               type: 'doc',
               label: 'Use resilient aliases',
               id: 'resilient-alias/resilient-alias',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Morse encoder',
+          link: { type: 'doc', id: 'morse/morse' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Algorithm',
+              id: 'morse/algorithm',
+            },
+            {
+              type: 'doc',
+              label: 'Output',
+              id: 'morse/output',
+            },
+            {
+              type: 'doc',
+              label: 'Add service',
+              id: 'morse/add-service',
             },
           ],
         },

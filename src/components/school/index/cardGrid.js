@@ -38,16 +38,9 @@ const cardGrid = (props) => {
     <Grid container spacing={2}>
       {filtered.map((x, y) => (
         <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
-          <a
-            href={x.link}
-            className={styles.link}
-            style={{ textDecoration: 'none' }}
-          >
+          <a href={x.link} className={styles.link} style={{ textDecoration: 'none' }}>
             <Paper className={styles.card} elevation={1}>
-              <img
-                src={`/img/school/${x.img}.svg`}
-                style={{ borderRadius: '4px' }}
-              />
+              <img src={`/img/school/${x.img}.svg`} style={{ borderRadius: '4px' }} alt={x.title} />
               <h2 className={styles.cardTitle}>{x.title}</h2>
 
               <Grid container spacing={1}>
@@ -58,6 +51,7 @@ const cardGrid = (props) => {
                       <img
                         className={styles.cardIcons}
                         src="/img/school/category.svg"
+                        alt="category"
                       />
                     </span>
                     <span className={styles.levelTxt}>{x.category}</span>
@@ -65,22 +59,15 @@ const cardGrid = (props) => {
                   <div>
                     <span>
                       {' '}
-                      <img
-                        className={styles.cardIcons}
-                        src="/img/school/clock.svg"
-                      />
+                      <img className={styles.cardIcons} src="/img/school/clock.svg" alt="clock" />
                     </span>
-                    <span className={styles.levelTxt}>
-                      {Math.round(x.toc)} Minutes
-                    </span>
+                    <span className={styles.levelTxt}>{Math.round(x.toc)} Minutes</span>
                   </div>
                 </Grid>
                 <Grid item xs={6}>
                   <div style={{ width: '100%' }}>
                     <div className={`${styles.difficultyContainer}`}>
-                      <span
-                        className={`${styles.difficulty} ${level[x.level]}`}
-                      ></span>
+                      <span className={`${styles.difficulty} ${level[x.level]}`}></span>
                       <span>{level[x.level]}</span>
                     </div>
                   </div>

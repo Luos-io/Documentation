@@ -41,13 +41,10 @@ const Anatomy = (props) => {
       <Grid container>
         <Grid item xs={12} md={6} lg={6} xl={6}>
           {' '}
-          <h2 className={`${styles.title} ${styles.underline}`}>
-            Anatomy of Luos
-          </h2>
+          <h2 className={`${styles.title} ${styles.underline}`}>Anatomy of Luos</h2>
           <p className={styles.text}>
-            Luos gives you access to multiple features created by developers for
-            developers. Many of these features are based on the needs of the
-            community.
+            Luos gives you access to multiple features created by developers for developers. Many of
+            these features are based on the needs of the community.
           </p>
         </Grid>
       </Grid>
@@ -137,10 +134,7 @@ const Anatomy = (props) => {
               className={styles.listLink}
             >
               <ListItemAvatar>
-                <CalendarMonthIcon
-                  fontSize="large"
-                  className={styles.listIcon}
-                />
+                <CalendarMonthIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 primary="Timestamp"
@@ -156,10 +150,7 @@ const Anatomy = (props) => {
               className={styles.listLink}
             >
               <ListItemAvatar>
-                <MiscellaneousServicesIcon
-                  fontSize="large"
-                  className={styles.listIcon}
-                />
+                <MiscellaneousServicesIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 primary="Microservice architecture"
@@ -175,6 +166,7 @@ const Anatomy = (props) => {
             {' '}
             <img
               src="img/index/header/buttons.svg"
+              alt="buttons"
               style={{ padding: '15px', width: '100px' }}
             />
           </div>
@@ -185,12 +177,12 @@ const Anatomy = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" />{' '}
+                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" />{' '}
+                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -207,55 +199,37 @@ const Anatomy = (props) => {
               >
                 <FormControlLabel
                   value="topo"
-                  className={
-                    currentInt == 'topo' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'topo' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Topology"
                 />
                 <FormControlLabel
                   value="micro"
-                  className={
-                    currentInt == 'micro' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'micro' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Microservices"
                 />
                 <FormControlLabel
                   value="remote"
-                  className={
-                    currentInt == 'remote' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'remote' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Remote control"
                 />
                 <FormControlLabel
                   value="bootloader"
-                  className={
-                    currentInt == 'bootloader'
-                      ? styles.engineActive
-                      : styles.engine
-                  }
+                  className={currentInt == 'bootloader' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Bootloader"
                 />
                 <FormControlLabel
                   value="timestamp"
-                  className={
-                    currentInt == 'timestamp'
-                      ? styles.engineActive
-                      : styles.engine
-                  }
+                  className={currentInt == 'timestamp' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Timestamp"
                 />
                 <FormControlLabel
                   value="monitoring"
-                  className={
-                    currentInt == 'monitoring'
-                      ? styles.engineActive
-                      : styles.engine
-                  }
+                  className={currentInt == 'monitoring' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Monitoring"
                 />
@@ -282,6 +256,7 @@ const Anatomy = (props) => {
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
           <img
             src="img/index/integration/line-right.svg"
+            alt="line-right"
             style={{ transform: 'rotateY(180deg)' }}
             className={styles.linesImg}
           />
@@ -290,6 +265,7 @@ const Anatomy = (props) => {
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
           <img
             src="img/index/integration/line-right.svg"
+            alt="line-right"
             style={{ float: 'right' }}
             className={styles.linesImg}
           />

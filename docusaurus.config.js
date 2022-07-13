@@ -1,6 +1,10 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const VersionsArchived = require('./versionsArchived.json');
+
+const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Luos',
@@ -31,6 +35,15 @@ module.exports = {
   },
 
   themeConfig: {
+    i18n: {
+      defaultLocale: 'en',
+      locales: ['en'],
+      localeConfigs: {
+        en: {
+          htmlLang: 'en-GB',
+        },
+      },
+    },
     metadata: [
       {
         name: 'description',
@@ -61,6 +74,21 @@ module.exports = {
           type: 'docsVersionDropdown',
           position: 'left',
           dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
+            {
+              type: 'html',
+              value: '<hr class="dropdown-separator">',
+            },
+            {
+              type: 'html',
+              className: 'dropdown-archived-versions',
+              value: '<b>Archived versions</b>',
+            },
+            ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
+              label: versionName,
+              href: versionUrl,
+            })),
+          ],
         },
         {
           to: '/',

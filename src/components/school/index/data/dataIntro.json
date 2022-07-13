@@ -134,7 +134,7 @@
       "category": "Tutorials",
       "toc": 30,
       "level": 1,
-      "img": "Bike_Alarm",
+      "img": "Luos_and_PlatformIO",
       "desc": "You heard about Luos, or you have just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
       "tags": ["Project", "Creation", "ST", "Arduino", "Service"],
       "link": "/tutorials/pio",
@@ -147,10 +147,9 @@
       "toc": 60,
       "level": 2,
       "img": "Morse_encoder_Luos",
-      "desc": "We will go through and explain Luos main API through a simple and fun project called Morse encoder. At the end of this tutorial, you will understand how a Luos project is structured, Luos API creation of service, and topology detection.",
-      "tags": ["Service", "Topology", "Led", "Morse encoder", "USART"],
-      "link": "/tutorials/morse",
-      "author": "viktoria"
+      "desc": "After the Luos Get started and Trainings, the Luos Morse encoder tutorial is a concrete and fun application of Luos technology.",
+      "tags": ["Service", "Topology", "Morse Encoder", "Led", "Pipe"],
+      "link": "/tutorials/morse"
     },
     {
       "title": "Luos with ESP32: ESP IDF and Espressif IDE Setup",

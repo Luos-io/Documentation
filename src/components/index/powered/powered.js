@@ -29,6 +29,7 @@ const Powered = (props) => {
           <img
             src={isDarkTheme ? 'img/index/powered/luos.svg' : 'img/index/powered/luos-dark.svg'}
             style={{ verticalAlign: 'middle', width: '100px' }}
+            alt="luos-dark"
           />
           <span style={{ display: 'none' }}>Luos</span>
         </h2>
@@ -161,7 +162,11 @@ const Powered = (props) => {
         <Grid item md={6} lg={6} style={{ marginTop: '-50px' }} className={styles.mobileNone}>
           <div className={styles.head}>
             {' '}
-            <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
+            <img
+              src="img/index/header/buttons.svg"
+              style={{ padding: '15px', width: '100px' }}
+              alt="buttons"
+            />
           </div>
           <Grid container style={{ height: '100%' }}>
             <Grid item md={1} lg={1} className={styles.docs}>
@@ -170,12 +175,12 @@ const Powered = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" />{' '}
+                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" />{' '}
+                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>

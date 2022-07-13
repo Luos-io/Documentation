@@ -30,5 +30,13 @@
         "link": "https://github.com/Luos-io/Training/tree/main/3_First_Detection"
       }
     }
+  },
+  "morse": {
+    "content": {
+      "1": {
+        "label": "Project",
+        "link": "https://github.com/Luos-io/morse_encoder/"
+      }
+    }
   }
 }
