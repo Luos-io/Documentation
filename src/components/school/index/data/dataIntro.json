@@ -149,7 +149,8 @@
       "img": "Morse_encoder_Luos",
       "desc": "After the Luos Get started and Trainings, the Luos Morse encoder tutorial is a concrete and fun application of Luos technology.",
       "tags": ["Service", "Topology", "Morse Encoder", "Led", "Pipe"],
-      "link": "/tutorials/morse"
+      "link": "/tutorials/morse",
+      "author": "thomas"
     },
     {
       "title": "Luos with ESP32: ESP IDF and Espressif IDE Setup",
