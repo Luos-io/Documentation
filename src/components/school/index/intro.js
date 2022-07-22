@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useLocation } from '@docusaurus/router';
 import { Paper } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -9,27 +11,51 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+
 import CardGrid from './cardGrid';
+
 import styles from './index.module.css';
 import data from './data/dataIntro.json';
 
 const Intro = () => {
-  const [filters, setfilters] = useState({
+  const { search } = useLocation();
+  const { replace } = useHistory();
+  let defaultFilters = {
     toc: '',
     tags: [],
     hardware: '',
     category: '',
     level: '',
+  };
+  new URLSearchParams(search).forEach((value, key) => {
+    if (key === 'tags') {
+      defaultFilters[key] = value.split(',').filter((tag) => tag !== '');
+    } else {
+      defaultFilters[key] = value;
+    }
   });
+  const [filters, setfilters] = useState(defaultFilters);
 
   const handleFilter = (newLevel, filterName) => {
     if (newLevel === filters[filterName]) {
       newLevel = '';
     }
-    setfilters({
+
+    const newState = {
       ...filters,
       [filterName]: newLevel,
-    });
+    };
+    setfilters(newState);
+
+    const newPath = new URLSearchParams(
+      Object.fromEntries(
+        Object.entries(newState).filter(
+          ([_key, val]) =>
+            (!Array.isArray(val) && val !== '') || (Array.isArray(val) && val.length > 0),
+        ),
+      ),
+    );
+    replace(`?${newPath.toString()}`);
   };
 
   let countTutos = 0,
