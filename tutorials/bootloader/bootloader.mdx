@@ -19,7 +19,7 @@ To flash one or multiple boards using the Luos engine's bootloader, you need a m
 </div>
 
 :::caution
-If you are not comfortable with the Luos network creation and Luos engine's firmware management and compiling, please follow [the Luos Get started tutorial](../get-started) first.
+If you are not comfortable with the Luos network creation and Luos engine's firmware management and compiling, please follow [the Luos Get started tutorial](../get-started/get-started.mdx) first.
 :::
 
 :::caution
@@ -27,7 +27,7 @@ It is not possible to update the firmware on the master board running the gate u
 :::
 
 On this tutorial, we will use the examples available in [the Luos engine's repository](https://github.com/Luos-io/luos_engine/tree/main).
-You can [download](https://github.com/Luos-io/luos_engine/archive/refs/heads/main.zip) and unzip it or clone it using: 
+You can [download](https://github.com/Luos-io/luos_engine/archive/refs/heads/main.zip) and unzip it or clone it using:
 
 ```
 Git clone https://github.com/Luos-io/luos_engine.git
@@ -50,7 +50,7 @@ Click on **Upload** on the bottom left corner of the IDE. Wait for the compilati
 </div>
 
 :::info
-If this step fails, check that you are properly connected to the USB port, or try to follow [the Luos Get started tutorial](../get-started).
+If this step fails, check that you are properly connected to the USB port, or try to follow [the Luos Get started tutorial](../get-started/get-started.mdx).
 :::
 
 ## 3. Detect the gate's node with the CLI
@@ -107,7 +107,7 @@ Then, click on **Build**.
 If you click on the **Upload** button, PlatformIO will use the Luos bootloader CLI to load your firmware. For now, please be sure to do it in command line instead, like explained below.
 :::
 
-The generated binary file can be found in _Luos_engine/Examples/Projects/YOUR_BOARD/Button/.pio/build/\*\_with\_bootloader_ under the name _firmware.bin_.
+The generated binary file can be found in _Luos_engine/Examples/Projects/YOUR_BOARD/Button/.pio/build/\*\_with_bootloader_ under the name _firmware.bin_.
 
 Now, you can use the bootloader's command line to load it, for example:
 
@@ -122,6 +122,7 @@ For further information on the options used with the CLI, please read the dedica
 ```bash
 pyluos-bootloader --help
 ```
+
 :::
 
 The following lines should appear after typing the command:

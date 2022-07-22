@@ -2,8 +2,8 @@
 custom_edit_url: null
 ---
 
-import { customFields } from "/docusaurus.config.js";
-import Tooltip from "@site/src/components/Tooltip.js";
+import { customFields } from '/docusaurus.config.js';
+import Tooltip from '@site/src/components/Tooltip.js';
 
 # Messages
 
@@ -50,10 +50,10 @@ typedef struct{
   - **IDACK**: This mode allows to communicate with a unique service using its ID **with** acknowledgment return.
   - **TYPE**: This mode sends a message to all services with a given type, e.g. all "Sharp digital distance sensor".
   - **BROADCAST**: This mode allows all the services in the network to catch a message. In this case, the message contains a type of data used by multiple services.
-  - **TOPIC**: Publisher/Subscriber mode, allows multiple services to catch a message depending on the topic that they subscribed to. 
+  - **TOPIC**: Publisher/Subscriber mode, allows multiple services to catch a message depending on the topic that they subscribed to.
   - **NODEID**: This mode allows to send a message to all the services of a specific node **without** acknowledgment return.
   - **NODEIDACK**: This mode allows to send a message to all the services of a specific node **with** acknowledgment return.
 - **Source (12 bits)**: The unique ID of the transmitter service.
 - **CMD (8 bits)**: The command defines the transmitted data's type.
 - **Size (16 bits)**: Size of the incoming data.
-- **ACK (8 bits)**: [Acknowledgment](../../tools/monitoring) signal demanded in target modes **IDACK** and **NODEIDACK**, after the good reception of the message.
+- **ACK (8 bits)**: [Acknowledgment](../../tools/monitoring.mdx) signal demanded in target modes **IDACK** and **NODEIDACK**, after the good reception of the message.
