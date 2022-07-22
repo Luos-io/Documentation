@@ -21,15 +21,33 @@ const Intro = () => {
   const { search } = useLocation();
   const { replace } = useHistory();
   let defaultFilters = {
-    toc: '',
-    tags: [],
-    hardware: '',
-    category: '',
-    level: '',
-  };
+      toc: '',
+      tags: [],
+      hardware: '',
+      category: '',
+      level: '',
+    },
+    countTutos = 0,
+    countHours = 0,
+    tagList = [];
+
+  data.tuto.forEach((tuto) => {
+    countTutos++;
+    countHours += tuto.toc;
+    tuto.tags.forEach((tag) => {
+      tagList.indexOf(tag) === -1 ? tagList.push(tag) : null;
+    });
+  });
+
   new URLSearchParams(search).forEach((value, key) => {
     if (key === 'tags') {
-      defaultFilters[key] = value.split(',').filter((tag) => tag !== '');
+      defaultFilters[key] = value
+        .split(',')
+        .filter((tag) => tag !== '')
+        .map((tag) => {
+          const result = tagList.findIndex((t) => t.toLowerCase() === tag);
+          return result !== -1 ? tagList[result] : null;
+        });
     } else {
       defaultFilters[key] = value;
     }
@@ -55,20 +73,8 @@ const Intro = () => {
         ),
       ),
     );
-    replace(`?${newPath.toString()}`);
+    replace(`?${newPath.toString().toLowerCase()}`);
   };
-
-  let countTutos = 0,
-    countHours = 0;
-
-  let tagList = [];
-  data.tuto.forEach((tuto) => {
-    countTutos++;
-    countHours += tuto.toc;
-    tuto.tags.forEach((tag) => {
-      tagList.indexOf(tag) === -1 ? tagList.push(tag) : null;
-    });
-  });
 
   return (
     <div>
