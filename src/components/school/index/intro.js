@@ -23,7 +23,6 @@ const Intro = () => {
   let defaultFilters = {
       toc: '',
       tags: [],
-      hardware: '',
       category: '',
       level: '',
     },
@@ -147,26 +146,6 @@ const Intro = () => {
               </Select>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-              <InputLabel id="hardware-label" className={styles.select}>
-                Hardware
-              </InputLabel>
-              <Select
-                value={filters.hardware}
-                label="Hardware"
-                labelId="hardware-label"
-                onChange={(e) => {
-                  handleFilter(e.target.value, 'hardware');
-                }}
-              >
-                <MenuItem value="">All</MenuItem>
-                {data.filters.hardware.map((label, index) => (
-                  <MenuItem value={label} key={index}>
-                    {label}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
               <InputLabel id="category-label" className={styles.select}>
                 Category
               </InputLabel>
@@ -181,7 +160,7 @@ const Intro = () => {
                 <MenuItem value="">All</MenuItem>
                 {data.filters.category.map((label, index) => (
                   <MenuItem value={label} key={index}>
-                    {label}
+                    {label.charAt(0).toUpperCase() + label.slice(1)}
                   </MenuItem>
                 ))}
               </Select>
