@@ -37,7 +37,7 @@ const Integration = (props) => {
     ],
     api: [
       ['simplefoc', 'SimpleFOC'],
-      ['zappier', 'Zapier'],
+      ['zapier', 'Zapier'],
       ['ifttt', 'IFTTT', 'ifttt-white'],
       ['freedom', 'Freedom Robotics'],
     ],
