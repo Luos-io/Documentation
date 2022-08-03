@@ -93,7 +93,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/luos-technology/services/services-api",
+      "source": "/docs/luos-technology/services/service-api",
       "destination": "/docs/luos-technology/services/create-services",
       "statusCode": 301
     },
