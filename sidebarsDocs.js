@@ -230,10 +230,11 @@ module.exports = {
           id: 'compatibility/mcu_demoboard',
         },
       ],
-    },{
-          type: 'doc',
-          label: '🖋 Contribute',
-          id: 'contribute',
-        }
+    },
+    {
+      type: 'doc',
+      label: '🖊️ Contribute',
+      id: 'contribute-to-luos',
+    },
   ],
 };
