@@ -35,6 +35,8 @@ While their skills in astrophysics, propulsion, and mechanics are developing dai
 
 Let's continue with Alexis:
 
+<blockquote>
+
 The courses given by ESTACA only give some basics on embedded systems, so we need to conduct longer studies when we try to develop the electronic system for our IoT, edge or embedded projects. Therefore, keeping the electronic design simple is better to ensure that we will have the expected results.
 
 We have chosen to use Luos for several applications: to measure the altitude (necessary to validate the objective), to record events occurring during the flight, and last but not least, to trigger the parachute allowing the rocket to decelerate and land "almost" as a whole.
@@ -54,12 +56,19 @@ Aerospace is a passion for many Luos developers and the cross-over was relevant.
   </tr>
 </table>
 
+</blockquote>
 
 <h2>Focus on your main objectives and not on technical constraints</h2>
 
+<blockquote>
+
 The main objective is to get the rocket off the ground and exceed the altitude of 32km. The underlying objective of collecting the altitude and checking the flight plan was managed by Luos. The association teams increased their skills on Luos by performing the [Get started](https://www.luos.io/tutorials/get-started) and testing a proof of concept of a parachute release system.
 
+</blockquote>
+
 <h3>Following the microservices philosophy, build and break down your IoT, edge or embedded projects into smaller goals.</h3>
+
+<blockquote>
 
 Apart from the objectives related to the rocket takeoff, such as the [propulsion management](/img/blog/pdf/Propulsion-management-Rocket-project-Luos.pdf) or the [friction with the air](/img/blog/pdf/Rocket-stability-project-Luos.pdf), one of the other three objectives of the association was to divide the ancillary objectives into three services. This splitting philosophy is a concept we have developed for a long time at Luos to gain agility. You can read [our article on monolithic vision compared to microservices vision](https://www.luos.io/blog/a-way-to-unleash-embedded-systems).
 
@@ -112,8 +121,12 @@ Actual design of release system.
 
 The barometer, the thermometer, and the inertial unit are used to calculate altitude. They will let us know when first the apogee, then the altitude of 1000m are reached. The solenoids are used in the release system that will deploy the parachutes.
 
+</blockquote>
+
 <h2>Hardware vs. software development</h2>
 <h3>Is hardware easier to modify than software?</h3>
+
+<blockquote>
 
 This question is generally difficult to answer as it depends on the hardware and software involved. However, devices are typically more expensive and difficult to modify than software. This is because the devices are physical and therefore require more time and effort to change, while the software is intangible and can be easily modified.
 
@@ -146,6 +159,8 @@ The first thing I used Pyluos for was to see if Luos correctly interpreted my sy
 Even if the values I was receiving were correct, they were sent with the wrong type. This could have ended in bad communication between the two services, but when I saw that Pyluos could not work because of this mistake, I tried to figure out what was wrong. I finally found a problem that would have been undetected without this tool. Another aspect of Pyluos that I used in this project is the possibility to send values to a service. 
 
 This was very useful for testing my system's reaction because it is hard to simulate the pressure variation that the rocket will be exposed to (approximately 850 Pa at 32km). Thanks to Pyluos, I was able to send data to my application and simulate the flight without using a complex and expensive chamber that would be able to lower the pressure down to 850 Pa.
+
+</blockquote>
 
 <h2>Is your edge, IoT or embedded project evolving or undergoing new constraints?</h2>
 
