@@ -74,13 +74,13 @@ Apart from the objectives related to the rocket takeoff, such as the [propulsion
 
 Thus, the objectives related to the Luos project were thought in terms of microservices:
 
-- Rocket altitude measurement service
-- Expected objective:
-    - Determine the evolution of altitude during the flight
-- Devices concerned by this service:
-    - Barometer
-    - Thermometer
-    - Inertial Unit
+1. Rocket altitude measurement service
+    - Expected objective:
+      - Determine the evolution of altitude during the flight
+    - Devices concerned by this service:
+      - Barometer
+      - Thermometer
+      - Inertial Unit
 
 ![Phases of flight](/img/blog/Phases-of-flight-rocket-project-Luos.svg)
 
@@ -94,27 +94,27 @@ We call this kind of flight a "ballistic flight".
 
 This redundancy constraint is part of the decision to use Luos on the edge project. Indeed, Luos permits to create a piece of code for a component that can be used everywhere in the system, and even in other systems. Therefore, it is as easy to duplicate a component from a hardware point of view (connect another component to a board) as to duplicate a component from a software point of view (change the connected pins' definition in the code).
 
-- Flight status recording service
-- Expected objective:
-    - Store all flight data on board
-    - Transmit flight data to a ground station in real-time
-- Equipment concerned by this service:
-    - SD card
-    - Telemetry
+2. Flight status recording service
+    - Expected objective:
+      - Store all flight data on board
+      - Transmit flight data to a ground station in real-time
+    - Equipment concerned by this service:
+      - SD card
+      - Telemetry
 
 You will notice that we also have a different way to retrieve the flight data, one on board (SD card) and one on a ground station (telemetry).
 
 This redundancy permits access to flight data even if the SD card is destroyed at the end of the flight (if the rocket crashes or has a bad impact at ground contact, for example).
 
-- "Automatic parachute ejection hatch release" service
-- Expected objective:
-    - Eject the first parachute at apogee
-    - Eject a second parachute at an altitude of 1000m
-- Equipment concerned by this service:
-    - Barometer
-    - Thermometer
-    - Inertial unit
-    - Solenoids
+3. "Automatic parachute ejection hatch release" service
+    - Expected objective:
+      - Eject the first parachute at apogee
+      - Eject a second parachute at an altitude of 1000m
+    - Equipment concerned by this service:
+      - Barometer
+      - Thermometer
+      - Inertial unit
+      - Solenoids
 
 ![Actual design of liberation system](/img/blog/Parachute-release-system-rocket-Luos.png)
 Actual design of release system.
