@@ -737,3 +737,8 @@ html[data-theme='dark'] .DocSearch-Button {
 .alexAuthor td {
   border: none;
 }
+
+.alexAuthor h2,
+h3 {
+  color: initial;
+}
