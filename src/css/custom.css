@@ -717,3 +717,23 @@ html[data-theme='dark'] .DocSearch-Button {
 .dropdown-separator {
   margin: 10px 0px;
 }
+
+.alexAuthor {
+  color: #ff5101;
+}
+
+.alexAuthor p {
+  color: #ff5101 !important;
+}
+
+.alexAuthor ol {
+  color: #ff5101 !important;
+}
+
+.alexAuthor tr {
+  border: none;
+}
+
+.alexAuthor td {
+  border: none;
+}
