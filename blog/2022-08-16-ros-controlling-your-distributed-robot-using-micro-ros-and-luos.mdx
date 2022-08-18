@@ -32,7 +32,6 @@ At Luos, we are exploring how we could integrate micro-ROS into distributed syst
     height="380"
     frameBorder="0"
     class="giphy-embed"
-    allowFullScreen
   ></iframe>
 </center>
 
@@ -42,7 +41,7 @@ Until now, the supported micro-ROS configuration includes an MCU directly connec
 
 But what if we need a distributed system that takes multiple microcontrollers without direct connection to pc? There is a case where we need to make a fully embedded network, and the only direct access we can have is only one connection between one of our MCU with the computer. Until now, micro-ROS cannot provide a solution for fully embedded distributed systems.
 
-![Micro-ROS](/img/blog/micro-ROS-without-luos.svg)
+<center><Image desc="Micro-ROS-without-luos" src="/img/blog/micro-ROS-without-luos.svg" width="300"/></center>
 
 Luos can offer a solution to this.
 
@@ -50,7 +49,7 @@ Get started and code your own project using Luos by following our [getting start
 
 Among others, Luos includes a communication protocol and a way to send and receive messages among different microcontrollers. By adding Luos in the middleware of a micro-ROS node, you could easily increment the number of boards of your setup and transfer the ROS messages from and to the ROS node to every board of your embedded network.
 
-<Image desc="Micro-ROS" src="/img/blog/micro-ROS-with-luos.svg" />
+<center><Image desc="Micro-ROS-with-luos" src="/img/blog/micro-ROS-with-luos.svg" width="300"/></center>
 
 <h2>How could this be possible?</h2>
 
@@ -82,13 +81,14 @@ A few months ago, we opened a community on Discord. This Discord aims to exchang
 In a microROS x Luos network, we need to have two different types of behavior. For this reason, the middleware should have different behavior depending on which MCU we are on. These different types are separated depending on one reason: A combined microROS and Luos middleware destined to the microcontroller that is connected to the ros2 interface, and only Luos middleware for all the other embedded MCUs.
 
 So in a schematical way, the position of middlewares depending on the position of MCUs should be like that:
-![Luos middleware](/img/blog/Luos-middleware.png)
+
+<center><Image desc="Luos middleware" src="/img/blog/Luos-middleware.png"/></center>
 
 So let’s see analytically how each MCU should work.
 
 First, we will examine the simple case concerning the MCUs that do not directly connect with the ros2 interface. 6 rmw functions should present a different behavior in the rmw_luos.
 
-![Luos middleware not connected to ros2](/img/blog/Luos-middleware-not-directly-connected-to-ros2.png)
+<center><Image desc="Luos middleware not connected to ros2" src="/img/blog/Luos-middleware-not-directly-connected-to-ros2.png"/></center>
 
 - rmw_init(): This function will create a package that initializes luos_engine and the luos service, for transmitting and receiving messages.
   - When rwm_init function is called, we create one luos service. This service will be responsible for sending to the network all the messages of specific topics that the micro-ROS publishers want to transmit, and receiving all the messages for each subscription of the node.
@@ -102,11 +102,11 @@ First, we will examine the simple case concerning the MCUs that do not directly 
   - The function rmw_wait() should be called continuously so that Luos_loop() will run every time. In Luos loop, we receive all the new messages. We store them in Luos buffer, and they are ready to be used by the service using polling or sent directly to the service’s callback. In this project, we need to use the polling method to get the message the exact moment we want it and not need to store it in a temporary buffer. The rmw_wait() function gets a subscriber as a parameter. After launching Luos_Loop() we will check if we have received a message for the subscriber we need. If yes, we notify microROS to take the message by using rmw_take function
   - After calling rmw_take(), we pull the message of the topic we want, transform the luos data to a ros message and return it to microROS.
 
-![Microros and luos architecture](/img/blog/micro-ros-and-luos-architecture.png)
+<center><Image desc="Microros and luos architecture" src="/img/blog/micro-ros-and-luos-architecture.png"/></center>
 
 The second behavior concerns the MCU that directly connects to the ros2 interface. This MCUs middleware should combine the Luos functionalities with the serial communication method implemented by microros - rmw_microxrcedds.
 
-![Luos middleware connected to ros2](/img/blog/Luos-middleware-directly-to-ros2.png)
+<center><Image desc="Luos middleware connected to ros2" src="/img/blog/Luos-middleware-directly-to-ros2.png"/></center>
 
 This MCU should follow the same process as any other MCU, with the addition of some extra functionalities:
 
