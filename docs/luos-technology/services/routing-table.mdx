@@ -72,29 +72,31 @@ The routing table structure has two modes: _service entry mode_ and _node entry 
 ```c
 typedef struct __attribute__((__packed__))
 {
-    entry_mode_t mode;
+    uint8_t mode; // entry_mode_t
     union
     {
-        struct __attribute__((__packed__))// SERVICE mode entry
-        {
+        struct __attribute__((__packed__))
+        {                               // SERVICE mode entry
             uint16_t id;                // Service ID.
             uint16_t type;              // Service type.
+            uint8_t access;             // Service Access access_t
             char alias[MAX_ALIAS_SIZE]; // Service alias.
         };
-        struct __attribute__((__packed__))// NODE mode entry
-        {
-            // Watch out, this structure has a lot of similarities with the node_t struct.
-            // It is similar to allow copy of a node_t struct directly in this one
-            // but there is potentially a port_table size difference so
-            // do not replace it with node_t struct.
+        struct __attribute__((__packed__))
+        { // NODE mode entry
+            // Watch out this structure have a lot similarities with the node_t struct.
+            // It is similar to allow copy of a node_t struct directly in this one.
+            // But you there is potentially a port_table size difference so
+            // Do not replace it with node_t struct.
             struct __attribute__((__packed__))
             {
                 uint16_t node_id : 12;  // Node id
                 uint16_t certified : 4; // True if the node have a certificate
+                uint8_t node_info;      // node info can contain info such as the saving of routing table
             };
-            uint16_t port_table[(MAX_ALIAS_SIZE + 2 + 2 - 2) / 2]; // Node link table
+            uint16_t port_table[(MAX_ALIAS_SIZE + 2 + 2 + sizeof(uint8_t) - 2) / 2]; // Node link table
         };
-        uint8_t unmap_data[MAX_ALIAS_SIZE + 2 + 2];
+        uint8_t unmap_data[MAX_ALIAS_SIZE + 2 + 2 + sizeof(uint8_t)];
     };
 } routing_table_t;
 ```

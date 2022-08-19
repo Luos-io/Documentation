@@ -17,7 +17,9 @@ This routing table allows any service to find, locate, and use any other service
 
 The [Routing Table](/docs/luos-technology/services/routing-table) is a feature of Luos allowing every <Tooltip def={customFields.node_def}>node</Tooltip> to own a "map" (or topology) of the entire network of your device. This map allows nodes to know their physical position and different functionalities, as well as to easily search and interact with the other nodes.
 
-The [Routing Table](/docs/luos-technology/services/routing-table) is designed and shared among all the nodes after a process that is called [detection](/docs/luos-technology/services/routing-table).
+The [Routing Table](/docs/luos-technology/services/routing-table) is designed and shared among all the nodes after a process that is called [detection](/docs/luos-technology/services/routing-table). Each node generate at detection,
+a local routing table; that containt the list of service on the node and PTP connection, to the node that start the detection. The node that start the topology detection agglomerate all the local routing table and generate a global routing table. By default the routing table is shared with all the nodes.
+The routing table may not necessary for node, especially if there is only driver services. In that case you may use in the node_config.h file of the project the define NO_RTB to spare some memory 
 
 :::info
 More details about routing table on the [dedicated page](/docs/luos-technology/services/routing-table).
