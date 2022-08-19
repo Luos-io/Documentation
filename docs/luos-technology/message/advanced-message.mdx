@@ -20,7 +20,7 @@ For example, here is how to send a picture:
 // fill the large message info
 msg_t msg;
 color_t picture[300*300] = {/*Your favorite cat picture data*/};
-msg.header.target_mode = ID_ACK;
+msg.header.target_mode = SERVICEIDACK;
 msg.header.target = 12;
 msg.header.cmd = COLOR;
 Luos_SendData(service, &msg, picture, sizeof(color_t)*300*300);
@@ -54,7 +54,7 @@ For example, to update a service each 10 ms:
 time_luos_t time = TimeOD_TimeFrom_ms(10);
 msg_t msg;
 msg.header.target = id;
-msg.header.target_mode = IDACK;
+msg.header.target_mode = SERVICEIDACK;
 TimeOD_TimeToMsg(&time, &msg);
 msg.header.cmd = UPDATE_PUB;
 Luos_SendMsg(app, &msg);
@@ -182,7 +182,7 @@ void Motor_MsgHandler(service_t *service, msg_t *msg) {
    // check message command
    if (msg->header.cmd == ASK_PUB_CMD) {
        // prepare a reply message and send
-       pub_msg.header.target_mode = ID;
+       pub_msg.header.target_mode = SERVICEID;
        pub_msg.header.target = msg->header.source;
        pub_msg.header.cmd = ANGULAR_POSITION;
        Luos_SendStreaming(service, &pub_msg, &measurement);
