@@ -42,7 +42,7 @@ Until now, the supported micro-ROS configuration includes an MCU directly connec
 But what if we need a distributed system that takes multiple microcontrollers without direct connection to PC? There is a case where we need to make a fully embedded network, and the only direct access we can have is only one connection between one of our MCU with the computer. Until now, micro-ROS cannot provide a solution for fully embedded distributed systems.
 
 <center>
-  <Image desc="Micro-ROS-without-luos" src="/img/blog/micro-ROS-without-luos.svg" width="300" />
+  <Image desc="Micro-ROS-without-luos" src="/img/blog/micro-ROS-without-luos.svg" width="300px" />
 </center>
 
 Luos can offer a solution to this.
@@ -51,7 +51,9 @@ Get started and code your own project using Luos by following our [Get started t
 
 Among others, Luos includes a communication protocol and a way to send and receive messages among different microcontrollers. By adding Luos in the middleware of a micro-ROS node, you could easily increment the number of boards in your setup and transfer the ROS messages from and to the ROS node to every board of your embedded network.
 
+<center>
 <Image desc="Micro-ROS" src="/img/blog/micro-ROS-with-luos.svg" width="300px" />
+</center>
 
 <h2>How is it possible?</h2>
 
@@ -72,7 +74,8 @@ To accomplish this exchange of messages, we need at least one service in each mi
 ROS messages are sent and received following the publisher/subscriber method. In other words, each node that wants to send a message creates a publisher that publishes a message of a specific topic. Depending on the topic names, the user creates subscribers to be able to receive the wanted messages. The Luos service in each MCU needs to follow the same principle. This can be achieved because of the Luos topic feature.
 
 > 💡 Using the <a href="/docs/luos-technology/message">Topic feature</a>, we can require a service to subscribe to a specific topic and to publish data of a topic by sending Luos messages of mode TOPIC.
-> ![Pub/sub method - multicast](/img/blog/pub-sub-method-multicast.png)
+
+> <Image desc="Pub/sub method - multicast" src="/img/blog/pub-sub-method-multicast.png" width="500px" />
 
 We need the Luos service to suscribe on every topic that we want to be received by the specific MCU. For each publisher existing in a micro-ROS node, the Luos service needs to publish the messages to the others.
 
