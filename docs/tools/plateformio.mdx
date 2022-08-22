@@ -1,0 +1,92 @@
+---
+custom_edit_url: null
+description: The gate is a major tool of the Luos ecosystem.
+---
+
+import { customFields } from '/docusaurus.config.js';
+import Tooltip from '@site/src/components/Tooltip.js';
+import Image from '@site/src/components/Images.js';
+
+# Plateformio
+
+## What is plateformio?
+
+Plateformio is user-friendly and extensible integrated development environment with a set of professional development instruments, compiler and debugger. Plateformio provide modern and powerful features to simplify the creation and delivery of embedded products
+That's the reason why Luos use plateformios project structure for its examples, allowing user to use and share easily service and development on a unified environment. Also Luos engine and some tools like [Gate](/docs/tools/gate) or [Inspector](/docs/tools/inspector) are available on plateformios registry! This registry allow user to link directly a project and a library, like Luos engine, by including dependencies in the configuration project file call plateformio.ini
+learn more about <a href="https://platformio.org" target="_blank">Plateformio and how to install Plateformio<IconExternalLink width="10"></IconExternalLink></a>.
+
+## Plateformio project structure
+
+Every plateformio project can have this folder project structure and must have at the root of the project a platformio.ini file
+
+```AsciiDoc
+ Project
+    │
+    ├─── lib
+    ├─── include
+    ├─── src
+    └─── platformio.ini
+```
+|      Folder      |                 Description             |
+| :--------------: |---------------------------------------: |
+|       lib        |    The local library for the project    |
+|     include      |      Header files of your project       |
+|        src       |      Source files of your project       |
+|  platformio.ini  |  Plateformio project configuration file |
+
+checkout luos tutorial on <a href="https://www.luos.io/tutorials/pio" target="_blank">how create a Luos project with PlatformIo <IconExternalLink width="10"></IconExternalLink></a>.
+
+
+## Luos configuration for plateformio.ini
+
+A basic plateformio.ini file must have
+
+|    Definition    |                   Description                  |
+| :--------------: |----------------------------------------------: |
+|     platform     | Environemennt and Tools for the specific board |
+|       board      |       Board choose compatible with Pio         |
+|    framework     |         SDK use for the specific board         |
+
+```AsciiDoc
+Exemple:
+
+[env:nucleo_f072rb]
+platform = ststm32
+board = nucleo_f072rb
+framework = stm32cube
+```
+
+When using a luos project some configuration can be add to configuration Luos engine in your specific project
+
+```AsciiDoc
+Exemple:
+
+[env:nucleo_f072rb]
+platform = ststm32
+board = nucleo_f072rb
+framework = stm32cube
+
+build_unflags = -Os
+build_flags =
+    -include node_config.h
+    -DLUOSHAL=STM32F0
+    -O1
+lib_deps =
+    luos_engine
+```
+
+This project in example is Luos engine dependent so pio will download from its registry, the last version of the library Luos engine
+The file "node_config.h" will be add to the project and Luos engine library will be build including specific files define thanks to pre-compile definition LUOSHAL=STM32F0
+
+## List of pre-compile definition for Luos engine
+
+|    Luos Definition    |                                        Description                                       |    Value    |
+| :-------------------: |----------------------------------------------------------------------------------------: | :-------------------: |
+|       LUOSHAL         |                      Define HAL family to use with Luos engine library                   |   see Luos engine HAL |
+|     NOTELEMETRY       | Disable sending anonymous information to luos (only for Luos engine experience improving |     On by default     |
+|      GATEFORMAT       |              Chose the format of data send by the gate to through a pipe                 |       TinyJson        |
+|       PIPEMODE        |    Choose Pipe style to send or receive information through a specific physical Layer    |    SERIAL/WIFI/BLE    |
+|       PIPEHAL         |                Choose Pipe HAL match a specific physical Layer with the board            |      see pipe HAL     |
+
+
+
