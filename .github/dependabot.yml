@@ -20,5 +20,11 @@ updates:
       - 'update'
       - 'dependencies'
     ignore:
+      # https://github.com/facebook/docusaurus/pull/7102#pullrequestreview-935447321
+      - dependency-name: 'react'
+        versions: ['18.x']
       - dependency-name: '@types/node'
         versions: ['17.x']
+      # https://github.com/facebook/docusaurus/pull/7102#pullrequestreview-935447321
+      - dependency-name: '@types/react'
+        versions: ['18.x']

@@ -1,0 +1,190 @@
+---
+title: 'What is Luos, really? How we built the speech'
+description: This article discusses the evolution of our thinking about Luos. Luos is the name of the company and the technology behind it. Find out more in this article!
+slug: what-is-luos-really-how-we-built-the-speech
+authors:
+  - name: Simon Baudry
+    title: Mecatronic 
+    url: https://github.com/Simonbdy
+    image_url: https://github.com/Simonbdy.png
+tags: [embedded, edge]
+image: /img/blog/What-is-Luos-really-How-we-built-the-speech-banner.png
+hide_table_of_contents: false
+date: 2020-11-13T10:00
+---
+
+![img alt](/img/blog/What-is-Luos-really-How-we-built-the-speech.png)
+
+_This article is about the path taken during a couple years to explain what Luos is. Although Luos is a name for the company and the technology behind it, it’s the technology in particular I will mostly talk about, and how we sometimes struggled to explain it. Regarding the company in general, we will see why_ **_Luos is not a robotics company_**_._
+
+<!--truncate-->
+
+At the start of [Luos](/), my co-founders and I had a hard time explaining to other people what we were doing, and what Luos technology was doing. It’s not that we didn’t know that ourselves. It’s just that we deal with a technology that implies complex methods of data communication systems along with embedded systems. Some institutions call that _deeptech_. And even though we made progress explaining it with time, today it is still a pain to make everyone fully understand.
+
+Two years ago, we were telling this:
+
+Luos is a set of plug-and-play modules with robotic functions such as actuators or sensors that allow an automatic topology detection and the development of simplified behaviors.
+
+_Ouch._
+
+Not only this is **unclear** and **incomplete**, but it also usually leads –at best– to a false idea of what it really is. Fortunately we got somehow a slightly bit clearer:
+
+_“Luos is a robot internal software that links and makes every element and function communicate together into a single system image.”_
+
+Or
+
+_“Luos is a nervous system for modular robotics, it’s a set of firmware bricks that handle each functionalities, sensors and actuators of a robot, through a communication bus.”_
+
+Or
+
+_“Luos is a distributed operating system that makes any robotic devices modular and fully operable.”_
+
+Each of these explanations is both partially true and fully incomplete, and for someone that doesn’t work in tech, they are just dark gibberish.
+
+![Explain_how_Luos_works](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6273e97b7caa08822fba9808_Explain_how_Luos_works.gif)
+
+People listening to us had to isolate and analyze every word like “system”, “firmware”, “sensor”, or even “software”. The chances are that they gather a wrong idea of what these words mean alone or together, and so a wrong general idea of what Luos really is and does. For example, to an investor that wants to see the big picture, this is an outright no-go (and this is what happened to us with the first set of VCs we went to talk to: they didn’t understand and so were not interested). For our prospects as well –although they tend to be more into technologies–, it was a tough game to make them understand, which meant it was hard to acquire customers at the time. And most of the regular people we talked to generally gave up after a few questions, or worse, just make false assumptions about our activity. That’s how people thought we were strictly into hardware and robotics, and today it’s still hard to get rid of this wrong image.
+
+<h2> Defining the problem </h2>
+
+We gradually understood that we needed to define the problem we were addressing _before_ giving out the explanation of what actually was Luos. I also think it’s something everyone should do when beginning a business, by the way, but I feel I’m stating the obvious here.  
+This was pretty straightforward because it was a problem that each one of the co-founders of Luos had encountered during their past experiences:
+
+_Robots\* are_ **_hard_** _to make. It requires_ **_too much money_**_,_ **_too much time_**_, and_ **_too many people_** _to develop one from scratch to production._
+
+(\* Not only robots actually, even electronic devices, but we’ll get to that later.)
+
+We also understood that figures were important to help people get the picture, so we made research and analysis in order to quantify the problem.
+
+As an example, it appears that many companies, instead of using existing processes, re-develop almost everything each time they make a new product, spending a lot of money and resources in the process: in total, that’s **a thousand billion dollars** wasted each year worldwide. That’s a 1 with twelve 0s behind it, of course it’s an approximation but it is also a reality.
+
+$1,000,000,000,000, you say? Hey, someone understands this figure! (Source: Wikipedia.org)
+
+![Jeff Bezos](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030e13474e18c239d330e99_1*44y6WfSG62Qaw0KCH8ZgHQ.jpeg)
+
+So this is the problem we addressed. Luos was to shorten the time-to-market, the cost and the resources needed for the development of a robot all the way to production. Nothing changed since, I just use the past tense here because the market was going to evolve soon…
+
+We also tried with the words _firmware_, _middleware_, or _operating system_. But we realized that people had their own definition of each of these words, making it more or less difficult to explain every time. We were also talking about electronic boards, and because we developed some actual boards to help customers try the technology faster, the speech was blurry: was the Luos product hardware or software? (in case you’re wondering, the right answer is software!)
+
+<h2> The microservice and open-source emergences </h2>
+
+One day of particular bad vibes with VCs, someone supporting finally understood better than us what was Luos, and told us how wrong we were while trying to explain things (thank you <a rel="external nofollow" href="https://medium.com/@ale6" target="_blank">Alexis Robert</a>).
+
+Ok guys, what you do is microservices, but for embedded systems. Period.
+
+— **Alexis Robert**, partner at Kima Ventures
+
+To any layperson, this is still incomprehensible. But for us it was a revolution: this suddenly gave us a new vision of what Luos was. The <a rel="external nofollow" href="https://en.wikipedia.org/wiki/Microservices" target="_blank">Wikipedia page for microservices</a> was somehow describing and explaining Luos better than we ever did. We had to adapt our speech with the microservices, which means understanding them to explain them.
+
+The same day, another friendly person (thank you <a rel="external nofollow" href="https://medium.com/@VNallatamby" target="_blank">Vincent Nallatamby</a>) helped us realize –aside from the keyword “chip-agnostic” that also helped structuring parts of our speech– that making our technology open-source and saying it in our speech was critical, particularly for investors. Why? Simply because a new technology must be disseminated at the larger scale possible. The more users now, the more customers in the future. And of course, in order to reach a maximum number, users must use it for free. For us, the business part would come in time, that is when companies will begin to produce devices with Luos inside.
+
+In parallel, our idea of the market evolved. Robotics was still in the game, but described as **service robotics**. Moreover, we realized that many other markets with complex electronic devices such as new mobility, smart home appliances, etc. were Any electronic device with more than one microcontroller inside was potentially concerned by Luos: we became market-transversal. We could now talk of “_electronic devices_” more than “_robots_”, and we were to introduce “_embedded systems_” to emphasize the large range of markets we could reach.
+
+So our explanation went like this:
+
+_“To shorten the time-to-market of electronic devices, Luos enables microservices architecture for embedded systems: 1 microservice = 1 software function, possibly using hardware.”_
+
+Is it clear now? **No it isn’t**. It might even be worse. Indeed, deploying this speech, meant also giving a definition for each notion:
+
+**_Embedded systems:_** _“computational system inside a larger mechanic/electronic system…”_
+
+**_Microservices architecture:_** _“small services with no unique implementation arranged around a lightweight protocol.”_
+
+**_Module:_** _“Uuuuuh… a thing that… hmm… well, no, it’s actually a thing that goes where you want…. I mean…. uuuuh… you can plug it everywhere?”_
+
+_Etc._
+
+Please. Stop. I. Don’t. Understand.
+
+Thanks Nathan Cowley _(Source: Pexels)_, and sorry if our explanation makes you sad.
+
+![Luos Explanations](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030e134a557c3ba8c1c2c9a_1*sgx4Nm0IDdnibkPYr0nfHA.jpeg)
+
+<h2> Layers of explanations </h2>
+
+As people have different jobs, experiences, cultures or points of view, they could somehow be classified by “understanding categories” that need a definition that they understand at their own level. Even if at Luos we were not interested –at the time– in making every category understand what we did (we were wrong to think so), I realized it was important to adapt our explanations to whom we were talking to, according to their own understanding of tech things and to the reason why you talk to them (you won’t present the same picture to an investor, to prospect, or to a toddler).
+
+**_Level 0:_** _“Luos is a software that eases the creation of electronic devices.”_
+
+**_Level 1:_** _”Luos is a software that eases the development of electronic devices thanks to modularity.”_
+
+**_Level 2:_** _”Luos draws inspiration from microservices architecture in the web for embedded electronics in order to ease the development and production of electronic devices.”_
+
+**_Level 3:_** _”Luos is a technology inspired from microservices architecture and taking the form of software library for embedded systems for bare metal or for operating systems, in order to enable modularity in real-time electronics.”_
+
+_And so on…_
+
+The perks are that we could analyze the level of understanding of the person we were talking to, analyze what side of our full story will interest them, adapt our explanations, and go deeper and deeper in the complexity if it was required. This was getting a little bit easier for us, but the most difficult still were the first levels… How to put things simpler?
+
+<h2> The Docker comparison </h2>
+
+In parallel, we went on diving into the world of microservices, what they were and what they did. Finally, we discovered that **Luos was doing for embedded systems what Docker was doing for the web**:
+
+Docker encapsulates web applications so that they can be plugged and work together.  
+Luos encapsulates embedded applications for electronics so that they can be connected, communicate and work together.
+
+We had full new sets of ready-to-go sentences thanks to the 10-year-old Docker pitch experience, so we assumed that to understand Docker was to understand Luos. We began to explain things differently.
+
+Containers living their home to go abroad work with Luos. _(Source: Pexels)_
+
+![Docker experience](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030e1342786196796b0d54f_1*Hn51u8gXE0FnHvhkfmVTVg.jpeg)
+
+We also got used to use the “web comparison”, that still works well today:
+
+“Before, people used to build websites from nothing to fully functional, with thousands lines of code. Today, they just take functional bricks and plug them together (one brick for the chat, one brick for online payment, one brick for the dynamic menu, etc).
+
+This will go the same with electronic devices: today, people develop electronic devices from bottom to top, in a monolithic way. But tomorrow thanks to Luos, they will be able to re-use existing bricks (one brick for the wheels, one brick for the camera, etc.) and plug them together to have a fully functional device.”
+
+On the left, a visual idea of a monolithic product run by a big team. On the right, a modular product with microservices represented as various-colored cubes. And a relaxed product owner.
+
+![Monolithic vs Microservices vision](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030e1341d995102bdfc7f87_1*-0iSOjE2OmgQW749J1tazQ.png)
+
+Progressively we were talking about the **philosophy behind Luos** more than the **technical details**, and it gave people a new sense of far-reaching possibilities.
+
+Even in the core of our technology, this had an impact: we replaced the name module by container, which is technically more accurate. Spoiler alert: this change will appear in <a rel="external nofollow" href="https://github.com/Luos-io/Luos" target="_blank">the next version of Luos</a>.
+
+At the same time, if you want to discover some exciting projects created with Luos, don't hesitate to join our developer community: <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">Join us on Discord</a>.
+
+<h2> Tell a story </h2>
+
+More recently, we tried to explain Luos by telling a story. This is not a once-upon-a-time story, though it totally could be, but it’s merely a way of explaining a complex technology to someone that is not in the same “bubble” as the one you are in, **by using simple words**. It could even be for a child or for someone from your family that wants to know what exactly you do with that startup of yours.
+
+![Explain_how_Luos_works](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6273eaee7470bd18553f7441_Explain_Luos.gif)
+
+It can go like this:
+
+_An electronic device, such as a wheelchair, a free-mobility bike in the street, or a robot vacuum cleaner, is composed of electronic boards so that each function can work properly and to make the device work. In order to work properly, these boards need a small brain, a component called microcontroller. Now imagine that a microcontroller can host small boxes: these boxes, empty for now, are called containers. All these boxes are set to make what will be inside them talk and work together, wherever it comes from, and wherever the boxes are._
+
+**_✗_** _Now, if I want to add a camera to my wheelchair, for example, I could take my computer, connect to the wheelchair, and program how this camera can be used, and make the connection manually with every other element inside my wheelchair. But this is very complex and will take a lot of time, because I must not forget any connection._
+
+_✔ A better solution, thanks to Luos and to the containers inside the microcontrollers, is to simply plug the camera and put the special program that already knows how to use it into one of the empty containers. Thanks to the container ability to talk to others, this program and the camera will be able to work with all the other programs and elements in the wheelchair._
+
+_Smooth._
+
+Someone finally understood what Luos does. _(Source: Pexels)_
+
+![Someone finally understood what Luos does.](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030e13473c6a36f8ebc97d3_1*s4cbC03MkoN9H5Cj1AOs8w.jpeg)
+
+Of course this kind of story lacks many technical details, and takes sometimes rough shortcuts in order to ease the interlocutor’s understanding. But do they need to know, for example, that a container provides an abstraction of what’s inside it, making any program language-agnostic? No.
+
+<h2> Any advice, now? </h2>
+
+Explaining science or technology is sometimes harder than applying them, and why not? It usually represents years of studying deep pits of complex knowledge that you try to explain to someone in a few seconds with a few words. To conclude, here are some pieces of advice from our short experience with Luos:
+
+1.  First, be sure that everything is clear from your side: you won’t be able to explain something you don’t understand. Then be sure to identify the issue you resolve: knowing the issue makes the solution clearer to understand. Find examples, use figures; concrete facts usually print better into people’s minds.
+2.  And what else do people remember? **Comparisons**. Comparing your product to something everyone knows and adding a framework works well.
+3.  There is no best way to do this, but we found out that listening to people rephrase something you just tell them to be sure they understood well can sometimes help you a lot. **Communicating** in general often brings good ideas.
+4.  You can also test your speech on various categories of people, **using different layers of details**, from the simplest to the most precise. Each layer has new specific words.
+5.  For the first layers of explanation, you can try **telling a story**. Stories work better in people’s mind, it helps them picture and memorize it. It doesn’t matter if everything is not exactly right, or if some information is missing, as long as people get the big picture before getting into details. And for the first layers of explanation, this big picture is enough.
+6.  At last, I can only recommend you to **train yourself**. Delivering a speech, a pitch, an elevator pitch, etc. is mostly a question of doing it again and again. This way you quickly see what example works, what details people don’t understand, or how long it takes them to fall soundly asleep.
+
+There are a lot of other techniques that can be used to explain what your complex product does. Of course I don’t list them all here, only the one we used at Luos.
+
+Discover the potential of Luos and his technology by following our tutorials.  
+You can [get started](/tutorials/get-started) with us step by step!
+
+Our very first speech’s main elements began with **robots**, **modules** and even **electronic boards**. These words then disappeared to let room for **firmware**, **middleware**, or **operating system**. Again, the latter were pushed aside and **embedded systems**, **microservices**, and finally **containers** came to replace them. But our technology stayed the same, and our vision stayed the same (though expanded slightly). Only the speech evolved a lot, and will go on evolving in the future of Luos.
+
+Even if we made progress, nothing is definitely set in our way of explaining Luos to people. Tomorrow we will have new words, sentences and stories that will hopefully fit even better than the ones we have today. The most important part is that we are going in the right direction and improving at each step in our way of popularizing and explaining what Luos is and does.
+
+[Get Started with Luos](/tutorials/get-started)

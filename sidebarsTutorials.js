@@ -3,7 +3,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Tutorials',
-      link: { type: 'doc', id: 'tutorials' },
+      link: { type: 'doc', id: 'index' },
       items: [
         {
           type: 'category',
@@ -27,7 +27,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Part 4: Connect to the Network Display tool',
+              label: 'Part 4: Connect to a web app',
               id: 'get-started/get-started4',
             },
           ],
@@ -56,19 +56,19 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Receiving Message',
+              label: 'Receiving a message',
               id: 'your-first-message/receiving-message',
             },
             {
               type: 'doc',
-              label: 'Send Message from button service',
+              label: 'Send a message from button service',
               id: 'your-first-message/send-message',
             },
           ],
         },
         {
           type: 'category',
-          label: 'Your First Topology detection',
+          label: 'Your first topology detection',
           link: {
             type: 'doc',
             id: 'your-first-detection/your-first-detection',
@@ -81,7 +81,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'How to use the routing Table',
+              label: 'How to use the routing table',
               id: 'your-first-detection/routing-table',
             },
             {
@@ -98,19 +98,19 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Part 1: Use Luos with Arduino IDE',
+              label: 'Use Luos with Arduino IDE',
               id: 'arduino/arduino',
             },
           ],
         },
         {
           type: 'category',
-          label: 'FreeRTos',
+          label: 'RTOS',
           link: { type: 'doc', id: 'freertos/intro' },
           items: [
             {
               type: 'doc',
-              label: 'Part 1: Use Luos with FreeRTos',
+              label: 'Use Luos with an RTOS',
               id: 'freertos/freertos',
             },
           ],
@@ -122,8 +122,76 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Part 1: Use Luos Bootloader',
+              label: 'Use Luos bootloader',
               id: 'bootloader/bootloader',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'PlatformIo',
+          link: { type: 'doc', id: 'pio/pio' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Project creation',
+              id: 'pio/creation',
+            },
+            {
+              type: 'doc',
+              label: 'Include Luos to your project',
+              id: 'pio/include',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Alias',
+          link: { type: 'doc', id: 'resilient-alias/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Use resilient aliases',
+              id: 'resilient-alias/resilient-alias',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Morse encoder',
+          link: { type: 'doc', id: 'morse/morse' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Algorithm',
+              id: 'morse/algorithm',
+            },
+            {
+              type: 'doc',
+              label: 'Output',
+              id: 'morse/output',
+            },
+            {
+              type: 'doc',
+              label: 'Add service',
+              id: 'morse/add-service',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Luos with ESP32',
+          link: { type: 'doc', id: 'esp/esp' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Environment',
+              id: 'esp/env',
+            },
+            {
+              type: 'doc',
+              label: 'Connect to the network',
+              id: 'esp/connect',
             },
           ],
         },
@@ -152,44 +220,7 @@ module.exports = {
             },
           ],
         },
-        {
-          type: 'category',
-          label: 'Bike alarm',
-          link: {
-            type: 'doc',
-            id: 'bike-alarm/bike-alarm',
-          },
-          items: [
-            {
-              type: 'doc',
-              label: 'Part 1: Make a basic alarm',
-              id: 'bike-alarm/basic-alarm',
-            },
-            {
-              type: 'doc',
-              label: 'Part 2: Make our alarm adaptable and hot-plug-gable',
-              id: 'bike-alarm/adaptable-alarm',
-            },
-            {
-              type: 'doc',
-              label: 'Part 3: Add another app controlling the alarm',
-              id: 'bike-alarm/control-alarm',
-            },
-            {
-              type: 'doc',
-              label :
-                  'Part 4: Make our alarm evolve using a truck horn and more',
-              id: 'bike-alarm/evolve-alarm',
-            },
-            {
-              type: 'doc',
-              label: 'Part 5: Connect our system to the cloud',
-              id: 'bike-alarm/cloud-alarm',
-            },
-          ],
-        },
       ],
     },
-    { type: 'link', label: 'Go to Luos.io', href: 'https://www.luos.io/' },
   ],
 };

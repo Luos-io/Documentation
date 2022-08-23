@@ -1,0 +1,50 @@
+---
+custom_edit_url: null
+---
+
+import Image from "@site/src/components/Images.js";
+
+# My board is not detected in the network
+
+### Symptom(s)
+
+After flashing a board with PlatformIO and launching a detection, the board is not detected in the Luos network. 
+
+### Possible reason(s)
+
+- The upload function did not work properly in PlatformIO.
+
+### Explanation and resolution
+
+Sometimes, VS Code and PlatformIO do not clean nor regenerate the user folders *.vscode* and *.pio*, and it can affect uploading (or flashing) your code to the board, even if there is a success message after the upload. The clean action does not affect these folders either. 
+
+If you have this detection problem, try the following actions:
+- Delete the folder *.pio* from the tree on the left in PLatformIO. 
+- In order to have a clean development environment, you can also delete the folder *.vscode* from the tree. 
+- Perform a clean (Bin icon in the bottom left of VS Code).
+- Try hitting Upload again in the bottom left. 
+
+The deleted folders and their files will be automatically regenerated at upload. Then try to make a detection again, the board should now be detected.
+
+### Example
+
+#### Step 1: Delete the folders
+
+<div align="center">
+  <Image src="/img/faq/board-not-detected-in-network-01.png" />
+</div>
+
+
+#### Step 2: Clean and upload your code
+
+<div align="center">
+  <Image src="/img/faq/board-not-detected-in-network-02.png" />
+</div>
+
+<div align="center">
+  <Image src="/img/faq/board-not-detected-in-network-03.png" />
+</div>
+
+:::note
+The uplaod time may be longer, because the files are regenerated in the folders *.vscode* and *.pio*.
+:::

@@ -1,0 +1,56 @@
+---
+title: 'Safe, fast and lightweight'
+description: At Luos, we split code into smaller pieces that can be run on several microcontrollers as if everything was on a single CPU. Read this article to discover our vision
+slug: safe-fast-and-lightweight
+authors:
+  - name: James Langbridge
+    title: Teacher, researcher, author
+    url: https://github.com/jlangbridge
+    image_url: https://github.com/jlangbridge.png
+tags: [embedded, edge]
+image: /img/blog/safe-fast-lightweight-banner-luos.png
+hide_table_of_contents: false
+date: 2021-05-13T10:00
+---
+
+![img alt](/img/blog/safe-fast-lightweight-luos.png)
+
+Back in the past of the history of flight
+
+<!--truncate-->
+
+In 1904, Orville Wright made the world’s first controlled and sustained flight in a powered aircraft. He flew a total of 23 meters. For the time, it was a spectacular event. Less than a year later, his brother, Wilbur, passed over a kilometer. One hundred and fifteen years later, I flew 10,722 kilometers from Paris to Singapore. As far as firsts in aviation go, it was far from breathtaking. It was totally normal and just one of dozens of flights to arrive in Singapore that day, as they have been doing for years.
+
+<h2> When humans fly... </h2>
+
+The first airplanes were controlled by humans, using sheer strength. If the pilot pulled on the stick, it would drag on wires that ran the length of the airplane, and activate control surfaces. The bigger the plane, the more force was needed. It didn’t take long until humans could no longer control airplanes by themselves. They required motors and hydraulics to help them. But wait, if a human can activate hydraulics, a computer can too, right? They are faster and more reliable than humans. And so we found ourselves with airplanes that had flight computers.
+
+Back to the modern-day? My correspondence flight was an Airbus A320. The first A320 flew in 1987, but it is brand new by the looks of this one. It’s a silent flight back to my home city. I’m looking out of the window, watching the clouds as we skim over them. Control surfaces are constantly moving on the wings to keep this beautiful bird stable, saving me from as much turbulence as possible. As I watch the landscape, I remember my early days of computing. 1987, Commodore Amiga 500. It is an incredible machine with 512 kilobytes of RAM and can play games in a great 320x256. I was in love with a fantastic piece of hardware, all of this powered by a Motorola 68000 processor. I’m reminded of this because that is exactly what controls the flaps on this wing, a good old 68000.
+
+The system controlling the structures on the wing is known as the ELAC, short for Elevator Aileron Computer. It is a critical piece of equipment. If your **computer** crashes, then it leaves you in a bad mood. If a flight computer crashes, well, everything might crash. Don’t worry, though; these **systems** are completely redundant; an A320 has two ELACs and five other systems that can take over if anything ever happens. What Airbus has done here is to make a reliable flying computer, made up of dozens of smaller computers.
+
+![Representation of computers in a plane](/img/blog/computer-plane-luos.jpeg)
+
+Ladies and gentlemen, come aboard the Luos spaceship by joining the crew on Discord! A world of discovery awaits you: <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">Join us on Discord</a>
+
+<h2> Tiny computers </h2>
+
+So why am I putting my life in the hands of the processor that let me play games when I was young? One reason is that the original design for the A320 dated back to this era, so they used **available processors**, which is logical. However, this design has been kept up to date, so why didn’t this processor change? Why don’t we use something faster, like a Core i7 as we have in our modern computers? There are a few reasons. It isn’t about price; a new A320 costs over 100 million dollars, a few dollars more won’t change anything.
+
+The first reason is just enough. The 68000 has just enough **technology** to get the job done. Your computer might run at three gigahertz, but don’t be fooled by slower processors; with some creative development, you can squeeze a lot of calculations out of a low-powered device.
+
+The second reason is reliability. The 68000 is a proven design used by Commodore on my Amiga 500 and NASA for flight **computers a**nd **engineers** knew this **system** inside out. The 68k, as it is known, is highly reliable and easy to program.
+
+In a previous article, in parallels of computers and systems, we wrote about [why standardized data is so important in embedded systems](/2021-04-13-standardized-data.mdx).
+
+![Luos split code into smaller pieces that can be run on several microcontrollers](/img/blog/man-waiting-luos.jpeg)
+
+<h3> One big one, or lots of small ones? </h3>
+
+Maybe an A320 could run on a single processor, one massive **system** that controls everything, like a mainframe of the sky. However, separating this into lots of tiny **systems** makes the entire system safe, fast, and lightweight. Safe, because there might be hundreds of lines of code instead of tens of millions, making bugs easier to catch and making testing easier to perform. Fast, because no matter what is happening elsewhere on the plane, this one **system** makes sure that I’m safe and comfortable. Lightweight, not in terms of physical weight, but words of code. The code on the ELAC brought down to the strict minimum, but other systems don’t need to handle the ELAC, they need to send data, and that data will be handled.
+
+By splitting tasks into several subsystems, everything becomes safer. What happens in the worst case if the ELAC fails? A second system is available to take over immediately, safety isn’t compromised, and the crew is probably notified by a red light somewhere, but the flight continues. What happens if a single system processor fails? Let’s not think about that. All I know is that this flying computer brought me safely home and comfortably, despite the strong winds. Now, if only they could use the same level of reliability to get my baggage back because that was a completely different experience.
+
+At [Luos](#), we split code into smaller pieces that can be run on several microcontrollers, as if everything was on a single CPU. From a development standpoint, you don’t need to spend time developing inter-microcontroller communications, and you don’t even need to know where your program is physically located, it becomes available on a network.
+
+[Get Started with Luos](/tutorials/get-started)

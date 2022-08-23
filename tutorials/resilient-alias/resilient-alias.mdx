@@ -1,0 +1,224 @@
+---
+custom_edit_url: null
+---
+
+import Image from '@site/src/components/Images.js';
+
+
+# Resilient aliases management
+
+Luos allows you to deal with service aliases. Aliases are much more practical than ids and allow developers to naturally find and access a specific service somewhere in the network.
+
+In some developments, you will need to duplicate the same service multiple times. For example, if you are making a robot with multiple motors you could have the exact same boards running the exact same firmware multiple times and at different places on your device.
+
+But the same way an id needs to be unique, each alias needs to be different to be findable in your system.
+
+Luos allows you to avoid creating a new binary for all your boards and gives you the possibility to customize the aliases as you want, in a really practical way.
+
+:::info
+You can find an example of resilient aliases management on our [NUCLEO-F401RE led driver](https://github.com/Luos-io/luos_engine/tree/main/examples/projects/NUCLEO-F401RE/led/lib).
+:::
+
+# How aliases are managed
+
+Every service needs an alias. Basically, when you create your service you will have to define your service's default alias.
+
+After this creation, your alias can be modified in different ways.
+
+1. If you have the same service alias multiple times on a device, Luos will add a number at the end of your alias depending on their position from the node performing the detection. This guarantees aliases unicity. This modification is regenerated at each detection, so this new alias may change if another detection occurs from another node. This alias is not saved in the service, only in the routing table, and it is not persistent at all.
+```
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> Pipe                Pipe                2    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> State               led                 3    ┃
+    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ╚══ 0>┃1 ╭node 3            /!\ Not certified            ┃
+          ┃  │  Type                Alias               ID   ┃
+          ┃  ╰> Color               led1                4    ┃
+        ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+        ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+        ╚══ 0>┃1 ╭node 4            /!\ Not certified            ┃
+              ┃  │  Type                Alias               ID   ┃
+              ┃  ╰> State               led2                5    ┃
+             >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+2. Users can choose to rename an existing service by sending a custom alias request from another service. This allows to keep the alias' name consistent even in the case of new detection, and to choose a practical alias name such as “left_motor” or “front_sensor”. This alias is saved in the service, but not in the routing table, and you will have to remake a detection to update the routing table with the new alias.
+```
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> Pipe                Pipe                2    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> State               left_led            3    ┃
+    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ╚══ 0>┃1 ╭node 3            /!\ Not certified            ┃
+          ┃  │  Type                Alias               ID   ┃
+          ┃  ╰> Color               front_led           4    ┃
+        ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+        ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+        ╚══ 0>┃1 ╭node 4            /!\ Not certified            ┃
+              ┃  │  Type                Alias               ID   ┃
+              ┃  ╰> State               right_led           5    ┃
+             >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+In this second situation, the customization of the alias is less volatile, but this information is still not persistent to a hard reset or a power off.
+
+In this tutorial, we will discover how to make an alias persistent to a reboot, and even to a flash of the board.
+
+# Saving aliases
+
+To make an alias resilient, we will need to save the alias information in flash memory or EEPROM. Depending on your hardware specificities, you may have different ways to read and write into your memory. You can use this function to store some other parameters such as configuration or calibrations values for your project, have direct flash access, or use a file system.
+
+Luos provides a flexible solution allowing you to optionally save your aliases in the best way possible for your project.
+
+Let's see how to make it!
+
+## Default aliases
+
+In every case, you need to define a default alias at the service creation. This is mandatory, and this alias will be used as a backup if your custom alias is removed.
+
+Let's use a simple led service as an example. In the package inititalization, you need to create your service with the associated alias:
+
+```c
+void Led_Init(void)
+{
+    // Initialization of the led GPIO...
+    // Create the led service
+    revision_t revision = {.major = 1, .minor = 0, .build = 0};
+    Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
+}
+```
+
+As you can see here, we just created an on/off led service with the alias `led`.
+
+If you run this service somewhere, other services will be able to rename it using a `WRITE_ALIAS` command message containing a new alias. The easiest way to test it is to use a gate service connected with Pyluos. After running `pyluos-shell`, if you type `device.nodes` you should see:
+
+```
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> Pipe                Pipe                2    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> State               led                 3    ┃
+     >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+As you can see here, the led-aliased service is displayed.
+
+## Custom alias
+
+Now, in your `pyluos-shell` console you can type:
+
+```python
+device.led.rename("custom led")
+```
+
+Then relaunch `pyluos-shell` and type `device.nodes`. You should see:
+
+```
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> Pipe                Pipe                2    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> State               custom_led          3    ┃
+     >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+As you can see, the service saved your alias and replaced the space with the character `_`. Also, be aware that a too long alias (above 15 characters) will be truncated.
+
+:::warning
+If your alias has characters different from a-A to z-Z, 0 to 9, space or `_`, it will be rejected and won't be saved.
+:::
+
+Now, in your `pyluos-shell` console, type:
+
+```python
+device.custom_led.rename("")
+```
+
+Then relaunch `pyluos-shell` and type `device.nodes`. You should see: 
+
+```
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> Pipe                Pipe                2    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> State               led                 3    ┃
+     >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+As you can see, your default alias is back! You can remove your custom alias by sending a void string.
+
+## How to save a custom alias
+
+When a service receives a `WRITE_ALIAS` command, Luos saves the alias then passes the message to the service. This means that you can get this message into the `Led_MsgHandler` callback to save this new alias somewhere (EEPROM, Flash memory, SD card, etc.).
+
+For example:
+
+```c
+static void Led_MsgHandler(service_t *service, msg_t *msg)
+{
+     ...
+    if (msg->header.cmd == WRITE_ALIAS)
+    {
+        Alias_write(addressToWriteIt, msg->data, msg->header.size);
+    }
+}
+```
+
+By saving this alias on a non-volatile memory, you will be able to get this new alias back even after a reboot or a program flash of your MCU.
+
+To update the alias after a reboot, you can use the `Luos_UpdateAlias` function:
+
+```c
+void Led_Init(void)
+{
+    // Initialization of led GPIO...
+    // Create the led service
+    revision_t revision = {.major = 1, .minor = 0, .build = 0};
+    service_t *myService = Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
+        // Get back the saved alias.
+        char saved_alias[MAX_ALIAS_SIZE];
+        int size = Alias_read(addressToReadIt, saved_alias);
+    // Update the Alias
+        Luos_UpdateAlias(myService, saved_alias, size);
+}
+```
+
+## How to save aliases for multiple packages
+
+The main concept of Luos is to keep services and packages loosely coupled. This means that your package should have everything needed locally and does not depend on any code somewhere else.
+
+If you have multiple packages on a node and if you want to be able to save your aliases on all those packages, you may want to have a common function used by all the packages to store aliases. In this case, we advise you to consider your memory management functions as a library and to make your packages dependent on this library.
+
+:::info
+You can find an example of resilient aliases management on our [NUCLEO-F401RE led driver](https://github.com/Luos-io/luos_engine/tree/main/examples/projects/NUCLEO-F401RE/led/lib).
+:::

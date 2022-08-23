@@ -4,8 +4,8 @@
 }
 
 html[data-theme='dark'] .introContainer {
-  background-color: #393f58;
-  border: 0.5px solid #c4c4c4;
+  background-color: #323334;
+  border: 0.5px solid #323334;
   color: white;
 }
 
@@ -58,8 +58,8 @@ html[data-theme='dark'] .lvlBtn button {
 }
 
 html[data-theme='dark'] .card {
-  background-color: #393f58;
-  border: 0.5px solid #c4c4c4;
+  background-color: #323334;
+  border: 0.5px solid #323334;
   color: white;
 }
 
@@ -88,7 +88,7 @@ html[data-theme='dark'] .card {
 }
 
 .difficultyContainer {
-  background: rgba(149, 143, 174, 0.2);
+  background: #F5F5F5;
   width: 150px;
   margin: 15px 0px;
   padding: 3px 10px;
@@ -96,6 +96,10 @@ html[data-theme='dark'] .card {
   font-family: 'Roboto Mono', sans-serif;
   text-transform: capitalize;
   float: right;
+}
+
+html[data-theme='dark'] .difficultyContainer{
+  background: #565758;
 }
 
 .difficultyContainer span {
@@ -107,8 +111,13 @@ html[data-theme='dark'] .card {
   width: 0.25rem;
   display: inline-block;
   margin-right: 1.25rem;
-  background: #a8b6d1;
-  box-shadow: 6px 0 0 #a8b6d1, 12px 0 0 #a8b6d1;
+  background: #F5F5F5;
+  box-shadow: 6px 0 0 #F5F5F5, 8px 0 0 #F5F5F5;
+}
+
+html[data-theme='dark'] .difficulty{
+  background: #565758;
+  box-shadow: 6px 0 0 #565758, 8px 0 0 #323334;
 }
 
 .levelTxt {

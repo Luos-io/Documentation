@@ -8,9 +8,10 @@
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/roboto');
 
 :root {
-  --ifm-color-primary: #227c6a;
+  --ifm-color-primary: #bd99ff;
   --ifm-color-primary-dark: #a370ff;
   --ifm-color-primary-darker: #955cff;
   --ifm-color-primary-darkest: #6e1fff;
@@ -30,10 +31,10 @@
 }
 
 html[data-theme='dark'] {
-  --ifm-background-color: hsl(226, 23%, 11%);
-  --ifm-navbar-background-color: black;
+  --ifm-background-color: #1e1e1e;
+  --ifm-navbar-background-color: #323334;
   --ifm-menu-background-color: white;
-  --ifm-color-primary: #75dbc7;
+  --ifm-color-primary: #bd99ff;
 }
 
 a {
@@ -42,7 +43,7 @@ a {
 
 h1 {
   font-size: 43px !important;
-  margin-bottom: 60px !important;
+  margin-bottom: 30px !important;
 }
 
 h2 {
@@ -82,7 +83,7 @@ li {
 }
 
 html[data-theme='dark'] .menu {
-  background-color: #282d3f;
+  background-color: #323334;
   margin-bottom: 0;
 }
 
@@ -99,9 +100,16 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .footer__links {
   text-align: center;
-  border-top: 2px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   padding: 25px 0px;
+  color: black;
+}
+
+.footer__items {
+  padding-left: 0;
+}
+
+html[data-theme='dark'] footer__links {
+  background-color: white;
 }
 
 .feedbackForm {
@@ -138,7 +146,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .col-info {
   width: 50%;
-  background-color: #282d3f;
+  background-color: #323334;
   border-radius: 5px 0px 0px 5px;
 }
 
@@ -220,7 +228,7 @@ html[data-theme='dark'] .container-feedback {
 }
 
 html[data-theme='dark'] .inputForm {
-  background-color: #282d3f;
+  background-color: #323334;
   color: white;
 }
 
@@ -346,16 +354,16 @@ html[data-theme='dark'] .cust_square {
   width: 200px;
   margin: 10px;
   padding: 20px;
-  background-color: #282d3f;
-  border: solid 1px #485171;
+  background-color: #323334;
+  border: solid 1px #323334;
   border-radius: 5px;
-  box-shadow: 1px 1px 5px #282d3f;
+  box-shadow: 1px 1px 5px #323334;
   text-align: center;
   filter: none;
 }
 
 html[data-theme='dark'] .cust_square:hover {
-  background-color: #383f58;
+  background-color: #565758;
 }
 
 html[data-theme='dark'] .cust_landing_title {
@@ -365,11 +373,11 @@ html[data-theme='dark'] .cust_landing_title {
   padding-bottom: 5px;
 }
 html[data-theme='dark'] .cust_landing_text {
-  color: #75dbc7;
+  color: #bd99ff;
 }
 
 html[data-theme='dark'] .cust_landing_seperator {
-  border-top: 2px solid #3c435e;
+  border-top: 2px solid #323334;
   margin: 9px 0px 5px 0px;
 }
 
@@ -434,7 +442,7 @@ html[data-theme='dark'] .cust_landing_seperator {
 html[data-theme='dark'] .cust_tooltiptext {
   visibility: hidden;
   width: 350px;
-  background-color: #282d3f;
+  background-color: #323334;
   color: white;
   text-align: left;
   border-radius: 5px;
@@ -546,11 +554,11 @@ html[data-theme='dark'] thead {
 }
 
 html[data-theme='dark'] table tbody tr {
-  background-color: #282d3f;
+  background-color: #323334;
 }
 
 html[data-theme='dark'] table tbody tr:nth-child(2n) {
-  background-color: #1c1f2c;
+  background-color: #323334;
 }
 
 .tabs {
@@ -579,20 +587,29 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
   width: 50%;
 }
 
-.joinUsContainer {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
 .rsLogo {
   width: 32px;
   margin: 15px 10px;
 }
 
+@media screen and (max-width: 800px) {
+  .rsLogo {
+    margin: 15px 5px;
+  }
+}
+
 .footer {
   padding: 20px;
+  background-color: #f5f5f5;
+  color: black;
+  z-index: 2;
+  border-top: 2px solid #e2e2e2;
+}
+
+html[data-theme='dark'] .footer {
+  border-top: 2px solid #1e1e1e;
+  background-color: #323334;
+  color: white;
 }
 
 .send {
@@ -629,11 +646,7 @@ html[data-theme='dark'] table tbody tr:nth-child(2n) {
 }
 
 .MuiListItemText-primary {
-  color: black !important;
-}
-
-html[data-theme='dark'] .MuiListItemText-primary {
-  color: white !important;
+  color: black;
 }
 
 .breadcrumbs__link {
@@ -642,4 +655,90 @@ html[data-theme='dark'] .MuiListItemText-primary {
 
 .breadcrumbs__link span {
   font-size: inherit !important;
+}
+
+.MuiListItemText-primary {
+  font-family: 'Roboto Mono', sans-serif !important;
+  font-size: 18px !important;
+}
+
+.react-typewriter-text {
+  text-align: left;
+  font-family: 'Roboto Mono';
+  font-size: 30px !important;
+  margin-bottom: 15px !important;
+}
+
+.MuiRadio-root {
+  display: none !important;
+}
+
+.react-typewriter-text-luos {
+  color: white;
+}
+
+html[data-theme='light'] .react-typewriter-text-luos {
+  color: black !important;
+}
+.footer__link-item {
+  color: black;
+  font-weight: 400 !important;
+}
+
+html[data-theme='dark'] .footer__link-item {
+  color: white;
+}
+
+.footer__title {
+  color: black;
+}
+html[data-theme='dark'] .footer__title {
+  color: white;
+}
+
+.DocSearch-Button {
+  background: #f5f5f5 !important;
+}
+
+html[data-theme='dark'] .DocSearch-Button {
+  background: #565758 !important;
+}
+
+.arrayWithImg table {
+  display: inline-block !important;
+  margin-right: 15px;
+}
+
+.dropdown-archived-versions {
+  font-size: 0.875rem;
+  padding: 0;
+}
+
+.dropdown-separator {
+  margin: 10px 0px;
+}
+
+.alexAuthor {
+  color: #ff5101;
+}
+
+.alexAuthor p {
+  color: #ff5101 !important;
+}
+
+.alexAuthor ol {
+  color: #ff5101 !important;
+}
+
+.alexAuthor tr {
+  border: none;
+}
+
+.alexAuthor td {
+  border: none;
+}
+
+.alexAuthor h2,
+h3 {
+  color: initial;
 }

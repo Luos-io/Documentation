@@ -1,12 +1,15 @@
 ---
 custom_edit_url: null
+image: /img/get-started/Get-Started-Part-3-banner-Luos.png
+description: In this part, we will learn how to configure Luos engine to access to multiple boards in your physical network.
 ---
 
 import Image from '@site/src/components/Images.js';
 import Tabs from '@theme/Tabs';
+import Form from '/src/components/typeform/index.js';
 import TabItem from '@theme/TabItem';
 
-# Part 3: Unleash your code
+# Part 3: unleash your code
 
 <div align="center">
   <iframe
@@ -20,7 +23,7 @@ import TabItem from '@theme/TabItem';
 
 The first two parts of the [Get started tutorial](/tutorials/get-started/) are now done. Good work! 💪
 
-In this part, we will learn how to configure Luos to access to multiple boards in your physical network. Then, we will run our first example into these boards.
+In this part, we will learn how to configure Luos engine to access to multiple boards in your physical network. Then, we will run our first example into these boards.
 
 :::info
 We will use the same board from the first two parts, but **you also need a second board to create a network**. Supported boards are listed [here](/tutorials/get-started/get-started1#setup-development-environment).
@@ -29,9 +32,9 @@ We will use the same board from the first two parts, but **you also need a secon
 
 ## 2. Create a physical network
 
-As we saw in Part 1, Luos allows you to define services and use them together on one MCU. What really sets Luos apart and make it special is that you can also make services work together on separated MCUs.
+As we saw in Part 1, Luos engine allows you to define services and use them together on one MCU. What really sets Luos apart and make it special is that you can also make services work together on separated MCUs.
 
-Let’s make a network with two boards!
+Let's make a network with two boards!
 
 In this part, we will use the “default wiring” defined by Luos to create a network of two MCUs. We will use a [OneWire network](/docs/hardware-consideration/electronics), limiting the circuit to simple wires and pins:
 
@@ -39,7 +42,7 @@ In this part, we will use the “default wiring” defined by Luos to create a n
 - One PTP wire.
 
 :::tip
-💡 Luos Point-To-Point (PTP) connection allows to find your board’s [physical position](/docs/luos-technology/node/topology). Luos can deal with up to 8 PTP lines on each board to connect as many boards as you want.
+💡 Luos Point-To-Point (PTP) connection allows to find your board's [physical position](/docs/luos-technology/node/topology). Luos engine can deal with up to 8 PTP lines on each board to connect as many boards as you want.
 
 :::
 
@@ -57,11 +60,11 @@ To prevent any mistakes, unplug the USB cables from the boards before wiring.
 
 To create your network, you have to identify the pins used to perform Luos communication:
 
-| Function name | Arduino pin | STM32L432KC pin | STM32F072RB pin | STM32F401RE pin | STM32F410RB pin | STM32G431KB pin |
-| ------------- | ----------- | --------------- | --------------- | --------------- | --------------- | --------------- |
-| TX            | Tx          | PA9 (D0)        | PA9 (D8)        | PB7(21)         | PB7 (21)        | PA9 (D0)        |
-| RX            | Rx          | PA10 (D1)       | PA10 (D2)       | PB6 (D10)       | PB6 (D10)       | PA10 (D1)       |
-| PTP           | D6          | PB5 (D12)       | PA8 (D7)        | PB5 (D5)        | PB5 (D5)        | PB5 (D12)       |
+| Function name | Arduino pin | STM32L432KC pin | STM32F072RB pin | STM32F401RE pin | STM32F410RB pin | STM32G431KB pin | Seeeduino XIAO pin |
+| ------------- | ----------- | --------------- | --------------- | --------------- | --------------- | --------------- | ------------------ |
+| TX            | Tx          | PA9 (D0)        | PA9 (D8)        | PB7(21)         | PB7 (21)        | PA9 (D0)        | D6                 |
+| RX            | Rx          | PA10 (D1)       | PA10 (D2)       | PB6 (D10)       | PB6 (D10)       | PA10 (D1)       | D7                 |
+| PTP           | D6          | PB5 (D12)       | PA8 (D7)        | PB5 (D5)        | PB5 (D5)        | PB5 (D12)       | D1                 |
 
 Below are the schematics of various boards and how to wire them:
 
@@ -79,6 +82,14 @@ Below are the schematics of various boards and how to wire them:
       <Image
         src="/img/get-started/get-started-3-2.png"
         darkSrc="/img/get-started/get-started-3-2-dark.png"
+      />
+    </div>
+  </TabItem>
+  <TabItem value="Seeeduino Xiao">
+    <div align="center">
+      <Image
+        src="/img/get-started/get-started-3-6_light.png"
+        darkSrc="/img/get-started/get-started-3-6-dark.png"
       />
     </div>
   </TabItem>
@@ -121,12 +132,12 @@ After wiring the boards together, you will have to power both of them for the ne
 
 ## 3. Build Luos distributed system
 
-In Part 1, you have downloaded or cloned the Get started code folder in your computer. We will use this code to demonstrate how Luos works using a network. We will begin by moving the blinker app service from _board 1_ to _board 2_ and see what is happening next.
+In Part 1, you have downloaded or cloned the Get started code folder in your computer. We will use this code to demonstrate how Luos engine works using a network. We will begin by moving the blinker app service from _board 1_ to _board 2_ and see what is happening next.
 
 ### Flash _board 1_
 
 :::caution
-Connect the USB cable of _board 1_ and leave the USB cable of _board 2_ deconnected.
+Connect the USB cable of _board 1_ and leave the USB cable of _board 2_ disconnected.
 
 :::
 
@@ -164,8 +175,7 @@ These lines trigger the initialization and looping execution of all the packages
     darkSrc="/img/get-started/get-started-3-6.png"
   />
 </div>
-5. Build and flash _board 1_ by clicking on the right arrow button in the bottom
-left in VS Code.
+5. Build and flash _board 1_ by clicking on the right arrow button in the bottom left in VS Code.
 
 ### Flash _board 2_
 
@@ -194,11 +204,11 @@ You should now unplug the USB cable of _board 1_ and connect the USB cable of _b
    ```
 
 :::tip
-In order to keep using Luos Engine in your MCU, `Luos_init()` and `Luos_Loop()` must not be commented.
+In order to keep using Luos engine in your MCU, `Luos_init()` and `Luos_Loop()` must not be commented.
 
 :::
 
-4. Check if the proper board environnement is selected depending on your board:
+4. Check if the proper board environment is selected depending on your board:
 
 <div align="center">
   <Image
@@ -206,8 +216,7 @@ In order to keep using Luos Engine in your MCU, `Luos_init()` and `Luos_Loop()` 
     darkSrc="/img/get-started/get-started-3-7.png"
   />
 </div>
-5. Build and flash _board 2_ by clicking on the right arrow button in the bottom
-left in VS Code.
+5. Build and flash _board 2_ by clicking on the right arrow button in the bottom left in VS Code.
 
 We are done!
 
@@ -282,17 +291,18 @@ device.led.state=False
 device.blinker.play()
 ```
 
-## Next steps
+## 5. Next steps
 
-:::info
-In this Get started tutorial, we used the default wiring defined by Luos. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Luos is defined on the [LuosHAL](https://github.com/Luos-io/LuosHAL) folder corresponding to your device.
+In this Get started tutorial, we used the default network used by Luos engine called Robus. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Robus is defined on the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank" rel="external nofollow">Robus HAL</a> folder corresponding to your device.
 
-:::
+## 6. Test your skills
+
+<Form id="FV0qhGbo" />
 
 **Congratulation, you have plugged, configured, and used your first Luos network!**
 
 The next step will show you how to visualize your network online through the Luos Network Display tool.
 
-You can check out our [tutorials](/tutorials/tutorials) to learn more about Luos and understand how to use the features of Luos Engine. We also invite you to check out our [documentation](/docs/luos-technology/luos_tech) to learn more about the core concepts of Luos Engine.
+You can check out our [tutorials](/tutorials) to learn more about Luos and understand how to use the features of Luos engine. We also invite you to check out our [documentation](/docs/luos-technology) to learn more about the core concepts of Luos engine.
 
-⭐ If you liked this tutorial, feel free to star our [Luos repository](https://github.com/Luos-io/Luos) ⭐
+⭐ If you liked this tutorial, feel free to star our <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow">Luos engine repository</a>⭐

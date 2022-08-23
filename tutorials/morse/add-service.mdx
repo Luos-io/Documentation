@@ -1,0 +1,177 @@
+---
+custom_edit_url: null
+image: /img/Morse_encoder_Luos.png
+---
+
+import Image from '/src/components/Images.js';
+
+# Part 3: How to display the encoder output
+
+## 1. Introduction
+
+Now is the time to encode your own words to communicate in Morse code!
+
+<div align="center">
+  <img
+    src="https://media.giphy.com/media/3o6UB3VhArvomJHtdK/giphy.gif"
+    className="gif_tutorial"
+    alt="gif_yes"
+  />
+</div>
+
+The final part of this tutorial is the integration of a service that will send an input words in order to be encoded into Morse code, by the encoder application. We can use various types of services that provide the text input like, for example, a string input, microphones, our computer, or even an application that generates words. After this addition, we will have a complete Morse project.
+
+For this tutorial, we decided to use a serial communication driver so that we can send words from the keyboard of our computer, which will be translated into Morse code and displayed to a LED light on the electronic boards. This serial driver is a commonly used component at Luos and is called a pipe.
+
+<div align="center">
+  <Image
+    src="/img/tutorials/morse/morse-3-1.png"
+    darkSrc="/img/tutorials/morse/morse-3-1-dark.png"
+  />
+</div>
+
+## 2. Explore the pipe driver utilty
+
+The pipe is a Luos pre-specified driver which is responsible for serially receiving and sending data, from and to a computer, an RPI, etc. Its only responsability is to pass the data received from the embedded system to the higher level, and to pass the data received from the high level to the embedded system.
+
+<div align="center">
+  <Image
+    src="/img/tutorials/morse/morse-3-2.png"
+    darkSrc="/img/tutorials/morse/morse-3-2-dark.png"
+  />
+</div>
+
+The pipe service is a part of the embedded network like any other Luos service.
+
+For this reason it has the same basic functions that any other service: `Pipe_Init()` and `Pipe_Loop()`. Each time it receives a frame of data, it stores it to a buffer and waits for another service to ask for it. When a service asks for the data (`GET_CMD` message), the pipe sends the stored data to the requiring service (`SET_CMD` command).
+
+In our project (if your remember well from the previous steps), the encoder application demanded to the pipe to be updated every 10ms. So the moment that we will integrate the pipe to the project, it will send the data (if they exist) to the encoder, every 10ms.
+
+:::info
+If you want more information about the pipe, you can check the corresponding [documentation page](/docs/tools/gate).
+:::
+
+:::tip
+You can explore all the Luos services examples that we have created for you [here](https://github.com/Luos-io/Examples).
+:::
+
+## 3. Integrate the pipe service into our Morse encoder:
+
+The pipe is integrated into your Luos project.
+
+```c
+...
+#include "pipe.h"
+...
+
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+
+  // Init
+  Luos_Init();
+  Led_Init();
+  Encoder_Init();
+  Pipe_Init();
+  while (1)
+  {
+    // Loop
+    Luos_Loop();
+    Led_Loop();
+    Encoder_Loop();
+    Pipe_Loop();
+  }
+}
+```
+
+Compile your project and check that you have no errors.
+
+You are ready: because the encoder app is looking for a `Pipe` services as an input, this will directly work!
+
+## 7. Encode your words to Morse Code
+
+You are now ready to send some characters in your MCU, and see the encoded Morse result in the LED of your board.
+
+### Specify port configuration parameters
+
+In order to send characters, we will use the monitoring console provided by PlatformIO.
+
+First we need to define the baudrate of our serial USB port and to configure the monitoring parameters in the file _platformio.ini_.
+
+You cn see an example of the file `platformio.ini`, after adding the monitoring part.
+
+```c
+; PlatformIO Project Configuration File
+;
+;   Build options: build flags, source filter
+;   Upload options: custom upload port, speed and extra flags
+;   Library options: dependencies, extra library storages
+;   Advanced options: extra scripting
+;
+; Please visit documentation for the other options and examples
+; https://docs.platformio.org/page/projectconf.html
+
+platform = ststm32
+board = ; your board
+framework = stm32cube
+
+build_unflags = -Os
+build_flags =
+    -include node_config.h
+    -DUSE_HAL_DRIVER
+    -DUSE_FULL_LL_DRIVER
+    -DLUOSHAL= ; your board LuosHAL
+    -O1
+lib_extra_dirs = lib/
+lib_deps =
+    luos_engine
+		Led
+		Pipe
+debug_tool = stlink
+upload_protocol = stlink
+
+; Monitoring port config
+monitor_speed = 1000000
+monitor_filters =
+    debug
+monitor_flags=
+    --eol
+    CRLF
+```
+
+It is now time to compile your project and flash your MCU with your code. Click on the upload button of PlatformIO. You should finally see that your code is uploaded successfully.
+
+<div align="center">
+  <Image src="/img/tutorials/morse/morse-3-3.png" darkSrc="" />
+</div>
+
+Then click to the Serial Monitor button in platformIO:
+
+<div align="center">
+  <Image src="/img/tutorials/morse/morse-3-4.png" darkSrc="" />
+</div>
+
+You should see a miniterm console open, which shows the configuration of your serial port.
+
+You can now send the sequence of the characters that you want to encode.
+
+:::warning
+Do not forget to press the “Enter” button after the end of each of your words.
+:::
+
+Below you can see an example of sending the word “hello”.
+
+<div align="center">
+  <Image src="/img/tutorials/morse/morse-3-5.png" darkSrc="" />
+</div>
+
+Congratulations! You have arrived at the end of this project. You can now communicate in Morse code with everybody existing on this earth (or not 👽).
+
+<div align="center">
+  <img
+    src="https://media.giphy.com/media/xT0xeF9hBOWZzAGEr6/giphy.gif"
+    className="gif_tutorial"
+    alt="gif_sheldon"
+  />
+</div>

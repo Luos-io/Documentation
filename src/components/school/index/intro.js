@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useLocation } from '@docusaurus/router';
 import { Paper } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -9,33 +11,25 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+
 import CardGrid from './cardGrid';
+
 import styles from './index.module.css';
 import data from './data/dataIntro.json';
 
 const Intro = () => {
-  const [filters, setfilters] = useState({
-    toc: '',
-    tags: [],
-    hardware: '',
-    category: '',
-    level: '',
-  });
+  const { search } = useLocation();
+  const { replace } = useHistory();
+  let defaultFilters = {
+      toc: '',
+      tags: [],
+      category: '',
+      level: '',
+    },
+    countTutos = 0,
+    countHours = 0,
+    tagList = [];
 
-  const handleFilter = (newLevel, filterName) => {
-    if (newLevel === filters[filterName]) {
-      newLevel = '';
-    }
-    setfilters({
-      ...filters,
-      [filterName]: newLevel,
-    });
-  };
-
-  let countTutos = 0,
-    countHours = 0;
-
-  let tagList = [];
   data.tuto.forEach((tuto) => {
     countTutos++;
     countHours += tuto.toc;
@@ -43,6 +37,43 @@ const Intro = () => {
       tagList.indexOf(tag) === -1 ? tagList.push(tag) : null;
     });
   });
+
+  new URLSearchParams(search).forEach((value, key) => {
+    if (key === 'tags') {
+      defaultFilters[key] = value
+        .split(',')
+        .filter((tag) => tag !== '')
+        .map((tag) => {
+          const result = tagList.findIndex((t) => t.toLowerCase() === tag);
+          return result !== -1 ? tagList[result] : null;
+        });
+    } else {
+      defaultFilters[key] = value;
+    }
+  });
+  const [filters, setfilters] = useState(defaultFilters);
+
+  const handleFilter = (newLevel, filterName) => {
+    if (newLevel === filters[filterName]) {
+      newLevel = '';
+    }
+
+    const newState = {
+      ...filters,
+      [filterName]: newLevel,
+    };
+    setfilters(newState);
+
+    const newPath = new URLSearchParams(
+      Object.fromEntries(
+        Object.entries(newState).filter(
+          ([_key, val]) =>
+            (!Array.isArray(val) && val !== '') || (Array.isArray(val) && val.length > 0),
+        ),
+      ),
+    );
+    replace(`?${newPath.toString().toLowerCase()}`);
+  };
 
   return (
     <div>
@@ -115,26 +146,6 @@ const Intro = () => {
               </Select>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-              <InputLabel id="hardware-label" className={styles.select}>
-                Hardware
-              </InputLabel>
-              <Select
-                value={filters.hardware}
-                label="Hardware"
-                labelId="hardware-label"
-                onChange={(e) => {
-                  handleFilter(e.target.value, 'hardware');
-                }}
-              >
-                <MenuItem value="">All</MenuItem>
-                {data.filters.hardware.map((label, index) => (
-                  <MenuItem value={label} key={index}>
-                    {label}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
               <InputLabel id="category-label" className={styles.select}>
                 Category
               </InputLabel>
@@ -149,7 +160,7 @@ const Intro = () => {
                 <MenuItem value="">All</MenuItem>
                 {data.filters.category.map((label, index) => (
                   <MenuItem value={label} key={index}>
-                    {label}
+                    {label.charAt(0).toUpperCase() + label.slice(1)}
                   </MenuItem>
                 ))}
               </Select>

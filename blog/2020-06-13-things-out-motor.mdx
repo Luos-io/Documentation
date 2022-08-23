@@ -1,0 +1,178 @@
+---
+title: 'All the things getting out of a motor'
+description: All you need to know about motors following our previous posts. We will talk about rotation, speed, inertia, angular acceleration, force, heat, magnetic field, etc.
+slug: all-the-things-getting-out-of-a-motor
+authors:
+  - name: Simon Baudry
+    title: Mecatronic 
+    url: https://github.com/Simonbdy
+    image_url: https://github.com/Simonbdy.png
+tags: [motors, robotics]
+image: /img/blog/All-the-things-getting-out-of-a-motor-banner-luos.png
+hide_table_of_contents: false
+date: 2020-06-13T10:00
+---
+
+![img alt](/img/blog/All-the-things-getting-out-of-a-motor-luos.png)
+
+This post is the follow-up of the Motors-in-robotics series. Although what I will present you here is still basic notions and can be addressed to anyone keen on knowing more about it, don't hesitate to have a look at the previous posts ([types of motors in robotics](/2020-01-13-lift-banana-motors.mdx), DC motor [direction](/2020-03-13-control-dc-motor-1.mdx), and [speed](/2020-04-13-control-dc-motor-2.mdx) control, [how to read a datasheet](/2020-05-13-read-datasheet.mdx)), they will help you expand your knowledge about electric motors and start on a reasonable basis.
+
+<!--truncate-->
+
+Your DC brushed motor is full of surprises: you think feeding it with some electric power kindly provides a turning shaft. Sometimes it spins fast, sometimes slower, and with more or less force — actually torque —. _That's_ something unique, and that's good enough.
+
+But that's not quite _everything._
+
+Remember this image I put in [one of the first posts](/2020-01-13-lift-banana-motors.mdx) about motors?
+
+![The electrical energy is the input of the motor, and the mechanical energy is the output](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacd9736082452c7c863_1*IM8uHsEVAm-gaeC3HC_RYg.jpeg)
+
+It's highly simplified, though, and reality is slightly different.  
+What I will detail here is still simplified but a little more precise.  
+
+A motor generates more than a rotation, more than only torque and speed. Many other things are getting out of it, and they go from something you don't care about to things you wish never existed. Let's review everything that really comes out of your motors.
+
+<h2> Torque and speed </h2>
+
+We begin with the basics. Both these outputs are the most important because they are the ones we want. A motor is supposed to rotate. It rotates, cool, now let's have a coffee.
+
+_What are they?_ **Torque** is the force applied at a distance to an object's pivot —hence it's a _Force_ time a _Distance —_, allowing the object to rotate. The International System of Units measure is represented in Newton-meter (_N.m_) _(1)_. Applied to your motor, torque is also the rotational force provided by the rotor.
+
+**Speed** is the rotational speed of the rotor. Nothing much to say about it, because you already know from a previous post that [you can control that speed with easy electronics](/2020-04-13-control-dc-motor-2.mdx) and PWM. You can express it in _radians per second_ (_rad/s_), or most of the time, in _revolutions per minute_ (_rpm_) _(1)_.
+
+Let me remind you that in a DC motor, high speed means low torque and inversely. On the characteristic curve, it looks like this:
+
+![Speed vs Torque at a fixed voltage](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc09d01eb78d8513c989c_1*hqBaz1nwv7ARhWjcT4pkFg.jpeg)
+
+The following function represents this curve:
+
+![Representation of the curve](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d31a255fb193a49c4c8a_1*9TszaRodJR3vheZeZF_v3Q.jpeg)
+
+![Formula of a curve representation](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc09e9f38e233fd86b9f8_1*Vs0u-PFivGFqjf_q5K9sYA.jpeg)
+
+We already discussed this in a [previous post](/2020-05-13-read-datasheet.mdx), but it's attractive to be precise that this linear curve is theoretical. In your real world, it may look like that:
+
+![Linear curve](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d31a1d9951e9f8fc4246_1*ZYOyos5mv5L4YuQhkgOc0g.jpeg)
+
+<h2> Moment of inertia </h2>
+
+Because while a motor is working, its rotor is a spinning mass. And any rotating mass has a moment of inertia. You can see it as a factor to calculate how much torque is needed to give a movement to an object. Its unit is _kg.m²_ (SI), or _lb.ft²_.
+
+The moment of inertia — also called rotational inertia — of an object depends on three factors:
+
+*   The object's mass
+*   The position of its axis of rotation
+*   Its mass distribution around this axis
+
+For example, more torque is needed to rotate to a free horizontal bicycle wheel than to rotate a small rotor. Both masses are evenly distributed, but the bicycle wheel is heavier, and some of its group is far away from the axis of rotation; for the rotor, it's light, and the mass is very close to its axis of rotation.
+
+![Inertia representation with a banana](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d31bedb267d2161cd96a_1*vnOQM39inLgFl-URyldMmQ.jpeg)
+
+To ease the painful life of _science people_, the moment of inertia calculation can be simplified or assimilated to a reference solid (like a sphere, a cube, _etc._).
+
+<h2> Angular acceleration </h2>
+
+DC motors need to provide acceleration to change speed. For example, from idle speed to whatever speed a rotor wants to get, the transition is not spontaneous (because an infinite acceleration, as well as a null moment of inertia, are strongly unlikely). It needs an acceleration to reach a given speed. In the case of reducing the speed, a deceleration is only negative acceleration.
+
+Acceleration — actually _angular_ acceleration —, torque, and moment of inertia are closely linked together by this equation:
+
+![Angular acceleration formula](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d31b8678e23f92e9bc82_1*SPsqOaZ8JTmwWftOiVGwXA.jpeg)
+
+Torque (T) (in N.m) is equal to moment of inertia (I) (in kg.m²) times angular acceleration (alpha) (in m/s², all the units here are form SI). This equation appears in <a rel="external nofollow" href="https://en.wikipedia.org/wiki/Rotation_around_a_fixed_axis" target="_blank">Newton's law of motion</a>.
+
+<h2> Back electromotive force </h2>
+
+Also called counter electromotive force, back-EMF, or CEMF. Back-EMF is a voltage (in V), a difference of potential. In the coils of a motor, it appears while electrons are moving through the wires while under a motion of magnetic field (<a rel="external nofollow" href="https://en.wikipedia.org/wiki/Lenz%27s_law" target="_blank">Lenz's law</a>) may explain it better than me).
+
+This one is tricky because **_electromotive force_** _and_ **_back electromotive force_** _are the same phenomena_. Only one of them (back-EMF) exerts a mechanical force opposing the motion of the motor, while the other is giving a rotation to the motor (you already know [the process](/2020-01-13-lift-banana-motors.mdx), by the way).
+
+A back-EMF can be measured by a voltage generated at the output of the motor, which, in certain cases, can damage the electronic circuits.
+
+However, back-EMF is proportional to the rotational speed of the rotor, making it sometimes very useful to measure them.
+
+> Did you know that Luos connects every part and function of your electronic devices into a single system image?
+
+<div align="center">
+  <iframe
+    className="player_iframe"
+    src="https://www.youtube.com/embed/ujh0xNE3TZ8"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+  ></iframe>
+</div>
+
+<h2> Heat </h2>
+
+Heat is a recurrent encounter when dealing with electrical power. Why is that? It's because electrical power is always put face-to-face with electric components, and many of them have more or less resistance to electricity. This resistance means electrical power is transformed into heat. A famous equation called**Joule's first law** explains it:
+
+![Heat formula](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d31bf83d44f0ed7fc680_1*w7_KI4kaqRz7sQ0jEexVuQ.jpeg)
+
+In this equation, R is the resistance of any conductive component, and i is the current which flows through this component. P\_th is the thermal power, _i.e._, the power _(2)_, which is transformed in pure heat emitted from the component.
+
+In a DC brushed motor, electricity flows into the winding; having a resistance, this winding tends to heat according to the amount of current.
+
+To summarize:
+
+A part of electrical power is continually transformed in heat if passing through electric components.
+
+By the way, more a component (like a motor) tends to heat, the more its **efficiency** — which is the ratio of output power by input power— is said to below. High-efficiency components will emit very little heat.
+
+Also, while running, a DC brushed motor has constant inside friction between brushes and commutators and between shaft and housing through plain- or ball-bearings. This friction is a heat generator as well, _i.e._, an efficiency-killer.
+
+This was the third thing that comes out of a motor, and wait here. There is more.
+
+<h2> Magnetic field </h2>
+
+Of course, you remember this one from [a guide to motors in robotics.](/2020-01-13-lift-banana-motors.mdx) Most electric motors run with a magnetic field — not black magic.
+
+_The electricity runs through the winding, generating a magnetic field and motioning electrically-induced or permanent magnets._ One sentence to summarize how a motor works! Sweet.
+
+Let's precise that only the permanent magnets produce a "static" magnetic field. The rest, particularly the magnetic field from the winding, is more likely to be called electromagnetic. We will see that in a short while.
+
+Anyway, all this magnetic mess is not disappearing away. It forms imaginary lines from one pole to another (negative to positive), which we call a magnetic field, all around the motor. Its strength is measured in Amperes per meter (_A/m_). The representation of lines, though imaginary, is an excellent model to help to understand how a magnetic field would look if you had superpowers.
+
+The Earth happens to have something similar:
+
+![Magnetic field representation](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d31bf1c0b4f8377d1f6d_1*gZ0Eb3n0SculHUDwnE3CEA.png)
+
+Any magnetic material (e.g., an iron-made object) put near a motor will interact with its magnetic field. Although no material can stop and cancel a magnetic field, it's possible to create shields that can redirect the magnetic lines.
+
+<h2> EMI </h2>
+
+_So now who even is this Emi, and what does she have to tell us about motors?_
+
+EMI stands for **Electromagnetic Interference**. It's a blend of electronic and magnetic fields, both perpendicular to each other and their propagation direction.
+
+![EMI graphic representation](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d31b9eb520fcab5fb950_1*UzMzq4e-zBF8NibOL6DCwA.png)
+
+To simplify, we can say it's a radiation of energy through the air around the motor. It's caused by the electricity running through winding and commutators, brushes, terminals, and wires.
+
+These kinds of interference are not really welcomed, if not unwanted. They can highly affect electronic circuits to go as far as stopping working. Fortunately, electromagnetic shields can be applied to reduce their propagation.
+
+**_Note:_** _Communication buses used to send a signal—eg. I2C — can be sensitive to interference. However, some of them provide differential pair, which is the same signal transiting on two wires of the same length, one signal being opposed from the other one. The electromagnetic interference being the same on both wires, the difference of signal at reception allows getting a clean signal. This is why the bus associated called Robus (from Luos Robotics) uses a differential pair._
+
+Following your reading and new knowledge on motors, don't hesitate to follow our [Get Started tutorial](/tutorials/get-started) to continue training step by step:
+
+[Get Started with Luos](/tutorials/get-started)
+
+<h2> Bonus: Noise, vibrations, light, and other stuff </h2>
+
+<h3> Noise </h3>
+
+There is not much to say about noise: only it's generated mostly from the friction of brushes on commutators and shaft on bearings. Also, some vibrations can appear on the shaft at high speed and increase the noise.  
+The electrical signal frequency through the winding may sometimes generate noise, particularly between 100 Hz and 8000 Hz (more or less the audible range of human hear). Controlling motors at 20 kHz is a way to avoid high-pitched noises.
+
+<h3> Vibrations </h3>
+
+Motorization implies motion, and even though the rotor's axis of rotation is fairly situated at its center of mass, the inertia is never perfectly balanced. Every motor generates more or fewer vibrations.
+
+<h3> “Light” </h3>
+
+Technically, heat generation implies photon generation, _i.e._, light. But this would be _quibbling_ to say that the winding could heat at the point to generate visible light and that the light would be visible through the interstices of the motor's housing, not to mention this would imply the motor to be melting and… burning, so not working anymore. But, technically, yes, "light."
+
+<h3> Smell? </h3>
+
+Talking about quibbling, ever try to smell a running motor? The kind of plastic shield around the coils' wire could emit some smelly particles while heating.
+
+I think it's time to stop here. Please don't even try to taste a motor.
+
+[Get Started with Luos](/tutorials/get-started)

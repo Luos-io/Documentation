@@ -1,0 +1,68 @@
+---
+title: 'Embedded Services: how to get the most out of it'
+description: Embedded services have a lot of advantages over traditional code. You can write reusable code for different devices, deploy it to one or multiple microcontrollers.
+slug: embedded-services
+authors:
+  - name: James Langbridge
+    title: Teacher, researcher, author
+    url: https://github.com/jlangbridge
+    image_url: https://github.com/jlangbridge.png
+tags: [embedded, edge]
+image: /img/blog/Embedded-Services-how-to-get-the-most-out-of-it-banner-luos.png
+hide_table_of_contents: false
+date: 2021-07-13T10:00
+---
+
+![img alt](/img/blog/embedded-services-luos.png)
+
+Let's talk about Embedded Services.
+
+A family photo shared on a social network. An interesting news article. A funny video of a cat. It all starts with a website. A website needs a few things, notably a database. You ask for the website for your link, and the website gets data from different _services_, formats it into something pretty, and then returns that to you. The World Wide Web is literally that, a web of services. Websites fetching data from other websites, from databases, from authentification services, from data storage servers... And you don't need to know where those services are. They might be located on the same server, or they might be in the same building, or they might even be on the other side of the planet. Everything just works.
+
+<!--truncate-->
+
+Developing for such a scenario was difficult, but the world of web development changed everything. Web services today are separated into different code blocks, making things easier to develop and maintain. You literally do not need to know anything about how the database server works, so long as you use the services described in the documentation, you can store and retrieve data. If you need more storage or more space, then moving a database to a different server is now trivial. When you call a number to get information on your electricity bill, do you know where the call center is? Is it in your city? Is it even in your country? You don't know, so long as you know how to contact the service, you are good to go. You don't need to know where something is _physically_, you only need to know where something is _logically_.
+
+Embedded systems haven't yet caught up, but we're getting there.
+
+![Embedded services with Luos](/img/blog/embedded-services-2-luos.jpeg)
+
+<h2> Simple ideas, complicated solutions </h2>
+
+Let’s take the example of an industrial system. If the temperature goes above a certain point (T1), we need to turn on a fan to cool down the system. This fan is noisy, so we won’t keep it running all the time, only when needed. If the temperature still goes higher, past another point called T2, we will shut down the system to avoid damage. If the temperature goes below a certain point, called T0, we need to turn some heating elements on.
+
+The program used to control this situation is pretty simple: program the primary microcontroller to check values from time to time to see what the temperature is and then act on that information. Lower than T0, then we turn the heating element on. Higher than T1, turn the fan on. Higher than T2, then turn the entire system off. But wait a minute, we made a mistake. If the temperature goes above T0, we need to turn the heating element off; otherwise, we are overheating a system we are trying to keep cool. No problem, we can easily catch errors like this when the code is small.
+
+> By the way, did you know what is Luos?
+
+<h2> Splitting up code </h2> 
+
+Your hugely complex machine will be running much more code than just a temperature sensor. It might be an industrial 3D printer, or maybe even something to help send the next space probe to Mars. However, deep inside this code, there will still be the temperature sensor routine, something that electronically checks the temperature component to get that information. Since one microcontroller will be busy with other important tasks, maybe this task can be offloaded to another microcontroller? There is an advantage; the code on this microcontroller is nice and lightweight. Disadvantage? Now you have to write code to communicate (remember that the "main" microcontroller is also going to need the temperature to display on that fancy LCD screen so that the operator knows what is going on).
+
+![Splitting up code with Luos](/img/blog/complex-machine-luos.jpeg)
+
+<h2> Simplifying code </h2> 
+
+So what is the best thing to do? Who gets the temperature sensor? Even worse, is it actually easier to add two temperature sensors from a development point of view? One for each microcontroller, and each reading the same temperature at the same location? This has actually happened in the past.
+
+By creating one single program that controls not only the fans and heater, but also the laser engraver, hydraulic press, or some other complex system, we make the code more and more complex. The more code becomes complex, the more errors can hide inside, and the bigger the board. When does complex become too complex? By separating the code, we make it easier to maintain, but we also need to add in communication code to be able to communicate with other boards. Win some, lose some.
+
+![Simplifying code with Luos](/img/blog/agility-service-luos.jpeg)
+
+Don't hesitate to bookmark our blog and <a rel="external nofollow" href="https://www.reddit.com/r/Luos/" target="_blank">follow us on Reddit</a> if you like these topics!
+
+<h2> Boxes of code </h2> 
+
+Reading the temperature is a service, or at least it should be. It doesn't really matter who needs the temperature; each program running on this network should be able to send a request to get the temperature, no matter where they are, no matter where the sensor is on the network. The temperature sensor and the alarm in case something goes wrong, the keypad to know what the user wants, the distance sensor to know if the object you're working on is correctly placed, and so on.
+
+If the temperature does go above the limit, you need to send an alarm. What kind of alarm? It doesn't matter. Maybe a flashing red and orange light is enough in one factory with lots of workers. However, in another factory with fewer people, they would want a siren to alert someone close by.
+
+Added advantage, you can replace the alarm with some other hardware, with a completely different electronic interface, and you won’t have to rewrite any code since it offers equivalent services; it is transparent. Serial, I2C, SPI, or even just standard GPIO, just connect to the service and tell it that you want to activate the alarm; it's as simple as that.
+
+Embedded services have a lot of advantages over traditional code. You can write reusable code for different devices. You can deploy to one or multiple microcontrollers. You don’t have to spend extra development time handling communications. All in all, it makes your code easier to read, therefore easier to maintain, and less likely to have bugs.
+
+<h2> How can we help? </h2> 
+
+At Luos, we have designed a library that is easy to integrate into an existing project, that helps you separate your code into services, and that handles all of the communications for you. Have a look at our documentation pages to discover step by step Luos!
+
+[Get Started with Luos](/tutorials/get-started)

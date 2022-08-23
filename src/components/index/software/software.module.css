@@ -1,0 +1,270 @@
+.container {
+  width: 100%;
+  background-image: url('/static/img/index/NEBULA.svg');
+  background-size: cover;
+  color: white;
+  padding: 30px;
+}
+
+html[data-theme='light'] .container {
+  background-image: url('/static/img/index/software/nebula-light.svg');
+  color: black !important;
+}
+
+@media screen and (max-width: 1023px) {
+  .mobileNone {
+    display: none !important;
+  }
+
+  .howitsworkMobile {
+    display: initial !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobileNone {
+    display: flex !important;
+  }
+  .howitsworkMobile {
+    display: none !important;
+  }
+}
+
+.title {
+  font-family: 'Roboto Mono', sans-serif;
+  margin: 0 auto;
+  margin-bottom: 60px !important;
+  font-size: 30px !important;
+  text-align: center;
+  padding: 0 250px 15px;
+}
+
+@media screen and (max-width: 1023px) {
+  .title {
+    padding: 0;
+  }
+}
+
+.subtitle {
+  font-size: 18px !important;
+  padding-right: 10px;
+}
+
+.green {
+  border-left: 5px solid #75dbc7;
+  padding-top: 0px !important;
+}
+
+.purple {
+  border-left: 5px solid #be99ff;
+  padding-top: 0px !important;
+}
+
+.orange {
+  border-left: 5px solid #ff5200;
+  padding-top: 0px !important;
+}
+
+.yellow {
+  border-left: 5px solid #edf568;
+  padding-top: 0px !important;
+}
+
+.underline:after {
+  content: '_';
+  color: #be99ff;
+}
+
+.work {
+  display: block;
+  margin: 0 auto -50px !important;
+  width: 90%;
+}
+
+.btnContainer {
+  width: 100%;
+
+  text-align: center;
+  margin-bottom: 40px;
+}
+.pinkBtn {
+  background-color: #be99ff !important;
+  color: white !important;
+  border-radius: 2px !important;
+
+  height: 40px;
+  text-transform: uppercase;
+}
+
+.pinkBtn:hover {
+  background-color: white !important;
+  color: #be99ff !important;
+}
+
+.head {
+  width: 100%;
+  height: 50px;
+  border: 2px solid black;
+  background-color: #323334;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.footer {
+  width: 100%;
+  height: 15px;
+  background-color: #81c8be;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.player {
+  border-right: 2px solid black;
+  background-color: #1e1e1e;
+}
+
+.playerLeft {
+  border-right: 2px solid black;
+  background-color: #1e1e1e;
+}
+
+.docs {
+  background-color: #323334;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.docs img {
+  margin: 15px auto !important;
+  display: block;
+  width: 30px;
+}
+
+.icons {
+  margin: 15px auto !important;
+  display: block !important;
+}
+
+html[data-theme='light'] .icons {
+  fill: black !important;
+}
+
+.hiwTitle {
+  color: black;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 18px !important;
+  font-weight: bold;
+  padding-top: 7px;
+  display: block;
+}
+html[data-theme='dark'] .hiwTitle {
+  color: white;
+}
+
+.video {
+  background-color: #1e1e1e;
+  color: white !important;
+  border-right: 2px solid black;
+}
+
+.cardIcons {
+  float: left !important;
+  width: 24px;
+  margin-top: 3px;
+  padding-right: 5px;
+}
+
+.caroussel {
+  width: 100% !important;
+  border-radius: 0 !important;
+  background-color: #1e1e1e !important;
+  color: white !important;
+  height: 350px;
+}
+
+.file {
+  width: 100%;
+  background-color: #323334;
+
+  border-bottom: 2px solid black;
+}
+
+.fileName {
+  color: white;
+  height: 100%;
+  width: 40%;
+  padding-left: 15px;
+  border-right: 2px solid black;
+  background-color: #1e1e1e;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.carousselImg {
+  padding: 15px;
+}
+
+.carousselImgDesktop {
+  padding: 15px;
+  width: 130px;
+}
+
+.carousselTitle {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 18px !important;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.carousselText {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px !important;
+  padding: 15px;
+  text-align: justify;
+  line-height: normal !important;
+}
+
+.howitswork {
+  padding-left: 0 !important;
+}
+
+.step {
+  border-right: 2px solid #fafafa;
+  height: 330px;
+}
+
+html[data-theme='light'] .head {
+  background-color: #f7f8fa !important;
+}
+html[data-theme='light'] .file {
+  background-color: #f7f8fa !important;
+}
+html[data-theme='light'] .fileName {
+  background-color: #fafafa !important;
+  color: #1e1e1e;
+}
+html[data-theme='light'] .carousselText {
+  color: #1e1e1e !important;
+}
+
+html[data-theme='light'] .carousselTitle {
+  color: #1e1e1e !important;
+}
+
+html[data-theme='light'] .docs {
+  background-color: #f7f8fa !important;
+}
+html[data-theme='light'] .player {
+  background-color: #fafafa !important;
+}
+
+html[data-theme='light'] .playerLeft {
+  background-color: #fafafa !important;
+}
+html[data-theme='light'] .caroussel {
+  background-color: #fafafa !important;
+}
+
+html[data-theme='light'] .step {
+  border-right: 2px solid #1e1e1e;
+}

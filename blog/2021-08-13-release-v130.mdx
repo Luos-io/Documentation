@@ -1,0 +1,178 @@
+---
+title: 'Release announcement v1.3.0'
+description: '📢 Luos release announcement v1.3.0: new features, new bug fixes. Try it!'
+slug: release-v130
+authors:
+  - name: Emanuel Allely
+    title: Co-founder & COO @ Luos
+    url: https://github.com/Emanuel-Allely
+    image_url: https://github.com/Emanuel-Allely.png
+tags: [release, luos]
+image: /img/blog/release-v-1-3-0-banner-luos.png
+hide_table_of_contents: false
+date: 2021-08-13T10:00
+---
+
+![img alt](/img/blog/release-v130-luos.png)
+
+Template management and Gate major update
+
+<!--truncate-->
+
+Hello everybody, we are thrilled to share this new release note with you: <a rel="external nofollow" href="https://github.com/Luos-io/Luos/releases/tag/1.3.0" target="_blank">Luos v1.3.0 is out</a>
+
+Like every young technology growing fast, Luos is going through an intense period of development. This means new critical features and many fixes at the same time, both into frequent releases. Fully dedicated to easing your life as an embedded developer, an electronic engineer, or a product manager, our R&D team is growing and working hard with passion for delivering a powerful technology to you.
+
+As an open-source solution, Luos aims to be wildly distributed and used by as many embedded developers as possible. Thanks to Luos, you can easily design, test and deploy embedded applications on multi-MCUs devices. Spread the word!
+
+<h2> What's new in this version? </h2>
+
+This is the sixth release of Luos. We described below the various features and fixes that it provides.
+
+<h3> 🆕 Feature: Manage pipe type and command </h3>
+
+The gate in a Luos environment is something tremendously important and used to check or control a Luos network, and (teaser...) it will be even more important for the next revision! 😉
+
+Basically, its task is to share the entire machine capabilities to the outer world by translating Luos things into a standard format easy to use with standard software languages such as Python, JS, Ruby, C++, etc.
+
+On the previous version of the gate example, you needed to modify the code to adapt it to your project's specificities, and it was an arduous task. Then we decided to make it simple and portable for you.
+
+We split it into 2 parts, the main Gate App and a Driver:
+
+*   Now the gate is an App. Meaning it doesn't have any code related to hardware. It's a basic ANSI C that you can compile directly for any MCU or CPU without any additional configuration! This way, you can easily add it to your setup.
+
+We also added a build option allowing you to select the output format managed by the gate or create your own easily. For now, we have 2 Json options, the one we use on the previous version (cJSON), and a new one (TinyJSON) that doesn't make any dynamic allocation.
+
+The **Pipe** is the driver part: This Driver allows sending or receiving data from the outer world and converting those data to the Luos side. A Pipe can be USB, serial, Wifi, Bluetooth, an SD card, or anything allowing to send and receive information to/from another machine.
+
+This new type of driver can be used for different purposes, and the gate App needs it to exchange information and share its output format.
+
+As a gate user, you will only have to adapt this Pipe driver to your needs. The gate will deal with it.
+
+More details about this can be found in the [Gate](/docs/tools/gate) section of our documentation.
+
+<h3> 🆕 Feature: Add access management to container </h3>
+
+Sometimes the same container type can be used for input or output purposes. For example, a _STATE\_TYPE_ container (which is a basic True/False state) can be used for a button (read-only) or a relay (write-only). This is no big deal regarding the capability of your code because you deal with the messages as you want and make it work as you want, but other containers don't know if it's read-only or write-only.
+
+This new access management feature allows you to declare the readability of your container for the other containers in your device. By default, a container is on a **READ\_WRITE\_ACCESS,** and you can choose to make it **READ\_ONLY\_ACCESS**, **WRITE\_ONLY\_ACCESS**, or even **NO\_ACCESS**.
+
+More details about this can be found in our documentation.
+
+<h3> 🆕 Feature: Template Creation for State, Voltage, Motor, Servo </h3>
+
+To make the embedded development easier, we have to make everything work the same way.
+
+For example, there are many different motor technologies and control, but all motors have the same purpose: making something move. And because all of them have the same purpose, we also should have the same profile or API for all of them!
+
+That's why we created the Templates.
+
+Profiles are advanced APIs dedicated to common Drivers such as motors, and we call template the container hosting a profile.
+
+Templates are containers that will manage for you the profile (API) of your driver.
+
+By developing this kind of container, you don't need to take care of message management anymore. You only need to deal with simple variables adapted to your container's needs!
+
+And of course, you can create your own profiles, compose a new one with the already existing ones and share it with your team or the community.
+
+More details in our documentation.
+
+<h3> 🆕 Feature: Add some research API in the routing table </h3>
+
+When it comes to developing the behavior of your machine, you will have to access some drivers.
+
+With Luos, all the resources of your system are resumed into a [routing\_table structure](/docs/luos-technology/services/routing-table). This structure allows you to find the resources you need to make your application work. We are constantly updating and optimizing the functions allowing you to easily find the resources you need.
+
+In this revision 1.3.0 of Luos, we added index research, giving you the most optimized way of getting resource information.
+
+More details about this are on the [routing\_table](/docs/luos-technology/services/routing-table) section of our documentation.
+
+<h3> 🆕 Feature: Localhost verbose management </h3>
+
+Every board on your Luos network can deal with multiple containers, and sometimes those containers have to exchange information.
+
+To save some data bandwidth on your network and RAM on your MCU, we added a new feature allowing you to deal with localhost messaging. Localhost messages are not shared into your network and stay in the MCU.
+
+This is a huge deal to improve your Luos system performances, and you should take care to put your applications close to the drivers they are using!
+
+If you need to get all the data into the network, for example for debugging purposes, you can use the **VERBOSE\_LOCALHOST** build flag that disables this feature!
+
+More details about this subject in the [messages handling](/docs/luos-technology/message/handling-message) section of our documentation.
+
+<h3> 🛠️ Fix: Streaming better management for DMA transmission </h3>
+
+Luos can now deal with streaming channels.
+
+To make it, Luos manages a ring buffer for you that you can use to store samples, for example. In this Luos 1.3.0 revision, we updated the API allowing you to deal with DMA. This way, Luos interacts directly with your hardware, saving you a lot of execution time dealing with those data.
+
+More details about this can be found in our documentation.
+
+<h3> 🛠️ Fix: Streaming sends data more than 128 bytes. </h3>
+
+On the previous revision of Luos, we discovered that Streaming couldn't deal with more than 128-byte messages.
+
+We fixed it, allowing you to deal with massive streaming data.
+
+<h3> 🛠️ Fix: Routing table exclusion optimization </h3>
+
+On the previous revision of Luos, we discovered that excluded containers were not removed from the routing\_table.
+
+We fixed it, allowing you to avoid multiple access to a dead container.
+
+<h3> 🛠️ Fix: Memory data overlap </h3>
+
+On some specific conditions (simultaneous RX and TX with more already received bytes from RX than the size of the TX), we discovered that some data copy into Luos was corrupted.
+
+This copying issue resulted in some incorrect 0 values reception.
+
+We had to add some padding on RAM to avoid this problem, but in this specific case, Luos will use a little more RAM.
+
+<h3> 🛠️ Fix: RX task protection when TX task created </h3>
+
+On some particular conditions (when a header reception ended during a transmission setup), we spotted some corrupted tasks.
+
+We added some check steps at the begging and the end of the TX allocation to make it work for any case.
+
+<h3> 🛠️ Fix: Transmission retry optimization </h3>
+
+Sometimes when a container retried too many times reaching a container, it leads to container exclusion and removal of the TX message. But when this situation happened on some specific conditions, the next TX messages for other containers were also removed.
+
+We fixed it and made sure to always be able to transmit anything to anyone.
+
+<h2> Other Luos' releases </h2>
+
+<a rel="external nofollow" href="https://github.com/Luos-io/Luos/releases" target="_blank">Click here</a> to see all Luos' releases.
+
+TL;DR
+
+You will find below the <a rel="external nofollow" href="https://github.com/Luos-io/Luos/releases/tag/1.3.0" target="_blank">original changelog</a>.
+
+**Luos 1.3.0:**
+
+🆕 Feature: Manage pipe type and command  
+🆕 Feature: Add access management to container  
+🆕 Feature: Template Creation for State, Voltage, Motor, Servo  
+🆕 Feature: Add some research API in the routing table  
+🆕 Feature: Localhost verbose management
+
+🛠️ Fix: Streaming better management for DMA transmission  
+🛠️ Fix: Streaming send data more than 128 byte  
+🛠️ Fix: Routing table exclusion optimization  
+🛠️ Fix: Memory data overlap  
+🛠️ Fix: RX task protection when TX task created  
+🛠️ Fix: Transmission retry optimization
+
+**Dependencies:**
+
+*   LuosHAL version >= 0.3.0
+*   Pyluos version >= 1.5.0
+
+**Package:**
+
+*   Luos library
+*   Luos library for Arduino environment with example
+*   Luos gate library for Arduino environnement
+
+🎉 Try it, it's #opensource: <a rel="external nofollow" href="https://github.com/Luos-io/Luos/releases/tag/1.3.0" target="_blank">https://github.com/Luos-io/Luos/releases/tag/1.3.0</a>. 
+
+[Get Started with Luos](/tutorials/get-started)

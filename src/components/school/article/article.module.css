@@ -4,18 +4,22 @@
 }
 
 html[data-theme='dark'] .introContainer {
-  background-color: #393f58;
-  border: 0.5px solid #c4c4c4;
+  background-color: #323334;
+  border: 0.5px solid #323334;
   color: white !important;
 }
 
 html[data-theme='dark'] .chip {
   color: white !important;
-  border: 1px solid #75dbc7;
+  border: 1px solid #bd99ff;
 }
 
 html[data-theme='dark'] .listItem p {
-  color: white !important;
+  color: white;
+}
+
+html[data-theme='dark'] .listItem span {
+  color: white;
 }
 
 .title {
@@ -74,13 +78,13 @@ html[data-theme='dark'] .listItem p {
 .requirement {
   width: 100%;
   padding: 20px;
-  border-left: 3px solid #75dbc7;
+  border-left: 3px solid #bd99ff;
   min-height: 185px;
   margin-bottom: 10px;
 }
 
 html[data-theme='dark'] .requirement {
-  background-color: #282d3f !important;
+  background-color: #323334 !important;
 }
 
 .titleRequirement {
@@ -90,18 +94,18 @@ html[data-theme='dark'] .requirement {
 
 .separator {
   border: none;
-  border-top: 2px solid #75dbc7;
+  border-top: 2px solid #bd99ff;
   color: #333;
   overflow: visible;
   margin: 0px;
 }
 
 html[data-theme='light'] .separator {
-  border-top: 2px solid #227c6a;
+  border-top: 2px solid #bd99ff;
 }
 
 html[data-theme='light'] .requirement {
-  border-left: 3px solid #227c6a;
+  border-left: 3px solid #bd99ff;
 }
 
 .requirement a {
@@ -121,7 +125,7 @@ html[data-theme='light'] .requirement {
 }
 
 .difficultyContainer {
-  background: rgba(149, 143, 174, 0.2);
+  background: #f5f5f5;
   width: 150px;
   margin: 15px 0px;
   padding: 3px 10px;
@@ -129,6 +133,10 @@ html[data-theme='light'] .requirement {
   font-family: 'Roboto Mono', sans-serif;
   text-transform: capitalize;
   float: right;
+}
+
+html[data-theme='dark'] .difficultyContainer {
+  background: #565758;
 }
 
 @media screen and (max-width: 800px) {
@@ -146,8 +154,13 @@ html[data-theme='light'] .requirement {
   width: 0.25rem;
   display: inline-block;
   margin-right: 1.25rem;
-  background: #a8b6d1;
-  box-shadow: 6px 0 0 #a8b6d1, 12px 0 0 #a8b6d1;
+  background: #f5f5f5;
+  box-shadow: 6px 0 0 #f5f5f5, 8px 0 0 #f5f5f5;
+}
+
+html[data-theme='dark'] .difficulty {
+  background: #565758;
+  box-shadow: 6px 0 0 #565758, 8px 0 0 #323334;
 }
 
 .levelTxt {
@@ -163,8 +176,8 @@ html[data-theme='light'] .requirement {
 }
 
 .expandBtn {
-  color: #75dbc7;
+  color: #bd99ff;
 }
 html[data-theme='light'] .expandBtn {
-  color: #227c6a;
+  color: #bd99ff;
 }

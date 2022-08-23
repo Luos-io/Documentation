@@ -1,0 +1,184 @@
+---
+title: 'How to develop IoT, edge, and embedded projects easier?'
+description: Some IoT, edge and embedded projects should not involve such a dependence on hardware.
+slug: how-to-develop-iot-edge-and-embedded-projects-easier
+authors:
+  - name: Nicolas Lorenzi
+    title: Community and user acquisition @ Luos
+    url: https://github.com/lorenzi-nicolas
+    image_url: https://github.com/lorenzi-nicolas.png
+  - name: Alexis Gorlier
+    title: Embedded developer Intern @ Luos
+    url: https://github.com/alexgorlier
+    image_url: /img/school/authors/guest-author-luos.png
+tags: [iot, edge, embedded]
+image: /img/blog/how-to-develop-iot-edge-and-embedded-projects-easier.jpg
+hide_table_of_contents: false
+date: 2022-08-12T11:00
+---
+
+![How to develop IoT, edge, and embedded projects easier?](/img/blog/how-to-develop-iot-edge-and-embedded-projects-easier.jpg)
+
+Some IoT, edge and embedded projects should not involve such a dependence on hardware.
+
+The dependency would lead to a limitation of possibilities.
+
+<!--truncate-->
+
+The technique should not alter or limit the imagination and the development of ideas. Whether it comes from a lack of hardware knowledge or prioritization of other objectives, the project's development should be done without reinventing the wheel or spending hours redoing existing developments, and without stress.
+
+Many examples are shared with us each month through our [Luos community](https://discord.gg/luos), but one example is currently part of the Luos team as an intern. Alexis Gorlier is a student at ESTACA (engineering school based in Paris, France) and is part of the French association ESO which develops many projects around aerospace, and especially rockets.
+
+The objective is to break the current European altitude record for an amateur flight, i.e. 32km.
+
+While their skills in astrophysics, propulsion, and mechanics are developing daily, the fields of embedded, computers, and software development are not their domain.
+
+Let's continue with <span style={{ color: '#ff5101' }}>Alexis</span>:
+
+<div class="alexAuthor">
+
+The courses given by ESTACA only give some basics on embedded systems, so we need to conduct longer studies when we try to develop the electronic system for our IoT, edge or embedded projects. Therefore, keeping the electronic design simple is better to ensure that we will have the expected results.
+
+We have chosen to use Luos for several applications: to measure the altitude (necessary to validate the objective), to record events occurring during the flight, and last but not least, to trigger the parachute allowing the rocket to decelerate and land "almost" as a whole.
+
+Aerospace is a passion for many Luos developers and the cross-over was relevant. By the way, we can discuss my edge project directly via the Luos community on [Discord](https://discord.gg/luos).
+
+<table border="0">
+  <tr border="0">
+    <td border="0">
+      <img
+        desc="Nosecone mold of our rocket"
+        src="/img/blog/Nosecone_mold_of_our_rocket_Luos.jpeg"
+      />
+      Nose cone's mold of our rocket.
+    </td>
+    <td border="0">
+      <img
+        desc="Representation of our rocket"
+        src="/img/blog/Representation-of-our-rocket-Luos.png"
+      />
+      Representation of our rocket.
+    </td>
+  </tr>
+</table>
+
+<h2>Focus on your main objectives and not on technical constraints</h2>
+
+The main objective is to get the rocket off the ground and exceed the altitude of 32km. The underlying objective of collecting the altitude and checking the flight plan was managed by Luos. The association teams increased their skills on Luos by performing the [Get started](https://www.luos.io/tutorials/get-started) and testing a proof of concept of a parachute release system.
+
+<h3>
+  Following the microservices philosophy, build and break down your IoT, edge or embedded projects
+  into smaller goals.
+</h3>
+
+Apart from the objectives related to the rocket takeoff, such as the [propulsion management](/img/blog/pdf/Propulsion-management-Rocket-project-Luos.pdf) or the [friction with the air](/img/blog/pdf/Rocket-stability-project-Luos.pdf), one of the other three objectives of the association was to divide the ancillary objectives into three services. This splitting philosophy is a concept we have developed for a long time at Luos to gain agility. You can read [our article on monolithic vision compared to microservices vision](https://www.luos.io/blog/a-way-to-unleash-embedded-systems).
+
+Thus, the objectives related to the Luos project were thought in terms of microservices:
+
+1. Rocket altitude measurement service
+   - Expected objective:
+     - Determine the evolution of altitude during the flight
+   - Devices concerned by this service:
+     - Barometer
+     - Thermometer
+     - Inertial Unit
+
+![Phases of flight](/img/blog/Phases-of-flight-rocket-project-Luos.svg)
+
+You will notice that we are using three electronic components for this objective, even if each one could be used individually. This choice adds a layer of security if something goes wrong. For example, let's suppose that the thermometer stops working correctly (complete failure or providing wrong values).
+
+In that case, we will still be able to determine the altitude thanks to the barometer and the inertial unit. We will also use several components of each type to add more security. This process is called redundancy.
+
+The principle of redundancy is very important in this case because the altitude measurement will be used to initiate the parachute's release. Therefore, if we can't measure altitude anymore, the parachute will not be deployed, so the mission will end up in a crash that will destroy the rocket. We already experienced this case in my association, with a release system that did not work correctly, resulting in the rocket's loss with all the onboard data.
+
+We call this kind of flight a "ballistic flight".
+
+This redundancy constraint is part of the decision to use Luos on the edge project. Indeed, Luos permits to create a piece of code for a component that can be used everywhere in the system, and even in other systems. Therefore, it is as easy to duplicate a component from a hardware point of view (connect another component to a board) as to duplicate a component from a software point of view (change the connected pins' definition in the code).
+
+2. Flight status recording service
+   - Expected objective:
+     - Store all flight data on board
+     - Transmit flight data to a ground station in real-time
+   - Equipment concerned by this service:
+     - SD card
+     - Telemetry
+
+You will notice that we also have a different way to retrieve the flight data, one on board (SD card) and one on a ground station (telemetry).
+
+This redundancy permits access to flight data even if the SD card is destroyed at the end of the flight (if the rocket crashes or has a bad impact at ground contact, for example).
+
+3. "Automatic parachute ejection hatch release" service
+   - Expected objective:
+     - Eject the first parachute at apogee
+     - Eject a second parachute at an altitude of 1000m
+   - Equipment concerned by this service:
+     - Barometer
+     - Thermometer
+     - Inertial unit
+     - Solenoids
+
+![Actual design of liberation system](/img/blog/Parachute-release-system-rocket-Luos.png)
+Actual design of release system.
+
+The barometer, the thermometer, and the inertial unit are used to calculate altitude. They will let us know when first the apogee, then the altitude of 1000m are reached. The solenoids are used in the release system that will deploy the parachutes.
+
+<h2>Hardware vs. software development</h2>
+<h3>Is hardware easier to modify than software?</h3>
+
+This question is generally difficult to answer as it depends on the hardware and software involved. However, devices are typically more expensive and difficult to modify than software. This is because the devices are physical and therefore require more time and effort to change, while the software is intangible and can be easily modified.
+
+Software development today is no longer limited to the devices that host the code. We are generally forced to have machines running the code to comply with always-growing requirements and have unlimited possibilities. With Luos, we want the same agility in development and the same way of thinking about embedded and edge systems. We want Luos to make it possible to develop IoT, edge and embedded projects as easily as software.
+
+Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source. [Get started now](https://www.luos.io/tutorials/get-started)!
+
+As you know, this edge project involves launching a rocket at the altitude of 32km. This objective implies a lot of constraints such as temperature, vibrations, components needed, etc. Moreover, we must have the best performance in energy consumption, space, mass, data rate, etc. Therefore, we must choose our components wisely, so the more possibilities we have, the better it is.
+
+Luos works with every component and theoretically every board (some boards are yet to be developed because the technology is new). Therefore, using Luos doesn't limit our choice and allows us, for instance, to use a Nucleo board and an Arduino board in the same system.
+
+![Luos principle](/img/blog/feature-service-package-node-board-luos.png)
+
+Moreover, Luos is easy to use (thanks to the Get started and the various tutorials on Luos official website), and the developers are very active and helpful. This is very important for us astrophysical developers as we don't have much experience in electronics.
+
+I also tried to design a part of the electronic system of this edge project. I used a barometer to calculate the altitude and activate a solenoid when the apogee is detected, on my own using Luos. The most difficult part for me was to create the SPI driver for the barometer and to start communicating with it.
+
+![Hardware representation](/img/blog/Hardware_representation_iot_edge_embedded_project_alexis_gorlier_luos.svg)
+
+Once I did it, I encountered some difficulties in using Luos, but nothing that I did not resolve within a short delay.
+
+The main difficulty I had was creating a new type of data still incompatible with Luos, and make it compatible. Managing this part can take some time at first because you need to find what files to change to allow this type of variables in Luos, but once you find the right file, it is very easy to modify it correctly as you have a lot of examples for other types of variables.
+
+This is why I recommend exchanging a lot with the developers, especially when you use Luos for the first time, as they will quickly respond and prevent you losing too much time finding the information you could not guess by yourself.
+
+Another advantage of Luos is the possibility to use the tool Pyluos. This tool will let you see your entire system and communicate with it in Python.
+
+The first thing I used Pyluos for was to see if Luos correctly interpreted my system. This permitted me, for example, to see that even if my program seemed to work correctly, there was a problem in the communication between the barometer and the application that detects the apogee thanks to the barometer's values.
+
+Even if the values I was receiving were correct, they were sent with the wrong type. This could have ended in bad communication between the two services, but when I saw that Pyluos could not work because of this mistake, I tried to figure out what was wrong. I finally found a problem that would have been undetected without this tool. Another aspect of Pyluos that I used in this project is the possibility to send values to a service.
+
+This was very useful for testing my system's reaction because it is hard to simulate the pressure variation that the rocket will be exposed to (approximately 850 Pa at 32km). Thanks to Pyluos, I was able to send data to my application and simulate the flight without using a complex and expensive chamber that would be able to lower the pressure down to 850 Pa.
+
+</div>
+<h2>Is your edge, IoT or embedded project evolving or undergoing new constraints?</h2>
+
+Don't worry. We are introducing: Modular programming in hardware development.
+
+Thank you Alexis for this nice application of Luos in your project. This embedded/edge project will be able to evolve quickly by using modular programming.
+As your project gains agility with Luos, it becomes modular as a combination of bricks.
+
+![Monolithic vs Microservices](/img/blog/Monolithic_vs_microservices_luos.svg)
+
+We recently saw how [a shortage can impact project development](https://www.luos.io/blog/semiconductor-crisis-how-to-minimize-the-impact) and how to minimize that impact. They split the dependency between their code/software and their hardware boards by developing their projects with microservices.
+
+We saw that Alexis' team chose Arduino and STNucleo boards to handle different tasks. Now suppose that a board of this brand is unavailable during production (or, in some cases, during industrialization).
+
+In that case, changing this board and using a compatible board from our list of integrations is not a problem. Oh, and by the way, if integration does not exist yet, you are welcomed to develop the one you are interested in with our community!
+
+Luos and the ESO project have a deeper vision of developing a modular, agile, scalable project. Imagine a webcam broadcasting live the evolution of the rocket, or an emergency system that monitors the rocket's status/rotation/position and makes a decision in real-time.
+
+The possibilities will become endless and beyond.
+
+Feel free to discuss with Alexis about this edge project in our Discord community dedicated to embedded and edge developers.
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get Started with Luos
+</a>

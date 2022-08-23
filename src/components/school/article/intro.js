@@ -21,14 +21,12 @@ export const Introduction = (props) => {
                 <img
                   className={styles.categoryIcons}
                   src="/img/school/category.svg"
+                  alt="category"
                 />
               </span>
               <span className={styles.counter}>{props.category}</span>
               <span>
-                <img
-                  className={styles.materialIcons}
-                  src="/img/school/clock.svg"
-                />
+                <img className={styles.materialIcons} src="/img/school/clock.svg" alt="clock" />
               </span>
               <span className={styles.lastCounter}>{props.time}</span>
             </div>
@@ -38,30 +36,21 @@ export const Introduction = (props) => {
             </div>
           </Grid>
         </Grid>
-        <h2 className={styles.subtitle}>What will you learn</h2>
+        <h2 className={styles.subtitle}>What you will learn:</h2>
         <p>{props.desc}</p>
         <Stack direction="row" spacing={1} marginBottom={2}>
           {keyword.map((element, index) => (
-            <Chip
-              key={index}
-              label={element}
-              className={styles.chipCustom}
-              size="small"
-            />
+            <Chip key={index} label={element} className={styles.chipCustom} size="small" />
           ))}
         </Stack>
 
         <Grid container spacing={5}>
           <Grid item md={6} xs={12}>
-            <Requirement
-              title="Pre-requisites"
-              list={props.requierements}
-              color="#f5f5f5"
-            />
+            <Requirement title="Prerequisites" list={props.requierements} color="#f5f5f5" />
           </Grid>
           <Grid item md={6} xs={12}>
             <Requirement
-              title="Supported Hardware"
+              title="Supported hardware"
               list={props.ressources}
               shortList={!!props.shortList}
               shortListSize={props.shortListSize}
@@ -72,7 +61,7 @@ export const Introduction = (props) => {
       </Paper>
       <Grid container mt={3}>
         <Grid item xs={12}>
-          <Requirement title="Summary" color="#FFF9E6" list={props.summary} />
+          <Requirement title="Summary" color="#FFFFFF" list={props.summary} />
         </Grid>
       </Grid>
     </div>

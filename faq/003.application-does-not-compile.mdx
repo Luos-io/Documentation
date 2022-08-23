@@ -1,0 +1,104 @@
+---
+custom_edit_url: null
+---
+
+# The default Luos engine's examples does not compile
+
+### Symptom(s)
+
+Luos engine provides examples for different MCUs, and a HAL for MCU families. You may change HAL definitions in _node_config.h_ to fit with your design and your MCU. After the setup of your environment, building Luos engine's example may create an error with CRC or IrqHandler definitions.
+
+### Possible explanation
+
+- CRC case:
+  You may not have a CRC hardware peripheral on your MCU. If your MCU has hardware CRC, you may have chosen `#define USE_HW_CRC 1` in _node_config.h_.
+
+If you have this peripheral in your MCU, it may not support polynome 16 (the polynome Luos chooses for CRC calculation).
+
+- IrqHandler case:
+  It is possible that you want to use the default configuration while the IrqHandler chosen by Luos does not exist in your MCU.
+
+### Resolution
+
+- CRC case:
+  If you don't have a CRC hardware peripheral on your MCU, or if your MCU does not support polynome 16, you must change to `#define USE_HW_CRC 0` in _node_config.h_.
+
+- IrqHandler case:
+  Check your startup file for the default MCU definition of IrqHandler in you MCU. If Luos engine's default configuration does not match with your MCU, you must redefine the used peripherial in _node_config.h_.
+
+### Example and Solution
+
+Below is an example of the file _node_config.h_ in your project:
+
+```c
+
+/*******************************************************************************
+ * LUOS HAL LIBRARY DEFINITION
+*******************************************************************************
+ *    Define                  | Description
+ *    :-----------------------|-----------------------------------------------
+ *    MCUFREQ                 | Put your the MCU frequency (value in Hz)
+ *    TIMERDIV                | Timer divider clock (see your clock configuration)
+ *    USE_CRC_HW              | define to 0 if there is no Module CRC in your MCU
+ *    USE_TX_IT               | define to 1 to not use DMA transfert for Luos Tx
+ *
+ *    PORT_CLOCK_ENABLE       | Enable clock for port
+ *    PTPx                    | A,B,C,D etc. PTP Branch Pin/Port/IRQ
+ *    TX_LOCK_DETECT          | Disable by default use if not busy flag in USART Pin/Port/IRQ
+ *    RX_EN                   | Rx enable for driver RS485 always on Pin/Port
+ *    TX_EN                   | Tx enable for driver RS485 Pin/Port
+ *    COM_TX                  | Tx USART Com Pin/Port/Alternate
+ *    COM_RX                  | Rx USART Com Pin/Port/Alternate
+ *    PINOUT_IRQHANDLER       | Callback function for Pin IRQ handler
+
+ *    LUOS_COM_CLOCK_ENABLE   | Enable clock for USART
+ *    LUOS_COM                | USART number
+ *    LUOS_COM_IRQ            | USART IRQ number
+ *    LUOS_COM_IRQHANDLER     | Callback function for USART IRQ handler
+
+ *    LUOS_DMA_CLOCK_ENABLE   | Enable clock for DMA
+ *    LUOS_DMA                | DMA number
+ *    LUOS_DMA_CHANNEL        | DMA channel (depending on MCU DMA may need special config)
+
+ *    LUOS_TIMER_CLOCK_ENABLE | Enable clock for Timer
+ *    LUOS_TIMER              | Timer number
+ *    LUOS_TIMER_IRQ          | Timer IRQ number
+ *    LUOS_TIMER_IRQHANDLER   | Callback function for Timer IRQ handler
+
+ *    FLASH_SECTOR               | FLASH page size
+ *    PAGE_SIZE               | FLASH page size
+ *    ADDRESS_LAST_PAGE_FLASH | Page to write alias
+******************************************************************************/
+
+/*******************************************************************************
+ * MCU CONFIG
+ ******************************************************************************/
+#define USE_HW_CRC 0
+/*******************************************************************************
+ * PINOUT CONFIG
+ ******************************************************************************/
+
+/*******************************************************************************
+ * COM CONFIG
+ ******************************************************************************/
+
+/*******************************************************************************
+ * COM DMA CONFIG
+ ******************************************************************************/
+
+/*******************************************************************************
+ * COM TIMEOUT CONFIG
+ ******************************************************************************/
+#define LUOS_TIMER_CLOCK_ENABLE() __HAL_RCC_TIM3_CLK_ENABLE()
+#define LUOS_TIMER                TIM3
+#define LUOS_TIMER_IRQ            TIM3_IRQn
+#define LUOS_TIMER_IRQHANDLER()   TIM3_IRQHandler()
+/*******************************************************************************
+ * FLASH CONFIG
+ ******************************************************************************/
+
+```
+
+> **Associated page(s):**
+>
+> - <a href="https://github.com/Luos-io/luos_engine/tree/main/examples/projects/NUCLEO-F401RE/button" target="_blank" rel="external nofollow">Examples</a>

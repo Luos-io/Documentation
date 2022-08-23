@@ -30,11 +30,15 @@ function DocItemMetadata(props) {
   const { keywords } = frontMatter;
   const { description, title } = metadata;
   const image = assets.image ?? frontMatter.image;
+
   return (
     <PageMetadata
       {...{
-        title,
-        description,
+        title: metadata.version === 'current' ? title : `${title} for version ${metadata.version}`,
+        description:
+          metadata.version === 'current'
+            ? description
+            : `${description} for version ${metadata.version}`,
         keywords,
         image,
       }}

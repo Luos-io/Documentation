@@ -1,12 +1,14 @@
 ---
 custom_edit_url: null
+image: /img/Handle-and-receive-a-message-banner-luos.png
+description: Message callbacks of services can be difficult to use when a project has high real-time constraints.
 ---
 
 # How to handle and receive messages
 
 Message callbacks of services can be difficult to use when a project has high real-time constraints.
 
-Luos provides two different configurations allowing you to choose the best way for you to deal with messages.
+Luos engine provides two different configurations allowing you to choose the best way for you to deal with messages.
 The message handling configuration is set during the [initialization of a service](../services/service-api).
 
 |                 Configuration                 |  execution type  |
@@ -18,7 +20,7 @@ The following sections detail how the different configurations work.
 
 ## Callback configuration
 
-This configuration is the default and most common setup. In this configuration, Luos directly calls the service callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `luos_loop()` function execution frequency.
+This configuration is the default and most common setup. In this configuration, Luos engine directly calls the service callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `Luos_loop()` function execution frequency.
 
 With this configuration you have no real constraints on the callback's time of execution, you can then reply to a message directly on the callback.
 
@@ -34,7 +36,7 @@ void Button_MsgHandler(service_t *service, msg_t *msg)
         // The message is filled with global variables with proper data
         msg_t pub_msg;
         pub_msg.header.cmd         = IO_STATE;
-        pub_msg.header.target_mode = ID;
+        pub_msg.header.target_mode = SERVICEID;
         pub_msg.header.target      = msg->header.source;
         pub_msg.header.size        = sizeof(char);
         pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
@@ -80,7 +82,7 @@ void Button_Loop(void)
             // The message is filled with global variables with proper data
             msg_t pub_msg;
             pub_msg.header.cmd         = IO_STATE;
-            pub_msg.header.target_mode = ID;
+            pub_msg.header.target_mode = SERVICEID;
             pub_msg.header.target      = msg->header.source;
             pub_msg.header.size        = sizeof(char);
             pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);

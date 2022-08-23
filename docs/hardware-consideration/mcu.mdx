@@ -5,33 +5,37 @@ custom_edit_url: null
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Luos configuration
+# Luos engine configuration
 
 ## Compatible MCUs
 
-Luos can manage any type of microcontrollers as long as they are first added to the library manually. If your microcontroller is not supported yet, please contact us:
+Luos engine can manage any type of microcontrollers as long as they have a HAL. If your microcontroller is not supported yet, please contact us:
 
 - by mail <a href="mailto:hello@luos.io">hello&#x40;luos.io</a>
-- on <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
+- on <a href="https://github.com/Luos-io/luos_engine/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
-Check the list of MCU family Luos cover :<a href="https://github.com/Luos-io/LuosHAL" target="_blank">Hardware Abstraction Layers for MCU Families</a>,
+Check the list of MCU families Luos engine cover:<a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank">Hardware Abstraction Layers for MCU families</a>,
 
-## Default Configuration
+> Depending on what network you have, you may also configure the specific HAL of your network. By default, Luos engine uses the Robus network layer with <a href="https://github.com/Luos-io/luos_engine/tree/main/Network/Robus/HAL" target="_blank">Robus HAL</a>.
 
-Luos libraries is made to run on MCU and use hardware peripheral of the MCU to complete communication between services. In order to configure this low level part, Luos compagny provide, for many MCU family, a default configuration that can be follow to plug and play luos library with the chosen MCU family. The peripheral configuration is describe in files luos_hal_config.h in the repository <a href="https://github.com/Luos-io/LuosHAL" target="_blank">LuosHAL</a>, and can be redefined in the node_config.h file to fit with your design.
+## Default Configurations
 
-## Luos HAL configuration
+Luos engine is made to run on MCU and use the hardware peripherals of the MCU to complete communication between services. In order to configure this low-level part, Luos company provide, for many MCU families, a default configuration that can be followed to plug and play Luos engine with the chosen MCU family. The peripheral configuration is described in the _luos_hal_config.h_ files, and can be redefined in the _node_config.h_ file to fit with your design.
 
-To match pinout and fonctionality with your design, you can create or use the file `node_config.h` (see Luos example)
-Base on the default configuration define in luos_hal_config.h, you can define in the file `node_config.h`, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer etc.
+## Luos engine's HAL configuration
 
-This way you are able to change default hardware configuration so it need to be call in the preprossessor variable section of your IDE to be taken into consideration for your project
+To match pinout and fonctionality with your design, you can create or use the file _node_config.h_ (see [Luos examples](https://github.com/Luos-io/luos_engine/tree/main/Examples)).
+Based on the default configuration defined in _luos_hal_config.h_, you can define in the _file node_config.h_, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer, etc.
 
-> **FYI:** Every example provide by luos has a node_config.h files and includes by the file platformio.ini
+This way, you are able to change the default hardware configuration so it needs to be called in the preprossessor variable section of your IDE to be taken into consideration for your project.
 
-For example, redefine PTPA to fit with your design
+:::info 
+Each example provided by Luos has a _node_config.h_ file and includes the file _platformio.ini_.
+:::
 
-in`luos_hal_config.h` this is defined as followed:
+For example, you can redefine PTPA to fit with your design.
+
+in _luos_hal_config.h_, this is defined as followed:
 
 ```c
 #ifndef PTPA_PIN
@@ -39,7 +43,7 @@ in`luos_hal_config.h` this is defined as followed:
 #endif
 ```
 
-in`node_config.h` this should be redefined as followed:
+in _node_config.h_ this should be redefined as followed:
 
 ```c
 #define PTPA_PIN                    GPIO_PIN_11
@@ -64,8 +68,8 @@ There are many possible configurations that you can change, not all of them bein
 | :---------------------------------------: | :----------------------------------: | :-----------------------------: |
 |           LUOS_COM_CLOCK_ENABLE           |      Activates clock for serial      |      Depends on serial bus      |
 | LUOS_COM/LUOS_COM_IRQ/LUOS_COM_IRQHANDLER | Chooses serial bus, IRQ and callback | Adapts to the serial bus chosen |
-|           LUOS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for for Tx       |
-|             LUOS_DMA_CHANNEL              |           Chooses Channel            |             Send Tx             |
+|           LUOS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for Tx           |
+|             LUOS_DMA_CHANNEL              |           Chooses Channel            |             Sends Tx            |
 
 </TabItem>
 <TabItem value="Timer" label="Timer">
@@ -78,9 +82,10 @@ There are many possible configurations that you can change, not all of them bein
 </TabItem>
 <TabItem value="Flash" label="Flash">
 
-|          Function          |           Description            |             Comments              |
-| :------------------------: | :------------------------------: | :-------------------------------: |
-| PAGE_SIZE/ADRESS_LAST_PAGE | Defines space in flash for alias | Necessary to rename service alias |
+|               Function               |           Description            |             Comments                   |
+| :----------------------------------: | :------------------------------: | :------------------------------------: |
+| BOOT_START_ADDRESS/APP_START_ADDRESS |   define boot and App position   |           See bootloader section       |
+|         SHARED_MEMORY_ADDRESS        |   define shared memory position  |Used to store Luos Information and alias|
 
 </TabItem>
 

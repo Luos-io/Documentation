@@ -1,18 +1,20 @@
 ---
 custom_edit_url: null
+image: /img/Your-first-service-banner-luos.png
 ---
 
 import Image from '/src/components/Images.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Form from '/src/components/typeform/index.js';
 
 # Part 2: Create a Package
 
 ## 1. How to make your services easy to move and share
 
-If we want to be able to easily move our led service from one project to another, it’s really more convenient to have something similar to the other services we have on the project (Pipe, Gate, Blinker) to prevent us from copying and pasting multiple pieces of code.
+If we want to be able to easily move our led service from one project to another, it's really more convenient to have something similar to the other services we have on the project (pipe, gate, blinker) to prevent us from copying and pasting multiple pieces of code.
 
-The service you just created doesn’t need any direct access to any other services on your network. But the other services still have the possibility to interact with it. This is the purpose of microservice: it is allowing you to have loosely coupled pieces of code.
+The service you just created doesn't need any direct access to any other services on your network. But the other services still have the possibility to interact with it. This is the purpose of microservice: it is allowing you to have loosely coupled pieces of code.
 
 Thanks to that, we can put the service in a folder, move it as we want, and share all our services extremely easily. We call it a [package](/docs/luos-technology/package).
 
@@ -41,7 +43,7 @@ Then in this folder create 2 files, _led.h_ (header file) and _led.c_ (main file
 In the header _led.h_ file, we declare functions allowing us to call the packages from the main file _led.c_. These functions are declared in the header files in order to give access to other functions in other files.
 
 ```c
-#include "luos.h"
+#include "luos_engine.h"
 
 void Led_Init(void);
 void Led_Loop(void);
@@ -186,7 +188,7 @@ extern "C"
 {
 #endif
 
-#include <luos.h>
+#include <luos_engine.h>
 #include "blinker.h"
 #include "pipe.h"
 #include "gate.h"
@@ -222,7 +224,7 @@ void loop()
 <TabItem value="Nucleo" label="Nucleo">
 
 ```c
-#include <luos.h>
+#include <luos_engine.h>
 #include "blinker.h"
 #include "pipe.h"
 #include "gate.h"
@@ -278,4 +280,8 @@ Then, use `pyluos-shell` to make a detection and you should see the following ro
 
 ## 5. Exercise
 
-Now try to move your led package on another board. Keep only the led package on this second board, and keep Pipe, Gate, and Blinker into the first one. Then wire a OneWire network as you learned in [Part 3 in the _Get started_](/tutorials/get-started/get-started3).
+Now try to move your led package on another board. Keep only the led package on this second board, and keep the pipe, the gate, and the blinker into the first one. Then wire a OneWire network as you learned in [Part 3 in the _Get started_](/tutorials/get-started/get-started3).
+
+## 6. Test your skills
+
+<Form id="G0c9xCMX" />

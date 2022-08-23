@@ -1,0 +1,54 @@
+---
+title: 'Think Globally...'
+description: Read this article to understand Luos benefits and vision. How to write an application inside a container witch can communicate with other containers?
+slug: think-globally
+authors:
+  - name: James Langbridge
+    title: Teacher, researcher, author
+    url: https://github.com/jlangbridge
+    image_url: https://github.com/jlangbridge.png
+tags: [embedded, edge]
+image: /img/blog/think-globally-banner-luos.png
+hide_table_of_contents: false
+date: 2021-06-13T10:00
+---
+
+![img alt](/img/blog/think-globally-luos.png)
+
+Imagine the liberty of being on a sailboat, alone, in the middle of the ocean. What skills would you require for that? First of all, basic (or even advanced) knowledge of sailing, you are all alone, with only the wind to help you move. Secondly, navigation, the art of knowing where you are, where you want to go, and how. Cooking, there are no delivery services possible, and you need to survive for over a month. Medical skills, if something goes wrong and you hurt yourself, you are the only first responder. Maintenance, fixing things that break down? And this is only part of a very long list.
+
+<!--truncate-->
+
+![Explanation of the concept: food trotter delivery - Luos](/img/blog/think-globally-luos.png)
+
+Bigger is better?  
+
+Let’s notch it up a bit. Now, imagine the captain of a cruise ship, or a cargo ship. Again, let’s look at the captain’s skill set required. We can forget about cooking, there is certainly someone on the ship for that. Medical skills, again, there might be a dedicated person for that. While at first glance it might look like the captain of a cruise ship needs a shorter skill set than that of a sailboat, there is a huge amount of responsibility. To help with this task, the captain can rely on a crew, offloading some of the tasks. The whole system works harmoniously to keep things running smoothly.
+
+![Luos crew art design](/img/blog/luos-crew-art-design.jpeg)
+
+No matter how many people are on the ship, no matter what their jobs are, for people sitting on the shore, they see a single vessel floating by, performing a task. From an outside point of view, there is only one device, the ship. No matter how many tasks or subtasks, you only see one unit, performing the task it is supposed to. A single system.
+
+<h2> Understand in a few minutes what is Luos and how it works: </h2>
+
+On a smaller ship, like a fishing vessel, the captain gives out all the orders. If something breaks, he will tell someone to repair it. What if something breaks on the cruise ship? If the engine breaks down, the captain is immediately notified since this is a critical element, and requires immediate attention. What would happen if it is simply an oven or a light? In this case, the captain isn’t immediately notified, he has far more important things to do. Repairing an oven means taking parts out of stock, the captain might be notified in an expenses report, but other teams will take care of the problem. Other teams work together, housekeeping will talk directly to maintenance, and maintenance will inform housekeeping when the task is finished. Different teams talking together, without micromanagement from the captain (however, the captain is still available if a team thinks that this problem is critical).
+
+![Docker representation](/img/blog/docker-representation-luos.jpeg)
+
+<h2> Embedded teams </h2>
+
+Let’s look at this from an embedded point of view. For the sailboat, a single microcontroller will control all of your hardware. Everything is connected to this one microcontroller, and a single program will control everything.
+
+For a fishing vessel, this would be a multi-microcontroller environment, where one microcontroller would issue orders to other microcontrollers, but would still have the final say in any situation. On a communications bus, this would be a single master.
+
+How about the cruise ship? In this situation, multiple microcontrollers control multiple devices, and we start to see a notion of application independence, one task will run without being directly ordered by another. On a communications bus, this would be a multi-master system, several microcontrollers can issue commands.
+
+Containers? On a cruise ship?  
+
+This is where Luos comes in. You can write your application inside a container, and communicate with other containers. However, the architecture might be different. In the [bike alarm example](/tutorials/bike-alarm), one App controls the alarm, looking for an input that will activate or deactivate the alarm, but the alarm itself is in another container, and will communicate with the gyroscope container, and will only activate when the main app sends a start flag on the Luos network.
+
+[The bike alarm](/tutorials/bike-alarm) is a fairly simple application, but imagine a more complex situation. Imagine an industrial system that manufactures spare parts. The main control system will keep a close look at how the parts are manufactured, and the display will offer information about the entire system, including the internal temperature. However, another system, deep inside, also monitors the temperature, and will activate fans if needed. The main app can request information from the temperature sensor container, and also the fan container. The temperature controller also has access to these two containers, and happily keeps on working without intervention, unless instructed to do otherwise by the main app.
+
+Using distributed apps and containers, you can easily create sub-applications that can handle a task, and talk with the containers that it needs to. No matter if your application looks like a fishing boat or a cruise ship, we can get you up and running, come sail with us!  
+
+[Get Started with Luos](/tutorials/get-started)

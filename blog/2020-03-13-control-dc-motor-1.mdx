@@ -1,0 +1,119 @@
+---
+title: 'How to stop being controlled by your DC motor: reverse the roles! Part 1'
+description: Learn more about the basics of DC motors in robotics and precisely how to control them. We will present different concepts like direction control or motor rotation.
+slug: how-to-stop-being-controlled-by-your-dc-motor-reverse-the-roles
+authors:
+  - name: Simon Baudry
+    title: Mecatronic 
+    url: https://github.com/Simonbdy
+    image_url: https://github.com/Simonbdy.png
+tags: [motors, robotics]
+image: /img/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-1-banner-luos.png
+hide_table_of_contents: false
+date: 2020-03-13T10:00
+---
+
+![img alt](/img/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-1-luos.png)
+
+This post is dedicated to curious about the basics of DC motors in robotics and precisely how to control them. You can begin with the [previous post](/2020-01-13-lift-banana-motors.mdx) dealing with the different motors used for robotic applications. While some of them are not often used, others, as the DC brushed motor, are more common.
+
+<!--truncate-->
+
+In this post, be aware that the word **motor** will be short for **DC brushed motor**.
+
+Today, I’m talking to you about the basics of how to control your motor.
+
+One of the main features of these motors is the simplicity of use: if you plug each wire of a battery into the motor’s terminals, it is likely to turn one way. If you switch the wires, it will turn the other way.
+
+(Of course, it’s a little bit more complicated since the battery must not be too powerful for the motor. If not, the motor may be damaged.)
+
+But this is the problem: it just turns. No speed control. No direction control unless you manually inverse the wires. At this point, your motor is a little bit impertinent. This is painful if you want to build a rover robot for Venus ground (_Mars is so 2017_)…
+
+If we talk about priorities, we will find that direction control comes before speed control. Why? Because you’d rather have a rover that rolls way too fast with jerky turns than a rover that moves smoothly in only one direction — and cannot turn. Yes, you get it.
+
+So let’s put aside the speed control for a while and focus on the direction control.
+
+<h2> Direction control </h2>
+
+As I said earlier, if you plug the positive wire of your battery on one of the motor’s terminals and the negative wire on the other motor’s terminal, the motor rotates in one direction. If you switch the wires, it rotates in the other direction. In the following images, U are batteries, and M are motors.
+
+![Direction control](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbce9838b8275537c742d_1*m6YmVbsBz5AjwBVSzcBK5Q.jpeg)
+
+We could design a small circuit with a mechanical switch (S) to make it more automatic. Switching the switch (_yes, this is how it works_) changes the polarity, hence the direction of rotation:
+
+![Small circuit with a mechanical switch](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbce9056aac0820e19cc1_1*MLmCa2vBEvM-VjFeGbouhQ.jpeg)
+
+At this point, this sassy motor is no longer controlling you, but you are still far from having complete control on your side.
+
+You are still in manual mode. Your hand and your fingers must press the toggle switch to invert the direction. And please, don’t build a robotic arm that does it instead of your hand.
+
+To avoid using your hand, I want to introduce you to **H-bridges**.
+
+H-bridges are simple electronic circuits (they have the size of a chip actually, but can easily be made with discrete components). They allow the voltage to be applied in one direction by opening and closing four doors.
+
+In the example below, the motor (M4) is situated at the center of the horizontal bar of the H.
+
+![Circuit of a motor is situated at the center of the horizontal bar of the H](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbce9fefcfe2b07dca6dd_1*gwHwWnGVHVeL74uPgCrblQ.jpeg)
+
+Only two configurations can make the motor rotate, in one direction or the other:
+
+Configuration 1: S2 and S5 are closed, S3 and S4 are opened  
+Configuration 2: S2 and S5 are opened, S3 and S4 are closed
+
+![Two configurations can make the motor rotate](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbcea4b4bc58442894d1a_1*q8cZ3wBVpe05gResmj34fg.jpeg)
+
+Ok, now that’s too many schematic pictures. I don’t know about you, but I find this very exhausting, so please take a while and relax.
+
+![Beach](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbceaa0b1d87332ca12ef_1*6pdcNXjFiQaUqj8rgq5ybQ.jpeg)
+
+Let’s go back to control.
+
+Any other “doors” configuration would result either in nothing happening, either in a short circuit on the power supply (_which is terrible_), or either in braking the motor.
+
+> With Luos, you can control every part of your system in the same place. We are like Docker, for embedded systems:
+
+<div align="center">
+  <iframe
+    className="player_iframe"
+    src="https://www.youtube.com/embed/ujh0xNE3TZ8"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+  ></iframe>
+</div>
+
+_Note: braking (or short-braking) a motor consists in connecting both its terminals together. It only works when the rotor is moving, resulting in shorter stopping. But you can quickly try it at home with a disconnected motor: turn the axis with your hand, then do it again while connecting the terminals; you’ll feel the rotor is a little bit harder to turn._
+
+— _Ok_, you’re telling me, _but what you call “doors” looks quite like push-buttons to me. That means I’ll need my hands again, and two of them this time!_
+
+Right, this was only the simple way to explain it. These doors can be replaced by several components, called transistors or MOFSETs. The most used is called the **bipolar transistor**. This three-legged component will take the role of an automated door; it means that connected to a microprocessor that sends commands, each door automatically lets a certain amount of current flow through it or blocks it. This results in a door or a no-hands-needed push-button.
+
+![Bipolar transistor](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbcea32216e0c365caeb6_1*iXLz2lWZDjS1AaHx1NpHoQ.jpeg)
+
+This kind of transistor works like a controlled door: the B side is the control side, from where you choose to open or close. If a small “signal” current flows through B to E, the door is opened and lets a more significant “power” current flow from C to E. If no current flows from B to E, the door is closed, and no current is allowed from C and E.
+
+_Note: This explanation is for the case of a perfectly saturated transistor. The reality may be a little more complex._
+
+_Also, you can find PNP (this was an NPN), which is the opposed polarity._
+
+Many electronic control boards (like L298N) carry one or several H-bridge chips in their design. The microprocessor you’re using (for example, the one in an _Arduino_ board) is connected to the input pins of the control board. High and low signals from the microprocessor will then command the H-bridge chip to make the motor rotate the way you want.
+
+To summarize:
+
+*   You write a program in a microprocessor (more accessible with the help of a developing board).
+*   The microprocessor sends high or low signals to the H-bridge (easier with a controlling board).
+*   The H-bridge orient the voltage so that the connected motor can rotate the way you politely asked it.
+
+![DC brushed motor](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbcea2c6b59469aae5498_1*rgOUW1Lfhn0T-VxD6RrtCg.jpeg)
+
+Of course, you will have to program your developing board to work properly. Many websites provide great help for dealing with _Arduino_ or _Raspberry Pi_ boards.
+
+_Note: H-bridges are used for other functions, like, for example, DC-to-AC converters. Also, the stepper motors are controlled by H-bridges, but it’s slightly more complicated._
+
+Congratulations. Despite some pictures challenging to watch for too long, you now have half the control of your not-that-eager-now motor. In the [next part](/2020-04-13-control-dc-motor-2.mdx), we will look at the **speed control**, still on DC brushed motors. One more step towards total control!
+
+Thank you for reading.
+
+— If you liked what you read, please **_clap the hell out of it_** and <a rel="external nofollow" href="https://www.reddit.com/r/Luos/" target="_blank">follow us on Reddit!</a>
+
+Discover the following article: [How to stop being controlled by your DC motor: reverse the roles! Part 2.](/2020-04-13-control-dc-motor-2.mdx)
+
+[Get Started with Luos](/tutorials/get-started)
