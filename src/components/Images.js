@@ -13,7 +13,6 @@ const Image = (props) => {
     : props.src;
   const height = props.height === undefined ? '100%' : props.height;
   const width = props.width === undefined ? null : props.width;
-  console.log(width);
   return (
     <div style={{ display: 'inline', marginRight: '15px' }}>
       <img
