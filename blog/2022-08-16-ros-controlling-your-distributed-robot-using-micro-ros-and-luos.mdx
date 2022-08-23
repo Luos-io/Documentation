@@ -1,0 +1,161 @@
+---
+title: 'ROS: Control your distributed robot with micro-ROS and Luos in resource-constrained MCUs.'
+description: We aim to guide you through the integration of a Luos custom middleware used for the communication between multiple micro-ROS nodes.
+slug: ros-controlling-your-distributed-robot-using-micro-ros-and-luos
+authors:
+  - name: Viktoria
+    title: Embedded Systems Engineer @ Luos
+    image_url: https://www.luos.io/img/school/authors/viktoria.png
+tags: [ros, micro-ros, embedded, edge]
+image: /img/blog/Micro-ros-and-luos-article.jpg
+hide_table_of_contents: false
+date: 2022-08-16T10:00
+---
+
+import Image from '@site/src/components/Images.js';
+
+![Micro-ROS and Luos article](/img/blog/Micro-ros-and-luos-article.jpg)
+
+Certainly, you have already used or heard about ROS, the Robot Operating System.
+Using the functionalities provided in ROS libraries, you can develop software applications and control your robots easily and optimally.
+
+<!--truncate-->
+
+Lately, the need to use resource-constrained electronic boards like microcontrollers has led to the creation of an open source project called micro-ROS. Micro-ROS adapts ROS2 for limited-performance microcontrollers to bridge the gap between them and the larger processors in ROS robotic applications.
+
+At Luos, we are exploring how to integrate micro-ROS into distributed systems. With this article, we aim to guide you through the integration of a Luos custom middleware used for the communication between multiple micro-ROS nodes. Although this method is not implemented, you can develop your Luos middleware by following the process explained in this article, checking out a dummy GitHub repository, and previewing the Luos APIs you will need to use. Check this out here: <a rel="external nofollow" href="https://github.com/Luos-io/rmw_luos" target="_blank">https://github.com/Luos-io/rmw_luos</a>
+
+<center>
+  <iframe
+    src="https://giphy.com/embed/xGPy9LFlMi5X1Iarfh"
+    width="380"
+    height="380"
+    frameBorder="0"
+    class="giphy-embed"
+  ></iframe>
+</center>
+
+<h2>Why use Luos?</h2>
+
+Until now, the supported micro-ROS configuration includes an MCU directly connected with a ROS2 interface (like a computer) containing ROS2 nodes. Each time we want to add a new MCU, it needs to be connected directly to a ROS2 interface. So every component of the embedded network should have direct access to a computer.
+
+But what if we need a distributed system that takes multiple microcontrollers without direct connection to PC? There is a case where we need to make a fully embedded network, and the only direct access we can have is only one connection between one of our MCU with the computer. Until now, micro-ROS cannot provide a solution for fully embedded distributed systems.
+
+<center>
+  <Image desc="Micro-ROS-without-luos" src="/img/blog/micro-ROS-without-luos.svg" width="300px" />
+</center>
+
+Luos can offer a solution to this.
+
+Get started and code your own project using Luos by following our [Get started tutorial](/tutorials/get-started)!
+
+Among others, Luos includes a communication protocol and a way to send and receive messages among different microcontrollers. By adding Luos in the middleware of a micro-ROS node, you could easily increment the number of boards in your setup and transfer the ROS messages from and to the ROS node to every board of your embedded network.
+
+<center>
+<Image desc="Micro-ROS" src="/img/blog/micro-ROS-with-luos.svg" width="300px" />
+</center>
+
+<h2>How is it possible?</h2>
+
+In Luos, the exchange of messages among the MCUs is achieved using the notion of services. A normal Luos MCU can have multiple services that send and receive messages depending on the functionality that we want them to have.
+
+> 💡 For more information regarding the exchange of messages using Luos, you can check out this documentation page: [https://www.luos.io/docs/luos-technology/message](https://www.luos.io/docs/luos-technology/message)
+
+The services can be drivers or applications. Here, the goal is to transfer the messages received from a ROS2 interface to every microcontroller in the embedded network, and every message published in an MCU to the computer.
+
+For this reason we need 2 types of middleware:
+
+First, a middleware that combines the transfer of ROS data from and to a PC and from an MCU to the others.
+
+Second, a middleware that will be used by the MCUs that are not directly connected to ROS interface.
+
+To accomplish this exchange of messages, we need at least one service in each microcontroller. This Luos service will be responsible for publishing and subscribing to ROS topics, depending on the publishers and subscribers existing on each node.
+
+ROS messages are sent and received following the publisher/subscriber method. In other words, each node that wants to send a message creates a publisher that publishes a message of a specific topic. Depending on the topic names, the user creates subscribers to be able to receive the wanted messages. The Luos service in each MCU needs to follow the same principle. This can be achieved because of the Luos topic feature.
+
+> 💡 Using the <a href="/docs/luos-technology/message">Topic feature</a>, we can require a service to subscribe to a specific topic and to publish data of a topic by sending Luos messages of mode TOPIC.
+
+> <Image desc="Pub/sub method - multicast" src="/img/blog/pub-sub-method-multicast.png" width="500px" />
+
+We need the Luos service to suscribe on every topic that we want to be received by the specific MCU. For each publisher existing in a micro-ROS node, the Luos service needs to publish the messages to the others.
+
+A few months ago, we opened a community on Discord. This Discord aims to exchange with embedded and edge developers on new project development methodologies. We want to help each other, get inspired and share together. If you are interested, <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">join the Luos community</a>!
+
+<h2>Luos middleware</h2>
+
+In a micro-ROS x Luos network, we need to have two different types of behavior. For this reason, the middleware should have different behaviors depending on which MCU we are on. These different types are separated depending on one reason: a combined micro-ROS and Luos middleware destined to the microcontroller that is connected to the ROS2 interface, and only the Luos middleware for all the other embedded MCUs.
+
+So in a schematical way, the position of middlewares depending on the position of MCUs should be like that:
+
+<center>
+  <Image desc="Luos middleware" src="/img/blog/Luos-middleware.png" />
+</center>
+
+So let's see analytically how each MCU should work.
+
+First, we will examine the simple case concerning the MCUs that do not directly connect with the ROS2 interface. Six RMW functions should present a different behavior in the `rmw_luos`.
+
+<center>
+  <Image
+    desc="Luos middleware not connected to ROS2"
+    src="/img/blog/Luos-middleware-not-directly-connected-to-ros2.png"
+  />
+</center>
+
+- `rmw_init()`: This function will create a package that initializes Luos engine and the Luos service, for transmitting and receiving messages.
+  - When the `rwm_init` function is called, we create one Luos service. This service will be responsible for sending to the network all the messages of specific topics that the micro-ROS publishers want to transmit, and receiving all the messages for each subscription of the node.
+- `rmw_create_publisher()`: Each time this function is called, we only have to launch a detection if it is not yet launched, to be able to publish messages.
+
+> 💡 The topology detection is necessary for constructing a [Luos routing table](/docs/luos-technology/services/routing-table) containing all the necessary information for the communication between the Luos services.
+
+- `rmw_create_subscription()`: Each time this function is called, we add a new reception topic to this service's topics list. Again, if needed, we launch a detection.
+- `rmw_publish()`: A publisher required to publish a ROS message. The Luos service needs to take this message, transform the data into a Luos message containing the topic's information, and send it to the rest of the nodes.
+- The reception of messages will be done in `rmw_wait` and `rmw_take` functions.
+  - The function `rmw_wait()` should be called continuously so that `Luos_loop()` can run every time. In the Luos loop, we receive all the new messages. We store them in the Luos buffer, and they are ready to be used by the service using polling, or sent directly to the service's callback. In this project, we need to use the polling method to get the message the exact moment we want it, without storing it in a temporary buffer. The `rmw_wait()` function gets a subscriber as a parameter. After launching `Luos_Loop()` we will check if we have received a message for the subscriber we need. If it is the case, we notify micro-ROS to take the message by using the `rmw_take` function.
+  - After calling `rmw_take()`, we pull the message of the topic we want, transform the Luos data to a ROS message, and return it to micro-ROS.
+
+<center>
+  <Image
+    desc="Micro-ROS and Luos architecture"
+    src="/img/blog/micro-ros-and-luos-architecture.png"
+  />
+</center>
+
+The second behavior involves the MCU that directly connects to the ROS2 interface. This MCU's middleware should combine the Luos functionalities with the serial communication method implemented by micro-ROS —`rmw_microxrcedds`.
+
+<center>
+  <Image
+    desc="Luos middleware connected to ROS2"
+    src="/img/blog/Luos-middleware-directly-to-ros2.png"
+  />
+</center>
+
+This MCU should follow the same process as any other MCU, with the addition of some extra functionalities:
+
+- Messages are coming from the ROS interface: This MCU will have to receive all the messages from a computer and direct-transfer them to the other MCUs.
+  There are two cases:
+  1. The messages are destined to a subscriber existing in an MCU, so they should be taken by the current subscriber and also transferred to the rest of the network.
+  2. The messages are not destined to an active subscriber in this MCU, so they are only transferred to the rest of the network.
+- Messages published by publishers existing in this MCU: These messages should always be sent to both the computer and the rest of the embedded network.
+- Messages published from another MCU: Same with the first option, these messages should be taken by the involved subscribers in this MCU **and** also transmitted to the ROS interface.
+
+<center>
+  <Image
+    desc="Particular behavior of MCU connected to PC"
+    src="/img/blog/particular-behavior-of-mcu-connected-to-pc-luos.png"
+  />
+</center>
+
+There are some cases that you should pay attention to:
+
+1. The third option of messages sent from another MCU will be dropped by Luos if the Luos service is not subscribed to them. For this reason, we need to subscribe the Luos service of this MCU to the topics destined to the ROS node, so that we can always get them.
+2. Another tricky point is that we cannot have multiple subscribers with the same topic to the same MCU in that simple implementation. That is because we stock only once a received topic (as we have only one Luos service). For this reason, if we want to avoid a restriction that forces the user to have this situation, we should develop a method to stock the messages multiple times depending on the number of subscriptions to each topic. An idea could be to keep a table of the number of subscribers to each topic and drop each message only if every subscriber had already got it.
+3. Last, the topic's names defined by ROS2 are dynamically created strings. In Luos engine, we cannot do this: we need to associate all the possible topic's names with a number, as the topic's identifier in the messaging protocol of Luos is a 12-bit value.
+
+This article aimed to present an analytical method for implementing a micro-ROS Luos middleware to use ROS and micro-ROS with distributed systems.
+
+You can contact us in <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">our Discord community</a> if you need more information about this integration!
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get Started with Luos
+</a>
