@@ -68,8 +68,8 @@ There are many possible configurations that you can change, not all of them bein
 | :---------------------------------------: | :----------------------------------: | :-----------------------------: |
 |           LUOS_COM_CLOCK_ENABLE           |      Activates clock for serial      |      Depends on serial bus      |
 | LUOS_COM/LUOS_COM_IRQ/LUOS_COM_IRQHANDLER | Chooses serial bus, IRQ and callback | Adapts to the serial bus chosen |
-|           LUOS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for for Tx       |
-|             LUOS_DMA_CHANNEL              |           Chooses Channel            |             Send Tx             |
+|           LUOS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for Tx           |
+|             LUOS_DMA_CHANNEL              |           Chooses Channel            |             Sends Tx            |
 
 </TabItem>
 <TabItem value="Timer" label="Timer">
@@ -82,9 +82,10 @@ There are many possible configurations that you can change, not all of them bein
 </TabItem>
 <TabItem value="Flash" label="Flash">
 
-|          Function          |           Description            |             Comments              |
-| :------------------------: | :------------------------------: | :-------------------------------: |
-| PAGE_SIZE/ADRESS_LAST_PAGE | Defines space in flash for alias | Necessary to rename service alias |
+|               Function               |           Description            |             Comments                   |
+| :----------------------------------: | :------------------------------: | :------------------------------------: |
+| BOOT_START_ADDRESS/APP_START_ADDRESS |   define boot and App position   |           See bootloader section       |
+|         SHARED_MEMORY_ADDRESS        |   define shared memory position  |Used to store Luos Information and alias|
 
 </TabItem>
 
