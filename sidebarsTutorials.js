@@ -180,6 +180,23 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Luos with ESP32',
+          link: { type: 'doc', id: 'esp/esp' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Environment',
+              id: 'esp/env',
+            },
+            {
+              type: 'doc',
+              label: 'Connect to the network',
+              id: 'esp/connect',
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Luos integration',
           link: {
             type: 'doc',

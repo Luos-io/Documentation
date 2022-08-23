@@ -20,7 +20,7 @@ In this tutorial, we will see how to use Luos with an RTOS and discover the bene
 ## 1. Set up a PlatformIO project
 
 In this tutorial, we will use the examples available in <a href="https://github.com/Luos-io/luos_engine/tree/main" target="_blank" rel="external nofollow">the Luos engine's repository</a>.
-You can <a href="https://github.com/Luos-io/luos_engine/archive/refs/heads/main.zip" target="_blank" rel="external nofollow">download</a> and unzip it or clone it using: 
+You can <a href="https://github.com/Luos-io/luos_engine/archive/refs/heads/main.zip" target="_blank" rel="external nofollow">download</a> and unzip it or clone it using:
 
 ```
 Git clone https://github.com/Luos-io/luos_engine.git
@@ -36,15 +36,15 @@ As a quick reminder, you will find in this project:
 Open Visual Studio Code and open a **Led** project corresponding to your master board in _Luos_engine/Examples/Projects/YOUR_BOARD_.
 
 :::caution
-If you are not comfortable with the opening and compiling of a Luos engine project, please follow [the Luos Get started tutorial](../get-started) first.
+If you are not comfortable with the opening and compiling of a Luos engine project, please follow [the Luos Get started tutorial](../get-started/get-started.mdx) first.
 :::
 
 Now we need to import FreeRTOS source files in our project. To do that we will use the PlatformIO registry and add a <a href="https://registry.platformio.org/libraries/bojit/PlatformIO-FreeRTOS" target="_blank" rel="external nofollow">dependency to FreeRTOS</a>. Then at compilation time PlatformIO will download it and include it on our project.
 
-To do that open the _platformio.ini_ file of your project and add a FreeRTOS dependency: 
+To do that open the _platformio.ini_ file of your project and add a FreeRTOS dependency:
 
 ```json
-lib_deps = 
+lib_deps =
     Luos_engine@^2.2.0
     Led
     bojit/PlatformIO-FreeRTOS
@@ -60,7 +60,7 @@ More details about it on <a href="https://registry.platformio.org/libraries/boji
 In this tutorial, we will also use <a href="https://arm-software.github.io/CMSIS_5/RTOS2/html/rtos_api2.html" target="_blank" rel="external nofollow">CMSIS_RTOS_V2</a> to have a generic RTOS API. You will have to find the lib corresponding to your provider's and MCU. If you prefer to directly use FreeRTOS API, you will have to adapt the code of this tutorial, no big deal...
 
 :::info
-You can find a ST version in <a href="https://github.com/Luos-io/luos_engine/tree/main/examples/projects/l0/button_freertos" target="_blank" rel="external nofollow">our FreeRTOS example</a>. 
+You can find a ST version in <a href="https://github.com/Luos-io/luos_engine/tree/main/examples/projects/l0/button_freertos" target="_blank" rel="external nofollow">our FreeRTOS example</a>.
 :::
 
 ## 3. FreeRTOS configurations
@@ -81,9 +81,9 @@ The only exception of this standard configuration is that Luos engine uses the s
 
 You have three solutions to solve this:
 
- - You write the systick IRQ handler by yourself increment the HAL systick then call the RTOS systick function. (We use this solution on our examples)
- - You can override the weak HAL systick function and use the RTOS systick instead of the HAL one.
- - You can use the <a href="https://www.freertos.org/a00016.html" target="_blank" rel="external nofollow">RTOS hook</a> option calling a callback at each systick allowing you to increment the HAL systick manualy.
+- You write the systick IRQ handler by yourself increment the HAL systick then call the RTOS systick function. (We use this solution on our examples)
+- You can override the weak HAL systick function and use the RTOS systick instead of the HAL one.
+- You can use the <a href="https://www.freertos.org/a00016.html" target="_blank" rel="external nofollow">RTOS hook</a> option calling a callback at each systick allowing you to increment the HAL systick manualy.
 
 Now we have to call the kernel routines from our `main()` function. We could directly use FreeRTOS functions, but ARM defined a standard API to interface with RTOS capabilities called <a href="https://arm-software.github.io/CMSIS_5/RTOS2/html/rtos_api2.html" target="_blank" rel="external nofollow">CMSIS_RTOS_V2</a> and we will use it.
 
@@ -121,6 +121,7 @@ Because we based our code on a LED project, on the _lib/_ folder, you should hav
 Lets create a new file called _freertos.c_ on your _src/_ folder. We will use this file to creates some tasks for our LED.
 
 `freertos.c`:
+
 ```c
 // RTOS includes:
     #include "FreeRTOS.h"

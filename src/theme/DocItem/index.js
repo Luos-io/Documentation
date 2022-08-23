@@ -34,11 +34,11 @@ function DocItemMetadata(props) {
   return (
     <PageMetadata
       {...{
-        title: metadata.version === 'current' ? title : `${title} for version ${metadata.verison}`,
+        title: metadata.version === 'current' ? title : `${title} for version ${metadata.version}`,
         description:
           metadata.version === 'current'
             ? description
-            : `${description} for version ${metadata.verison}`,
+            : `${description} for version ${metadata.version}`,
         keywords,
         image,
       }}

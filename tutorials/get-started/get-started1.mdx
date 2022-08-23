@@ -78,7 +78,8 @@ If VS Code displays the message “Do you trust the authors of the files in the 
 The project folder should now be opened in the PlatformIO explorer. 👍
 
 :::info
-**For Arduino users**, you have to select the board you use on the _platformio.ini_ file by modifying the `board = zero` line.
+**For Arduino users**, you have to select the board you use in the file _platformio.ini_. Find `board` and set it to `board = zero`. 
+For the Seeeduino XIAO board, also set `default_envs` to `default_envs = seed`. 
 
 <div align="center">
   <Image
@@ -152,10 +153,11 @@ On top of it, we also added two other services allowing you to take control of y
 - **Pipe**, managing a serial interface.<br /> ╰ The code folder of this service is located in the cloud (because it is a common cross-platform's Luos tool), PlatformIO just downloaded it for you.
 - **Gate**, an app that translates Luos engine's messages to JSON and sends it through the _Pipe_.<br /> ╰ The code folder of this service is located in the cloud (because it is a common cross-platform's Luos tool), PlatformIO just downloaded it for you.
 
-## Test your skills
+## 7. Next step
+
+Your development environment is now configured, and the Get started project is installed in a local folder of your choice. The [next part](/tutorials/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take the control with high level API!
+
+## 8. Test your skills
 
 <Form id="uAfY4YhI" />
 
-## Next step
-
-Your development environment is now configured, and the Get started project is installed in a local folder of your choice. The [next part](/tutorials/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take the control with high level API!

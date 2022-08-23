@@ -1,0 +1,20 @@
+---
+custom_edit_url: null
+---
+
+import Image from "@site/src/components/Images.js";
+
+# I can't upload my Arduino project
+
+## Symptom(s)
+
+When you try to update an Arduino board, an error message may appear in the file *platformio.ini*. 
+
+## Possible explanation
+
+This error is related to an upload problem of Arduino, even though you do not have any compilation errors. 
+
+## Resolution
+
+You need to restart your Arduino board so that it is ready to be flashed.
+Double-push your Arduino's reset button so that it gets in boot mode, and try to relaunch the upload of your firmware.

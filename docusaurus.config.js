@@ -14,6 +14,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
+  trailingSlash: false,
   favicon: 'img/favicon.png',
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.

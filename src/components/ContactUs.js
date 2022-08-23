@@ -8,8 +8,13 @@ export const ContactUs = (props) => {
   }
   return (
     <div className="contactUs">
-      <a href="/feedbacks/send" target="_blank">
-        You can't find what your're looking for? »
+      A feedback? Let's discuss on&nbsp;
+      <a href="https://discord.gg/luos" target="_blank">
+      Discord
+      </a>
+      &nbsp;|&nbsp;
+      <a href="https://github.com/Luos-io/Documentation/issues/new?assignees=Simonbdy&labels=documentation&template=documentation-issue-or-suggestion.md&title=%5BDOC%5D" target="_blank">
+      Github
       </a>
     </div>
   );
