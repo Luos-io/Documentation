@@ -78,7 +78,8 @@ If VS Code displays the message “Do you trust the authors of the files in the 
 The project folder should now be opened in the PlatformIO explorer. 👍
 
 :::info
-**For Arduino users**, you have to select the board you use on the _platformio.ini_ file. For Seeeduino XIAO board modify default_envs = arduino to default_envs = seed. For all the other arduino board leave default_envs = arduino and modifying the `board = zero` line.
+**For Arduino users**, you have to select the board you use in the file _platformio.ini_. Find `board` and set it to `board = zero`. 
+For the Seeeduino XIAO board, only set `default_envs` to `default_envs = seed`.
 
 <div align="center">
   <Image
