@@ -7,22 +7,22 @@ import { customFields } from '/docusaurus.config.js';
 import Tooltip from '@site/src/components/Tooltip.js';
 import Image from '@site/src/components/Images.js';
 
-# Plateformio
+# PlatformIO
 
-## What is plateformio?
+## What is PlatformIO?
 
-Plateformio is user-friendly and extensible integrated development environment with a set of professional development instruments, compiler and debugger. Plateformio provide modern and powerful features to simplify the creation and delivery of embedded products
-That's the reason why Luos use plateformios project structure for its examples, allowing user to use and share easily service and development on a unified environment. Also Luos engine and some tools like [Gate](/docs/tools/gate) or [Inspector](/docs/tools/inspector) are available on plateformios registry! This registry allow user to link directly a project and a library, like Luos engine, by including dependencies in the configuration project file call plateformio.ini
-learn more about <a href="https://platformio.org" target="_blank">Plateformio and how to install Plateformio<IconExternalLink width="10"></IconExternalLink></a>.
+PlatformIO is user-friendly and extensible integrated development environment with a set of professional development instruments, compiler and debugger. PlatformIO provide modern and powerful features to simplify the creation and delivery of embedded products
+That's the reason why Luos use PlatformIOs project structure for its examples, allowing user to use and share easily service and development on a unified environment. Also Luos engine and some tools like [Gate](/docs/tools/gate) or [Inspector](/docs/tools/inspector) are available on PlatformIOs registry! This registry allow user to link directly a project and a library, like Luos engine, by including dependencies in the configuration project file call 'Platformio.ini'
+learn more about <a href="https://platformio.org" target="_blank">PlatformIO and how to install PlatformIO<IconExternalLink width="10"></IconExternalLink></a>.
 
-## Plateformio project structure
+## PlatformIO project structure
 
-Every plateformio project have a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#directory-options" target="_blank">basic folder project structure<IconExternalLink width="10"></IconExternalLink></a> and must have at the root of the project a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#generic-options" target="_blank">platformio.ini<IconExternalLink width="10"></IconExternalLink></a> file
+Every PlatformIO project have a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#directory-options" target="_blank">basic folder project structure<IconExternalLink width="10"></IconExternalLink></a> and must have at the root of the project a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#generic-options" target="_blank">platformio.ini<IconExternalLink width="10"></IconExternalLink></a> file
 
 Checkout luos tutorial on <a href="https://www.luos.io/tutorials/pio" target="_blank">how create a Luos project with PlatformIo <IconExternalLink width="10"></IconExternalLink></a>.
 
 
-## Luos configuration for plateformio.ini
+## Luos configuration for 'Platformio.ini'
 
 Some pre-compile definition may be use to configure Luos engine when its add in your project. those definition will be taking care of for Luos engine library using Luos script call at building a project with Luos engine.
 For more information, see the script source_filter_script.py in <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow"> Luos engine <IconExternalLink width="10"></IconExternalLink> </a>.
@@ -34,9 +34,8 @@ For more information, see the script source_filter_script.py in <a href="https:/
 |       LUOSHAL         | Define HAL family to use with Luos engine library |   see Luos engine HAL |
 |     NOTELEMETRY       |                 Disable Telemetry                 |     On by default     |
 
+Platformio.ini project example:
 ```AsciiDoc
-plateformio.ini project example:
-
 [env:nucleo_f072rb]
 platform = ststm32
 board = nucleo_f072rb
@@ -50,7 +49,7 @@ lib_deps =
     luos_engine
 ```
 
-This project in example is Luos engine dependent. Plateformio will download from its registry, the last version of the library Luos engine .The file "node_config.h" allowing user to configure Luos parameter and hardware definition to be add to the project.
+This project in example is Luos engine dependent. PlatformIO will download from its registry, the last version of the library Luos engine .The file "node_config.h" allowing user to configure Luos parameter and hardware definition to be add to the project.
 
 Building project exemple:
 <div align="center">
@@ -61,9 +60,8 @@ You must define the <a href="https://github.com/Luos-io/luos_engine/tree/main/en
 
 Add the definition of the HAL you want to use as follow:
 
+Platformio.ini project example:
 ```AsciiDoc
-plateformio.ini project example:
-
 [env:nucleo_f072rb]
 platform = ststm32
 board = nucleo_f072rb
@@ -84,7 +82,7 @@ Building project exemple:
   <Image src="/img/telemetry.svg" darkSrc="/img/telemetry.svg" />
 </div>
 
-By default the telemetry is enable and send anonymous information to luos (only for Luos engine experience improving). To disable place the flag NOTELEMETRY in plateformio.ini the same way as LUOSHAL Flag
+By default the telemetry is enable and send anonymous information to luos (only for Luos engine experience improving). To disable place the flag NOTELEMETRY in 'Platformio.ini' the same way as LUOSHAL Flag
 
 ###  Definition for gate tool and pipe
 
@@ -100,11 +98,10 @@ For more information, see the script select_format_script.py in <a href="https:/
 |       PIPEMODE        | Choose Pipe style to send or receive information through a specific physical Layer |    SERIAL/WIFI/BLE    |
 |       PIPEHAL         |             Choose Pipe HAL match a specific physical Layer with the board         |      see pipe HAL     |
 
-For exemple see in project gate_serialcom the plateformio.ini file
+For exemple see in project gate_serialcom the 'Platformio.ini' file
 
+Plateformio.ini project example:
 ```AsciiDoc
-plateformio.ini project example:
-
 [env:nucleo_f072rb]
 platform = ststm32
 board = nucleo_f072rb
