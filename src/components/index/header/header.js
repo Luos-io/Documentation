@@ -18,6 +18,7 @@ const Header = (props) => {
   const { isDarkTheme } = useColorMode();
   return (
     <div className={styles.container}>
+      <h1 style={{ display: 'none' }}>Luos is an embedded microservice orchestrator</h1>
       <Grid container>
         <Grid item md={7} className={styles.left}>
           <div className={styles.head}>

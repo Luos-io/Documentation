@@ -122,7 +122,7 @@ const Integration = (props) => {
               </Grid>
               <Grid item md={4} lg={4} xl={4} style={{ textAlign: 'center' }}>
                 {' '}
-                <h2 className={`${styles.hiwTitle} ${styles.underline}`}>Integrations</h2>
+                <span className={`${styles.hiwTitle} ${styles.underline}`}>Integrations</span>
               </Grid>
               <Grid item md={4} lg={4} xl={4}></Grid>
             </Grid>
