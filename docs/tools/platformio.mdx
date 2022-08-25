@@ -11,32 +11,32 @@ import Image from '@site/src/components/Images.js';
 
 ## What is PlatformIO?
 
-PlatformIO is user-friendly and extensible integrated development environment with a set of professional development instruments, compiler and debugger. PlatformIO provide modern and powerful features to simplify the creation and delivery of embedded products
-That's the reason why Luos use PlatformIOs project structure for its examples, allowing user to use and share easily service and development on a unified environment. Also Luos engine and some tools like [Gate](/docs/tools/gate) or [Inspector](/docs/tools/inspector) are available on PlatformIOs registry! This registry allow user to link directly a project and a library, like Luos engine, by including dependencies in the configuration project file call 'Platformio.ini'
-learn more about <a href="https://platformio.org" target="_blank">PlatformIO and how to install PlatformIO<IconExternalLink width="10"></IconExternalLink></a>.
+PlatformIO is user-friendly and extensible integrated development environment with a set of professional development instruments, compilers and debuggers. PlatformIO provides modern and powerful features to simplify the creation and delivery of embedded products.
+That is the reason why Luos uses PlatformIO's project structure for its examples, allowing users to use and share easily services and developments on a unified environment. Also, Luos engine and some tools like the [gate](/docs/tools/gate) or the [inspector](/docs/tools/inspector) are available in the PlatformIO's registry. This registry allows user to link directly a project and a library, like Luos engine, by including dependencies in the configuration project file called *platformio.ini*.
+Learn more about <a href="https://platformio.org" target="_blank">PlatformIO and how to install it in VSCode <IconExternalLink width="10"></IconExternalLink></a>.
 
-## PlatformIO project structure
+## PlatformIO's project structure
 
-Every PlatformIO project have a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#directory-options" target="_blank">basic folder project structure<IconExternalLink width="10"></IconExternalLink></a> and must have at the root of the project a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#generic-options" target="_blank">platformio.ini<IconExternalLink width="10"></IconExternalLink></a> file
+Every PlatformIO's project has a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#directory-options" target="_blank">basic folder project structure<IconExternalLink width="10"></IconExternalLink></a> and must have at the root of the project the file <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#generic-options" target="_blank">*platformio.ini* <IconExternalLink width="10"></IconExternalLink></a>.
 
-Checkout luos tutorial on <a href="https://www.luos.io/tutorials/pio" target="_blank">how create a Luos project with PlatformIO <IconExternalLink width="10"></IconExternalLink></a>.
+Checkout the Luos tutorial on <a href="https://www.luos.io/tutorials/pio" target="_blank">how to create a Luos project with PlatformIO <IconExternalLink width="10"></IconExternalLink></a>.
 
 
-## Luos configuration for 'Platformio.ini'
+## Luos configuration for *platformio.ini*
 
-Some build flags definition may be use to configure Luos engine when its add in your project. those definition will be taking care of for Luos engine library using Luos script call at building a project with Luos engine. Those definition must be set on platformio.ini
-For more information, see the script source_filter_script.py in <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow"> Luos engine <IconExternalLink width="10"></IconExternalLink> </a>.
+Some build flags definition may be used to configure Luos engine when it is added in your project. Those definitions will take care of the Luos engine library by using a Luos script called when building a project with Luos engine. Those definitions must be set in *platformio.ini*.
+For more information, see the script *source_filter_script.py* in <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow">Luos engine <IconExternalLink width="10"></IconExternalLink></a>.
 
 ### Definition for Luos engine Library
 
 |      Definition       |                    Description                    |         Value         |
 | :-------------------: |-------------------------------------------------: | :-------------------: |
-|       LUOSHAL         | Define HAL family to use with Luos engine library | <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> Luos HAL <IconExternalLink width="10"></IconExternalLink></a> |
-|     NOTELEMETRY       |                 Disable Telemetry                 |     On by default     |
+|       LUOSHAL         | Defines the HAL family to use with Luos engine library | <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> Luos HAL <IconExternalLink width="10"></IconExternalLink></a> |
+|     NOTELEMETRY       |                 Disables telemetry                 |     On by default     |
 
-Every Luos project need to have a 'node_config.h' file allowing to configure Luos engine hardware dependencies and configure the library. see the [basics  concept page](/docs/luos-technology/basics/orga) for more information.
+Every Luos project needs to have a *node_config.h* file allowing to configure Luos engine's hardware dependencies and configure the library. See the [basics concept page](/docs/luos-technology/basics/orga) for more information.
 
-Platformio.ini project example:
+Here is a *platformio.ini* project example:
 ```AsciiDoc
 [env:nucleo_f072rb]
 platform = ststm32
@@ -52,18 +52,19 @@ lib_deps =
     luos_engine
 ```
 
-This project in example is Luos engine dependent. PlatformIO will download from its registry, the last version of the library Luos engine .The file "node_config.h" allowing user to configure Luos parameter and hardware definition to be add to the project.
+This project in the examples is Luos engine-dependent. PlatformIO will download the last version of the library Luos engine from its registry. The file *node_config.h* allowing users to configure Luos parameters and the hardware definition to be added to the project.
 <div align="center">
   <Image src="/img/telemetry.svg" darkSrc="/img/telemetry.svg" />
 </div>
 
-You must define the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> HAL family <IconExternalLink width="10"></IconExternalLink> </a> corresponding to your MCU. see the [compatibility page](/docs/compatibility/mcu_demoboard) to find the HAL familly you must use for your MCU. During build, if a message appears in red, a problem has occurred meaning you forget a build flag in your Platformio.ini file
+You must define the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">HAL family <IconExternalLink width="10"></IconExternalLink></a> corresponding to your MCU. See the [compatibility page](/docs/compatibility/mcu_demoboard) to find the HAL family you must use for your MCU. During the build, a message appearing in red means  a problem has occurred. It happens if you forget a build flag in your the file *platformio.ini*. 
 <div align="center">
   <Image src="/img/telemetry-1.png" darkSrc="/img/telemetry-1.png" />
 </div>
 
 
-By default the telemetry is enable and send anonymous information to luos (only for Luos engine experience improving). To disable place the flag NOTELEMETRY in 'Platformio.ini' the same way as LUOSHAL Flag
+By default, the telemetry is enabled and send anonymous information to Luos (only for improving Luos engine experience). To disable it, place the flag `NOTELEMETRY` in *platformio.ini* the same way that the `LUOSHAL` flag.
+
 ```AsciiDoc
 ...
 
@@ -77,23 +78,24 @@ build_flags =
 ```
 
 
-###  Definition for gate tool and pipe
+###  Definition for the tools gate and pipe
 
-The same way for tools, some pre-compile definition may be use to configure Luos tools when these add in your project.
-For more information, see the script select_format_script.py in <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow"> gate tool <IconExternalLink width="10"></IconExternalLink> </a> and select_hal_script.py in <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow"> pipe <IconExternalLink width="10"></IconExternalLink> </a>
+Some pre-compiled definitions may be used to configure Luos tools when they are added in your project.
+For more information, see the script *select_format_script.py* in the <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">gate tool <IconExternalLink width="10"></IconExternalLink></a> and *select_hal_script.py* in <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">pipe tool <IconExternalLink width="10"></IconExternalLink></a>.
 
 |      Definition       |                          Description                        |         Value         |
 | :-------------------: |-----------------------------------------------------------: | :-------------------: |
-|      GATEFORMAT       | Chose the format of data send by the gate to through a pipe | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow"> Gate message format <IconExternalLink width="10"></IconExternalLink></a> file|
+|      GATEFORMAT       | Chooses the format of data sent by the gate through a pipe. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">Gate message format <IconExternalLink width="10"></IconExternalLink></a> file.
 
 |      Definition       |                                      Description                                   |         Value         |
 | :-------------------: |----------------------------------------------------------------------------------: | :-------------------: |
-|       PIPEMODE        | Choose Pipe style to send or receive information through a specific physical Layer | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow"> SERIAL/WS <IconExternalLink width="10"></IconExternalLink></a> |
-|       PIPEHAL         |             Choose Pipe HAL match a specific physical Layer with the board         | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe/SERIAL" target="_blank" rel="external nofollow"> Pipe HAL <IconExternalLink width="10"></IconExternalLink></a> | |
+|       PIPEMODE        | Chooses the pipe style to send or receive information through a specific physical layer. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">SERIAL/WS <IconExternalLink width="10"></IconExternalLink></a> |
+|       PIPEHAL         |             Chooses the pipe HAL matched to a specific physical layer with the board.       | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe/SERIAL" target="_blank" rel="external nofollow">Pipe HAL <IconExternalLink width="10"></IconExternalLink></a> | |
 
-For exemple see in project gate_serialcom the 'Platformio.ini' file
+For example, see the file *platformio.ini* in the project "gate_serialcom".
 
-Plateformio.ini project example:
+Here is a *platformio.ini* project example:
+
 ```AsciiDoc
 [env:nucleo_f072rb]
 platform = ststm32
@@ -114,7 +116,8 @@ lib_deps =
     Pipe
 ```
 
-Building project exemple:
+Building project example:
+
 <div align="center">
   <Image src="/img/telemetry-2.png" darkSrc="/img/telemetry-2.png" />
 </div>
