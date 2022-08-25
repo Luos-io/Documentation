@@ -60,11 +60,11 @@ To prevent any mistakes, unplug the USB cables from the boards before wiring.
 
 To create your network, you have to identify the pins used to perform Luos communication:
 
-| Function name | Arduino pin | STM32L432KC pin | STM32F072RB pin | STM32F401RE pin | STM32F410RB pin | STM32G431KB pin | Seeeduino XIAO pin |
-| ------------- | ----------- | --------------- | --------------- | --------------- | --------------- | --------------- | ------------------ |
-| TX            | Tx          | PA9 (D0)        | PA9 (D8)        | PB7(21)         | PB7 (21)        | PA9 (D0)        | D6                 |
-| RX            | Rx          | PA10 (D1)       | PA10 (D2)       | PB6 (D10)       | PB6 (D10)       | PA10 (D1)       | D7                 |
-| PTP           | D6          | PB5 (D12)       | PA8 (D7)        | PB5 (D5)        | PB5 (D5)        | PB5 (D12)       | D1                 |
+| Function name | Arduino pin | STM32L432KC pin | STM32F072RB pin | STM32F401RE pin | STM32F410RB pin | STM32G431KB pin | Seeeduino XIAO pin | ESP32 WROOM 32 Dev Kit|
+| ------------- | ----------- | --------------- | --------------- | --------------- | --------------- | --------------- | ------------------ | --------------------- |
+| TX            | Tx          | PA9 (D0)        | PA9 (D8)        | PB7(21)         | PB7 (21)        | PA9 (D0)        | D6                 | Tx (SD2)              |
+| RX            | Rx          | PA10 (D1)       | PA10 (D2)       | PB6 (D10)       | PB6 (D10)       | PA10 (D1)       | D7                 | Rx (SD3)              |
+| PTP           | D6          | PB5 (D12)       | PA8 (D7)        | PB5 (D5)        | PB5 (D5)        | PB5 (D12)       | D1                 | IO26                  |
 
 Below are the schematics of various boards and how to wire them:
 
@@ -121,6 +121,13 @@ Below are the schematics of various boards and how to wire them:
       </TabItem>
     </Tabs>
   </TabItem>
+  <TabItem value="ESP32 WROOM-32 DevKit">
+    <div align="center">
+      <Image
+        src="/img/get-started/get-started-3-8.png"
+        darkSrc="/img/get-started/get-started-3-8.png"
+      />
+    </div>
 </Tabs>
 
 You should now be able to wire the two boards together. From now on, we will call these boards _board 1_ and _board 2_.
