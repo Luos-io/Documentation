@@ -19,46 +19,22 @@ learn more about <a href="https://platformio.org" target="_blank">PlatformIO and
 
 Every PlatformIO project have a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#directory-options" target="_blank">basic folder project structure<IconExternalLink width="10"></IconExternalLink></a> and must have at the root of the project a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#generic-options" target="_blank">platformio.ini<IconExternalLink width="10"></IconExternalLink></a> file
 
-Checkout luos tutorial on <a href="https://www.luos.io/tutorials/pio" target="_blank">how create a Luos project with PlatformIo <IconExternalLink width="10"></IconExternalLink></a>.
+Checkout luos tutorial on <a href="https://www.luos.io/tutorials/pio" target="_blank">how create a Luos project with PlatformIO <IconExternalLink width="10"></IconExternalLink></a>.
 
 
 ## Luos configuration for 'Platformio.ini'
 
-Some pre-compile definition may be use to configure Luos engine when its add in your project. those definition will be taking care of for Luos engine library using Luos script call at building a project with Luos engine.
+Some build flags definition may be use to configure Luos engine when its add in your project. those definition will be taking care of for Luos engine library using Luos script call at building a project with Luos engine. Those definition must be set on platformio.ini
 For more information, see the script source_filter_script.py in <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow"> Luos engine <IconExternalLink width="10"></IconExternalLink> </a>.
 
 ### Definition for Luos engine Library
 
 |      Definition       |                    Description                    |         Value         |
 | :-------------------: |-------------------------------------------------: | :-------------------: |
-|       LUOSHAL         | Define HAL family to use with Luos engine library |   see Luos engine HAL |
+|       LUOSHAL         | Define HAL family to use with Luos engine library | <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> Luos HAL <IconExternalLink width="10"></IconExternalLink></a> |
 |     NOTELEMETRY       |                 Disable Telemetry                 |     On by default     |
 
-Platformio.ini project example:
-```AsciiDoc
-[env:nucleo_f072rb]
-platform = ststm32
-board = nucleo_f072rb
-framework = stm32cube
-
-build_unflags = -Os
-build_flags =
-    -include node_config.h
-    -O1
-lib_deps =
-    luos_engine
-```
-
-This project in example is Luos engine dependent. PlatformIO will download from its registry, the last version of the library Luos engine .The file "node_config.h" allowing user to configure Luos parameter and hardware definition to be add to the project.
-
-Building project exemple:
-<div align="center">
-  <Image src="/img/telemetry-1.png" darkSrc="/img/telemetry-1.png" />
-</div>
-
-You must define the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> HAL family <IconExternalLink width="10"></IconExternalLink> </a> corresponding to your MCU. see the [compatibility page](/docs/compatibility/mcu_demoboard)
-
-Add the definition of the HAL you want to use as follow:
+Every Luos project need to have a 'node_config.h' file allowing to configure Luos engine hardware dependencies and configure the library. see the [basics  concept page](/docs/luos-technology/basics/orga) for more information.
 
 Platformio.ini project example:
 ```AsciiDoc
@@ -76,13 +52,30 @@ lib_deps =
     luos_engine
 ```
 
-
-Building project exemple:
+This project in example is Luos engine dependent. PlatformIO will download from its registry, the last version of the library Luos engine .The file "node_config.h" allowing user to configure Luos parameter and hardware definition to be add to the project.
 <div align="center">
-  <Image src="/img/telemetry.png" darkSrc="/img/telemetry.png" />
+  <Image src="/img/telemetry.svg" darkSrc="/img/telemetry.svg" />
 </div>
 
+You must define the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> HAL family <IconExternalLink width="10"></IconExternalLink> </a> corresponding to your MCU. see the [compatibility page](/docs/compatibility/mcu_demoboard) to find the HAL familly you must use for your MCU. During build, if a message appears in red, a problem has occurred meaning you forget a build flag in your Platformio.ini file
+<div align="center">
+  <Image src="/img/telemetry-1.png" darkSrc="/img/telemetry-1.png" />
+</div>
+
+
 By default the telemetry is enable and send anonymous information to luos (only for Luos engine experience improving). To disable place the flag NOTELEMETRY in 'Platformio.ini' the same way as LUOSHAL Flag
+```AsciiDoc
+...
+
+build_flags =
+    -include node_config.h
+    -DLUOSHAL=STM32F0
+    -DNOTELEMETRY
+    -O1
+
+...
+```
+
 
 ###  Definition for gate tool and pipe
 
@@ -91,12 +84,12 @@ For more information, see the script select_format_script.py in <a href="https:/
 
 |      Definition       |                          Description                        |         Value         |
 | :-------------------: |-----------------------------------------------------------: | :-------------------: |
-|      GATEFORMAT       | Chose the format of data send by the gate to through a pipe |       TinyJson        |
+|      GATEFORMAT       | Chose the format of data send by the gate to through a pipe | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow"> Gate message format <IconExternalLink width="10"></IconExternalLink></a> file|
 
 |      Definition       |                                      Description                                   |         Value         |
 | :-------------------: |----------------------------------------------------------------------------------: | :-------------------: |
-|       PIPEMODE        | Choose Pipe style to send or receive information through a specific physical Layer |    SERIAL/WIFI/BLE    |
-|       PIPEHAL         |             Choose Pipe HAL match a specific physical Layer with the board         |      see pipe HAL     |
+|       PIPEMODE        | Choose Pipe style to send or receive information through a specific physical Layer | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow"> SERIAL/WS <IconExternalLink width="10"></IconExternalLink></a> |
+|       PIPEHAL         |             Choose Pipe HAL match a specific physical Layer with the board         | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe/SERIAL" target="_blank" rel="external nofollow"> Pipe HAL <IconExternalLink width="10"></IconExternalLink></a> | |
 
 For exemple see in project gate_serialcom the 'Platformio.ini' file
 
