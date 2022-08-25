@@ -211,7 +211,7 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'PlateformIo',
+          label: 'PlatformIo',
           id: 'tools/plateformio',
         },
       ],
