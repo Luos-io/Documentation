@@ -60,11 +60,11 @@ To prevent any mistakes, unplug the USB cables from the boards before wiring.
 
 To create your network, you have to identify the pins used to perform Luos communication:
 
-| Function name | Arduino pin | STM32L432KC pin | STM32F072RB pin | STM32F401RE pin | STM32F410RB pin | STM32G431KB pin |
-| ------------- | ----------- | --------------- | --------------- | --------------- | --------------- | --------------- |
-| TX            | Tx          | PA9 (D0)        | PA9 (D8)        | PB7(21)         | PB7 (21)        | PA9 (D0)        |
-| RX            | Rx          | PA10 (D1)       | PA10 (D2)       | PB6 (D10)       | PB6 (D10)       | PA10 (D1)       |
-| PTP           | D6          | PB5 (D12)       | PA8 (D7)        | PB5 (D5)        | PB5 (D5)        | PB5 (D12)       |
+| Function name | Arduino pin | STM32L432KC pin | STM32F072RB pin | STM32F401RE pin | STM32F410RB pin | STM32G431KB pin | Seeeduino XIAO pin |
+| ------------- | ----------- | --------------- | --------------- | --------------- | --------------- | --------------- | ------------------ |
+| TX            | Tx          | PA9 (D0)        | PA9 (D8)        | PB7(21)         | PB7 (21)        | PA9 (D0)        | D6                 |
+| RX            | Rx          | PA10 (D1)       | PA10 (D2)       | PB6 (D10)       | PB6 (D10)       | PA10 (D1)       | D7                 |
+| PTP           | D6          | PB5 (D12)       | PA8 (D7)        | PB5 (D5)        | PB5 (D5)        | PB5 (D12)       | D1                 |
 
 Below are the schematics of various boards and how to wire them:
 
@@ -82,6 +82,14 @@ Below are the schematics of various boards and how to wire them:
       <Image
         src="/img/get-started/get-started-3-2.png"
         darkSrc="/img/get-started/get-started-3-2-dark.png"
+      />
+    </div>
+  </TabItem>
+  <TabItem value="Seeeduino Xiao">
+    <div align="center">
+      <Image
+        src="/img/get-started/get-started-3-6_light.png"
+        darkSrc="/img/get-started/get-started-3-6-dark.png"
       />
     </div>
   </TabItem>
@@ -167,8 +175,7 @@ These lines trigger the initialization and looping execution of all the packages
     darkSrc="/img/get-started/get-started-3-6.png"
   />
 </div>
-5. Build and flash _board 1_ by clicking on the right arrow button in the bottom
-left in VS Code.
+5. Build and flash _board 1_ by clicking on the right arrow button in the bottom left in VS Code.
 
 ### Flash _board 2_
 
@@ -209,8 +216,7 @@ In order to keep using Luos engine in your MCU, `Luos_init()` and `Luos_Loop()` 
     darkSrc="/img/get-started/get-started-3-7.png"
   />
 </div>
-5. Build and flash _board 2_ by clicking on the right arrow button in the bottom
-left in VS Code.
+5. Build and flash _board 2_ by clicking on the right arrow button in the bottom left in VS Code.
 
 We are done!
 

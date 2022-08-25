@@ -49,7 +49,7 @@ function Footer() {
           />
         </Grid>
         <Grid item xs={12} md={4} lg={4} xl={4}>
-          <h1 className={styles.title}>Support us</h1>
+          <h2 className={styles.title}>Support us</h2>
           <div className="footer__bottom btn_footer">
             <GitHubButton
               href="https://github.com/luos-io"
@@ -71,7 +71,7 @@ function Footer() {
           </div>
         </Grid>
         <Grid item xs={12} md={4} lg={4} xl={4}>
-          <h1 className={styles.titleCommunity}>Join our community</h1>
+          <h2 className={styles.titleCommunity}>Join our community</h2>
           <div className={styles.joinUsContainer}>
             <a href="https://discord.gg/luos" rel="nofollow">
               <img src="/img/discord.png" className="rsLogo" alt="discord logo"></img>

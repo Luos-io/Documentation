@@ -19,9 +19,9 @@ Finding, understanding, and managing bugs on multiple boards running multiple se
 
 ## Service exclusion
 
-Luos engine includes an acknowledgment management using the `ID_ACK` target_mode. This mode guarantees the proper reception of critical messages.
+Luos engine includes an acknowledgment management using the `SERVICEIDACK` target_mode. This mode guarantees the proper reception of critical messages.
 
-If Luos fails to reach its target using ID_ACK, it will retry 10 times. If the acknowledgment still fails, the targeted service is declared excluded. Excluded services are removed from the routing table to avoid messaging from any services, preserving bandwidth for the rest of the system.
+If Luos fails to reach its target using SERVICEIDACK, it will retry 10 times. If the acknowledgment still fails, the targeted service is declared excluded. Excluded services are removed from the routing table to avoid messaging from any services, preserving bandwidth for the rest of the system.
 
 :::note
 - Gates services can report service exclusion through JSON.
@@ -44,7 +44,7 @@ This structure gives you access to several values:
 
 - `memory`: Memory statisctics information.
 - `rx_msg_stack_ratio`: Percentage of memory occupation of Rx message management tasks.
-- `luos_stack_ratio`: Percentage of memory occupation of Luos engine's tasks.
+- `engine_msg_stack_ratio`: Percentage of memory occupation of Luos engine's tasks.
 - `tx_msg_stack_ratio`: Percentage of memory occupation of Tx message management tasks.
 - `buffer_occupation_ratio`: Percentage of memory occupation of the message buffer.
 - `msg_drop_number`: Number of messages dropped due to a lack of memory (older messages are dropped to be replaced by new ones).

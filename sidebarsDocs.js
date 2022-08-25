@@ -113,6 +113,17 @@ module.exports = {
             },
             {
               type: 'doc',
+              label: 'Luos engine API',
+              id: 'api/luos-engine-api',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Compatibility',
+          items: [
+            {
+              type: 'doc',
               label: 'Commands',
               id: 'luos-technology/message/command',
             },
@@ -212,6 +223,11 @@ module.exports = {
           type: 'doc',
           label: 'JSON API',
           id: 'api/api-json',
+        },
+        {
+          type: 'doc',
+          label: 'Luos engine API',
+          id: 'api/luos-engine-api',
         },
       ],
     },
