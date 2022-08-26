@@ -55,6 +55,10 @@ Pyluos provides a set of application programming interfaces (APIs). To control y
 pyluos-shell
 ```
 
+:::caution
+When using ESP32-DevKit the serial USB is Baudrate is 115200 by default you must use the command 'pyluos-shell --baudrate 115200'
+:::
+
 This command will find the serial port of your device and mount it into a “device” object.
 
 For example:
