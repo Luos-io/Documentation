@@ -18,7 +18,6 @@ const Header = (props) => {
   const { isDarkTheme } = useColorMode();
   return (
     <div className={styles.container}>
-      <h1 style={{ display: 'none' }}>Luos is an embedded microservice orchestrator</h1>
       <Grid container>
         <Grid item md={7} className={styles.left}>
           <div className={styles.head}>
@@ -57,15 +56,15 @@ const Header = (props) => {
                 cursorColor="#BD99FF"
                 multiTextLoop={true}
                 multiText={[
-                  'an open-source project_',
-                  'an embedded microservice orchestrator_',
-                  'an embedded library_',
-                  'a distributed IPC_',
-                  'a message broker_',
-                  'an ecosystem_',
-                  'an SDK_',
-                  'a project toolset_',
-                  'a community_',
+                  'is an open-source project_',
+                  'is an embedded microservice orchestrator_',
+                  'is an embedded library_',
+                  'is a distributed IPC_',
+                  'is a message broker_',
+                  'is an ecosystem_',
+                  'is an SDK_',
+                  'is a project toolset_',
+                  'is a community_',
                 ]}
                 multiTextDelay={2000}
                 typeSpeed={100}

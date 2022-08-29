@@ -130,9 +130,9 @@ class TypeWriterEffect extends Component {
   render() {
     return (
       <div ref={this.myRef} className="react-typewriter-text-wrap">
-        <h2 style={{ ...this.props.textStyle }} className="react-typewriter-text">
+        <h1 style={{ ...this.props.textStyle }} className="react-typewriter-text">
           <span className="react-typewriter-text-luos" style={{ fontSize: '30px' }}>
-            Luos is
+            Luos
           </span>{' '}
           {this.state.text}
           <div
@@ -141,7 +141,7 @@ class TypeWriterEffect extends Component {
             }`}
             style={{ backgroundColor: `${this.props.cursorColor}` }}
           ></div>
-        </h2>
+        </h1>
       </div>
     );
   }
