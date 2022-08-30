@@ -36,8 +36,7 @@ class TypeWriterEffect extends Component {
       });
       let text = '';
       const typeSpeedDelay = new delay(this.props.typeSpeed || 120);
-      const multiTextDelay =
-        this.props.multiText && new delay(this.props.multiTextDelay || 2000);
+      const multiTextDelay = this.props.multiText && new delay(this.props.multiTextDelay || 2000);
       this.setState({
         typeSpeedDelay,
         multiTextDelay,
@@ -85,8 +84,7 @@ class TypeWriterEffect extends Component {
         this.setState({
           animate: true,
         });
-        const startDelay =
-          this.props.startDelay && new delay(this.props.startDelay);
+        const startDelay = this.props.startDelay && new delay(this.props.startDelay);
         this.setState({
           hideCursor: false,
           startDelay,
@@ -121,10 +119,7 @@ class TypeWriterEffect extends Component {
   componentWillUnmount() {
     // unsubscribe from timeouts and events
     this.props.scrollArea && typeof this.props.scrollArea == 'object'
-      ? this.props.scrollArea.removeEventListener(
-          'scroll',
-          this.animateOnScroll,
-        )
+      ? this.props.scrollArea.removeEventListener('scroll', this.animateOnScroll)
       : document.removeEventListener('scroll', this.animateOnScroll);
     this.state.startDelay && this.state.startDelay.cancel();
     this.state.eraseSpeedDelay && this.state.eraseSpeedDelay.cancel();
@@ -135,21 +130,15 @@ class TypeWriterEffect extends Component {
   render() {
     return (
       <div ref={this.myRef} className="react-typewriter-text-wrap">
-        <h1
-          style={{ ...this.props.textStyle }}
-          className="react-typewriter-text"
-        >
-          <span
-            className="react-typewriter-text-luos"
-            style={{ fontSize: '30px' }}
-          >
-            Luos is
+        <h1 style={{ ...this.props.textStyle }} className="react-typewriter-text">
+          <span className="react-typewriter-text-luos" style={{ fontSize: '30px' }}>
+            Luos
           </span>{' '}
           {this.state.text}
           <div
-            className={`react-typewriter-pointer ${
-              this.state.blink && 'add-cursor-animate'
-            } ${this.state.hideCursor ? 'hide-typing-cursor' : ''}`}
+            className={`react-typewriter-pointer ${this.state.blink && 'add-cursor-animate'} ${
+              this.state.hideCursor ? 'hide-typing-cursor' : ''
+            }`}
             style={{ backgroundColor: `${this.props.cursorColor}` }}
           ></div>
         </h1>

@@ -13,9 +13,10 @@ function BlogListPageMetadata(props) {
   const {
     siteConfig: { title: siteTitle },
   } = useDocusaurusContext();
-  const { blogDescription, blogTitle, permalink } = metadata;
-  const isBlogOnlyMode = permalink === '/';
-  const title = isBlogOnlyMode ? siteTitle : blogTitle;
+
+  const title = 'Luos blog: embedded, edge, microservices and much more...';
+  const blogDescription =
+    'Get information and keep an eye on many topics: embedded and edge systems, microservices, robots, electronics, cyber-physical systems etc...';
   return (
     <>
       <PageMetadata title={title} description={blogDescription} />

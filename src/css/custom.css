@@ -667,6 +667,7 @@ html[data-theme='dark'] .footer {
   font-family: 'Roboto Mono';
   font-size: 30px !important;
   margin-bottom: 15px !important;
+  font-weight: 700 !important;
 }
 
 .MuiRadio-root {

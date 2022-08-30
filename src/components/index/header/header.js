@@ -56,15 +56,15 @@ const Header = (props) => {
                 cursorColor="#BD99FF"
                 multiTextLoop={true}
                 multiText={[
-                  'an open-source project_',
-                  'an embedded microservice orchestrator_',
-                  'an embedded library_',
-                  'a distributed IPC_',
-                  'a message broker_',
-                  'an ecosystem_',
-                  'an SDK_',
-                  'a project toolset_',
-                  'a community_',
+                  'is an open-source project_',
+                  'is an embedded microservice orchestrator_',
+                  'is an embedded library_',
+                  'is a distributed IPC_',
+                  'is a message broker_',
+                  'is an ecosystem_',
+                  'is an SDK_',
+                  'is a project toolset_',
+                  'is a community_',
                 ]}
                 multiTextDelay={2000}
                 typeSpeed={100}

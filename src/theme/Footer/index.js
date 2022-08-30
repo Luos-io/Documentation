@@ -74,19 +74,39 @@ function Footer() {
           <h2 className={styles.titleCommunity}>Join our community</h2>
           <div className={styles.joinUsContainer}>
             <a href="https://discord.gg/luos" rel="nofollow">
-              <img src="/img/discord.png" className="rsLogo" alt="discord logo"></img>
+              <img
+                src="/img/discord.svg"
+                className="rsLogo"
+                loading="lazy"
+                alt="discord logo"
+              ></img>
             </a>
             <a href="https://www.reddit.com/r/Luos/" rel="nofollow">
-              <img src="/img/reddit.png" className="rsLogo" alt="reddit logo"></img>
+              <img src="/img/reddit.svg" className="rsLogo" loading="lazy" alt="reddit logo"></img>
             </a>
             <a href="https://twitter.com/Luos_io" rel="nofollow">
-              <img src="/img/twitter.png" className="rsLogo" alt="twitter logo"></img>
+              <img
+                src="/img/twitter.svg"
+                className="rsLogo"
+                loading="lazy"
+                alt="twitter logo"
+              ></img>
             </a>
             <a href="https://www.linkedin.com/company/luos" rel="nofollow">
-              <img src="/img/linkedin.png" className="rsLogo" alt="linkedin logo"></img>
+              <img
+                src="/img/linkedin.svg"
+                className="rsLogo"
+                loading="lazy"
+                alt="linkedin logo"
+              ></img>
             </a>
             <a href="https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA" rel="nofollow">
-              <img src="/img/youtube.png" className="rsLogo" alt="youtube logo"></img>
+              <img
+                src="/img/youtube.svg"
+                className="rsLogo"
+                loading="lazy"
+                alt="youtube logo"
+              ></img>
             </a>
           </div>
         </Grid>
