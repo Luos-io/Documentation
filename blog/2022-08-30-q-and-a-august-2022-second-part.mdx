@@ -1,0 +1,163 @@
+---
+title: 'Are microservices optimized for edge and embedded? Q&A live'
+description: We answered some important questions about drivers, Luos, embedded, microservices, MCU, CPU, nodes, sensors and motors.
+slug: are-microservices-optimized-for-edge-and-embedded-q-and-a
+authors:
+  - name: Nicolas Rabault
+    title: CEO @ Luos
+    url: https://github.com/nicolas-rabault
+    image_url: https://github.com/nicolas-rabault.png
+tags: [Q&A, embedded, edge]
+image: /img/blog/q-and-a-session-Luos-august-2022-second-part.jpg
+hide_table_of_contents: false
+date: 2022-08-30T12:00
+---
+
+![Are microservices optimized for edge and embedded? Q&A live](/img/blog/q-and-a-session-Luos-august-2022-second-part.jpg)
+
+This is the second part of our article concerning our latest Q&A live session on Discord. **Please read the first part before the following.**
+
+<!--truncate-->
+
+<h2>Do you plan to develop something to share the drivers with others?</h2>
+
+Previously, I explained the differences between a [driver service](/docs/luos-technology/services/service-api#drivers-guidelines) and an [application service](/docs/luos-technology/services/service-api#apps-guidelines). 
+
+The idea is that an application service doesn't rely on any hardware so that you can move it anywhere; you can copy-paste someone else's project, which will work the same way. This application will look at some resources available on the device and use them if they are available.
+
+You can discover the bike alarm demonstration on <a href="https://www.youtube.com/watch?v=kTr-pwIrRqw" rel="external nofollow">our youtube channel</a>. This video uses an application. So if you copy-paste the alarm application, this application will find a way to create an alarm on your device.
+
+When you develop your drivers, you will have some hardware specificities, and your drivers will only work on **one specific electronic board** or **one specific configuration** of a given board. It's not so easy to share a **driver**, and it's easier to share an **application**.
+
+But you can share a driver on the application. We call it a [Luos package](/docs/luos-technology/package).
+
+**The Luos package** is a folder with some code on it, and this code will have one or multiple services. You will be able to copy-paste this folder from one project to another one.
+
+This is where we are today. You need to copy-paste it from one project to another, and at the beginning of the next year, we plan to work on something called **Registry**.
+
+The idea is to give you some dependencies, such as you can do with <a href="https://platformio.org/" rel="external nofollow">PlatformIO</a>. For example, you can say: "I want to use this driver service on this application service."
+
+On the **Registry**, you can download the service and modify your code to integrate it directly into your project. This will rely on **PlatformIO**, and we are currently working on this subject. 
+
+Ultimately, we plan to develop a website again based on **PlatformIO Registry**, allowing us to display all the Luos packages available and created by the entire community. 
+
+This will allow anyone to **reuse the work of others** extremely easily and make it work on any boards, anywhere on the device.
+
+<h2>Are microservices optimized for embedded? What is the memory and CPU overhead of Luos?</h2>
+
+This is a complex question because it depends a lot on how much data you will pass through Luos.
+
+Luos have been developed to work on **extremely small configurations**. 
+>Luos can work on small 8-bits microcontrollers with something like a 30ko of flash on a 2ko of RAM. Luos allow you to master all the memory conceptions you will have.
+
+We have a lot of different buffering: you can size the message allocation buffer, and you can directly size it. Luos don't do any dynamic allocation.
+
+In-kind of memory, you will have perfect control of how much RAM Luos can use. We also have some statistics allowing you to **analyze** if Luos is comfortable or not.
+
+You will have some ideas about optimizing it in terms of memory consumption and CPU consumption. It's scaling depending on the number of information you want to transmit between the different microcontrollers you have on your device.
+
+>Luos mostly runs codes when some information is transmitted, and if you don't transmit any information, Luos don't do anything.
+
+A lot of things are started directly from the interrupt. When you receive a [message](/docs/luos-technology/message), there will be an interruption, and Luos will create some jobs. These will be in the Luos loop you are running on your system.
+
+If you don't have any interruption, you don't have any Luos tasks, and Luos don't do anything. This is the main idea. 
+
+The idea is to have a program that uses the **minimum CPU time possible** and depends on how many messages you transmit.
+
+<h2>Information about Luos</h2>
+
+We are working on releasing the new revision, which is **2.5.3**, which will be released in a few hours. This new release is nothing game-changing because this is like a bug-fix release. We just improved some workflow on <a href="https://github.com/Luos-io/luos_engine" rel="external nofollow">Github</a>, allowing us to accelerate some real things. We have bug fixes some of you guys just showed us.
+
+We have added some examples for [ESP32](/tutorials/esp), some of the [gate](/docs/tools/gate) web circuit examples we are working on right now, and we don't have something compiling already, but this will be integrated into the next release which will be probably the **2.6.0**.
+
+<h2>
+Do Luos have another way to update nodes from any node dynamically? If the update fails, can it affect other nodes?
+</h2>
+
+**Luos engine** access to a communication way which is the [network](/docs/luos-technology/node/topology), when you have one way to communicate, which is called [ROBUS](/docs/luos-technology/node/luos-hal#robus-hal), and this ROBUS thing uses a half-duplex serial interface to broadcast the information to all the [nodes](/docs/luos-technology/node) available on the system.
+
+You can have as many sensors, motors, batteries, and drivers as you want on the boards, and all those boards will be able to communicate in a **multi-master way** to any other one.
+
+Concerning the update capabilities of Luos, because Luos access to the network and we also have access to the flash (so basically, we need to have that two access to make Luos run), you can compare Luos as [a bootloader](/docs/tools/boot). 
+
+When you do that, Luos provide you with a binary. You will be able to install where you want on your microcontroller and when at the boot **this bootloader** will start, you will be able to update the firmware using the Luos network.
+
+To do that, you will have to use a gate somewhere on your network allowing you to link a computer with the existing network on the different nodes of your device.
+
+After that, when you have this **gate**, you will have access to all the bootloaders of your device's nodes, and you can create a script to flash all the boards you have on the device. These bootloaders have some security allowing you to be **safe** even if the firmware you just uploaded to it is **corrupted**.
+
+If you have a crush on this firmware, Luos will be able to see that this firmware doesn't trend properly, and you will fall back on the bootloader. Even if you have a **complex situation** (where sometimes the applications crash and you want to update it), you can force the erasing of this application and go back to the **bootloader**.
+
+We don't have a way to block this bootloader completely right now, we have a lot of things to improve on this side, and this is something that Victoria <a href="https://discord.gg/luos" rel="external nofollow">(Vik#1501 on Luos Discord)</a> will work on during the few weeks coming.
+
+We will also have another thing that is kind of challenging. Right now, Luos is an early technology. It is a state-of-the-art technology, so we have a lot of things moving around every day, and it's difficult for us to keep all the revisions compatible. 
+
+It's still a little bit complex for us to do that, so to patch this, Viktoria is working on an application that can update the bootloader, allowing you to upgrade the Bluetooth directly into your board.
+
+This is something that will probably appear in a few weeks too.
+
+Finally, there is something else that is extremely important we plan to work on soon.
+
+Some microcontrollers provide multiple flash banks, allowing you to **have virtually two banks** that you can swap from one to another. This is interesting because we could flash the firmware on one bank, and if this flash fails or if this application fails, it just falls back into the other flash. 
+>Imagine you have one working firmware and want to upload a new version, and you may put it on the second one. If this one fails, you fall back and run the previous revision. This is like a security system we could use to prevent these problems.
+
+We have some users working in the **nuclear industry**, and we already have questions such as what happens if a nuclear particle just hits some parts of the flash and corrupts completing the program. 
+
+<h3>How to deal with it using the bootloader and Luos?</h3>
+
+If this kind of thing happens, your program will probably crash, and you will have a hard-fought on your project. You have to take care about when you get this hard-fought interruption. 
+We have a **Luos function** that allows you to call and say: "This program is dead, and I don't want to use it anymore." 
+
+Then you will go back to **bootloader mode**, and you will be able just to refresh your application as you want to.
+
+<h2>What is Luos' business model?</h2>
+
+This is a really good question, we are a company, but our objective is to **provide free tools for developers.**
+
+This vision will allow them to get rid of complexity and to be able to have the **flexibility and agility** that we have in software in the embedded world.
+
+>The main objective of Luos is to make the hardware as agile as the software. 
+
+Because we are a company, we will have to make money one day.
+
+We think this method is the **best way to grow this technology worldwide** and allow anyone to use it without any bugs.
+
+This vision takes money and a lot of time. We are already in a team of nine engineers at Luos, and we need money to make those engineers work on the library.
+
+About our business model, **Luos engine technology** will be free and will remain **free always**. You can use it for free, and there will never be payable for any kind.
+
+You can use it for free in any project without any constraints. We start working on some **additional tools** that will be fast tools allowing developers to be more efficient in using Luos. I already mentioned some of them. For example, the **Registry** will be part of these paying tools.
+
+We already have **some developers** that want to develop things and sell those programs or electronic boards (for example, motors or sensors with Luos inside directly).
+
+We will allow them to sell it directly into this Registry, allowing any developer to buy it through the Luos platform. This guarantees that this motor or this sensor will be **plug-and-play** directly into your device. This is one of the tools.
+
+We're also working on something we call **Luos inspector**, <a href="https://app.luos.io/" rel="external nofollow">a SAAS tool</a>. These web tools will allow you to inspect what's happening on your device, and the idea is to have a timeline. We can tag and log all the events anywhere on your device at a nanosecond scale.
+
+This will allow you to understand and visualize what's happening on your device. You can make it like a trace allowing you to have an offline device running somewhere, and when there is a crash, we save a file. You can download this file and inspect it directly in this web tool.
+
+So finally, our business model will rely on a SAAS model. We'll provide some web tools on our website, allowing you to accelerate your product development using Luos.
+
+<h2>Call for contributions</h2>
+
+Simon <a href="https://discord.gg/luos" rel="external nofollow">(Simon#2786 on Luos Discord)</a> recently opened some calls for contributions. We add it on <a href="https://github.com/Luos-io/luos_engine/blob/main/CONTRIBUTING.md" rel="external nofollow">our Github page</a>, you can go to the <a href="https://github.com/Luos-io/luos_engine/issues" rel="external nofollow">issues</a>, and then you will find the label "help wanted." You will see all the issues we have right now, and you can have a look at them and contribute to them.
+
+We also have like the good first issue tag. That means that any users (even those who never use Luos but just want to help this open source initiative) can start. This is kind of easy to fix bugs and improvements. We also have [a documentation page](/docs/contribute-to-luos) about it.
+
+If you want to continue the discussions, don't hesitate to <a href="https://discord.gg/luos" rel="external nofollow">join our Discord community</a>, a Help channel, and many developers are waiting for you!
+
+We will continue to write this kind of transcription to propose all the responses you need to start using Luos. Follow us on <a href="https://www.linkedin.com/company/luos" rel="external nofollow">social media</a> to subscribe to the upcoming Q&A session.
+
+If you would like to see or review the Q&A video, here is the recording:
+
+<div align="center">
+  <iframe
+    className="player_iframe"
+    src="https://www.youtube.com/embed/l25YONqrzPk"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+  ></iframe>
+</div>
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get started with Luos
+</a>
