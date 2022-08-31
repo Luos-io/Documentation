@@ -120,10 +120,6 @@ You can now flash your board: connect it to your PC with a USB cable and upload 
 PlatformIO will build the firmware and flash the board. Take a look at the terminal to observe each step thet PlatformIO follows. A success message should appear at the end.
 
 Once the board is flashed, it means the compiled binary you created have been copied into the board and ran, and you should see the LED blinking on your board.
-:::caution
-Some board in this get started may not have a LED built in on the board, so you must connect a external LED between the specified Pin and GND
-ex for ESP32-DevKit you must connect a LED and a resistor between IO18 and GND (See part3 for Hardware specification)
-:::
 
 <div align="center">
   <Image
@@ -131,6 +127,11 @@ ex for ESP32-DevKit you must connect a LED and a resistor between IO18 and GND (
     darkSrc="/img/get-started/get-started-1-6.png"
   />
 </div>
+
+:::caution
+Some boards in this Get started may not have a LED built in on the board, so you must connect an external LED between the specified pin and the GND pin.
+E.g. for an ESP32-DevKit, you must connect a LED and a resistor between IO18 and GND (see the [Get started Part 3](/tutorials/get-started/get-started3) for hardware specification).
+:::
 
 :::tip
 In order to make this step to work, you may need to install the USB driver related to your board on your computer.
