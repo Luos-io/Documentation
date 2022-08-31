@@ -32,7 +32,7 @@ My name is Nicolas Rabault. I'm CEO at Luos.
 
 Luos was basically the student project I chose 15 years ago, and today it has become a company with an open source technology. At Luos, we aim to provide a technology allowing developers to develop agile devices in the embedded world. We provide a microservices embedded systems orchestrator called Luos engine.
 
-<h2>What arw the differences or similarities between Luos and an embedded OS?</h2>
+<h2>What are the differences or similarities between Luos and an embedded OS?</h2>
 
 Luos is not an operating system. This technology allows the developers to **encapsulate any embedded system features** into something we call [services](/docs/luos-technology/services). 
 
@@ -125,21 +125,23 @@ The only difference is the path to the information, which is the [Luos network](
 
 *From Alan C.Assis (Espressif, Brasil): "Basically, my main idea was to base it on your native initial part and get it running on the <a href="https://fr.wikipedia.org/wiki/NuttX" rel="external nofollow">Nuttx</a>. You can imagine Nuttx like a small Linux. You can run Nuttx on many boards, like any ESP32 board or the RaspberryPico board. There are more than 200 supported boards in the mainline, some very small, but there are also some big boards with powerful processors like IMX6. The idea is to run these rules like an application to serve some basic information from the board. For example, to send a temperature, accelerometer, or another sensor device. I suppose it will be possible to do that."*
 
-Luos is using something we call "HAL": [hardware attraction layer](/docs/luos-technology/node/luos-hal). The idea is to indicate to Luos how to use the hardware Luos is running on. Luos will be able to use this interface to access the network to use the memory through different paths and to the timers; for example, Luos needs to work properly.
+Luos uses something we call "HAL":  [hardware attraction layer](/docs/luos-technology/node/luos-hal). The idea is to tell Luos how to use the hardware it is running on. Luos will be able to use this interface to access the network, memory or timers for example.
 
 Yes, Luos could use Nuttx as an HAL for Luos. We could access the physical resources available on the board using POSIX interfaces. This could allow Luos to access all the boards supported by Nuttx.
 
-Embedded system developers didn't care previously about the project's API. We think that embedded system engineers' minds are moving to use this kind of standard because everyone is using it. It allows there to create developments that will be reusable extremely more easily.
+Embedded system developers didn't use to care about a project's API. But we think that today their points of view are evolving toward using this kind of standards, because everyone is using it. It allows them to create developments that will be reusable extremely more easily.
 
-Historically Luos were thought to work for bare metal applications. That's why we don't have a lot of usages, use cases, and examples using a real-time operating system.
+Historically, Luos was thought to work for bare metal applications only. That is why we don't have a lot of usages, use cases, and examples using a real-time operating system.
 
-This is something new for us, and we just did an experiment using [FreeRTOS](/tutorials/freertos/intro) a few months ago, and that was easy for us to create something working with FreeRTOS. 
+We did an experiment using [FreeRTOS](/tutorials/freertos/intro) just a few months ago: it that was easy for us to adapt it to work with FreeRTOS. 
 
-Luos was ready to multithreading. This is something new to us, and we plan to develop a lot of support for different kinds of real-time operating systems in the future, so NuttX is on top of the list right now, thanks to Alan. We will work on this kind of subject during the coming months.
+Luos was then ready to multithreading. Although this is something new to us, we plan to develop a lot of support for different kinds of real-time operating systems in the future, so NuttX is on top of the list right now, thanks to Alan. We will work on this kind of subject during the coming months.
+
+<hr />
 
 We have divided this article into **two parts** to make it more agreeable for reading. 
 
-If you want to discover our development roadmap concerning drivers, if microservices are for the embedded world, some methods and technics to upgrade nodes more easily, what's the business model of Luos, and some information concerning the call for contributions: read our second article.
+If you want to discover our development roadmap concerning drivers, find out if microservices are for the embedded world, know some methods and technics to upgrade nodes more easily, learn about the business model of Luos, or some information concerning the call for contributions: read our second article.
 
 <a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
   Read our second article
