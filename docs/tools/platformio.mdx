@@ -6,31 +6,32 @@ description: The gate is a major tool of the Luos ecosystem.
 import { customFields } from '/docusaurus.config.js';
 import Tooltip from '@site/src/components/Tooltip.js';
 import Image from '@site/src/components/Images.js';
+import IconExternalLink from "@theme/IconExternalLink";
 
 # PlatformIO
 
 ## What is PlatformIO?
 
-PlatformIO is user-friendly and extensible integrated development environment with a set of professional development instruments, compilers and debuggers. PlatformIO provides modern and powerful features to simplify the creation and delivery of embedded products.
+PlatformIO is a user-friendly and extensible integrated development environment with a set of professional development instruments, compilers and debuggers. PlatformIO provides modern and powerful features to simplify the creation and delivery of embedded products.
 That is the reason why Luos uses PlatformIO's project structure for its examples, allowing users to use and share easily services and developments on a unified environment. Also, Luos engine and some tools like the [gate](/docs/tools/gate) or the [inspector](/docs/tools/inspector) are available in the PlatformIO's registry. This registry allows user to link directly a project and a library, like Luos engine, by including dependencies in the configuration project file called _platformio.ini_.
-Learn more about <a href="https://platformio.org" target="_blank">PlatformIO and how to install it in VSCode <IconExternalLink width="10"/></a>.
+Learn more about <a href="https://platformio.org" target="_blank">PlatformIO and how to install it in VSCode <IconExternalLink width="10" /></a>.
 
 ## PlatformIO's project structure
 
-Every PlatformIO's project has a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#directory-options" target="_blank">basic folder project structure<IconExternalLink width="10"/></a> and must have at the root of the project the file <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#generic-options" target="_blank">_platformio.ini_ <IconExternalLink width="10"/></a>.
+Every PlatformIO's project has a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#directory-options" target="_blank">basic folder project structure<IconExternalLink width="10"/></a> and must have at the root of the project the file <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#generic-options" target="_blank">_platformio.ini_ <IconExternalLink width="10" /></a>.
 
-Checkout the Luos tutorial on <a href="https://www.luos.io/tutorials/pio" target="_blank">how to create a Luos project with PlatformIO <IconExternalLink width="10"/></a>.
+Checkout the Luos tutorial on <a href="https://www.luos.io/tutorials/pio" target="_blank">how to create a Luos project with PlatformIO <IconExternalLink width="10" /></a>.
 
 ## Luos configuration for _platformio.ini_
 
 Some build flags definition may be used to configure Luos engine when it is added in your project. Those definitions will take care of the Luos engine library by using a Luos script called when building a project with Luos engine. Those definitions must be set in _platformio.ini_.
-For more information, see the script _source_filter_script.py_ in <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow">Luos engine <IconExternalLink width="10"/></a>.
+For more information, see the script _source_filter_script.py_ in <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow">Luos engine <IconExternalLink width="10" /></a>.
 
 ### Definition for Luos engine Library
 
 | Definition  |                                            Description |                                                                           Value                                                                            |
 | :---------: | -----------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|   LUOSHAL   | Defines the HAL family to use with Luos engine library | <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> Luos HAL <IconExternalLink width="10"/></a> |
+|   LUOSHAL   | Defines the HAL family to use with Luos engine library | <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> Luos HAL <IconExternalLink width="10" /></a> |
 | NOTELEMETRY |                                     Disables telemetry |                                                                       On by default                                                                        |
 
 Every Luos project needs to have a _node_config.h_ file allowing to configure Luos engine's hardware dependencies and configure the library. See the [basics concept page](/docs/luos-technology/basics/orga) for more information.
@@ -58,7 +59,7 @@ This project in the examples is Luos engine dependent. PlatformIO will download 
   <Image src="/img/telemetry.svg" darkSrc="/img/telemetry.svg" />
 </div>
 
-You must define the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">HAL family <IconExternalLink width="10"/></a> corresponding to your MCU. See the [compatibility page](/docs/compatibility/mcu_demoboard) to find the HAL family you must use for your MCU. During the build, a message appearing in red means a problem has occurred. It happens if you forget a build flag in your the file _platformio.ini_.
+You must define the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">HAL family <IconExternalLink width="10" /></a> corresponding to your MCU. See the [compatibility page](/docs/compatibility/mcu_demoboard) to find the HAL family you must use for your MCU. During the build, a message appearing in red means a problem has occurred. It happens if you forget a build flag in your the file _platformio.ini_.
 
 <div align="center">
   <Image src="/img/telemetry-1.png" darkSrc="/img/telemetry-1.png" />
@@ -81,16 +82,16 @@ build_flags =
 ### Definition for the tools gate and pipe
 
 Some pre-compiled definitions may be used to configure Luos tools when they are added in your project.
-For more information, see the script _select_format_script.py_ in the <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">gate tool <IconExternalLink width="10"/></a> and _select_hal_script.py_ in <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">pipe tool <IconExternalLink width="10"/></a>.
+For more information, see the script _select_format_script.py_ in the <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">gate tool <IconExternalLink width="10" /></a> and _select_hal_script.py_ in the <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">pipe tool <IconExternalLink width="10" /></a>.
 
 | Definition |                                                 Description |                                                                                       Value                                                                                        |
 | :--------: | ----------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| GATEFORMAT | Chooses the format of data sent by the gate through a pipe. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">Gate message format <IconExternalLink width="10"/></a> file. |
+| GATEFORMAT | Chooses the format of data sent by the gate through a pipe. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">Gate message format <IconExternalLink width="10" /></a> file. |
 
 | Definition |                                                                              Description |                                                                                  Value                                                                                   |
 | :--------: | ---------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | --- |
-|  PIPEMODE  | Chooses the pipe style to send or receive information through a specific physical layer. |    <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">SERIAL/WS <IconExternalLink width="10"/></a>    |
-|  PIPEHAL   |                Chooses the pipe HAL matched to a specific physical layer with the board. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe/SERIAL" target="_blank" rel="external nofollow">Pipe HAL <IconExternalLink width="10"/></a> |     |
+|  PIPEMODE  | Chooses the pipe style to send or receive information through a specific physical layer. |    <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">SERIAL/WS <IconExternalLink width="10" /></a>    |
+|  PIPEHAL   |                Chooses the pipe HAL matched to a specific physical layer with the board. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe/SERIAL" target="_blank" rel="external nofollow">Pipe HAL <IconExternalLink width="10" /></a> |     |
 
 For example, see the file _platformio.ini_ in the project "gate_serialcom".
 
