@@ -26,10 +26,10 @@
     ]
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.21",
-    "@docusaurus/plugin-client-redirects": "^2.0.0-beta.21",
-    "@docusaurus/plugin-google-analytics": "^2.0.0-beta.21",
-    "@docusaurus/preset-classic": "^2.0.0-beta.21",
+    "@docusaurus/core": "2.0.0-beta.21",
+    "@docusaurus/plugin-client-redirects": "2.0.0-beta.21",
+    "@docusaurus/plugin-google-analytics": "2.0.0-beta.21",
+    "@docusaurus/preset-classic": "2.0.0-beta.21",
     "@emailjs/browser": "^3.2.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -49,7 +49,7 @@
     "react-material-ui-carousel": "^3.4.2"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.21",
+    "@docusaurus/module-type-aliases": "2.0.0-beta.21",
     "@tsconfig/docusaurus": "^1.0.6",
     "@types/react": "^17.0.45",
     "@types/react-helmet": "^6.1.5",
