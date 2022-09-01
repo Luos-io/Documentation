@@ -22,7 +22,6 @@ This page explains how to begin your journey through contribution.
 
 The first step is to read [Luos's contribution guidelines](https://github.com/Luos-io/luos_engine/blob/main/CONTRIBUTING.md) to discover the basics and the different layers of contribution.
 
-
 ## Issues and PR
 
 After this reading, the next step is to get familiar with the [workflow](https://docs.github.com/en/get-started/quickstart/github-flow) we use with GitHub. Basically, it is about GitHub's **issues** and **pull requests**.
@@ -89,7 +88,12 @@ The issues and PR are tagged with various labels that help filtering during a se
 | <Image src="/img/label-good-first-issue-light.png" darkSrc="/img/label-good-first-issue-dark.png" height="20" /> | This label is for issues we consider as easy, and that are good to work on if you want to begin your journey as a contributor. |
 | <Image src="/img/label-advanced-light.png" darkSrc="/img/label-advanced-dark.png" height="20" /> | The advanced label is for more complicated issues that will require advanced skills. |
 
-## Luos contribution project
+## Contribute without coding
+
+As explained in the [Luos's contribution guidelines](https://github.com/Luos-io/luos_engine/blob/main/CONTRIBUTING.md), some contributions such as giving a GitHub star or reporting a typo don't require to know how to code. Each page of the documentation has a small message at its bottom inviting to discuss about any feedback, either by connecting to the Luos community on Discord or by opening a new issue on GitHub.
+
+
+## Luos contribution project on GitHub
 
 The <a href="https://github.com/orgs/Luos-io/projects/21" target ="_blank">Luos contribution project</a> is a cross-repository <a href="https://github.com/orgs/Luos-io/projects/21" target ="_blank">GitHub project</a> that aims to list every issues and PR in all the public repository of Luos. 
 
@@ -98,7 +102,6 @@ The <a href="https://github.com/orgs/Luos-io/projects/21" target ="_blank">Luos 
 You can find the list of all issues with `help wanted` label on the first tab to help you find where the help of the community is the most needed. 
 
 The other tabs list all the issues, PR, and contributors of Luos. 
-
 
 ## Content rules
 
@@ -127,3 +130,7 @@ Result:
 - [ ] Following that fashion, anything that is owned by "Luos engine" implies that we must use 's as stated in the standard English rule, to show the possessive case, e.g. "Luos engine's API".
 - [ ] The names pipe, gate, inspector, sniffer, app or application, driver, etc. have a lower case and can be refered with the determiner the. E.g.: The inspector.
 
+## HAL contribution: porting Luos on a microcontroller
+
+Some users want to adapt the Hardware Abstraction Layer (HAL) to the microcontrollers that are not supported yet. It can be done by [requesting a new porting in a GitHub issue](https://github.com/Luos-io/luos_engine/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+), or through contribution: a [Luos HAL template](https://github.com/Luos-io/luos_engine/tree/main/engine/HAL/template) and a [Robus HAL template](https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL/) are available to detail the functions and the important characteristics that must be followed to achieve a porting.
+If you adapt the HAL to your need, it will be greatly appreciated if you share your work with the community by creating an issue and a PR.
