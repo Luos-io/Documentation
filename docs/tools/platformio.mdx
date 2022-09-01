@@ -24,98 +24,69 @@ Checkout the Luos tutorial on <a href="https://www.luos.io/tutorials/pio" target
 
 ## Luos configuration for _platformio.ini_
 
-Some build flags definition may be used to configure Luos engine when it is added in your project. Those definitions will take care of the Luos engine library by using a Luos script called when building a project with Luos engine. Those definitions must be set in _platformio.ini_.
-For more information, see the script _source_filter_script.py_ in <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow">Luos engine <IconExternalLink width="10" /></a>.
+With Platformio, Luos libraries uses script before compilation to select and include the code folder depending to your needs.
 
-### Definition for Luos engine Library
+Configuration parameters need to be equal to the folder name you want to use.
+Some `build_flags` definition may be added to your _platformio.ini_ file to configure those scripts.
 
-| Definition |                        Description                        |                        Value                        |
-| :--------: | --------------------------------------------------------: | :-------------------------------------------------: |
-|  LUOSHAL   |   Defines the HAL family to use with Luos engine library  | <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> Luos HAL <IconExternalLink width="10" /></a> |
-| NOTELEMETRY |                 Disables telemetry                       |                    On by default                    |
-
-- HAL value :
-You must define the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">HAL family <IconExternalLink width="10" /></a> corresponding to your MCU. See the [compatibility page](/docs/compatibility/mcu_demoboard) to find the HAL family you must use for your MCU. During the build, a message appearing in red means a problem has occurred. It happens if you forget a build flag in your the file _platformio.ini_.
-
-- Telemetry value :
-By default, the telemetry is enabled and send anonymous information to Luos (only for improving Luos engine experience). To disable it, place the flag `NOTELEMETRY` in _platformio.ini_ the same way that the `LUOSHAL` flag. When telemetry message appearing in red means its disable.
-
-You must add this in your plateformio.ini like this :
+Build flags examples :
 ```AsciiDoc
-...
-
-build_flags =
-    -DLUOSHAL
-    -DNOTELEMETRY
-
-...
-```
-
-Here is a _platformio.ini_ project example:
-
-```AsciiDoc
-[env:nucleo_f072rb]
-platform = ststm32
-board = nucleo_f072rb
-framework = stm32cube
-
-build_unflags = -Os
-build_flags =
-    -include node_config.h
-    -DLUOSHAL=STM32F0
-    -O1
-lib_deps =
-    luos_engine
-```
-
-Because this example is Luos engine dependent, PlatformIO will download the last version of the Luos engine library from its registry. Every Luos project needs to have a _node_config.h_ file allowing to configure Luos engine's hardware dependencies and configure the library. See the [basics concept page](/docs/luos-technology/basics/orga) for more information.
-
-Here is the result of a good configuration of Luos engine during compilation:
-
-<div align="center">
-  <Image src="/img/telemetry.png" darkSrc="/img/telemetry.png" />
-</div>
-
-### Definition for the tools gate and pipe
-
-Some configuration definitions used by a script before pre-compilation may be used to configure Luos tools when they are added in your project.
-For more information, see the script _select_format_script.py_ in the <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">gate tool <IconExternalLink width="10" /></a> and _select_hal_script.py_ in the <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">pipe tool <IconExternalLink width="10" /></a>.
-
-| Definition |                        Description                        |                        Value                        |
-| :--------: | --------------------------------------------------------: | :-------------------------------------------------: |
-| GATEFORMAT | Chooses the format of data sent by the gate through a pipe. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">Gate message format <IconExternalLink width="10" /></a>. |
-
-| Definition |                        Description                        |                        Value                        |
-| :--------: | --------------------------------------------------------: | :-------------------------------------------------: |
-|  PIPEMODE  | Chooses the pipe style to send or receive information through a specific physical layer. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">SERIAL/WS <IconExternalLink width="10" /></a> |
-|  PIPEHAL   | Chooses the pipe HAL matched to a specific physical layer with the board. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe/SERIAL" target="_blank" rel="external nofollow">Pipe HAL <IconExternalLink width="10" /></a> |
-
-For example, see the file _platformio.ini_ in the project "gate_serialcom".
-
-Here is a _platformio.ini_ project example:
-
-```AsciiDoc
-[env:nucleo_f072rb]
-platform = ststm32
-board = nucleo_f072rb
-framework = stm32cube
-
-build_unflags = -Os
 build_flags =
     -include node_config.h
     -D GATEFORMAT=TinyJSON
-    -DLUOSHAL=STM32F0
+    -D LUOSHAL=STM32F0
     -D PIPEMODE=SERIAL
     -D PIPEHAL=NUCLEO-F0
-    -O1
 lib_deps =
     luos_engine
     Gate
     Pipe
 ```
+:::caution
+Every Luos project needs to have a _node_config.h_ file allowing to configure hardware dependencies and configure the libraries. See the [basics concept page](/docs/luos-technology/basics/orga) for more information.
+:::
 
-Building project example:
-
+A good configuration look like this :
 <div align="center">
   <Image src="/img/telemetry-2.png" darkSrc="/img/telemetry-2.png" />
 </div>
+
+During the build, a message appearing in red means a problem has occurred except for telemetry configuration.
+
+### Configuration for Luos engine Library
+
+| Definition |                        Description                        |                        Value                        |     flag example   |
+| :--------: | --------------------------------------------------------: | :-------------------------------------------------: | :----------------: |
+|  LUOSHAL   | Defines the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">HAL family <IconExternalLink width="10" /></a> to use depending on your MCU. | <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> Luos engine HAL <IconExternalLink width="10" /></a> | `-D LUOSHAL=ATSAMD21_ARDUINO` |
+| NOTELEMETRY |                 Disables telemetry                       |                    On by default                    | `-D NOTELEMETRY` to disable telemetry |
+
+:::info
+By default, the telemetry is enabled and send anonymous information to Luos maintainers. These information are only used to improve Luos engine experience.
+
+When telemetry message is appearing in red, this means its disable but compilation will run properly.
+:::
+
+:::info
+For more information, see the <a href="https://github.com/Luos-io/luos_engine/blob/main/source_filter_script.py" target="_blank" rel="external nofollow">_source_filter_script.py_<IconExternalLink width="10" /></a>.
+:::
+
+### Configuration for gate
+
+| Definition |                        Description                        |                        Value                        |     flag example   |
+| :--------: | --------------------------------------------------------: | :-------------------------------------------------: | :----------------: |
+| GATEFORMAT | Chooses the format of data sent by the gate through a pipe. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">Available folder names <IconExternalLink width="10" /></a>. | `-D GATEFORMAT=TinyJSON` |
+
+:::info
+For more information, see <a href="https://github.com/Luos-io/luos_engine/blob/main/tool_services/gate/select_format_script.py" target="_blank" rel="external nofollow">_select_format_script.py_<IconExternalLink width="10" /></a>.
+:::
+
+### Configuration for pipe
+
+| Definition |                        Description                        |                        Value                        |     flag example   |
+| :--------: | --------------------------------------------------------: | :-------------------------------------------------: | :----------------: |
+|  PIPEMODE  | Chooses the pipe style to send or receive information through a specific physical layer. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">Available folder names<IconExternalLink width="10" /></a> | `-D PIPEMODE=SERIAL` |
+|  PIPEHAL   | Chooses the pipe HAL matched to a specific physical layer with the board. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe/SERIAL" target="_blank" rel="external nofollow">Available folder names on the selected PIPEMODE<IconExternalLink width="10" /></a> | `-D PIPEHAL=ARDUINO` |
+
+:::info
+For more information, see <a href="https://github.com/Luos-io/luos_engine/blob/main/tool_services/pipe/select_hal_script.py" target="_blank" rel="external nofollow">_select_hal_script.py_<IconExternalLink width="10" /></a>.
+:::
