@@ -12,6 +12,7 @@ const Image = (props) => {
       : props.darkSrc
     : props.src;
   const height = props.height === undefined ? '100%' : props.height;
+  const width = props.width === undefined ? null : props.width;
   return (
     <div style={{ display: 'inline', marginRight: '15px' }}>
       <img
@@ -19,6 +20,7 @@ const Image = (props) => {
         src={source}
         onClick={() => setIsOpen(true)}
         height={height}
+        width={width}
         alt={props.alt ? props.alt : 'luos_img'}
       />
       {isOpen && (

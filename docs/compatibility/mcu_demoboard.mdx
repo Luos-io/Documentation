@@ -1,5 +1,8 @@
 ---
+hide_title: true
 custom_edit_url: null
+title: 'MCUs and demo boards compatibility'
+description: Luos engine uses the resources of the MCU to create a network. Discover a list of MCUs directly compatible with the Luos engine.
 ---
 
 import Image from '/src/components/Images.js';
@@ -12,11 +15,19 @@ Below is the list of the MCUs directly compatible with Luos engine:
 ### ST
 
 |      Family      |                MCU                  |                       Description                       |
-| :--------------: | :---------------------------------: |-------------------------------------------------------: |
-|     STM32F0      |             STM32F0X0               |                                                         |
-|                  |             STM32F0X1               |                                                         |
-|                  |             STM32F0X2               |     HAL default configuration on NUCLEO-F072RB          |
-|                  |             STM32F0X8               |                                                         |
+| :--------------: | :---------------------------------: | :-----------------------------------------------------: |
+|     STM32L0      |            STM32L01xxx              |      Max robus Baudrate 500Kb/s for all L0 familly      |
+|                  |            STM32L02xxx              |                                                         |
+|                  |            STM32L03xxx              |                                                         |
+|                  |            STM32L04xxx              |                                                         |
+|                  |            STM32L05xxx              |                                                         |
+|                  |            STM32L06xxx              |                                                         |
+|                  |            STM32L07xxx              |      HAL default configuration on NUCLEO-L073R          |
+|                  |            STM32L08xxx              |                                                         |
+|     STM32F0      |            STM32F0x0                |                                                         |
+|                  |             STM32F0x1               |                                                         |
+|                  |             STM32F0x2               |     HAL default configuration on NUCLEO-F072RB          |
+|                  |             STM32F0x8               |                                                         |
 |     STM32F4      |             STM32F401               |                 Example on NUCLEO-F401RE                |
 |                  |           STM32F405/415             |                                                         |
 |                  |           STM32F407/417             |                                                         |
@@ -28,19 +39,21 @@ Below is the list of the MCUs directly compatible with Luos engine:
 |                  |           STM32F429/439             |                                                         |
 |                  |             STM32F446               |                                                         |
 |                  |           STM32F469/479             |                                                         |
-|     STM32G4      |             STM32G4X1               |     HAL default configuration on NUCLEO-G431KB          |
-|                  |             STM32G4X3               |                                                         |
-|                  |             STM32G4X4               |                Example on NUCLEO-G474KE                 |
+|     STM32G4      |             STM32G4x1               |     HAL default configuration on NUCLEO-G431KB          |
+|                  |             STM32G4x3               |                                                         |
+|                  |             STM32G4x4               |                Example on NUCLEO-G474KE                 |
 |     STM32L4      |             STM32L4x1               |                                                         |
 |                  |             STM32L4x2               |     HAL default configuration on NUCLEO-L432KC          |
 |                  |             STM32L4x3               |                                                         |
 |                  |             STM32L4x5               |                                                         |
 |                  |             STM32L4x6               |                                                         |
+|                  |             STM32L4Rx               |                                                         |
+
 
 ### Atmel/Microchip
 
 |      Family      |                MCU                  |                       Description                       |
-| :--------------: | :---------------------------------: |-------------------------------------------------------: |
+| :--------------: | :---------------------------------: | :-----------------------------------------------------: |
 |      ATSAMD      |             ATSAMD21Exx             |                                                         |
 |                  |             ATSAMD21Gxx             |                                                         |
 |                  |             ATSAMD21Jxx             |      HAL default configuration on SAMDJ18A              |
@@ -48,7 +61,7 @@ Below is the list of the MCUs directly compatible with Luos engine:
 ### ESP32
 
 |      Family      |                MCU                  |                       Description                       |
-| :--------------: | :---------------------------------: |-------------------------------------------------------: |
+| :--------------: | :---------------------------------: | :-----------------------------------------------------: |
 |       ESP32      |                ESP32                |         HAL default configuration on ESP32              |
 |                  |               ESP32-C3              |                                                         |
 |                  |               ESP32-S2              |                                                         |
@@ -57,21 +70,26 @@ Below is the list of the MCUs directly compatible with Luos engine:
 ### Demo boards
 
 |                Board                 |                                 Description                               |
-| :----------------------------------: |-------------------------------------------------------------------------: |
+| :----------------------------------: | :-----------------------------------------------------------------------: |
+|             NUCLEO-L010RB            |                                                                           |
+|             NUCLEO-L011K4            |                                                                           |
+|             NUCLEO-L031K6            |                                                                           |
+|             NUCLEO-L073RZ            |                         Example with Luos engine                          |
 |             NUCLEO-F030R8            |                                                                           |
 |             NUCLEO-F031K6            |                                                                           |
 |             NUCLEO-F042K6            |                                                                           |
 |             NUCLEO-F070RB            |                                                                           |
-|             NUCLEO-F072RB            |                             Example with Luos engine                      |
-|             NUCLEO-F401RE            |                             Example with Luos engine                      |
-|             NUCLEO-F410RB            |                             Example with Luos engine                      |
+|             NUCLEO-F072RB            |                         Example with Luos engine                          |
+|             NUCLEO-F401RE            |                         Example with Luos engine                          |
+|             NUCLEO-F410RB            |                         Example with Luos engine                          |
 |             NUCLEO-F411RE            |                                                                           |
-|             NUCLEO-G431KB            |                             Example with Luos engine                      |
-|             NUCLEO-G474KE            |                             Example with Luos engine                      |
+|             NUCLEO-G431KB            |                         Example with Luos engine                          |
+|             NUCLEO-G474KE            |                         Example with Luos engine                          |
 |             NUCLEO-L412KB            |                                                                           |
-|             NUCLEO-L432KC            |                             Example with Luos engine                      |
+|             NUCLEO-L432KC            |                         Example with Luos engine                          |
 |             NUCLEO-L433RC            |                                                                           |
 |             NUCLEO-L452RE            |                                                                           |
+|             NUCLEO-L4R5ZI            |                         Example with Luos engine                          |
 |          ARDUINO_SAMD_ZERO           |                 HAL default configuration on ARDUINO                      |
 |       ARDUINO_SAMD_MKRZERO           |                                                                           |
 |       ARDUINO_SAMD_MKR1000           |                                                                           |

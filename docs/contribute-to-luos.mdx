@@ -1,0 +1,136 @@
+---
+hide_title: true
+custom_edit_url: null
+title: 'Contribute to Luos: begin your journey through contribution'
+description: As an open source project, Luos is open to contribution. Anyone can improve the project by fixing bugs/texts or working on issues and pull requests.
+---
+
+import Image from '@site/src/components/Images.js';
+import IconExternalLink from '@theme/IconExternalLink';
+import Form from '/src/components/typeform/index.js';
+
+
+# Contribute to Luos
+
+## Contribution
+
+As an open source project, Luos is open to contribution. It means that anyone can actively contribute in improving the project by reporting bugs or typos, or working on issues and pull requests.
+
+This page explains how to begin your journey through contribution.
+
+## Luos's contribution guidelines
+
+The first step is to read [Luos's contribution guidelines](https://github.com/Luos-io/luos_engine/blob/main/CONTRIBUTING.md) to discover the basics and the different layers of contribution.
+
+## Issues and PR
+
+After this reading, the next step is to get familiar with the [workflow](https://docs.github.com/en/get-started/quickstart/github-flow) we use with GitHub. Basically, it is about GitHub's **issues** and **pull requests**.
+
+### Issues
+
+:::info
+A <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues" target ="_blank">GitHub issue</a> is like a ticket used as a tracking tool, associated to a repository. It helps tracking bugs, feature requests, feedbacks, etc., and provides the details of the tracked subject. It is also used to discuss of the subject with other contributors.
+:::
+
+As a contributor, you will sometimes open new issues, for example if you spot a typo, want to report a bug, or request a new feature. 
+
+But you will also be able to contribute by commenting in existing issues by bringing some inputs and discussing bug resolving or feature implementing with other contributors.
+
+#### Checklists
+
+**Before creating a new issue:**
+
+- [ ] Verify what you want to talk about: if you are reporting a bug, are you sure it is an actual bug and not a particular way of using Luos that doesn't suite you in a particular case? 
+- [ ] If you want to request a feature, did you check that there is no way to do what you want to do? Do not hesitate to search in the <a href="https://www.luos.io/docs/luos-technology" target ="_blank">documentation</a> first and <a href="https://discord.gg/luos" target ="_blank">ask questions on the Discord</a> before to rush in the creation of a new issue.
+- [ ] Ensure that no other issue has been opened before on the same subject, to prevent any duplicate. You can [use the search bar](https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests) with various filters. 
+
+
+**When opening a new issue:**
+
+- [ ] Provide a meaningful title, not too short nor too long, that explains the subject.
+- [ ] Use square brackets at the begining of the title to show what type of issue it is. (E.g. `[Features] ...`, `[Bug] ...`, etc.)
+- [ ] Be precise in the description. Put yourself in the shoes of a user who does not know the subject yet: how would you describe it best?
+- [ ] Respect the rules given in the issue template. These rules are made to ease the good integration of the issue in the project. 
+- [ ] Assign the issue to yourself if you will work on it, or to a maintainer.
+- [ ] Apply the labels that describe the best the issue.
+
+### Pull requests (PR)
+
+:::info
+A <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" target ="_blank">GitHub pull request</a> is the suggested changes that have been submitted by a contributor to a branch in a repository. It provides the commits brought to the branch, a description of them, and sometimes discussion about the changes. A PR is eventually accepted (leading to a merge) or rejected by the repository's administrators.  
+:::
+
+The PR are a level above the issues, as opening a PR implies that you modified the code of Luos and want to merge your changes within the main code.
+
+#### Checklist
+
+**Before creating a new issue:**
+
+- [ ] Ensure that no other PR is linked to the same issue(s) and doing the same job you want to do with yours.
+- [ ] Check that your code doesn't have errors or typos
+
+**When openning a new PR:**
+
+- [ ] Follow the same title's rules that for the issues: meaningful title, right length, precision in brackets. 
+- [ ] Link to the PR the issue(s) you want to solve.
+- [ ] Explain what are the changes you brought in the code, and why you did them.
+- [ ] Apply the right labels to help others find your PR.
+- [ ] Assign the issue to yourself.
+- [ ] Respect the rules given in the PR template. These rules are made to ease the good integration of the PR in the project. 
+
+## Labels
+
+The issues and PR are tagged with various labels that help filtering during a search. The labels dealing with contribution are the following:
+
+| Label | Description |
+|:---:|:---|
+| <Image src="/img/label-help-wanted-light.png" darkSrc="/img/label-help-wanted-dark.png" height="20" /> | This label is our call for contribution. You will see it for issues we need help from the community to work on with us. |
+| <Image src="/img/label-good-first-issue-light.png" darkSrc="/img/label-good-first-issue-dark.png" height="20" /> | This label is for issues we consider as easy, and that are good to work on if you want to begin your journey as a contributor. |
+| <Image src="/img/label-advanced-light.png" darkSrc="/img/label-advanced-dark.png" height="20" /> | The advanced label is for more complicated issues that will require advanced skills. |
+
+## Contribute without coding
+
+As explained in the [Luos's contribution guidelines](https://github.com/Luos-io/luos_engine/blob/main/CONTRIBUTING.md), some contributions such as giving a GitHub star or reporting a typo don't require to know how to code. Each page of the documentation has a small message at its bottom inviting to discuss about any feedback, either by connecting to the Luos community on Discord or by opening a new issue on GitHub.
+
+
+## Luos contribution project on GitHub
+
+The <a href="https://github.com/orgs/Luos-io/projects/21" target ="_blank">Luos contribution project</a> is a cross-repository <a href="https://github.com/orgs/Luos-io/projects/21" target ="_blank">GitHub project</a> that aims to list every issues and PR in all the public repository of Luos. 
+
+![Luos contribution project](/img/contribution-project.png)
+
+You can find the list of all issues with `help wanted` label on the first tab to help you find where the help of the community is the most needed. 
+
+The other tabs list all the issues, PR, and contributors of Luos. 
+
+## Content rules
+
+When you want to contribute to the Luos documentation, be sure that your content fits to the following rules:
+
+- [ ] Colons (:), semi-colons (;), exclamation marks (!), and interrogation marks (?) are not preceded by a space (like full stops and commas). E.g.: Colons!
+- [ ] File names and/or addresses are put in italic. E.g.: The file *main.c*.
+- [ ] Functions, variables, or more generally short codes are put between grave accents. E.g.: To obtain `code()`, type \`code()\`.
+- [ ] Long codes are put into blocks of code with a set of three grave accent on each side (\`\`\`), and the language's name after the first set:
+
+<blockquote>
+
+\`\`\`c<br />
+// Some C language<br />
+\`\`\`<br />
+
+Result:
+
+```c
+// Some C language
+```
+</blockquote>
+
+- [ ] "Luos engine" has a upper case on the L for "Luos" and lower case on the e for "engine".
+- [ ] We call it "Luos engine" as a proper name, and not "the Luos engine".
+- [ ] Following that fashion, anything that is owned by "Luos engine" implies that we must use 's as stated in the standard English rule, to show the possessive case, e.g. "Luos engine's API".
+- [ ] The names pipe, gate, inspector, sniffer, app or application, driver, etc. have a lower case and can be refered with the determiner the. E.g.: The inspector.
+
+## HAL contribution: porting Luos on a microcontroller
+
+Some users want to adapt the Hardware Abstraction Layer (HAL) to the microcontrollers that are not supported yet. It can be done by [requesting a new porting in a GitHub issue](https://github.com/Luos-io/luos_engine/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+), or through contribution: a [Luos HAL template](https://github.com/Luos-io/luos_engine/tree/main/engine/HAL/template) and a [Robus HAL template](https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL/) are available to detail the functions and the important characteristics that must be followed to achieve a porting.
+If you adapt the HAL to your need, it will be greatly appreciated if you share your work with the community by creating an issue and a PR.

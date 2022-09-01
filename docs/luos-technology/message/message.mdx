@@ -1,5 +1,8 @@
 ---
+hide_title: true
 custom_edit_url: null
+title: 'Messages: exchange information between services'
+description: Understand its structure, learn to send and receive messages, commands, the object dictionary and advanced messages.
 ---
 
 import { customFields } from '/docusaurus.config.js';
@@ -46,8 +49,8 @@ typedef struct{
 - **Protocol (4 bits)**: This field provides the protocol revision. This field is automatically filled; you don't have to deal with it.
 - **Target (12 bits)**: This field contains the target address. To understand the real destination of this field, you have to know the addressing mode contained on the _Target_mode_ field.
 - **Target_mode (4 bits)**: This field indicates the addressing mode and how to understand the _Target_ field. It can take different values:
-  - **ID**: This mode allows to communicate with a unique service using its ID **without** acknowledgment return.
-  - **IDACK**: This mode allows to communicate with a unique service using its ID **with** acknowledgment return.
+  - **SERVICEID**: This mode allows to communicate with a unique service using its ID **without** acknowledgment return.
+  - **SERVICEIDACK**: This mode allows to communicate with a unique service using its ID **with** acknowledgment return.
   - **TYPE**: This mode sends a message to all services with a given type, e.g. all "Sharp digital distance sensor".
   - **BROADCAST**: This mode allows all the services in the network to catch a message. In this case, the message contains a type of data used by multiple services.
   - **TOPIC**: Publisher/Subscriber mode, allows multiple services to catch a message depending on the topic that they subscribed to.

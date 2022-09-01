@@ -83,6 +83,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/luos-technology/node/node",
+      "destination": "/docs/luos-technology/node",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/luos-technology/package/package",
       "destination": "/docs/luos-technology/package",
       "statusCode": 301
@@ -149,7 +154,7 @@
     },
     {
       "source": "/docs/2.0.1/tools/tool",
-      "destination": "/docs/2.0.1/tools/",
+      "destination": "/docs/2.0.1/tools",
       "statusCode": 301
     },
     {
@@ -165,6 +170,11 @@
     {
       "source": "/get-started(.*)",
       "destination": "/tutorials/get-started",
+      "statusCode": 301
+    },
+    {
+      "source": "/legal-notice",
+      "destination": "/docs/luos-technology",
       "statusCode": 301
     },
     {
@@ -328,6 +338,11 @@
       "statusCode": 301
     },
     {
+      "source": "/tutorials/luos-and-tools/arduino",
+      "destination": "/tutorials/arduino/intro",
+      "statusCode": 301
+    },
+    {
       "source": "/support",
       "destination": "https://discord.gg/luos",
       "statusCode": 301
@@ -338,17 +353,17 @@
       "statusCode": 301
     },
     {
-      "source": "/us/documentation/",
+      "source": "/us/documentation",
       "destination": "/docs",
       "statusCode": 301
     },
     {
-      "source": "/us/roi/",
+      "source": "/us/roi",
       "destination": "/",
       "statusCode": 301
     },
     {
-      "source": "/us/roi-calculator/",
+      "source": "/us/roi-calculator",
       "destination": "/",
       "statusCode": 301
     },
@@ -374,6 +389,11 @@
     {
       "source": "/support",
       "destination": "https://discord.gg/luos",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/luos-and-tools/arduino",
+      "destination": "/tutorials/arduino/intro",
       "statusCode": 301
     }
   ]

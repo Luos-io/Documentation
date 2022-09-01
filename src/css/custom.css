@@ -667,6 +667,7 @@ html[data-theme='dark'] .footer {
   font-family: 'Roboto Mono';
   font-size: 30px !important;
   margin-bottom: 15px !important;
+  font-weight: 700 !important;
 }
 
 .MuiRadio-root {
@@ -716,4 +717,29 @@ html[data-theme='dark'] .DocSearch-Button {
 
 .dropdown-separator {
   margin: 10px 0px;
+}
+
+.alexAuthor {
+  color: #ff5101;
+}
+
+.alexAuthor p {
+  color: #ff5101 !important;
+}
+
+.alexAuthor ol {
+  color: #ff5101 !important;
+}
+
+.alexAuthor tr {
+  border: none;
+}
+
+.alexAuthor td {
+  border: none;
+}
+
+.alexAuthor h2,
+h3 {
+  color: initial;
 }
