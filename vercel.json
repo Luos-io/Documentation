@@ -43,6 +43,16 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/api/index",
+      "destination": "/docs/integration/index",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api/api-json",
+      "destination": "/docs/tools/api-json",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/demo_boards/boards_list/powerswitch(.*)",
       "destination": "/docs/compatibility/mcu_demoboard",
       "statusCode": 301
@@ -53,8 +63,23 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/hardware-consideration/minimum-requirement",
+      "destination": "/docs/hardware-consideration/minimum-requirements",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/luos-technology/basics/concept",
+      "destination": "/docs/luos-technology/basics/concepts",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/luos-technology/luos_tech",
       "destination": "/docs/luos-technology",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/luos-technology/basics/orga",
+      "destination": "/docs/luos-technology/basics/organization",
       "statusCode": 301
     },
     {
@@ -73,6 +98,31 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/luos-technology/services/service-api",
+      "destination": "/docs/luos-technology/services/create-services",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/luos-technology/services/service-type",
+      "destination": "/docs/luos-technology/services/types",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/luos-technology/services/profile",
+      "destination": "/docs/luos-technology/services/profiles",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/luos-technology/package",
+      "destination": "/docs/luos-technology/packages",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/luos-technology/message",
+      "destination": "/docs/luos-technology/messages",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/next/luos-technology/luos_tech",
       "destination": "/docs/next/luos-technology",
       "statusCode": 301
@@ -85,6 +135,21 @@
     {
       "source": "/docs/tools/freertos(.*)",
       "destination": "/tutorials/freertos/intro",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/tools/boot",
+      "destination": "/docs/tools/bootloader",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/tools/pyluos",
+      "destination": "/docs/integrations/pyluos",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/tools/ros",
+      "destination": "/docs/integrations/ros",
       "statusCode": 301
     },
     {
