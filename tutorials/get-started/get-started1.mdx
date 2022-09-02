@@ -128,14 +128,20 @@ Once the board is flashed, it means the compiled binary you created have been co
   />
 </div>
 
+:::caution
+Some boards in this Get started may not have a built-in LED, so you must connect an external LED between the specified pin and the GND pin.
+
+E.g. for an ESP32-DevKit, you must connect a LED and a resistor between IO18 and GND (check the schematics from the table in the [Get started Part 3](/tutorials/get-started/get-started3) for hardware specification).
+:::
+
 :::tip
-In order to make this step to work, you may need to install the USB driver related to your board on your computer.
+In order to make this step work, you may need to install the USB driver related to your board on your computer.
 Note: Linux users should give USB access to their boards by modifying the `udev rules` access rights. To give such rights to PlatformIO, please follow this <a href="https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules" target="_blank" rel="external nofollow">tutorial</a> on PlatformIO FAQ section.
 
 :::
 
 :::warning
-If you have any trouble with your board's USB driver, you can consult **[our related troubleshooting page](/faq/dfu)**. Also, Make sure your USB cable is not faulty (it happens... 🤗).
+If you have any trouble with your board's USB driver, you can consult **[our related troubleshooting page](/faq/dfu)**. Also, make sure your USB cable is not faulty (it happens... 🤗).
 
 :::
 

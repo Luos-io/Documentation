@@ -57,6 +57,10 @@ pyluos-shell
 
 This command will find the serial port of your device and mount it into a “device” object.
 
+:::caution
+When using ESP32-DevKit, the USB serial's baudrate must be 115200 by default. Use the command `pyluos-shell --baudrate 115200` to set it.
+:::
+
 For example:
 
 ```bash
