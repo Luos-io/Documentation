@@ -25,7 +25,7 @@ Great News! Luos engine is now plug-and-play-compatible with the ESP32 family!
 
 The ESP32 is a low-cost, low-power microcontroller with built-in Wi-Fi and Bluetooth/BLE support.
 
-The ESP32 is a successor to the ESP8266, a breakout hit on Kickstarter. The ESP32 adds Wi-Fi and Bluetooth/BLE support to the already impressive list of features of the ESP8266.
+It is a successor to the ESP8266, a breakout hit on Kickstarter. The ESP32 added Wi-Fi and Bluetooth/BLE support to the already impressive list of features of the ESP8266.
 
 ESP32 is created by Espressif Systems, a Shanghai-based company with an excellent reputation for producing low-cost, low-power microcontrollers.
 
@@ -33,27 +33,27 @@ It is often dedicated to the Internet of Things (IoT) and embedded applications 
 
 The small ESP32 package has a high level of integrations, such as:
 
-- RF balun
+- RF Balun
 - In-built antenna switches
 - Power amplifier
-- Low-noise receive amplifier
+- Low-noise amplifier
 - Filters
 - Power management modules
 - With a Printed Circuit Board (PCB), ESP32 provides an accessible and versatile application for your projects.
 
-Since the Luos' release 2.6.0, a Gate_serialcom example is available that allow you to perform the [Get started with ESP32](/tutorials/get-started) evaluation board.
+Since the Luos release 2.6.0, a new example called **Gate_serialcom** is available and allows you to perform the [Get started with ESP32](/tutorials/get-started) evaluation board.
 
-Luos team developed a HAL based on ESP-IDF SDK provided by Espressif to create a Robus network and natively exchange messages and information through the Luos protocol.
+The Luos team developed a HAL based on ESP-IDF SDK provided by Espressif to create a Robus network and natively exchange messages and information through the Luos protocol.
 
-This new covering of MCU family makes Luos compatible with the IoT world product development. It offers the possibility to make new tools for Luos like a [gate](/docs/tools/gate) and an [inspector](/docs/tools/inspector) to communicate with an embedded product on a computer through Wi-Fi or Bluetooth.
+This new covering of MCU family makes Luos compatible with the IoT world product development. It offers the possibility to make new tools for Luos, like a [gate](/docs/tools/gate) or an [inspector](/docs/tools/inspector), to communicate with an embedded product on a computer through Wi-Fi or Bluetooth.
 
 ESP32 HAL gives access to a broad community of developers who can benefit from the plug-and-play protocol networking and the Luos microservices approach of product development to capitalize on many codes already done and tested worldwide.
 
-Luos' topology detection feature can be very relevant for IoT products and very useful for developers who can easily hot plug boards and add features to an existing system. With the Luos protocol and networking, you can connect MCUs from different brands in a snap!
+Luos's topology detection feature can be very relevant for IoT products and very useful for developers who can easily hot-plug boards and add features to an existing system. With the Luos protocol and networking, **you can connect MCUs from different brands in a snap!**
 
-ESP32 is popular worldwide in the maker culture, to create wirelessly connected projects easily through Arduino SDK. Luos engine is also compatible with Arduino SDK. 
+ESP32 is famous worldwide in the maker culture, allowing to create wirelessly connected projects easily through Arduino SDK. Luos engine is also compatible with Arduino SDK. 
 
-It closes the loop by connecting the project between boards and makes it easy to share and reuse the functionality in many innovative projects in prototyping or production phase.
+It closes the loop by connecting the project between boards and makes it easy to share and reuse the same functionalities in many innovative projects from prototyping to production phase.
 
 <div align="center">
   <Image src="/img/blog/communication_esp32_arduino_and_luos_engine_white.svg" darkSrc="/img/blog/communication_esp32_arduino_and_luos_engine_dark.svg" alt="Communication principle between Luos engine, Arduino and ESP32" />
@@ -89,11 +89,13 @@ Luos HAL is compatible with many MCU developed by Espressif:
              - build/
 ```
 
-1. A “project” is a directory that contains all the files and configuration to **build** a single “app” (executable), as well as additional supporting elements such as a partition table, data/filesystem partitions, and a bootloader.
-2. “Project configuration” is held in a single file called `sdkconfig` in the project's root directory.
-3. An “app” is an executable that ESP-IDF builds. A single project will usually **build** two apps, a “project app” and a “bootloader app”.
-4. “components” are modular pieces of standalone code that are compiled into static libraries (.a files) and linked into an app.
-5. “Target” is the hardware for which an application is built.
+**Vocabulary:**
+
+1. A "project" is a directory that contains all the files and configuration to **build** a single "app" (executable), as well as additional supporting elements such as a partition table, data/filesystem partitions, and a bootloader.
+2. "Project configuration" is held in a single file called `sdkconfig` in the project's root directory.
+3. An "app" is an executable that ESP-IDF builds. A single project will usually **build** two apps, a "project app" and a "bootloader app".
+4. "components" are modular pieces of standalone code that are compiled into static libraries (*.a* files) and linked into an app.
+5. "Target" is the hardware for which an application is built.
 
 ![ESP32 Concept explanation](/img/blog/ESP32-concept.png)
 
@@ -138,9 +140,11 @@ Luos HAL is compatible with many MCU developed by Espressif:
 
 ```
 
+**Vocabulary:**
+
 1. **Product:** A node or a set of nodes that communicate with each other. This is where you will have the configurations and information intended for all your boards.
 2. **Product config:** This is a configuration file for your entire Product (*product_config.h*).
-3. **Node:** This is the board's code. This is your actual Eclipse, PlatformIO, IAR, or other projects.
+3. **Node:** Also the MCU on the hardware side, the node is the target present in the product in which the user's code is built and run.
 4. **Node config:** The configuration file for your node. Define here the specific needs for the node, like pinout or hardware peripheric in HAL (*node_config.h*).
 5. **Package:** A shareable folder containing code files managing one or more services.
 6. **Service:** Luos services can be drivers or apps. Each service can follow Luos profiles to be standard, but it can also be custom.
@@ -158,15 +162,15 @@ As we can see, Luos and Espressif have many concepts in common!
 
 ESP32 target is a HAL compatibility for Luos. A project and its configuration can be linked to a product composed of nodes with the Espressif structure.
 
-Finally, the component will become a package in Luos. It is interesting to note that the component is an independent library that must be compiled and reused in another project. 
+Finally, the component will become a package in Luos. It is interesting to note that the component is an independent library that can be compiled and reused in another project. 
 
-Luos' methodology advocates the same concept and will provide a registry to simplify package installation and implementation in your product.
+Luos's methodology advocates the same concept and will provide a registry to simplify package sharing, installation, and implementation in your product.
 
-Luos fits well with these MCUs. Even if Espressif focuses on hardware, Luos’ approach is more of a methodology and software overlay. You can combine both strong points of these technologies:
+Luos fits well with these MCUs. Even if Espressif focuses on hardware, Luos's approach is more of a methodology and software overlay. You can combine both strong points of these technologies:
 
-**Espressif:** Easy-to-use SDK, mainstream hardware peripherals like Wi-Fi and Bluetooth with great API to develop IoT products.
+1. **Espressif:** Easy-to-use SDK, mainstream hardware peripherals like Wi-Fi and Bluetooth with great API to develop IoT products.
 
-**Luos:** Microservice methodology development, plug-and-play network, and protocol allowing sharing/reusing packages to facilitate team working on an embedded development product.
+2. **Luos:** Microservice methodology development, plug-and-play network, and protocol allowing sharing/reusing packages to facilitate team working on an embedded development product.
 
 It is a simple and powerful way to control and manage your embedded systems by combining a gate application of Luos and the Wi-Fi or Bluetooth device of the ESP32.
 
