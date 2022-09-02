@@ -4,7 +4,7 @@ import '@typeform/embed/build/css/widget.css';
 
 const Form = (props) => (
   <div>
-    <Widget id={props.id} style={{ height: '500px' }} />
+    <Widget id={props.id} style={{ height: '500px' }} lazy />
   </div>
 );
 
