@@ -33,13 +33,13 @@ But you can share a driver on an application. We call it a [Luos package](/docs/
 
 **The Luos package** is a folder with some code on it, and this code will have one or multiple services. You will be able to copy-paste this folder from one project to another one.
 
-This is where we are today. Today, you must copy-paste the package from one project to another, but at the beginning of the next year, we plan to work on something called a **Registry**.
+This is where we are today. Today, you must copy-paste the package from one project to another, but at the beginning of next year we plan to work on something called a **Registry**.
 
-The idea is to give you some dependencies, such as you can do with <a href="https://platformio.org/" rel="external nofollow">PlatformIO</a>. For example, you can say: "I want to use this driver service on this application service."
+The idea is to give you some dependencies, such as you can have with <a href="https://platformio.org/" rel="external nofollow">PlatformIO</a>. For example, you can say: "I want to use this driver service on this application service."
 
-On the **Registry**, you can download the service and modify your code to integrate it directly into your project. This will rely on **PlatformIO**, and we are currently working on this subject. 
+With the **Registry**, you can download the service and modify your code to integrate it directly into your project. This will rely on **PlatformIO**, and we are currently working on this subject. 
 
-Ultimately, we plan to develop a website also based on **PlatformIO Registry**, allowing us to display and share all the Luos packages available and created by the entire community. 
+Ultimately, we plan to develop a website also based on **PlatformIO's Registry**, allowing us to display and share all the Luos packages available and created by the entire community. 
 
 This will allow anyone to **reuse the work of others** extremely easily and make it work on any boards, anywhere on the device. Stay tuned for this new feature!
 
@@ -99,52 +99,56 @@ Finally, there is something else that is very important we plan to work on soon.
 Some microcontrollers provide multiple flash banks, allowing you to **have virtually two banks** that you can swap from one to another. This is interesting because we could flash the firmware on one bank, and if this flash fails or if this application fails, it just falls back into the other flash. 
 >Imagine you have one working firmware and want to upload a new version, and you may put it on the second one. If this one fails, you fall back and run the previous revision. This is like a security system we could use to prevent these problems.
 
-We have some users working in the **nuclear industry**, and we already have questions such as what happens if a nuclear particle hits some parts of the flash and corrupts the program. We will be able to address this kind of situation soon.
+We have some users working in the **nuclear industry**, and we already have questions such as what happens if a nuclear particle hits some parts of the flash and corrupts the program. How to address this kind of situation?
 
-<h3>How to deal with it using the bootloader and Luos?</h3>
+<h3>How to deal with program corruptions using the bootloader and Luos?</h3>
 
-If this kind of thing happens, your program will probably crash, and you will have a hard-fought on your project. You have to take care about when you get this hard-fought interruption. 
-We have a **Luos function** that allows you to call and say: "This program is dead, and I don't want to use it anymore." 
+If this kind of thing happens, your program will probably crash, and you will have a hard-fault on your project. You have to take care of this hard-fault interruption. 
+We have a **Luos function** that allows you to call it and say: "This program is dead, and I don't want to use it anymore." 
 
-Then you will go back to **bootloader mode**, and you will be able just to refresh your application as you want to.
+Then you can go back to **bootloader mode**, and you will be able to just refresh your application as you it was before the corruption.
 
-<h2>What is Luos' business model?</h2>
+<h2>What is Luos's business model?</h2>
 
-This is a really good question, we are a company, but our objective is to **provide free tools for developers.**
+This is a really good question, because even if we are a company, our goal is to **provide free tools for developers.**
 
-This vision will allow them to get rid of complexity and to be able to have the **flexibility and agility** that we have in software in the embedded world.
+This vision will allow the developers to get rid of complexity and be able to have the **flexibility and agility** that we have in software today brought in the embedded world.
 
 >The main objective of Luos is to make the hardware as agile as the software. 
 
-Because we are a company, we will have to make money one day.
+But because we are a company, we will have to make money one day.
 
-We think this method is the **best way to grow this technology worldwide** and allow anyone to use it without any bugs.
+We think this method of dissemination is the **best way to grow this technology worldwide** and allow anyone to use it without any bugs.
 
-This vision takes money and a lot of time. We are already in a team of nine engineers at Luos, and we need money to make those engineers work on the library.
+This vision takes money and a lot of time. We are already in a team of nine engineers working full time at Luos, and we need money to make these engineers work on the library.
 
-About our business model, **Luos engine technology** will be free and will remain **free always**. You can use it for free, and there will never be payable for any kind.
+About our business model, now. As I said, **the Luos engine technology is and will always be free**. You can use it for free, and we will never ask the users to pay for it.
 
-You can use it for free in any project without any constraints. We start working on some **additional tools** that will be fast tools allowing developers to be more efficient in using Luos. I already mentioned some of them. For example, the **Registry** will be part of these paying tools.
+You can use it for free in any project without any constraints. We have started to work on **additional paid tools** allowing developers to be more efficient in using Luos. I already mentioned some of them. For example, the **Registry** will be part of these paid tools.
 
-We already have **some developers** that want to develop things and sell those programs or electronic boards (for example, motors or sensors with Luos inside directly).
+We already have **some developers from our community** that want to make developpment and sell their programs or electronic boards (for example, motors or sensors with Luos directly inside).
 
-We will allow them to sell it directly into this Registry, allowing any developer to buy it through the Luos platform. This guarantees that this motor or this sensor will be **plug-and-play** directly into your device. This is one of the tools.
+We will allow to sell various Luos items directly from our Registry, for any developer to buy any item through the Luos platform. It guarantees that such motor or such sensor will be **plug-and-play** directly into your device. This is one of the tools.
 
-We're also working on something we call **Luos inspector**, <a href="https://app.luos.io/" rel="external nofollow">a SAAS tool</a>. These web tools will allow you to inspect what's happening on your device, and the idea is to have a timeline. We can tag and log all the events anywhere on your device at a nanosecond scale.
+We are also working on something we call **Luos inspector**, <a href="https://app.luos.io/" rel="external nofollow">a SaaS tool</a>. This web tool will allow you to inspect what is happening in your device, with the idea of having a timeline. We are able to tag and log all the events happening anywhere on your device at a nanosecond scale.
 
-This will allow you to understand and visualize what's happening on your device. You can make it like a trace allowing you to have an offline device running somewhere, and when there is a crash, we save a file. You can download this file and inspect it directly in this web tool.
+This will allow you to understand and visualize what is really happening in your device. You can make it like a trace allowing you to have an offline device running somewhere, with a file being saved when there is a crash. You will be able to download this file and inspect it directly in this web tool.
 
-So finally, our business model will rely on a SAAS model. We'll provide some web tools on our website, allowing you to accelerate your product development using Luos.
+Eventually, our business model will rely on a SaaS model. We will provide some web tools on our website, allowing you to accelerate your product development using Luos, the core technology Luos engine remaining free to use.
 
 <h2>Call for contributions</h2>
 
-Simon <a href="https://discord.gg/luos" rel="external nofollow">(Simon#2786 on Luos Discord)</a> recently opened some calls for contributions. We add it on <a href="https://github.com/Luos-io/luos_engine/blob/main/CONTRIBUTING.md" rel="external nofollow">our Github page</a>, you can go to the <a href="https://github.com/Luos-io/luos_engine/issues" rel="external nofollow">issues</a>, and then you will find the label "help wanted." You will see all the issues we have right now, and you can have a look at them and contribute to them.
+Simon <a href="https://discord.gg/luos" rel="external nofollow">(Simon#2786 on Luos Discord)</a> recently opened a call for contributions, added on <a href="https://github.com/Luos-io/luos_engine/blob/main/CONTRIBUTING.md" rel="external nofollow">our GitHub page</a>. You can have a look at the <a href="https://github.com/Luos-io/luos_engine/issues" rel="external nofollow">issues</a>, where you will find the label `help wanted`. You will see all the issues we have right now, and you can have a look at them and contribute to them.
 
-We also have like the good first issue tag. That means that any users (even those who never use Luos but just want to help this open source initiative) can start. This is kind of easy to fix bugs and improvements. We also have [a documentation page](/docs/contribute-to-luos) about it.
+We also have the `good first issue` tag. This tag applied on an issue means that any user (even those who never used Luos but just want to help this open source initiative) can start they contributing journey with this kind of issue, with easy bugs and improvements. We also have a [documentation page](/docs/contribute-to-luos) to help you through your contributions.
 
-If you want to continue the discussions, don't hesitate to <a href="https://discord.gg/luos" rel="external nofollow">join our Discord community</a>, a Help channel, and many developers are waiting for you!
+If you want to continue the discussion, feel free to <a href="https://discord.gg/luos" rel="external nofollow">join our Discord community</a>, where you will find a Help channel along with some others, many developers waiting for you. Thank you for attending!
 
-We will continue to write this kind of transcription to propose all the responses you need to start using Luos. Follow us on <a href="https://www.linkedin.com/company/luos" rel="external nofollow">social media</a> to subscribe to the upcoming Q&A session.
+<hr />
+
+That is all for this Q&A session!
+
+We will continue to write this kind of transcription to propose all the answers you need to start using Luos. Follow us on <a href="https://www.linkedin.com/company/luos" rel="external nofollow">social media</a> to subscribe to the upcoming Q&A session.
 
 If you would like to see or review the Q&A video, here is the recording:
 
