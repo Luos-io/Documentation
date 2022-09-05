@@ -1,0 +1,90 @@
+---
+custom_edit_url: null
+description: The gate is a major tool of the Luos ecosystem.
+---
+
+import { customFields } from '/docusaurus.config.js';
+import Tooltip from '@site/src/components/Tooltip.js';
+import Image from '@site/src/components/Images.js';
+import IconExternalLink from "@theme/IconExternalLink";
+
+# PlatformIO
+
+## What is PlatformIO?
+
+PlatformIO is a user-friendly and extensible integrated development environment with a set of professional development instruments, compilers and debuggers. PlatformIO provides modern and powerful features to simplify the creation and delivery of embedded products.
+That is the reason why Luos uses PlatformIO's project structure for its examples, allowing users to use and share easily services and developments on a unified environment. Also, Luos engine and some tools like the [gate](/docs/tools/gate) or the [inspector](/docs/tools/inspector) are available in the PlatformIO's registry. This registry allows users to link directly a project and a library, like Luos engine, by including dependencies in the configuration project file called _platformio.ini_.
+Learn more about <a href="https://platformio.org" target="_blank">PlatformIO and how to install it in VS Code <IconExternalLink width="10" /></a>.
+
+## PlatformIO's project structure
+
+Every PlatformIO's project has a <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#directory-options" target="_blank">basic folder project structure<IconExternalLink width="10"/></a> and must have the file <a href="https://docs.platformio.org/en/latest/projectconf/section_platformio.html#generic-options" target="_blank">_platformio.ini_ <IconExternalLink width="10" /></a> at the root of the project.
+
+Checkout the Luos tutorial on <a href="https://www.luos.io/tutorials/pio" target="_blank">how to create a Luos project with PlatformIO <IconExternalLink width="10" /></a>.
+
+## Luos configuration for _platformio.ini_
+
+With PlatformIO, Luos libraries use scripts before compilation to select and include the code folder depending to your needs.
+
+Configuration parameters need to be the same as the folder name you want to use.
+Some `build_flags` definition may be added to your _platformio.ini_ file to configure these scripts.
+
+Build flags examples:
+```AsciiDoc
+build_flags =
+    -include node_config.h
+    -D GATEFORMAT=TinyJSON
+    -D LUOSHAL=STM32F0
+    -D PIPEMODE=SERIAL
+    -D PIPEHAL=NUCLEO-F0
+lib_deps =
+    luos_engine
+    Gate
+    Pipe
+```
+:::caution
+Every Luos project needs to have a _node_config.h_ file allowing to configure the hardware dependencies and the libraries. See the [basics concept page](/docs/luos-technology/basics/orga) for more information.
+:::
+
+A good configuration looks like this:
+<div align="center">
+  <Image src="/img/telemetry-2.png" darkSrc="/img/telemetry-2.png" />
+</div>
+
+During the build, a message appearing in red means a problem has occurred, except for telemetry configuration (see next ).
+
+### Configuration for Luos engine Library
+
+| Definition |                        Description                        |                        Value                        |     flag example   |
+| :--------: | :-------------------------------------------------------- | :-------------------------------------------------: | :----------------: |
+|  LUOSHAL   | Defines the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">HAL family<IconExternalLink width="10" /></a> to use depending on your MCU. | <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> Luos engine HAL<IconExternalLink width="10" /></a> | `-D LUOSHAL=ATSAMD21_ARDUINO` |
+| NOTELEMETRY |                 Disables telemetry.                       |                    On by default                    | `-D NOTELEMETRY` to disable telemetry |
+
+:::info
+By default, the telemetry is enabled and sends anonymous information to Luos maintainers. This information is only used to improve Luos engine experience.
+
+When telemetry message is appearing in red, this means it is disabled, but compilation will run properly.
+
+For more information about telemetry, check the file <a href="https://github.com/Luos-io/luos_engine/blob/main/source_filter_script.py" target="_blank" rel="external nofollow">_source_filter_script.py_<IconExternalLink width="10" /></a>.
+:::
+
+### Configuration for the gate
+
+| Definition |                        Description                        |                        Value                        |     flag example   |
+| :--------: | :-------------------------------------------------------- | :-------------------------------------------------: | :----------------: |
+| GATEFORMAT | Chooses the format of data sent by the gate through a pipe. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate" target="_blank" rel="external nofollow">Available folder names <IconExternalLink width="10" /></a>. | `-D GATEFORMAT=TinyJSON` |
+
+:::info
+For more information about the gate configuration, check the file <a href="https://github.com/Luos-io/luos_engine/blob/main/tool_services/gate/select_format_script.py" target="_blank" rel="external nofollow">_select_format_script.py_<IconExternalLink width="10" /></a>.
+:::
+
+### Configuration for the pipe
+
+| Definition |                        Description                        |                        Value                        |     flag example   |
+| :--------: | :-------------------------------------------------------- | :-------------------------------------------------: | :----------------: |
+|  PIPEMODE  | Chooses the pipe style to send or receive information through a specific physical layer. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe" target="_blank" rel="external nofollow">Available folder names<IconExternalLink width="10" /></a> | `-D PIPEMODE=SERIAL` |
+|  PIPEHAL   | Chooses the pipe HAL matched to a specific physical layer with the board. | <a href="https://github.com/Luos-io/luos_engine/tree/main/tool_services/pipe/SERIAL" target="_blank" rel="external nofollow">Available folder names on the selected PIPEMODE<IconExternalLink width="10" /></a> | `-D PIPEHAL=ARDUINO` |
+
+:::info
+For more information about the pipe configuration, check the file <a href="https://github.com/Luos-io/luos_engine/blob/main/tool_services/pipe/select_hal_script.py" target="_blank" rel="external nofollow">_select_hal_script.py_<IconExternalLink width="10" /></a>.
+:::

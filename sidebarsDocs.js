@@ -209,6 +209,11 @@ module.exports = {
           label: 'ROS',
           id: 'tools/ros',
         },
+        {
+          type: 'doc',
+          label: 'PlatformIO',
+          id: 'tools/platformio',
+        },
       ],
     },
     {
