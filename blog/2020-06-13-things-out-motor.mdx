@@ -4,16 +4,16 @@ description: All you need to know about motors following our previous posts. We 
 slug: all-the-things-getting-out-of-a-motor
 authors:
   - name: Simon Baudry
-    title: Mecatronic 
+    title: Mecatronic
     url: https://github.com/Simonbdy
     image_url: https://github.com/Simonbdy.png
 tags: [motors, robotics]
-image: /img/blog/All-the-things-getting-out-of-a-motor-banner-luos.png
+image: /assets/images/blog/All-the-things-getting-out-of-a-motor-banner-luos.png
 hide_table_of_contents: false
 date: 2020-06-13T10:00
 ---
 
-![img alt](/img/blog/All-the-things-getting-out-of-a-motor-luos.png)
+![img alt](/assets/images/blog/All-the-things-getting-out-of-a-motor-luos.png)
 
 This post is the follow-up of the Motors-in-robotics series. Although what I will present you here is still basic notions and can be addressed to anyone keen on knowing more about it, don't hesitate to have a look at the previous posts ([types of motors in robotics](/2020-01-13-lift-banana-motors.mdx), DC motor [direction](/2020-03-13-control-dc-motor-1.mdx), and [speed](/2020-04-13-control-dc-motor-2.mdx) control, [how to read a datasheet](/2020-05-13-read-datasheet.mdx)), they will help you expand your knowledge about electric motors and start on a reasonable basis.
 
@@ -28,7 +28,7 @@ Remember this image I put in [one of the first posts](/2020-01-13-lift-banana-mo
 ![The electrical energy is the input of the motor, and the mechanical energy is the output](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacd9736082452c7c863_1*IM8uHsEVAm-gaeC3HC_RYg.jpeg)
 
 It's highly simplified, though, and reality is slightly different.  
-What I will detail here is still simplified but a little more precise.  
+What I will detail here is still simplified but a little more precise.
 
 A motor generates more than a rotation, more than only torque and speed. Many other things are getting out of it, and they go from something you don't care about to things you wish never existed. Let's review everything that really comes out of your motors.
 
@@ -60,9 +60,9 @@ Because while a motor is working, its rotor is a spinning mass. And any rotating
 
 The moment of inertia — also called rotational inertia — of an object depends on three factors:
 
-*   The object's mass
-*   The position of its axis of rotation
-*   Its mass distribution around this axis
+- The object's mass
+- The position of its axis of rotation
+- Its mass distribution around this axis
 
 For example, more torque is needed to rotate to a free horizontal bicycle wheel than to rotate a small rotor. Both masses are evenly distributed, but the bicycle wheel is heavier, and some of its group is far away from the axis of rotation; for the rotor, it's light, and the mass is very close to its axis of rotation.
 
@@ -106,7 +106,7 @@ Heat is a recurrent encounter when dealing with electrical power. Why is that? I
 
 ![Heat formula](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d31bf83d44f0ed7fc680_1*w7_KI4kaqRz7sQ0jEexVuQ.jpeg)
 
-In this equation, R is the resistance of any conductive component, and i is the current which flows through this component. P\_th is the thermal power, _i.e._, the power _(2)_, which is transformed in pure heat emitted from the component.
+In this equation, R is the resistance of any conductive component, and i is the current which flows through this component. P*th is the thermal power, \_i.e.*, the power _(2)_, which is transformed in pure heat emitted from the component.
 
 In a DC brushed motor, electricity flows into the winding; having a resistance, this winding tends to heat according to the amount of current.
 

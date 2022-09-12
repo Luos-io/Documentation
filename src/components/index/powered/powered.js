@@ -27,7 +27,11 @@ const Powered = (props) => {
         <h2 className={`${styles.title}`}>
           More features powered by{' '}
           <img
-            src={isDarkTheme ? 'img/index/powered/luos.svg' : 'img/index/powered/luos-dark.svg'}
+            src={
+              isDarkTheme
+                ? 'assets/images/index/powered/luos.svg'
+                : 'assets/images/index/powered/luos-dark.svg'
+            }
             style={{ verticalAlign: 'middle', width: '100px' }}
             alt="luos-dark"
           />
@@ -54,7 +58,7 @@ const Powered = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/services#service-properties"
+              href="/documentation/luos-technology/services#service-properties"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -100,7 +104,7 @@ const Powered = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/message/object-dictionary"
+              href="/documentation/luos-technology/messages/object-dictionary"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -118,7 +122,7 @@ const Powered = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/services/routing-table#detection"
+              href="/documentation/luos-technology/services/routing-table#detection"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -163,7 +167,7 @@ const Powered = (props) => {
           <div className={styles.head}>
             {' '}
             <img
-              src="img/index/header/buttons.svg"
+              src="assets/images/index/header/buttons.svg"
               style={{ padding: '15px', width: '100px' }}
               alt="buttons"
             />
@@ -175,12 +179,12 @@ const Powered = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>

@@ -1,18 +1,27 @@
 ---
 custom_edit_url: null
-image: /img/Bike-alarm-Luos.png
+image: /assets/images/Bike-alarm-Luos.png
 ---
 
-import Image from '@site/src/components/Images.js';
+import Image from '@site/src/components/Image';
 
 # Make a basic alarm
+
+<div align="center">
+  <iframe
+    width="650"
+    height="363"
+    src="https://www.youtube.com/embed/kTr-pwIrRqw?feature=oembed"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"
+  ></iframe>
+</div>
 
 The purpose of the bike alarm is to create an alarm that constantly measures a bike's movements while activated, and raise an alarm if the bike is moving.
 
 To make it work, we will use an IMU board to measure the bike's motions and, for now, an RGB LED board to display an alarm using a red blinky LED.
 For this tutorial, we are going to use <a href="https://github.com/Luos-io/luos_engine/tree/main/examples/projects/l0" target="_blank" rel="external nofollow">L0 board examples available in Luos examples</a>.
 We are going to use IMU and LED drivers examples without any modifications and just add an embedded app to control them.
-This embedded app service will control the behavior of the alarm. This app can work on any node. 
+This embedded app service will control the behavior of the alarm. This app can work on any node.
 
 :::tip
 We chose the LED node because there is plenty of memory space in it.
@@ -59,7 +68,7 @@ void AlarmController_Loop(void);
 ```
 
 :::info
-For more details about Luos code organization, please read the [Luos project organization page](/docs/luos-technology/basics/orga).
+For more details about Luos code organization, please read the [Luos project organization page](/docs/luos-technology/basics/organization).
 :::
 
 Now we have to fill both functions in the C file.
@@ -82,7 +91,7 @@ void AlarmController_Init(void)
 As you can see, our app default alias will be `"alarm_control"`, and we created a custom service type.
 
 :::info
-For more information about service creation, read the [Create Luos service page](/docs/luos-technology/services/service-api).
+For more information about service creation, read the [Create Luos service page](/docs/luos-technology/services/create-services).
 :::
 
 To declare to others this custom service type, we need to add an enum in the C file:
@@ -94,7 +103,7 @@ typedef enum
 } alarm_t;
 ```
 
-For now, there is only one custom type dedicated to our app, but later on this tutorial we will have to add another one. 
+For now, there is only one custom type dedicated to our app, but later on this tutorial we will have to add another one.
 
 In order to measure bike's motion, our app will need to receive gyroscopic data from IMU and put an alarm flag if motion is detected. To manage it, we created a message reception callback `AlarmController_MsgHandler`.
 Here is how we made this function:
@@ -164,7 +173,6 @@ void AlarmController_Init(void)
     }
 }
 ```
-
 
 Now the IMU service will automatically send gyroscopic data to your app each 10ms.
 

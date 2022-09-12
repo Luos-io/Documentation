@@ -1,13 +1,13 @@
 .container {
   width: 100%;
-  background-image: url('/static/img/index/NEBULA.svg');
+  background-image: url('/static/assets/images/index/NEBULA.svg');
   background-size: cover;
   color: white;
   padding: 30px;
 }
 
 html[data-theme='light'] .container {
-  background-image: url('/static/img/index/software/nebula-light.svg');
+  background-image: url('/static/assets/images/index/software/nebula-light.svg');
   color: black !important;
 }
 

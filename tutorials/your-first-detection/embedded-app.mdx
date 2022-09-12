@@ -1,9 +1,9 @@
 ---
 custom_edit_url: null
-image: /img/Your-first-topology-detection-banner-luos.png
+image: /assets/images/Your-first-topology-detection-banner-luos.png
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Form from '/src/components/typeform/index.js';
@@ -384,8 +384,8 @@ To simulate a press button, connect a wire between the BTN_PIN (Pin 8) and GND.
 
 <div align="center">
   <Image
-    src="/img/your-first-message/your-first-message-2-1.png"
-    darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"
+    src="/assets/images/tutorials/your-first-message/your-first-message-2-1.png"
+    darkSrc="/assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"
   />
 </div>
 
@@ -400,7 +400,7 @@ For this board, only push the B1 button (the blue button) on your board.
 To simulate a press button, connect a wire between the BTN_PIN (Pin D10) and GND.
 
 <div align="center">
-  <Image src="/img/your-first-message/your-first-message-2-1.png" darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"/>
+  <Image src="/assets/images/tutorials/your-first-message/your-first-message-2-1.png" darkSrc="/assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"/>
 </div>
 </TabItem>
 </Tabs>
@@ -421,7 +421,7 @@ You can now detect all the services in your project and command them through an 
 
 Now try to move your switcher package on another board, and keep the button and led packages on the first one: everything should work the same way!
 
-Asking the value of the button every 10ms represents a not negligible portion of code. Luos engine provides an `update_time` command to simplify it, check the [documentation associated page](/docs/luos-technology/message/advanced-message) to learn more about it.
+Asking the value of the button every 10ms represents a not negligible portion of code. Luos engine provides an `update_time` command to simplify it, check the [documentation associated page](/docs/luos-technology/messages/advanced-message) to learn more about it.
 
 ## 8. Test your skills
 

@@ -1,0 +1,94 @@
+---
+custom_edit_url: null
+image: /assets/images/Handle-and-receive-a-message-banner-luos.png
+description: Message callbacks of services can be difficult to use when a project has high real-time constraints.
+---
+
+# How to handle and receive messages
+
+Message callbacks of services can be difficult to use when a project has high real-time constraints.
+
+Luos engine provides two different configurations allowing you to choose the best way for you to deal with messages.
+The message handling configuration is set during the [initialization of a service](../services/create-services).
+
+|                 Configuration                 |  execution type  |
+| :-------------------------------------------: | :--------------: |
+| [Callback (default)](#Callback-configuration) | runtime callback |
+|       [Polling](#polling-configuration)       |   no callback    |
+
+The following sections detail how the different configurations work.
+
+## Callback configuration
+
+This configuration is the default and most common setup. In this configuration, Luos engine directly calls the service callback during runtime. The time between the physical reception of a message and the callback may vary depending on the `Luos_loop()` function execution frequency.
+
+With this configuration you have no real constraints on the callback's time of execution, you can then reply to a message directly on the callback.
+
+To setup this configuration, you have to simply setup the callback at service creation.
+
+Here is a code example with a button:
+
+```c
+void Button_MsgHandler(service_t *service, msg_t *msg)
+{
+    if (msg->header.cmd == ASK_PUB_CMD)
+    {
+        // The message is filled with global variables with proper data
+        msg_t pub_msg;
+        pub_msg.header.cmd         = IO_STATE;
+        pub_msg.header.target_mode = SERVICEID;
+        pub_msg.header.target      = msg->header.source;
+        pub_msg.header.size        = sizeof(char);
+        pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
+        // Sending the message
+        Luos_SendMsg(service, &pub_msg);
+        return;
+    }
+}
+
+void Button_Init(void)
+{
+    // service creation: (callback, service type, Default alias)
+    service_t* service = Luos_CreateService(Button_MsgHandler, STATE_TYPE, "button");
+}
+
+void Button_Loop(void)
+{
+}
+```
+
+## Polling configuration
+
+This configuration is often used in Arduino libraries to receive information in a basic way. This method allows you to handle messages only when the user wants to do it in the loop of the service.
+
+To set up this configuration, you have to create your service without any callbacks.
+
+See the following code as an example, with a button:
+
+```c
+service_t* service;
+void Button_Init(void)
+{
+    service = Luos_CreateService(0, STATE_TYPE, "button");
+}
+
+void Button_Loop(void)
+{
+    if (Luos_NbrAvailableMsg())
+    {
+        msg_t *msg = Luos_ReadMsg(service);
+        if (msg->header.cmd == ASK_PUB_CMD)
+        {
+            // The message is filled with global variables with proper data
+            msg_t pub_msg;
+            pub_msg.header.cmd         = IO_STATE;
+            pub_msg.header.target_mode = SERVICEID;
+            pub_msg.header.target      = msg->header.source;
+            pub_msg.header.size        = sizeof(char);
+            pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
+            // Sending the message
+            Luos_SendMsg(service, &pub_msg);
+        }
+    }
+}
+```

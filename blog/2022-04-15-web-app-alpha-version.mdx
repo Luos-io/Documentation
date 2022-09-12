@@ -1,5 +1,5 @@
 ---
-title: "Luos Web App: Alpha Version"
+title: 'Luos Web App: Alpha Version'
 description: Luos enabled you to connect an embedded application with the outside world, this article takes place as an example of what you could do with it.
 slug: luos-web-app-alpha-version
 authors:
@@ -8,12 +8,12 @@ authors:
     url: https://github.com/K0rdan
     image_url: https://github.com/K0rdan.png
 tags: [startup journey, luos]
-image: /img/blog/luos-web-app-alpha-version.png
+image: /assets/images/blog/luos-web-app-alpha-version.png
 hide_table_of_contents: false
 date: 2022-04-15T10:00
 ---
 
-![img alt](/img/blog/luos-web-app-alpha-version.png)
+![img alt](/assets/images/blog/luos-web-app-alpha-version.png)
 
 <h2> Introduction </h2>
 
@@ -31,7 +31,7 @@ Our path to achieving it wasn’t straightforward, so we will tell you how we ac
 
 <h3> Gate </h3>
 
-With our first try to connect embedded systems with a Javascript app, we based our development on the <a rel="external nofollow" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API" target="_blank">Web Serial API</a>, a “living document” described by the W3C Incubator Community Group (WICG).
+With our first try to connect embedded systems with a Javascript app, we based our development on the <a rel="external nofollow" href="https://developer.mozilla.org/en-US../Web/API/Web_Serial_API" target="_blank">Web Serial API</a>, a “living document” described by the W3C Incubator Community Group (WICG).
 
 This normative-like document is near the _Web Bluetooth API_ and _Web USB API_, among other things. This promises us great compatibility if it works fine!
 
@@ -44,8 +44,8 @@ The main advantages of the Gate were:
 
 But it came with drawbacks. Here are some of them:
 
-*   Our conversion layer takes the number of resources (CPU and memory).
-*   The maintainability of two APIs for the same features (the internal one and the JSON one).
+- Our conversion layer takes the number of resources (CPU and memory).
+- The maintainability of two APIs for the same features (the internal one and the JSON one).
 
 <h3> Sniffer 👃 </h3>
 
@@ -63,47 +63,47 @@ Our early works weren’t wasted, and we reused our firsts concepts! The high-le
 
 This part is about the implementation of the Web Serial API. This API gives us the ability to:
 
-*   Get the list of available serial ports to communicate with.
-*   Open/close the serial connection stream.
-*   **Read/write data on the stream.**
-*   Handle errors.
+- Get the list of available serial ports to communicate with.
+- Open/close the serial connection stream.
+- **Read/write data on the stream.**
+- Handle errors.
 
 <h3> Protocol </h3>
 
 We use the same protocol as the Luos engine embedded systems to read and write data.
 
-![(1) Illustration of the exchange of data between Luos and Luos Engine](/img/blog/web-app-protocol-luos.png)
+![(1) Illustration of the exchange of data between Luos and Luos Engine](/assets/images/blog/web-app-protocol-luos.png)
 
 (1) Illustration of the exchange of data between Luos and Luos Engine
 
 As you can see in figure 1, the data is encapsulated in a “Luos Frame” described as:
 
-*   Preamble: Detection of the start of a frame.
-*   Target: Targeted node ID of the message.
-*   Mode: Broadcast or targeted.
-*   Source: Source of the message.
-*   Size: Size of the data transmitted.
-*   Data: The data we want to send.
+- Preamble: Detection of the start of a frame.
+- Target: Targeted node ID of the message.
+- Mode: Broadcast or targeted.
+- Source: Source of the message.
+- Size: Size of the data transmitted.
+- Data: The data we want to send.
 
 <h2> Front-end 🌈 </h2>
 
 Now that we have set up this new way to communicate with the embedded world, the next step will be to give our users all the features implemented all over the years in <a rel="external nofollow" href="https://github.com/Luos-io/luos_engine" target="_blank">Luos engine</a> from a web perspective.
 
-The first feature we decided to implement is the network topology. This feature is a graphical representation of the Luos [routing table](/docs/luos-technology/services/routing-table).
+The first feature we decided to implement is the network topology. This feature is a graphical representation of the Luos [routing table](/docs/tools/gate).
 
 We first get the list of the nodes and services in our network. Then we query each service of each node to get their properties like their type (Motor, Led, Gate, ...), their firmware revision, and their memory statistics.
 
-![Illustration of the routing table data](/img/blog/routing-table-data-luos.png)
+![Illustration of the routing table data](/assets/images/blog/routing-table-data-luos.png)
 
 Illustration of the routing table data
 
-![Illustration of the service's data](/img/blog/service-data-luos.png)
+![Illustration of the service's data](/assets/images/blog/service-data-luos.png)
 
 Service’s data
 
 We finally gathered all those data in a graph using the <a rel="external nofollow" href="https://observablehq.com/@d3/gallery" target="_blank">D3JS</a> library:
 
-![Network Display of Luos web app](/img/blog/network-display-luos.png)
+![Network Display of Luos web app](/assets/images/blog/network-display-luos.png)
 
 Network Display of Luos web app
 
@@ -115,15 +115,15 @@ Now that we solved the browser to embedded connection, Luos can afford web conne
 
 It’s opening a wide variety of new possible features like:
 
-*   High-level integrations with IFTT, Zapier, ...
-*   Monitoring system
-*   Continuous Integration and Delivery (CICD)
-*   Debugging
-*   ...
+- High-level integrations with IFTT, Zapier, ...
+- Monitoring system
+- Continuous Integration and Delivery (CICD)
+- Debugging
+- ...
 
 \[Spoiler Alert\] Some of them are already in development!
 
-So please take a look at our alpha version of Luos web app, stay tuned and make your suggestions by sending us a message on our <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">Discord</a> community!  
+So please take a look at our alpha version of Luos web app, stay tuned and make your suggestions by sending us a message on our <a rel="external nofollow" href="https://discord.gg/luos" target="_blank">Discord</a> community!
 
 [Discover Luos Web App](https://app.luos.io/)
 

@@ -1,7 +1,7 @@
 ---
 custom_edit_url: null
 hide_table_of_contents: true
-image: /img/Routing-table-banner-Luos.png
+image: /assets/images/Routing-table-banner-Luos.png
 description: The routing table is a feature of Luos allowing every services to own a "map" (or topology) of the entire network of your device.
 ---
 
@@ -9,7 +9,7 @@ import { customFields } from '/docusaurus.config.js';
 import Tooltip from '/src/components/Tooltip.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 
 # Routing Table
 
@@ -36,7 +36,7 @@ where `app` is the `service_t` pointer running the detection.
 A non-detected service (not in the routing table) has a specific ID of `0`. At the beginning of the detection, Luos engine erases each service's ID in the network, so all of them will have ID `0` during this operation. You can use it on your services' code to act consequently to this detection if you need it (for example, a service can monitor its ID to detect if a detection has been made and if it has to reconfigure its auto-update).
 
 Then the service running the detection will have ID `1`, and the other services will have an ID between `2` and `4096`, depending on their position from the service detector. IDs are attributed to the services according to their position from the detector service, and to the branch they are in. IDs' attribution begins first to the PTPA port, then PTPB, etc.
-When each service in the network has an attributed ID, the detection algorithm proceeds to create the routing table and shares it with every service (saved only one time per node).
+When each service in the network has an attributed ID, the detection algorithm proceeds to create the routing table and shares it with every service (saved only one time per [node](../node)).
 
 Sometimes, multiple services in the network can have the same alias, which is not allowed to prevent service confusion. In this case, the detection algorithm will add an incremented number after each alias instance in the routing table.
 
@@ -48,13 +48,14 @@ Luos_IsNodeDetected();
 
 It returns `true` or `false` depending on whether this node is detected or not.
 
-:::caution 
+:::caution
 Warnings:
+
 1. Be careful that a service's ID can change during a detection depending on the service running this detection.
 2. Do not consider your service's ID fixed.
 3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
-4. Make sure that by the creation of your services you specified a callback pointer for each of them, so that the messages arriving to them concerning the detection do not stay stored in your node's memory.
-:::
+4. Make sure that by the creation of your services you specified a callback pointer for each of them, so that the [messages](../messages) arriving to them concerning the detection do not stay stored in your node's memory.
+   :::
 
 ## Modes
 
@@ -109,7 +110,7 @@ Service entry mode allows the routing table to include information about a servi
 - **type**: service's type
 - **alias**: service's alias
 
-You can read the [services page](../services) for more information about what services are and how they are used.
+You can read the [services page](../services/index.mdx) for more information about what services are and how they are used.
 
 ### Node entry mode
 
@@ -124,7 +125,7 @@ The **port_table** allows the sharing of topological information of your network
 Here is an example:
 
 <div align="center">
-  <Image src="/img/routing-table.svg" darkSrc="/img/routing-table-dark.svg" />
+  <Image src="/assets/images/routing-table.svg" darkSrc="/assets/images/routing-table-dark.svg" />
 </div>
 
 As shown on this image, elements of the `port_table` indicate the first or last service's ID of the connected node through a given port.
@@ -135,7 +136,7 @@ Specific values can be taken by `port_table`:
 - **0x0FFF**: this port is not connected to any other node.
 
 :::info
-Routing tables can be easily displayed using [Pyluos](../../tools/pyluos) through a [USB gate](../../tools/gate). Please refer to the [Pyluos routing table section](../../tools/pyluos) for more information.
+Routing tables can be easily displayed using [Pyluos](../../integrations/pyluos.mdx) through a [USB gate](/tools/gate.mdx). Please refer to the [Pyluos routing table section](../../integrations/pyluos.mdx) for more information.
 :::
 
 <Tabs className="unique-tabs">
@@ -158,7 +159,7 @@ First of all, we need to reset the filtering result in order to contain all the 
 Here is an example:
 
 <div align="center">
-  <Image src="/img/result-table.svg" />
+  <Image src="/assets/images/result-table.svg" />
 </div>
 <br />
 

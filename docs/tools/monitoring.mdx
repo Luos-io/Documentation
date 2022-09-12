@@ -24,18 +24,20 @@ Luos engine includes an acknowledgment management using the `SERVICEIDACK` targe
 If Luos fails to reach its target using SERVICEIDACK, it will retry 10 times. If the acknowledgment still fails, the targeted service is declared excluded. Excluded services are removed from the routing table to avoid messaging from any services, preserving bandwidth for the rest of the system.
 
 :::note
+
 - Gates services can report service exclusion through JSON.
 - Pyluos can report service exclusion through gates.
-:::
+  :::
 
 ## Luos engine's statistics
 
 Luos engine monitors some values representing the sanity of your nodes and services.
 
 :::note
+
 - Gates services can report statistics through JSON.
 - Pyluos can display statistics through gates.
-:::
+  :::
 
 ### Node statistics
 
@@ -112,7 +114,7 @@ The inspector, exactly like the gate, is a Luos engine's [app service](../luos-t
 
 In order to exploit the functionalities of the inspector app, we need to combine it with the communication driver service, which is called **pipe**.
 
-The format of the messages that are transmitted serially from the inspector using the pipe driver follow the specified [Luos engine communication protocol](../luos-technology/message).
+The format of the messages that are transmitted serially from the inspector using the pipe driver follow the specified [Luos engine communication protocol](../luos-technology/messages).
 
 ### Inspector Features
 

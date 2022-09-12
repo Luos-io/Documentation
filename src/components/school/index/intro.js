@@ -96,55 +96,6 @@ const Intro = () => {
         {/* Filter container */}
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
-              <InputLabel id="toc-label" className={styles.select}>
-                Time to complete
-              </InputLabel>
-              <Select
-                labelId="toc-label"
-                id="toc"
-                value={filters.toc}
-                label="Time to complete"
-                onChange={(e) => {
-                  handleFilter(e.target.value, 'toc');
-                }}
-              >
-                <MenuItem value="">All</MenuItem>
-                {data.filters.toc.map((filter, index) => (
-                  <MenuItem value={filter.duration} key={index}>
-                    {filter.label}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-              <InputLabel id="topic-label" className={styles.select}>
-                Tags
-              </InputLabel>
-              <Select
-                value={filters.tags}
-                label="Tags"
-                labelId="topic-label"
-                onChange={(e) => {
-                  handleFilter(e.target.value, 'tags');
-                }}
-                multiple
-                renderValue={(selected) => (
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                    {selected.map((value) => (
-                      <Chip key={value} label={value} />
-                    ))}
-                  </Box>
-                )}
-              >
-                <MenuItem value="">All</MenuItem>
-                {tagList.map((label, index) => (
-                  <MenuItem value={label} key={index}>
-                    {label}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
               <InputLabel id="category-label" className={styles.select}>
                 Category

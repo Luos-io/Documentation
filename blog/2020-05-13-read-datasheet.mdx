@@ -4,16 +4,16 @@ description: Learn how to read and understand a motor’s datasheet. Accessible 
 slug: get-to-know-your-dc-motor-how-to-read-a-datasheet
 authors:
   - name: Simon Baudry
-    title: Mecatronic 
+    title: Mecatronic
     url: https://github.com/Simonbdy
     image_url: https://github.com/Simonbdy.png
 tags: [motors, robotics]
-image: /img/blog/Get-to-know-your-DC-motor-how-to-read-a-datasheet-luos.jpg
+image: /assets/images/blog/Get-to-know-your-DC-motor-how-to-read-a-datasheet-banner-luos.png
 hide_table_of_contents: false
 date: 2020-05-13T10:00
 ---
 
-![img alt](/img/blog/Get-to-know-your-DC-motor-how-to-read-a-datasheet-luos.jpg)
+![img alt](/assets/images/blog/Get-to-know-your-DC-motor-how-to-read-a-datasheet-luos.jpg)
 
 We go on deeper in the jungle. In this post I will show you that a motor’s datasheet is not always meant to help you starting a fire in your fireplace or to be thrown at a random colleague through the open-space. I explain here how to actually read and understand a motor’s datasheet.
 
@@ -23,7 +23,7 @@ Anyone who knows the basics of DC motors can read this. If you feel that you mis
 
 While working with DC motors, you’ll be more than likely to deal with datasheets / specifications files. Many retailers provide them to define the specifications of their motors, in order to properly use them. This is how it may look:
 
-![This is a good example, unfortunately several retailers’ datasheets lack many useful specs.](/img/blog/Maxon-DC-motor-Luos.jpeg)
+![This is a good example, unfortunately several retailers’ datasheets lack many useful specs.](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc09d9736089e00c7e260_1*8s9xhrCgSBq44ukb7Ns9pw.jpeg)
 
 Here I want to divide this datasheet in 3 sections.
 
@@ -37,32 +37,32 @@ Section 3: Characteristic curves. Sometimes you find them, sometimes not. They a
 
 Some useful facts, always good to keep in mind:
 
-*   A motor absorbs energy in the form of **current** and **voltage**, so a motor’s datasheet will provide various electronic specifications.
-*   It delivers energy in the form of rotational movements (and a bit of heat). The movements imply **speed** and **torque**.
+- A motor absorbs energy in the form of **current** and **voltage**, so a motor’s datasheet will provide various electronic specifications.
+- It delivers energy in the form of rotational movements (and a bit of heat). The movements imply **speed** and **torque**.
 
 _Note: A torque is a rotational force. It means a force applied at a distance from a pivot. Its expression is a force multiplied by a distance.  
 A simple way to put it is the force you apply to a screwdriver while screwing a screw._
 
-*   A DC motor has two main ranges of use: **continuous** use and **intermittent** (or short-term) use (a third one is a no-go zone). The first one allows you to make it rotate during long periods of time, while the second one only allows short periods of time rotating, until it heats too much.
+- A DC motor has two main ranges of use: **continuous** use and **intermittent** (or short-term) use (a third one is a no-go zone). The first one allows you to make it rotate during long periods of time, while the second one only allows short periods of time rotating, until it heats too much.
 
 <h2> Now, the minimum spec list </h2>
 
 There are a minimum of three critical specs in the _section 2_ you will need if you want to know well your motor and properly use it:
 
-*   Nominal voltage (Unom)
-*   No-load speed (S0)
-*   Stall torque (Tstall)
+- Nominal voltage (Unom)
+- No-load speed (S0)
+- Stall torque (Tstall)
 
 Why only these three are the most important, while a bunch of other strange words and values are orbiting around them?
 
 Because every result you want to produce with a motor is dependent to speed or torque — or ultimately to both of them. And at a given voltage, speed and torque are tightly linked together. We will come back to that in a minute.
 
-*   Nominal voltage: This is at the same time the voltage at which the other specs were measured, and the suggested voltage at which the performances are the best, most of the time. You can consider using the motor with the nominal voltage without any problem, or a at value above it. Be advised that a too high voltage will result in damaging the coils.
+- Nominal voltage: This is at the same time the voltage at which the other specs were measured, and the suggested voltage at which the performances are the best, most of the time. You can consider using the motor with the nominal voltage without any problem, or a at value above it. Be advised that a too high voltage will result in damaging the coils.
 
 _Also, the voltage is directly proportional to the speed of the motor (as you read in previous posts)._
 
-*   No-load speed: Exactly as it is named, this is the rotational speed of the motor’s output when no load is applied to it, _i.e._ when nothing is linked to the output. This is the maximal speed the motor can reach at a given voltage.
-*   Stall torque: It is the maximal torque that can be applied to the rotor until it stops spinning.
+- No-load speed: Exactly as it is named, this is the rotational speed of the motor’s output when no load is applied to it, _i.e._ when nothing is linked to the output. This is the maximal speed the motor can reach at a given voltage.
+- Stall torque: It is the maximal torque that can be applied to the rotor until it stops spinning.
 
 > _The faster a motor rotates, the lesser torque it provides — and vice versa._
 
@@ -72,7 +72,7 @@ _Note: Don’t try this a too long time — i.e. no more than a second, or two. 
 
 ![DC motor — or something like that — casually exploding to express its disagreement.](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc09d8ec01a36cfd56d0d_1*HmnT3mpdMTh4VgueuNwHLw.jpeg)
 
-_What do these three specs tell you?_ They give you the theoretical range of use of your motor. You know that for optimal performance, the motor must be supplied by the given nominal voltage. Also, you know what are its maximal speed and the maximal load it can bear _(1)_. Of course n_o-load speed_ and _stall torque_ are extreme values (theoretically impossible to reach), and it’s better not to push the motor close to these limits if you want to ensure a good dynamic. A motor never works well at its extreme values.
+_What do these three specs tell you?_ They give you the theoretical range of use of your motor. You know that for optimal performance, the motor must be supplied by the given nominal voltage. Also, you know what are its maximal speed and the maximal load it can bear _(1)_. Of course n*o-load speed* and _stall torque_ are extreme values (theoretically impossible to reach), and it’s better not to push the motor close to these limits if you want to ensure a good dynamic. A motor never works well at its extreme values.
 
 <h2> The basic curve and the ranges of use </h2>
 
@@ -102,34 +102,34 @@ Finally, a motor can’t virtually be used on its whole speed-torque curve. Ther
 
 Let’s go back to _section 2_, the specs. There are some other important specs that come just after the three ones we talked about earlier. Here is a list of the ones that come just after:
 
-*   No-load current: Current consumed by the motor while continuously rotating at no-load speed.
-*   Starting (or stall) current: Current consumed by the motor at stall torque condition. This current is observed as a peak when a rotor stars rotating.
-*   Rated (or continuous) speed, torque and current: These three values are linked together and define a functioning point of your speed-torque curve. This is a point at which the conditions are the best to ensure maximum efficiency.
-*   Maximum continuous current and torque: (Sometimes called nominal current and torque.) A point of the speed-torque curve which is at the limit between continuous and intermittent ranges, sometimes around the value of the stall torque value divided by three. At this point the amount of current still ensures that the winding is not overheating. Above these values, the motor is likely to overheat quickly. Under them, the amount of current allows the rotor to dissipate the heat.
-*   Peak torque: For most retailers, peak torque is the maximum possible torque a motor can provide in intermittent use, _i.e._ for a short time, and without damaging itself and reducing its lifspan.
-*   Friction torque: This is the torque losses caused by the friction between brushes and commutator, and between shaft and bearings. It can vary with the motor temperature.
-*   Torque constant: A constant allowing to link the torque with the current. I will give you the formula later in this post, as a gift. Usually in _N.m/A_, or _mN.m/A_.
-*   Speed constant: A constant allowing to link the speed with the torque of the motor.
+- No-load current: Current consumed by the motor while continuously rotating at no-load speed.
+- Starting (or stall) current: Current consumed by the motor at stall torque condition. This current is observed as a peak when a rotor stars rotating.
+- Rated (or continuous) speed, torque and current: These three values are linked together and define a functioning point of your speed-torque curve. This is a point at which the conditions are the best to ensure maximum efficiency.
+- Maximum continuous current and torque: (Sometimes called nominal current and torque.) A point of the speed-torque curve which is at the limit between continuous and intermittent ranges, sometimes around the value of the stall torque value divided by three. At this point the amount of current still ensures that the winding is not overheating. Above these values, the motor is likely to overheat quickly. Under them, the amount of current allows the rotor to dissipate the heat.
+- Peak torque: For most retailers, peak torque is the maximum possible torque a motor can provide in intermittent use, _i.e._ for a short time, and without damaging itself and reducing its lifspan.
+- Friction torque: This is the torque losses caused by the friction between brushes and commutator, and between shaft and bearings. It can vary with the motor temperature.
+- Torque constant: A constant allowing to link the torque with the current. I will give you the formula later in this post, as a gift. Usually in _N.m/A_, or _mN.m/A_.
+- Speed constant: A constant allowing to link the speed with the torque of the motor.
 
 _Note: With the proper units from International System of units, torque constant times speed constant equals 1. This is not black magic._
 
-*   Speed / torque gradient: This is the opposite coefficient of the linear speed-torque curve. Usually in _rpm/V_. The speed-torque curve is expressed by the following equation (N as speed, T as torque):
+- Speed / torque gradient: This is the opposite coefficient of the linear speed-torque curve. Usually in _rpm/V_. The speed-torque curve is expressed by the following equation (N as speed, T as torque):
 
 ![Speed / torque gradient formula](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc09e9f38e233fd86b9f8_1*Vs0u-PFivGFqjf_q5K9sYA.jpeg)
 
-*   Power or rated power: This is the mechanical power taken at half the stall torque. Visually, as power (in _W_) is equal to torque (in _N.m_) times speed (in _rad/s_), it’s the area of the square under the speed-torque characteristic curve, at half the stall torque.
+- Power or rated power: This is the mechanical power taken at half the stall torque. Visually, as power (in _W_) is equal to torque (in _N.m_) times speed (in _rad/s_), it’s the area of the square under the speed-torque characteristic curve, at half the stall torque.
 
 ![This is the mechanical power taken at half the stall torque](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc09ea220f865ae57b308_1*oUrdMis9jJfhd7jzmGgKBA.jpeg)
 
-*   Max efficiency: This is the best performance the motor can provide. Efficiency is a ratio between output mechanical power and input electric power, and is mostly expressed in _%_. Typically, it occurs at high speed and low torque.
-*   Terminal resistance and inductance: These are respectively the resistance (in Ohm_, Ω_) and the inductance (in Henry_, H_) of the winding. They are used to calculate various other specs.
-*   Thermal time constant: Constant in seconds (_s_) allowing to know the time it takes to the winding to reach 63% of its critical value, in short-term use. It’s therefore useful to know how long you can use a motor in its intermittent range.
-*   Thermal resistances: Mostly in Kelvin by Watt (_K/W_). These values are thermal resistance between rotor and stator/housing, and between stator/housing and ambient air. The lower the value, the best the dissipation of heat.
-*   Maximal temperature of winding: The critical temperature above which your motor is not feeling good at all, and will eventually be damaged and shorten its lifespan.
-*   Rotor inertia: The inertia of the rotor. The lower the value, the faster the motor goes from 0-speed to no-load speed.
-*   Mechanical time constant: The time (in seconds, _s_) it takes for the motor at rest with no load to reach 63% of its no-load speed under a constant voltage. Th e value is proportional to the inertia of the rotor, and inversely proportional to the square of the torque constant, I’m pretty sure you craved to know that one.
-*   Axial and radial play: The backlash of the shaft, respectively along it or perpendicular to it. Usually in _mm_.
-*   Figure of merit: This almost occult figure is actually a constant, but that’s not helping you. It’s calculated with the torque constant divided by the square root of the terminal resistance, or with the torque divided by the square root of power. It is useful for comparing different motor types as it remains constant whatever the motor voltage and winding configuration.
+- Max efficiency: This is the best performance the motor can provide. Efficiency is a ratio between output mechanical power and input electric power, and is mostly expressed in _%_. Typically, it occurs at high speed and low torque.
+- Terminal resistance and inductance: These are respectively the resistance (in Ohm*, Ω*) and the inductance (in Henry*, H*) of the winding. They are used to calculate various other specs.
+- Thermal time constant: Constant in seconds (_s_) allowing to know the time it takes to the winding to reach 63% of its critical value, in short-term use. It’s therefore useful to know how long you can use a motor in its intermittent range.
+- Thermal resistances: Mostly in Kelvin by Watt (_K/W_). These values are thermal resistance between rotor and stator/housing, and between stator/housing and ambient air. The lower the value, the best the dissipation of heat.
+- Maximal temperature of winding: The critical temperature above which your motor is not feeling good at all, and will eventually be damaged and shorten its lifespan.
+- Rotor inertia: The inertia of the rotor. The lower the value, the faster the motor goes from 0-speed to no-load speed.
+- Mechanical time constant: The time (in seconds, _s_) it takes for the motor at rest with no load to reach 63% of its no-load speed under a constant voltage. Th e value is proportional to the inertia of the rotor, and inversely proportional to the square of the torque constant, I’m pretty sure you craved to know that one.
+- Axial and radial play: The backlash of the shaft, respectively along it or perpendicular to it. Usually in _mm_.
+- Figure of merit: This almost occult figure is actually a constant, but that’s not helping you. It’s calculated with the torque constant divided by the square root of the terminal resistance, or with the torque divided by the square root of power. It is useful for comparing different motor types as it remains constant whatever the motor voltage and winding configuration.
 
 Obviously, I forgot many specs that you may find later in some datasheets. I will add the missing ones from time to time, but don’t worry, you already know good stuff.
 
@@ -141,7 +141,7 @@ Now that we know many specs, we will see that w can find some of them on the cha
 
 You recognized the blue curve: speed-torque characteristic. Good. Let’s have a look at the others.
 
-*   Current curve (dark-red): It’s a line showing the evolution of the current _versus_ the torque. Remember the speed is linked to the torque (the more torque, the less speed)? Here we have a new thing: **the more torque, the more current**. If you take the problem upside-down, it’s kind of logical: at constant voltage, if you add more and more load to the shaft — like your hand trying to stop it spinning — , the speed will decrease, and the motor will consume more and more current to overcome the mechanical resistance of your hand — which is torque — and keep rotating.
+- Current curve (dark-red): It’s a line showing the evolution of the current _versus_ the torque. Remember the speed is linked to the torque (the more torque, the less speed)? Here we have a new thing: **the more torque, the more current**. If you take the problem upside-down, it’s kind of logical: at constant voltage, if you add more and more load to the shaft — like your hand trying to stop it spinning — , the speed will decrease, and the motor will consume more and more current to overcome the mechanical resistance of your hand — which is torque — and keep rotating.
 
 _While voltage is an image of speed, we observe now that_ **_current is an image of torque._**
 
@@ -151,11 +151,11 @@ I take advantage to introduce to you a small yet important formula:
 
 Here _KT_ is the motor constant (_N.m/A_), I is the current (_A_) at the time you want to know the torque T (_N.m_), and I0 is the no-load current (_A_). Some retailers simplified this equation by erasing I0 from it.
 
-*   **Power curve (green):** This is a curve of the output power, expressed in Watts. It is a mechanical power. It’s calculated according to speed (S in _rad/s_) and torque (T in _N.m_):
+- **Power curve (green):** This is a curve of the output power, expressed in Watts. It is a mechanical power. It’s calculated according to speed (S in _rad/s_) and torque (T in _N.m_):
 
 ![Power curve](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc09f299723a80eba37f6_1*W5tcj0PI38TTuQ31sI7hjA.jpeg)
 
-*   **Efficiency curve (brown):** This is the ratio between output power and input power— current A (_A_) times voltage U (_V_ ):
+- **Efficiency curve (brown):** This is the ratio between output power and input power— current A (_A_) times voltage U (_V_ ):
 
 ![Efficiency curve](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc09fe770b81d49c408df_1*WjyuhL3kF-BuIS4xn9CDQQ.jpeg)
 
@@ -175,8 +175,8 @@ Most of the time, nominal voltage _is_ rated voltage, regarding motors. It has t
 
 However, in some cases (_e.g._ on electronic component’s datasheet) both words won’t mean quite the same:
 
-*   The _nominal voltage_, as put above, is the voltage for which the motor is designed to be used.
-*   The _rated voltage_, on the other hand, can sometimes means the maximum voltage for which the motor can work safely without being damaged.
+- The _nominal voltage_, as put above, is the voltage for which the motor is designed to be used.
+- The _rated voltage_, on the other hand, can sometimes means the maximum voltage for which the motor can work safely without being damaged.
 
 In the case nominal and rated are distincts, rated voltage may be written _Rated maximum voltage_ in order to emphasize the difference with nominal voltage.
 

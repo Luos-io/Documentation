@@ -1,0 +1,27 @@
+---
+custom_edit_url: null
+---
+
+# Minimum requirements
+
+Luos engine's library uses hardware and software MCU ressources. Here are the minimum requirements to make Luos engine work properly:
+
+## MCU consideration for Luos engine using Robus network
+
+|  Hardware  |                                     Specification                                      |
+| :--------: | :------------------------------------------------------------------------------------: |
+|   Flash    |                Luos engine + Robus use less than 32 kB of Flash memory                 |
+|    RAM     | Luos engine uses at least 2 kB of RAM for library usage and protocol message buffering |
+|   Stack    |                                         512 B                                          |
+|    Heap    |                                        0 needed                                        |
+|    GPIO    |                         (For Robus) 4 in one wire / 5 in RS485                         |
+| Ressources |                   (For Robus) 1 USART, 1 Timer (option: DMA and CRC)                   |
+
+## Luos engine + Robus network performances vs microcontroler frequency
+
+| MCU frequency | data bandwidth | Robus Max Baudrate |
+| :-----------: | :------------: | :----------------: |
+|   >=48 MHz    |    700 Kbps    |      > 1 Mbps      |
+|   >=32 MHz    |    350 kbps    |     > 500 Kbps     |
+|   >=16 MHz    |    175 kbps    |     > 250 Kbps     |
+|    >=8 MHz    |   87.5 kbps    |     > 125 Kbps     |

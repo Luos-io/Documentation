@@ -1,5 +1,5 @@
 ---
-title: "How to connect electronic boards to the outside world"
+title: 'How to connect electronic boards to the outside world'
 description: Who never complains about a messy and unstable software they have to install to communicate with with an electronic board?
 slug: how-to-connect-electronic-boards-to-the-outside-world
 authors:
@@ -8,12 +8,12 @@ authors:
     url: https://github.com/nicolas-rabault
     image_url: https://github.com/nicolas-rabault.png
 tags: [startup journey, luos]
-image: /img/blog/connect-electronic-outside-luos.png
+image: /assets/images/blog/connect-electronic-outside-luos.png
 hide_table_of_contents: false
 date: 2022-04-12T10:00
 ---
 
-![img alt](/img/blog/connect-electronic-outside-luos.png)
+![img alt](/assets/images/blog/connect-electronic-outside-luos.png)
 
 <h2> Introduction </h2>
 
@@ -43,7 +43,7 @@ What we did is we developed a tool called _Gate_ which is able to translate the 
 
 To summarize, we chose to make an embedded translation software allowing to use it with any language having a JSON library.
 
-![Translation_of_Luos_to_JSON](/img/blog/translation-json-luos.png)
+![Translation_of_Luos_to_JSON](/assets/images/blog/translation-json-luos.png)
 
 At this time we had the embedded working, and a better vision about how things should work on the embedded side than on the outside world. So that choice of an embedded translation software was the obvious way.
 
@@ -61,7 +61,7 @@ But today, a few years later, with the technological advances we made, we faced 
 - For each new feature of Luos engine, we had to update the Gate and Pyluos to the JSON format. This was a big maintainability issue.
 
 Discover our Alpha version of Luos App.  
-Use this very first version to discover the new possibilities we are working on and make your suggestions by sending a message to our community:  
+Use this very first version to discover the new possibilities we are working on and make your suggestions by sending a message to our community:
 
 [Discover Luos App](https://app.luos.io/)
 
@@ -80,7 +80,7 @@ This also required us to create a “kind of Luos” on the computer side, which
 
 Here is what we have today:
 
-![Luos_electronic_device_to_the_outside_world](/img/blog/sketchy-protocol-luos.png)
+![Luos_electronic_device_to_the_outside_world](/assets/images/blog/sketchy-protocol-luos.png)
 
 As you can see, things are becoming sketchy... This is actually working, but we have to find a better way to simplify usability, maintainability, and to offer better performances.
 
@@ -92,14 +92,14 @@ Luos engine already exchanges information between features with a specific API, 
 
 Soon, we will be able to use Luos engine with any kind of physical network. On top of it, if Luos engine can use multiple networks, this could allow us to exchange information with the outside world the exact same way we are exchanging information between the electronic boards. The only difference would be the physical way of transporting the information.
 
-![Luos_electronic_device_to_the_outside_world_2](/img/blog/next-protocol-luos.png)
+![Luos_electronic_device_to_the_outside_world_2](/assets/images/blog/next-protocol-luos.png)
 
 This means that we will have to run a Luos instance on the computer linked to the electronic device. Then we will be able to run and test embedded applications (non-related to hardware) directly on the computer or on the electronic boards, without any differences.
 
 Of course, this will require an installation and mean no direct use of a SaaS tool on a browser. To avoid this problem, we could consider compiling Luos engine in web-assembly, allowing any Javascript browser program to be considered as a normal Luos service.
 
 Discover our Alpha version of Luos App.  
-Use this very first version to discover the new possibilities we are working on and make your suggestions by sending a message to our community:  
+Use this very first version to discover the new possibilities we are working on and make your suggestions by sending a message to our community:
 
 [Discover Luos App](https://app.luos.io/)
 

@@ -4,16 +4,16 @@ description: Discover the basics of PID control and why it comes in handy for ro
 slug: an-introduction-to-pid-control-with-dc-motor
 authors:
   - name: Simon Baudry
-    title: Mecatronic 
+    title: Mecatronic
     url: https://github.com/Simonbdy
     image_url: https://github.com/Simonbdy.png
 tags: [motors, robotics]
-image: /img/blog/An-introduction-to-PID-control-with-DC-motor-banner-luos.jpg
+image: /assets/images/blog/An-introduction-to-PID-control-with-DC-motor-banner-luos.png
 hide_table_of_contents: false
 date: 2020-07-13T10:00
 ---
 
-![An introduction to PID control with DC motor](/img/blog/An-introduction-to-PID-control-with-DC-motor-luos.jpg)
+![img alt](/assets/images/blog/An-introduction-to-PID-control-with-DC-motor-luos.jpg)
 
 This post will introduce the basics of PID control and why it comes in handy for robotic applications. Discover here an introduction to PID control with DC motor. You don't need much background to read this, but knowing the basics of motors is always a good idea: my previous posts on this subject are listed here: [Welcome to the jungle](/2020-02-13-dc-motor-jungle.mdx).
 
@@ -36,8 +36,8 @@ _Your rover must get along with these factors and continue being a rover even th
 _Life is hard on Venus._
 
 Train yourself on PID controllers and Luos at the same time!  
-Different articles follow this one and tell you more about PID control. At the same time we write blog articles, we create an open-source and real-time orchestrator (Luos engine) for distributed architectures; embedded developers can easily design, test and deploy embedded applications.  
-  
+Different articles follow this one and tell you more about PID control. At the same time we write blog articles, we create an open-source and real-time orchestrator (Luos engine) for distributed architectures; embedded developers can easily design, test and deploy embedded applications.
+
 Don't hesitate to try our technology by following [our getting started tutorial.](/tutorials/get-started) Three steps are needed to become a Luos user!
 
 [Get Started with Luos](/tutorials/get-started)
@@ -58,9 +58,9 @@ We can now talk about **control loop feedback system**.
 
 Let's first define the **system** as:
 
-*   An actuator (for example a motor) and its control board (e.g. <a rel="external nofollow" href="https://www.pololu.com/product/713" target="_blank">this board</a>)
-*   A sensor (speed, torque, position, etc.)
-*   A micro-controller board
+- An actuator (for example a motor) and its control board (e.g. <a rel="external nofollow" href="https://www.pololu.com/product/713" target="_blank">this board</a>)
+- A sensor (speed, torque, position, etc.)
+- A micro-controller board
 
 All of them must be supplied with proper electric energy. As a user, you want the actuator to reach a value, that is called a **set-point**.
 
@@ -68,11 +68,11 @@ A **control loop feedback system** is a system that runs in a close loop, with a
 
 Applied to the motor-sensor-system I defined above, it follows a simple recipe (please note it’s highly simplified for now):
 
-*   An initial order is given to the motor _(for example: please spin at 10 rad/s)._
-*   The sensor retrieves the status of the motor _(the motor is spinning at 8 rad/s)._
-*   The error is calculated _(10 minus 8 equals 2)._
-*   The error is re-injected and computed into the initial order _(Please go 2 rad/s faster, if it’s not too much to ask you)._
-*   And so on.
+- An initial order is given to the motor _(for example: please spin at 10 rad/s)._
+- The sensor retrieves the status of the motor _(the motor is spinning at 8 rad/s)._
+- The error is calculated _(10 minus 8 equals 2)._
+- The error is re-injected and computed into the initial order _(Please go 2 rad/s faster, if it’s not too much to ask you)._
+- And so on.
 
 This illustration will help you understand:
 
@@ -112,7 +112,7 @@ The term PID stands for **proportional**, **integral**, **derivative**.
 
 They are the three main components of the code (associated with three respective constants (PID term) that I will talk about later).
 
-These three terms (components) will be calculated in function of the error given by the sensor. Let's call these components functions to simplify things: e.g., _F\_i(e)_ is the integral function of the error _e_. The original target has reached the set point.
+These three terms (components) will be calculated in function of the error given by the sensor. Let's call these components functions to simplify things: e.g., _F_i(e)_ is the integral function of the error _e_. The original target has reached the set point.
 
 ![Function PID command](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d40f255fb18cb89c594c_1*FlLnS95RglcrhaztKnYnIA.png)
 
@@ -132,13 +132,13 @@ You want your motor to stop fooling around, to get its life on track, to spin at
 
 > **_Note:_** _the following is simplified pseudo-code, not written in an actual kick-ass programming language._
 
-*   Your desired speed: setPoint = 50
-*   The actual speed of the motor: sensorValue
-*   The speed command with the PID parameters in function of the error: speed = Fp(error) + Fi(error) + Fd(error)
-*   In the very **first loop**, the motor is not running:The first command is speed = Fp(0) + Fi(0) + Fd(0) = 0>> sensorValue = 0>> error = setPoint-sensorValue = 50–0 = 50Error is 50. Big.
-*   The associated command changes in the **second loop,** and so the motor has began to spin, it’s rotating at 5, that’s why the error is a bit lower.speed = Fp(50) + Fi(50) + Fd(50)>>sensorValue = 5>>error = setPoint-sensorValue = 50–5 = 45
-*   On the **third loop** the motor has accelerated a lot.speed = Fp(45) + Fi(45) + Fd(45)>>sensorValue = 60>>error = setPoint-sensorValue = 50 — 60 = -10The error is negative because the motor is spinning too fast now.
-*   The command to correct that on the **fourth loop**:speed = Fp(-10) + Fi(-10) + Fd(-10)>>sensorValue = 50>>error = setPoint-sensorValue = 50–50 = 0
+- Your desired speed: setPoint = 50
+- The actual speed of the motor: sensorValue
+- The speed command with the PID parameters in function of the error: speed = Fp(error) + Fi(error) + Fd(error)
+- In the very **first loop**, the motor is not running:The first command is speed = Fp(0) + Fi(0) + Fd(0) = 0>> sensorValue = 0>> error = setPoint-sensorValue = 50–0 = 50Error is 50. Big.
+- The associated command changes in the **second loop,** and so the motor has began to spin, it’s rotating at 5, that’s why the error is a bit lower.speed = Fp(50) + Fi(50) + Fd(50)>>sensorValue = 5>>error = setPoint-sensorValue = 50–5 = 45
+- On the **third loop** the motor has accelerated a lot.speed = Fp(45) + Fi(45) + Fd(45)>>sensorValue = 60>>error = setPoint-sensorValue = 50 — 60 = -10The error is negative because the motor is spinning too fast now.
+- The command to correct that on the **fourth loop**:speed = Fp(-10) + Fi(-10) + Fd(-10)>>sensorValue = 50>>error = setPoint-sensorValue = 50–50 = 0
 
 On the **fifth loop**, the micro-controller is quite happy because the motor is obeying. Good.
 
@@ -150,9 +150,9 @@ Viewed on a curve, it will look like this:
 
 We see that the curve — the motor speed versus the time — is trying to reach the set point value 1. Don't worry; we will discuss more in the next following posts about PID control. To access directly, follow these links:
 
-*   [PID: the P, as in Proportional](/2020-08-13-pid-p-proportional.mdx)
-*   [PID: the I, as in Integral](/2020-09-13-pid-i-integral.mdx)
-*   [PID: D, as in Derivative](/2020-10-13-pid-d-derivative.mdx)
+- [PID: the P, as in Proportional](/2020-08-13-pid-p-proportional.mdx)
+- [PID: the I, as in Integral](/2020-09-13-pid-i-integral.mdx)
+- [PID: D, as in Derivative](/2020-10-13-pid-d-derivative.mdx)
 
 That's all for now.
 

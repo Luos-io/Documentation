@@ -8,18 +8,18 @@ authors:
     url: https://github.com/Emanuel-Allely
     image_url: https://github.com/Emanuel-Allely.png
 tags: [release, luos]
-image: /img/blog/release-v-1-3-0-banner-luos.png
+image: /assets/images/blog/release-v-1-3-0-banner-luos.png
 hide_table_of_contents: false
 date: 2021-08-13T10:00
 ---
 
-![img alt](/img/blog/release-v130-luos.png)
+![img alt](/assets/images/blog/release-v130-luos.png)
 
 Template management and Gate major update
 
 <!--truncate-->
 
-Hello everybody, we are thrilled to share this new release note with you: <a rel="external nofollow" href="https://github.com/Luos-io/Luos/releases/tag/1.3.0" target="_blank">Luos v1.3.0 is out</a>
+Hello everybody, we are thrilled to share this new release note with you: <a rel="external nofollow" href="https://github.com/Luos-io/luos_engine/releases/tag/1.3.0" target="_blank">Luos v1.3.0 is out</a>
 
 Like every young technology growing fast, Luos is going through an intense period of development. This means new critical features and many fixes at the same time, both into frequent releases. Fully dedicated to easing your life as an embedded developer, an electronic engineer, or a product manager, our R&D team is growing and working hard with passion for delivering a powerful technology to you.
 
@@ -39,7 +39,7 @@ On the previous version of the gate example, you needed to modify the code to ad
 
 We split it into 2 parts, the main Gate App and a Driver:
 
-*   Now the gate is an App. Meaning it doesn't have any code related to hardware. It's a basic ANSI C that you can compile directly for any MCU or CPU without any additional configuration! This way, you can easily add it to your setup.
+- Now the gate is an App. Meaning it doesn't have any code related to hardware. It's a basic ANSI C that you can compile directly for any MCU or CPU without any additional configuration! This way, you can easily add it to your setup.
 
 We also added a build option allowing you to select the output format managed by the gate or create your own easily. For now, we have 2 Json options, the one we use on the previous version (cJSON), and a new one (TinyJSON) that doesn't make any dynamic allocation.
 
@@ -53,9 +53,9 @@ More details about this can be found in the [Gate](/docs/tools/gate) section of 
 
 <h3> 🆕 Feature: Add access management to container </h3>
 
-Sometimes the same container type can be used for input or output purposes. For example, a _STATE\_TYPE_ container (which is a basic True/False state) can be used for a button (read-only) or a relay (write-only). This is no big deal regarding the capability of your code because you deal with the messages as you want and make it work as you want, but other containers don't know if it's read-only or write-only.
+Sometimes the same container type can be used for input or output purposes. For example, a _STATE_TYPE_ container (which is a basic True/False state) can be used for a button (read-only) or a relay (write-only). This is no big deal regarding the capability of your code because you deal with the messages as you want and make it work as you want, but other containers don't know if it's read-only or write-only.
 
-This new access management feature allows you to declare the readability of your container for the other containers in your device. By default, a container is on a **READ\_WRITE\_ACCESS,** and you can choose to make it **READ\_ONLY\_ACCESS**, **WRITE\_ONLY\_ACCESS**, or even **NO\_ACCESS**.
+This new access management feature allows you to declare the readability of your container for the other containers in your device. By default, a container is on a **READ_WRITE_ACCESS,** and you can choose to make it **READ_ONLY_ACCESS**, **WRITE_ONLY_ACCESS**, or even **NO_ACCESS**.
 
 More details about this can be found in our documentation.
 
@@ -81,11 +81,11 @@ More details in our documentation.
 
 When it comes to developing the behavior of your machine, you will have to access some drivers.
 
-With Luos, all the resources of your system are resumed into a [routing\_table structure](/docs/luos-technology/services/routing-table). This structure allows you to find the resources you need to make your application work. We are constantly updating and optimizing the functions allowing you to easily find the resources you need.
+With Luos, all the resources of your system are resumed into a [routing_table structure](/docs/tools/gate). This structure allows you to find the resources you need to make your application work. We are constantly updating and optimizing the functions allowing you to easily find the resources you need.
 
 In this revision 1.3.0 of Luos, we added index research, giving you the most optimized way of getting resource information.
 
-More details about this are on the [routing\_table](/docs/luos-technology/services/routing-table) section of our documentation.
+More details about this are on the [routing_table](/docs/tools/gate) section of our documentation.
 
 <h3> 🆕 Feature: Localhost verbose management </h3>
 
@@ -95,9 +95,9 @@ To save some data bandwidth on your network and RAM on your MCU, we added a new 
 
 This is a huge deal to improve your Luos system performances, and you should take care to put your applications close to the drivers they are using!
 
-If you need to get all the data into the network, for example for debugging purposes, you can use the **VERBOSE\_LOCALHOST** build flag that disables this feature!
+If you need to get all the data into the network, for example for debugging purposes, you can use the **VERBOSE_LOCALHOST** build flag that disables this feature!
 
-More details about this subject in the [messages handling](/docs/luos-technology/message/handling-message) section of our documentation.
+More details about this subject in the [messages handling](/docs/luos-technology/messages/handling-message) section of our documentation.
 
 <h3> 🛠️ Fix: Streaming better management for DMA transmission </h3>
 
@@ -115,7 +115,7 @@ We fixed it, allowing you to deal with massive streaming data.
 
 <h3> 🛠️ Fix: Routing table exclusion optimization </h3>
 
-On the previous revision of Luos, we discovered that excluded containers were not removed from the routing\_table.
+On the previous revision of Luos, we discovered that excluded containers were not removed from the routing_table.
 
 We fixed it, allowing you to avoid multiple access to a dead container.
 
@@ -141,11 +141,13 @@ We fixed it and made sure to always be able to transmit anything to anyone.
 
 <h2> Other Luos' releases </h2>
 
-<a rel="external nofollow" href="https://github.com/Luos-io/Luos/releases" target="_blank">Click here</a> to see all Luos' releases.
+<a rel="external nofollow" href="https://github.com/Luos-io/luos_engine/releases" target="_blank">
+  Click here
+</a> to see all Luos' releases.
 
 TL;DR
 
-You will find below the <a rel="external nofollow" href="https://github.com/Luos-io/Luos/releases/tag/1.3.0" target="_blank">original changelog</a>.
+You will find below the <a rel="external nofollow" href="https://github.com/Luos-io/luos_engine/releases/tag/1.3.0" target="_blank">original changelog</a>.
 
 **Luos 1.3.0:**
 
@@ -164,15 +166,15 @@ You will find below the <a rel="external nofollow" href="https://github.com/Luos
 
 **Dependencies:**
 
-*   LuosHAL version >= 0.3.0
-*   Pyluos version >= 1.5.0
+- LuosHAL version >= 0.3.0
+- Pyluos version >= 1.5.0
 
 **Package:**
 
-*   Luos library
-*   Luos library for Arduino environment with example
-*   Luos gate library for Arduino environnement
+- Luos library
+- Luos library for Arduino environment with example
+- Luos gate library for Arduino environnement
 
-🎉 Try it, it's #opensource: <a rel="external nofollow" href="https://github.com/Luos-io/Luos/releases/tag/1.3.0" target="_blank">https://github.com/Luos-io/Luos/releases/tag/1.3.0</a>. 
+🎉 Try it, it's #opensource: <a rel="external nofollow" href="https://github.com/Luos-io/luos_engine/releases/tag/1.3.0" target="_blank">https://github.com/Luos-io/luos_engine/releases/tag/1.3.0</a>.
 
 [Get Started with Luos](/tutorials/get-started)

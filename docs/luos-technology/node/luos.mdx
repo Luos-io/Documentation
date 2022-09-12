@@ -2,10 +2,10 @@
 custom_edit_url: null
 ---
 
-import { customFields } from "/docusaurus.config.js";
-import Tooltip from "@site/src/components/Tooltip.js";
-import Image from "@site/src/components/Images.js";
-import IconExternalLink from "@theme/IconExternalLink";
+import { customFields } from '/docusaurus.config.js';
+import Tooltip from '@site/src/components/Tooltip.js';
+import Image from '@site/src/components/Image';
+import IconExternalLink from '@theme/Icon/ExternalLink';
 
 # Luos engine
 
@@ -51,7 +51,7 @@ int main(void)
 }
 ```
 
-Adding this code to a <Tooltip def={customFields.node_def}>node</Tooltip> makes it able to react to a Luos network. It is now ready to host your services by [running packages](../package) on your main.
+Adding this code to a <Tooltip def={customFields.node_def}>node</Tooltip> makes it able to react to a Luos network. It is now ready to host your services by [running packages](../packages/index.mdx) on your main.
 
 **As a developer, you will always develop your functionalities into services and never into the `main()` program.**
 
@@ -61,7 +61,7 @@ The only information that should be put on the `main()` code are MCU's setup par
 
 ## A complete software node view
 
-At the node level, communication is achieved by receiving and sending [messages](../message) with the other [services](../services) of a Luos network. The nodes can communicate with each other thanks to the network layer.
+At the node level, communication is achieved by receiving and sending [messages](../messages/index.mdx) with the other [services](../services/index.mdx) of a Luos network. The nodes can communicate with each other thanks to the network layer.
 
 Luos engine will be able to find the physical destination to reach a specific service and define the best way to make it (basically using localhost or using the network layer).
 
@@ -69,10 +69,10 @@ Luos engine will be able to find the physical destination to reach a specific se
 If you use Luos engine on only one board, you don't need to take care of the physical network, the engine will only use localhost. You can use it to deal with microservice developpement on IOT, for example.
 :::
 
-Robus executes a format control, and stores messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos engine or sent to one or several [services](../services).
+Robus executes a format control, and stores messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos engine or sent to one or several [services](../services/index.mdx).
 
 <div align="center">
-  <Image src="/img/NodeFlow.svg" darkSrc="/img/NodeFlow-dark.svg" />
+  <Image src="/assets/images/NodeFlow.svg" darkSrc="/assets/images/NodeFlow-dark.svg" />
 </div>
 
 ## Node Parameters Configuration

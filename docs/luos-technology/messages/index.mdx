@@ -1,0 +1,62 @@
+---
+hide_title: true
+custom_edit_url: null
+title: 'Messages: exchange information between services'
+description: Understand its structure, learn to send and receive messages, commands, the object dictionary and advanced messages.
+---
+
+import { customFields } from '/docusaurus.config.js';
+import Tooltip from '@site/src/components/Tooltip.js';
+
+# Messages
+
+As a developer, you will have to create and use Luos messages to exchange information between <Tooltip def={customFields.service_def}>services</Tooltip>. In order to do that, you have to understand how messages work.
+
+## Message structure
+
+Luos engine's messages are managed by the `msg_t` structure:
+
+```c
+typedef struct{
+    header_t header;
+    uint8_t data[MAX_DATA_MSG_SIZE];
+}msg_t;
+```
+
+All messages have a header. A header is a 7-byte field containing all information allowing services to understand the messages' context. All services in the network catch and decode the header of each sent and received message.
+
+`data` is a table containing data.
+
+> **Info:** MAX_DATA_MSG_SIZE represents the maximum size of messages (default value is 128 bytes);
+
+## Header
+
+To send data to any services you want, you will have to first fill out some information on the header.
+
+here is the `header_t` structure:
+
+```c
+typedef struct{
+    uint16_t protocol : 4;    /*!< Protocol version. */
+    uint16_t target : 12;     /*!< Target address, it can be (ID, Topic,Broadcast, Type). */
+    uint16_t target_mode : 4; /*!< Select targeting mode (ID, ID+ACK, Topic, Broadcast, Type). */
+    uint16_t source : 12;     /*!< Source address, it can be (ID, Topic, Broadcast, Type). */
+    uint8_t cmd;              /*!< msg definition. */
+    uint16_t size;            /*!< Size of the data field. */
+}header_t;
+```
+
+- **Protocol (4 bits)**: This field provides the protocol revision. This field is automatically filled; you don't have to deal with it.
+- **Target (12 bits)**: This field contains the target address. To understand the real destination of this field, you have to know the addressing mode contained on the _Target_mode_ field.
+- **Target_mode (4 bits)**: This field indicates the addressing mode and how to understand the _Target_ field. It can take different values:
+  - **SERVICEID**: This mode allows to communicate with a unique service using its ID **without** acknowledgment return.
+  - **SERVICEIDACK**: This mode allows to communicate with a unique service using its ID **with** acknowledgment return.
+  - **TYPE**: This mode sends a message to all services with a given type, e.g. all "Sharp digital distance sensor".
+  - **BROADCAST**: This mode allows all the services in the network to catch a message. In this case, the message contains a type of data used by multiple services.
+  - **TOPIC**: Publisher/Subscriber mode, allows multiple services to catch a message depending on the topic that they subscribed to. 
+  - **NODEID**: This mode allows to send a message to all the services of a specific node **without** acknowledgment return.
+  - **NODEIDACK**: This mode allows to send a message to all the services of a specific node **with** acknowledgment return.
+- **Source (12 bits)**: The unique ID of the transmitter service.
+- **CMD (8 bits)**: The command defines the transmitted data's type.
+- **Size (16 bits)**: Size of the incoming data.
+- **ACK (8 bits)**: [Acknowledgment](../../tools/monitoring) signal demanded in target modes **IDACK** and **NODEIDACK**, after the good reception of the message.

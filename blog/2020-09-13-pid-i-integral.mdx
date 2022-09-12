@@ -4,16 +4,16 @@ description: We go on with the PID letters. This post deals with the I. You can 
 slug: pid-the-i-as-in-integral
 authors:
   - name: Simon Baudry
-    title: Mecatronic 
+    title: Mecatronic
     url: https://github.com/Simonbdy
     image_url: https://github.com/Simonbdy.png
 tags: [motors, robotics]
-image: /img/blog/PID-The-I-as-in-integral-banner-luos.png
+image: /assets/images/blog/PID-The-I-as-in-integral-banner-luos.png
 hide_table_of_contents: false
 date: 2020-09-13T10:00
 ---
 
-![img alt](/img/blog/PID-The-I-as-in-integral-luos.png)
+![img alt](/assets/images/blog/PID-The-I-as-in-integral-luos.png)
 
 We go on with the PID letters. This post deals with the I. You can visit the first posts of this series, the [introduction to PID](/2020-03-13-control-dc-motor-1.mdx), and the [proportional post](/2020-08-13-pid-p-proportional.mdx).
 
@@ -21,13 +21,13 @@ We go on with the PID letters. This post deals with the I. You can visit the fir
 
 In the previous post, I introduced to you what was a PID control and how the P — for proportional — was working in it. This post is about the I of PID.
 
-Welcome to the I_\-_post.
+Welcome to the I\_\-\_post.
 
 As you can remember from my previous posts, a PID is most of the time a coded feedback loop control working into a system that includes at least:
 
-*   a **powered actuator** (e.g. a DC motor),
-*   a **sensor** (e.g. a speed sensor), and,
-*   the associated **command** (most of the time an electronic board with a microprocessor).
+- a **powered actuator** (e.g. a DC motor),
+- a **sensor** (e.g. a speed sensor), and,
+- the associated **command** (most of the time an electronic board with a microprocessor).
 
 A PID is a tool used for politely but firmly asking a machine to move or react precisely the way you want while adapting to its changing environment.
 
@@ -35,10 +35,10 @@ The changing environment can be, for example, a dynamic charge or something slow
 
 I remind you of the must-known vocabulary you will need to go on reading:
 
-*   **Setpoint:** the user-defined value to be reached by the actuator (a speed, a torque, etc.).
-*   **Process variable:** the real actuator’s value, retrieved by the sensor in real-time.
-*   **Error:** the difference between the setpoint and the process variable.
-*   **Steady-state:** when the system stops oscillating and finds its full balance.
+- **Setpoint:** the user-defined value to be reached by the actuator (a speed, a torque, etc.).
+- **Process variable:** the real actuator’s value, retrieved by the sensor in real-time.
+- **Error:** the difference between the setpoint and the process variable.
+- **Steady-state:** when the system stops oscillating and finds its full balance.
 
 Unlike the proportional part of a PID, the integral part can’t be used alone, as it wouldn’t have any effect. Instead, the integral is either proportional (PI) or proportional and derivative (PID). The proportional part P is always used in a PID control.
 
@@ -52,9 +52,9 @@ What does that even mean?
 
 In the last post, [the P-post](/2020-08-13-pid-p-proportional.mdx), you thought you casually took the computed error and that you multiplied it by a chosen constant, P. But what you did is that you multiplied P by the _calculated last mistake_. At each loop, its value changes:
 
-*   The system is running. The process variable evolves at each loop.
-*   However, the setpoint stays the same unless you want to change it.
-*   The error, which is equal to ProcessVariable - setpoint, evolves at each loop.
+- The system is running. The process variable evolves at each loop.
+- However, the setpoint stays the same unless you want to change it.
+- The error, which is equal to ProcessVariable - setpoint, evolves at each loop.
 
 Then the error must not be seen as a variable anymore but as a function of time. Let’s call it ε(t).
 
@@ -85,7 +85,7 @@ It’s easy: You add together all the previous values of the error function. It�
 
 Then you multiply the total by a constant called KI, which will allow you to control the power of an integral part. For example, if KI is very small, like KI = 0.005, the essential part will have very few effects on the command. KI, like KP, is a value you will want to set to tweak your final PID.
 
-Here is how you want to express it: you declare a variable, let’s call it sum\_e, that will iterate with each new value of the error ε(t) at each loop of the system, something like sum\_e += e (e being the error at each loop), and you multiply this variable by KI in the command function. We now have this:
+Here is how you want to express it: you declare a variable, let’s call it sum_e, that will iterate with each new value of the error ε(t) at each loop of the system, something like sum_e += e (e being the error at each loop), and you multiply this variable by KI in the command function. We now have this:
 
 ![Command PID formula](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030d40f255fb18cb89c594c_1*FlLnS95RglcrhaztKnYnIA.png)
 
@@ -93,7 +93,7 @@ Here is how you want to express it: you declare a variable, let’s call it sum\
 
 ![Command PID formula - Luos](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030df0b31f7c0823667fe35_1*aoZI9dqx0OTsWC4fc6ilEA.png)
 
-_Note:_ _When you program a control loop feedback, at the beginning of the actual PID loop code and just after defining the error e = set\_point -process\_variable, the line sum\_e += e is essential, so that in the following passage into the loop sum\_e would evolve._
+_Note:_ _When you program a control loop feedback, at the beginning of the actual PID loop code and just after defining the error e = set_point -process_variable, the line sum_e += e is essential, so that in the following passage into the loop sum_e would evolve._
 
 Visually, after many loops, the operations made by the integral command look like this on the system:
 
@@ -107,13 +107,13 @@ Don't hesitate to start with Luos and discover our tutorials by following our [g
 
 <h2> The effects of I </h2>
 
-With an integral part, it’s as if the command had a memory: it knows the previous errors that were made. And the bigger the sum of the previous errors (sum\_e), the bigger fi(e). The bigger fi(e), the stronger the command. So if the past errors were too important before, it’s time to correct them with a bigger command.
+With an integral part, it’s as if the command had a memory: it knows the previous errors that were made. And the bigger the sum of the previous errors (sum_e), the bigger fi(e). The bigger fi(e), the stronger the command. So if the past errors were too important before, it’s time to correct them with a bigger command.
 
-*   ε(t) being a function of time, you can see that every single value it took in the past loops affects an integral part of the PID:
+- ε(t) being a function of time, you can see that every single value it took in the past loops affects an integral part of the PID:
 
 The integral looks into the past of the system.
 
-*   Adding an integral command will **correct the static error** induced by a proportional command set alone. Indeed, as long as there is an error, i.e., ε(t) ≠ 0, even if ε(t) is small enough to have no effect on the proportional part, it will still impact the system with its residual value.
+- Adding an integral command will **correct the static error** induced by a proportional command set alone. Indeed, as long as there is an error, i.e., ε(t) ≠ 0, even if ε(t) is small enough to have no effect on the proportional part, it will still impact the system with its residual value.
 
 You now have two parameters to tune, KP and KI. You can program a proportional control for your system and refine it with an integral control, making it a PI.
 

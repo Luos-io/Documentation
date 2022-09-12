@@ -7,12 +7,12 @@
 }
 
 .sidebarItemTitle {
-  font-size: 16px;
-  font-weight: normal !important;
+  font-size: var(--ifm-h4-font-size);
+  font-weight: var(--ifm-font-weight-normal);
 }
 
 .sidebarItemList {
-  font-size: 16px;
+  font-size: var(--ifm-h4-font-size);
 }
 
 .sidebarItem {
@@ -20,10 +20,10 @@
 }
 
 .sidebarItemLink {
-  color: #dadde1;
+  color: var(--ifm-font-color-base);
   display: block;
-  font-size: 16px;
-  font-weight: normal !important;
+  font-size: var(--ifm-h4-font-size);
+  font-weight: var(--ifm-font-weight-normal) !important;
 }
 
 .sidebarItemLink:hover {
@@ -42,7 +42,7 @@
 
 .titleLink {
   color: #626a73;
-  font-weight: normal !important;
+  font-weight: var(--ifm-font-weight-normal) !important;
 }
 
 .titleLink:hover {

@@ -1,9 +1,9 @@
 ---
 custom_edit_url: null
-image: /img/Bike-alarm-Luos.png
+image: /assets/images/Bike-alarm-Luos.png
 ---
 
-import Image from '@site/src/components/Images.js';
+import Image from '@site/src/components/Image';
 
 # Add another app controlling the alarm
 
@@ -14,11 +14,11 @@ This app is really similar to the alarm app, so if you understood everything fro
 
 To start the app, we follow the same steps that the previous ones:
 
- 1. App folder creation (we call it start_controller).
- 2. *.c* and *.h* files creation in the folder.
- 3. Service creation by writing the init and loop functions.
- 4. Detection event management with initialization of the button to return a state value each 10 ms.
- 5. Loop conditional execution if `control_app` is `PLAY` and `Luos_IsNodeDetected()` is `true`.
+1.  App folder creation (we call it start_controller).
+2.  _.c_ and _.h_ files creation in the folder.
+3.  Service creation by writing the init and loop functions.
+4.  Detection event management with initialization of the button to return a state value each 10 ms.
+5.  Loop conditional execution if `control_app` is `PLAY` and `Luos_IsNodeDetected()` is `true`.
 
 Your `start_controller.c` file should look like this:
 
@@ -59,7 +59,7 @@ static void StartController_MsgHandler(service_t *service, msg_t *msg)
 }
 ```
 
-As you can see, we created a new type called START_CONTROLLER_APP. We added this app to the structure we already made for the first one: 
+As you can see, we created a new type called START_CONTROLLER_APP. We added this app to the structure we already made for the first one:
 
 ```c
 typedef enum
@@ -68,15 +68,16 @@ typedef enum
     START_CONTROLLER_APP
 } alarm_t;
 ```
+
 :::info
-Those custom types are product level information. Following the [Luos project code organization](https://docs.luos.io/docs/next/luos-technology/basics/orga), you should create the `alarm_t` enum into the `product_config.h`.
+Those custom types are product level information. Following the [Luos project code organization](https://www.luos.io/documentation/next/luos-technology/basics/organization), you should create the `alarm_t` enum into the `product_config.h`.
 :::
 
 ## Manage button updates
 
 This app needs to get the button's information to do things. Let us add an auto-update on the `END_DETECTION` event and manage button information reception.
 
-We choose to search for the button service using its **alias**, instead of using its *type* like we did in the 'alarm_controller' app. This way, you can choose which button do what depending on its alias, and manage as many buttons you want on your bike for future new features.
+We choose to search for the button service using its **alias**, instead of using its _type_ like we did in the 'alarm_controller' app. This way, you can choose which button do what depending on its alias, and manage as many buttons you want on your bike for future new features.
 
 ```c
 void StartController_MsgHandler(service_t *service, msg_t *msg)

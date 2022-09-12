@@ -1,9 +1,9 @@
 ---
 custom_edit_url: null
-image: /img/Bootloader-Luos-banner.png
+image: /assets/images/Bootloader-Luos-banner.png
 ---
 
-import Image from '@site/src/components/Images.js';
+import Image from '@site/src/components/Image';
 
 # Bootloader
 
@@ -13,8 +13,8 @@ To flash one or multiple boards using the Luos engine's bootloader, you need a m
 
 <div align="center">
   <Image
-    src="/img/tutorials/bootloader/tutorial_setup.png"
-    darkSrc="/img/tutorials/bootloader/tutorial_setup-dark.png"
+    src="/assets/images/tutorials/bootloader/tutorial_setup.png"
+    darkSrc="/assets/images/tutorials/bootloader/tutorial_setup-dark.png"
   />
 </div>
 
@@ -38,7 +38,7 @@ Git clone https://github.com/Luos-io/luos_engine.git
 Open VS Code and open the _Gate_SerialCom_ project corresponding to your master board in _Luos_engine/Examples/Projects/YOUR_BOARD_:
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/Gate_project.png" />
+  <Image src="/assets/images/tutorials/bootloader/Gate_project.png" />
 </div>
 
 Now connect your master node with a USB cable from your PC to the port used for programming.
@@ -46,7 +46,7 @@ Now connect your master node with a USB cable from your PC to the port used for 
 Click on **Upload** on the bottom left corner of the IDE. Wait for the compilation and flashing to be completed. If successful, you should see the following:
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/load_gate.png" />
+  <Image src="/assets/images/tutorials/bootloader/load_gate.png" />
 </div>
 
 :::info
@@ -62,7 +62,7 @@ pyluos-bootloader detect
 ```
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/gate_detect.png" />
+  <Image src="/assets/images/tutorials/bootloader/gate_detect.png" />
 </div>
 
 :::info
@@ -76,7 +76,7 @@ Now, you will load the bootloader in the second node. Follow the same process as
 Connect the second node with the USB programming port and click on **Upload**; you should see the following:
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/load_bootloader.png" />
+  <Image src="/assets/images/tutorials/bootloader/load_bootloader.png" />
 </div>
 
 ## 5. Detection
@@ -84,7 +84,7 @@ Connect the second node with the USB programming port and click on **Upload**; y
 Connect your two nodes through the Luos network and connect your master board USB serial interface to your PC. Type the same command used on **Step 3**, and you should see the following:
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/detect_bootloader.png" />
+  <Image src="/assets/images/tutorials/bootloader/detect_bootloader.png" />
 </div>
 
 `boot_service` indicates there is a bootloader running on your node. You are now able to communicate with it through the gate and load any application.
@@ -98,7 +98,7 @@ PlatformIO is able to manage multiple build configurations. By default, Luos eng
 To do that, when your button project is open you can click on the `Switch PlatformIO Project Environment` button at the bottom of the window, then select the `with_bootloader` option on the list of choice appearing on the top of your screen.
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/select_env.png" />
+  <Image src="/assets/images/tutorials/bootloader/select_env.png" />
 </div>
 
 Then, click on **Build**.
@@ -117,7 +117,7 @@ pyluos-bootloader flash COM6 -t 2 -b firmware.bin
 ```
 
 :::info
-For further information on the options used with the CLI, please read the dedicated [documentation page](/docs/tools/boot), or type the following command:
+For further information on the options used with the CLI, please read the dedicated [documentation page](/docs/tools/bootloader), or type the following command:
 
 ```bash
 pyluos-bootloader --help
@@ -128,17 +128,17 @@ pyluos-bootloader --help
 The following lines should appear after typing the command:
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/application_load.png" />
+  <Image src="/assets/images/tutorials/bootloader/application_load.png" />
 </div>
 
 :::warning
-If any problem occurs during the loading process, please reboot your system and retry typing the command (you can also find information [here](/docs/tools/boot)).
+If any problem occurs during the loading process, please reboot your system and retry typing the command (you can also find information [here](/docs/tools/bootloader)).
 :::
 
 Then relaunch a detection (as done in **Step 3**):
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/detect_old_app.png" />
+  <Image src="/assets/images/tutorials/bootloader/detect_old_app.png" />
 </div>
 
 You can see that `boot_service` has been replaced by another alias such as **button**, which is the name of the service running in your app: the bootloader switched to application mode and launched your freshly written app.
@@ -151,7 +151,7 @@ Compile it using the `with_bootloader` environment, then use the bootloader comm
 You should see your updated service running in your node:
 
 <div align="center">
-  <Image src="/img/tutorials/bootloader/detect_new_app.png" />
+  <Image src="/assets/images/tutorials/bootloader/detect_new_app.png" />
 </div>
 
-You have reached the end of this tutorial. You are now able to use the bootloader's feature included in Luos engine. You know the basics, but you can find some more helpful information on the dedicated [documentation page](/docs/tools/boot).
+You have reached the end of this tutorial. You are now able to use the bootloader's feature included in Luos engine. You know the basics, but you can find some more helpful information on the dedicated [documentation page](/docs/tools/bootloader).

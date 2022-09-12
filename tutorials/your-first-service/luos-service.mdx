@@ -1,9 +1,9 @@
 ---
 custom_edit_url: null
-image: /img/Your-first-service-banner-luos.png
+image: /assets/images/tutorials/your-first-service-banner-luos.png
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -65,8 +65,8 @@ In the case of a simple LED, your service will have one input with the state of 
 
 <div align="center">
   <Image
-    src="/img/your-first-service/luos-service-1.png"
-    darkSrc="/img/your-first-service/luos-service-1-dark.png"
+    src="/assets/images/tutorials/your-first-service/luos-service-1.png"
+    darkSrc="/assets/images/tutorials/your-first-service/luos-service-1-dark.png"
   />
 </div>
 
@@ -93,7 +93,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg){}
 
 So that your service can be recognized by other services, you will need to expose some information about the features you want to encapsulate into it:
 
-- The service type, which defines the capabilities and the purpose of your service. You can find the list of all the [Luos types in this page](https://github.com/Luos-io/luos_engine/blob/master/inc/luos_list.h). Our new service fits with the **STATE_TYPE** (boolean 1 or 0).
+- The service type, which defines the capabilities and the purpose of your service. You can find the list of all the [Luos types in this page](https://github.com/Luos-io/luos_engine/blob/main/engine/core/inc/luos_list.h). Our new service fits with the **STATE_TYPE** (boolean 1 or 0).
 - The service alias, which is the default name of your service. Let's name our LED “**led**”.
 - The service revision, which is the firmware version of your service. Let's say our firmware has the version **1.0.0**; we have to make a `revision_t` variable to send it.
 

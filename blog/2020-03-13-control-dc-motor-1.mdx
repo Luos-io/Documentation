@@ -4,16 +4,16 @@ description: Learn more about the basics of DC motors in robotics and precisely 
 slug: how-to-stop-being-controlled-by-your-dc-motor-reverse-the-roles
 authors:
   - name: Simon Baudry
-    title: Mecatronic 
+    title: Mecatronic
     url: https://github.com/Simonbdy
     image_url: https://github.com/Simonbdy.png
 tags: [motors, robotics]
-image: /img/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-1-banner-luos.png
+image: /assets/images/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-1-banner-luos.png
 hide_table_of_contents: false
 date: 2020-03-13T10:00
 ---
 
-![img alt](/img/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-1-luos.png)
+![img alt](/assets/images/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-1-luos.png)
 
 This post is dedicated to curious about the basics of DC motors in robotics and precisely how to control them. You can begin with the [previous post](/2020-01-13-lift-banana-motors.mdx) dealing with the different motors used for robotic applications. While some of them are not often used, others, as the DC brushed motor, are more common.
 
@@ -82,7 +82,7 @@ Any other “doors” configuration would result either in nothing happening, ei
 
 _Note: braking (or short-braking) a motor consists in connecting both its terminals together. It only works when the rotor is moving, resulting in shorter stopping. But you can quickly try it at home with a disconnected motor: turn the axis with your hand, then do it again while connecting the terminals; you’ll feel the rotor is a little bit harder to turn._
 
-— _Ok_, you’re telling me, _but what you call “doors” looks quite like push-buttons to me. That means I’ll need my hands again, and two of them this time!_
+— *Ok*, you’re telling me, _but what you call “doors” looks quite like push-buttons to me. That means I’ll need my hands again, and two of them this time!_
 
 Right, this was only the simple way to explain it. These doors can be replaced by several components, called transistors or MOFSETs. The most used is called the **bipolar transistor**. This three-legged component will take the role of an automated door; it means that connected to a microprocessor that sends commands, each door automatically lets a certain amount of current flow through it or blocks it. This results in a door or a no-hands-needed push-button.
 
@@ -98,9 +98,9 @@ Many electronic control boards (like L298N) carry one or several H-bridge chips 
 
 To summarize:
 
-*   You write a program in a microprocessor (more accessible with the help of a developing board).
-*   The microprocessor sends high or low signals to the H-bridge (easier with a controlling board).
-*   The H-bridge orient the voltage so that the connected motor can rotate the way you politely asked it.
+- You write a program in a microprocessor (more accessible with the help of a developing board).
+- The microprocessor sends high or low signals to the H-bridge (easier with a controlling board).
+- The H-bridge orient the voltage so that the connected motor can rotate the way you politely asked it.
 
 ![DC brushed motor](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbcea2c6b59469aae5498_1*rgOUW1Lfhn0T-VxD6RrtCg.jpeg)
 

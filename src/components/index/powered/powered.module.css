@@ -90,13 +90,13 @@ html[data-theme='light'] .title {
 }
 
 .nebula {
-  background-image: url('/static/img/index/powered/nebula.svg');
+  background-image: url('/static/assets/images/index/powered/nebula.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 html[data-theme='light'] .nebula {
-  background-image: url('/static/img/index/powered/nebula-light.svg');
+  background-image: url('/static/assets/images/index/powered/nebula-light.svg');
   color: black;
 }
 
@@ -146,13 +146,13 @@ html[data-theme='light'] .nebula {
 }
 
 .whiteBtn::after {
-  content: url('/static/img/index/powered/discord.svg');
+  content: url('/static/assets/images/index/powered/discord.svg');
   margin-top: 3px;
   margin-left: 10px;
 }
 
 .whiteBtn:hover::after {
-  content: url('/static/img/index/powered/discord-white.svg');
+  content: url('/static/assets/images/index/powered/discord-white.svg');
   margin-top: 3px;
   margin-left: 10px;
 }
@@ -180,7 +180,7 @@ html[data-theme='light'] .nebula {
 
 .player {
   border-right: 2px solid black;
-  background-image: url('/static/img/index/powered/lines.svg');
+  background-image: url('/static/assets/images/index/powered/lines.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 15px 15px;

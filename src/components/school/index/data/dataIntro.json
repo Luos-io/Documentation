@@ -162,6 +162,17 @@
       "tags": ["Service", "Package", "ESP32"],
       "link": "/tutorials/esp",
       "author": "thomas"
+    },
+    {
+      "title": "Luos with ROS: get started with packages",
+      "id": "ros",
+      "category": "Integrations",
+      "toc": 60,
+      "level": 2,
+      "img": "Luos-and-ROS",
+      "desc": "Install ROS 2 and get started with packages in a Luos project.",
+      "tags": ["Service", "Package", "ROS"],
+      "link": "/tutorials/luos-integration/list"
     }
   ]
 }

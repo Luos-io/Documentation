@@ -11,7 +11,7 @@ export default function Error403() {
         <Paper elevation={3} className={Styles.error}>
           <div className={Styles.container}>
             <img
-              src="/img/school/close.svg"
+              src="/assets/images/tutorials/school/close.svg"
               alt="Luos network"
               width="150"
               height="150"

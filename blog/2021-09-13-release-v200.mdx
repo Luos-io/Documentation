@@ -8,12 +8,12 @@ authors:
     url: https://github.com/Emanuel-Allely
     image_url: https://github.com/Emanuel-Allely.png
 tags: [release, luos]
-image: /img/blog/release-v-2-0-0-banner-luos.png
+image: /assets/images/blog/release-v-2-0-0-banner-luos.png
 hide_table_of_contents: false
 date: 2021-09-13T10:00
 ---
 
-![img alt](/img/blog/release-v200-luos.png)
+![img alt](/assets/images/blog/release-v200-luos.png)
 
 No more container, but more profiles
 
@@ -33,15 +33,15 @@ This is the seventh release of Luos. We described below the various features and
 
 <h3> 🆕 Feature: Profiles to simplify user API </h3>
 
-Profiles are predefined structures representing a service type. Since Luos 2.0.0 you can comply services to a specific profile allowing anyone to know how your feature work. For example, any kind of motor (stepper, brushless, Dynamixel, ...) can use the servo-motor profile, then you can control any of them exactly the same way. Profiles also simplify your motor driver development. Instead of dealing with messages, profiles give you input and output variables to interact with anything else (other services, cloud app, ...). You can easily create your own profiles and share them with the community or with your team as a feature API definition. [More information on our documentation](/docs/luos-technology/services/profile)
+Profiles are predefined structures representing a service type. Since Luos 2.0.0 you can comply services to a specific profile allowing anyone to know how your feature work. For example, any kind of motor (stepper, brushless, Dynamixel, ...) can use the servo-motor profile, then you can control any of them exactly the same way. Profiles also simplify your motor driver development. Instead of dealing with messages, profiles give you input and output variables to interact with anything else (other services, cloud app, ...). You can easily create your own profiles and share them with the community or with your team as a feature API definition. [More information on our documentation](/docs/luos-technology/services/profiles)
 
 <h3> 🆕 Feature: Packages to simplify portability </h3>
 
-Packages allow you to store your embedded code features on sharable folders. So you can move those easily from one project to another and share it with the community. We have big plans for this feature so keep in touch... [more information about packages](/docs/luos-technology/package)
+Packages allow you to store your embedded code features on sharable folders. So you can move those easily from one project to another and share it with the community. We have big plans for this feature so keep in touch... [more information about packages](/docs/tools/gate)
 
 <h3> 🆕 Feature: Bootloader </h3>
 
-This feature is the big new one everyone has asked us for years. Now, you can compile luos in bootloader mode. By compiling it this way you can flash it to your board then use the Luos network through a gate to update your board firmware. This allows you to update any board anywhere on your device without having physical access to it. [More information about bootloader](/docs/tools/boot)
+This feature is the big new one everyone has asked us for years. Now, you can compile luos in bootloader mode. By compiling it this way you can flash it to your board then use the Luos network through a gate to update your board firmware. This allows you to update any board anywhere on your device without having physical access to it. [More information about bootloader](/docs/tools/gate)
 
 🛠️ Fix: ATSAMD21 register typography
 
@@ -87,14 +87,14 @@ Selftest is a specific way of compiling Luos, and specially LuosHAL, allowing yo
 
 <h3> Dependencies: </h3>
 
-*   LuosHAL version >= 0.4.0
-*   Pyluos version >= 2.0.0
+- LuosHAL version >= 0.4.0
+- Pyluos version >= 2.0.0
 
 <h3> Package: </h3>
 
-*   Luos library
-*   Luos library for Arduino environment with example
-*   Luos gate library for Arduino environnement
+- Luos library
+- Luos library for Arduino environment with example
+- Luos gate library for Arduino environnement
 
 🎉 Try it, it's #opensource: <a rel="external nofollow" href="https://github.com/Luos-io/luos_engine/releases/tag/2.0.0" target="_blank">https://github.com/Luos-io/luos_engine/releases/tag/2.0.0</a>
 
