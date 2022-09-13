@@ -169,7 +169,7 @@
       "category": "Integrations",
       "toc": 60,
       "level": 2,
-      "img": "Luos-and-ROS",
+      "img": "Luos_and_ROS",
       "desc": "Install ROS 2 and get started with packages in a Luos project.",
       "tags": ["Service", "Package", "ROS"],
       "link": "/tutorials/luos-integration/list"
