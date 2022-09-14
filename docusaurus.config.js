@@ -97,11 +97,6 @@ module.exports = {
           position: 'right',
         },
         {
-          to: 'https://app.luos.io',
-          label: 'Tools',
-          position: 'right',
-        },
-        {
           type: 'dropdown',
           label: 'Resources',
           position: 'right',
