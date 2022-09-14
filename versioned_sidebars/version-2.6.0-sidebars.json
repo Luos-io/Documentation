@@ -180,6 +180,11 @@
         },
         {
           "type": "doc",
+          "label": "Luos engine api",
+          "id": "tools/luos-engine-api"
+        },
+        {
+          "type": "doc",
           "label": "Bootloader",
           "id": "tools/bootloader"
         },

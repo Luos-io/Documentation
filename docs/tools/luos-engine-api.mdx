@@ -1,0 +1,242 @@
+---
+custom_edit_url: null
+---
+
+import { customFields } from '/docusaurus.config.js';
+import Tooltip from '@site/src/components/Tooltip.js';
+
+# Luos Engine APIs
+
+## Core API
+
+### Main Library API
+
+|       Function       |              Description               | Parameters | return |
+| :------------------: | :------------------------------------: | :--------: | :----: |
+| void Luos_Init(void) | The main initialization of Luos Engine |            |        |
+|                      |   Library need to be call before all   |            |        |
+|                      |          service declaration           |            |        |
+
+|       Function       |             Description              | Parameters | return |
+| :------------------: | :----------------------------------: | :--------: | :----: |
+| void Luos_Loop(void) | The main Loop of Luos Engine Library |            |        |
+|                      |       manage message mecanism        |            |        |
+
+### Package management API
+
+|       Function        |             Description             |            Parameters            | return |
+| :-------------------: | :---------------------------------: | :------------------------------: | :----: |
+| void Luos_AddPackage( | Register a Package that will be run |                                  |        |
+| void (\*Init)(void),  |           by Luos_Run API           | address to package init function |        |
+| void (\*Loop)(void))  |       manage message mecanism       | address to package loop function |        |
+
+|      Function       |            Description             | Parameters | return |
+| :-----------------: | :--------------------------------: | :--------: | :----: |
+| void Luos_Run(void) | Run Luos Init/Loop and all package |            |        |
+|                     |        Init/Loop registered        |            |        |
+
+### Topology API
+
+|       Function       |       Description       |             Parameters              | return |
+| :------------------: | :---------------------: | :---------------------------------: | :----: |
+|  void Luos_Detect(   | Reset Network and Start |                                     |        |
+| service_t \*service) |   Topology detection    | Pointer to service asking detection |        |
+
+|            Function            |            Description            | Parameters |                return                |
+| :----------------------------: | :-------------------------------: | :--------: | :----------------------------------: |
+| bool Luos_IsNodeDetected(void) | Indicate end of network detection |            | status of the node for the detection |
+
+|          Function          |              Description               |       Parameters       | return |
+| :------------------------: | :------------------------------------: | :--------------------: | :----: |
+|  void Luos_SetExternId()   | set id of a service trough the network |                        |        |
+|    service_t \*service,    |                                        | Pointer to the service |        |
+| target_mode_t target_mode, |                                        | way to send to target  |        |
+|      uint16_t target,      |                                        |         Target         |        |
+|      uint16_t newid)       |                                        |      New value ID      |        |
+
+### Service API
+
+|            Function            |     Description      |              Parameters              |            return            |
+| :----------------------------: | :------------------: | :----------------------------------: | :--------------------------: |
+| service_t \*Luos_CreateService | Service Creation API |                                      | Pointer service just created |
+|     SERVICE_CB service_cb,     |                      |   Message handler for the service    |                              |
+|         uint8_t type,          |                      |     Type of service you created      |                              |
+|      const char \*alias,       |                      |         Alias of the service         |                              |
+|      revision_t revision)      |                      | Revision of your service (optionnal) |                              |
+
+|           Function            |          Description           | Parameters | return |
+| :---------------------------: | :----------------------------: | :--------: | :----: |
+| void Luos_ServicesClear(void) | clear all service for the node |            |        |
+
+### Message API
+
+|           Function           |     Description     |       Parameters       |       return       |
+| :--------------------------: | :-----------------: | :--------------------: | :----------------: |
+| error_return_t Luos_SendMsg( | Send a Luos message |                        | SUCCEDED or FAILED |
+|     service_t \*service,     |                     | Pointer to the service |                    |
+|         msg_t \*msg)         |                     |   Pointer to the msg   |                    |
+
+|           Function           |           Description           |           Parameters            |       return       |
+| :--------------------------: | :-----------------------------: | :-----------------------------: | :----------------: |
+| error_return_t Luos_ReadMsg( | Read Last Luos message received |                                 | SUCCEDED or FAILED |
+|     service_t \*service,     |      (Use in Polling Mode)      |     Pointer to the service      |                    |
+|      \*\*returned_msg)       |                                 | Pointer to adress msg in buffer |                    |
+
+|               Function               |            Description             |           Parameters            |       return       |
+| :----------------------------------: | :--------------------------------: | :-----------------------------: | :----------------: |
+| error_return_t Luos_ReadFromService( |  Read Last Luos message received   |                                 | SUCCEDED or FAILED |
+|         service_t \*service,         | for a service(Use in Polling Mode) |     Pointer to the service      |                    |
+|             int16_t id,              |                                    |          ID of service          |                    |
+|          \*\*returned_msg)           |                                    | Pointer to adress msg in buffer |                    |
+
+|       Function       |            Description             |       Parameters       | return |
+| :------------------: | :--------------------------------: | :--------------------: | :----: |
+| void Luos_SendData(  | Send the remaining data in case of |                        |        |
+| service_t \*service, |           long messages            | Pointer to the service |        |
+|   void \*bin_data,   |                                    |    Pointer to data     |        |
+|    uint16_t size)    |                                    |      size of data      |        |
+
+|       Function        |            Description             |       Parameters       |                 return                 |
+| :-------------------: | :--------------------------------: | :--------------------: | :------------------------------------: |
+| int Luos_ReceiveData( | Receive the remaining data in case |                        | Number of data left to receive for msg |
+| service_t \*service,  |          of long messages          | Pointer to the service |                                        |
+|     msg_t \*msg,      |                                    |   Pointer to the msg   |                                        |
+|   void \*bin_data)    |                                    |    Pointer to data     |                                        |
+
+|           Function            |      Description      |          Parameters          | return |
+| :---------------------------: | :-------------------: | :--------------------------: | :----: |
+|   void Luos_SendStreaming(    | Send data stored in a |                              |        |
+|     service_t \*service,      |   streaming channel   |    Pointer to the service    |        |
+|         msg_t \*msg,          |                       |      Pointer to the msg      |        |
+| streaming_channel_t \*stream) |                       | Pointer to streaming channel |        |
+
+|           Function           |          Description          |          Parameters          | return |
+| :--------------------------: | :---------------------------: | :--------------------------: | :----: |
+| void Luos_SendStreamingSize( | Send a size of data stored in |                              |        |
+|     service_t \*service,     |       streaming channel       |    Pointer to the service    |        |
+|         msg_t \*msg,         |                               |      Pointer to the msg      |        |
+| streaming_channel_t \*stream |                               | Pointer to streaming channel |        |
+|      uint32_t max_size)      |                               | Pointer to streaming channel |        |
+
+|               Function                |              Description              |          Parameters          | return |
+| :-----------------------------------: | :-----------------------------------: | :--------------------------: | :----: |
+| error_return_t Luos_ReceiveStreaming( | Receive data from a streaming channel |                              |        |
+|         service_t \*service,          |                                       |    Pointer to the service    |        |
+|             msg_t \*msg,              |                                       |      Pointer to the msg      |        |
+|     streaming_channel_t \*stream      |                                       | Pointer to streaming channel |        |
+
+|               Function               |      Description      | Parameters |       return       |
+| :----------------------------------: | :-------------------: | :--------: | :----------------: |
+| error_return_t Luos_TxComplete(void) | Check Tx buffer empty |            | SUCCEDED or FAILED |
+
+|              Function               |             Description              | Parameters |      return       |
+| :---------------------------------: | :----------------------------------: | :--------: | :---------------: |
+| uint16_t Luos_NbrAvailableMsg(void) | Number of received message in buffer |            | Number of message |
+
+### Other API
+
+|            Function            |   Description    | Parameters |   return    |
+| :----------------------------: | :--------------: | :--------: | :---------: |
+| uint32_t Luos_GetSystick(void) | Get a tick at ms |            | Tick number |
+
+|            Function            |     Description      | Parameters | return |
+| :----------------------------: | :------------------: | :--------: | :----: |
+| void Luos_ResetStatistic(void) | Reset node statistic |            |        |
+
+|         Function          |           Description           |        Parameters        | return |
+| :-----------------------: | :-----------------------------: | :----------------------: | :----: |
+| void Luos_SetFilterState( | Filter to message for a service |                          |        |
+|      uint8_t state,       |                                 | state of filter (on/off) |        |
+|   service_t \*service)    |                                 |  Pointer to the service  |        |
+
+## Routing Table research API
+
+|              Function              |          Description          |       Parameters        |       return       |
+| :--------------------------------: | :---------------------------: | :---------------------: | :----------------: |
+| error_return_t RTFilter_InitCheck( | Init result tab routing table |                         | SUCCEDED or FAILED |
+|     search_result_t \*result)      |                               | Pointer to result table |                    |
+
+|             Function              |       Description       |       Parameters        |             return             |
+| :-------------------------------: | :---------------------: | :---------------------: | :----------------------------: |
+| search_result_t \*RTFilter_Reset( | Reset the results table |                         | result of filter routing table |
+|     search_result_t \*result)     |                         | Pointer to result table |                                |
+
+|            Function            |             Description             |       Parameters        |             return             |
+| :----------------------------: | :---------------------------------: | :---------------------: | :----------------------------: |
+| search_result_t \*RTFilter_ID( | Find a the service of a specific id |                         | result of filter routing table |
+|    search_result_t \*result    |                                     | Pointer to result table |                                |
+|          uint16_t id)          |                                     |      ID to filter       |                                |
+
+|             Function             |             Description              |       Parameters        |             return             |
+| :------------------------------: | :----------------------------------: | :---------------------: | :----------------------------: |
+| search_result_t \*RTFilter_Type( | Find the services of a specific type |                         | result of filter routing table |
+|     search_result_t \*result     |                                      | Pointer to result table |                                |
+|        luos_type_t type)         |                                      |     type to filter      |                                |
+
+|             Function             |             Description              |       Parameters        |             return             |
+| :------------------------------: | :----------------------------------: | :---------------------: | :----------------------------: |
+| search_result_t \*RTFilter_Node( | Find the services of a specific Node |                         | result of filter routing table |
+|     search_result_t \*result     |                                      | Pointer to result table |                                |
+|        uint16_t node_id)         |                                      |    Node id to filter    |                                |
+
+|             Function              |              Description              |       Parameters        |             return             |
+| :-------------------------------: | :-----------------------------------: | :---------------------: | :----------------------------: |
+| search_result_t \*RTFilter_Alias( | Find the services of a specific alias |                         | result of filter routing table |
+|     search_result_t \*result      |                                       | Pointer to result table |                                |
+|           char \*alias)           |                                       |     Alias to filter     |                                |
+
+|              Function               |              Description              |       Parameters        |             return             |
+| :---------------------------------: | :-----------------------------------: | :---------------------: | :----------------------------: |
+| search_result_t \*RTFilter_Service( | Find the services of a specific alias |                         | result of filter routing table |
+|      search_result_t \*result       |                                       | Pointer to result table |                                |
+|        service_t \*service)         |                                       |    Service to filter    |                                |
+
+## Streaming API
+
+|                      Function                      |        Description         |               Parameters               |              return               |
+| :------------------------------------------------: | :------------------------: | :------------------------------------: | :-------------------------------: |
+| streaming_channel_t Stream_CreateStreamingChannel( | Create a streaming Channel |                                        | Pointer to stream channel created |
+|             const void \*ring_buffer,              |    to send/receive data    |         Pointer to ring buffer         |                                   |
+|             uint16_t ring_buffer_size,             |                            |          Size of ring buffer           |                                   |
+|                 uint8_t data_size)                 |                            | size of data to stream(8, 16, 32 bits) |                                   |
+
+|              Function              |        Description        |        Parameters         | return |
+| :--------------------------------: | :-----------------------: | :-----------------------: | :----: |
+| void Stream_ResetStreamingChannel( | Reset a streaming Channel |                           |        |
+|   streaming_channel_t \*stream)    |                           | Pointer to stream channel |        |
+
+|           Function           |             Description              |        Parameters         |                return                 |
+| :--------------------------: | :----------------------------------: | :-----------------------: | :-----------------------------------: |
+|  uint16_t Stream_PutSample(  | Put some sample in streaming channel |                           | number available samples in streaming |
+| streaming_channel_t \*stream |                                      | Pointer to stream channel |                                       |
+|      const void \*data,      |                                      |  Pointer to data to send  |                                       |
+|        uint16_t size)        |                                      |       Size to send        |                                       |
+
+|           Function           |             Description              |        Parameters         |                return                 |
+| :--------------------------: | :----------------------------------: | :-----------------------: | :-----------------------------------: |
+|  uint16_t Stream_GetSample(  | Get some sample in streaming channel |                           | number available samples in streaming |
+| streaming_channel_t \*stream |                                      | Pointer to stream channel |                                       |
+|         void \*data,         |                                      |  Pointer to data to send  |                                       |
+|        uint16_t size)        |                                      |       Size to send        |                                       |
+
+|               Function                |              Description               |        Parameters         |                return                 |
+| :-----------------------------------: | :------------------------------------: | :-----------------------: | :-----------------------------------: |
+| uint16_t Stream_GetAvailableSampleNB( | Get sample number in streaming channel |                           | number available samples in streaming |
+|     streaming_channel_t \*stream)     |                                        | Pointer to stream channel |                                       |
+
+|                      Function                       |            Description             |       Parameters        |                return                 |
+| :-------------------------------------------------: | :--------------------------------: | :---------------------: | :-----------------------------------: |
+| uint16_t Stream_GetAvailableSampleNBUntilEndBuffer( | Get sample number until the end of |                         | Number data until end circular buffer |
+|            streaming_channel_t \*stream)            |         streaming channel          | Pointer to result table |                                       |
+
+|               Function                |          Description           |       Parameters        |                return                 |
+| :-----------------------------------: | :----------------------------: | :---------------------: | :-----------------------------------: |
+| uint16_t Stream_AddAvailableSampleNB( | Add number of available sample |                         | Number data until end circular buffer |
+|     streaming_channel_t \*stream,     |                                | Pointer to result table |                                       |
+|            uint16_t size)             |                                |      Size of data       |                                       |
+
+|               Function                |            Description            |       Parameters        |                return                 |
+| :-----------------------------------: | :-------------------------------: | :---------------------: | :-----------------------------------: |
+| uint16_t Stream_RmvAvailableSampleNB( | remove number of available sample |                         | Number data until end circular buffer |
+|     streaming_channel_t \*stream,     |                                   | Pointer to result table |                                       |
+|            uint16_t size)             |                                   |      Size of data       |                                       |
