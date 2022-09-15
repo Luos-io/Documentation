@@ -1,10 +1,11 @@
 ---
 custom_edit_url: null
 ---
+
 # Test your Robus configuration
 
 To adapt Luos engine to your board specificities, you need to configure it. This subject is covered in the [Luos engine configuration](./mcu).
-To validate your Robus network's hardware configuration, you can use a Robus tool called _selftest_ available in the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/selftest" target="_blank" rel="external nofollow">Luos engine's 'library.<IconExternalLink width="10"></IconExternalLink></a>
+To validate your Robus network's hardware configuration, you can use a Robus tool called _selftest_ available in the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/selftest" target="_blank" rel="external nofollow">Luos engine's 'library<IconExternalLink width="10"></IconExternalLink></a>.
 
 ## Hardware test conditions
 
@@ -15,8 +16,8 @@ You must also connect the PTP pins together.
 
 <div align="center">
   <Image
-    src="/img/selftest_connection.svg"
-    darkSrc="/img/selftest_connection-dark.svg"
+    src="/assets/images/selftest_connection.svg"
+    darkSrc="/assets/images/selftest_connection-dark.svg"
   />
 </div>
 
@@ -26,7 +27,7 @@ To check the Robus access to the physical network, you need to create a specific
 To use the _selftest_ tool, you have to define SELFTEST using "-D SELFTEST" GCC build flag.
 
 :::info
-If you use platformio IDE, you must add a "-D SELFTEST" directive in the build_flags setting (this can be found in the file _platformio.ini_).
+If you use platformio IDE, you must add a "-D SELFTEST" directive in the build*flags setting (this can be found in the file \_platformio.ini*).
 :::
 
 To finish, you need to add this in your main file:
@@ -74,4 +75,4 @@ It can be a PTP problem:
 
 1. Check your Pinout definition and IRQ for you PTP pin
 2. Check in dedicated files the handler for IRQ
-:::
+   :::

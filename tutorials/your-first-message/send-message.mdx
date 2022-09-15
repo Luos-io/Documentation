@@ -1,9 +1,9 @@
 ---
 custom_edit_url: null
-image: /img/Your-first-message-banner-luos.png
+image: /assets/images/tutorials/your-first-message-banner-luos.png
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Form from '/src/components/typeform/index.js';
@@ -79,8 +79,8 @@ Any message contains two main parts:
 
 <div align="center">
   <Image
-    src="/img/your-first-message/your-first-message-2.png"
-    darkSrc="/img/your-first-message/your-first-message-2.png"
+    src="/assets/images/tutorials/your-first-message/your-first-message-2.png"
+    darkSrc="/assets/images/tutorials/your-first-message/your-first-message-2.png"
   />
 </div>
 
@@ -89,7 +89,7 @@ The **Data** is the actual transmitted data.
 The **Header** contains some contextual information allowing the receiver to get the purpose of the Data.
 
 :::info
-For more information about the messages, you can refer to [the related documentation page](https://docs.luos.io/docs/luos-technology/message).
+For more information about the messages, you can refer to [the related documentation page](https://www.luos.io/docs/luos-technology/messages).
 :::
 
 To send a message, you will need to fill in some header information regarding the target and the data of you message:
@@ -229,7 +229,7 @@ Out[1]: False
 <TabItem value="Arduino" label="Arduino">
 To simulate a press button, connect a wire between the BTN_PIN (pin 8) and GND.
 <div align="center">
-  <Image src="/img/your-first-message/your-first-message-2-1.png" darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"/>
+  <Image src="/assets/images/tutorials/your-first-message/your-first-message-2-1.png" darkSrc="/assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"/>
 </div>
 
 </TabItem>
@@ -239,7 +239,7 @@ Now push on the B1 button (the blue one) on your board
 <TabItem value="Nucleo2" label="STM32G431KB Nucleo/STM32L432KC Nucleo">
 To simulate a press button, connect a wire between the BTN_PIN (pin D10) and GND.
 <div align="center">
-  <Image src="/img/your-first-message/your-first-message-2-1.png" darkSrc="/img/your-first-message/your-first-message-2-1-dark.png"/>
+  <Image src="/assets/images/tutorials/your-first-message/your-first-message-2-1.png" darkSrc="/assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"/>
 </div>
 </TabItem>
 </Tabs>

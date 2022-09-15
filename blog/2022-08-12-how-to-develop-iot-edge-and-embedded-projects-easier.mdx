@@ -10,14 +10,14 @@ authors:
   - name: Alexis Gorlier
     title: Embedded developer Intern @ Luos
     url: https://github.com/alexgorlier
-    image_url: /img/school/authors/guest-author-luos.png
+    image_url: /assets/images/tutorials/school/authors/guest-author-luos.png
 tags: [iot, edge, embedded]
-image: /img/blog/how-to-develop-iot-edge-and-embedded-projects-easier.jpg
+image: /assets/images/blog/how-to-develop-iot-edge-and-embedded-projects-easier.jpg
 hide_table_of_contents: false
 date: 2022-08-12T11:00
 ---
 
-![How to develop IoT, edge, and embedded projects easier?](/img/blog/how-to-develop-iot-edge-and-embedded-projects-easier.jpg)
+![How to develop IoT, edge, and embedded projects easier?](/assets/images/blog/how-to-develop-iot-edge-and-embedded-projects-easier.jpg)
 
 Some IoT, edge and embedded projects should not involve such a dependence on hardware.
 
@@ -48,14 +48,14 @@ Aerospace is a passion for many Luos developers and the cross-over was relevant.
     <td border="0">
       <img
         desc="Nosecone mold of our rocket"
-        src="/img/blog/Nosecone_mold_of_our_rocket_Luos.jpeg"
+        src="/assets/images/blog/Nosecone_mold_of_our_rocket_Luos.jpeg"
       />
       Nose cone's mold of our rocket.
     </td>
     <td border="0">
       <img
         desc="Representation of our rocket"
-        src="/img/blog/Representation-of-our-rocket-Luos.png"
+        src="/assets/images/blog/Representation-of-our-rocket-Luos.png"
       />
       Representation of our rocket.
     </td>
@@ -71,7 +71,7 @@ The main objective is to get the rocket off the ground and exceed the altitude o
   into smaller goals.
 </h3>
 
-Apart from the objectives related to the rocket takeoff, such as the [propulsion management](/img/blog/pdf/Propulsion-management-Rocket-project-Luos.pdf) or the [friction with the air](/img/blog/pdf/Rocket-stability-project-Luos.pdf), one of the other three objectives of the association was to divide the ancillary objectives into three services. This splitting philosophy is a concept we have developed for a long time at Luos to gain agility. You can read [our article on monolithic vision compared to microservices vision](https://www.luos.io/blog/a-way-to-unleash-embedded-systems).
+Apart from the objectives related to the rocket takeoff, such as the [propulsion management](/assets/images/blog/pdf/Propulsion-management-Rocket-project-Luos.pdf) or the [friction with the air](/assets/images/blog/pdf/Rocket-stability-project-Luos.pdf), one of the other three objectives of the association was to divide the ancillary objectives into three services. This splitting philosophy is a concept we have developed for a long time at Luos to gain agility. You can read [our article on monolithic vision compared to microservices vision](https://www.luos.io/blog/a-way-to-unleash-embedded-systems).
 
 Thus, the objectives related to the Luos project were thought in terms of microservices:
 
@@ -83,7 +83,7 @@ Thus, the objectives related to the Luos project were thought in terms of micros
      - Thermometer
      - Inertial Unit
 
-![Phases of flight](/img/blog/Phases-of-flight-rocket-project-Luos.svg)
+![Phases of flight](/assets/images/blog/Phases-of-flight-rocket-project-Luos.svg)
 
 You will notice that we are using three electronic components for this objective, even if each one could be used individually. This choice adds a layer of security if something goes wrong. For example, let's suppose that the thermometer stops working correctly (complete failure or providing wrong values).
 
@@ -117,7 +117,7 @@ This redundancy permits access to flight data even if the SD card is destroyed a
      - Inertial unit
      - Solenoids
 
-![Actual design of liberation system](/img/blog/Parachute-release-system-rocket-Luos.png)
+![Actual design of liberation system](/assets/images/blog/Parachute-release-system-rocket-Luos.png)
 Actual design of release system.
 
 The barometer, the thermometer, and the inertial unit are used to calculate altitude. They will let us know when first the apogee, then the altitude of 1000m are reached. The solenoids are used in the release system that will deploy the parachutes.
@@ -135,13 +135,13 @@ As you know, this edge project involves launching a rocket at the altitude of 32
 
 Luos works with every component and theoretically every board (some boards are yet to be developed because the technology is new). Therefore, using Luos doesn't limit our choice and allows us, for instance, to use a Nucleo board and an Arduino board in the same system.
 
-![Luos principle](/img/blog/feature-service-package-node-board-luos.png)
+![Luos principle](/assets/images/blog/feature-service-package-node-board-luos.png)
 
 Moreover, Luos is easy to use (thanks to the Get started and the various tutorials on Luos official website), and the developers are very active and helpful. This is very important for us astrophysical developers as we don't have much experience in electronics.
 
 I also tried to design a part of the electronic system of this edge project. I used a barometer to calculate the altitude and activate a solenoid when the apogee is detected, on my own using Luos. The most difficult part for me was to create the SPI driver for the barometer and to start communicating with it.
 
-![Hardware representation](/img/blog/Hardware_representation_iot_edge_embedded_project_alexis_gorlier_luos.svg)
+![Hardware representation](/assets/images/blog/Hardware_representation_iot_edge_embedded_project_alexis_gorlier_luos.svg)
 
 Once I did it, I encountered some difficulties in using Luos, but nothing that I did not resolve within a short delay.
 
@@ -165,7 +165,7 @@ Don't worry. We are introducing: Modular programming in hardware development.
 Thank you Alexis for this nice application of Luos in your project. This embedded/edge project will be able to evolve quickly by using modular programming.
 As your project gains agility with Luos, it becomes modular as a combination of bricks.
 
-![Monolithic vs Microservices](/img/blog/Monolithic_vs_microservices_luos.svg)
+![Monolithic vs Microservices](/assets/images/blog/Monolithic_vs_microservices_luos.svg)
 
 We recently saw how [a shortage can impact project development](https://www.luos.io/blog/semiconductor-crisis-how-to-minimize-the-impact) and how to minimize that impact. They split the dependency between their code/software and their hardware boards by developing their projects with microservices.
 

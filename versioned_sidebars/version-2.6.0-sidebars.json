@@ -2,7 +2,7 @@
   "documentation": [
     {
       "type": "category",
-      "label": "Luos engine",
+      "label": "Luos technology",
       "link": {
         "type": "doc",
         "id": "luos-technology/index"
@@ -19,12 +19,12 @@
             {
               "type": "doc",
               "label": "Concept",
-              "id": "luos-technology/basics/concept"
+              "id": "luos-technology/basics/concepts"
             },
             {
               "type": "doc",
               "label": "Code organization",
-              "id": "luos-technology/basics/orga"
+              "id": "luos-technology/basics/organization"
             }
           ]
         },
@@ -43,7 +43,7 @@
             },
             {
               "type": "doc",
-              "label": "Luos engine HAL",
+              "label": "Hardware abstraction layer",
               "id": "luos-technology/node/luos-hal"
             },
             {
@@ -55,8 +55,8 @@
         },
         {
           "type": "doc",
-          "label": "Package",
-          "id": "luos-technology/package/index"
+          "label": "Packages",
+          "id": "luos-technology/packages/index"
         },
         {
           "type": "category",
@@ -68,22 +68,22 @@
           "items": [
             {
               "type": "doc",
-              "label": "Initialization",
-              "id": "luos-technology/services/service-api"
+              "label": "Create services",
+              "id": "luos-technology/services/create-services"
             },
             {
               "type": "doc",
               "label": "Types",
-              "id": "luos-technology/services/service-type"
+              "id": "luos-technology/services/types"
             },
             {
               "type": "doc",
               "label": "Profiles",
-              "id": "luos-technology/services/profile"
+              "id": "luos-technology/services/profiles"
             },
             {
               "type": "doc",
-              "label": "Routing Table",
+              "label": "Routing table",
               "id": "luos-technology/services/routing-table"
             },
             {
@@ -95,47 +95,36 @@
         },
         {
           "type": "category",
-          "label": "Message",
+          "label": "Messages",
           "link": {
             "type": "doc",
-            "id": "luos-technology/message/message"
+            "id": "luos-technology/messages/index"
           },
           "items": [
             {
               "type": "doc",
-              "label": "Send Message",
-              "id": "luos-technology/message/basic-message"
+              "label": "Send message",
+              "id": "luos-technology/messages/basic-message"
             },
             {
               "type": "doc",
-              "label": "Receive Message",
-              "id": "luos-technology/message/handling-message"
+              "label": "Receive message",
+              "id": "luos-technology/messages/handling-message"
             },
-            {
-              "type": "doc",
-              "label": "Luos engine API",
-              "id": "api/luos-engine-api"
-            }
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Compatibility",
-          "items": [
             {
               "type": "doc",
               "label": "Commands",
-              "id": "luos-technology/message/command"
+              "id": "luos-technology/messages/command"
             },
             {
               "type": "doc",
               "label": "Object dictionnary",
-              "id": "luos-technology/message/object-dictionary"
+              "id": "luos-technology/messages/object-dictionary"
             },
             {
               "type": "doc",
               "label": "Advanced message",
-              "id": "luos-technology/message/advanced-message"
+              "id": "luos-technology/messages/advanced-message"
             }
           ]
         }
@@ -143,16 +132,16 @@
     },
     {
       "type": "category",
-      "label": "Hardware Consideration",
+      "label": "Hardware consideration",
       "link": {
         "type": "doc",
-        "id": "hardware-consideration/index"
+        "id": "hardware-consideration/hardware-consideration"
       },
       "items": [
         {
           "type": "doc",
-          "label": "Minimum Requirement",
-          "id": "hardware-consideration/minimum-requirement"
+          "label": "Minimum requirements",
+          "id": "hardware-consideration/minimum-requirements"
         },
         {
           "type": "doc",
@@ -161,19 +150,19 @@
         },
         {
           "type": "doc",
-          "label": "Electronic Design",
+          "label": "Electronic design",
           "id": "hardware-consideration/electronics"
         },
         {
           "type": "doc",
-          "label": "Test your Robus Configuration",
+          "label": "Test your Robus configuration",
           "id": "hardware-consideration/test-your-configuration"
         }
       ]
     },
     {
       "type": "category",
-      "label": "Tools",
+      "label": "Built-in tools",
       "link": {
         "type": "doc",
         "id": "tools/index"
@@ -186,18 +175,23 @@
         },
         {
           "type": "doc",
-          "label": "Inspector",
-          "id": "tools/inspector"
+          "label": "JSON API",
+          "id": "tools/api-json"
         },
         {
           "type": "doc",
-          "label": "Pyluos",
-          "id": "tools/pyluos"
+          "label": "Luos engine api",
+          "id": "tools/luos-engine-api"
         },
         {
           "type": "doc",
           "label": "Bootloader",
-          "id": "tools/boot"
+          "id": "tools/bootloader"
+        },
+        {
+          "type": "doc",
+          "label": "Inspector",
+          "id": "tools/inspector"
         },
         {
           "type": "doc",
@@ -206,28 +200,58 @@
         },
         {
           "type": "doc",
-          "label": "ROS",
-          "id": "tools/ros"
+          "label": "PlatformIO",
+          "id": "tools/platformio"
+        },
+        {
+          "type": "link",
+          "label": "Network display",
+          "href": "https://app.luos.io/network"
         }
       ]
     },
     {
       "type": "category",
-      "label": "API",
+      "label": "Software Integrations",
       "link": {
         "type": "doc",
-        "id": "api/index"
+        "id": "integrations/index"
       },
       "items": [
         {
           "type": "doc",
-          "label": "JSON API",
-          "id": "api/api-json"
+          "label": "SDK python: Pyluos",
+          "id": "integrations/pyluos"
+        },
+        {
+          "type": "link",
+          "label": "SDK typescript",
+          "href": "https://github.com/Luos-io/sdk-ts"
+        },
+        {
+          "type": "link",
+          "label": "PlateformIO",
+          "href": "https://www.luos.io/tutorials/pio"
+        },
+        {
+          "type": "link",
+          "label": "Arduino IDE",
+          "href": "https://www.luos.io/tutorials/arduino"
+        },
+        {
+          "type": "link",
+          "label": "Espressif IDE",
+          "href": "https://www.luos.io/tutorials/esp"
+        },
+        {
+          "type": "link",
+          "label": "RTOS",
+          "href": "https://www.luos.io/tutorials/freertos"
         },
         {
           "type": "doc",
-          "label": "Luos engine API",
-          "id": "api/luos-engine-api"
+          "label": "ROS",
+          "id": "integrations/ros"
         }
       ]
     },

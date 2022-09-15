@@ -35,9 +35,9 @@ const Software = (props) => {
   ];
 
   const anArrayOfNumbers = [
-    <img src="img/index/software/icons/step1.svg" />,
-    <img src="img/index/software/icons/step2.svg" />,
-    <img src="img/index/software/icons/step3.svg" />,
+    <img src="assets/images/index/software/icons/step1.svg" />,
+    <img src="assets/images/index/software/icons/step2.svg" />,
+    <img src="assets/images/index/software/icons/step3.svg" />,
   ];
 
   return (
@@ -102,7 +102,7 @@ const Software = (props) => {
                 <Grid item md={4} lg={4} xl={4}>
                   {' '}
                   <img
-                    src="img/index/header/buttons.svg"
+                    src="assets/images/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
                   />
@@ -121,12 +121,12 @@ const Software = (props) => {
                 {isDarkTheme ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                    <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -140,8 +140,8 @@ const Software = (props) => {
                     <img
                       src={
                         isDarkTheme
-                          ? `img/index/software/step1.svg`
-                          : `img/index/software/step1-dark.svg`
+                          ? `assets/images/index/software/step1.svg`
+                          : `assets/images/index/software/step1-dark.svg`
                       }
                       alt="step one"
                       className={styles.carousselImgDesktop}
@@ -159,8 +159,8 @@ const Software = (props) => {
                     <img
                       src={
                         isDarkTheme
-                          ? `img/index/software/step2.svg`
-                          : `img/index/software/step2-dark.svg`
+                          ? `assets/images/index/software/step2.svg`
+                          : `assets/images/index/software/step2-dark.svg`
                       }
                       alt="step two"
                       className={styles.carousselImgDesktop}
@@ -178,8 +178,8 @@ const Software = (props) => {
                     <img
                       src={
                         isDarkTheme
-                          ? `img/index/software/step3.svg`
-                          : `img/index/software/step3-dark.svg`
+                          ? `assets/images/index/software/step3.svg`
+                          : `assets/images/index/software/step3-dark.svg`
                       }
                       alt="step three"
                       className={styles.carousselImgDesktop}
@@ -209,7 +209,7 @@ const Software = (props) => {
                 <Grid item xs={4}>
                   {' '}
                   <img
-                    src="img/index/header/buttons.svg"
+                    src="assets/images/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
                   />
@@ -232,12 +232,12 @@ const Software = (props) => {
                 {isDarkTheme ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                    <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -283,8 +283,8 @@ function Item(props) {
       <img
         src={
           isDarkTheme
-            ? `img/index/software/${props.item.img}.svg`
-            : `img/index/software/${props.item.img}-dark.svg`
+            ? `assets/images/index/software/${props.item.img}.svg`
+            : `assets/images/index/software/${props.item.img}-dark.svg`
         }
         className={styles.carousselImg}
         loading="lazy"

@@ -14,10 +14,10 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: false,
-  favicon: 'img/favicon.png',
+  favicon: 'assets/images/favicon.png',
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
+  trailingSlash: false,
 
   customFields: {
     node_def:
@@ -52,7 +52,7 @@ module.exports = {
           'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
       },
     ],
-    image: 'img/thumbnail-luos.png',
+    image: 'assets/images/thumbnail-luos.png',
     colorMode: {
       defaultMode: 'light',
     },
@@ -67,8 +67,8 @@ module.exports = {
     navbar: {
       logo: {
         alt: 'Luos Logo',
-        src: 'img/logo_luos_animated_black.gif',
-        srcDark: 'img/logo_luos_animated_white.gif',
+        src: 'assets/images/logo_luos_animated_black.gif',
+        srcDark: 'assets/images/logo_luos_animated_white.gif',
       },
       items: [
         {
@@ -94,11 +94,6 @@ module.exports = {
         {
           to: '/',
           label: 'Technology',
-          position: 'right',
-        },
-        {
-          to: 'https://app.luos.io',
-          label: 'Tools',
           position: 'right',
         },
         {
@@ -279,6 +274,15 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         fromExtensions: ['html'],
+      },
+    ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        max: 1080, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+        disableInDev: false,
       },
     ],
     ['./plugins/dotenv', {}],

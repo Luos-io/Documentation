@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import styles from './styles.module.css';
 import { NavbarSecondaryMenuFiller } from '@docusaurus/theme-common';
+
+import styles from './styles.module.css';
 
 function BlogSidebarMobileSecondaryMenu({ sidebar }) {
   return (
@@ -28,12 +29,6 @@ function BlogSidebarMobileSecondaryMenu({ sidebar }) {
     </div>
   );
 }
-
 export default function BlogSidebarMobile(props) {
-  return (
-    <NavbarSecondaryMenuFiller
-      component={BlogSidebarMobileSecondaryMenu}
-      props={props}
-    />
-  );
+  return <NavbarSecondaryMenuFiller component={BlogSidebarMobileSecondaryMenu} props={props} />;
 }

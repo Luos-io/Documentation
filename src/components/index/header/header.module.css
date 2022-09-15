@@ -1,14 +1,14 @@
 .container {
   width: 100%;
   margin-bottom: 10px;
-  background-image: url('/static/img/index/powered/nebula.svg');
+  background-image: url('/static/assets/images/index/powered/nebula.svg');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px 15px;
 }
 
 html[data-theme='light'] .container {
-  background-image: url('/static/img/index/header/nebula-light.svg');
+  background-image: url('/static/assets/images/index/header/nebula-light.svg');
 }
 
 @media screen and (max-width: 1023px) {
@@ -124,13 +124,13 @@ html[data-theme='light'] .container {
 }
 
 .whiteBtn::after {
-  content: url('/static/img/index/powered/discord.svg');
+  content: url('/static/assets/images/index/powered/discord.svg');
   margin-top: 3px;
   margin-left: 10px;
 }
 
 .whiteBtn:hover::after {
-  content: url('/static/img/index/powered/discord-white.svg');
+  content: url('/static/assets/images/index/powered/discord-white.svg');
   margin-top: 3px;
   margin-left: 10px;
 }

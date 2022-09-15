@@ -18,12 +18,6 @@ const cardGrid = (props) => {
         switch (key) {
           case 'category':
             return el[key] === filters[key];
-          case 'toc':
-            if (filters[key] === 361) {
-              return el[key] >= filters[key];
-            }
-            return el[key] <= filters[key];
-
           case 'level':
             return el[key] === parseInt(filters[key]);
           case 'tags':
@@ -40,7 +34,11 @@ const cardGrid = (props) => {
         <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
           <a href={x.link} className={styles.link} style={{ textDecoration: 'none' }}>
             <Paper className={styles.card} elevation={1}>
-              <img src={`/img/school/${x.img}.svg`} style={{ borderRadius: '4px' }} alt={x.title} />
+              <img
+                src={`/assets/images/tutorials/school/${x.img}.svg`}
+                style={{ borderRadius: '4px' }}
+                alt={x.title}
+              />
               <h2 className={styles.cardTitle}>{x.title}</h2>
 
               <Grid container spacing={1}>
@@ -50,7 +48,7 @@ const cardGrid = (props) => {
                       {' '}
                       <img
                         className={styles.cardIcons}
-                        src="/img/school/category.svg"
+                        src="/assets/images/tutorials/school/category.svg"
                         alt="category"
                       />
                     </span>
@@ -59,7 +57,11 @@ const cardGrid = (props) => {
                   <div>
                     <span>
                       {' '}
-                      <img className={styles.cardIcons} src="/img/school/clock.svg" alt="clock" />
+                      <img
+                        className={styles.cardIcons}
+                        src="/assets/images/tutorials/school/clock.svg"
+                        alt="clock"
+                      />
                     </span>
                     <span className={styles.levelTxt}>{Math.round(x.toc)} Minutes</span>
                   </div>

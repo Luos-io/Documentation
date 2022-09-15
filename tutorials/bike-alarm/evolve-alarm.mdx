@@ -1,9 +1,9 @@
 ---
 custom_edit_url: null
-image: /img/Bike-alarm-Luos.png
+image: /assets/images/Bike-alarm-Luos.png
 ---
 
-import Image from '@site/src/components/Images.js';
+import Image from '@site/src/components/Image';
 
 # Make our alarm evolve using a truck horn and more
 
@@ -12,9 +12,7 @@ For now, our alarm does not make any noise, which is sad for an alarm. Let us ma
 To do that, we will add another board to the setup with a relay switch. In this power switch, we put a 12V truck horn producing 150db.
 
 <div align="center">
-  <Image
-    src="/img/tutorials/Bike_alarm/truck_horn.jpeg"
-  />
+  <Image src="/assets/images/tutorials/Bike_alarm/truck_horn.jpeg" />
 </div>
 
 To control it, we will simply have to manage it on the apps and use the standard power_switch driver.
@@ -63,9 +61,7 @@ To make it usable in real life, we should probably select something less noisy t
 We also should add a real locking system which would be able to lock the bike wheel using a motor and a mechanism, like this one made by our friends from <a href="https://getapony.com/" target="_blank" rel="external nofollow">Pony</a>:
 
 <div align="center">
-  <Image
-    src="/img/tutorials/Bike_alarm/pony_lock.jpeg"
-  />
+  <Image src="/assets/images/tutorials/Bike_alarm/pony_lock.jpeg" />
 </div>
 
 We can also add connectivity to set the bike up using a mobile app or something similar. This part is interesting, so let us talk about that on the next chapter.

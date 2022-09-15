@@ -1,6 +1,7 @@
 .introContainer {
   width: 100%;
   padding: 20px;
+  margin-top: 70px;
 }
 
 html[data-theme='dark'] .introContainer {

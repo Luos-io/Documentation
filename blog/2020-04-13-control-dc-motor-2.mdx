@@ -4,16 +4,16 @@ description: Let's talk about direction control of your DC motor. Have a look at
 slug: how-to-stop-being-controlled-by-your-dc-motor-reverse-the-roles-2
 authors:
   - name: Simon Baudry
-    title: Mecatronic 
+    title: Mecatronic
     url: https://github.com/Simonbdy
     image_url: https://github.com/Simonbdy.png
 tags: [motors, robotics]
-image: /img/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-2-banner-luos.png
+image: /assets/images/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-2-banner-luos.png
 hide_table_of_contents: false
 date: 2020-04-13T10:00
 ---
 
-![img alt](/img/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-2-luos.png)
+![img alt](/assets/images/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-2-luos.png)
 
 [Part 1](/2020-03-13-control-dc-motor-1.mdx) of this topic was about direction control of your DC motor. Today it's time to have a look at speed control. Everyone curious about robotic motorization basics can read this post, but I suggest you begin with the [guide to motors in robotics](/2020-01-13-lift-banana-motors.mdx), as well as part 1 of this post first.
 
@@ -45,9 +45,9 @@ We could use a series variable resistor (R1) to adjust the voltage, i.e., the mo
 
 But:
 
-*   This is not automated — this is not robotics!
-*   A resistor dissipates power when current flows through it and generates heat. That means less power and lower efficiency.
-*   As current varies with the motor's load (we will see that later), and as voltage drops run with the current into the resistor, the speed control wouldn't be linear if the motor's load varies.
+- This is not automated — this is not robotics!
+- A resistor dissipates power when current flows through it and generates heat. That means less power and lower efficiency.
+- As current varies with the motor's load (we will see that later), and as voltage drops run with the current into the resistor, the speed control wouldn't be linear if the motor's load varies.
 
 Is that control? _No, it's not._
 
@@ -63,11 +63,11 @@ PWM (Pulse Width Modulation) is a way of providing voltage, but instead of being
 
 Applying to a motor it's like switching it ON and OFF a lot of times and very fast.
 
-*   The ON phases are called **pulses**.
-*   The short time of one pulse of HIGH is called the **duty cycle** (in seconds — for now).
-*   One pulse of HIGH and one fraction of time of LOW is called the **period** (also in seconds).
-*   The high value of the pulse is called the **amplitude** (in Volt).
-*   Hertz's **frequency** (f) is the inverse of the period (T).
+- The ON phases are called **pulses**.
+- The short time of one pulse of HIGH is called the **duty cycle** (in seconds — for now).
+- One pulse of HIGH and one fraction of time of LOW is called the **period** (also in seconds).
+- The high value of the pulse is called the **amplitude** (in Volt).
+- Hertz's **frequency** (f) is the inverse of the period (T).
 
 ![Formula: frequency (f) in Hertz, is the inverse of the period (T).](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc00feee201549e156310_1*PioEr9xltl-24DV1-qj7YQ.jpeg)
 
@@ -97,12 +97,12 @@ As we don't choose the amplitude, let me remind you that**PWM is not used for po
 
 So, what happens in this picture:
 
-*   The power supply is Vcc (the positive wire of your battery).
-*   Q1 is a transistor (a "door").
-*   When the PWM signal is down (LOW value), Q1 is opened. No current flows through the motor. It doesn't turn.
-*   When the PWM signal is up (HIGH value), Q1 is closed, the current can flow through the motor, from Vcc to the ground, making it turn.
-*   The resistor R2 prevents too much current from flowing inside the transistor Q1.
-*   When the transistor opens, the motor is not powered quickly before the transistor closes again. It can be in generator mode during this time, and the generated current could damage the transistor. That's why D1 is here: the current flows into D1 instead of Q1. The diode D1 is called a free-wheeling diode.
+- The power supply is Vcc (the positive wire of your battery).
+- Q1 is a transistor (a "door").
+- When the PWM signal is down (LOW value), Q1 is opened. No current flows through the motor. It doesn't turn.
+- When the PWM signal is up (HIGH value), Q1 is closed, the current can flow through the motor, from Vcc to the ground, making it turn.
+- The resistor R2 prevents too much current from flowing inside the transistor Q1.
+- When the transistor opens, the motor is not powered quickly before the transistor closes again. It can be in generator mode during this time, and the generated current could damage the transistor. That's why D1 is here: the current flows into D1 instead of Q1. The diode D1 is called a free-wheeling diode.
 
 _Note: Saying that a transistor or a push-button is closed is the same as saying that a door is opened; Because an opened door lets the passage to whatever wants to go through, a closed transistor or push-button enables the passage to current_
 
@@ -123,7 +123,7 @@ Let's go back to the command signal. As I said earlier, PWM is defined by its fr
 ![Speed control](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fc00f97360802b8c7dfa1_1*HfNnOpjhVS-GDZCfIXmh7A.jpeg)
 
 This percentage value of the duty cycle will define the speed of the motor: the higher the value, the faster the rotor.  
-The power signal will look like the command signal — same duty cycle — but with more amplitude (Vcc). Again, how does the motor see this? If we take several pulses, we can deduce an average value from this power signal. For example, a PWM signal with a 24 V amplitude and a 33 % duty cycle has a mean voltage of 8 V. Because 24 x 33% = 8.  
+The power signal will look like the command signal — same duty cycle — but with more amplitude (Vcc). Again, how does the motor see this? If we take several pulses, we can deduce an average value from this power signal. For example, a PWM signal with a 24 V amplitude and a 33 % duty cycle has a mean voltage of 8 V. Because 24 x 33% = 8.
 
 Let's have a look at the power signal and the average voltage:
 
@@ -135,24 +135,24 @@ Regarding the evolution of the speed, it looks roughly like that:
 
 **If I summarize this whole PWM thing:**
 
-*   You can create a PWM signal from a microcontroller (e.g., an Arduino board) that drives the speed of your motor in a small circuit.
-*   Its frequency and its duty cycle define this PWM signal.
-*   The PWM signal opens and closes a transistor, allowing a current to flow or not through the motor, thus creating a power signal that looks like the command signal but with more amplitude.
-*   The higher the duty cycle, the faster the motor's rotational speed.
-*   The motor reacts to that power signal like a mean voltage, calculated from its duty cycles.
+- You can create a PWM signal from a microcontroller (e.g., an Arduino board) that drives the speed of your motor in a small circuit.
+- Its frequency and its duty cycle define this PWM signal.
+- The PWM signal opens and closes a transistor, allowing a current to flow or not through the motor, thus creating a power signal that looks like the command signal but with more amplitude.
+- The higher the duty cycle, the faster the motor's rotational speed.
+- The motor reacts to that power signal like a mean voltage, calculated from its duty cycles.
 
 **Pros of using PWM signal for your motor:**
 
-*   It's easy to use.
-*   Good efficiency (few losses of power).
-*   It is good for the motor's coils — better than flat voltage.
-*   Good robustness.
+- It's easy to use.
+- Good efficiency (few losses of power).
+- It is good for the motor's coils — better than flat voltage.
+- Good robustness.
 
 **Cons:**
 
-*   It can make noises (according to the human-audible frequency used).
-*   EMI noises can be generated.
-*   The frequency must be chosen wisely (this will be the subject of a future post).
+- It can make noises (according to the human-audible frequency used).
+- EMI noises can be generated.
+- The frequency must be chosen wisely (this will be the subject of a future post).
 
 That was a tough one. But look at you now. You can control both the direction and the speed of your DC motor. This _is freakin' robotics!_
 

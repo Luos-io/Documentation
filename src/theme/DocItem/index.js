@@ -1,15 +1,8 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React from 'react';
 import clsx from 'clsx';
 import DocPaginator from '@theme/DocPaginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
-import DocItemFooter from '@theme/DocItemFooter';
 import TOC from '@theme/TOC';
 import TOCCollapsible from '@theme/TOCCollapsible';
 import Heading from '@theme/Heading';
@@ -110,8 +103,6 @@ function DocItemContent(props) {
                 <ContactUs />
               </MDXContent>
             </div>
-
-            <DocItemFooter {...props} />
           </article>
 
           <DocPaginator previous={metadata.previous} next={metadata.next} />

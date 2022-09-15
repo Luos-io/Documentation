@@ -1,0 +1,38 @@
+---
+hide_table_of_contents: true
+custom_edit_url: null
+---
+
+# Types of services
+
+As explained in the [service page](./create-services#messages), Luos enables message exchanges between services in a straightforward way for developers. Still, to easily use a service you need to know their interfaces or how to interact with them.
+
+In your code, in order to know what are the capabilities and the purpose of any services of your product, you need to know their types.
+
+## Standard interface between services
+
+Types allow to define the interface of a service. Types create a **common API** between services.
+
+The following example uses the most straightforward type available in Luos: STATE_TYPE defines the capability to manage state messages format. With this information, each application that wants to send a message to the LED driver knows how to communicate with this service; it only has to put the state information, and the LED can then be controlled.
+
+To define the capabilities of a specific type, you can use or create [profiles](./profiles). Profiles are API definitions that can be applied to a service.
+
+## List of all supported services' type
+
+| ID  |       Type       | Description                                                                                                                                                                                                                                                           |
+| :-: | :--------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  0  |    VOID_TYPE     | A service doing nothing, it allows you to detect a board with no running service on it.                                                                                                                                                                               |
+|  1  |    GATE_TYPE     | The gate service allows to translate JSON to Luos and Luos to JSON constantly. This service continuously pulls data from the sensors detected on the network and streams it into a JSON format. Also, it can receive JSON data and convert it into a service command. |
+|  2  |    COLOR_TYPE    | The Color service handles an RGB color data.                                                                                                                                                                                                                          |
+|  3  |    ANGLE_TYPE    | The Angle service handles a rotation position value.                                                                                                                                                                                                                  |
+|  4  |    STATE_TYPE    | The State service can handles a sensor (Button board for example), or an actuator (Power Switch board for example). Generally, this type of services allows to manage bi-state elements such as on/off, pushed/release, 0/1, ...                                      |
+|  5  |  DISTANCE_TYPE   | The Distance service handles a sensor measuring a distance.                                                                                                                                                                                                           |
+|  6  |   VOLTAGE_TYPE   | The Voltage service handles a sensor measuring voltage.                                                                                                                                                                                                               |
+|  7  |     IMU_TYPE     | The Imu service handles an inertial sensor.                                                                                                                                                                                                                           |
+|  8  |    LIGHT_TYPE    | The Light service handles a sensor measuring a light intensity.                                                                                                                                                                                                       |
+|  9  |    LOAD_TYPE     | The Load service handles a sensor measuring a force.                                                                                                                                                                                                                  |
+| 10  |    PIPE_TYPE     | A communication service with the external world.                                                                                                                                                                                                                      |
+| 11  |    MOTOR_TYPE    | An universal motor handling speed, position, and torque control, limits and measurement.                                                                                                                                                                              |
+| 12  | SERVO_MOTOR_TYPE | The Servo service allows to drive RC elements like servomotor.                                                                                                                                                                                                        |
+| 13  |  INSPECTOR_TYPE  | A service allowing an external program to take control and inspect an embedded Luos network through a PIPE service.                                                                                                                                                    |
+| 14  |  LUOS_LAST_TYPE  | This is not an actual type this is the beginning of the user specific type space.                                                                                                                                                                                     |

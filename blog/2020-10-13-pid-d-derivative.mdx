@@ -4,16 +4,16 @@ description: 'All the cheap neon letters are now lit up by your growing knowledg
 slug: pid-d-as-in-derivative
 authors:
   - name: Simon Baudry
-    title: Mecatronic 
+    title: Mecatronic
     url: https://github.com/Simonbdy
     image_url: https://github.com/Simonbdy.png
 tags: [motors, robotics]
-image: /img/blog/PID-D-as-in-Derivative-banner-luos.png
+image: /assets/images/blog/PID-D-as-in-Derivative-banner-luos.png
 hide_table_of_contents: false
 date: 2020-10-13T10:00
 ---
 
-![img alt](/img/blog/PID-D-as-in-Derivative-luos.png)
+![img alt](/assets/images/blog/PID-D-as-in-Derivative-luos.png)
 
 All the cheap neon letters are now lit up by your growing knowledge! We arrive at the last letter of PID: the letter D. Remember there is an [introduction to PID](/2020-03-13-control-dc-motor-1.mdx), a [proportional post](/2020-08-13-pid-p-proportional.mdx) for the P and an [integral post](/2020-09-13-pid-i-integral.mdx) for the I. It’s not the end, it’s only the beginning.
 
@@ -25,9 +25,9 @@ Today I’ll talk to you about the last effect: the **derivative** effect in a P
 
 As for the previous posts, let me remind that a PID is — most of the time — a coded feedback loop control working into a system which includes, at least:
 
-*   a powered actuator (eg. a DC motor),
-*   a sensor (eg. a speed sensor), and,
-*   the associated command (most of the time an electronic board with a microcontroller).
+- a powered actuator (eg. a DC motor),
+- a sensor (eg. a speed sensor), and,
+- the associated command (most of the time an electronic board with a microcontroller).
 
 And a reminder of what a PID is:
 
@@ -37,10 +37,10 @@ The changing environment can be, for example, a dynamic charge (more or less peo
 
 This is where I’m supposed to remind you the must-known vocabulary you will need in order to go on reading:
 
-*   Set-point: the user-defined value to be reached by the actuator (a speed, a torque, etc.).
-*   Process variable: the real actuator’s value, retrieved by the sensor in real time.
-*   Error: the difference between the set-point and the process variable.
-*   Steady state: when the system stops oscillating and finds its full balance.
+- Set-point: the user-defined value to be reached by the actuator (a speed, a torque, etc.).
+- Process variable: the real actuator’s value, retrieved by the sensor in real time.
+- Error: the difference between the set-point and the process variable.
+- Steady state: when the system stops oscillating and finds its full balance.
 
 Unlike the proportional part of a PID, the derivative part, like the integral one, can’t be used alone as it wouldn’t have any effect. Instead of that, derivative is either used along with proportional (PD), or with proportional and integral (full PID). The proportional part P is always used in a PID control.
 
@@ -57,7 +57,7 @@ I explained in the last post that the computed error was a function of time ε(t
 The derivative of a function is the result of differentiating this function. _Right._  
 Let’s take a continuous function y = f(x). f is the function that transforms x into y. _Easy._  
 Now let’s call f'(x) the derivative of f(x). f(x) has been differentiated into f'(x). _All right... maybe slow down a little bit.  
-_Mathematically speaking, the derivative f' of f is the ratio of change in output by an infinitesimal change in input. Limits are used to show that change in the input. _Nope. Please go now._
+\_Mathematically speaking, the derivative f' of f is the ratio of change in output by an infinitesimal change in input. Limits are used to show that change in the input. \_Nope. Please go now._
 
 > Differentiating a function is like measuring how much the output y is changing when we make the input x change.
 
@@ -100,15 +100,15 @@ Remember the extra-simplified expression of a PID? Let’s add the final bit to 
 
 ![Simplified expression of a PID](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/6030dfcc73c6a347a9bc970b_1*DE13uE5NLWeN87bLRLNzaQ.png)
 
-e is the error, and previous\_e is the error from the last loop.
+e is the error, and previous_e is the error from the last loop.
 
-_Note:_ _When you program a control loop feedback, at the very end of the actual PID loop code, the line previous\_e = e is very important so that in the next passage into the loop previous\_e would have a value._
+_Note:_ _When you program a control loop feedback, at the very end of the actual PID loop code, the line previous_e = e is very important so that in the next passage into the loop previous_e would have a value._
 
-_Another note:_ _We are supposed, in order to make a differentiation with respect to time, to divide e - previous\_e by t - previous\_t, which is the time of one loop (it depends on the sampling frequency of your system). However and most of the time, the expression of t - previous\_t is implicitly included into KD._
+_Another note:_ _We are supposed, in order to make a differentiation with respect to time, to divide e - previous_e by t - previous_t, which is the time of one loop (it depends on the sampling frequency of your system). However and most of the time, the expression of t - previous_t is implicitly included into KD._
 
 Now it’s clear: the derivative has the effect of “predicting” what will be the error by retrieving its amount of variation, in order to reduce it.
 
-Do you see what is my point? In other words, while integral was a “look” into the past, derivative is a “look” into the future! _(Kind of.)_Let me write it for you one more time:
+Do you see what is my point? In other words, while integral was a “look” into the past, derivative is a “look” into the future! \_(Kind of.)\_Let me write it for you one more time:
 
 The derivative looks into the future of the system.
 
@@ -116,10 +116,10 @@ Isn’t that sweet. But what is the real effect of this derivative element?
 
 <h2> The effects of D </h2>
 
-*   Derivative softens or smooths oscillations, _ie._ it damps the system’s response, also making it more stable.
-*   If correctly tuned, KD, by damping the overshoots, accelerates the global system’s response.
-*   **But:** raising KD too much will make the rise time longer and longer, because it damps the system. Also, although getting rid of overshoots and damp the whole curve seems like a good thing to do, an over-damped system will eventually show a slow response: this is not the solution you are looking for.
-*   In practice, many say that the gain KD is rarely used, and has good results if it is kept small.
+- Derivative softens or smooths oscillations, _ie._ it damps the system’s response, also making it more stable.
+- If correctly tuned, KD, by damping the overshoots, accelerates the global system’s response.
+- **But:** raising KD too much will make the rise time longer and longer, because it damps the system. Also, although getting rid of overshoots and damp the whole curve seems like a good thing to do, an over-damped system will eventually show a slow response: this is not the solution you are looking for.
+- In practice, many say that the gain KD is rarely used, and has good results if it is kept small.
 
 In the following illustration, we can see the effect of the change of the derivative gain KD on the system’s response (both proportional and integral gains are held constant):
 
@@ -132,10 +132,10 @@ But if the value you control is subject to very high dynamic changes or if the r
 
 **To summarize**
 
-*   The D part of a PID is the derivative command, used into a control loop feedback to control a system.
-*   The derivative command is used as a differentiation of the retrieved error (which is the difference between set-point and process variable), times the chosen derivative gainKD.
-*   Thanks to differentiation, derivative predicts what will be the error on the next loops in order to adapt the system’s response accordingly.
-*   Used as part of a control loop feedback, the derivative damps the curves of the system’s response.
-*   Derivative always comes either with a proportional command (PD), either with a proportional and an integral commands (PID) (it’s never used alone nor with an integral only).
+- The D part of a PID is the derivative command, used into a control loop feedback to control a system.
+- The derivative command is used as a differentiation of the retrieved error (which is the difference between set-point and process variable), times the chosen derivative gainKD.
+- Thanks to differentiation, derivative predicts what will be the error on the next loops in order to adapt the system’s response accordingly.
+- Used as part of a control loop feedback, the derivative damps the curves of the system’s response.
+- Derivative always comes either with a proportional command (PD), either with a proportional and an integral commands (PID) (it’s never used alone nor with an integral only).
 
 [Get Started with Luos](/tutorials/get-started)

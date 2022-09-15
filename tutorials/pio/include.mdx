@@ -2,7 +2,7 @@
 custom_edit_url: null
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -10,11 +10,11 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Include the Luos library in your project
 
-The file *platformio.ini* in your project describes the precompiler variables and the library depencies of your project.
+The file _platformio.ini_ in your project describes the precompiler variables and the library depencies of your project.
 
 In our case, we want to use Luos as a library. Writing "Luos" and "LuosHAL" in the section `lib_deps` will download the Luos library from PIO registry and will build and link Luos to your project.
 
-Fill in the file *platformio.ini* accordingly:
+Fill in the file _platformio.ini_ accordingly:
 
 <Tabs>
 <TabItem value="ST" label="ST">
@@ -129,7 +129,7 @@ Those special pins, called PTP pins, are necessary for the topology detection. T
 <Tabs>
 <TabItem value="ST" label="ST">
 
-1. Open the file *stm32xx_it.c*
+1. Open the file _stm32xx_it.c_
 2. fill in the end of the file with the following code:
 
 ```c
@@ -148,7 +148,7 @@ void EXTI4_15_IRQHandler(void)
 ```
 
 :::info
-This is the default configuration of F0 Family used for the STM32F072RB (see [*LuosHAL_Config.h*](https://github.com/Luos-io/LuosHAL)). If you need to adapt you hardware, put your changes in the file *node_config.h* in your project.
+This is the default configuration of F0 Family used for the STM32F072RB (see [_LuosHAL_Config.h_](https://github.com/Luos-io/LuosHAL)). If you need to adapt you hardware, put your changes in the file _node_config.h_ in your project.
 :::
 
 </TabItem>
@@ -156,7 +156,7 @@ This is the default configuration of F0 Family used for the STM32F072RB (see [*L
 For Arduino, Luos fills in this information for you.
 
 :::warning
-You have to follow the pinout declared in the file *LuosHAL_Config.h* for ATSAMD21\*ARDUINO in the [LuosHAL repository](https://github.com/Luos-io/LuosHAL).
+You have to follow the pinout declared in the file _LuosHAL_Config.h_ for ATSAMD21\*ARDUINO in the [LuosHAL repository](https://github.com/Luos-io/LuosHAL).
 :::
 
 </TabItem>
@@ -167,15 +167,15 @@ You have to follow the pinout declared in the file *LuosHAL_Config.h* for ATSAMD
 As you can see in the terminal when you build your project, PlatformiIO will download the last version of the Luos library from its registry, and add it as a library to your project.
 
 <div align="center">
-  <Image src="/img/tutorials/pio/pio-2-1.png" />
+  <Image src="/assets/images/tutorials/pio/pio-2-1.png" />
 </div>
 
 Upload the code to your MCU by clicking on the right arrow button at the bottom of the IDE.
 
 <div align="center">
-  <Image src="/img/tutorials/pio/pio-2-2.png" />
+  <Image src="/assets/images/tutorials/pio/pio-2-2.png" />
 </div>
 
 You have now created a project with an ST framework or with an Arduino framework, and configured everyting to begin with Luos.
 
-Rename your project and add packages like in the trainings, in order to make great projects with Luos! [You can check the full solution here](https://github.com/Luos-io/Mooc/tree/main/Basic*Project).
+Rename your project and add packages like in the trainings, in order to make great projects with Luos! [You can check the full solution here](https://github.com/Luos-io/morse_encoder).

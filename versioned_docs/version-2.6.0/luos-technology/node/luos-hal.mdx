@@ -3,11 +3,13 @@ hide_table_of_contents: true
 custom_edit_url: null
 ---
 
-# Luos Hardware Abstraction Layer
+# Hardware Abstraction Layer
 
 Luos engine can work on a single node using localhost communication or it can create a network for communication between services located on different nodes. This communication should be defined and hardware-configured to fit with the chosen MCU. The files _luos_hal.c_ and _luos_hal.h_ define all the functions needed by Luos engine. Then, there is a HAL depending on the network layer you use to send messages through the physical bus.
 
-The file _luos_hal_config.h_ contains a default configuration for an MCU family and can be redefined in a configuration file to fit your design. The configuration of Luos engine HAL is described [here](/docs/hardware-consideration/mcu).
+The file _luos_hal_config.h_ contains a default configuration for an MCU family and can be redefined in a configuration file to fit your design.
+
+[Discover the configuration of Luos engine HAL.](../../hardware-consideration/mcu)
 
 ## Luos engine's HAL
 

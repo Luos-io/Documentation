@@ -1,9 +1,9 @@
 ---
 custom_edit_url: null
-image: /img/Your-first-service-banner-luos.png
+image: /assets/images/tutorials/your-first-service-banner-luos.png
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Form from '/src/components/typeform/index.js';
@@ -16,7 +16,7 @@ If we want to be able to easily move our led service from one project to another
 
 The service you just created doesn't need any direct access to any other services on your network. But the other services still have the possibility to interact with it. This is the purpose of microservice: it is allowing you to have loosely coupled pieces of code.
 
-Thanks to that, we can put the service in a folder, move it as we want, and share all our services extremely easily. We call it a [package](/docs/luos-technology/package).
+Thanks to that, we can put the service in a folder, move it as we want, and share all our services extremely easily. We call it a [package](/docs/luos-technology/packages).
 
 Packages also allow you to have plenty of code in your project while keeping it clean anyway! Let's see how to create one.
 
@@ -26,8 +26,8 @@ First, you will have to create a dedicated folder on your _lib_ folder and call 
 
 <div align="center">
   <Image
-    src="/img/your-first-service/luos-service-2.png"
-    darkSrc="/img/your-first-service/luos-service-2.png"
+    src="/assets/images/tutorials/your-first-service/luos-service-2.png"
+    darkSrc="/assets/images/tutorials/your-first-service/luos-service-2.png"
   />
 </div>
 
@@ -35,8 +35,8 @@ Then in this folder create 2 files, _led.h_ (header file) and _led.c_ (main file
 
 <div align="center">
   <Image
-    src="/img/your-first-service/luos-service-2-1.png"
-    darkSrc="/img/your-first-service/luos-service-2-1.png"
+    src="/assets/images/tutorials/your-first-service/luos-service-2-1.png"
+    darkSrc="/assets/images/tutorials/your-first-service/luos-service-2-1.png"
   />
 </div>
 

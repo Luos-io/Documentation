@@ -2,7 +2,7 @@
 custom_edit_url: null
 ---
 
-import Image from '@site/src/components/Images.js';
+import Image from '@site/src/components/Image.js';
 
 # I can't complete the get started tutorial because some dependencies are not installed
 
@@ -13,10 +13,11 @@ When you start your first application or follow the Luos's Get started, you may 
 ### Possible explanation
 
 One of these installations failed or is not up to date:
-- Python 
-- Pip 
-- VSCode 
-- PlatformIO 
+
+- Python
+- Pip
+- VSCode
+- PlatformIO
 
 ### Resolution
 
@@ -36,7 +37,7 @@ For MacOS and Linux Python are pre installed following installation for Windows
 3. Select a link to download either the Windows x86 or x64 executable, according to your configuration.
 
 <div align="center">
-  <Image src="/img/faq/python_release_windows.png" />
+  <Image src="/assets/images/faq/python_release_windows.png" />
 </div>
 
 Note: If your Windows installation is a 32-bit system, you need the Windows x86 executable installer. If your Windows is a 64-bit version, you need to download the Windows x86-64 executable installer. There is nothing to worry about if you install the “wrong” version. You can uninstall one version of Python and install another.
@@ -48,7 +49,7 @@ Note: If your Windows installation is a 32-bit system, you need the Windows x86 
 3. Click on Install Now.
 
 <div align="center">
-  <Image src="/img/faq/python_path.png" />
+  <Image src="/assets/images/faq/python_path.png" />
 </div>
 
 For all recent versions of Python, the recommended installation options include Pip and IDLE. Older versions may not include such additional features.
@@ -56,7 +57,7 @@ For all recent versions of Python, the recommended installation options include 
 4. The next dialog will prompt you to select whether to disable path length limit. Choosing this option will allow Python to bypass the 260-character MAX_PATH limit. Effectively, it will enable Python to use long path names.
 
 <div align="center">
-  <Image src="/img/faq/python_length_limit.png" />
+  <Image src="/assets/images/faq/python_length_limit.png" />
 </div>
 
 The disabled path length limit option will not affect any other system settings. Turning it on will resolve potential name length issues that may arise with Python projects developed in Linux.
@@ -65,16 +66,16 @@ The disabled path length limit option will not affect any other system settings.
 
 Follow the steps outlined below to install PIP on Windows.
 
-##### Step 1: Download PIP *get-pip.py*
+##### Step 1: Download PIP _get-pip.py_
 
-Before installing PIP, download the *get-pip.py* file.
+Before installing PIP, download the _get-pip.py_ file.
 
 1. Launch a command prompt if it isn't already open. To do so, open the Windows search bar, type "cmd" and click on the icon.
-2. Then, run the following command to download the *get-pip.py* file:
-  `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+2. Then, run the following command to download the _get-pip.py_ file:
+   `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
 
 <div align="center">
-  <Image src="/img/faq/pip_install.png" />
+  <Image src="/assets/images/faq/pip_install.png" />
 </div>
 
 ##### Step 2: Installing PIP on Windows
@@ -83,7 +84,7 @@ To install PIP, type in the command invite:
 `python get-pip.py`
 
 <div align="center">
-  <Image src="/img/faq/pip_install_progress.png" />
+  <Image src="/assets/images/faq/pip_install_progress.png" />
 </div>
 
 If the file isn't found, double-check the path to the folder where you saved the file. The command must be executed in the same folder.
@@ -93,13 +94,13 @@ If the file isn't found, double-check the path to the folder where you saved the
 1. Download the Visual Studio Code installer for your OS.
 
 <div align="center">
-  <Image src="/img/faq/vscode_install.png" />
+  <Image src="/assets/images/faq/vscode_install.png" />
 </div>
 
 For Windows:
 
-2. Once it is downloaded, run the installer (*VSCodeUserSetup-{version}.exe*). This will only take a minute.
-3. By default, VSCode is installed under the path C:\users\{username}\AppData\Local\Programs\Microsoft VS Code.
+2. Once it is downloaded, run the installer (_VSCodeUserSetup-{version}.exe_). This will only take a minute.
+3. By default, VSCode is installed under the path `C:\users\{username}\AppData\Local\Programs\Microsoft VS Code`.
 
 #### Installing PlatformIO on VSCode
 
@@ -107,6 +108,5 @@ For Windows:
 2. Search for official PlatformIO IDE extension
 3. Install PlatformIO IDE.
    <div align="center">
-     <Image src="/img/faq/pio_install.png" />
+     <Image src="/assets/images/faq/pio_install.png" />
    </div>
-

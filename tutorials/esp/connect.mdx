@@ -2,7 +2,7 @@
 custom_edit_url: null
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -16,7 +16,7 @@ We will illsutrate this second part of the tutorial with a button example. The n
 - Running Luos engine and the button package on ESP32
 - Getting ready to be plug-and-play on the Luos network
 
-The file *main.c* in the *src* folder of the example project is as followed:
+The file _main.c_ in the _src_ folder of the example project is as followed:
 
 ```c
 #include "luos_engine.h"
@@ -43,7 +43,7 @@ If you want to create a new service, you can learn how to do it in the par one o
 
 To implement Luos on a node and be connected to a Luos network, you need the following file and functions:
 
-- *luos_engine.h*
+- _luos_engine.h_
 - `Luos_Init()`
 - `Luos_Loop()`
 
@@ -57,10 +57,10 @@ This ESP32 becomes a **node** on the Luos network and must be connected with oth
 
 Depending on the development board you choose and on the MCU it contains, to do this tutorial you will have to adapt the connection. In Luos engine there is a default configuration for each ESP32 family, allowing it to be plug-and-play on the network.
 
-You can find this default configuration in *luos_engine/network/HAL/ESP32*.
+You can find this default configuration in _luos_engine/network/HAL/ESP32_.
 
 :::caution
-If you need to change the default pinout, you will need to add *node_config.h* to your project and reconfigure the pins defined by default in this file.
+If you need to change the default pinout, you will need to add _node_config.h_ to your project and reconfigure the pins defined by default in this file.
 :::
 
 Pins needed for the Luos network:
@@ -84,7 +84,7 @@ Default configuration:
 | COM_TX_PIN | GPIO_NUM_10 |
 | COM_RX_PIN | GPIO_NUM_9  |
 
-  <Image src="/img/tutorials/esp/esp-2-1.png" height="300px" />
+  <Image src="/assets/images/tutorials/esp/esp-2-1.png" height="300px" />
 </div>
 </TabItem>
     <TabItem value="ESP32 C3" label="ESP32 C3" className="arrayWithImg">
@@ -98,7 +98,7 @@ Default configuration:
 | COM_TX_PIN | GPIO_NUM_4 |
 | COM_RX_PIN | GPIO_NUM_5 |
 
-  <Image src="/img/tutorials/esp/esp-2-2.png" height="300px" />
+  <Image src="/assets/images/tutorials/esp/esp-2-2.png" height="300px" />
 </div>
 </TabItem>
     <TabItem value="ESP32 S2 and S3" label="ESP32 S2 and S3" className="arrayWithImg">
@@ -112,7 +112,7 @@ Default configuration:
 | COM_TX_PIN | GPIO_NUM_17 |
 | COM_RX_PIN | GPIO_NUM_18 |
 
-  <Image src="/img/tutorials/esp/esp-2-3.png" height="300px" />
+  <Image src="/assets/images/tutorials/esp/esp-2-3.png" height="300px" />
 </div>
 </TabItem>
 </Tabs>

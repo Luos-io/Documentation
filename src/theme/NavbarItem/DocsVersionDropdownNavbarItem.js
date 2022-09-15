@@ -1,10 +1,12 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { useVersions, useActiveDocContext } from '@docusaurus/plugin-content-docs/client';
-import { useDocsPreferredVersion, useDocsVersionCandidates } from '@docusaurus/theme-common';
+import { useDocsPreferredVersion } from '@docusaurus/theme-common';
+import { useDocsVersionCandidates } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
-import { useLocation } from 'react-router-dom';
 const getVersionMainDoc = (version) => version.docs.find((doc) => doc.id === version.mainDocId);
 export default function DocsVersionDropdownNavbarItem({
   mobile,
@@ -14,14 +16,9 @@ export default function DocsVersionDropdownNavbarItem({
   dropdownItemsAfter,
   ...props
 }) {
-  const location = useLocation();
-  const regex = /docs/g;
-  const found = location.pathname.match(regex);
-
-  if (!found) {
-    return null;
-  }
-
+  const {
+    siteConfig: { customFields },
+  } = useDocusaurusContext();
   const activeDocContext = useActiveDocContext(docsPluginId);
   const versions = useVersions(docsPluginId);
   const { savePreferredVersionName } = useDocsPreferredVersion(docsPluginId);
@@ -50,6 +47,18 @@ export default function DocsVersionDropdownNavbarItem({
       : dropdownVersion.label;
   const dropdownTo =
     mobile && items.length > 1 ? undefined : getVersionMainDoc(dropdownVersion).path;
+
+  // Luos - Add location check to see if we are on a doc page
+  const location = useLocation();
+
+  const regex = /docs/g;
+  const found = location.pathname.match(regex);
+
+  if (!found) {
+    return null;
+  }
+  // Luos - End
+
   // We don't want to render a version dropdown with 0 or 1 item. If we build
   // the site with a single docs version (onlyIncludeVersions: ['1.0.0']),
   // We'd rather render a button instead of a dropdown

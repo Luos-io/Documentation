@@ -23,7 +23,7 @@ const Header = (props) => {
           <div className={styles.head}>
             {' '}
             <img
-              src="img/index/header/buttons.svg"
+              src="assets/images/index/header/buttons.svg"
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
             />
@@ -35,12 +35,12 @@ const Header = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -122,7 +122,7 @@ const Header = (props) => {
             <div className={styles.head}>
               {' '}
               <img
-                src="img/index/header/buttons.svg"
+                src="assets/images/index/header/buttons.svg"
                 alt="buttons"
                 style={{ padding: '15px', width: '100px' }}
               />
@@ -134,12 +134,12 @@ const Header = (props) => {
                 {isDarkTheme ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                    <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>

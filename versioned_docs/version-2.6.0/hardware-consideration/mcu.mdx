@@ -14,9 +14,9 @@ Luos engine can manage any type of microcontrollers as long as they have a HAL. 
 - by mail <a href="mailto:hello@luos.io">hello&#x40;luos.io</a>
 - on <a href="https://github.com/Luos-io/luos_engine/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
 
-Check the list of MCU families Luos engine cover:<a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank">Hardware Abstraction Layers for MCU families</a>,
+Check the list of MCU families Luos engine cover:<a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank">Hardware Abstraction Layers for MCU families</a>,
 
-> Depending on what network you have, you may also configure the specific HAL of your network. By default, Luos engine uses the Robus network layer with <a href="https://github.com/Luos-io/luos_engine/tree/main/Network/Robus/HAL" target="_blank">Robus HAL</a>.
+> Depending on what network you have, you may also configure the specific HAL of your network. By default, Luos engine uses the Robus network layer with <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank">Robus HAL</a>.
 
 ## Default Configurations
 
@@ -24,7 +24,7 @@ Luos engine is made to run on MCU and use the hardware peripherals of the MCU to
 
 ## Luos engine's HAL configuration
 
-To match pinout and fonctionality with your design, you can create or use the file _node_config.h_ (see [Luos examples](https://github.com/Luos-io/luos_engine/tree/main/Examples)).
+To match pinout and fonctionality with your design, you can create or use the file _node_config.h_ (see [Luos examples](https://github.com/Luos-io/luos_engine/tree/main/examples)).
 Based on the default configuration defined in _luos_hal_config.h_, you can define in the _file node_config.h_, in the section "LUOS HAL LIBRARY DEFINITION", pinout usart timer, etc.
 
 This way, you are able to change the default hardware configuration so it needs to be called in the preprossessor variable section of your IDE to be taken into consideration for your project.
@@ -68,8 +68,8 @@ There are many possible configurations that you can change, not all of them bein
 | :---------------------------------------: | :----------------------------------: | :-----------------------------: |
 |           LUOS_COM_CLOCK_ENABLE           |      Activates clock for serial      |      Depends on serial bus      |
 | LUOS_COM/LUOS_COM_IRQ/LUOS_COM_IRQHANDLER | Chooses serial bus, IRQ and callback | Adapts to the serial bus chosen |
-|           LUOS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for Tx           |
-|             LUOS_DMA_CHANNEL              |           Chooses Channel            |             Sends Tx            |
+|           LUOS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for for Tx       |
+|             LUOS_DMA_CHANNEL              |           Chooses Channel            |             Send Tx             |
 
 </TabItem>
 <TabItem value="Timer" label="Timer">
@@ -82,10 +82,10 @@ There are many possible configurations that you can change, not all of them bein
 </TabItem>
 <TabItem value="Flash" label="Flash">
 
-|               Function               |           Description            |             Comments                   |
-| :----------------------------------: | :------------------------------: | :------------------------------------: |
-| BOOT_START_ADDRESS/APP_START_ADDRESS |   define boot and App position   |           See bootloader section       |
-|         SHARED_MEMORY_ADDRESS        |   define shared memory position  |Used to store Luos Information and alias|
+|               Function               |          Description          |                 Comments                 |
+| :----------------------------------: | :---------------------------: | :--------------------------------------: |
+| BOOT_START_ADDRESS/APP_START_ADDRESS | define boot and App position  |          See bootloader section          |
+|        SHARED_MEMORY_ADDRESS         | define shared memory position | Used to store Luos Information and alias |
 
 </TabItem>
 

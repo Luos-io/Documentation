@@ -1,9 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -43,7 +37,11 @@ function Footer() {
         <Grid item xs={12} md={4} lg={4} xl={4}>
           {' '}
           <img
-            src={isDarkTheme ? '/img/index/powered/luos.svg' : '/img/index/powered/luos-dark.svg'}
+            src={
+              isDarkTheme
+                ? '/assets/images/index/powered/luos.svg'
+                : '/assets/images/index/powered/luos-dark.svg'
+            }
             style={{ verticalAlign: 'middle', width: '150px' }}
             alt="luos-dark"
           />
@@ -75,18 +73,23 @@ function Footer() {
           <div className={styles.joinUsContainer}>
             <a href="https://discord.gg/luos" rel="nofollow">
               <img
-                src="/img/discord.svg"
+                src="/assets/images/discord.svg"
                 className="rsLogo"
                 loading="lazy"
                 alt="discord logo"
               ></img>
             </a>
             <a href="https://www.reddit.com/r/Luos/" rel="nofollow">
-              <img src="/img/reddit.svg" className="rsLogo" loading="lazy" alt="reddit logo"></img>
+              <img
+                src="/assets/images/reddit.svg"
+                className="rsLogo"
+                loading="lazy"
+                alt="reddit logo"
+              ></img>
             </a>
             <a href="https://twitter.com/Luos_io" rel="nofollow">
               <img
-                src="/img/twitter.svg"
+                src="/assets/images/twitter.svg"
                 className="rsLogo"
                 loading="lazy"
                 alt="twitter logo"
@@ -94,7 +97,7 @@ function Footer() {
             </a>
             <a href="https://www.linkedin.com/company/luos" rel="nofollow">
               <img
-                src="/img/linkedin.svg"
+                src="/assets/images/linkedin.svg"
                 className="rsLogo"
                 loading="lazy"
                 alt="linkedin logo"
@@ -102,7 +105,7 @@ function Footer() {
             </a>
             <a href="https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA" rel="nofollow">
               <img
-                src="/img/youtube.svg"
+                src="/assets/images/youtube.svg"
                 className="rsLogo"
                 loading="lazy"
                 alt="youtube logo"

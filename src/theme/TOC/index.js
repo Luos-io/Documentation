@@ -1,9 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React from 'react';
 import clsx from 'clsx';
 import TOCItems from '@theme/TOCItems';
@@ -62,7 +56,7 @@ function TOC({ className, ...props }) {
               <Grid item md={3}>
                 <Avatar
                   alt={author.name !== 'nicoR' ? author.name : 'N'}
-                  src={`/img/school/authors/${author.img}`}
+                  src={`/assets/images/tutorials/school/authors/${author.img}`}
                   sx={{ width: 56, height: 56, float: 'right' }}
                 />
               </Grid>
@@ -72,18 +66,23 @@ function TOC({ className, ...props }) {
           <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
             <a href="https://discord.gg/luos">
               <img
-                src="/img/discord.svg"
+                src="/assets/images/discord.svg"
                 className="rsLogo"
                 loading="lazy"
                 alt="logo discord"
               ></img>
             </a>
             <a href="https://www.reddit.com/r/Luos/">
-              <img src="/img/reddit.svg" className="rsLogo" loading="lazy" alt="logo reddit"></img>
+              <img
+                src="/assets/images/reddit.svg"
+                className="rsLogo"
+                loading="lazy"
+                alt="logo reddit"
+              ></img>
             </a>
             <a href="https://twitter.com/Luos_io">
               <img
-                src="/img/twitter.svg"
+                src="/assets/images/twitter.svg"
                 className="rsLogo"
                 loading="lazy"
                 alt="logo twitter"
@@ -91,7 +90,7 @@ function TOC({ className, ...props }) {
             </a>
             <a href="https://www.linkedin.com/company/luos">
               <img
-                src="/img/linkedin.svg"
+                src="/assets/images/linkedin.svg"
                 className="rsLogo"
                 loading="lazy"
                 alt="logo linkedin"

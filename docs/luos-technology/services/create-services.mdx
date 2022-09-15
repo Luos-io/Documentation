@@ -1,0 +1,153 @@
+---
+custom_edit_url: null
+---
+
+import { customFields } from '/docusaurus.config.js';
+import Tooltip from '@site/src/components/Tooltip.js';
+
+# Create Luos services
+
+**As a developer, you will always develop your functionalities as services into packages and never into the `main()` program.**
+
+:::caution
+Make sure to read and understand the [package](../packages) section before reading this page.
+:::
+
+## How to create and initialize a service
+
+To create a service, you have to call this function:
+
+```c
+service_t* Luos_CreateService(void* callback, service_type_t type, char* default_alias, revision_t revision);
+```
+
+The returned `service_t*` is a service structure pointer that will be useful to make your service act in the network after this initialization.
+
+**callback** is a pointer to a callback function called by Luos engine when a service receives messages from other services (see [messages](../messages) for more details).
+This function needs to have a specific format:
+
+```c
+void Service_MsgHandler(service_t *service, msg_t *msg)
+```
+
+- **service** is the service pointer of the service receiving the data (basically, it is your service).
+- **msg** is the message your service received.
+
+**type** is the type of the new service represented by a number. Some basic types (e.g. `DISTANCE_MOD`, `VOLTAGE_MOD`, etc.) are already available in the `service_type_t` enum structure of Luos engine. You can also add your own.
+
+**default alias** is the alias by default for your new service (e.g. `Myservice02`). This alias is the one your service will use if no other service have the same and if no other alias is set by the user. Aliases have a maximum size of 16 characters.
+
+**revision** is the revision number of the service you are creating and which will be accessible via Pyluos.
+
+Following the [packages rules](../packages), here is a code example for a button service:
+
+```c
+service_t* service_btn;
+
+static void Button_MsgHandler(service_t *service, msg_t *msg)
+{
+    // Manage received messages
+}
+
+void Button_Init(void)
+{
+    revision_t ButtonRevision = {.major = 0, .minor = 0, .build = 7};
+
+    service_btn = Luos_CreateService(Button_MsgHandler, STATE_TYPE, "button", ButtonRevision);
+}
+
+void Button_Loop(void)
+{
+}
+```
+
+## Services categories
+
+To make your development as clean as possible, you have to understand into which category ([**Driver**](#drivers-guidelines) or [**App**](#apps-guidelines)) each service of the project is located.
+
+By following the categories guidelines, you will be able to make clean and reusable functionalities.
+
+## Drivers guidelines
+
+A driver is a type of service that handles hardware. Motors, distance sensors, LEDs are all drivers.
+
+By designing a driver, you have to keep the following rules in mind:
+
+- A driver service always uses a standard Luos type to be usable by any other services called [profiles](./profiles).
+- A driver service always uses standard <Tooltip def={customFields.od_def}>object dictionary</Tooltip> structures to be usable by any other services.
+- A driver service never depends on or uses any other services (driver or app).
+- A driver service is "dumb", as it can't do anything else than manage its hardware feature (but it does it very well).
+
+You can have multiple driver services on the same <Tooltip def={customFields.node_def}>node</Tooltip> managing different hardware functionalities of your board. It is up to you to sort them depending on your design.
+
+## Apps guidelines
+
+An application or app is a type of service that only manages software items such as functions or algorithms. Apps use other services to make your device act, operate, and behave.
+Apps can be placed in any <Tooltip def={customFields.node_def}>node</Tooltip> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact the global performance of the system.
+
+By designing an app, you have to keep the following rules in mind:
+
+- An app can't have hardware dependencies.
+- An app can use custom service types (you can create your own [profiles](./profiles) for that).
+- An app must use standard <Tooltip def={customFields.od_def}>object dictionary</Tooltip> data structures (you can create your own object dictionary for that).
+
+:::caution
+If the data structures used are not standard, the [gate](../../tools/gate.mdx) services could be completely unable to manage them.
+:::
+
+Apps are the embedded smartness of your device, and at least one of them should run a network detection in order to map every service in every node in your device and make it work properly. Go to the [Routing table](./routing-table) page for more information.
+
+## Services accessibility
+
+You can define and manage the accessibility of services.
+
+This accessibility allows you to specify the access the services can deal with. For example, a STATE_TYPE service (which can handle a basic True/False state) can be used either for a button (read-only) or a relay (write-only).
+
+By default, when you create a new service, it will be on **READ_WRITE_ACCESS**, telling any other services that they can "send to" or "receive from" this new service. You can change this configuration if you want to.
+
+Services can have the following accessibility:
+
+- READ_WRITE_ACCESS
+- READ_ONLY_ACCESS
+- WRITE_ONLY_ACCESS
+- NO_ACCESS
+
+For example, from the previous initialization example function of the button service, we should specify the accessibility of the service as **READ_ONLY_ACCESS**:
+
+```c
+service_t* service_btn;
+
+void Button_Init(void)
+{
+    revision_t ButtonRevision = {.major = 0, .minor = 0, .build = 7};
+
+    service_btn = Luos_CreateService(Button_MsgHandler, STATE_TYPE, "button", ButtonRevision);
+
+    service_btn->access = READ_ONLY_ACCESS;
+}
+```
+
+This doesn't change anything else on your service code as it allows external services to know the accessibility of your service.
+
+## Messages
+
+Luos engine enables sending and receiving [messages](../messages/basic-message) from services with a straightforward API.
+
+## Luos engine's APIs
+
+Luos engine includes the following tools to integrate more capabilities and functionalities to manage your messages:
+
+|                        Description                         |                                       Function                                        |               Return                |
+| :--------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :---------------------------------: |
+|                    Send a Luos message                     |                    `Luos_SendMsg(service_t *service, msg_t *msg);`                    |          `error_return_t`           |
+|              Send a timestamped Luos message               |    `Luos_SendTimestampMsg(service_t *service, msg_t *msg, time_luos_t timestamp);`    |          `error_return_t`           |
+|                    Read a Luos message                     |               `Luos_ReadMsg(service_t *service, msg_t **returned_msg);`               |          `error_return_t`           |
+|      Send the remaining data in case of long messages      |    `Luos_SendData(service_t *service, msg_t *msg, void *bin_data, uint16_t size);`    |               `void`                |
+|    Receive the remaining data in case of long messages     |          `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);`          | `data size at the end of reception` |
+|          Send data stored in a streaming channel           |  `Luos_SendStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);`   |               `void`                |
+|           Receive data from a streaming channel            | `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);` |          `error_return_t`           |
+|                  Share network's baudrate                  |              `Luos_SendBaudrate(service_t *service, uint32_t baudrate);`              |               `void`                |
+|    Get the total ticks number since the initialization     |                               `Luos_GetSystick(void);`                                |             `uint32_t`              |
+|       Subscribe to a new topic for pub/sub messages        |              `Luos_TopicSubscribe(service_t *service, uint16_t topic);`               |          `error_return_t`           |
+|       Unsubscribe from a topic for pub/sub messages        |             `Luos_TopicUnsubscribe(service_t *service, uint16_t topic);`              |          `error_return_t`           |
+| Activate/Deactivate message filtering for global reception |               `Luos_SetFilterState(uint8_t state, service_t *service);`               |               `void`                |

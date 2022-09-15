@@ -1,9 +1,9 @@
 ---
 custom_edit_url: null
-image: /img/Bike-alarm-Luos.png
+image: /assets/images/Bike-alarm-Luos.png
 ---
 
-import Image from '@site/src/components/Images.js';
+import Image from '@site/src/components/Image';
 
 # Make our alarm adaptable and hot-pluggable
 
@@ -16,8 +16,8 @@ By following this tutorial and applying these pieces of advice to all of your ap
 
 To check if your app is already ready to be used with other ones, you have to ask yourself two questions:
 
- - Is the app ready to accept another app to run a detection?
- - Is the app controllable by any other app in a standard way?
+- Is the app ready to accept another app to run a detection?
+- Is the app controllable by any other app in a standard way?
 
 ## Detection consideration
 
@@ -175,12 +175,14 @@ if (msg->header.cmd == CONTROL)
 ```
 
 Now we can use this control_mode to make the app run or not by using:
+
 ```c
 if (control_app.flux == PLAY)
 {
     // Do app things
 }
 ```
+
 In the case of this alarm app, we use it as a condition to execute the non-blocking blink in the loop function and for the IMU data reception.
 Finally, the complete callback reception looks like this:
 

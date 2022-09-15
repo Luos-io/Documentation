@@ -6,7 +6,7 @@
 .st3 {
   fill-rule: evenodd;
   clip-rule: evenodd;
-  fill: #BD99FF;
+  fill: #bd99ff;
   animation: flickerAnimation 2.5s infinite;
 }
 

@@ -1,9 +1,9 @@
 ---
 custom_edit_url: null
-image: /img/Bike-alarm-Luos.png
+image: /assets/images/Bike-alarm-Luos.png
 ---
 
-import Image from '@site/src/components/Images.js';
+import Image from '@site/src/components/Image';
 
 # Connect our system to the cloud
 
@@ -38,6 +38,7 @@ from pyluos import Device
 bike = Device('/dev/cu.usbserial-DN05NM1H')
 print(bike.services)
 ```
+
 This gives us:
 
 ```text

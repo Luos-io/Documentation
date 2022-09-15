@@ -1,12 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
-import { ThemeClassNames, useDocsVersion } from '@docusaurus/theme-common';
+import { ThemeClassNames } from '@docusaurus/theme-common';
+import { useDocsVersion } from '@docusaurus/theme-common/internal';
 import Link from '@docusaurus/Link';
 import versionList from './version.json';
 export default function DocVersionBadge({ className }) {
   const versionMetadata = useDocsVersion();
-
   const currentVersion =
     versionMetadata.version !== 'current'
       ? versionList[versionMetadata.version]

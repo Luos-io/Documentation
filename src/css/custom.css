@@ -743,3 +743,7 @@ html[data-theme='dark'] .DocSearch-Button {
 h3 {
   color: initial;
 }
+
+.breadcrumbs__link svg {
+  top: 7px;
+}

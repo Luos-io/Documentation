@@ -1,0 +1,15 @@
+---
+custom_edit_url: null
+---
+
+import IconExternalLink from '@theme/Icon/ExternalLink';
+
+# Hardware consideration
+
+Luos engine needs to acces your hardware to properly work.
+
+When creating a Luos network, if you have a product with several nodes, it is mandatory to configure your MCU to create the network's physical layer. In <a href="https://github.com/Luos-io/luos_engine/tree/main/examples" target="_blank" rel="external nofollow">Luos's examples on GitHub<IconExternalLink width="10"></IconExternalLink></a>, we use the Robus network interface with RS485 or one-wire communication (for this physical layer [see Electronic design](./electronics.mdx) page), but other networks can be used as well.
+
+Board examples and driver sources are available <a href="https://github.com/Luos-io/luos_engine/tree/main/examples/projects" target="_blank" rel="external nofollow">on GitHub<IconExternalLink width="10"></IconExternalLink></a>. We encourage you to use them as a reference, the way you want.
+
+You can find the schematics of a Luos-ready board called L0 <a href="https://github.com/Luos-io/luos_engine/tree/main/examples/hardware/l0" target="_blank" rel="external nofollow">on Github<IconExternalLink width="10"></IconExternalLink></a> for a quick hardware example.

@@ -75,7 +75,7 @@ html[data-theme='light'] .container {
 }
 
 .integrations {
-  background-image: url('/static/img/index/vscode-white.svg');
+  background-image: url('/static/assets/images/index/vscode-white.svg');
   background-size: cover;
   min-height: 470px;
 }

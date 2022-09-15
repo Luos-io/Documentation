@@ -165,7 +165,7 @@ const Anatomy = (props) => {
           <div className={styles.head}>
             {' '}
             <img
-              src="img/index/header/buttons.svg"
+              src="assets/images/index/header/buttons.svg"
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
             />
@@ -177,12 +177,12 @@ const Anatomy = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -243,7 +243,7 @@ const Anatomy = (props) => {
               xl={8}
               className={styles.player}
               style={{
-                backgroundImage: `url('/img/index/anatomy/illu/${currentImageTmp}.svg')`,
+                backgroundImage: `url('assets/images/index/anatomy/illu/${currentImageTmp}.svg')`,
               }}
             ></Grid>
           </Grid>
@@ -255,7 +255,7 @@ const Anatomy = (props) => {
       <Grid container>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
           <img
-            src="img/index/integration/line-right.svg"
+            src="assets/images/index/integration/line-right.svg"
             alt="line-right"
             style={{ transform: 'rotateY(180deg)' }}
             className={styles.linesImg}
@@ -264,7 +264,7 @@ const Anatomy = (props) => {
         <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
           <img
-            src="img/index/integration/line-right.svg"
+            src="assets/images/index/integration/line-right.svg"
             alt="line-right"
             style={{ float: 'right' }}
             className={styles.linesImg}
