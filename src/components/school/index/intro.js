@@ -17,7 +17,7 @@ import CardGrid from './cardGrid';
 import styles from './index.module.css';
 import data from './data/dataIntro.json';
 
-const Intro = () => {
+const Intro = (props) => {
   const { search } = useLocation();
   const { replace } = useHistory();
   let defaultFilters = {
@@ -81,7 +81,7 @@ const Intro = () => {
         {/* Title & Text container */}
         <Grid container spacing={2}>
           <Grid item xs={8}>
-            <h2>{data.title}</h2>
+            <h1>{props.title}</h1>
           </Grid>
           <Grid item xs={4}>
             {/* TODO set value with JSON */}
