@@ -75,11 +75,11 @@ You can [Get started](/tutorials/get-started) with us and our technology step by
 
 <h2> How do electric motors work? </h2>
 
-Expect some motors of the last category; all the previous ones use electromagnetism to transform electricity into motion. A magnetic field is created by running current into a wire coiled around a bar of iron (which is called an electromagnet). It can attract or repulse either magnets, ferrous materials, or other electromagnets. So, here is the recipe:
+Expect some motors from the last category; all the previous ones use electromagnetism to transform electricity into motion. A magnetic field is created by running a current into a wire coiled around a bar of iron (which is called an electromagnet). It can attract or repulse either magnets, ferrous materials, or other electromagnets. So, here is the recipe:
 
 - Take some coils and place them into a circle (they must not move).
 - Take a magnet, and put it in the middle of the circle. The magnet should be able to rotate while staying at the center.
-- Put current into the coils, one after another, and watch the central magnet rotate, one of its poles attracted to the powered coil.
+- Put current into the coils, one after another, and watch the central magnet rotate, one of its poles is attracted to the powered coil.
 
 Congrats, you just made an electric motor. Now, be advised that the configurations may vary: coils can be in the center (sometimes around the iron, sometimes not), magnets can form the circle, sometimes there can be no magnets at all, and so on. Each configuration is a type of motor from the category list above. Regarding the vocabulary, these are the main words you will need to continue:
 
@@ -101,7 +101,7 @@ Some of these words will help us understand the next part of this post:
 
 <h2> Digging into types of motors </h2>
 
-Let's eliminate the first two from the previous list of motors' categories. Synchronous and asynchronous motors are AC-powered, which stands for Alternative Current. AC mainly comes "raw" from your wall plug, and we can represent it as endless waves of current (sinusoidal curves). It's not fit for robotic, mainly because it's way too much power. Synchronous and asynchronous motors are too big for being used in robots, even human-sized ones. (Many DC motors are oversized too.)
+Let's eliminate the first two from the previous list of motors categories. Synchronous and asynchronous motors are AC-powered, which stands for Alternative Current. AC mainly comes "raw" from your wall plug, and we can represent it as endless waves of current (sinusoidal curves). It's not fit for robotic, mainly because it's way too much power. Synchronous and asynchronous motors are too big for being used in robots, even human-sized ones. (Many DC motors are oversized too.)
 
 ![Who wants to build a robot with this anyway?](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacd24e919604cd020ec_1*0TAkuxkClgFWHaN4NN2HZA.png)
 
@@ -114,7 +114,7 @@ For each category and subcategory, I will explain how motors are made and how th
 
 <h2> Motors Category 1: DC motors </h2>
 
-DC means Direct Current. It's a flat curve of current (different from the AC's waves), and it is used in batteries or at the output of most power supplies you use for various devices in your home.We can divide this category into Brushed DC motors and brushless DC motors.
+DC means Direct Current. It's a flat curve of current (different from the AC's waves), and it is used in batteries or at the output of most power supplies you use for various devices in your home. We can divide this category into Brushed DC motors and brushless DC motors.
 
 <h3> Brushed DC motors </h3>
 
@@ -136,15 +136,15 @@ The brushed DC motor is the most common motor in robotics and the most used main
 
 > _Note: We will be coming back another day to explain the different ways of controlling a brushed DC motor._
 
-These motors have **cons**: First of all, the quality is associated with the cost (the cheaper, the worst quality). That means sometimes poor materials, weak assemblies, and overheating motors. The brushes, whatever the quality, are a vulnerable part of the motor because they are always in friction with a collector. With time and depending on your use of the motor, brushes wear and create dust; connection is thus not always made with collectors, which results in a significant loss of speed and torque. In the end, all these cons strongly impact the motor's life.
+These motors have **cons**: First of all, the quality is associated with the cost (the cheaper, the worst quality). That means sometimes poor materials, weak assemblies, and overheating motors. The brushes, whatever the quality, are a vulnerable part of the motor because they are always in friction with a collector. With time and depending on your use of the motor, brushes wear off and create dust; the connection is thus not always made with collectors, which results in a significant loss of speed and torque. In the end, all these cons strongly impact the motor's life.
 
-Several famous non-fictional robots have brushed DC motors inside their hardware. Probably some fictional robots have some as well.
+Several famous non-fictional robots have brushed DC motors inside their hardware. Various fictional robots probably have some as well.
 
-Nao, Pepper, Roomba, or Asimo: they all have some brushed DC motors inside (and some other types too).
+Nao, Pepper, Roomba, or Asimo: they all have brushed DC motors inside (and some other types too).
 
 <h3> Brushless DC motors </h3>
 
-As the name makes it explicit, this subcategory of DC motors doesn't have brushes and collectors to make the electrical connection between the power supply and rotor.
+As the name makes indicates, this subcategory of DC motors doesn't have brushes or collectors to make the electrical connection between the power supply and rotor.
 
 The brushless DC motor (BLDC) works on the same principle as the brushed DC motor, electromagnetism. However, the rotor, which can't be powered, is a permanent magnet.  
 The coils of the stator are either disposed around — outside — the rotor (in-runner motors), or in the center — inside — of the rotor (out-runner motors, with the housing being part of the rotor). These coils are arranged by pairs located on each side to give them a north pole and a south pole when they are powered.
@@ -156,7 +156,7 @@ The number of coils is always a multiple of 3 because they are always 3 phases (
 The recipe:
 
 - Power the coils one after the other (you will need a special control board for that).
-- A rotating magnetic field is created, making the rotor's magnet turns to "catch" the changing poles:
+- A rotating magnetic field is created, making the rotor's magnet turn to "catch" the changing poles:
 
 ![Simplified view of out-runner (BLDC usually have more windings). The blue (minus) is attracted to the red (plus), and the red to the blue.](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbace32216ecaeb5ca491_1*XKJC7QkcD5eb7JOEaycWUg.gif)
 
@@ -164,15 +164,15 @@ That type of motor can be controlled in several ways. In some cases, if needed, 
 
 The first pro is clear regarding **pros** and **cons**: no brushes mean no contact, no friction, so no wear; that implies the best reliability and best efficiency (friction means loss of energy as heat).
 
-The in-runners BLDC will provide more speed than torque because of their rotor's inertia. On the contrary, out-runners BLDC will have more torque and less speed. Depending on the desired function, this may be a pro or cons.
+The in-runners BLDC will provide more speed than torque because of their rotor's inertia. On the contrary, out-runners BLDC will have more torque and less speed. Depending on the desired function, this may be a pro or a con.
 
-A significant con is the price, more expensive than their cousins brushed motors. It's explained by many factors (winding construction, magnets, some electronic parts, _etc._).
+A significant con is the price, as it is more expensive than their cousins brushed motors. This can be explained by many factors (winding construction, magnets, some electronic parts, _etc._).
 
 Another con is that BLDC is trickier to control and needs an electronic control board most of the time. Also, as for brushed motors, their possible high speed may imply the use of a **reducer** device at the motors' output to lower the speed and increase the torque. This invariably means a loss of efficiency, but it is very often used.
 
 ![A small part of gearbox for reducing the speed of a motor.](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbacef4915e6097c7ffce_1*Z9bLIA83FVddGqEOY-Mnjw.jpeg)
 
-> _Note: Reduction is a crucial part of the whole motorization choice process. To stay in the basics, keep in mind that a reducer — composed of gears assembled — is meant to reduce the speed and, let alone efficiency, to multiply the torque of the motor it is coupled to._
+> _Note: Reduction is a crucial part of the whole motorization choice process. To keep it simple, keep in mind that a reducer — composed of gears assembled — is meant to reduce the speed and, especially the efficiency, to multiply the torque of the motor it is coupled to._
 
 Many famous robots have brushless DC motors as well as brushed motors. However, being more expensive and complicated to control than brushed motors, "cheap" robots and toy robots may not provide any BLDC inside.
 
