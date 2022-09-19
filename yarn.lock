@@ -4824,10 +4824,10 @@ dotenv-defaults@^2.0.2:
   dependencies:
     dotenv "^8.2.0"
 
-dotenv-vault@^1.11.2:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/dotenv-vault/-/dotenv-vault-1.12.1.tgz#6bb8c7771b1025b3acd27a2963eaa3e163d5c8dd"
-  integrity sha512-jNG+y3vwSIPO2gv2/KWKgZpbSBVpWRoowhdcxZCpFoBj24pEG3l7eBpCuOw8rLsjbf05ZFRJtRpggxjPlQdF3g==
+dotenv-vault@^1.13.3:
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/dotenv-vault/-/dotenv-vault-1.13.3.tgz#8b34293c852a15a5fd0a1a173a42dfaf5709945d"
+  integrity sha512-e9Jl7bwkDYStP0gBPaYVBmBe1hc/68GHW1irZecJ5DgP/8rPumFDnlB8IWz1dXgdjJDAaQrjn0WPTt8WCn4KSA==
   dependencies:
     "@oclif/core" "^1"
     "@oclif/plugin-help" "^5.1.12"
