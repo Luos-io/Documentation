@@ -39,7 +39,7 @@ At Luos, we are exploring how to integrate micro-ROS into distributed systems. W
 
 Until now, the supported micro-ROS configuration includes an MCU directly connected with a ROS2 interface (like a computer) containing ROS2 nodes. Each time we want to add a new MCU, it needs to be connected directly to a ROS2 interface. So every component of the embedded network should have direct access to a computer.
 
-But what if we need a distributed system that takes multiple microcontrollers without direct connection to PC? There is a case where we need to make a fully embedded network, and the only direct access we can have is only one connection between one of our MCU with the computer. Until now, micro-ROS cannot provide a solution for fully embedded distributed systems.
+But what if we need a distributed system that takes multiple microcontrollers without direct connection to a PC? If there is a case where we need to make a fully embedded network, the only direct access we can have is a connection between one of our MCU's with the computer. Until now, micro-ROS cannot provide a solution for fully embedded distributed systems.
 
 <div align="center">
   <Image
@@ -111,15 +111,15 @@ First, we will examine the simple case concerning the MCUs that do not directly 
 </div>
 
 - `rmw_init()`: This function will create a package that initializes Luos engine and the Luos service, for transmitting and receiving messages.
-  - When the `rwm_init` function is called, we create one Luos service. This service will be responsible for sending to the network all the messages of specific topics that the micro-ROS publishers want to transmit, and receiving all the messages for each subscription of the node.
+  - When the `rwm_init` function is called, we create one Luos service. This service will be responsible for sending all the messages on specific topics to the network that the micro-ROS publishers want to transmit. In addition it is responsible to receive all the messages for each subscription of the node.
 - `rmw_create_publisher()`: Each time this function is called, we only have to launch a detection if it is not yet launched, to be able to publish messages.
 
 > 💡 The topology detection is necessary for constructing a [Luos routing table](/docs/luos-technology/services/routing-table) containing all the necessary information for the communication between the Luos services.
 
 - `rmw_create_subscription()`: Each time this function is called, we add a new reception topic to this service's topics list. Again, if needed, we launch a detection.
-- `rmw_publish()`: A publisher required to publish a ROS message. The Luos service needs to take this message, transform the data into a Luos message containing the topic's information, and send it to the rest of the nodes.
+- `rmw_publish()`: A publisher is required to publish a ROS message. The Luos service needs to take this message, transform the data into a Luos message containing the topic's information, and send it to the rest of the nodes.
 - The reception of messages will be done in `rmw_wait` and `rmw_take` functions.
-  - The function `rmw_wait()` should be called continuously so that `Luos_loop()` can run every time. In the Luos loop, we receive all the new messages. We store them in the Luos buffer, and they are ready to be used by the service using polling, or sent directly to the service's callback. In this project, we need to use the polling method to get the message the exact moment we want it, without storing it in a temporary buffer. The `rmw_wait()` function gets a subscriber as a parameter. After launching `Luos_Loop()` we will check if we have received a message for the subscriber we need. If it is the case, we notify micro-ROS to take the message by using the `rmw_take` function.
+  - The function `rmw_wait()` should be called continuously so that `Luos_loop()` can run every time. In the Luos loop, we receive all the new messages. We store them in the Luos buffer, and they are ready to be used by the service using polling, or to be sent directly to the service's callback. In this project, we need to use the polling method to get the message the exact moment we want it, without storing it in a temporary buffer. The `rmw_wait()` function gets a subscriber as a parameter. After launching `Luos_Loop()` we will check if we have received a message for the subscriber we need. If it is the case, we notify micro-ROS to take the message by using the `rmw_take` function.
   - After calling `rmw_take()`, we pull the message of the topic we want, transform the Luos data to a ROS message, and return it to micro-ROS.
 
 <div align="center">
@@ -142,10 +142,10 @@ This MCU should follow the same process as any other MCU, with the addition of s
 
 - Messages are coming from the ROS interface: This MCU will have to receive all the messages from a computer and direct-transfer them to the other MCUs.
   There are two cases:
-  1. The messages are destined to a subscriber existing in an MCU, so they should be taken by the current subscriber and also transferred to the rest of the network.
+  1. The messages are destined to a subscriber existing in an MCU, so they should be taken by the current subscriber and also be transferred to the rest of the network.
   2. The messages are not destined to an active subscriber in this MCU, so they are only transferred to the rest of the network.
-- Messages published by publishers existing in this MCU: These messages should always be sent to both the computer and the rest of the embedded network.
-- Messages published from another MCU: Same with the first option, these messages should be taken by the involved subscribers in this MCU **and** also transmitted to the ROS interface.
+- Messages published by publishers existing in this MCU: These messages should always be sent to both of the computers and to the rest of the embedded network.
+- Messages published from another MCU: Same with the first option, these messages should be taken by the involved subscribers in this MCU and also be transmitted to the ROS interface.
 
 <div align="center">
   <Image
@@ -157,8 +157,8 @@ This MCU should follow the same process as any other MCU, with the addition of s
 There are some cases that you should pay attention to:
 
 1. The third option of messages sent from another MCU will be dropped by Luos if the Luos service is not subscribed to them. For this reason, we need to subscribe the Luos service of this MCU to the topics destined to the ROS node, so that we can always get them.
-2. Another tricky point is that we cannot have multiple subscribers with the same topic to the same MCU in that simple implementation. That is because we stock only once a received topic (as we have only one Luos service). For this reason, if we want to avoid a restriction that forces the user to have this situation, we should develop a method to stock the messages multiple times depending on the number of subscriptions to each topic. An idea could be to keep a table of the number of subscribers to each topic and drop each message only if every subscriber had already got it.
-3. Last, the topic's names defined by ROS2 are dynamically created strings. In Luos engine, we cannot do this: we need to associate all the possible topic's names with a number, as the topic's identifier in the messaging protocol of Luos is a 12-bit value.
+2. Another tricky point is that we cannot have multiple subscribers with the same topic to the same MCU in that simple implementation. That is because we stock only once per received topic (as we have only one Luos service). For this reason, if we want to avoid a restriction that forces the user to have this situation, we should develop a method to stock the messages multiple times depending on the number of subscriptions to each topic. An idea could be to keep a table of the number of subscribers to each topic and drop each message only if every subscriber has already got it.
+3. Lastly, the topic names defined by ROS2 are dynamically created strings. In Luos engine, we cannot do this: we need to associate all the possible topic names with a number, as the topic identifier in the messaging protocol of Luos is a 12-bit value.
 
 This article aimed to present an analytical method for implementing a micro-ROS Luos middleware to use ROS and micro-ROS with distributed systems.
 

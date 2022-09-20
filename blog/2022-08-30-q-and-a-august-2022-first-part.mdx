@@ -19,7 +19,7 @@ A few days ago, we held our first live Q&A session on Discord, and it was a plea
 
 If you missed it or want to discover it again, we have concatenated all your questions in this article and completed them with precise answers.
 
-If you have other questions concerning Luos, our open source project, or the embedded world, feel free to <a href="https://discord.gg/luos" rel="external nofollow">join our Discord community</a> (we are +3000 at the time writing to exchange on this amazing and inspiring place)
+If you have other questions concerning Luos, our open source project, or the embedded world, feel free to <a href="https://discord.gg/luos" rel="external nofollow">join our Discord community</a>. We are +4000 community as of right now and keep in touch with our members daily to create a strong community and an inspiring place for everyone.
 
 <!--truncate-->
 
@@ -33,9 +33,9 @@ Luos was basically the student project I chose 15 years ago, and today it has be
 
 <h2>What are the differences or similarities between Luos and an embedded OS?</h2>
 
-Luos is not an operating system. This technology allows the developers to **encapsulate any embedded system features** into something we call [services](/docs/luos-technology/services).
+Luos is not an operating system. Our technology allows the developers to **encapsulate any embedded system features** into something we call [services](/docs/luos-technology/services).
 
-A service is a kind of a box with an API on top of it. Luos will allow you to exchange information between the different services available on your entire system using any network. Boxes communicate together. So basically, this is not an operating system: this is a way to separate your developments into small services.
+A service is a kind of a box with an API on top of it. Luos will allow you to exchange information between the different services available on your entire system using any network. The Boxes communicate with each other, making this not an operating system but a way to separate your developments into small services.
 
 > Luos can run on top of any real-time operating system. You create your tasks and render the code of all your services as you want.
 
@@ -48,11 +48,11 @@ If you need to have a real-time operating system, you can. If you don't, you can
 
 <h2>Is it difficult to learn and start with Luos? Does it take time? What basics do you need?</h2>
 
-Luos is not so complicated for embedded developers. The code side is easy. You have to master something like two or three different functions. The difficult things to [get started](/tutorials/get-started) with Luos are concepts of microservices and how to deal with them in the embedded world.
+Luos is not particularly complicated for embedded developers. The code side is easy. You'll only have to master about two or three functions. The difficult things to [get started](/tutorials/get-started) with Luos are concepts of microservices and how to deal with them in the embedded world.
 
-[Microservices](/2021-01-13-unleash-embedded.mdx) are more focused on the web domain than it is on the regular hardware world, and embedded development doesn't use this kind of methodologies.
+[Microservices](/2021-01-13-unleash-embedded.mdx) are more focused on the web domain than they are on the regular hardware world, additionally embedded development doesn't use these kinds of methodologies.
 
-Luos combined those two worlds, allowing embedded system developers to think of their product development as a whole **microservice system**. This is the biggest characteristic that is difficult to understand. This is how to use microservice in the embedded world and make it efficient.
+Luos combined those two worlds, allowing embedded system developers to think of their product development as a whole **microservice system**, which is the most difficult to understand. We believe that it is the solution to use microservices in the embedded world and make it, therefore, efficient.
 
 The first mistake when you start with Luos is creating tons of services for every single thing; your system will have difficulty to scale with too many services. You will have to find the good tuning on how many services you will have on your device and how to regroup them.
 
@@ -70,7 +70,7 @@ You will learn how to make a normal system interact with Luos. Because Luos enca
 
 From the Luos point of view, there are no differences between exchanging information between one service on the same board, between two services on multiple electronic boards, or between one service on a board and a computer, a cloud application, etc., because we are using this API.
 
-You can interact from a program on your computer directly with a program embedded directly into electronic boards (such as a sensor, a battery, or a motor). This allows normal software developers to interact with the embedded world easily, and we have a lot of users dealing with it this way.
+You can interact from a program on your computer directly with a program embedded directly into electronic boards (such as a sensor, a battery, or a motor). This allows normal software developers to interact with the embedded world easily, we have a lot of users dealing with it this way.
 
 We also have a lot of robotics developers that just develop some drivers allowing them to use motors or sensors.
 
@@ -85,11 +85,11 @@ So, it's easy! We already provided some frameworks, allowing you to deal with Lu
 
 One sensitive aspect about Luos is that big industrial companies fear this kind of technology because, to be efficient, Luos has to be used at the beginning of the project. Doing that changes many things in how the developpers develop the product (in a good way).
 
-When you develop with Luos, you will be able to have small strike teams working on only one piece of the device, for example the motion sensor of one device, while some other team will work on the motor part of the device.
+When you develop with Luos, you will be able to have small strike teams working on only one piece of the device, for example, the motion sensor, while another team works on the motor part of the device.
 
-These two teams don't have to talk together. The idea of Luos is to allow them to develop their services on their side, and then to just gather to plug them together: it will work. This is the main idea.
+These two teams don't have to talk to each other. The idea of Luos is to allow them to develop their services separately with the convenience that they will work in sync when plugged together.
 
-So this is a big change for big companies, and right now we have some users coming from critical industries: we already have some advanced use cases such as <a href="https://nimbl-bot.com/" rel="external nofollow">Nimbl'bot</a>, a company developing a robot's arm for nuclear plants. They are using these robots directly in the reactor of the nuclear plants. This is a highly [critical usage of Luos](/2022-04-28-distributed-latency.mdx).
+This is a huge change for big companies. As of right now, we already have users coming from critical industries. An example of an advanced use case is the company <a href="https://nimbl-bot.com/" rel="external nofollow">Nimbl'bot</a> which is developing a robot arm for nuclear plants directly used in the reactor. This is therefore a [critical usage of Luos](/2022-04-28-distributed-latency.mdx).
 
 We have many contacts with other industries such as aeronautics, automotive, and medical markets. This is the beginning for us, and to comfort the skeptics, we are working on testing this technology and publicly provide the results of these tests.
 
@@ -100,11 +100,11 @@ Our testing platform downloads the branch and runs several tests on complex conf
 Testing this technology is extremely challenging because we are working on **modularity**. Modularity means infinite possibilities in terms of several board configurations. So it is difficult for us to check any possible usage of this technology, but we are working on it.
 
 <h2>
-  About industrial applications: do Luos has a CAN bus driver? Is Luos working with Zephyr, NuttX,
+  About industrial applications: does Luos have a CAN bus driver? Is Luos working with Zephyr, NuttX,
   and FreeRTOS? Is Luos only giving a wrapper?
 </h2>
 
-Our work is not to develop drivers, this is not what we are doing, and this is not our job because we are not good at it.
+Our work is not to develop drivers, it is not what we are doing, and it is not our job because we are not good at it.
 
 We have some <a href="https://github.com/Luos-io/luos_engine/tree/main/examples" rel="external nofollow">working examples on the Luos repository</a> allowing engineers just to understand how to develop their own. In any case, when developing a specific product, you will have to develop your electronic boards with a specific chip and a specific usage of the GPU.
 
@@ -112,9 +112,9 @@ So you will have to, most of the time, re-develop your driver when you have to i
 
 Luos also allows you to make a clean and good separation between drivers and applications on your complete system.
 
-You can have motor drivers on a board, it can just run on a really small board without any real-time operating system, and have another board running some complex algorithm using that kind of motor running on RTOS, such as NuttX or [FreeRTOS](/tutorials/freertos/intro).
+You can have motor drivers on a board, it just has to run on a really small board without any real-time operating system, and have another board running some complex algorithm using that kind of motor running on RTOS, such as NuttX or [FreeRTOS](/tutorials/freertos/intro).
 
-This application can directly access the motor driver running somewhere else. This is extremely powerful because you have a good separation between **applications** and **drivers**.
+The application can directly access the motor driver running somewhere else, which is extremely powerful because you have a good separation between **applications** and **drivers**.
 
 Your application doesn't rely on any hardware You can just copy-paste the piece of code running your application, and you can move it to any microcontroller. It will work the same way.
 
@@ -134,17 +134,17 @@ Luos uses something we call "HAL": [hardware attraction layer](/docs/luos-techno
 
 Yes, Luos could use Nuttx as an HAL for Luos. We could access the physical resources available on the board using POSIX interfaces. This could allow Luos to access all the boards supported by Nuttx.
 
-Embedded system developers didn't use to care about a project's API. But we think that today their points of view are evolving toward using this kind of standards, because everyone is using it. It allows them to create developments that will be reusable extremely more easily.
+Embedded system developers didn't use to care about a project's API. But we think their point of view is evolving today towards using these standards because everyone is using them. It allows them to create developments that will be reusable extremely easily.
 
 Historically, Luos was thought to work for bare metal applications only. That is why we don't have a lot of usages, use cases, and examples using a real-time operating system.
 
 We did an experiment using [FreeRTOS](/tutorials/freertos/intro) just a few months ago: it that was easy for us to adapt it to work with FreeRTOS.
 
-Luos was then ready to multithreading. Although this is something new to us, we plan to develop a lot of support for different kinds of real-time operating systems in the future, so NuttX is on top of the list right now, thanks to Alan. We will work on this kind of subject during the coming months.
+Luos is now ready to multithread. Although this is something new to us, we plan to develop a lot of support for different kinds of real-time operating systems in the future, so NuttX is on top of the list right now, thanks to Alan (Alan C. Assis 3983 in the Luos Discord). We will work on this kind of subject during the coming months.
 
 <hr />
 
-We have divided this article into **two parts** to make it more agreeable for reading.
+We have divided this article into **two parts** to make it more agreeable to read.
 
 If you want to discover our development roadmap concerning drivers, find out if microservices are for the embedded world, know some methods and technics to upgrade nodes more easily, learn about the business model of Luos, or some information concerning the call for contributions: read our second article.
 

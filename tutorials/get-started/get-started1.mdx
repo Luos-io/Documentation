@@ -61,7 +61,7 @@ You will need to have <a href="https://git-scm.com/downloads" target="_blank" re
 ## 4. Build your project
 
 1. Locate the project in the folder you just downloaded, corresponding to the board you will use. (For example, for the STM32L432KC Nucleo board, the folder will be **Get_started/NUCLEO_L432KC**)
-2. On VS Code, click on **File → Open Folder** and open the project folder you just locate.
+2. On VS Code, click on **File → Open Folder** and open the project folder you just located.
 
 <div align="center">
   <Image
@@ -117,9 +117,9 @@ The build may sometimes output an error message. In that case, you need to updat
 
 You can now flash your board: connect it to your PC with a USB cable and upload the code by clicking on the right arrow in the bottom left of the VS Code window, situated next to the build tick button (see image below).
 
-PlatformIO will build the firmware and flash the board. Take a look at the terminal to observe each step thet PlatformIO follows. A success message should appear at the end.
+PlatformIO will build the firmware and flash the board. Take a look at the terminal to observe each step that PlatformIO follows. A success message should appear at the end.
 
-Once the board is flashed, it means the compiled binary you created have been copied into the board and ran, and you should see the LED blinking on your board.
+Once the board is flashed, it means the compiled binary you've created have been copied into the board and is running. You should now see the LED blinking on your board.
 
 <div align="center">
   <Image
@@ -149,19 +149,19 @@ Congratulations, your first Luos app is running!
 
 ## 6. Explanation: What has been going on?
 
-Two [services](/docs/luos-technology/services) have been loaded in your board on step 5, allowing you to make the LED blink.
+Two [services](/docs/luos-technology/services) have been loaded into your board on step 5, allowing you to make the LED blink.
 
 - **Blinker** sends a message at a fixed duration.<br /> ╰ The code folder of this service is located at the root of the _get_started_ repository (because the same app can run on any board so it's a shared folder)
 - **Led** receives this message and makes the LED blink.<br /> ╰ The code folder of this service is located on the _lib_ folder of your project (because it is a driver which is specific to your board)
 
 On top of it, we also added two other services allowing you to take control of your board:
 
-- **Pipe**, managing a serial interface.<br /> ╰ The code folder of this service is located in the cloud (because it is a common cross-platform's Luos tool), PlatformIO just downloaded it for you.
+- **Pipe**, managing a serial interface.<br /> ╰ The code folder of this service is located in the cloud (because it is a common cross-platform of Luos tools), PlatformIO just downloaded it for you.
 - **Gate**, an app that translates Luos engine's messages to JSON and sends it through the _Pipe_.<br /> ╰ The code folder of this service is located in the cloud (because it is a common cross-platform's Luos tool), PlatformIO just downloaded it for you.
 
 ## 7. Next step
 
-Your development environment is now configured, and the Get started project is installed in a local folder of your choice. The [next part](/tutorials/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take the control with high level API!
+Your development environment is now configured, and the Get started project is installed in a local folder of your choice. The [next part](/tutorials/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take control with a high level API!
 
 ## 8. Test your skills
 

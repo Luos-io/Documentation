@@ -32,7 +32,7 @@ We will use the same board from the first two parts, but **you also need a secon
 
 ## 2. Create a physical network
 
-As we saw in Part 1, Luos engine allows you to define services and use them together on one MCU. What really sets Luos apart and make it special is that you can also make services work together on separated MCUs.
+As we saw in Part 1, Luos engine allows you to define services and use them together on one MCU. What really sets Luos apart and makes it special is that you can also make services work together on separated MCUs.
 
 Let's make a network with two boards!
 
@@ -42,7 +42,7 @@ In this part, we will use the “default wiring” defined by Luos to create a n
 - One PTP wire.
 
 :::tip
-💡 Luos Point-To-Point (PTP) connection allows to find your board's [physical position](/docs/luos-technology/node/topology). Luos engine can deal with up to 8 PTP lines on each board to connect as many boards as you want.
+💡 Luos Point-To-Point (PTP) connection allows you to find your board's [physical position](/docs/luos-technology/node/topology). Luos engine can deal with up to 8 PTP lines on each board to connect as many boards as you want.
 
 :::
 
@@ -135,9 +135,9 @@ After wiring the boards together, you will have to power both of them for the ne
 
 :::
 
-## 3. Build Luos distributed system
+## 3. Build a Luos distributed system
 
-In Part 1, you have downloaded or cloned the Get started code folder in your computer. We will use this code to demonstrate how Luos engine works using a network. We will begin by moving the blinker app service from _board 1_ to _board 2_ and see what is happening next.
+In Part 1, you have downloaded or cloned the Get started code folder in your computer. We will use this code to demonstrate how Luos engine works using a network. We will begin by moving the blinker app service from _board 1_ to _board 2_ and see what happens next.
 
 ### Flash _board 1_
 
@@ -146,9 +146,9 @@ Connect the USB cable of _board 1_ and leave the USB cable of _board 2_ disconne
 
 :::
 
-1. In VS Code, open the folder _Get_started_ project corresponding to your _board 1_: `file/open folder`.
-2. From the left panel, locate and open the file _src/main.c_ or _src/Arduino.ino_ file.
-3. Comment the two lines to remove the blinker service from this board: `Blinker_Init();` and `Blinker_Loop();`
+1. In VS Code, open the folder _Get_started_ that corresponds to your _board 1_: `file/open folder`.
+2. From the left panel, locate and open the file _src/main.c_ or _src/Arduino.ino_.
+3. Comment the following two lines to remove the blinker service from this board: `Blinker_Init();` and `Blinker_Loop();`
 
    ```c
    ...
@@ -178,7 +178,7 @@ These lines trigger the initialization and looping execution of all the packages
     darkSrc="/assets/images/tutorials/get-started/get-started-3-6-dark.png"
   />
 </div>
-5. Build and flash _board 1_ by clicking on the right arrow button in the bottom left in VS Code.
+5. Build and flash _board 1_ by clicking on the arrow pointing to the right on the bottom left in VS Code.
 
 ### Flash _board 2_
 
@@ -187,9 +187,9 @@ You should now unplug the USB cable of _board 1_ and connect the USB cable of _b
 
 :::
 
-1. In VS Code, open the folder _Get_started_ project corresponding to your _board 2_, `file/open folder`. (If you have twice the same board, you will open the same folder.)
+1. In VS Code, open the folder _Get_started_ project corresponding to your _board 2_, `file/open folder`. (If you have the same boards twice, you can open the same folder.)
 2. From the left panel, find and open the file _src/main.c_ (or _src/Arduino.ino_ for Arduino users).
-3. This time, comment the six lines to remove all the services except the blinker: `Led_Init();`, `Pipe_Init();`, `Gate_Init();`, `Led_Loop();`, `Pipe_Loop();`, and `Gate_Loop();`
+3. This time, comment the following six lines to remove all of the services except the blinker: `Led_Init();`, `Pipe_Init();`, `Gate_Init();`, `Led_Loop();`, `Pipe_Loop();`, and `Gate_Loop();`
 
    ```c
    ...
@@ -207,11 +207,11 @@ You should now unplug the USB cable of _board 1_ and connect the USB cable of _b
    ```
 
 :::tip
-In order to keep using Luos engine in your MCU, `Luos_init()` and `Luos_Loop()` must not be commented.
+In order to keep using Luos engine in your MCU, don't comment `Luos_init()` nor `Luos_Loop()`.
 
 :::
 
-4. Check if the proper board environment is selected depending on your board:
+4. Check if the right board environment is selected depending on your board:
 
 <div align="center">
   <Image
@@ -219,7 +219,7 @@ In order to keep using Luos engine in your MCU, `Luos_init()` and `Luos_Loop()` 
     darkSrc="/assets/images/tutorials/get-started/get-started-3-7.png"
   />
 </div>
-5. Build and flash _board 2_ by clicking on the right arrow button in the bottom left in VS Code.
+5. Build and flash _board 2_ by clicking on the arrow pointing to the right on the bottom left in VS Code.
 
 We are done!
 
@@ -227,7 +227,7 @@ To check if everything is OK, plug a USB cable into _board 1,_ and power _board 
 
 The LED of _board 1_ should blink thanks to the blinker app in _board 2_.
 
-**Congratulation, you just created your first Luos distributed system where a service from one board is used in another board to perform an action on this second board.**
+**Congratulation, you've just created your first Luos distributed system. The objective of this part of our Get started was to use a service located in your first board, in another board to perform an action on it.**
 
 ## 4. Use Pyluos to control your network
 
@@ -296,7 +296,7 @@ device.blinker.play()
 
 ## 5. Next steps
 
-In this Get started tutorial, we used the default network used by Luos engine called Robus. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Robus is defined on the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank" rel="external nofollow">Robus HAL</a> folder corresponding to your device.
+In the next part of the Get started tutorial, we'll use the default network used by the Luos engine called Robus. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Robus is defined on the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank" rel="external nofollow">Robus HAL</a> folder corresponding to your device.
 
 ## 6. Test your skills
 
