@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from '@docusaurus/router';
 import { Paper } from '@mui/material';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Chip from '@mui/material/Chip';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
@@ -20,10 +18,11 @@ import data from './data/dataIntro.json';
 const Intro = (props) => {
   const { search } = useLocation();
   const { replace } = useHistory();
+
   let defaultFilters = {
       toc: '',
       tags: [],
-      category: '',
+      category: props.category,
       level: '',
     },
     countTutos = 0,
@@ -63,7 +62,6 @@ const Intro = (props) => {
       [filterName]: newLevel,
     };
     setfilters(newState);
-
     const newPath = new URLSearchParams(
       Object.fromEntries(
         Object.entries(newState).filter(
