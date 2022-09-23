@@ -28,7 +28,7 @@
       "tags": ["ROS", "micro-ros", "embedded", "edge"],
       "author": "Viktoria Biliouri",
       "author_img": "/assets/images/tutorials/school/authors/viktoria.png",
-      "link": "/blog/difference-between-luos-and-embedded-os-like-ros-q-and-a"
+      "link": "/blog/ros-controlling-your-distributed-robot-using-micro-ros-and-luos"
     },
     {
       "title": "How to develop IoT, edge, and embedded projects easier?",
@@ -38,6 +38,8 @@
       "tags": ["iot", "edge", "embedded"],
       "author": "Alexis Gorlier",
       "author_img": "/assets/images/tutorials/school/authors/guest-author-luos.png",
+      "author_2": "Nicolas Lorenzi",
+      "author_img_2": "https://github.com/lorenzi-nicolas.png",
       "link": "/blog/how-to-develop-iot-edge-and-embedded-projects-easier"
     },
     {
@@ -78,7 +80,7 @@
       "tags": ["embedded", "edge"],
       "author": "Nicolas Rabault",
       "author_img": "https://github.com/nicolas-rabault.png",
-      "link": "/blog/cyber-physical-systems"
+      "link": "/blog/distributed-latency-based-time-synchronization"
     },
     {
       "title": "Luos Web App: Alpha Version",
@@ -133,7 +135,7 @@
     {
       "title": "The bootloader",
       "desc": "🆕 Luos feature in the V2.0.0: the open-source bootloader",
-      "img": "/assets/images/blog/gate-discovering-banner-luos.png",
+      "img": "/assets/images/blog/the-bootloader-banner-luos.png",
       "date": "2021-12-13T10:00",
       "tags": ["release", "luos"],
       "author": "Emanuel Allely",

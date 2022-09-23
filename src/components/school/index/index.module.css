@@ -79,6 +79,7 @@ html[data-theme='dark'] .card {
   font-size: 14px !important;
   line-height: 18px;
   margin: 15px 0px;
+  font-weight: initial !important;
 }
 
 .cardTag span {
@@ -132,9 +133,5 @@ html[data-theme='dark'] .difficulty {
 }
 
 .link:hover .cardTitle {
-  text-decoration: underline;
-}
-
-.link:hover .cardDesc {
-  text-decoration: underline;
+  color: #bd99ff;
 }

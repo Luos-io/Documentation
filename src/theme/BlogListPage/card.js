@@ -34,13 +34,24 @@ const cardGrid = (props) => {
                 <Grid item xs={12}>
                   <Grid container spacing={1} alignItems="center">
                     <Grid item xs={2}>
-                      <img className="avatar__photo" src={x.author_img} alt="category" />
+                      <img className="avatar__photo" src={x.author_img} alt="author" />
                     </Grid>
                     <Grid item xs={8}>
                       <span className={styles.levelTxt}>{x.author}</span>
                     </Grid>
-                    <span className={styles.date}>{Moment(x.date).format('MMM Do, YYYY')}</span>
                   </Grid>
+                  {x.author_2 !== undefined ? (
+                    <Grid container spacing={1} mt={1} alignItems="center">
+                      <Grid item xs={2}>
+                        <img className="avatar__photo" src={x.author_img_2} alt="author" />
+                      </Grid>
+                      <Grid item xs={8}>
+                        <span className={styles.levelTxt}>{x.author_2}</span>
+                      </Grid>
+                    </Grid>
+                  ) : null}
+
+                  <span className={styles.date}>{Moment(x.date).format('MMM Do, YYYY')}</span>
                 </Grid>
               </Grid>
               <p className={styles.cardDesc}>{x.desc}</p>
