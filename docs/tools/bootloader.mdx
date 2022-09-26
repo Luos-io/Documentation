@@ -28,12 +28,14 @@ The bootloader feature consists of three elements:
   />
 </div>
 
-When you want to update the firmware of node 2 (for example), the CLI tool sends commands through JSON files to the gate, which converts them into Luos commands. During the update, if the node needs to send information to the CLI tool, it sends information to the gate, converting it into JSON files.
+When you want to update the firmware of node 2 (for example), the CLI tool sends commands through JSON files to the gate, which converts them into Luos commands. During the update, if the node needs to send information to the CLI tool, it sends information to the gate, converting it into JSON files. 
+
+The exchange of Luos messages between the Gate and the Bootloader of each node, is done by using the Publisher/Subscriber method. Each time the user decides to update the firmware of a node, Pyluos creates a json message to instruct the node to get in Bootloader mode, which contains a specific topic. This message, is transfered to the node-of-interest via the gate, and the bootloader of this node, gets subscribed to this topic. After this moment, all the messages containing the Bootloader commands, and the binary firmware will be published to this topic. In that way, we are able to flash an infinite number of nodes, with almost the same number of messages sent, gaining time and effort.
 
 The feature has been designed to be as simple as possible, and the process can be described by only a few steps:
 
-1. The CLI reboots the entire Luos network (except the gate) on bootloader mode, so all nodes are ready to receive and save a new firmware
-2. The CLI sends binary files to the nodes you want to update
+1. The CLI reboots the entire Luos network (except the gate) on bootloader mode, so all nodes are ready to receive and save a new firmware. At that time, the nodes that we want to update, subscribe to a specific topic shared by the CLI
+2. The CLI sends binary files to the nodes you want to update, using the pub/sub method
 3. The CLI checks the CRC of the binary files saved by the nodes
 4. The CLI reboots the entire network in application mode.
 
@@ -121,6 +123,12 @@ You can program more than one node by giving an ID list with the option -t :
 pyluos-bootloader flash COM3 -t 2 3 4 -b firmware_new.bin
 ```
 
+or
+
+```c
+pyluos-bootloader flash COM3 -t {2..4} -b firmware_new.bin
+```
+
 Here we will program nodes with ID n°2, 3, 4.
 
 ## Troubleshooting
@@ -164,6 +172,7 @@ The `pyluos-bootloader` CLI is included in pyluos since v2.0.0. So it's packed w
 ### Gate
 
 Since Luos engine v2.0.0, the gate application handles bootloader commands.
+From Luos engine v2.7.0 and after, you need to have at list Pyluos v.2.3.0
 
 ### Install a Bootloader in your node
 
