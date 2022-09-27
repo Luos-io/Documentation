@@ -189,7 +189,7 @@ module.exports = {
               label: 'ROS 1&2',
               link: {
                 type: 'doc',
-                id: 'luos-integration/list',
+                id: 'luos-integration/ros-1-and-2',
               },
               items: [
                 {
