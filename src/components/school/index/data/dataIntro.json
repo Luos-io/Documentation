@@ -8,7 +8,7 @@
       { "id": 3, "label": "Less than 6 hours", "duration": 360 },
       { "id": 4, "label": "More than 6 hours", "duration": 361 }
     ],
-    "category": ["tutorials", "trainings", "Codelab", "use case"]
+    "category": ["trainings", "use cases", "integrations"]
   },
   "tuto": [
     {
@@ -62,7 +62,7 @@
     {
       "title": "Luos with Arduino IDE",
       "id": "arduino",
-      "category": "tutorials",
+      "category": "integrations",
       "toc": 30,
       "level": 2,
       "img": "Luos_and_Arduino",
@@ -74,7 +74,7 @@
     {
       "title": "Bootloader",
       "id": "bootloader",
-      "category": "tutorials",
+      "category": "trainings",
       "toc": 30,
       "level": 2,
       "img": "Bootloader_Luos",
@@ -86,7 +86,7 @@
     {
       "title": "How to use Luos with FreeRTOS",
       "id": "freertos",
-      "category": "tutorials",
+      "category": "integrations",
       "toc": 30,
       "level": 2,
       "img": "Luos_and_FreeRTOS",
@@ -98,7 +98,7 @@
     {
       "title": "How to have flexible and resilient aliases",
       "id": "resilient-alias",
-      "category": "tutorials",
+      "category": "trainings",
       "toc": 30,
       "level": 2,
       "img": "Alias-Luos",
@@ -110,7 +110,7 @@
     {
       "title": "Develop a connected bike alarm",
       "id": "bike-alarm",
-      "category": "tutorials",
+      "category": "use cases",
       "toc": 120,
       "level": 3,
       "img": "Bike_Alarm",
@@ -130,7 +130,7 @@
     {
       "title": "Create Luos project with PlatformIo",
       "id": "pio",
-      "category": "tutorials",
+      "category": "integrations",
       "toc": 30,
       "level": 1,
       "img": "Luos_and_PlatformIO",
@@ -142,7 +142,7 @@
     {
       "title": "How to make a Morse Encoder",
       "id": "morse",
-      "category": "tutorials",
+      "category": "use cases",
       "toc": 60,
       "level": 2,
       "img": "Morse_encoder_Luos",
@@ -154,7 +154,7 @@
     {
       "title": "Luos with ESP32: ESP IDF and Espressif IDE Setup",
       "id": "esp",
-      "category": "tutorials",
+      "category": "integrations",
       "toc": 60,
       "level": 2,
       "img": "Luos_and_ESP32",
@@ -166,13 +166,13 @@
     {
       "title": "Luos with ROS: get started with packages",
       "id": "ros",
-      "category": "Integrations",
+      "category": "integrations",
       "toc": 60,
       "level": 2,
       "img": "Luos_and_ROS",
       "desc": "Install ROS 2 and get started with packages in a Luos project.",
       "tags": ["Service", "Package", "ROS"],
-      "link": "/tutorials/luos-integration/list"
+      "link": "/tutorials/luos-integration/ros-1-and-2"
     }
   ]
 }

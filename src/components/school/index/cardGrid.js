@@ -11,6 +11,7 @@ const cardGrid = (props) => {
   };
 
   const filters = props.filter;
+
   let filtered = props.selection;
   Object.keys(filters).forEach((key) => {
     if (filters[key]) {
