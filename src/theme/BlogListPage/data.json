@@ -1,6 +1,16 @@
 {
   "articles": [
     {
+      "title": "Create an amateur space rocket using Luos by Alexgorl#3053",
+      "desc": "Another Luos use case, Alexis Gorlier created an amateur space rocket using the Luos engine with his space association. Let's discover his proof of concept.",
+      "img": "/assets/images/blog/New-project-completed-with-luos-create-an-amateur-space-rocket.jpg",
+      "date": "2022-09-23T12:00",
+      "tags": ["usecase", "embedded", "edge"],
+      "author": "Alexis Gorlier",
+      "author_img": "/assets/images/tutorials/school/authors/guest-author-luos.png",
+      "link": "/blog/create-an-amateur-space-rocket-using-luos"
+    },
+    {
       "title": "Are microservices optimized for edge and embedded systems? Q&A live",
       "desc": "We answer some important questions about drivers, Luos, embedded, microservices, MCU, CPU, nodes, sensors and motors.",
       "img": "/assets/images/blog/q-and-a-session-Luos-august-2022-second-part.jpg",
