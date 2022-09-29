@@ -10,3 +10,7 @@
 html[data-theme='dark'] .tabLabel {
   color: white;
 }
+
+.subtitle {
+  margin-bottom: 0;
+}

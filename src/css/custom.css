@@ -48,7 +48,7 @@ h1 {
 
 h2 {
   font-size: 31px !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 15px;
   font-weight: 500 !important;
 }
 

@@ -89,22 +89,64 @@ const Roadmap = () => {
               </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry's standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged. It was popularised in the 1960s with the release of
-              Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              <h2 className={styles.subtitle}>Luos engine v3</h2>
+              <h5>Q1 2023</h5>
+              <p>
+                The main goal of Luos engine v3 is to drastically simplify the addition of various
+                networks’ support into the Luos engine library. Luos engine will not be limited to
+                the Robus network layer anymore, and will be able to deal with any kind of network.
+              </p>
+
+              <h2 className={styles.subtitle}>Multi-phy</h2>
+              <h5>Q3 2023</h5>
+              <p>
+                Based on Luos engine v3, the multi-phy feature will allow Luos engine to deal with
+                multiple and different networks at the same time (WiFi, CAN, Robus, …), acting like
+                a switch. This feature will allow you to deal with multiple networks on your device,
+                multiply data bandwidth, and break the frontier between your embedded networks and
+                your cloud or computer applications.
+              </p>
+              <h2 className={styles.subtitle}>Luos web assembly</h2>
+              <h5>Q1 2024</h5>
+              <p>
+                Thanks to multi-phy, you can now run Luos engine services everywhere, even on the
+                cloud, on your computer, or on a mobile phone. To make it even more flexible, we
+                will compile Luos engine in WebAssembly, allowing you to run services directly in
+                your web browser. This web browser application will be visible by any embedded
+                services and usable from anywhere.
+              </p>
+              <h2 className={styles.subtitle}>Luos certification</h2>
+              <h5>Q3 2024</h5>
+              <p>
+                Luos engine certification will add connectivity rules to your nodes, allowing you to
+                create white-lists, black-lists, or any conditional rules based on encrypted
+                information on all your nodes. Your product, your rules.
+              </p>
             </TabPanel>
             <TabPanel value={value} index={1}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry's standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged. It was popularised in the 1960s with the release of
-              Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              <h2 className={styles.subtitle}>Luos hub</h2>
+              <h5>Q3 2023</h5>
+              <p>
+                Luos hub is a registry allowing you to deal with your Luos packages revision as you
+                want, and to easily reuse and share the services with other users.
+              </p>
+
+              <h2 className={styles.subtitle}>Luos inspector</h2>
+              <h5>Q1 2024</h5>
+              <p>
+                Luos inspector will be a web application allowing you to inspect any event happening
+                on your whole product at a nanosecond scale. You can use it to deeply understand and
+                debug your entire product.
+              </p>
+              <h2 className={styles.subtitle}>Luos manager</h2>
+              <h5>Q3 2024</h5>
+              <p>
+                Luos manager will provide a complete CI/CD interface allowing you to manage your
+                product during the development phases and on post-production. This tool will allow
+                you to easily manage your products’ configuration from A to Z, inspect any product,
+                link bugs with inspection cession, or deploy a specific configuration to specific
+                targets.
+              </p>
             </TabPanel>
           </Box>
         </Grid>
