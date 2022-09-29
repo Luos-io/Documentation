@@ -747,3 +747,7 @@ h3 {
 .breadcrumbs__link svg {
   top: 7px;
 }
+
+.Mui-selected {
+  color: #bd99ff !important;
+}
