@@ -1,5 +1,5 @@
 ---
-title: 'Create an amateur space rocket using Luos by Alexgorl#3053'
+title: 'Create an amateur space rocket using Luos, by Alexgorl#3053'
 description: Another Luos use case, Alexis Gorlier created an amateur space rocket using the Luos engine with his space association. Let's discover his proof of concept.
 slug: create-an-amateur-space-rocket-using-luos
 authors:
@@ -18,56 +18,56 @@ import Image from '@site/src/components/Image';
 ![Create an amateur space rocket using Luos by Alexgorl#3053](/assets/images/blog/New-project-completed-with-luos-create-an-amateur-space-rocket.jpg)
 
 First, let me introduce myself. 
-My name is Alexis Gorlier; I am a student in aerospace engineering at ESTACA (a french school specializing in mobilities). I am very invested in an association named ESO (Estaca Space Odyssey), which is part of my school and allows students to work on real space projects.
-This article will present a project I am working on in my association and show the issues linked to this project.
+My name is Alexis Gorlier; I am a student in aerospace engineering at ESTACA (a French school specializing in mobilities). I'm very invested in an association named ESO (Estaca Space Odyssey), which is part of my school and allows students to work on real space projects.
+This article will present a project I am working on in my association, and show the issues linked to this project.
 
 <!--truncate-->
 
-I will particularly insist on the electronic system as I have worked on it these last four months. 
+I will particularly insist on the electronic system, as I have worked on it these last four months.
 
-The first thing to know about the electronic system of a rocket is what it is used for in students' projects (the issues are not the same on professional rockets as the mission and the laws differ).
+The first thing to know about the electronic system of a rocket is what it is used for in students' projects (the issues are not the same on professional rockets as the missions and the laws differ).
 
-In our projects, the electronic system has two objectives: retrieve and store data, and eject the parachutes.
+In our projects, the electronic system embedded into the rocket has two objectives: retrieve and store data, and eject the parachutes.
 
-Retrieving and storing data data permit us to have data to study after the flight to see how our parameters evolved and use this information to improve our next projects.
+Retrieving and storing data permit us to have inputs to study after the flight, see how our parameters evolved, and use this information to improve our next projects.
 
-As for the parachute part, it seems obvious that we need to retrieve the rocket, and to do so, we use an electronic system that will free a parachute when apogee is reached.
+As for the parachute part, it seems obvious that we need to retrieve the rocket, and to do so we use an electronic system that will release a parachute when the apogee is reached.
 
-These two objectives are very important as they will let us understand what happened during the flight and whether it was a success. Therefore, we want our system to work even if some components stop working during the flight.
+These two objectives are very important as they will let us understand what happened during the flight and whether it was a success or not. Therefore, we want our system to work even if some components stop working during the flight.
 
-To do so, we can either have a backup system, use more components than necessary (have three barometers instead of 1, for example), or even have both, which is the safest way. We call this redundancy.
+To do so, we can either have a backup system, use more components than necessary (for example have three barometers instead of one), or even have both, which is the safest way. We call this redundancy.
 
-Another issue of this project is our system's **reusability and agility**. Indeed, I noticed that a lot of our association projects have already been done a few years before but were not documented enough or not reusable in other similar projects. 
+Another issue of this project is our system's **reusability and agility**. Indeed, I noticed that a lot of our association projects which have been done a few years before were not documented enough or not reusable in other similar projects. 
 
-As our association is changing its objectives and wants to do more ambitious projects, we need to transmit our knowledge yearly to reduce the time necessary for each project.
+As our association is changing its objectives and wants to work on more ambitious projects, we need to transmit our knowledge yearly, from the past teams to the new ones, to reduce the time necessary for each project.
 
-And the end, we will use this time on new technologies that could be interesting to experiment with.
+Eventually, we will use this time on discovering and testing new technologies that could be interesting to experiment with.
 
-Finally, the last issue we have for the electronic system development is the lack of knowledge of our members in this area. Indeed, our formation is more oriented toward the mechanical field. We are only learning the basics of electronics. 
+Finally, the last issue we have for the electronic system development is the lack of knowledge from our members in this area. Indeed, our scholar formation is more oriented toward the mechanical field. We are only learning the basics of electronics. 
 
 Therefore, it is better to find a system that is not too complex to realize to be sure we will not lose too much time on it.
 
 <h2>Description of the rocket and the choices made so far</h2>
 
-The rocket ESL-1 (Estaca Space Launcher 1) is meant to be developed in 5 years. The development started two years ago, so some choices were already made, and others are still to be made.
+The rocket ESL-1 (Estaca Space Launcher 1) is meant to be developed in five years. The development started two years ago, so some choices were already made and others are still to be made.
 
-The projects (linked to the electronic part) already finished or in good progress are Recovery and Telemetry.
+The projects (linked to the electronic part) that are already finished or in good progress are Recovery and Telemetry.
 
-The recovery will use two parachutes, a first one ejected at apogee and a second one ejected at 1000m of altitude. 
+**The recovery** will use two parachutes, a first one ejected at apogee and a second one ejected after the first at a 1000 m altitude.
 
-Indeed, as the apogee should be at 32 km of altitude, we can't slow down the rocket too much (if the descending speed is too low, the rocket will be carried by the wind and will go too far away from the launchpad). 
+Indeed, as the apogee should be at a 32 km altitude, we can't slow down the rocket too much (if the descending speed is too low, the rocket will be carried by the wind and will go too far away from the launchpad).
 
-Therefore, the first parachute will slow down the rocket to a speed of 50 m/s, and the second will slow it down to 10 m/s.
+Therefore, the first parachute will slow down the rocket to a speed of 50 m/s, and the second will slow it down to 10 m/s.
 
-The telemetry has been made and tested. The max range we could test is nearly 45km of distance between the system and the ground station. Therefore, our telemetry is functional and ready to use for ESL-1. 
+**The telemetry** has been made and tested. The max range we could test is nearly a 45 km distance between the system and the ground station. We consider our telemetry functional and ready to be used for ESL-1.
 
-We will need to make a few changes depending on the sensors used. The board used for this telemetry is the L073RZ, and our system will not work with another board.
+We will need to make a few changes depending on the sensors used. The board used for this telemetry is the L073RZ, and our system won't be able to work with another board.
 
-One of the main parts we want to do next year is developing the electronic system. The first thing we need to define is what technology to use in our system according to the constraints imposed by the project already finished. This is where Luos comes into play.
+One of the main parts we want to do next year is developing the electronic system. The first thing we need to define is what technology to use in our system according to the constraints imposed by the already finished projects. This is where Luos comes into play.
 
-When I was looking for an internship, one of the Luos maintainers talked to me about the technology he was working on. I then went on [Luos website](/) to discover the possibilities offered by this technology and immediately saw that it fits particularly well with the issues I listed above.
+When I was looking for an internship, one of the Luos maintainers talked to me about the technology he was working on. I then went on [Luos website](/) to discover the possibilities offered by this technology and immediately saw that it would fit particularly well with the issues I listed above.
 
-Luos permits creating a [network](/tutorials/get-started/get-started3#2-create-a-physical-network) with the possibility of using multiple boards, in which the code is divided into services (parts of code dedicated to one property, for example, a service can be used to communicate with a component or manage communication between several components). 
+Luos allows to create a [network](/tutorials/get-started/get-started3#2-create-a-physical-network) with the possibility of using multiple boards, in which the code is divided into services (parts of code dedicated to one property, for example a service can be used to communicate with a component or manage communication between several components).
 
 The services can communicate, no matter where they are in the network, using [messages](/docs/luos-technology/messages#message-structure) standardized by Luos.
 
@@ -103,11 +103,11 @@ It also permits us to easily add redundancy to our system, as we will be able to
   />
 </div>
 
-Finally, Luos is quite easy to use because the [examples](/tutorials/trainings) given on the Luos website permit to understand how it works easily, and the developers are <a href="https://discord.gg/luos" rel="external nofollow">available on discord</a> to help when a problem is encountered.
+Finally, Luos is quite easy to use because the [examples](/tutorials/trainings) given on the Luos website easily allow to understand how it works, and the Luos's developers are <a href="https://discord.gg/luos" rel="external nofollow">available on Discord</a> to help the community when a problem is encountered.
 
-Considering all the properties I listed above, Luos is an answer to all the project's issues.
+Considering all the properties I listed above, Luos is an answer to all of this project's issues.
 
-Therefore, I decided to do my fourth-year internship of 4 months at Luos to develop a part of my system with Luos technology and see if it matches my expectations.
+That's why I decided to do my fourth-year internship of four months at Luos to develop a part of my system with the Luos technology, and see if it matches my expectations.
 
 <h2>Proof of concept</h2>
 
@@ -120,9 +120,9 @@ For this proof of concept, I realized the following system: a barometer connecte
   />
 </div>
 
-The objective of this system is to retrieve the pressure with the barometer, convert the pressure into an altitude, detect apogee, and activate the solenoid when apogee is detected. Activating this solenoid will trigger our liberation system and free the parachute to recover our rocket.
+The objective of this system is to retrieve the pressure with the barometer, convert the pressure into an altitude, detect apogee, and activate the solenoid releasing the first parachute when apogee is detected. Activating this solenoid will trigger our liberation system and free the parachute to recover our rocket.
 
-I divided my network into three services:
+I divided my network into three Luos services:
 
 - **Barometer:** Contains an SPI driver and the communication between the barometer and the rest of the system. This service will retrieve the pressure and send it when it is asked to.
 
@@ -134,102 +134,100 @@ I divided my network into three services:
 
 <h4>Barometer Service:</h4>
 
-**SPI driver**
-- The SPI driver is the most complex part of this system. I won't describe precisely how it works because it would take too long and is not the most interesting part. To put it simply, an SPI driver permits communication between a Master and several Slaves.
+**SPI driver:**
+- The SPI driver is the most complex part of this system. I won't describe precisely how it works because it would take too long and is not the most interesting part. To put it simply, an SPI driver allows the communication between a master and several slaves.
 
 - The SPI protocol uses four wires: CLK (Clock), MOSI (Master Output Slave Input), MISO (Master Input Slave Output), and CS (Chip Select).
 
-- The CLK permits a common clock between the Master and Slaves, synchronizing the Writing and Reading of bytes. The clock is generated by the Master and transferred to the Slaves.
+- The CLK permits a common clock between the master and slaves, synchronizing the writing and reading of bytes. The clock is generated by the master and transferred to the slaves.
 
-- The MOSI is the line where the Slaves write and the Master reads.
+- The MOSI is the line where the slaves write and the master reads.
 
-- The MISO is the line where the Master writes and the Slaves read.
+- The MISO is the line where the master writes and the slaves read.
 
-- The CS is the line that permits you to select the Slave you want to talk to (One line per Slave, initiated to 1 and lowered to 0 to select the Slave).
+- The CS is the line that permits you to select the slave you want to talk to (one line per slave, initiated to 1 and lowered to 0 to select the slave).
 
 **BMP 280:**
-- BMP 280 is the reference of the barometer I use in my system. To retrieve pressure, I need to send the good bytes at the right timings and read and store the response.
+- BMP 280 is the reference of the barometer I use in my system. To retrieve pressure, I need to send the good bytes at the right timing and read and store the response.
 
-- The first thing I do is to send initialization bytes. To do so, I first send the address of the register I want to write in, and then I send bytes containing information such as the precision wanted, the time between two measures, etc.
+- The first thing I do is to send initialization bytes. To do so, I first send the address of the register I want to write in, and then I send the bytes containing information such as the precision wanted, the time between two measures, etc.
 
-- Then the barometer will continuously measure the pressure (you can also use a mode to measure pressure punctually). I obtain the results by reading specific registers and transforming their bytes into pressure.
+- Then the barometer will continuously measure the pressure (you can also use a mode to measure the pressure intermittently). I obtain the results by reading specific registers and transforming their bytes into pressure.
 
-- The last functionality of this service is that when it receives a GET_CMD message, it will return the pressure to the service that sent this message.
+- The last functionality of this service is that when it receives a `GET_CMD` message, it will return the pressure to the service that sent this message.
 
 <h4>Solenoid Service:</h4>
+
 This service is very simple. From an electronic point of view, a solenoid is an interrupter. 
-It only needs to be turned on or off. Therefore, this service permits activating or deactivating the solenoid when it receives a State message with the information True (activate) or False (Deactivate).
+It only needs to be turned on or off. This service permits to activate or deactivate the solenoid when it receives a state message with the information `TRUE` (activate) or `FALSE` (deactivate).
 
 <h4>Application Service:</h4>
 
 **Purpose:**
-- This application is a bridge between the barometer service and the solenoid service. Therefore, it needs to be able to send and receive messages to/from these two services.
+- This application is a bridge between the barometer service and the solenoid service. It needs to be able to send and receive messages to/from these two services.
 
 - The difference here is that this service does not reply to a message, so it needs to identify the other services first.
 
-- Therefore, this service does a [Luos Detection](/tutorials/your-first-detection). This functionality allows us to have a system map and know what and where the other services are. Then, it stores the ID of these services in variables to be able to communicate with them at any moment.
+- Therefore, this service does a [Luos Detection](/tutorials/your-first-detection). This functionality allows us to have a map of the system and know what and where the other services are. Then, it stores the ID of these services in variables to be able to communicate with them at any moment.
 
 **Communication with the barometer:**
-- The application service sends an auto-update message to the barometer service at the beginning of the program. This permits receiving a message from the barometer every 100ms (I need this delay in my system, but it can be changed).
+- The application service sends an auto-update message to the barometer service at the beginning of the program. This permits receiving a message from the barometer every 100 ms (I need this delay in my system, but it can be changed).
 
-- Then when it receives a message from the barometer service, it will use the pressure received to determine altitude and will then use this altitude to determine if we reached apogee.
+- Then when it receives a message from the barometer service, it will use the pressure received to determine the altitude and will then use this altitude to determine if the rocket has reached the apogee.
 
 **Communication with the solenoid:**
-- When the application service detects apogee, it sends a message to the solenoid with the information "True" to activate it.
+- When the application service detects the apogee, it sends a message to the solenoid with the information `TRUE` to activate it.
 
 <h3>Validation of the POC</h3>
 
-I will use [Pyluos](/docs/integrations/pyluos) to test my POC. I made this choice because my system reacts to pressure variations with pressures between 101325 and 850 Pa. These kinds of variations are difficult to simulate. This is why I had to find another way.
+I will use [Pyluos](/docs/integrations/pyluos) to test my POC. I made this choice because my system reacts to pressure variations, with pressures between 101,325 Pa (ground pressure) and 850 Pa (high-altitude pressure). These kinds of variations are difficult and expansive to simulate without launching the rocket. This is why I had to find another way to simulate the changes of pressure.
 
-Pyluos permits to send of values to the system's services. 
-Therefore, replacing the barometer's data with simulation values is possible.
+Pyluos allows to send values to the system's services, so replacing the barometer's data with simulated values is possible.
 
 I approximated the pressure variations during a flight and sent the values to my system to see how it reacted. Here is the pressure evolution I am sending:
 
 ![Pressure-POC-Alexis-Luos](/assets/images/blog/create-an-amateur-space-rocket/pressure-poc-alexis-gorlier-luos.png)
 
-The initial value is 101325 Pa, and the minimum value is 800 Pa. 
+The initial value is 101,325 Pa, and the minimum value is 800 Pa.
 
-I tried to be as realistic as possible on the first part of this graph (Pressure decreasing), but the second part (Pressure increasing) is not very realistic as it should take much longer for the rocket to touch the ground. I made this choice because there is no point in being realistic for this part. What I want to try is the reaction of my system.
+I tried to be as realistic as possible on the first part of this graph (pressure decreasing), but the second part (pressure increasing) is not very realistic as it should take much longer for the rocket to touch the ground. I made this choice because there is no point in being realistic for this part. What I want to test is the reaction of my system.
 
 The second step of this validation is to retrieve the altitude calculated by my system. Here is the graph I obtained:
 
 ![Altitude-POC-Alexis-Luos](/assets/images/blog/create-an-amateur-space-rocket/altitude-poc-alexis-gorlier-luos.png)
 
-The maximal value I obtained is 32586 m. This value seems correct as the pressure is around 850Pa at 32km.
-The last step of this validation is to see when the solenoids are activated. 
+The maximal value I obtained is 32,586 m. This value seems correct as the pressure is around 850 Pa at 32 km. The last step of this validation is to see when the solenoids are activated.
 
-This will allow us to see if the parachutes are liberated at the right time. To do so, I read the solenoids' state for each Pressure/Altitude and stored the first time I detected a "True" state, meaning that my solenoid had been activated. I then added the four curves obtained (Pressure, Altitude, Solenoid's 1 state, Solenoid's 2 state) on the same graph:
+This will allow us to see if the parachutes are liberated at the right time. To do so, I read the solenoids' state for each pressure/altitude data and store it the first time I detect a `TRUE` state, meaning that my solenoid had been activated. I then add the four curves obtained (pressure, altitude, solenoid's 1 state, solenoid's 2 state) on the same graph:
 
 ![Pressure-Altitude-State-solenoid-POC-Alexis-Luos](/assets/images/blog/create-an-amateur-space-rocket/pressure-altitude-solenoid-state-poc-alexis-gorlier-luos.png)
 
-We can see that the two solenoids are activated at the right timings (first at 32000m and second at 1000m). Therefore, our system achieved its objective. 
+We can see that the two solenoids are activated at the right timings (first at 32,000 m and second at 1,000 m). Therefore, our system achieved its objective.
 
 **The POC is validated** 🎉
 
-
 <h3>Reusability of this program:</h3>
 
-- Barometer Service:
+- Barometer service:
 
 This service can be reused only with the BMP280 barometer. However, the SPI driver can be used in other applications.
 
-- Solenoid Service:
+- Solenoid service:
 
 This service can be reused with every interrupter-like component.
 
-- Application Service:
+- Application service:
 
 This service can be reused for every system that needs to activate an interrupter when a specific altitude is reached. However, it is only usable with a barometer for the moment. It must be adapted with other sensors to be reusable in every electronic rocket system.
 
-<h2>What’s the future of the project?</h2>
+<h2>What's the future of the project?</h2>
 
 As I said in the first part, there are still some years of development left for this project.
 
 If you are interested in this project and want to see how it evolves, you can check our association news on <a href="https://www.instagram.com/estaca_space_odyssey/?hl=fr" rel="external nofollow">Instagram</a>.
-There might as well be other publications in the future on that project, and <a href="https://discord.gg/luos" rel="external nofollow">join the Luos community</a> to discuss this project!
+There might as well be other publications in the future on that project, you can <a href="https://discord.gg/luos" rel="external nofollow">join the Luos community</a> to discuss about it!
 
-I presented my project in video too:
+I made a video to present this project as well:
 
 <div align="center">
   <iframe
