@@ -66,6 +66,6 @@
     "dotenv-webpack": "^8.0.1",
     "eslint-config-custom": "*",
     "typescript": "^4.8.2",
-    "vercel": "^28.2.0"
+    "vercel": "^28.4.5"
   }
 }
