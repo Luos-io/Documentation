@@ -48,7 +48,7 @@ h1 {
 
 h2 {
   font-size: 31px !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 15px;
   font-weight: 500 !important;
 }
 
@@ -746,4 +746,8 @@ h3 {
 
 .breadcrumbs__link svg {
   top: 7px;
+}
+
+.Mui-selected {
+  color: #bd99ff !important;
 }

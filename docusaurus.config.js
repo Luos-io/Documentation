@@ -121,6 +121,10 @@ module.exports = {
               to: '/blog',
               label: 'Blog',
             },
+            {
+              to: '/roadmap',
+              label: 'Roadmap',
+            },
           ],
         },
         {

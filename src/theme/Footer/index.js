@@ -211,6 +211,15 @@ function Footer() {
                 Blog
               </Link>
             </li>
+            <li>
+              {' '}
+              <Link
+                className={`${styles.link} ${styles.ressourcesLink} ${styles.mbZero}`}
+                to="/roadmap"
+              >
+                Roadmap
+              </Link>
+            </li>
           </ul>
           <span className={` ${styles.span} ${styles.community}`} to="/docs/luos-technology">
             Community

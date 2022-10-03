@@ -1,0 +1,21 @@
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin: 15px 0px 30px;
+}
+
+.tabLabel {
+  text-transform: capitalize !important;
+}
+html[data-theme='dark'] .tabLabel {
+  color: white;
+}
+
+.subtitle {
+  margin-bottom: 0;
+}
+
+.btn {
+  color: #bd99ff !important;
+  border-color: #bd99ff !important;
+}
