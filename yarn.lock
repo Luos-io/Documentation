@@ -4824,10 +4824,10 @@ dotenv-defaults@^2.0.2:
   dependencies:
     dotenv "^8.2.0"
 
-dotenv-vault@^1.11.2:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/dotenv-vault/-/dotenv-vault-1.12.1.tgz#6bb8c7771b1025b3acd27a2963eaa3e163d5c8dd"
-  integrity sha512-jNG+y3vwSIPO2gv2/KWKgZpbSBVpWRoowhdcxZCpFoBj24pEG3l7eBpCuOw8rLsjbf05ZFRJtRpggxjPlQdF3g==
+dotenv-vault@^1.13.10:
+  version "1.13.10"
+  resolved "https://registry.yarnpkg.com/dotenv-vault/-/dotenv-vault-1.13.10.tgz#88535bb44537d4ca91038a01d898a8cd650f480b"
+  integrity sha512-OdPDBYYjYYaSxArUB2A6jWWyDIyTImbjab3GxYVw0JZMdEsS1DioMPG7vWaWg8LBgQLK5iLobn64XPsNAllmuA==
   dependencies:
     "@oclif/core" "^1"
     "@oclif/plugin-help" "^5.1.12"
@@ -4837,7 +4837,7 @@ dotenv-vault@^1.11.2:
     abortcontroller-polyfill "1.7.3"
     axios "^0.27.2"
     chalk "^4.1.2"
-    dotenv "^16.0.2"
+    dotenv "16.0.3"
 
 dotenv-webpack@^8.0.1:
   version "8.0.1"
@@ -4846,10 +4846,10 @@ dotenv-webpack@^8.0.1:
   dependencies:
     dotenv-defaults "^2.0.2"
 
-dotenv@^16.0.2:
-  version "16.0.2"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.2.tgz#0b0f8652c016a3858ef795024508cddc4bffc5bf"
-  integrity sha512-JvpYKUmzQhYoIFgK2MOnF3bciIZoItIIoryihy0rIA+H4Jy0FmgyKYAHCTN98P5ybGSJcIFbh6QKeJdtZd1qhA==
+dotenv@16.0.3:
+  version "16.0.3"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
+  integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
 
 dotenv@^8.2.0:
   version "8.6.0"
