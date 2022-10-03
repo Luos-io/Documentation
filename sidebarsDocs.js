@@ -230,7 +230,7 @@ module.exports = {
         },
         {
           type: 'link',
-          label: 'PlateformIO',
+          label: 'PlatformIO',
           href: 'https://www.luos.io/tutorials/pio',
         },
         {
