@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import styles from './index.module.css';
 import Image from '../Image';
+import Link from '@docusaurus/Link';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,13 +63,29 @@ const Roadmap = () => {
           <p>
             As part of an open source project, each of these subjects are open to contribution: it
             means that anyone from the Luos community can work on them and help the team in their
-            developments. You can check out our contribution’s guidelines on GitHub and how to
-            contribute on Luos Documentation.
+            developments. You can check out our{' '}
+            <Link
+              href="https://github.com/Luos-io/luos_engine/blob/main/CONTRIBUTING.md"
+              target="_blank"
+            >
+              contribution’s guidelines on GitHub
+            </Link>{' '}
+            and{' '}
+            <Link href="https://www.luos.io/docs/contribute-to-luos" target="_blank">
+              how to contribute on Luos Documentation
+            </Link>
+            .
           </p>
           <p>
             If you have any question about this roadmap or more generally about Luos, join in the
             community and chat with developers from all around the world!
           </p>
+
+          <Box textAlign="center">
+            <Button href="https://discord.gg/luos" className={styles.btn}>
+              Join the community
+            </Button>
+          </Box>
         </Grid>
         <Grid item md={8} mb={5}>
           <Image
@@ -148,6 +165,11 @@ const Roadmap = () => {
                 targets.
               </p>
             </TabPanel>
+          </Box>
+          <Box textAlign="center">
+            <Button href="https://discord.gg/luos" className={styles.btn}>
+              Join the community
+            </Button>
           </Box>
         </Grid>
       </Grid>

@@ -14,3 +14,7 @@ html[data-theme='dark'] .tabLabel {
 .subtitle {
   margin-bottom: 0;
 }
+
+.btn {
+  color: #bd99ff !important;
+}
