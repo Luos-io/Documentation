@@ -170,15 +170,6 @@ function Footer() {
               {' '}
               <Link
                 className={`${styles.link} ${styles.ressourcesLink} ${styles.mbZero}`}
-                to="/roadmap"
-              >
-                Roadmap
-              </Link>
-            </li>
-            <li>
-              {' '}
-              <Link
-                className={`${styles.link} ${styles.ressourcesLink} ${styles.mbZero}`}
                 to="/tutorials/get-started"
               >
                 Get Started
@@ -218,6 +209,15 @@ function Footer() {
                 to="/blog"
               >
                 Blog
+              </Link>
+            </li>
+            <li>
+              {' '}
+              <Link
+                className={`${styles.link} ${styles.ressourcesLink} ${styles.mbZero}`}
+                to="/roadmap"
+              >
+                Roadmap
               </Link>
             </li>
           </ul>
