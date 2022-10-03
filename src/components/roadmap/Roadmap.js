@@ -55,9 +55,9 @@ const Roadmap = () => {
       <Grid container justifyContent="center">
         <Grid item md={8} mb={5}>
           <p>
-            This page is a preview of Luos’s product roadmap. This graphic shows the next technical
-            developments our team is and will be working on with the help of the community, on a
-            one-year scale.
+            This page is a preview of Luos’s product roadmap. The following graphic shows the next
+            technical developments our team is and will be working on with the help of the
+            community, quarter by quarter.
           </p>
           <p>This roadmap is updated every quarter.</p>
           <p>
@@ -82,7 +82,7 @@ const Roadmap = () => {
           </p>
 
           <Box textAlign="center">
-            <Button href="https://discord.gg/luos" className={styles.btn}>
+            <Button href="https://discord.gg/luos" variant="outlined" className={styles.btn}>
               Join the community
             </Button>
           </Box>
@@ -167,7 +167,7 @@ const Roadmap = () => {
             </TabPanel>
           </Box>
           <Box textAlign="center">
-            <Button href="https://discord.gg/luos" className={styles.btn}>
+            <Button href="https://discord.gg/luos" className={styles.btn} variant="outlined">
               Join the community
             </Button>
           </Box>

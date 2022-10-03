@@ -17,4 +17,5 @@ html[data-theme='dark'] .tabLabel {
 
 .btn {
   color: #bd99ff !important;
+  border-color: #bd99ff !important;
 }
