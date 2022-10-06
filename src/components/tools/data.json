@@ -1,6 +1,12 @@
 {
   "tools": [
     {
+      "title": "Luos engine API",
+      "desc": "Here is a list of public API provided by Luos engine for you to use.",
+      "link": "/docs/next/tools/luos-engine-api",
+      "img": "/assets/images/tools/LUOS-ENGINE-API.svg"
+    },
+    {
       "title": "Gate",
       "desc": "A translation Luos app service allowing you to easily connect your computer to your hardware product.",
       "link": "/docs/next/tools/gate",
@@ -16,7 +22,7 @@
       "title": "Bootloader",
       "desc": "The bootloader feature allows updating the firmware of any node in a Luos network.",
       "link": "/docs/next/tools/bootloader",
-      "img": "/assets/images/tools/BOOTLOADER-LUOS.svg"
+      "img": "/assets/images/tools/LUOS-BOOTLOADER.svg"
     },
     {
       "title": "Inspector",
