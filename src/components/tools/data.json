@@ -7,7 +7,7 @@
       "img": "/assets/images/tools/GATE-LUOS.png"
     },
     {
-      "title": "Json API",
+      "title": "JSON API",
       "desc": "The JSON formatted data is common and widely used by many programming languages. ",
       "link": "/docs/next/tools/api-json",
       "img": "/assets/images/tools/JSON-API-LUOS.png"
