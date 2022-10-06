@@ -4,7 +4,7 @@
 
 .card {
   padding: 10px;
-  min-height: 320px;
+  min-height: 330px;
 }
 
 html[data-theme='dark'] .card {

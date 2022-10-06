@@ -14,7 +14,7 @@
     },
     {
       "title": "Bootloader",
-      "desc": "Update node through Luos network.",
+      "desc": "The bootloader feature allows updating the firmware of any node in a Luos network.",
       "link": "/docs/next/tools/bootloader",
       "img": "/assets/images/tools/BOOTLOADER-LUOS.svg"
     },
@@ -26,13 +26,13 @@
     },
     {
       "title": "Monitoring",
-      "desc": "API that allows you to monitor a Luos network.",
+      "desc": "Luos provides monitoring and debugging mechanisms that give you better visibility of your network.",
       "link": "/docs/next/tools/monitoring",
       "img": "/assets/images/tools/MONITOR-LUOS.svg"
     },
     {
       "title": "PlatformIO",
-      "desc": "How to configure Luos with PlatformIO.",
+      "desc": "Luos uses PlatformIO, allowing users to easily use and share services and developments on a unified environment.",
       "link": "/docs/next/tools/platformio",
       "img": "/assets/images/tools/LUOS-AND-PLATFORMIO.svg"
     },
