@@ -89,8 +89,8 @@ const Roadmap = () => {
         </Grid>
         <Grid item md={8} mb={5}>
           <Image
-            src="assets/images/roadmap/public-roadmap-light.png"
-            darkSrc="assets/images/roadmap/public-roadmap-dark.png"
+            src="assets/images/roadmap/Luos-roadmap-light.svg"
+            darkSrc="assets/images/roadmap/Luos-roadmap-dark.svg"
           />
         </Grid>
         <Grid item md={8} mb={5}>
