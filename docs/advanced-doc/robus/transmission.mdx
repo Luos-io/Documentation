@@ -1,0 +1,36 @@
+---
+hide_title: true
+hide_table_of_contents: true
+custom_edit_url: null
+title: 'Part 1: The transmission, and reception management'
+---
+
+# Part 1: The transmission, and reception management
+
+[Luos_engine library](https://github.com/Luos-io/luos_engine) provides a complete mailing system between services.
+
+The role of Robus is to transmit and receive through the network messages to and from other nodes.
+
+## Transmission
+
+When `Luos_send` API is called, the message to transmit is stored in the Luos_engine [message](/docs/next/luos-technology/messages) allocator `msg_alloc.c`.
+
+Depending on the target of this message Luos_engine will pass it to a local service ([localhost](http://localhost) network) or to a [network layer](/docs/next/luos-technology/node/luos-hal), in this case, Robus.
+
+Depending on the state of the network Luos will be able to ask the Luos_engine [message allocator](https://github.com/Luos-io/luos_engine/blob/main/network/robus/src/msg_alloc.c) if a TX message is available, and send it if there is.
+
+At the beginning of transmission, Robus will check if there is any collision with another node transmitting at the same time.
+
+At the end of transmission, Robus will add some sanity checks and ACK management.
+
+Check [transmission.c](https://github.com/Luos-io/luos_engine/blob/main/network/robus/src/transmission.c) files for a better understanding of the transmission process and functions
+
+## Reception
+
+Robus reuse the format of the Luos_engine messages as the base of its protocol. Robus use a multipoint network so any transmitted messages will be broadcasted to any nodes on the network.
+
+During message reception, Robus will use the message [header](/docs/next/luos-technology/messages#header) and the information of the node it’s running on to know if it needs to keep this message or not.
+
+To finish, at the end of the message, Robus will check the integrity send back an ACK if needed, and store the message into the Luos_engine allocator.
+
+Check [reception.c](https://github.com/Luos-io/luos_engine/blob/main/network/robus/src/reception.c) files for a better understanding of the reception process and functions

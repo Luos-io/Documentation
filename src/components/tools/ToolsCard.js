@@ -1,14 +1,11 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Paper } from '@mui/material';
-import Moment from 'moment';
-
-import dataJson from './data.json';
 
 import styles from './index.module.css';
 
-const ToolsCard = () => {
-  const data = dataJson.tools;
+const ToolsCard = (props) => {
+  const data = props.data.data;
   return (
     <Grid container spacing={2} mb={5}>
       {data.map((x, y) => (

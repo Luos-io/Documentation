@@ -1,0 +1,52 @@
+---
+hide_title: true
+hide_table_of_contents: true
+custom_edit_url: null
+title: 'Part 2: The topology management'
+---
+
+import Image from '@site/src/components/Image';
+
+# Part 2: The topology management
+
+Robus will rely on the unique ID distributed during the Luos_engine detection. Luos_engine will need topological information to provide a unique ID during detection. Robus need to be able to detect the neighbors on the network and to share this information to Luos_engine allowing a proper topology detection
+
+## Topology detection using PTP lines
+
+Robus use wires called [PTP](/docs/next/luos-technology/node/topology#ptp-network) to poke the neighbors and see if there is someone.
+
+This example below show the process of assigning node ID during the topology detection of 3 [nodes](/docs/next/luos-technology/node). The starting node always has the node_ID 1.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/topology/robus-2-1-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/topology/robus-2-1-dark.svg"
+    width="600px"
+  />
+</div>
+
+In Robus network, “poke” a node is done by a physical line called PTP connected between one node to another. Those lines are only used during the topology detection process.
+
+Here is a complete detection process. As you can see, during the node_id assignation PTP lines are moving. Using this measure meant we can know witch node is were.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/topology/robus-2-2-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/topology/robus-2-2-dark.svg"
+    width="600px"
+  />
+</div>
+
+The example below show the different line state during the different steps needed to poke and get a response back from the poked node. The PTP line is shared by 2 nodes, so both of them will have an impact on the line level.
+
+This drawing represents the different states of the different nodes and the line level resulting in those different states.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/topology/robus-2-3-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/topology/robus-2-3-dark.svg"
+    width="800px"
+  />
+</div>
+
+Check [port_manager.c](https://github.com/Luos-io/luos_engine/blob/main/network/robus/src/port_manager.c) files for a better understanding of port management process and functions.

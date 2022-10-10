@@ -1,0 +1,112 @@
+---
+hide_title: true
+hide_table_of_contents: true
+custom_edit_url: null
+title: 'Part 3: The protocol definition'
+---
+
+import Image from '@site/src/components/Image';
+
+# Part 3: The protocol definition
+
+Robus simply add some information to guarantee the good transmission and reception of the message through physical support.
+
+Here is a complete representation of a Robus message:
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/protocol/robus-3-1-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/protocol/robus-3-1-dark.svg"
+  />
+</div>
+
+## Robus CRC calculation
+
+To secure transfer and detect communication error, Robus provide a CRC calculation to verify data transfer integrity.
+
+### CRC computation specificities
+
+Robus CRC is a CRC16 with a polynomial 7→ 0x0007 = X^2 +X^1+X^0
+
+- Width = 16 bits
+- Truncated polynomial = 0x0007
+- Initial value = 0xFFFF
+- Input data is NOT reflected
+- Output CRC is NOT reflected
+- No XOR is performed on the output CRC
+
+### Transmission
+
+Before sending on the network, Robus compute and add 2 CRC bytes at the end of the message. The CRC is computed on the complete header and data bytes. This CRC calculation is made by software for transmission.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/protocol/robus-3-2-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/protocol/robus-3-2-dark.svg"
+  />
+</div>
+
+### Reception
+
+During the reception, a CRC computation is performed for each byte received. At the message's end, Robus compares the CRC calculated by the sender with the one calculated.
+
+In case of a wrong CRC, the message is dropped, and a NAK is sent if an acknowledgment is needed.
+
+This CRC calculation can be software or hardware when the MCU you use provides a CRC computation module built in.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/protocol/robus-3-3-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/protocol/robus-3-3-dark.svg"
+  />
+</div>
+
+## Robus frame separator (Timeout/Preamble)
+
+Robus network is a multi-master half duplex network with a variable payload frame. All communication buses must have a delimiter to separate frames from one another. Robus protocol uses an inactive period to achieve that. This period is called “timeout”, but you can also see it as a message preamble.
+
+Frames on Robus are serialized and sent by a pack of 10bits (one start bit, 8bits of data, and one stop bit). The time needed to transmit those bits depend on the serial communication baud rate.
+
+:::info
+Ex: serial communication baudrate= 1Mb/s → Time for 1bits is 1microsecond → Basic timing = 1 microsecond. <br/>
+In this example, sending one byte of data takes 10 microseconds.
+:::
+
+Robus timeout equals the time needed to transmit 2 bytes (or 20 times the basic timing).
+
+:::tip
+Timeout = 20\* Basic timing <br/>
+In the previous example, Basic timing = 1 microsecond → Timeout = 20 microseconds.
+:::
+
+Each time Robus receive or send a byte, the timeout counter is reset. When no byte is received during the timeout period, Robus will consider that the current frame is finished and try to send a new one if some messages are waiting to be sent.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/protocol/robus-3-4-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/protocol/robus-3-4-dark.svg"
+  />
+</div>
+
+## Robus Acknowledge frame
+
+Luos Protocol provides the possibility to send messages from service to service. You can ask Luos_engine to guarantee a good understanding of your message by the receiver using an Acknowledgment byte ([status_t](https://github.com/Luos-io/luos_engine/blob/main/network/robus/inc/reception.h) struct).
+
+In Robus protocol, the acknowledge is a byte sent back by the receiving node before the end of the timeout.
+
+The acknowledgment byte value can be :
+
+- “ACK” if the message has been received
+
+- “NACK” if there is a bad CRC calculation or framing error detected.
+
+If the transmitter node has received no ACK or NACK, the message transmission will be considered failed, and Robus will retry it ten times.
+
+If, after ten times, message transmission still fails, the message will be dropped, and an alert on Luos_statistics will be raised.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/protocol/robus-3-5-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/protocol/robus-3-5-dark.svg"
+  />
+</div>
