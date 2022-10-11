@@ -4,25 +4,25 @@
       "title": "Part 1: The transmission, and reception management",
       "desc": "The role of Robus is to transmit and receive through the network messages to and from other nodes.",
       "link": "/docs/next/advanced-doc/robus/transmission",
-      "img": "/assets/images/tools/LUOS-ENGINE-API.svg"
+      "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS-1.svg"
     },
     {
       "title": "Part 2: The topology management",
       "desc": "Robus will rely on the unique ID distributed during the Luos_engine detection, Luos_engine will need topological information to provide a unique ID during detection.",
       "link": "/docs/next/advanced-doc/robus/topology",
-      "img": "/assets/images/tools/LUOS-ENGINE-API.svg"
+      "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS-2.svg"
     },
     {
       "title": "Part 3: The protocol definition",
       "desc": "Robus simply add some information to guarantee the good transmission and reception of the message through physical support.",
       "link": "/docs/next/advanced-doc/robus/protocol",
-      "img": "/assets/images/tools/LUOS-ENGINE-API.svg"
+      "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS-3.svg"
     },
     {
       "title": "Part 4: The physical driver interface",
       "desc": "The Robus layer allows half-duplex wired communication between physical nodes and services. ",
       "link": "/docs/next/advanced-doc/robus/physical-driver-interface",
-      "img": "/assets/images/tools/LUOS-ENGINE-API.svg"
+      "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS-4.svg"
     }
   ]
 }
