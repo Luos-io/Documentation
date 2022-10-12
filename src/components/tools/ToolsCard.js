@@ -4,8 +4,7 @@ import { Paper } from '@mui/material';
 
 import styles from './index.module.css';
 
-const ToolsCard = (props) => {
-  const data = props.data.data;
+const ToolsCard = ({ data }) => {
   return (
     <Grid container spacing={2} mb={5}>
       {data.map((x, y) => (

@@ -1,10 +1,8 @@
-{
-  "data": [
-    {
-      "title": "Robus",
-      "desc": "This protocol has been developed specifically for the need of Luos_engine.",
-      "link": "/docs/next/advanced-doc/robus",
-      "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS.svg"
-    }
-  ]
-}
+[
+  {
+    "title": "Robus",
+    "desc": "This protocol has been developed specifically for the needs of Luos engine.",
+    "link": "/docs/next/advanced-documentation/robus",
+    "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS.svg"
+  }
+]

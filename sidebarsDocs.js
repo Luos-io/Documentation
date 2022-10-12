@@ -273,10 +273,10 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Advanced doc',
+      label: 'Advanced documentation',
       link: {
         type: 'doc',
-        id: 'advanced-doc/index',
+        id: 'advanced-documentation/index',
       },
       items: [
         {
@@ -284,28 +284,28 @@ module.exports = {
           label: 'Robus',
           link: {
             type: 'doc',
-            id: 'advanced-doc/robus/index',
+            id: 'advanced-documentation/robus/index',
           },
           items: [
             {
               type: 'doc',
               label: 'The transmission, and reception management',
-              id: 'advanced-doc/robus/transmission',
+              id: 'advanced-documentation/robus/transmission',
             },
             {
               type: 'doc',
               label: 'The topology management',
-              id: 'advanced-doc/robus/topology',
+              id: 'advanced-documentation/robus/topology',
             },
             {
               type: 'doc',
               label: 'The protocol definition',
-              id: 'advanced-doc/robus/protocol',
+              id: 'advanced-documentation/robus/protocol',
             },
             {
               type: 'doc',
               label: 'The physical driver interface',
-              id: 'advanced-doc/robus/physical-driver-interface',
+              id: 'advanced-documentation/robus/physical-driver-interface',
             },
           ],
         },
