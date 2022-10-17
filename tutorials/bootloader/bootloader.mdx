@@ -1,11 +1,22 @@
 ---
 custom_edit_url: null
+hide_title: true
+title: Bootloader
 image: /assets/images/Bootloader-Luos-banner.png
 ---
 
 import Image from '@site/src/components/Image';
 
-# Bootloader
+import Introduction from '/src/components/school/article/intro.js';
+
+<Introduction
+  title="Bootloader"
+  time="30 minutes"
+  level="Confirmed"
+  category="Tutorial"
+  desc="In this tutorial, you will learn to use the bootloader feature offered by Luos engine."
+  tags={['Board', 'MCU', 'Service', 'Network', 'Distributed System']}
+/>
 
 ## 1. Acquire and set up your equipment
 
@@ -19,7 +30,7 @@ To flash one or multiple boards using the Luos engine's bootloader, you need a m
 </div>
 
 :::caution
-If you are not comfortable with the Luos network creation and Luos engine's firmware management and compiling, please follow [the Luos Get started tutorial](../get-started/get-started.mdx) first.
+If you are not comfortable with the Luos network creation and Luos engine's firmware management and compiling, please follow [the Luos Get started tutorial](../get-started/get-started1.mdx) first.
 :::
 
 :::caution
@@ -50,7 +61,7 @@ Click on **Upload** on the bottom left corner of the IDE. Wait for the compilati
 </div>
 
 :::info
-If this step fails, check that you are properly connected to the USB port, or try to follow [the Luos Get started tutorial](../get-started/get-started.mdx).
+If this step fails, check that you are properly connected to the USB port, or try to follow [the Luos Get started tutorial](../get-started/get-started1.mdx).
 :::
 
 ## 3. Detect the gate's node with the CLI

@@ -14,7 +14,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Get started',
-              link: { type: 'doc', id: 'get-started/get-started' },
+              link: { type: 'doc', id: 'get-started/get-started1' },
               items: [
                 {
                   type: 'doc',
@@ -41,7 +41,7 @@ module.exports = {
             {
               type: 'category',
               label: 'First service',
-              link: { type: 'doc', id: 'your-first-service/your-first-service' },
+              link: { type: 'doc', id: 'your-first-service/luos-service' },
               items: [
                 {
                   type: 'doc',
@@ -58,7 +58,7 @@ module.exports = {
             {
               type: 'category',
               label: 'First message',
-              link: { type: 'doc', id: 'your-first-message/your-first-message' },
+              link: { type: 'doc', id: 'your-first-message/receiving-message' },
               items: [
                 {
                   type: 'doc',
@@ -75,7 +75,7 @@ module.exports = {
             {
               type: 'category',
               label: 'First detection',
-              link: { type: 'doc', id: 'your-first-detection/your-first-detection' },
+              link: { type: 'doc', id: 'your-first-detection/topology' },
               items: [
                 {
                   type: 'doc',
@@ -95,28 +95,14 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
-              label: 'Aliases',
-              link: { type: 'doc', id: 'resilient-alias/intro' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Resilient aliases management',
-                  id: 'resilient-alias/resilient-alias',
-                },
-              ],
+              type: 'doc',
+              label: 'How to have flexible and resilient aliases',
+              id: 'resilient-alias/resilient-alias',
             },
             {
-              type: 'category',
+              type: 'doc',
               label: 'Bootloader',
-              link: { type: 'doc', id: 'bootloader/intro' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Set and use a bootloader',
-                  id: 'bootloader/bootloader',
-                },
-              ],
+              id: 'bootloader/bootloader',
             },
           ],
         },
@@ -129,7 +115,7 @@ module.exports = {
             {
               type: 'category',
               label: 'PlatformIO',
-              link: { type: 'doc', id: 'pio/pio' },
+              link: { type: 'doc', id: 'pio/creation' },
               items: [
                 {
                   type: 'doc',
@@ -144,21 +130,14 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
+              type: 'doc',
               label: 'Arduino IDE',
-              link: { type: 'doc', id: 'arduino/intro' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Luos with Arduino IDE',
-                  id: 'arduino/arduino',
-                },
-              ],
+              id: 'arduino/arduino',
             },
             {
               type: 'category',
               label: 'Espressif IDE',
-              link: { type: 'doc', id: 'esp/esp' },
+              link: { type: 'doc', id: 'esp/env' },
               items: [
                 {
                   type: 'doc',
@@ -173,23 +152,16 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
-              label: 'RTOS',
-              link: { type: 'doc', id: 'freertos/intro' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'RTOS with Luos engine',
-                  id: 'freertos/freertos',
-                },
-              ],
+              type: 'doc',
+              label: 'RTOS with Luos engine',
+              id: 'freertos/freertos',
             },
             {
               type: 'category',
               label: 'ROS 1&2',
               link: {
                 type: 'doc',
-                id: 'luos-integration/ros-1-and-2',
+                id: 'luos-integration/install-ros2',
               },
               items: [
                 {
@@ -220,7 +192,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Morse encoder',
-              link: { type: 'doc', id: 'morse/morse' },
+              link: { type: 'doc', id: 'morse/algorithm' },
               items: [
                 {
                   type: 'doc',
@@ -242,7 +214,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Connected bike alarm',
-              link: { type: 'doc', id: 'bike-alarm/bike-alarm' },
+              link: { type: 'doc', id: 'bike-alarm/basic-alarm' },
               items: [
                 {
                   type: 'doc',

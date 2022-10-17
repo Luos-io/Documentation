@@ -1,5 +1,7 @@
 ---
 custom_edit_url: null
+title: Your First Message
+hide_title: true
 image: /assets/images/tutorials/your-first-message-banner-luos.png
 description: A button can be represented (as a LED) by a state-type service.
 ---
@@ -7,6 +9,17 @@ description: A button can be represented (as a LED) by a state-type service.
 import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+import Introduction from '/src/components/school/article/intro.js';
+
+<Introduction
+  title="Your First Message"
+  time="1 hour"
+  level="Confirmed"
+  category="Trainings"
+  desc="Luos engine aims to exchange information between services by sending messages. In this tutorial, you will learn messages' structure and how to send one to another service."
+  tags={['Service', 'Luos message', 'Polling', 'Message handler']}
+/>
 
 # Part 1: Receiving a message
 
