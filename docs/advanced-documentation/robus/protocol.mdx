@@ -8,7 +8,7 @@ import Image from '@site/src/components/Image';
 
 # Robus - Part 3: The protocol definition
 
-Robus simply add some information to guarantee the good transmission and reception of the message through physical support.
+Robus simply adds some information to guarantee the good transmission and reception of the messages through physical support.
 
 Here is a complete representation of a Robus message:
 
@@ -21,11 +21,11 @@ Here is a complete representation of a Robus message:
 
 ## Robus CRC calculation
 
-To secure transfer and detect communication error, Robus provide a CRC calculation to verify data transfer integrity.
+To secure, transfer, and detect communication errors, Robus provides a CRC calculation to verify the data transfer integrity.
 
 ### CRC computation specificities
 
-Robus CRC is a CRC16 with a polynomial 7→ 0x0007 = X^2 +X^1+X^0
+Robus CRC is a CRC16 with a polynomial 7 → 0x0007 = X^2 + X^1 + X^0
 
 - Width = 16 bits
 - Truncated polynomial = 0x0007
@@ -36,7 +36,7 @@ Robus CRC is a CRC16 with a polynomial 7→ 0x0007 = X^2 +X^1+X^0
 
 ### Transmission
 
-Before sending on the network, Robus compute and add 2 CRC bytes at the end of the message. The CRC is computed on the complete header and data bytes. This CRC calculation is made by software for transmission.
+Before sending a message through the network, Robus computes and adds two CRC bytes at the end of the message. The CRC is computed on the complete header and data bytes. This CRC calculation is made by software for the transmission.
 
 <div align="center">
   <Image
@@ -47,11 +47,11 @@ Before sending on the network, Robus compute and add 2 CRC bytes at the end of t
 
 ### Reception
 
-During the reception, a CRC computation is performed for each byte received. At the message's end, Robus compares the CRC calculated by the sender with the one calculated.
+During the reception, a CRC computation is performed for each byte received. At the message's end, Robus compares the CRC calculated by the sender with the one initially calculated.
 
-In case of a wrong CRC, the message is dropped, and a NAK is sent if an acknowledgment is needed.
+In case of a wrong CRC, the message is dropped, and a NAK is sent in case an acknowledgment is needed.
 
-This CRC calculation can be software or hardware when the MCU you use provides a CRC computation module built in.
+This CRC calculation can be software or hardware when the MCU you use provides a built-in CRC computation module.
 
 <div align="center">
   <Image
@@ -60,25 +60,27 @@ This CRC calculation can be software or hardware when the MCU you use provides a
   />
 </div>
 
-## Robus frame separator (Timeout/Preamble)
+## Robus frame separator (timeout/preamble)
 
-Robus network is a multi-master half duplex network with a variable payload frame. All communication buses must have a delimiter to separate frames from one another. Robus protocol uses an inactive period to achieve that. This period is called “timeout”, but you can also see it as a message preamble.
+Robus network is a multi-master half-duplex network with a variable payload frame. All communication buses must have a delimiter to separate the frames from one another. Robus protocol uses an inactive period to achieve that. This period is called "timeout", but you can also see it as a message preamble.
 
-Frames on Robus are serialized and sent by a pack of 10bits (one start bit, 8bits of data, and one stop bit). The time needed to transmit those bits depend on the serial communication baud rate.
+Frames on Robus are serialized and sent in a 10-bit pack (one start-bit, 8 bits of data, and one stop-bit). The time needed to transmit those bits depends on the serial communication baudrate.
 
 :::info
-Ex: serial communication baudrate= 1Mb/s → Time for 1bits is 1microsecond → Basic timing = 1 microsecond. <br/>
+E.g.: Serial communication baudrate = 1Mb/s → Time for 1 bit is 1 microsecond → Basic timing = 1 microsecond.
+
 In this example, sending one byte of data takes 10 microseconds.
 :::
 
-Robus timeout equals the time needed to transmit 2 bytes (or 20 times the basic timing).
+Robus timeout is the time needed to transmit two bytes (or twenty times the basic timing).
 
 :::tip
-Timeout = 20\* Basic timing <br/>
+Timeout = 20 \* Basic timing
+
 In the previous example, Basic timing = 1 microsecond → Timeout = 20 microseconds.
 :::
 
-Each time Robus receive or send a byte, the timeout counter is reset. When no byte is received during the timeout period, Robus will consider that the current frame is finished and try to send a new one if some messages are waiting to be sent.
+Each time Robus receives or sends a byte, the timeout counter is reset. When no byte is received during the timeout period, Robus will consider that the current frame is finished and will try to send a new one if some messages are waiting to be sent.
 
 <div align="center">
   <Image
@@ -87,21 +89,20 @@ Each time Robus receive or send a byte, the timeout counter is reset. When no by
   />
 </div>
 
-## Robus Acknowledge frame
+## Robus acknowledge frame
 
-Luos Protocol provides the possibility to send messages from service to service. You can ask Luos_engine to guarantee a good understanding of your message by the receiver using an Acknowledgment byte ([status_t](https://github.com/Luos-io/luos_engine/blob/main/network/robus/inc/reception.h) struct).
+Luos protocol provides the possibility to send messages from service to service. You can ask Luos engine to guarantee a good understanding of your message by the receiver using an acknowledgment byte ([`status_t`](https://github.com/Luos-io/luos_engine/blob/main/network/robus/inc/reception.h) struct).
 
-In Robus protocol, the acknowledge is a byte sent back by the receiving node before the end of the timeout.
+In the Robus protocol, the acknowledgement byte is a byte sent back by the receiving node before the end of the timeout.
 
-The acknowledgment byte value can be :
+The acknowledgment byte value can be:
 
-- “ACK” if the message has been received
+- "ACK" if the message has been received.
+- "NACK" if there is a bad CRC calculation or framing error detected.
 
-- “NACK” if there is a bad CRC calculation or framing error detected.
+If the transmitter node has received no ACK nor NACK, the message transmission will be considered failed, and Robus will retry it ten times.
 
-If the transmitter node has received no ACK or NACK, the message transmission will be considered failed, and Robus will retry it ten times.
-
-If, after ten times, message transmission still fails, the message will be dropped, and an alert on Luos_statistics will be raised.
+If, after tenth times, the message transmission still fails, the message will be dropped, and an alert on `Luos_statistics` will be raised.
 
 <div align="center">
   <Image
