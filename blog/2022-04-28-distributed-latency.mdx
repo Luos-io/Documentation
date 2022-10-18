@@ -43,11 +43,11 @@ Any node has own timeline, so we have multiple concurrent timelines in the entir
 
 <h3> Timeline synchronization is a common way. </h3>
 
-People synchronize timelines to have a coherent timestamp of data across different nodes. They have to designate a primary system that will synchronize the dates in all the nodes to do it. This operation is achieved by sending specific messages and frequently updating them to avoid drifting and keep them synchronized. To operate with precision, this clear synchronization message needs a predictable latency guaranteeing the accuracy of the date. To do so, we generally need to stop every operation in the network to ensure that the latency will always be the same.
+People synchronize timelines to have a coherent timestamp of data across different nodes. They have to designate an initiator system that will synchronize the dates in all the nodes to do it. This operation is achieved by sending specific messages and frequently updating them to avoid drifting and keep them synchronized. To operate with precision, this clear synchronization message needs a predictable latency guaranteeing the accuracy of the date. To do so, we generally need to stop every operation in the network to ensure that the latency will always be the same.
 
 <h3> What are the problems we have with it? </h3>
 
-This common date synchronization is not relevant for Luos engine because it follows primary-secondary management, which we don’t have in Luos architectures. The closest to a primary system we have is the node performing detection.
+This common date synchronization is not relevant for Luos engine because it follows initiator-follower management, which we don’t have in Luos architectures. The closest to an initiator system we have is the node performing detection.
 
 One of the rules we have in the Luos philosophy is "Don't do something if the user doesn't do it voluntarily.".
 
