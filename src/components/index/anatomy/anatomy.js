@@ -89,7 +89,7 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/tutorials/your-first-detection"
+              href="/tutorials/your-first-detection/topology"
               className={styles.listLink}
             >
               <ListItemAvatar>

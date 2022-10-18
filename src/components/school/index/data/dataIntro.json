@@ -32,7 +32,7 @@
       "img": "Your_first_service_Luos",
       "desc": "You just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
       "tags": ["Service", "Package", "Handler", "Gate", "Pipe"],
-      "link": "/tutorials/your-first-service",
+      "link": "/tutorials/your-first-service/luos-service",
       "author": "thomas"
     },
     {
@@ -44,7 +44,7 @@
       "img": "Your_first_message_Luos",
       "desc": "Luos aim to exchange information between services by sending messages. In this tutorial we will learn the message structure and how to send it to another services.",
       "tags": ["Luos Message", "Service", "Polling", "Message Handler"],
-      "link": "/tutorials/your-first-message",
+      "link": "/tutorials/your-first-message/receiving-message",
       "author": "nicoC"
     },
     {
@@ -56,7 +56,7 @@
       "img": "Your_First_Topology_detection_Luos",
       "desc": "Since the beginning of this training, we discover how to create services, deal with messages and control them using Pyluos. But we never create any embedded application service using other services.",
       "tags": ["Service", "Topology", "Detection", "Application"],
-      "link": "/tutorials/your-first-detection",
+      "link": "/tutorials/your-first-detection/topology",
       "author": "viktoria"
     },
     {
@@ -124,7 +124,7 @@
         "Network",
         "Distributed System"
       ],
-      "link": "/tutorials/bike-alarm",
+      "link": "/tutorials/bike-alarm/basic-alarm",
       "author": "nicoR"
     },
     {
@@ -136,7 +136,7 @@
       "img": "Luos_and_PlatformIO",
       "desc": "You heard about Luos, or you have just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
       "tags": ["Project", "Creation", "ST", "Arduino", "Service"],
-      "link": "/tutorials/pio",
+      "link": "/tutorials/pio/creation",
       "author": "thomas"
     },
     {
@@ -160,7 +160,7 @@
       "img": "Luos_and_ESP32",
       "desc": "You want to use luos_engine and take advantage of luos network on an ESP32 MCU. In this tutorial, you will learn how to use a simple package button with ESP32 Family.",
       "tags": ["Service", "Package", "ESP32"],
-      "link": "/tutorials/esp",
+      "link": "/tutorials/esp/env",
       "author": "thomas"
     },
     {
@@ -172,7 +172,7 @@
       "img": "Luos_and_ROS",
       "desc": "Install ROS 2 and get started with packages in a Luos project.",
       "tags": ["Service", "Package", "ROS"],
-      "link": "/tutorials/luos-integration/ros-1-and-2"
+      "link": "/tutorials/luos-integration/install-ros2"
     }
   ]
 }

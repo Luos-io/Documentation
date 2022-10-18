@@ -231,7 +231,7 @@ module.exports = {
         {
           type: 'link',
           label: 'PlatformIO',
-          href: 'https://www.luos.io/tutorials/pio',
+          href: 'https://www.luos.io/tutorials/pio/creation',
         },
         {
           type: 'link',
@@ -241,7 +241,7 @@ module.exports = {
         {
           type: 'link',
           label: 'Espressif IDE',
-          href: 'https://www.luos.io/tutorials/esp',
+          href: 'https://www.luos.io/tutorials/esp/env',
         },
         {
           type: 'link',
