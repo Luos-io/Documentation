@@ -55,7 +55,7 @@ But today, a few years later, with the technological advances we made, we faced 
 
 - To properly work, the Gate’s firmware on the electronic device has to continuously update the different values, and translate them into massive JSON data. This is not free and it needs a significant amount of CPU time and memory to run.
 - We chose JSON because this is the most standard and human-readable format. We wanted to have users using it directly in their software. But a few years later, almost all our users directly use Pyluos.
-- Because of the polling update, the Gate naturally takes the lead of all the resources of the system. If you didn’t want it to be the master, it wasn’t so easy.
+- Because of the polling update, the Gate naturally takes the lead of all the resources of the system. If you didn’t want it to be the primary system, it wasn’t so easy.
 - Because of the Gate’s JSON translation, the outside world could not be considered in the Luos “generic software representation”.
 - Because of the Gate’s translation, the outside world didn’t have direct access to the new features we developed in our technology. For each new feature, we had to develop a specific code on the gate’s side, then another one on Pyluos’ side.
 - For each new feature of Luos engine, we had to update the Gate and Pyluos to the JSON format. This was a big maintainability issue.
