@@ -253,6 +253,11 @@ module.exports = {
           label: 'ROS',
           id: 'integrations/ros',
         },
+        {
+          type: 'doc',
+          label: 'SimpleFOC',
+          id: 'integrations/simplefoc',
+        },
       ],
     },
     {
