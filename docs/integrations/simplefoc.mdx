@@ -5,6 +5,7 @@ description: This pages shows the integration information of SimpleFOC library a
 ---
 
 import IconExternalLink from '@theme/Icon/ExternalLink';
+import Image from '@site/src/components/Image.js';
 
 SimpleFOC is an opensource project providing an arduino library to control different types of motors, as well as arduino shields in order to drive them. We have integrated the SimpleFOC library with Luos engine for the creation of the drivers of BLDC and a Stepper motors, based in Arduino Zero boards.
 The SimpleFOC library contains different APIs for controlling different types of motors, getting the motor's information like the sensor values (position, angle etc.). In order to use it with Luos, you need to include the library into the motor driver services.
@@ -31,19 +32,14 @@ In order to create a Luos network with Arduino Zeros and SimpleFOC motors you sh
 ### BLDC wiring
 
 <h1>
-  <a href="#simplefoc" className="header" id="simplefoc">
-    <img src="/assets/images/bldc_wiring.png" />
-  </a>
+  <Image src="/assets/images/bldc_wiring.png" />
 </h1>
 
 ### Stepper wiring
 
 <h1>
-  <a href="#simplefoc" className="header" id="simplefoc">
-    <img src="/assets/images/stepper_wiring.png" />
-  </a>
+  <Image src="/assets/images/stepper_wiring.png" />
 </h1>
-
 
 :::note
 You can find a demo of how the motors work with Luos [here](https://www.youtube.com/watch?v=XLMP-gg-LrU&t=12s&ab_channel=Luos).
