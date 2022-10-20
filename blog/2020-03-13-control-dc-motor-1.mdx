@@ -15,7 +15,7 @@ date: 2020-03-13T10:00
 
 ![img alt](/assets/images/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-1-luos.png)
 
-This post is dedicated to curious about the basics of DC motors in robotics and precisely how to control them. You can begin with the [previous post](/2020-01-13-lift-banana-motors.mdx) dealing with the different motors used for robotic applications. While some of them are not often used, others, as the DC brushed motor, are more common.
+This post is dedicated to people that are curious about the basics of DC motors in robotics and precisely how to control them. You can begin with the [previous post](/2020-01-13-lift-banana-motors.mdx) dealing with the different motors used for robotic applications. While some of them are not often used, others, as the DC brushed motor, are more common.
 
 <!--truncate-->
 
@@ -25,11 +25,11 @@ Today, I’m talking to you about the basics of how to control your motor.
 
 One of the main features of these motors is the simplicity of use: if you plug each wire of a battery into the motor’s terminals, it is likely to turn one way. If you switch the wires, it will turn the other way.
 
-(Of course, it’s a little bit more complicated since the battery must not be too powerful for the motor. If not, the motor may be damaged.)
+(Of course, it’s a little bit more complicated since the battery should not be too powerful for the motor. If not, the motor may be damaged.)
 
 But this is the problem: it just turns. No speed control. No direction control unless you manually inverse the wires. At this point, your motor is a little bit impertinent. This is painful if you want to build a rover robot for Venus ground (_Mars is so 2017_)…
 
-If we talk about priorities, we will find that direction control comes before speed control. Why? Because you’d rather have a rover that rolls way too fast with jerky turns than a rover that moves smoothly in only one direction — and cannot turn. Yes, you get it.
+If we talk about priorities, we will see that direction control comes before speed control. Why? Because you’d rather have a rover that rolls way too fast with jerky turns than a rover that moves smoothly in only one direction — and that cannot turn. You get it.
 
 So let’s put aside the speed control for a while and focus on the direction control.
 
@@ -62,13 +62,13 @@ Configuration 2: S2 and S5 are opened, S3 and S4 are closed
 
 ![Two configurations can make the motor rotate](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbcea4b4bc58442894d1a_1*q8cZ3wBVpe05gResmj34fg.jpeg)
 
-Ok, now that’s too many schematic pictures. I don’t know about you, but I find this very exhausting, so please take a while and relax.
+Ok, now that’s too many schematic pictures. I don’t know about you, but I find this very exhausting, so please take a short break and relax.
 
 ![Beach](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbceaa0b1d87332ca12ef_1*6pdcNXjFiQaUqj8rgq5ybQ.jpeg)
 
 Let’s go back to control.
 
-Any other “doors” configuration would result either in nothing happening, either in a short circuit on the power supply (_which is terrible_), or either in braking the motor.
+Any other “door” configuration would result either in nothing happening, in a short circuit on the power supply (which is terrible), or in braking the motor.
 
 > With Luos, you can control every part of your system in the same place. We are like Docker, for embedded systems:
 
@@ -100,7 +100,7 @@ To summarize:
 
 - You write a program in a microprocessor (more accessible with the help of a developing board).
 - The microprocessor sends high or low signals to the H-bridge (easier with a controlling board).
-- The H-bridge orient the voltage so that the connected motor can rotate the way you politely asked it.
+- The H-bridge orients the voltage so that the connected motor can rotate the way you politely asked it to.
 
 ![DC brushed motor](https://uploads-ssl.webflow.com/602cf5c87ad04ea98eaa99da/602fbcea2c6b59469aae5498_1*rgOUW1Lfhn0T-VxD6RrtCg.jpeg)
 
