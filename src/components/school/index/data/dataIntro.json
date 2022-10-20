@@ -20,7 +20,7 @@
       "img": "Get_Started_Luos",
       "desc": "The Get started allows you to build, flash, run, and control your very first Luos project.",
       "tags": ["Board", "MCU", "Service", "Network", "Distributed system"],
-      "link": "/tutorials/get-started/get-started1",
+      "link": "/tutorials/get-started",
       "author": "nicoR"
     },
     {

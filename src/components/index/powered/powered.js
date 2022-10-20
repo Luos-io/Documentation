@@ -150,11 +150,7 @@ const Powered = (props) => {
             your first embedded microservice.
           </p>
           <div className={styles.btnContainer}>
-            <Button
-              variant="contained"
-              className={styles.pinkBtn}
-              href="/tutorials/get-started/get-started1"
-            >
+            <Button variant="contained" className={styles.pinkBtn} href="/tutorials/get-started">
               Get started <RocketLaunchIcon style={{ marginLeft: '10px' }} />
             </Button>
             <Button

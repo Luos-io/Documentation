@@ -102,7 +102,7 @@ module.exports = {
           position: 'right',
           items: [
             {
-              to: '/tutorials/get-started/get-started1',
+              to: '/tutorials/get-started',
               label: 'Get started',
             },
             {

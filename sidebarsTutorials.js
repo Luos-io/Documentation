@@ -14,12 +14,12 @@ module.exports = {
             {
               type: 'category',
               label: 'Get started',
-              link: { type: 'doc', id: 'get-started/get-started1' },
+              link: { type: 'doc', id: 'get-started/get-started' },
               items: [
                 {
                   type: 'doc',
                   label: 'Your first project',
-                  id: 'get-started/get-started1',
+                  id: 'get-started/get-started',
                 },
                 {
                   type: 'doc',

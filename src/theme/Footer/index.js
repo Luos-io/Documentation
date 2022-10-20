@@ -170,7 +170,7 @@ function Footer() {
               {' '}
               <Link
                 className={`${styles.link} ${styles.ressourcesLink} ${styles.mbZero}`}
-                to="/tutorials/get-started/get-started1"
+                to="/tutorials/get-started"
               >
                 Get Started
               </Link>
