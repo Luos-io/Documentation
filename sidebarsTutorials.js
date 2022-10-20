@@ -41,12 +41,12 @@ module.exports = {
             {
               type: 'category',
               label: 'First service',
-              link: { type: 'doc', id: 'your-first-service/luos-service' },
+              link: { type: 'doc', id: 'your-first-service/your-first-service' },
               items: [
                 {
                   type: 'doc',
                   label: 'Create a service',
-                  id: 'your-first-service/luos-service',
+                  id: 'your-first-service/your-first-service',
                 },
                 {
                   type: 'doc',
@@ -58,12 +58,12 @@ module.exports = {
             {
               type: 'category',
               label: 'First message',
-              link: { type: 'doc', id: 'your-first-message/receiving-message' },
+              link: { type: 'doc', id: 'your-first-message/your-first-message' },
               items: [
                 {
                   type: 'doc',
                   label: 'Receive a message',
-                  id: 'your-first-message/receiving-message',
+                  id: 'your-first-message/your-first-message',
                 },
                 {
                   type: 'doc',
@@ -75,12 +75,12 @@ module.exports = {
             {
               type: 'category',
               label: 'First detection',
-              link: { type: 'doc', id: 'your-first-detection/topology' },
+              link: { type: 'doc', id: 'your-first-detection/your-first-detection' },
               items: [
                 {
                   type: 'doc',
                   label: 'The topology',
-                  id: 'your-first-detection/topology',
+                  id: 'your-first-detection/your-first-detection',
                 },
                 {
                   type: 'doc',
@@ -115,12 +115,12 @@ module.exports = {
             {
               type: 'category',
               label: 'PlatformIO',
-              link: { type: 'doc', id: 'pio/creation' },
+              link: { type: 'doc', id: 'pio/pio' },
               items: [
                 {
                   type: 'doc',
                   label: 'Create your project',
-                  id: 'pio/creation',
+                  id: 'pio/pio',
                 },
                 {
                   type: 'doc',
@@ -137,12 +137,12 @@ module.exports = {
             {
               type: 'category',
               label: 'Espressif IDE',
-              link: { type: 'doc', id: 'esp/env' },
+              link: { type: 'doc', id: 'esp/esp' },
               items: [
                 {
                   type: 'doc',
                   label: 'Set the environnement',
-                  id: 'esp/env',
+                  id: 'esp/esp',
                 },
                 {
                   type: 'doc',
@@ -192,12 +192,12 @@ module.exports = {
             {
               type: 'category',
               label: 'Morse encoder',
-              link: { type: 'doc', id: 'morse/algorithm' },
+              link: { type: 'doc', id: 'morse/morse' },
               items: [
                 {
                   type: 'doc',
                   label: 'The algorithm',
-                  id: 'morse/algorithm',
+                  id: 'morse/morse',
                 },
                 {
                   type: 'doc',
@@ -214,12 +214,12 @@ module.exports = {
             {
               type: 'category',
               label: 'Connected bike alarm',
-              link: { type: 'doc', id: 'bike-alarm/basic-alarm' },
+              link: { type: 'doc', id: 'bike-alarm/bike-alarm' },
               items: [
                 {
                   type: 'doc',
                   label: 'Make a basic alarm',
-                  id: 'bike-alarm/basic-alarm',
+                  id: 'bike-alarm/bike-alarm',
                 },
                 {
                   type: 'doc',
