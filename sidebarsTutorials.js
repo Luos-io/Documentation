@@ -146,7 +146,7 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Conect ESP to network',
+                  label: 'Connect ESP to network',
                   id: 'esp/connect',
                 },
               ],
