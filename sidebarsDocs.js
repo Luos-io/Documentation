@@ -277,6 +277,46 @@ module.exports = {
       ],
     },
     {
+      type: 'category',
+      label: 'Advanced documentation',
+      link: {
+        type: 'doc',
+        id: 'advanced-documentation/index',
+      },
+      items: [
+        {
+          type: 'category',
+          label: 'Robus',
+          link: {
+            type: 'doc',
+            id: 'advanced-documentation/robus/index',
+          },
+          items: [
+            {
+              type: 'doc',
+              label: 'The transmission, and reception management',
+              id: 'advanced-documentation/robus/transmission',
+            },
+            {
+              type: 'doc',
+              label: 'The topology management',
+              id: 'advanced-documentation/robus/topology',
+            },
+            {
+              type: 'doc',
+              label: 'The protocol definition',
+              id: 'advanced-documentation/robus/protocol',
+            },
+            {
+              type: 'doc',
+              label: 'The physical driver interface',
+              id: 'advanced-documentation/robus/physical-driver-interface',
+            },
+          ],
+        },
+      ],
+    },
+    {
       type: 'doc',
       label: '🖊️ Contribute',
       id: 'contribute-to-luos',
