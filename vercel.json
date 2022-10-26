@@ -134,7 +134,7 @@
     },
     {
       "source": "/docs/tools/freertos(.*)",
-      "destination": "/tutorials/freertos/intro",
+      "destination": "/tutorials/freertos",
       "statusCode": 301
     },
     {

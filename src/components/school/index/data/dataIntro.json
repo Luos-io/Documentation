@@ -92,7 +92,7 @@
       "img": "Luos_and_FreeRTOS",
       "desc": "If you're used to develop your embedded system with FreeRTOS, you can leverage Luos features without changing the way you design your system. Indeed, Luos fits well with FreeRTOS and this tutorial aims to help you setup your project.",
       "tags": ["RTOS", "Distributed System"],
-      "link": "/tutorials/freertos/intro",
+      "link": "/tutorials/freertos",
       "author": "nicoC"
     },
     {
@@ -172,7 +172,8 @@
       "img": "Luos_and_ROS",
       "desc": "Install ROS 2 and get started with packages in a Luos project.",
       "tags": ["Service", "Package", "ROS"],
-      "link": "/tutorials/luos-integration/install-ros2"
+      "link": "/tutorials/luos-integration/install-ros2",
+      "author": "thomas"
     }
   ]
 }
