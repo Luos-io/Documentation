@@ -21,6 +21,7 @@ const Image = (props) => {
         onClick={() => setIsOpen(true)}
         height={height}
         width={width}
+        style={{ minWidth: props.minWidth !== undefined ? props.minWidth : 0 }}
         alt={props.alt ? props.alt : 'luos_img'}
       />
       {isOpen && (

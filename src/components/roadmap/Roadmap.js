@@ -53,7 +53,7 @@ const Roadmap = () => {
     <div>
       <h1 className={styles.title}>Luos Roadmap</h1>
       <Grid container justifyContent="center">
-        <Grid item md={8} mb={5}>
+        <Grid item md={8} mb={5} p={3}>
           <p>
             This page is a preview of Luos’s product roadmap. The following graphic shows the next
             technical developments our team is and will be working on with the help of the
@@ -91,6 +91,7 @@ const Roadmap = () => {
           <Image
             src="assets/images/roadmap/Luos-roadmap-light.svg"
             darkSrc="assets/images/roadmap/Luos-roadmap-dark.svg"
+            minWidth="370px"
           />
         </Grid>
         <Grid item md={8} mb={5}>
