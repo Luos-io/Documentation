@@ -1,6 +1,6 @@
 ---
 title: 'Should I use Luos in embedded development? Q&A live'
-description: We answer some important questions about Luos, overhead, Embedded, Arduino, Raspberry Pi, boards compatible with luos and our plans fo the future
+description: We answer some important questions about Luos, Embedded, Arduino, Raspberry Pi, boards compatible with luos and our plans for the future
 slug: should-I-use-Luos-in-embedded-development-q-and-a
 authors:
   - name: Nicolas Rabault
@@ -24,14 +24,13 @@ If you were not able to attend or if you want to go back to the information that
 If you have other questions concerning Luos, our open-source project, or the embedded world, feel free to <a href="https://discord.gg/luos" rel="external nofollow"> join our Discord community</a>. We are a +6000 member community as of right now and keep in touch with our members daily to create a strong community and an inspiring place for everyone.
 
 
-<h2>To begin with, Nicolas, the CEO of Luos started off by telling us how he got started in the industry and why</h2>
+<h2>Where did the idea of creating Luos come from?</h2>
 
 When I started working in the industry **15 years ago**, I was working in Paris, in a company called <a href="https://www.aldebaran.com/fr" rel="external nofollow">Aldebaran Robotics</a> which was developing humanoid robots. 
 
-It was around this time that I discovered ways to create extremely **complex products** with a lot of electronic boards on them. I noticed that when you have to change something somewhere on the device, you have to **rethink** absolutely everything from scratch every time. However, I really disliked **always doing the same thing** as an embedded system developer. As consequence, I created an association in Paris with multiple engineers facing the same kind of issues when we were working on a new device. We started to work on technologies that included certain methodologies allowing 
-us to improve usability in the embedded world. 
+It was around this time that I discovered ways to create extremely **complex products** with a lot of electronic boards on them. I noticed that when you have to change something somewhere on the device, you have to **rethink** absolutely everything from scratch every time. However, I really disliked **always doing the same thing** as an embedded system developer. As consequence, I created an association in Paris with multiple engineers facing the same kind of issues when we were working on a new device. We started to work on technologies that included certain methodologies allowing us to improve usability in the embedded world. 
 
-A few years later I was spotted by, <a href="https://www.inria.fr/fr" rel="external nofollow">Inria</a> which is the biggest Research Institute in France regarding software. I worked there for a little bit more than two years on my first open-source project. This project was an open-source humanoid robot which was called <a href="https://www.poppyproject.org/fr/#:~:text=Poppy%20est%20une%20plateforme%20robotique,pour%20apprendre%20et%20%C3%AAtre%20cr%C3%A9atif" rel="external nofollow">poppy projects</a>.
+A few years later I was spotted by <a href="https://www.inria.fr/fr" rel="external nofollow">Inria</a> which is the biggest Research Institute in France regarding software. I worked there for a little bit more than two years on my first open-source project. This project was an open-source humanoid robot which was called <a href="https://www.poppyproject.org/fr/#:~:text=Poppy%20est%20une%20plateforme%20robotique,pour%20apprendre%20et%20%C3%AAtre%20cr%C3%A9atif" rel="external nofollow">poppy project</a>.
 
 > This project was very big with a lot of people from **all over the world** working on it. My role was to create a piece of technology allowing anyone to develop any kind of piece of hardware to make those different pieces of hardware compatible with each other. In retrospect, that was the basis of Luos at this time.
 
@@ -41,23 +40,17 @@ Its goal is to create robots for **big corporations**, with the specialty to be 
 
 Following this, we split the company into two parts and created Luos. **Pollen Robotics** still exists and is a great company. They are developing an **open-source**, real-size robot called **Reachy**. If you are interested in this topic, make sure to visit their <a href="https://www.pollen-robotics.com/" rel="external nofollow">website</a> to find out more. But I’m not alone in this, I founded the company together with Simon and Emanuel. Today we have a complete team of developers working on this technology.
 
-<h2>How much overhead does Luos have? And why should I use Luos in Embedded Development when you want the least overhead possible as resources are limited?</h2>
+<h2>Why should I use Luos in embedded development when you want the least overhead possible as resources are limited?</h2>
 
-> The **main goal of Luos** is to run on extremely complex products with multiple literary boards on them. This describes the real benefit of Luos, because when you have multiple electric boards running, multiple kinds of programs are used which will allow you to synchronize the different programs running on the different boards. 
+> The **main goal of Luos** is to run on extremely complex products with multiple boards on them. This describes the real benefit of Luos, because when you have multiple electric boards running, multiple kinds of programs are used which will allow you to synchronize the different programs running on the different boards. 
 
-When you are working on these kinds of products, you will need to exchange information between your different **nodes**. You should be able to use existing physical support to communicate. You should then proceed to develop something that can receive this information allowing you to work on it.
+When you are working on these kinds of products, you will need to exchange information between your different [nodes](/docs/luos-technology/node). You should be able to use existing physical support to communicate. You should then proceed to develop something that can receive this information allowing you to work on it.
 
 > In short, we develop everything to be extremely **low cost** in terms of memory, for example on the **flash**, or on the **RAM**, and in the **CPU**. 
 
 We spent years to improve the **efficiency** of this code but we know that it is difficult to do the same when you are working on personal projects or even on a professional project because you will have a lot of other things to deal with.
 
-Basically, if you want to work with **Luos** it will be lighter than your own solution. But it depends, of course. If you have a really simple communication studio, Luos will be a lot bigger, but we provide everything allowing you to adjust Luos and to choose the space you need. If you just want to what the minimal requirements are to build a simple product, you will need about **30 kilobytes of flash**, approximately **2 KB**. And after that the resources with rely a lot on how many messages you want to send.
-
-<h2> Have you ever used a flutter framework?</h2>
-
-No, I have never; I'm more of a low-level guy, like small microcontrollers without Android. But it is something that you will be **able to use** if you work with Luos and you want to if interact with **embedded systems**.
-
-Recently we have been working on **native supports** which allow you to compile Luos on a normal computer system and, for example, to complete the **[Get Started](https://www.luos.io/tutorials/get-started)** using only your computer without needing any additional electronical boards. This will be something coming on the **1.7 release**. In consequence, you will be able to try and understand the basic concepts of Luos without using any boards.
+Basically, if you want to work with **Luos** it will be lighter than your own solution. But it depends, of course. If you have a really simple communication to do, Luos will be a lot bigger, but we provide everything allowing you to adjust Luos and to choose the space you need. If you just want to know what the minimal requirements are to build a simple product, you will need about **30 kilobytes of flash** and approximately **2 KB of RAM**. And after that the CPU consumption with rely a lot on how many messages you want to send.
 
 <h2> How do you start with Arduino or Raspberry Pi </h2>
 
@@ -67,64 +60,66 @@ After this, you will execute your code without having any threading or advanced 
 
 <h3>What can you tell us concerning Arduino and Raspberry Pi in terms of industrialization?</h3>
 
-If you want to **industrialize** something, both of the solutions are difficult. You will need to acquire a specific border to work with both, which is not interesting when you go through the process of industrialization.
+If you want to **industrialize** something, both of the solutions are difficult. You will need to acquire a specific board to work with both, which is not interesting when you go through the process of industrialization.
 Recently Raspberry Pi released specific <a href="https://www.raspberrypi.com/products/raspberry-pi-pico/" rel="external nofollow">microcontrollers</a> for this which can work on a lot of industrial cases. There are a lot of **limitations** when you are using audio especially if you don't have access to the resources available on your microcontroller, which is limiting. I advise you not to use Arduino because it comes with multiple limitations, especially in terms of access to resources on your microcontroller.
 
 <h2>If you had the chance to learn embedded systems again, how and what would you do to increase your skills?</h2>
 
-**Let’s go back to my experience**, when I started studying embedded systems there was no Arduino so the start was a lot more complex. Today it is extremely easy to start learning embedded systems as there are tons of cheap Arduino boards and a vast number of tutorials online
+**Let’s go back to my experience**, when I started studying embedded systems there was no Arduino so the start was a lot more complex. Today it is extremely easy to start learning embedded systems as there are tons of cheap boards (like Arduino) and a vast number of tutorials online.
 
 But that’s not everything, in my opinion in order to become a good embedded system engineer, you should constantly work on **personal projects** involving embedded systems like robots. You could also create an association with other students. That’s exactly what I did and it taught me **everything** that I know today.
 
 <h3> What boards does Luos work with? </h3>
 
 In theory, you can make Luos work with **any kind of board**, but we have some boards that are already available on which you don't have to write one line of code to make it work. We have a whole page dedicated to this in our **[documentation](https://www.luos.io/docs/compatibility/mcu_demoboard)**.
-Basically, you can make Luos work on your board by creating **your own hardware abstraction**; this indicates Luos how to access the physical peripherals of your **microcontrollers** to, for example, send messages, received messages, or detect user nodes. If you however don’t want to create your own HAL Hardware abstraction, you can also use the one we already provide which covers Arduino and most of the **STM32** and **ESP32**.
+Basically, you can make Luos work on your board by creating **your own hardware abstraction**; this indicates Luos how to access the physical peripherals of your **microcontrollers** to, for example, send messages, received messages, or detect user nodes. If you however don’t want to create your own HAL, you can also use the one we already provide which covers Arduino and most of the **STM32** and **ESP32**.
 
-<h2> What are the plan for Luos in the future </h2>
+<h2> What are the plan for Luos in the future? </h2>
 
 We have recently been working on a **[roadmap](https://www.luos.io/roadmap)** allowing people that are using Luos to understand what we are going to do in the future.
 
-So Iet’s talk about the **different features** we plan to release. Right now we are working on the **1.7 release** which will have some improvements in the speed of the 
-uploading of the bootloader. Perhaps you’ve already seen the <a href="https://www.linkedin.com/feed/update/urn:li:activity:6981279138040946688" rel="external nofollow">video of Victoria</a>, she worked on a feature that multiplies the speed of the bootloader which allows 
-you to update on the advice very fast.
+I will talk about the **different features** we plan to release. Right now, we are working on the **1.7 release** which will have some improvements in the speed of the uploading of the bootloader. 
+Perhaps you’ve already seen the <a href="https://www.linkedin.com/feed/update/urn:li:activity:6981279138040946688" rel="external nofollow">video of Viktoria</a>, she worked on a feature that multiplies the speed of the bootloader which allows you to update on the device very fast.
 
-Apart from that, we are working on **native support**, which gives you the possibility to compile Luos on your **computer** and test lines of code natively on your 
-computer without needing to plug in any additional boards.
+Apart from that, we are working on **native support**, which gives you the possibility to compile Luos on your **computer** and test lines of code natively on your computer without needing to plug in any additional boards.
 
-But let me talk to you about certain technologies that we are working on in the future. We’ve recently started to plan to work on **Luos engine V3**. The main goal is to simplify the addition of a specific network. Right now luos mostly supports a network called Robus, which is a communication protocol specifically designed for luos. In the future however we want to be able to comply with any kind of industrial network.
+But let me talk to you about certain technologies that we are working on in the future. We’ve recently started to plan to work on **Luos engine V3**. 
 
-We will also work on something called **Multi-phy**. This feature is extremely interesting because it completely breaks the fraction between the **embedded world** on the normal **software computer development**. The multiple-phy is like a switch allowing luos to route information on multiple physical transportation leaders. This will allow you to have one board that supports **WiFi** and another one that only supports CAM while luos communicates between the boards, allowing you to access the services on the application anywhere on the complete product, even if you have **multiple networks**.
+The main goal is to simplify the addition of a specific network. Right now, Luos mostly supports a network called [Robus](/docs/luos-technology/node/luos-hal#robus-hal), which is a communication protocol specifically designed for Luos. In the future however we want to be able to comply with any kind of industrial network.
 
-We also plan to enable luos compilation using web assembly. This will allow to the creation of  Luos pieces of code on services running directly into any kind of web browser, this is extremely useful when you are working on cloud applications. You will be able to provide a service that will be natively compatible with an electronic device without having to install anything on the computer side.
+We will also work on something called **Multi-phy**. 
 
-> We are also starting to work on **SAAS tools** to increase the speed of the development using Luos. There is already a proof of concept available on our website if you are interested; part four of the tutorial get started uses this tool. Those tools will provide a registry that will allow you to store luos and share them with the other users of this technology.
+This feature is extremely interesting because it completely breaks the fraction between the **embedded world** and the normal **software computer development**. The multiple-phy is like a switch allowing Luos to route information on multiple physical transportation layers. This will allow you to have one board that supports **WiFi** and another one that only supports CAN. This Wifi interface will be shared with all the other one. Luos will be able to route information from CAN to Wifi, allowing you to access the services on the application anywhere on the complete product, even if you have **multiple networks** between these software.
 
-**Inspector** is a tool to see what’s happening inside a product; it's like a debug interface allowing you to log any events anywhere on your complete product at the second scale, and it allows you to just understand what's happening on the product.
+We also plan to enable Luos compilation using web assembly. This will allow the creation of  Luos pieces of code on services running directly into any kind of web browser, this is extremely useful when you are working on cloud applications. You will be able to provide a service that will be natively compatible with an electronic device without having to install anything on the computer side.
 
-The last one is called Luos manager which is dedicated to companies that are working on developing hardware products. This will give them a way to deal with the developments; for example, track the bugs during the development in the postproduction of the product.
+> We are also starting to work on **SAAS tools** to increase the speed of the development using Luos. There is already a proof of concept available on our website if you are interested; part four of the tutorial get started uses this tool. Those tools will provide a registry that will allow you to store the services you develop with Luos and share them with the other users of this technology.
+
+**Inspector** is a tool to see what’s happening inside a product; it's like a debug interface allowing you to log any events anywhere on your complete product at a nano second scale, and it allows you to just understand what's happening on the product.
+
+The last one is called Luos manager which is dedicated to companies that are working on developing hardware products. This will give them a way to deal with the developments; for example, track the bugs during the development and the postproduction of the product.
 
 <h2>  What options do we have for integrating security on SoC? </h2>
 
-There are a lot of different **solutions** to integrate security on **SoC**, but we will probably not implement this with Luos because the security regarding the use mostly depends on the network you will use on your device. For example, if you are using a **Wi-Fi network interface**, you will have specific security to develop or install to have secure communications between your different pieces of software on luos. This means that depending on the physical support we have different kinds of securities. 
+There are a lot of different **solutions** to integrate security on **SoC**, but we will probably not implement this with Luos because the security regarding Luos mostly depends on the network you will use on your device. For example, if you are using a **Wi-Fi network interface**, you will have specific security to develop or install to have secure communications between your different pieces of software on Luos. This means that depending on the physical support we have different kinds of securities. The idea of this Luos certification is to provide some high level rules allowing you to filter specific messages.
 
 Right now, we don't work on any kind of **SoC security**, but perhaps this is something that could be put into place when Luos is used by the **entire world**.
 
 <h2> If I want to contribute to Luos, how can I do that? </h2>
 
-We have a whole page dedicated to this, if you go to GitHub you can contribute directly to Luos. We work with flags, so there are certain flags dedicated to a call for contributions.
+We have a whole page dedicated to this, if you go to GitHub you can <a href="https://github.com/Luos-io/LuosHAL/blob/master/CONTRIBUTING.md" rel="external nofollow">contribute directly to Luos</a>. We work with flags, so there are certain flags dedicated to a call for contributions.
 
-We also have flags for **easy-to-do contributions** and some more advanced contributions for advanced developers, you can directly have <a href="https://github.com/Luos-io/LuosHAL/blob/master/CONTRIBUTING.md" rel="external nofollow">a look</a> at them. 
+We also have flags for **easy-to-do contributions** and some more advanced contributions for advanced developers, you can directly have a look at them. 
 
-We also have a page on our blog that explains the process more in detail **[blog](https://www.luos.io/docs/contribute-to-luos)**. If you have any questions about it, or any idea about how to contribute to yours, feel free to join us on discord and directly ask us on the server.
+We also have a page on our documentation that explains the process more in detail. **[Contribute to Luos](https://www.luos.io/docs/contribute-to-luos)**. If you have any questions about it, or any idea about how to contribute to Luos, feel free to join us on discord and directly ask us on the server.
 
-We have come to the end of this Q&A and I want to thank everyone for **participating** . We have recently had a **big growth** on our <a href="https://discord.gg/luos" rel="external nofollow">Discord server</a> which we are really proud of, so **thanks to all of you**.
+We have recently had a **big growth** on our <a href="https://discord.gg/luos" rel="external nofollow">Discord server</a> which we are really proud of, so **thanks to all of you**.
 
 <hr />
 
 That is all for this Q&A session!
 
-We will continue to write this kind of transcription to propose all the answers you need to start using Luos. Follow us on <a href="https://www.linkedin.com/company/luos" rel="external nofollow">social media</a> to subscribe to the upcoming Q&A session.
+We will continue to write this kind of transcription to propose all the answers you need to start using Luos. Follow us on <a href="https://www.linkedin.com/company/luos" rel="external nofollow">Linkedin</a> or Discord to subscribe to the upcoming Q&A session.
 
 If you would like to see or review the Q&A video, here is the recording:
 
