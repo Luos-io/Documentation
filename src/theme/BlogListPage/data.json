@@ -1,6 +1,16 @@
 {
   "articles": [
     {
+      "title": "Should I use Luos in embedded development? Q&A live",
+      "desc": "We answer some important questions about Luos, Embedded, Arduino, Raspberry Pi, boards compatible with luos and our plans for the future",
+      "img": "/assets/images/blog/Q-A-live-session-october-2022-luos.jpg",
+      "date": "2022-10-11T12:00",
+      "tags": ["Q&A", "embedded", "edge"],
+      "author": "Nicolas Rabault",
+      "author_img": "https://github.com/nicolas-rabault.png",
+      "link": "/blog/should-I-use-Luos-in-embedded-development-q-and-a"
+    },
+    {
       "title": "Create an amateur space rocket using Luos by Alexgorl#3053",
       "desc": "Another Luos use case, Alexis Gorlier created an amateur space rocket using the Luos engine with his space association. Let's discover his proof of concept.",
       "img": "/assets/images/blog/New-project-completed-with-luos-create-an-amateur-space-rocket.jpg",
