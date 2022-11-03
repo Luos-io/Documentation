@@ -53,6 +53,7 @@ If you already have Pyluos installed on your computer, please make sure it is up
 
 <Tabs>
   <TabItem value="Board" label="Board">
+
 Pyluos provides a set of application programming interfaces (APIs). To control your device, connect the same board you flashed in Part 1 and run the following command in the terminal:
 
 ```
@@ -93,13 +94,13 @@ Your luos device have been successfully mounted into a "device" object:
 </TabItem>
 <TabItem value="No board" label="No board">
 
-Pyluos provides a set of application programming interfaces (APIs). Keep running in a terminal the program.exe and in a new tab or in another terminal start Pyluos with the following command:
+Pyluos provides a set of application programming interfaces (APIs). Keep *program.exe* running in a terminal, and in a new tab or in another terminal start Pyluos with the following command:
 
 ```
 `pyluos-shell -p 'localhost'`
 ```
 
-This command will find through a web socket, your device and mount it into a “device” object.
+This command will find your device through a web socket, and mount it into a "device" object.
 
 For example:
 
@@ -125,7 +126,8 @@ Your luos device has been successfully mounted into a "device" object:
 ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
-you will see Pyluos coonected through the web socket on the terminal where you run you program.exe
+You will see Pyluos connected through the web socket on the terminal where you ran *program.exe*.
+
 <div align="center">
   <Image
     src="/assets/images/tutorials/get-started/no_board_2.png"
