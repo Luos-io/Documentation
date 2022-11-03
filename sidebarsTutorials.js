@@ -16,11 +16,11 @@ module.exports = {
               label: 'Get started',
               link: { type: 'doc', id: 'get-started/get-started' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Your first project',
-                  id: 'get-started/get-started',
-                },
+                // {
+                //   type: 'doc',
+                //   label: 'Your first project',
+                //   id: 'get-started/get-started',
+                // },
                 {
                   type: 'doc',
                   label: 'Take the control',
@@ -43,11 +43,11 @@ module.exports = {
               label: 'First service',
               link: { type: 'doc', id: 'your-first-service/your-first-service' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Create a service',
-                  id: 'your-first-service/your-first-service',
-                },
+                // {
+                //   type: 'doc',
+                //   label: 'Create a service',
+                //   id: 'your-first-service/your-first-service',
+                // },
                 {
                   type: 'doc',
                   label: 'Create a package',
@@ -60,11 +60,11 @@ module.exports = {
               label: 'First message',
               link: { type: 'doc', id: 'your-first-message/your-first-message' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Receive a message',
-                  id: 'your-first-message/your-first-message',
-                },
+                // {
+                //   type: 'doc',
+                //   label: 'Receive a message',
+                //   id: 'your-first-message/your-first-message',
+                // },
                 {
                   type: 'doc',
                   label: 'Send a message',
@@ -77,11 +77,11 @@ module.exports = {
               label: 'First detection',
               link: { type: 'doc', id: 'your-first-detection/your-first-detection' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'The topology',
-                  id: 'your-first-detection/your-first-detection',
-                },
+                // {
+                //   type: 'doc',
+                //   label: 'The topology',
+                //   id: 'your-first-detection/your-first-detection',
+                // },
                 {
                   type: 'doc',
                   label: 'The routing table',
@@ -117,11 +117,11 @@ module.exports = {
               label: 'PlatformIO',
               link: { type: 'doc', id: 'pio/pio' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Create your project',
-                  id: 'pio/pio',
-                },
+                // {
+                //   type: 'doc',
+                //   label: 'Create your project',
+                //   id: 'pio/pio',
+                // },
                 {
                   type: 'doc',
                   label: 'Include Luos',
@@ -139,11 +139,11 @@ module.exports = {
               label: 'Espressif IDE',
               link: { type: 'doc', id: 'esp/esp' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Set the environnement',
-                  id: 'esp/esp',
-                },
+                // {
+                //   type: 'doc',
+                //   label: 'Set the environnement',
+                //   id: 'esp/esp',
+                // },
                 {
                   type: 'doc',
                   label: 'Connect ESP to network',
@@ -164,11 +164,11 @@ module.exports = {
                 id: 'luos-integration/install-ros2',
               },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Install ROS 2',
-                  id: 'luos-integration/install-ros2',
-                },
+                // {
+                //   type: 'doc',
+                //   label: 'Install ROS 2',
+                //   id: 'luos-integration/install-ros2',
+                // },
                 {
                   type: 'doc',
                   label: 'ROS 2 package example',
@@ -194,11 +194,11 @@ module.exports = {
               label: 'Morse encoder',
               link: { type: 'doc', id: 'morse/morse' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'The algorithm',
-                  id: 'morse/morse',
-                },
+                // {
+                //   type: 'doc',
+                //   label: 'The algorithm',
+                //   id: 'morse/morse',
+                // },
                 {
                   type: 'doc',
                   label: 'Display encoder output',
@@ -216,11 +216,11 @@ module.exports = {
               label: 'Connected bike alarm',
               link: { type: 'doc', id: 'bike-alarm/bike-alarm' },
               items: [
-                {
-                  type: 'doc',
-                  label: 'Make a basic alarm',
-                  id: 'bike-alarm/bike-alarm',
-                },
+                // {
+                //   type: 'doc',
+                //   label: 'Make a basic alarm',
+                //   id: 'bike-alarm/bike-alarm',
+                // },
                 {
                   type: 'doc',
                   label: 'Make this alarm modular',
