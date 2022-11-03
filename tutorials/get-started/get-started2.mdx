@@ -49,6 +49,8 @@ If you already have Pyluos installed on your computer, please make sure it is up
 
 ## 3. Connecting and controlling your device
 
+<Tabs>
+  <TabItem value="Board" label="Board">
 Pyluos provides a set of application programming interfaces (APIs). To control your device, connect the same board you flashed in Part 1 and run the following command in the terminal:
 
 ```
@@ -56,17 +58,6 @@ pyluos-shell
 ```
 
 This command will find the serial port of your device and mount it into a “device” object.
-
-:::caution
-When using No board, Use the command `pyluos-shell -p 'localhost'` to set it.
-
-<div align="center">
-  <Image
-    src="/assets/images/tutorials/get-started/no_board_2.png"
-    darkSrc="/assets/images/tutorials/get-started/no_board_2.png"
-  />
-</div>
-:::
 
 :::caution
 When using ESP32-DevKit, the USB serial's baudrate must be 115200 by default. Use the command `pyluos-shell --baudrate 115200` to set it.
@@ -96,6 +87,53 @@ Your luos device have been successfully mounted into a "device" object:
   ┃  ╰> Unknown             blinker             4    ┃
 ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
+
+</TabItem>
+<TabItem value="No board" label="No board">
+
+Pyluos provides a set of application programming interfaces (APIs). Keep running in a terminal the program.exe and in a new tab or in another terminal start Pyluos with the following command:
+
+```
+`pyluos-shell -p 'localhost'`
+```
+
+This command will find through a web socket, your device and mount it into a “device” object.
+
+For example:
+
+```bash
+**$ pyluos-shell -p 'localhost'**
+
+Connected to "localhost".
+Sending detection signal.
+Waiting for routing table...
+Sending telemetry...
+Device setup.
+
+ Hit Ctrl-D to exit this interpreter.
+
+Your luos device has been successfully mounted into a "device" object:
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> State               led                 2    ┃
+  ┃  ├> Pipe                Pipe                3    ┃
+  ┃  ├> Gate                gate                1    ┃
+  ┃  ╰> Unknown             blinker             4    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+you will see Pyluos coonected through the web socket on the terminal where you run you program.exe
+<div align="center">
+  <Image
+    src="/assets/images/tutorials/get-started/no_board_2.png"
+    darkSrc="/assets/images/tutorials/get-started/no_board_2.png"
+  />
+</div>
+
+  </TabItem>
+</Tabs>
+
 
 :::caution
 In some cases, you may encounter an error message at this point. Most of the time, this is related to IPython. Installation or performing a new installation solves the problem. Type the command `pip install ipython` in the terminal.

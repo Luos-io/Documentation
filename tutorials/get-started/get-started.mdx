@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
   time="1 hour"
   level="Beginner"
   category="Trainings"
-  desc="In this Get started tutorial, you will make a LED blink (the embedded hello world 😉) and discover all the different possibilities you have to control it. At the end, you will have a complete working environment and a network of boards interacting together."
+  desc="In this Get started tutorial, you will make a LED blink (the embedded hello world 😉) and discover all the different possibilities you have to control it. At the end, you will have a complete working environment and a network of boards interacting together. If you don't have a board from the list of compatible hardware, you can still perform this get started directly on your computer to discover Luos technology! Pay attention to tabs at each step of the Get started that give you the specific information for board user and No board user!"
   tags={['Board', 'MCU', 'Service', 'Network', 'Distributed system']}
 />
 
@@ -163,7 +163,8 @@ Congratulations, your first Luos app is running!
 
 </TabItem>
 <TabItem value="No board" label="No board">
-  Run the application that you just build by going in the folder Get_started\No-Board\.pio\build\native and lunch program.exe
+  When you build your application, an executable program is generate! Run the application that you just build by going in the folder Get_started\No-Board\.pio\build\native and lunch program.exe
+  In a terminal you should see the program runing an the "LED" blinking
 
   <div align="center">
     <Image
@@ -174,10 +175,6 @@ Congratulations, your first Luos app is running!
   <br />
   </TabItem>
 </Tabs>
-
-:::caution
-If you perform the Get started with No-board run the program
-:::
 
 ## 6. Explanation: What has been going on?
 
