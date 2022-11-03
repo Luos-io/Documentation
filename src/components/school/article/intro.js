@@ -47,26 +47,6 @@ export const Introduction = (props) => {
             <Chip key={index} label={element} className={styles.chipCustom} size="small" />
           ))}
         </Stack>
-
-        <Grid container spacing={5}>
-          <Grid item md={6} xs={12}>
-            <Requirement title="Prerequisites" list={props.requierements} color="#f5f5f5" />
-          </Grid>
-          <Grid item md={6} xs={12}>
-            <Requirement
-              title="Supported hardware"
-              list={props.ressources}
-              shortList={!!props.shortList}
-              shortListSize={props.shortListSize}
-              color="#f5f5f5"
-            />
-          </Grid>
-        </Grid>
-        <Grid container mt={3}>
-          <Grid item xs={12}>
-            <Requirement title="Let's begin!" color="#FFFFFF" list={props.summary} />
-          </Grid>
-        </Grid>
       </Paper>
     </div>
   );

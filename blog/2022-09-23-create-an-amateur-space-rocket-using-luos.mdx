@@ -12,12 +12,12 @@ image: /assets/images/blog/New-project-completed-with-luos-create-an-amateur-spa
 hide_table_of_contents: false
 date: 2022-09-23T12:00
 ---
-import Image from '@site/src/components/Image';
 
+import Image from '@site/src/components/Image';
 
 ![Create an amateur space rocket using Luos by Alexgorl#3053](/assets/images/blog/New-project-completed-with-luos-create-an-amateur-space-rocket.jpg)
 
-First, let me introduce myself. 
+First, let me introduce myself.
 My name is Alexis Gorlier; I am a student in aerospace engineering at ESTACA (a French school specializing in mobilities). I'm very invested in an association named ESO (Estaca Space Odyssey), which is part of my school and allows students to work on real space projects.
 This article will present a project I am working on in my association, and show the issues linked to this project.
 
@@ -31,7 +31,7 @@ In our projects, the electronic system embedded into the rocket has two objectiv
 
 During our project, we will simulate the values that would be obtained during the launch and flight of the rocket to predict its behavior.
 
-Of course this project has for constraint that the construction and the takeoff of the rocket are successful on the D-day. 
+Of course this project has for constraint that the construction and the takeoff of the rocket are successful on the D-day.
 Without launch, no data. No data, no parachutes. No parachutes, no rocket. No rocket, no rocket.
 
 Retrieving and storing data permit us to have inputs to study after the flight, see how our parameters evolved, and use this information to improve our next projects.
@@ -42,13 +42,13 @@ These two objectives are very important as they will let us understand what happ
 
 To do so, we can either have a backup system, use more components than necessary (for example have three barometers instead of one), or even have both, which is the safest way. We call this redundancy.
 
-Another issue of this project is our system's **reusability and agility**. Indeed, I noticed that a lot of our association projects which have been done a few years before were not documented enough or not reusable in other similar projects. 
+Another issue of this project is our system's **reusability and agility**. Indeed, I noticed that a lot of our association projects which have been done a few years before were not documented enough or not reusable in other similar projects.
 
 As our association is changing its objectives and wants to work on more ambitious projects, we need to transmit our knowledge yearly, from the past teams to the new ones, to reduce the time necessary for each project.
 
 Eventually, we will use this time on discovering and testing new technologies that could be interesting to experiment with.
 
-Finally, the last issue we have for the electronic system development is the lack of knowledge from our members in this area. Indeed, our scholar formation is more oriented toward the mechanical field. We are only learning the basics of electronics. 
+Finally, the last issue we have for the electronic system development is the lack of knowledge from our members in this area. Indeed, our scholar formation is more oriented toward the mechanical field. We are only learning the basics of electronics.
 
 Therefore, it is better to find a system that is not too complex to realize to be sure we will not lose too much time on it.
 
@@ -140,6 +140,7 @@ I divided my network into three Luos services:
 <h4>Barometer Service:</h4>
 
 **SPI driver:**
+
 - The SPI driver is the most complex part of this system. I won't describe precisely how it works because it would take too long and is not the most interesting part. To put it simply, an SPI driver allows the communication between an initiator and several followers.
 
 - The SPI protocol uses four wires: CLK (Clock), MOSI, MISO, and CS (Chip Select).
@@ -153,6 +154,7 @@ I divided my network into three Luos services:
 - The CS is the line that permits you to select the follower you want to talk to (one line per follower, initiated to 1 and lowered to 0 to select the follower).
 
 **BMP 280:**
+
 - BMP 280 is the reference of the barometer I use in my system. To retrieve pressure, I need to send the good bytes at the right timing and read and store the response.
 
 - The first thing I do is to send initialization bytes. To do so, I first send the address of the register I want to write in, and then I send the bytes containing information such as the precision wanted, the time between two measures, etc.
@@ -163,12 +165,13 @@ I divided my network into three Luos services:
 
 <h4>Solenoid Service:</h4>
 
-This service is very simple. From an electronic point of view, a solenoid is an interrupter. 
+This service is very simple. From an electronic point of view, a solenoid is an interrupter.
 It only needs to be turned on or off. This service permits to activate or deactivate the solenoid when it receives a state message with the information `TRUE` (activate) or `FALSE` (deactivate).
 
 <h4>Application Service:</h4>
 
 **Purpose:**
+
 - This application is a bridge between the barometer service and the solenoid service. It needs to be able to send and receive messages to/from these two services.
 
 - The difference here is that this service does not reply to a message, so it needs to identify the other services first.
@@ -176,11 +179,13 @@ It only needs to be turned on or off. This service permits to activate or deacti
   - Therefore, this service does a [Luos Detection](/tutorials/your-first-detection). This functionality allows us to have a map of the system and know what and where the other services are. Then, it stores the ID of these services in variables to be able to communicate with them at any moment.
 
 **Communication with the barometer:**
+
 - The application service sends an auto-update message to the barometer service at the beginning of the program. This permits receiving a message from the barometer every 100 ms (I need this delay in my system, but it can be changed).
 
 - Then when it receives a message from the barometer service, it will use the pressure received to determine the altitude and will then use this altitude to determine if the rocket has reached the apogee.
 
 **Communication with the solenoid:**
+
 - When the application service detects the apogee, it sends a message to the solenoid with the information `TRUE` to activate it.
 
 <h3>Validation of the POC</h3>

@@ -5,6 +5,7 @@ custom_edit_url: null
 import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Author from '@site/src/components/school/author/author.js';
 
 # Part 2: Connect ESP32 to the network
 
@@ -38,7 +39,7 @@ void app_main(void)
 The Luos service used here is the button service from the example.
 
 :::tip
-If you want to create a new service, you can learn how to do it in the par one of the tutorial [Your first service](/tutorials/your-first-service/luos-service).
+If you want to create a new service, you can learn how to do it in the par one of the tutorial [Your first service](/tutorials/your-first-service).
 :::
 
 To implement Luos on a node and be connected to a Luos network, you need the following file and functions:
@@ -157,3 +158,5 @@ Your luos device have been successfully mounted into a "device" object:
 ```
 
 Your ESP board is now fully connected to the Luos network, and is detected in pyluos-shell as the node 2 containing a button in this example. Congratulations!
+
+<Author name="thomas" />

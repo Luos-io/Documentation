@@ -1,11 +1,23 @@
 ---
 custom_edit_url: null
+title: 'How to use Luos engine with FreeRTOS'
+hide_title: true
 image: /assets/images/Luos-and-FreeRTOS-banner.png
 ---
 
 import Image from '@site/src/components/Image';
 
-# RTOS with Luos engine
+import Introduction from '@site/src/components/school/article/intro.js';
+import Author from '@site/src/components/school/author/author.js';
+
+<Introduction
+  title="How to use Luos engine with FreeRTOS"
+  time="30 minutes"
+  level="Confirmed"
+  category="Tutorial"
+  desc="If you are used to develop your embedded system with RTOS, you can leverage Luos engine's features without changing the way you design your system. Indeed, Luos engine fits perfectly well with RTOS and this tutorial aims to help you set up your project and understand the benefits it brings."
+  tags={['RTOS', 'Distributed System']}
+/>
 
 :::info
 This tutorial uses FreeRTOS, but the main concepts can be used for any other RTOS. The configuration options may vary depending on the RTOS API you are using.
@@ -219,3 +231,5 @@ Luos engine brought you APIs to develop distributed applications with ease:
 - manage and monitor your network with our SaaS tools
 
 From a developer using Luos engine point of view, FreeRTOS can help to manage services scheduling to comply with hard real-time constraints.
+
+<Author name="nicoC" />

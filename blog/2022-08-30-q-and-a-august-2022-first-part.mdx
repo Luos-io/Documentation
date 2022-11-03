@@ -100,8 +100,8 @@ Our testing platform downloads the branch and runs several tests on complex conf
 Testing this technology is extremely challenging because we are working on **modularity**. Modularity means infinite possibilities in terms of several board configurations. So it is difficult for us to check any possible usage of this technology, but we are working on it.
 
 <h2>
-  About industrial applications: does Luos have a CAN bus driver? Is Luos working with Zephyr, NuttX,
-  and FreeRTOS? Is Luos only giving a wrapper?
+  About industrial applications: does Luos have a CAN bus driver? Is Luos working with Zephyr,
+  NuttX, and FreeRTOS? Is Luos only giving a wrapper?
 </h2>
 
 Our work is not to develop drivers, it is not what we are doing, and it is not our job because we are not good at it.
@@ -112,7 +112,7 @@ So you will have to, most of the time, re-develop your driver when you have to i
 
 Luos also allows you to make a clean and good separation between drivers and applications on your complete system.
 
-You can have motor drivers on a board, it just has to run on a really small board without any real-time operating system, and have another board running some complex algorithm using that kind of motor running on RTOS, such as NuttX or [FreeRTOS](/tutorials/freertos/intro).
+You can have motor drivers on a board, it just has to run on a really small board without any real-time operating system, and have another board running some complex algorithm using that kind of motor running on RTOS, such as NuttX or [FreeRTOS](/tutorials/freertos).
 
 The application can directly access the motor driver running somewhere else, which is extremely powerful because you have a good separation between **applications** and **drivers**.
 
@@ -138,7 +138,7 @@ Embedded system developers didn't use to care about a project's API. But we thin
 
 Historically, Luos was thought to work for bare metal applications only. That is why we don't have a lot of usages, use cases, and examples using a real-time operating system.
 
-We did an experiment using [FreeRTOS](/tutorials/freertos/intro) just a few months ago: it that was easy for us to adapt it to work with FreeRTOS.
+We did an experiment using [FreeRTOS](/tutorials/freertos) just a few months ago: it that was easy for us to adapt it to work with FreeRTOS.
 
 Luos is now ready to multithread. Although this is something new to us, we plan to develop a lot of support for different kinds of real-time operating systems in the future, so NuttX is on top of the list right now, thanks to Alan (Alan C. Assis 3983 in the Luos Discord). We will work on this kind of subject during the coming months.
 

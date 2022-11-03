@@ -1,10 +1,22 @@
 ---
 custom_edit_url: null
+title: How to have flexible and resilient aliases
+hide_title: true
 ---
 
 import Image from '@site/src/components/Image';
 
-# Resilient aliases management
+import Introduction from '@site/src/components/school/article/intro.js';
+import Author from '@site/src/components/school/author/author.js';
+
+<Introduction
+  title="How to have flexible and resilient aliases"
+  time="30 minutes"
+  level="Confirmed"
+  category="Tutorial"
+  desc="Luos provides a flexible way to deal with aliases. In this tutorial, we discover how to configure aliases and how to make the configuration resilient to boot and flash."
+  tags={['Alias', 'Distributed System', 'Flash', 'ROM', 'EEPROM']}
+/>
 
 Luos allows you to deal with service aliases. Aliases are much more practical than ids and allow developers to naturally find and access a specific service somewhere in the network.
 
@@ -223,3 +235,5 @@ If you have multiple packages on a node and if you want to be able to save your 
 :::info
 You can find an example of resilient aliases management on our [NUCLEO-F401RE led driver](https://github.com/Luos-io/luos_engine/tree/main/examples/projects/NUCLEO-F401RE/led/lib).
 :::
+
+<Author name="nicoR" />

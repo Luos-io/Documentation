@@ -19,7 +19,7 @@ module.exports = {
                 {
                   type: 'doc',
                   label: 'Your first project',
-                  id: 'get-started/get-started1',
+                  id: 'get-started/get-started',
                 },
                 {
                   type: 'doc',
@@ -46,7 +46,7 @@ module.exports = {
                 {
                   type: 'doc',
                   label: 'Create a service',
-                  id: 'your-first-service/luos-service',
+                  id: 'your-first-service/your-first-service',
                 },
                 {
                   type: 'doc',
@@ -63,7 +63,7 @@ module.exports = {
                 {
                   type: 'doc',
                   label: 'Receive a message',
-                  id: 'your-first-message/receiving-message',
+                  id: 'your-first-message/your-first-message',
                 },
                 {
                   type: 'doc',
@@ -80,7 +80,7 @@ module.exports = {
                 {
                   type: 'doc',
                   label: 'The topology',
-                  id: 'your-first-detection/topology',
+                  id: 'your-first-detection/your-first-detection',
                 },
                 {
                   type: 'doc',
@@ -95,28 +95,14 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
-              label: 'Aliases',
-              link: { type: 'doc', id: 'resilient-alias/intro' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Resilient aliases management',
-                  id: 'resilient-alias/resilient-alias',
-                },
-              ],
+              type: 'doc',
+              label: 'How to have flexible and resilient aliases',
+              id: 'resilient-alias/resilient-alias',
             },
             {
-              type: 'category',
+              type: 'doc',
               label: 'Bootloader',
-              link: { type: 'doc', id: 'bootloader/intro' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Set and use a bootloader',
-                  id: 'bootloader/bootloader',
-                },
-              ],
+              id: 'bootloader/bootloader',
             },
           ],
         },
@@ -134,7 +120,7 @@ module.exports = {
                 {
                   type: 'doc',
                   label: 'Create your project',
-                  id: 'pio/creation',
+                  id: 'pio/pio',
                 },
                 {
                   type: 'doc',
@@ -144,16 +130,9 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
+              type: 'doc',
               label: 'Arduino IDE',
-              link: { type: 'doc', id: 'arduino/intro' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Luos with Arduino IDE',
-                  id: 'arduino/arduino',
-                },
-              ],
+              id: 'arduino/arduino',
             },
             {
               type: 'category',
@@ -163,33 +142,26 @@ module.exports = {
                 {
                   type: 'doc',
                   label: 'Set the environnement',
-                  id: 'esp/env',
+                  id: 'esp/esp',
                 },
                 {
                   type: 'doc',
-                  label: 'Conect ESP to network',
+                  label: 'Connect ESP to network',
                   id: 'esp/connect',
                 },
               ],
             },
             {
-              type: 'category',
-              label: 'RTOS',
-              link: { type: 'doc', id: 'freertos/intro' },
-              items: [
-                {
-                  type: 'doc',
-                  label: 'RTOS with Luos engine',
-                  id: 'freertos/freertos',
-                },
-              ],
+              type: 'doc',
+              label: 'RTOS with Luos engine',
+              id: 'freertos/freertos',
             },
             {
               type: 'category',
               label: 'ROS 1&2',
               link: {
                 type: 'doc',
-                id: 'luos-integration/ros-1-and-2',
+                id: 'luos-integration/install-ros2',
               },
               items: [
                 {
@@ -225,7 +197,7 @@ module.exports = {
                 {
                   type: 'doc',
                   label: 'The algorithm',
-                  id: 'morse/algorithm',
+                  id: 'morse/morse',
                 },
                 {
                   type: 'doc',
@@ -247,7 +219,7 @@ module.exports = {
                 {
                   type: 'doc',
                   label: 'Make a basic alarm',
-                  id: 'bike-alarm/basic-alarm',
+                  id: 'bike-alarm/bike-alarm',
                 },
                 {
                   type: 'doc',

@@ -1,7 +1,8 @@
 .introContainer {
-  width: 100%;
+  min-width: 510px;
   padding: 20px;
   margin-top: 70px;
+  margin-bottom: 30px;
 }
 
 html[data-theme='dark'] .introContainer {
@@ -30,7 +31,7 @@ html[data-theme='dark'] .listItem span {
 }
 
 .navigation {
-  padding-top: 25px;
+  padding-top: 10px;
   font-family: 'Roboto Mono', sans-serif;
 }
 @media screen and (min-width: 900px) {
@@ -68,6 +69,14 @@ html[data-theme='dark'] .listItem span {
   font-size: 21px;
   vertical-align: top;
   padding: 0px 7px;
+}
+
+html[data-theme='dark'] .navigation .categoryIcons {
+  filter: invert(1);
+}
+
+html[data-theme='dark'] .navigation .materialIcons {
+  filter: invert(1);
 }
 
 .subtitle {

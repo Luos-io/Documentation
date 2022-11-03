@@ -134,7 +134,7 @@
     },
     {
       "source": "/docs/tools/freertos(.*)",
-      "destination": "/tutorials/freertos/intro",
+      "destination": "/tutorials/freertos",
       "statusCode": 301
     },
     {
@@ -394,6 +394,46 @@
     {
       "source": "/tutorials/luos-and-tools/arduino",
       "destination": "/tutorials/arduino/intro",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/get-started/get-started1",
+      "destination": "/tutorials/get-started",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/your-first-service/luos-service",
+      "destination": "/tutorials/your-first-service",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/your-first-message/receiving-message",
+      "destination": "/tutorials/your-first-message",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/your-first-detection/topology",
+      "destination": "/tutorials/your-first-detection",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/pio/creation",
+      "destination": "/tutorials/pio",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/esp/env",
+      "destination": "/tutorials/esp",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/bike-alarm/basic-alarm",
+      "destination": "/tutorials/bike-alarm",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/morse/algorithm",
+      "destination": "/tutorials/morse",
       "statusCode": 301
     }
   ]

@@ -1,15 +1,16 @@
 ---
-hide_title: true
-hide_table_of_contents: true
 custom_edit_url: null
-image: /assets/images/tutorials/get-started/Get_Started_Luos_banner.png
-title: 'How to get started with Luos?'
-description: The possibilities of Luos through an intuitive example. You will have a complete working environment and a network of boards interacting together.
+hide_title: true
+title: 'Get started Part 1: set up your project'
+image: /assets/images/tutorials/get-started/Get-Started-Part-1-banner-Luos.png
+description: This part will guide you through the basic essential tools' installation and how to use them.
 ---
 
-import Introduction from '/src/components/school/article/intro.js';
+import Image from '@site/src/components/Image';
+import IconExternalLink from '@theme/Icon/ExternalLink';
+import Form from '/src/components/typeform/index.js';
 
-#
+import Introduction from '@site/src/components/school/article/intro.js';
 
 <Introduction
   title="Get started"
@@ -18,71 +19,163 @@ import Introduction from '/src/components/school/article/intro.js';
   category="Trainings"
   desc="In this Get started tutorial, you will make a LED blink (the embedded hello world 😉) and discover all the different possibilities you have to control it. At the end, you will have a complete working environment and a network of boards interacting together."
   tags={['Board', 'MCU', 'Service', 'Network', 'Distributed system']}
-  requierements={[]}
-  shortList="true"
-  shortListSize="2"
-  ressources={[
-    {
-      label: 'Arduino zero',
-      link: 'https://docs.arduino.cc/hardware/zero',
-    },
-    {
-      label: 'MKRzero',
-      link: 'https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data',
-    },
-    {
-      label: 'MKR1000',
-      link: 'https://docs.arduino.cc/hardware/mkr-1000-wifi',
-    },
-    {
-      label: 'Seeeduino Xiao',
-      link: 'https://www.seeedstudio.com',
-    },
-    {
-      label: 'STM32L432KC',
-      link: 'https://www.st.com/en/evaluation-tools/nucleo-l432kc.html',
-    },
-    {
-      label: 'STM32F072RB',
-      link: 'https://www.st.com/en/evaluation-tools/nucleo-f072rb.html',
-    },
-    {
-      label: 'STM32F401RE',
-      link: 'https://www.st.com/en/evaluation-tools/nucleo-f401re.html',
-    },
-    {
-      label: 'STM32F410RB',
-      link: 'https://www.st.com/en/evaluation-tools/nucleo-f410rb.html',
-    },
-    {
-      label: 'STM32G431KB',
-      link: 'https://www.st.com/en/evaluation-tools/nucleo-g431kb.html',
-    },
-    {
-      label: 'ESP32',
-      link: 'https://www.espressif.com/en/products/modules/esp32',
-    },
-  ]}
-  summary={[
-    {
-      label: 'Part 1: Your first Luos Project',
-      desc: 'The embedded part, where you will have all the tools you need to easily develop using Luos engine in your embedded target and your first blink.',
-      link: '/tutorials/get-started/get-started1',
-    },
-    {
-      label: 'Part 2: take the control',
-      desc: 'The remote control part, where you will have all the tools you need to take control of the blinking led.',
-      link: '/tutorials/get-started/get-started2',
-    },
-    {
-      label: 'Part 3: unleash your code',
-      desc: 'This part will guide you to create your first Luos network allowing you to deal with a multiple-boards system.',
-      link: '/tutorials/get-started/get-started3',
-    },
-    {
-      label: 'Part 4: connect to the Network Display tool',
-      desc: 'The last part will guide you through the use of the Luos Network Display tool to visualize your whole network online.',
-      link: '/tutorials/get-started/get-started4',
-    },
-  ]}
 />
+
+# Part 1: set up your project
+
+<div align="center">
+  <iframe
+    className="player_iframe"
+    src="https://www.youtube.com/embed/zxr1K7mDP2M?feature=oembed"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+  ></iframe>
+</div>
+
+## 1. Introduction
+
+This part will guide you through the basic essential tools' installation and how to use them.
+
+## 2. Set up your development environment
+
+We will use <a href="https://platformio.org/platformio-ide" target="_blank" rel="external nofollow">PlatformIO</a> as a development environment.
+
+1. First, download and install it following the <a href="https://platformio.org/install/ide?install=vscode" target="_blank" rel="external nofollow">PlatformIO installation page</a>.
+2. When it is done, open the VS Code editor.
+3. Through this Get started, you will need to enter some command lines in a terminal. You can either use the terminal from VS Code, or use your favorite one.
+
+<div align="center">
+  <Image
+    src="/assets/images/tutorials/get-started/get-started-1.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-1.png"
+  />
+</div>
+<div align="center">
+  <Image
+    src="/assets/images/tutorials/get-started/get-started-1-1.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-1-1.png"
+  />
+</div>
+
+## 3. Download the base code
+
+Download and unzip <a href="https://github.com/Luos-io/Get_started/archive/refs/heads/master.zip" target="_blank" rel="external nofollow">from this link</a> the Get started base code.
+
+:::tip
+Alternatively, you can clone this code through **Git** via the terminal, using the following command line:
+
+```
+git clone https://github.com/Luos-io/Get_started.git
+```
+
+You will need to have <a href="https://git-scm.com/downloads" target="_blank" rel="external nofollow">GIT</a> installed on your computer to do that. If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc" target="_blank" rel="external nofollow">their documentation</a>.
+
+:::
+
+## 4. Build your project
+
+1. Locate the project in the folder you just downloaded, corresponding to the board you will use. (For example, for the STM32L432KC Nucleo board, the folder will be **Get_started/NUCLEO_L432KC**)
+2. On VS Code, click on **File → Open Folder** and open the project folder you just located.
+
+<div align="center">
+  <Image
+    src="/assets/images/tutorials/get-started/get-started-1-2.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-1-2.png"
+  />
+</div>
+
+:::caution
+If VS Code displays the message “Do you trust the authors of the files in the folder?”, you can trust us 😉: check the option “Trust the authors of all files in the parent folder” so it will not pop up anymore, then click the “Yes, I trust the authors” button.
+
+:::
+
+The project folder should now be opened in the PlatformIO explorer. 👍
+
+:::info
+**For Arduino users**, you have to select the board you use in the file _platformio.ini_. Find `board` and set it to `board = zero`.
+For the Seeeduino XIAO board, also set `default_envs` to `default_envs = seed`.
+
+<div align="center">
+  <Image
+    src="/assets/images/tutorials/get-started/get-started-1-3.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-1-3.png"
+  />
+</div>
+
+:::
+
+4. Build the project
+
+Click on the tick button on the bottom. Building the project creates a binary file of your code that you will upload in the next step.
+
+<div align="center">
+  <Image
+    src="/assets/images/tutorials/get-started/get-started-1-4.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-1-4.png"
+  />
+</div>
+
+:::caution
+The build may sometimes output an error message. In that case, you need to update the PlatformIO libraries (click on the PlatformIO ant logo on the left, then click on _Update All_ on the left panel as shown on the image below), and build again.
+
+<div align="center">
+  <Image
+    src="/assets/images/tutorials/get-started/get-started-1-5.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-1-5.png"
+  />
+</div>
+
+:::
+
+## 5. Upload to the board
+
+You can now flash your board: connect it to your PC with a USB cable and upload the code by clicking on the right arrow in the bottom left of the VS Code window, situated next to the build tick button (see image below).
+
+PlatformIO will build the firmware and flash the board. Take a look at the terminal to observe each step that PlatformIO follows. A success message should appear at the end.
+
+Once the board is flashed, it means the compiled binary you've created have been copied into the board and is running. You should now see the LED blinking on your board.
+
+<div align="center">
+  <Image
+    src="/assets/images/tutorials/get-started/get-started-1-6.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-1-6.png"
+  />
+</div>
+
+:::caution
+Some boards in this Get started may not have a built-in LED, so you must connect an external LED between the specified pin and the GND pin.
+
+E.g. for an ESP32-DevKit, you must connect a LED and a resistor between IO18 and GND (check the schematics from the table in the [Get started Part 3](/tutorials/get-started/get-started3) for hardware specification).
+:::
+
+:::tip
+In order to make this step work, you may need to install the USB driver related to your board on your computer.
+Note: Linux users should give USB access to their boards by modifying the `udev rules` access rights. To give such rights to PlatformIO, please follow this <a href="https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules" target="_blank" rel="external nofollow">tutorial</a> on PlatformIO FAQ section.
+
+:::
+
+:::warning
+If you have any trouble with your board's USB driver, you can consult **[our related troubleshooting page](/faq/dfu)**. Also, make sure your USB cable is not faulty (it happens... 🤗).
+
+:::
+
+Congratulations, your first Luos app is running!
+
+## 6. Explanation: What has been going on?
+
+Two [services](/docs/luos-technology/services) have been loaded into your board on step 5, allowing you to make the LED blink.
+
+- **Blinker** sends a message at a fixed duration.<br /> ╰ The code folder of this service is located at the root of the _get_started_ repository (because the same app can run on any board so it's a shared folder)
+- **Led** receives this message and makes the LED blink.<br /> ╰ The code folder of this service is located on the _lib_ folder of your project (because it is a driver which is specific to your board)
+
+On top of it, we also added two other services allowing you to take control of your board:
+
+- **Pipe**, managing a serial interface.<br /> ╰ The code folder of this service is located in the cloud (because it is a common cross-platform of Luos tools), PlatformIO just downloaded it for you.
+- **Gate**, an app that translates Luos engine's messages to JSON and sends it through the _Pipe_.<br /> ╰ The code folder of this service is located in the cloud (because it is a common cross-platform's Luos tool), PlatformIO just downloaded it for you.
+
+## 7. Next step
+
+Your development environment is now configured, and the Get started project is installed in a local folder of your choice. The [next part](/tutorials/get-started)2) of this section will teach you how to run Luos on your MCU and take control with a high level API!
+
+## 8. Test your skills
+
+<Form id="uAfY4YhI" />
