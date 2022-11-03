@@ -57,7 +57,7 @@ const Integration = (props) => {
     microship: '/docs/compatibility/mcu_demoboard',
     raspberry: '',
     arduino: '/tutorials/arduino/intro',
-    pio: '/tutorials/get-started/get-started1#2-set-up-your-development-environment',
+    pio: '/tutorials/get-started/get-started#2-set-up-your-development-environment',
     eclipse: '/docs/luos-technology/basics/organization#luos-engines-levels',
     vscodeico: '/docs/luos-technology/basics/organization#luos-engines-levels',
     ros: '/docs/integrations/ros',

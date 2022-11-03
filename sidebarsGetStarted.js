@@ -12,7 +12,7 @@ module.exports = {
         {
           type: 'doc',
           label: 'Part 1: set up your project',
-          id: 'get-started1',
+          id: 'get-started',
         },
         {
           type: 'doc',

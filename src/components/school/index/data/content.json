@@ -5,7 +5,37 @@
         "label": "Get started Repository",
         "link": "https://github.com/Luos-io/Get_started"
       }
-    }
+    },
+    "hardware": [
+      { "label": "Arduino zero", "link": "https://docs.arduino.cc/hardware/zero" },
+      {
+        "label": "MKRzero",
+        "link": "https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data "
+      },
+      { "label": "MKR1000", "link": "https://docs.arduino.cc/hardware/mkr-1000-wifi" },
+      { "label": "Seeeduino Xiao", "link": "https://www.seeedstudio.com" },
+      {
+        "label": "STM32L432KC",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-l432kc.html"
+      },
+      {
+        "label": "STM32F072RB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f072rb.html"
+      },
+      {
+        "label": "STM32F401RE",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f401re.html"
+      },
+      {
+        "label": "STM32F410RB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f410rb.html"
+      },
+      {
+        "label": "STM32G431KB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-g431kb.html"
+      },
+      { "label": "ESP32", "link": "https://www.espressif.com/en/products/modules/esp32" }
+    ]
   },
   "your-first-service": {
     "content": {
@@ -13,7 +43,35 @@
         "label": "Your first service Repository",
         "link": "https://github.com/Luos-io/Training/tree/main/1_First_Service"
       }
-    }
+    },
+    "hardware": [
+      { "label": "Arduino zero", "link": "https://docs.arduino.cc/hardware/zero" },
+      {
+        "label": "MKRzero",
+        "link": "https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data"
+      },
+      { "label": "MKR1000", "link": "https://docs.arduino.cc/hardware/mkr-1000-wifi" },
+      {
+        "label": "STM32L432KC",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-l432kc.html"
+      },
+      {
+        "label": "STM32F072RB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f072rb.html"
+      },
+      {
+        "label": "STM32F401RE",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f401re.html"
+      },
+      {
+        "label": "STM32F410RB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f410rb.html"
+      },
+      {
+        "label": "STM32G431KB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-g431kb.html"
+      }
+    ]
   },
   "your-first-message": {
     "content": {
@@ -21,7 +79,35 @@
         "label": "Your first message Repository",
         "link": "https://github.com/Luos-io/Training/tree/main/2_First_Message"
       }
-    }
+    },
+    "hardware": [
+      { "label": "Arduino zero", "link": "https://docs.arduino.cc/hardware/zero" },
+      {
+        "label": "MKRzero",
+        "link": "https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data"
+      },
+      { "label": "MKR1000", "link": "https://docs.arduino.cc/hardware/mkr-1000-wifi" },
+      {
+        "label": "STM32L432KC",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-l432kc.html"
+      },
+      {
+        "label": "STM32F072RB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f072rb.html"
+      },
+      {
+        "label": "STM32F401RE",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f401re.html"
+      },
+      {
+        "label": "STM32F410RB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f410rb.html"
+      },
+      {
+        "label": "STM32G431KB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-g431kb.html"
+      }
+    ]
   },
   "your-first-detection": {
     "content": {
@@ -29,7 +115,35 @@
         "label": "Your first detection Repository",
         "link": "https://github.com/Luos-io/Training/tree/main/3_First_Detection"
       }
-    }
+    },
+    "hardware": [
+      { "label": "Arduino zero", "link": "https://docs.arduino.cc/hardware/zero" },
+      {
+        "label": "MKRzero",
+        "link": "https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data"
+      },
+      { "label": "MKR1000", "link": "https://docs.arduino.cc/hardware/mkr-1000-wifi" },
+      {
+        "label": "STM32L432KC",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-l432kc.html"
+      },
+      {
+        "label": "STM32F072RB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f072rb.html"
+      },
+      {
+        "label": "STM32F401RE",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f401re.html"
+      },
+      {
+        "label": "STM32F410RB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f410rb.html"
+      },
+      {
+        "label": "STM32G431KB",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-g431kb.html"
+      }
+    ]
   },
   "morse": {
     "content": {
@@ -38,5 +152,45 @@
         "link": "https://github.com/Luos-io/morse_encoder/"
       }
     }
+  },
+  "bootloader": {
+    "hardware": [
+      {
+        "label": "Two Luos compatible Boards"
+      }
+    ]
+  },
+  "resilient-alias": {
+    "hardware": [
+      {
+        "label": "Nucleo-F401RE",
+        "link": "https://www.st.com/en/evaluation-tools/nucleo-f401re.html#overview"
+      }
+    ]
+  },
+  "pio": {
+    "hardware": [{ "label": "ST NUCLEO demo Board" }, { "label": "Arduino" }]
+  },
+  "arduino": {
+    "hardware": [
+      { "label": "Arduino zero", "link": "https://docs.arduino.cc/hardware/zero" },
+      {
+        "label": "MKRzero",
+        "link": "https://store.arduino.cc/products/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data"
+      },
+      { "label": "MKR1000", "link": "https://docs.arduino.cc/hardware/mkr-1000-wifi" },
+      { "label": "Any SAMD21-based Arduino board" }
+    ]
+  },
+  "esp": {
+    "hardware": [
+      { "label": "ESP32-S3 Series" },
+      { "label": "ESP32-S2 Series" },
+      { "label": "ESP32-C3 Series" },
+      { "label": "ESP32 Series" }
+    ]
+  },
+  "bike-alarm": {
+    "hardware": [{ "label": "Multiple L0 Boards" }]
   }
 }

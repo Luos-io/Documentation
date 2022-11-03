@@ -1,0 +1,49 @@
+.authorContainer {
+  padding: 15px 10px;
+  margin: 30px 0px;
+  background-color: #ffff;
+}
+
+html[data-theme='dark'] .authorContainer {
+  background: #323334 !important;
+}
+
+.author {
+  font-size: 16px !important;
+  margin: 0 !important;
+}
+
+.aboutTheAuthor {
+  margin-bottom: 10 !important;
+}
+
+.authorDesc {
+  font-size: 12px !important;
+  font-family: 'Roboto Mono', sans-serif;
+  color: black;
+}
+
+html[data-theme='dark'] .authorDesc {
+  color: white !important;
+}
+
+.separator {
+  border: none;
+  border-top: 2px solid #bd98fe;
+  color: #333;
+  overflow: visible;
+  margin: 0px;
+}
+
+.authorText {
+  font-size: 12px !important;
+  font-family: 'Roboto Mono', sans-serif;
+  padding: 5px 5px 0px;
+  line-height: 15px !important;
+  margin-bottom: 5px;
+  color: black;
+}
+
+html[data-theme='dark'] .authorText {
+  color: white !important;
+}
