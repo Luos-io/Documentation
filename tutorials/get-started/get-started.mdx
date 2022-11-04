@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
   time="1 hour"
   level="Beginner"
   category="Trainings"
-  desc="In this Get started tutorial, you will make a LED blink (the embedded hello world 😉) and discover all the different possibilities you have to control it. At the end, you will have a complete working environment and a network of boards interacting together. If you don't have a board from the list of compatible hardware, you can still perform this get started directly on your computer to discover Luos technology! Pay attention to tabs at each step of the Get started that give you the specific information for board user and No board user!"
+  desc="In this Get started tutorial, you will make a LED blink (the embedded hello world 😉) and discover all the different possibilities you have to control it. At the end, you will have a complete working environment and a network of boards interacting together. If you don't have a board from the list of compatible hardware, you can still perform this Get started directly on your computer to discover Luos technology! Pay attention to tabs at each step of the Get started that give you the specific information for board users and no-board users!"
   tags={['Board', 'MCU', 'Service', 'Network', 'Distributed system']}
 />
 
@@ -69,16 +69,14 @@ Alternatively, you can clone this code through **Git** via the terminal, using t
 git clone https://github.com/Luos-io/Get_started.git
 ```
 
-You will need to have <a href="https://git-scm.com/downloads" target="_blank" rel="external nofollow">GIT</a> installed on your computer to do that. If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc"
-target="_blank" rel="external nofollow">their documentation</a>.
-
+You will need to have <a href="https://git-scm.com/downloads" target="_blank" rel="external nofollow">GIT</a> installed on your computer to do that. If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc" target="_blank" rel="external nofollow">their documentation</a>.
 :::
 
 ## 4. Build your project
 
 1. Locate the project in the folder you just downloaded, corresponding to the board you will use. (For example, for the STM32L432KC Nucleo board, the folder will be **Get_started/NUCLEO_L432KC**)
    :::caution
-   If you don't have a board to perform this get started select the No-board folder to discover Luos technology on your computer
+   If you don't have a board to perform this Get started, select the No-board folder to discover Luos technology on your computer.
    :::
 
 2. On VS Code, click on **File → Open Folder** and open the project folder you just located.
@@ -137,13 +135,15 @@ The build may sometimes output an error message. In that case, you need to updat
 
 <Tabs>
   <TabItem value="Board" label="Board">
-    You can now flash your board: connect it to your PC with a USB cable and upload the code by clicking on the right arrow in the bottom left of the VS Code window, situated next to the build tick button (see image below).
-    PlatformIO will build the firmware and flash the board. Take a look at the terminal to observe each step that PlatformIO follows. A success message should appear at the end.
-    Once the board is flashed, it means the compiled binary you've created have been copied into the board and is running. You should now see the LED blinking on your board.
-    <Image
-      src="/assets/images/tutorials/get-started/get-started-1-6.png"
-      darkSrc="/assets/images/tutorials/get-started/get-started-1-6.png"
-    />
+
+You can now flash your board: connect it to your PC with a USB cable and upload the code by clicking on the right arrow in the bottom left of the VS Code window, situated next to the build tick button (see image below).
+PlatformIO will build the firmware and flash the board. Take a look at the terminal to observe each step that PlatformIO follows. A success message should appear at the end.
+Once the board is flashed, it means the compiled binary you've created have been copied into the board and is running. You should now see the LED blinking on your board.
+
+<Image
+  src="/assets/images/tutorials/get-started/get-started-1-6.png"
+  darkSrc="/assets/images/tutorials/get-started/get-started-1-6.png"
+/>
 
 :::caution
 Some boards in this Get started may not have a built-in LED, so you must connect an external LED between the specified pin and the GND pin.
@@ -162,17 +162,19 @@ If you have any trouble with your board's USB driver, you can consult **[our rel
 Congratulations, your first Luos app is running!
 
 </TabItem>
-<TabItem value="No board" label="No board">
-  When you build your application, an executable program is generate! Run the application that you just build by going in the folder Get_started\No-Board\.pio\build\native and lunch program.exe
-  In a terminal you should see the program runing an the "LED" blinking
 
-  <div align="center">
-    <Image
-      src="/assets/images/tutorials/get-started/no_board_1.png"
-      darkSrc="/assets/images/tutorials/get-started/no_board_1.png"
-    />
-  </div>
-  <br />
+<TabItem value="No board" label="No board">
+
+When you build your application, an executable program is generated. Run the application that you just built by going in the folder *Get_started\No-Board\.pio\build\native* and launch *program.exe*.
+In a terminal, you should see the program runing an the "LED" blinking.
+
+<Image
+  src="/assets/images/tutorials/get-started/no_board_1.png"
+  darkSrc="/assets/images/tutorials/get-started/no_board_1.png"
+/>
+
+Congratulations, your first Luos app is running!
+
   </TabItem>
 </Tabs>
 
