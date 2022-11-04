@@ -11,13 +11,15 @@ import IconExternalLink from '@theme/Icon/ExternalLink';
 import Form from '/src/components/typeform/index.js';
 
 import Introduction from '@site/src/components/school/article/intro.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Introduction
   title="Get started"
   time="1 hour"
   level="Beginner"
   category="Trainings"
-  desc="In this Get started tutorial, you will make a LED blink (the embedded hello world 😉) and discover all the different possibilities you have to control it. At the end, you will have a complete working environment and a network of boards interacting together."
+  desc="In this Get started tutorial, you will make a LED blink (the embedded hello world 😉) and discover all the different possibilities you have to control it. At the end, you will have a complete working environment and a network of boards interacting together. If you don't have a board from the list of compatible hardware, you can still perform this Get started directly on your computer to discover Luos technology! Pay attention to tabs at each step of the Get started that give you the specific information for board users and no-board users!"
   tags={['Board', 'MCU', 'Service', 'Network', 'Distributed system']}
 />
 
@@ -68,12 +70,15 @@ git clone https://github.com/Luos-io/Get_started.git
 ```
 
 You will need to have <a href="https://git-scm.com/downloads" target="_blank" rel="external nofollow">GIT</a> installed on your computer to do that. If you are not familiar with Git, you can consult <a href="https://git-scm.com/doc" target="_blank" rel="external nofollow">their documentation</a>.
-
 :::
 
 ## 4. Build your project
 
 1. Locate the project in the folder you just downloaded, corresponding to the board you will use. (For example, for the STM32L432KC Nucleo board, the folder will be **Get_started/NUCLEO_L432KC**)
+   :::caution
+   If you don't have a board to perform this Get started, select the No-board folder to discover Luos technology on your computer.
+   :::
+
 2. On VS Code, click on **File → Open Folder** and open the project folder you just located.
 
 <div align="center">
@@ -128,41 +133,54 @@ The build may sometimes output an error message. In that case, you need to updat
 
 ## 5. Upload to the board
 
+<Tabs>
+  <TabItem value="Board" label="Board">
+
 You can now flash your board: connect it to your PC with a USB cable and upload the code by clicking on the right arrow in the bottom left of the VS Code window, situated next to the build tick button (see image below).
-
 PlatformIO will build the firmware and flash the board. Take a look at the terminal to observe each step that PlatformIO follows. A success message should appear at the end.
-
 Once the board is flashed, it means the compiled binary you've created have been copied into the board and is running. You should now see the LED blinking on your board.
 
-<div align="center">
-  <Image
-    src="/assets/images/tutorials/get-started/get-started-1-6.png"
-    darkSrc="/assets/images/tutorials/get-started/get-started-1-6.png"
-  />
-</div>
+<Image
+  src="/assets/images/tutorials/get-started/get-started-1-6.png"
+  darkSrc="/assets/images/tutorials/get-started/get-started-1-6.png"
+/>
 
 :::caution
 Some boards in this Get started may not have a built-in LED, so you must connect an external LED between the specified pin and the GND pin.
-
 E.g. for an ESP32-DevKit, you must connect a LED and a resistor between IO18 and GND (check the schematics from the table in the [Get started Part 3](/tutorials/get-started/get-started3) for hardware specification).
 :::
 
 :::tip
 In order to make this step work, you may need to install the USB driver related to your board on your computer.
 Note: Linux users should give USB access to their boards by modifying the `udev rules` access rights. To give such rights to PlatformIO, please follow this <a href="https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules" target="_blank" rel="external nofollow">tutorial</a> on PlatformIO FAQ section.
-
 :::
 
-:::warning
+:::caution
 If you have any trouble with your board's USB driver, you can consult **[our related troubleshooting page](/faq/dfu)**. Also, make sure your USB cable is not faulty (it happens... 🤗).
-
 :::
 
 Congratulations, your first Luos app is running!
 
+</TabItem>
+
+<TabItem value="No board" label="No board">
+
+When you build your application, an executable program is generated. Run the application that you just built by going in the folder *Get_started\No-Board\.pio\build\native* and launch *program.exe*.
+In a terminal, you should see the program runing an the "LED" blinking.
+
+<Image
+  src="/assets/images/tutorials/get-started/no_board_1.png"
+  darkSrc="/assets/images/tutorials/get-started/no_board_1.png"
+/>
+
+Congratulations, your first Luos app is running!
+
+  </TabItem>
+</Tabs>
+
 ## 6. Explanation: What has been going on?
 
-Two [services](/docs/luos-technology/services) have been loaded into your board on step 5, allowing you to make the LED blink.
+Two [services](/docs/luos-technology/services) have been loaded into your board or your computer on step 5, allowing you to make the LED blink.
 
 - **Blinker** sends a message at a fixed duration.<br /> ╰ The code folder of this service is located at the root of the _get_started_ repository (because the same app can run on any board so it's a shared folder)
 - **Led** receives this message and makes the LED blink.<br /> ╰ The code folder of this service is located on the _lib_ folder of your project (because it is a driver which is specific to your board)
@@ -174,7 +192,7 @@ On top of it, we also added two other services allowing you to take control of y
 
 ## 7. Next step
 
-Your development environment is now configured, and the Get started project is installed in a local folder of your choice. The [next part](/tutorials/get-started)2) of this section will teach you how to run Luos on your MCU and take control with a high level API!
+Your development environment is now configured, and the Get started project is installed in a local folder of your choice. The [next part](/tutorials/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take control with a high level API!
 
 ## 8. Test your skills
 
