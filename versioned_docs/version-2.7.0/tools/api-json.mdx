@@ -11,7 +11,7 @@ import Image from '@site/src/components/Image';
 
 The <a href="https://en.wikipedia.org/wiki/JSON" target="blank_" rel="external nofollow">JSON formatted data</a> is common and widely used by many programming languages. Gate services allow you to convert Luos engine information into JSON objects, enabling conventional programming languages to interact with your device easily.
 
-To do that, you must add a specific app service called a [gate](./gate.mdx) on your device.
+To do that, you must add a specific app service called a [gate](../tools/gate.mdx) on your device.
 
 ## How to start using the JSON API
 
@@ -313,16 +313,16 @@ Parameters are defined by a 16-bit bitfield.
 
 Other specific messages:
 
-|   Object   |                            Definition                            |     Service(s)     |
-| :--------: | :--------------------------------------------------------------: | :----------------: |
-|  register  |   Motor memory register filed with \[register_number, value\]    |  Dynamixel, void   |
-|   set_id   |                         A set id command                         |  Dynamixel, void   |
-| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False |  Dynamixel, void   |
-|   delay    |                   reduce services refresh rate                   | [Gate](./gate.mdx) |
+|   Object   |                            Definition                            |        Service(s)         |
+| :--------: | :--------------------------------------------------------------: | :-----------------------: |
+|  register  |   Motor memory register filed with \[register_number, value\]    |      Dynamixel, void      |
+|   set_id   |                         A set id command                         |      Dynamixel, void      |
+| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False |      Dynamixel, void      |
+|   delay    |                   reduce services refresh rate                   | [Gate](../tools/gate.mdx) |
 
 ### Services exclusion messages
 
-Services can be excluded from the network if a problem occurs (see [self-healing](./monitoring.mdx) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
+Services can be excluded from the network if a problem occurs (see [self-healing](../tools/monitoring.mdx) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
 
 ```json
 { "dead_service": "service_alias" }
@@ -330,7 +330,7 @@ Services can be excluded from the network if a problem occurs (see [self-healing
 
 ### Node assert messages
 
-Nodes can assert if a critical issue occurs (see [self-healing](./monitoring.mdx) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](../tools/monitoring.mdx) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 
 ```json
 {

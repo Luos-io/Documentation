@@ -1,0 +1,52 @@
+---
+hide_title: true
+custom_edit_url: null
+title: 'Part 2: The topology management'
+description: During the detection, Luos engine needs topological information to provide a unique ID.
+---
+
+import Image from '@site/src/components/Image';
+
+# Robus - Part 2: The topology management
+
+Robus will rely on the unique ID distributed during the Luos engine's detection (`Node_ID`). Luos engine will need topological information to provide a unique ID during detection. Robus needs to be able to detect the nodes neighbors in the network and to share this information to Luos engine, allowing a proper topology detection.
+
+## Topology detection using PTP lines
+
+Robus uses wires called [PTP](/docs/next/luos-technology/node/topology#ptp-network) to poke the nodes neighbors and see if there is any.
+
+The example below shows the process of assigning a node ID during the topology detection of three [nodes](/docs/next/luos-technology/node). The starting node always has the `node_ID` set to the value 1.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/topology/robus-2-1-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/topology/robus-2-1-dark.svg"
+    width="600px"
+  />
+</div>
+
+In the Robus network, "poking" a node is done by a physical line called PTP, connected between one node to another. Those lines are only used during the topology detection process.
+
+Here is a complete detection process. As you can see, during the `node_ID` assignation, the PTP lines are moving. Using this measure meant we can know which node is where in the network.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/topology/robus-2-2-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/topology/robus-2-2-dark.svg"
+    width="600px"
+  />
+</div>
+
+The example below shows the different line states during the steps needed to poke and get a response back from the poked node. The PTP line is shared by two nodes, so both of them will have an impact on the line level.
+
+This drawing represents the different states of the different nodes, and the line level resulting in those different states.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/topology/robus-2-3-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/topology/robus-2-3-dark.svg"
+    width="800px"
+  />
+</div>
+
+Check the file [*port_manager.c*](https://github.com/Luos-io/luos_engine/blob/main/network/robus/src/port_manager.c) for a better understanding of port management process and functions.
