@@ -1,0 +1,72 @@
+---
+hide_title: true
+custom_edit_url: null
+title: 'Part 4: The physical driver interface'
+description: The Robus layer allows half-duplex wired communication between physical nodes and services.
+---
+
+import Image from '@site/src/components/Image';
+
+# Robus - Part 4: The physical driver interface
+
+The Robus layer allows half-duplex wired communication between physical nodes and services. Robus deals with it as a multi-master communication where any node can initiate a transmission or receive a message at any time.
+
+Receiving and sending on the same line requires a mechanism to enable and disable the reception and transmission.
+
+- Rx enable/disable → avoid receiving what is sent.
+- Tx enable/disable → avoid disturbing the line when in reception.
+
+Many physical layers like RS485 or OneWire fit with Robus. The hardware abstraction layer (HAL) of Robus takes control of:
+
+- USART for communication.
+  - CRC peripheral for reception (optional)
+  - DMA for transmission (optional)
+- Timer for timeout
+- 2 pinouts external interruption PTP
+
+## Transmission on the physical layer
+
+<div align="center">
+  <Image src="/assets/images/advanced-doc/robus/interface/robus-4-1.svg" />
+</div>
+
+## Reception on the physical layer
+
+<div align="center">
+  <Image src="/assets/images/advanced-doc/robus/interface/robus-4-2.svg" />
+</div>
+
+## Collision detection mechanism
+
+As Robus receives and sends in a multi-master way, multiple nodes may transmit a message at the same time.
+
+Before any transmission, Robus will check if the line is busy by reading if a start bit has been received (Tx lock mechanism), but it is still possible to have two transmissions starting at the exact same time. Robus also have a collision detection mechanism to secure transmission and reception.
+
+<div align="center">
+  <Image
+    src="/assets/images/advanced-doc/robus/interface/robus-4-3-light.svg"
+    darkSrc="/assets/images/advanced-doc/robus/interface/robus-4-3-dark.svg"
+  />
+</div>
+
+To detect a collision during a transmitting process, the first four bytes are received and compared with the transmitted bytes. If there is a difference, it means that another node sends a message simultaneously, and Robus must stop transmitting to receive the pending message. After the end of the message (timeout), Robus will retry to send the first message. If there is no differences between transmitted and received bytes, Rx will be disabled, and the rest of the message will be transmitted.
+
+## Transmission retry
+
+Robus retries the sending of a message if:
+
+- A collision is detected.
+- A NACK is received.
+- No ACK is received before the timeout whereas the frame needed acknowledgment.
+
+Robus will retry ten times to send a frame. After that, the nodes that didn't receive the message will be excluded from the networks.
+
+## Timeout
+
+Timeouts occur after a period of inactivity in the network. when a timeout occurs, Robus will try to send available messages. If it is a retry, Robus will add a "retry time" before sending, avoiding collision repetitions.
+
+retry time = timeout + (retry_number \* node_ID)
+
+## Hardware abstraction layer
+
+Check the [HAL template](https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL/template) files for a better understanding of porting robus MCU and functions that use MCU hardware resources.
