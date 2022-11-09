@@ -72,7 +72,7 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/tutorials/bootloader/intro"
+              href="/tutorials/bootloader"
               className={styles.listLink}
             >
               <ListItemAvatar>

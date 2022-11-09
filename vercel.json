@@ -328,6 +328,16 @@
       "statusCode": 301
     },
     {
+      "source": "/tutorials/arduino/intro",
+      "destination": "/tutorials/arduino",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/bootloader/intro",
+      "destination": "/tutorials/bootloader",
+      "statusCode": 301
+    },
+    {
       "source": "/tutorials/demo-boards(.*)",
       "destination": "/docs/compatibility/mcu_demoboard",
       "statusCode": 301
@@ -338,8 +348,23 @@
       "statusCode": 301
     },
     {
+      "source": "/tutorials/freertos/intro",
+      "destination": "/tutorials/freertos",
+      "statusCode": 301
+    },
+    {
       "source": "/tutorials/luos-and-tools/arduino",
-      "destination": "/tutorials/arduino/intro",
+      "destination": "/tutorials/arduino",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/get-started/get-started",
+      "destination": "/tutorials/get-started",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutorials/resilient-alias/intro",
+      "destination": "/tutorials/resilient-alias",
       "statusCode": 301
     },
     {
@@ -429,6 +454,11 @@
     {
       "source": "/tutorials/bike-alarm/basic-alarm",
       "destination": "/tutorials/bike-alarm",
+      "statusCode": 301
+    },
+    {
+      "source": "/your-first-message",
+      "destination": "/tutorials/your-first-message",
       "statusCode": 301
     },
     {
