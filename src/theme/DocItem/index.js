@@ -61,8 +61,8 @@ function DocItemContent(props) {
   const found = permalink.match(regex);
 
   let next = {
-    permalink: metadata.next.permalink,
-    title: metadata.next.title,
+    permalink: metadata.next ? metadata.next.permalink : null,
+    title: metadata.next ? metadata.next.title : null,
   };
 
   if (metadata.frontMatter.nextUrl) {
