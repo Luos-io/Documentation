@@ -1,6 +1,16 @@
 {
   "articles": [
     {
+      "title": "A flexible embedded bootloader: updating becomes easier",
+      "desc": "Updating multiple boards from different brands without having to be physically connected to each one can help an embedded and edge developer.",
+      "img": "/assets/images/blog/a-flexible-embedded-bootloader-luos.jpg",
+      "date": "2022-11-08T12:00",
+      "tags": ["bootloader", "embedded", "edge"],
+      "author": "Thomas Salembier",
+      "author_img": "/assets/images/tutorials/school/authors/thomas.png",
+      "link": "/blog/a-flexible-embedded-bootloader"
+    },
+    {
       "title": "Should I use Luos in embedded development? Q&A live",
       "desc": "We answer some important questions about Luos, Embedded, Arduino, Raspberry Pi, boards compatible with luos and our plans for the future",
       "img": "/assets/images/blog/Q-A-live-session-october-2022-luos.jpg",
