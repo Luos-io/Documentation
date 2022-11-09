@@ -44,7 +44,7 @@
       "img": "Your_first_message_Luos",
       "desc": "Luos aim to exchange information between services by sending messages. In this tutorial we will learn the message structure and how to send it to another services.",
       "tags": ["Luos Message", "Service", "Polling", "Message Handler"],
-      "link": "your-first-message",
+      "link": "/tutorials/your-first-message",
       "author": "nicoC"
     },
     {
@@ -68,7 +68,7 @@
       "img": "Luos_and_Arduino",
       "desc": "In this tutorial, you will how to set up a Luos-Arduino project on Arduino IDE.",
       "tags": ["Board", "MCU", "Service", "Network", "Distributed System"],
-      "link": "/tutorials/arduino/intro",
+      "link": "/tutorials/arduino",
       "author": "nicoR"
     },
     {
@@ -80,7 +80,7 @@
       "img": "Bootloader_Luos",
       "desc": "In this tutorial, you will learn to use the bootloader feature offered by Luos technology.",
       "tags": ["Board", "MCU", "Service", "Network", "Distributed System"],
-      "link": "/tutorials/bootloader/intro",
+      "link": "/tutorials/bootloader",
       "author": "thomas"
     },
     {
@@ -104,7 +104,7 @@
       "img": "Alias-Luos",
       "desc": "Luos provides a flexible way to deal with aliases. In this tutorial, we discover how to configure aliases and how to make the configuration resilient to boot and flash.",
       "tags": ["Alias", "Distributed System", "Flash", "ROM", "EEPROM"],
-      "link": "/tutorials/resilient-alias/intro",
+      "link": "/tutorials/resilient-alias",
       "author": "nicoR"
     },
     {
