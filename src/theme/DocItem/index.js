@@ -59,6 +59,7 @@ function DocItemContent(props) {
 
   const regex = /tutorials/g;
   const found = permalink.match(regex);
+
   return (
     <div className="row">
       <div
