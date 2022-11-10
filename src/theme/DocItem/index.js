@@ -60,18 +60,6 @@ function DocItemContent(props) {
   const regex = /tutorials/g;
   const found = permalink.match(regex);
 
-  let next = {
-    permalink: metadata.next ? metadata.next.permalink : null,
-    title: metadata.next ? metadata.next.title : null,
-  };
-
-  if (metadata.frontMatter.nextUrl) {
-    next = {
-      permalink: metadata.frontMatter.nextUrl,
-      title: metadata.frontMatter.nextTitle,
-    };
-  }
-
   return (
     <div className="row">
       <div
@@ -118,7 +106,7 @@ function DocItemContent(props) {
             </div>
           </article>
 
-          <DocPaginator previous={metadata.previous} next={next} />
+          <DocPaginator previous={metadata.previous} next={metadata.next} />
         </div>
       </div>
       {renderTocDesktop && (

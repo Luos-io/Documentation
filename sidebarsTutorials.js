@@ -14,7 +14,6 @@ module.exports = {
             {
               type: 'category',
               label: 'Get started',
-              link: { type: 'doc', id: 'get-started/get-started' },
               items: [
                 {
                   type: 'doc',
@@ -41,7 +40,6 @@ module.exports = {
             {
               type: 'category',
               label: 'First service',
-              link: { type: 'doc', id: 'your-first-service/your-first-service' },
               items: [
                 {
                   type: 'doc',
@@ -58,7 +56,6 @@ module.exports = {
             {
               type: 'category',
               label: 'First message',
-              link: { type: 'doc', id: 'your-first-message/your-first-message' },
               items: [
                 {
                   type: 'doc',
@@ -75,7 +72,6 @@ module.exports = {
             {
               type: 'category',
               label: 'First detection',
-              link: { type: 'doc', id: 'your-first-detection/your-first-detection' },
               items: [
                 {
                   type: 'doc',
@@ -115,7 +111,6 @@ module.exports = {
             {
               type: 'category',
               label: 'PlatformIO',
-              link: { type: 'doc', id: 'pio/pio' },
               items: [
                 {
                   type: 'doc',
@@ -137,7 +132,6 @@ module.exports = {
             {
               type: 'category',
               label: 'Espressif IDE',
-              link: { type: 'doc', id: 'esp/esp' },
               items: [
                 {
                   type: 'doc',
@@ -159,10 +153,6 @@ module.exports = {
             {
               type: 'category',
               label: 'ROS 1&2',
-              link: {
-                type: 'doc',
-                id: 'luos-integration/install-ros2',
-              },
               items: [
                 {
                   type: 'doc',
@@ -192,7 +182,6 @@ module.exports = {
             {
               type: 'category',
               label: 'Morse encoder',
-              link: { type: 'doc', id: 'morse/morse' },
               items: [
                 {
                   type: 'doc',
@@ -214,7 +203,6 @@ module.exports = {
             {
               type: 'category',
               label: 'Connected bike alarm',
-              link: { type: 'doc', id: 'bike-alarm/bike-alarm' },
               items: [
                 {
                   type: 'doc',
