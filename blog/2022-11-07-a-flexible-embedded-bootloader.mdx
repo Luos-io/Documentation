@@ -1,0 +1,205 @@
+---
+title: 'A flexible embedded bootloader: updating becomes easier'
+description: Updating multiple boards from different brands without having to be physically connected to each one can help an embedded and edge developer.
+slug: a-flexible-embedded-bootloader
+authors:
+  - name: Thomas Salembier
+    title: CTO at Luos
+    url: https://github.com/Salem-Tho
+    image_url: /assets/images/tutorials/school/authors/thomas.png
+tags: [bootloader, embedded, edge]
+image: /assets/images/blog/a-flexible-embedded-bootloader-luos.jpg
+hide_table_of_contents: false
+date: 2022-11-08T12:00
+---
+
+import Image from '@site/src/components/Image';
+
+![A flexible embedded bootloader: updating becomes easier](/assets/images/blog/a-flexible-embedded-bootloader-luos.jpg)
+
+Updating multiple boards from different brands without having to be physically connected to each one can help an embedded and edge developer.
+
+<!--truncate-->
+
+<h2>Part 1: Introduction</h2>
+
+Developing an embedded system can often present constraints that many of us are used to, such as updating your system without having physical access to the board.
+
+Any embedded developer may have to develop or use a bootloader to update their project. In most cases, the bootloader is developed with regard to the boards present in the system, and this bootloader could often only be used for one board, not being compatible with other MCU brands.
+
+Each company develops its own [bootloader](https://www.luos.io/docs/tools/bootloader), the current operation is that to flash an MCU, it is necessary to connect to the card physically, use an IDE to launch the command, and update the firmware. The update is more complex in the case of several cards of different brands.
+
+<h2>Part 2: Bootloaders in embedded systems: how does it work?</h2>
+
+In conventional **embedded systems**, the uploading of a firmware on an MCU is done using several programmers (like *stlink*, *ftdi*, *dfu*, etc.). This process is PIN-dependent, that is to say the programming of the binary firmware is done using specific PIN entries (JTAG or SWD) for each board.
+
+Generally, a **bootloader** is a piece of code that is responsible for loading and launching the main application. The bootloader is usually stored in read-only memory, and is typically the first code that is executed when the system is powered on.
+
+The bootloader typically performs some basic initialization tasks, such as setting up the **clock frequency** and initializing the peripherals, before jumping to the main application. In some cases, the bootloader may also provide a mechanism for updating the main application, either through a serial interface or over a network.
+
+![Bootloader: How does it work](/assets/images/blog/bootloader-how-does-it-work-luos.svg)
+
+<h3>A "classical" bootloader principles</h3>
+
+A conventional bootloader works simply like this: the computer sends command lines to a board.
+
+<div align="center">
+  <Image
+    src="/assets/images/blog/a-classical-bootloader-principles-white-luos.png"
+    darkSrc="/assets/images/blog/a-classical-bootloader-principles-dark-luos.png"
+  />
+</div>
+
+<h3>The limits of this method</h3>
+
+The main disadvantage of this method is that each board that needs to be flashed should have a **physical access** to a computer. Conventional bootloaders are designed to accept commands directly from a computer. Imagine a distributed robot which boards are not all accessible for a physical connection to the computer.
+
+<h4>How could we update their firmware?</h4>
+
+Also, it requires the system to be booted from a specific bootloader image. This can be problematic if the bootloader image is corrupted, or if the system needs to be booted from a different image (how can I update a bootloader's firmware?)
+
+This method often requires the bootloader to be located in a specific location in memory. This can be problematic if the system's memory map is changed, or if the system is upgraded to a new processor that has a different memory map.
+
+Finally, in some cases, this method requires developing a specific bootloader for each board you use in your system. It can be complex to update boards one by one with a specific configuration.
+
+<h2>Part 3: A new bootloader that can update all boards, without the need to have physical access to each of them</h2>
+
+Luos has developed a specific bootloader based on their different experiences and which meet all the <a href="https://discord.gg/luos" rel="external nofollow">community needs</a>. 
+
+But what exactly does the embedded community need?
+
+The principal constraint that we needed to resolve is the fact that we cannot always have physical access (through JTAG or SWD) to a board, or in case of multiple boards in a product, having a serial access to each board to update the firmware of a board. 
+
+Often, only one access point is available for all a network of boards. This becomes even more difficult if we consider that we need to create a different bootloader, depending on the brand of the MCU or on the physical access characteristics of each board.
+
+Luos library gives the opportunity to have a complete network orchestrator for a multiple-board system with a build-in bootloader that works the same way for each MCU that is covert by Luos library. The bootloader can be placed everywhere in the flash of an MCU and allows to update application of a system composed by one or several boards. 
+
+Updating time of full system should be a variable to consider. Also, after the first version of a bootloader, there was a need of speed. When users have a distributed system with numerous boards that have the same firmware and when they are in the prototyping phase of their project, it is necessary to update their boards in the minimum duration. 
+
+Imagine that you need to <a href="https://www.youtube.com/shorts/NrDbMe79TNA" rel="external nofollow">flash the 30 motors of a robot</a>, but for each one of them you must do a minor modification: you cannot spend hours to do this, you need something quicker.
+
+At that point, the question is: Do I need the quicker upload possible without any security control, or is it too risky to lose all the effort that is done by not checking the accuracy of the firmware flashed to my boards? The best answer is to find the compromise that combines both.
+
+Finally, another concern that a user can have when they do not have physical access to their boards is the moment when they want to update the **bootloader** itself. This bootloader is a part of an **open source project** that constantly evolves, so it would be nice to keep it updated. Can we do it remotely?
+
+To answer the questions above, we targeted the four main needs that Luos should meet by developing this revolutionary bootloader which are **Agility**, **Speed**, **Security** and **Maintainability**.
+
+<h3>Agility</h3>
+
+<h4>Update all your boards without the need of physical connection to each one</h4>
+
+We have previously mentioned what a constraint could be not to have a physical connection to each board you need to update. One of the most important functionalities is to **easily upgrade different boards** without the need to connect a programmer interface to a board. Luos bootloader is designed to work in one-entry-point distributed systems. In other words, as it is explained below, we need to connect only one MCU to the computer, that is programmed with a specific Luos application called gate, and connect our embedded network to this MCU. 
+
+Whichever your system configuration, through robust network and thanks to a [gate](https://www.luos.io/docs/tools/gate) that communicates between your computer and your embedded system, you can update a board even if it is not directly connected to your computer. 
+
+The **gate** is a specific tool, that can be hosted on any board, and in combination with a **pipe** that transfers the data from a computer to the embedded network, and the opposite. It is responsible to convert this data from the format received by the computer (eg. JSON) to the embedded communication protocol (eg. the Luos communication protocol called [Robus](https://www.luos.io/docs/luos-technology/node/luos-hal#robus-hal)), and the opposite.
+
+<div align="center">
+  <Image
+    src="/assets/images/blog/update-all-your-boards-without-the need of physical connection-to-each-one-dark-luos.png"
+    darkSrc="/assets/images/blog/update-all-your-boards-without-the need of physical connection-to-each-one-white-luos.png"
+  />
+</div>
+
+All we need is to just plug the gate to a computer and to an embedded network.
+
+> Gate is only needed for updating our boards, it is not necessary for the functioning of our system.
+
+<h4>Update all your boards, whatever their brand</h4>
+
+One of the main constraints when upgrading a system beyond the quality of the bootloader developed, is its compatibility with different systems. Each system has its own **bootloader**. The developed bootloader, available on our <a href="https://github.com/Luos-io/luos_engine" rel="external nofollow">Github</a> page, allows using the gate and the [HAL](https://www.luos.io/docs/luos-technology/node/luos-hal) of the board to **update any board no matter the brand** without having the need to develop a specific bootloader.
+
+Typically, using Luos bootloader you will be able to update an **Arduino**, an **ST**, a **RaspberryPi** board, and many others.
+
+But how does this bootloader work in a more technical point of view?
+
+<h4>A bootloader more flexible and extensible: how it works</h4>
+
+The process to update a firmware of a board using the Luos bootloader is divided in three different levels: the computer-side software, the gate process, and the bootloader itself.
+
+**Bootloader**: The bootloader is placed (by default) in the beginning of the Flash memory. In each board, when a bootloader exists, we keep a byte in the shared memory to stock a value that shows if the board is in bootloader mode, or in application mode. Each time the firmware of the board is launched, depending on this value, the execution starts at the beginning of the bootloader, or the application. When we want to flash a firmware, the board gets to bootloader mode, and then the bootloader is responsible for receiving the computer's commands, regarding the erasing of flash, the allocation of a specific place of memory to stock the firmware, the data chunks, the CRC calculation, etc.
+
+**Gate and pipe**: The data sent from the computer is received by a Luos service called pipe, and the pipe streams them directly to the gate. The gate converts them to the format of the embedded communication protocol and distributes them to the bootloaders. It does exactly the same process for the opposite direction. By default, the messages coming from a computer are in JSON format and the embedded communication protocol that is used is Robus, the custom protocol proposed by Luos. 
+
+**Computer**: The computer software included in Luos Python library, called [Pyluos](https://www.luos.io/docs/integrations/pyluos), is responsible to initiate and guide all the procedure. Firstly, it commands the boards that we want to upload to be set in bootloader mode and erase the necessary space in flash memory. Then, it sends the chunks of the firmware we want to uplaod. Finally, it is responsible for checking if the process is completed with success.
+
+<h3>Speed</h3>
+
+<h4>Gain time, cost of development and after-sale interventions</h4>
+
+The use of Luos bootloader will allow you to save a significant amount of time on updating the systems present in your project.
+
+Luos bootloader is built-in within Luos engine. It is hardware independent, so you do not need to redevelop one each time you use a new board.
+
+Since you are updating a set of boards through the same one, you will avoid numerous manipulations to connect physically each of your boards. In fact, through the [Luos network](https://www.luos.io/docs/luos-technology/node/topology) and especially through the gate, updating the boards is much easier. Luos will deliver the right firmware to the right board, no matter which is their physical location on your network. Time-saving will also be present in a context of industrialization.
+
+<h4>Multicast bootloader messages for simultanous upload</h4>
+
+The latest version of Luos bootloader includes a feature that will also help you save time, in case that your distributed system contains several boards that you need to update with the same firmware. 
+
+By using this feature, when we aim to upload the same firmware to multiple boards, the [messages](https://www.luos.io/docs/luos-technology/messages) are sent with the method publisher/subscriber, and the bootloader existing in them subscribes to a specific topic, in order to receive the binary chunks. So, each message is sent only once for all the boards, opposingly to the previous versions, where each message was sent to each board, helping us save a huge amount of time.
+
+<div align="center">
+  <Image
+    src="/assets/images/blog/Multicast-bootloader-messages-white-luos.png"
+    darkSrc="/assets/images/blog/Multicast-bootloader-messages-dark-luos.png"
+  />
+</div>
+
+<h3>Security</h3>
+
+A real question, when developing a tool like a bootloader, is at which point it is acceptable to sacrifice the safe execution to achieve a better performance. It is clear that when you accelerate the time of a process, it is possible to induce errors, and to lose the credibility of your system. For this reason, apart from the protection methods included in Luos communication protocol which are **messages acknowledgement, message retry, and CRC calculation**, the development of the new features of the bootloader was **enforced with protection mechanisms**, that can provide information regarding the upload results, and when, where, and why a failure has occured.
+
+- **Node readiness:** At the beginning of the computer's commands, we always check if an MCU is ready and in a state that allows it to be flashed.
+- **Erase flash testing:** Before sending the firmware to upload, the computer demands the MCU to erase the space of flash memory that will be used to stock the firmware. The bootloader should give a response of the result: wheather the clean is done, or wheather there is enough space in memory, etc.
+- **Response testing:** After each binary chunk sent to the board, the bootloader should send back a response that this chunk is valid and well stocked into the memory.
+- **CRC testing:** At the end of the process, the bootloader calculates the CRC of all the binary data received and send it to the computer.
+
+<h3>Maintainability</h3>
+
+<h4>Bootloader update</h4>
+
+We have solved the restriction of no physical access to the board, while uploading a firmware. However, what if we want to update the bootloader? In most cases there is no solutions other than finding a way to connect to the board, unless we use the last version of Luos bootloader (**Luos engine v2.8.0**). In that one, we enriched the functionalities, with a slightly modified bootloader application that is uploaded in the position of flash memory destined for the application, and after its execution, it updates the new bootloader in the place of the old one.
+
+That way, there is no need of demounting a robot, or withdraw a machine that is already in production. It is only needed to update the bootloader image like any other firmware.
+
+<div align="center">
+  <Image
+    src="/assets/images/blog/bootloader-update-dark-luos.png"
+    darkSrc="/assets/images/blog/bootloader-update-white-luos.png"
+  />
+</div>
+
+<h2>Part 4: Next developments for the Luos bootloader</h2>
+
+Almost all the features mentioned above are included in the Luos engine v2.7.0., while the bootloader upgrade method is included in v2.8.0. However in the embedded tools like a bootloader, there is always a margin of improvement. So we have already thought about the next steps in order to enforce it with more functionalities, and also robustify the existing ones.
+
+<h3>Enforce security: Backup bootloader</h3>
+
+We previously analyzed the case where an application, for some reason, is not successfully uploaded so that the security mechanisms inform the user of the problem and the bootloader is ready to try again. 
+
+Nevertheless, there is a case where we have a failed to update the bootloader, so the data in the position of flash memory corresponding to the main bootloader can be corrupted. In that case, the board should be flashed manually, which can cause problems if we do not have access to the board.
+
+A solution could be to stock a second backup bootloader in a place of the memory that is not used (for example in an other bank, etc.). Then in case of a corrupted bootloader, the system could jump directly to the backup bootloader, so that we do not lose the functionality of the board.
+
+<div align="center">
+  <Image
+    src="/assets/images/blog/Enforce-security-backup-bootloader-luos.png"
+    darkSrc="/assets/images/blog/Enforce-security-backup-bootloader-dark-luos.png"
+  />
+</div>
+
+<h3>Enforce agility: Swapping between bootloader and application</h3>
+
+An other useful tool that we are considering integrating to the Luos bootloader is a mechanism to simply swap from the bootloader to the application and the opposite, by sending Python commands, using **Pyluos library**. That way, we could easily get in bootloader mode, even when we are not trying to flash the board, or in application mode when we need to relaunch the application in the system, by using only one simple command.
+
+![Bootloader: How does it work](/assets/images/blog/bootloader-how-does-it-work-luos.svg)
+
+Finally, there is always other modifications to do, to improve all the aspects of the bootloader (speed, maintainance, etc.) that will always be a priority for the bootloader development.
+
+These improvements can come from your own ideas, so feel free to send us some advise on our <a href="https://discord.gg/luos" rel="external nofollow">Discord community</a>.
+
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get started with Luos
+</a>
