@@ -5,7 +5,7 @@
       "desc": "Updating multiple boards from different brands without having to be physically connected to each one can help an embedded and edge developer.",
       "img": "/assets/images/blog/a-flexible-embedded-bootloader-luos.jpg",
       "date": "2022-11-08T12:00",
-      "tags": ["bootloader", "embedded", "edge"],
+      "tags": ["Luos", "Embedded", "Releases"],
       "author": "Thomas Salembier",
       "author_img": "/assets/images/tutorials/school/authors/thomas.png",
       "link": "/blog/a-flexible-embedded-bootloader"
@@ -15,7 +15,7 @@
       "desc": "We answer some important questions about Luos, Embedded, Arduino, Raspberry Pi, boards compatible with luos and our plans for the future",
       "img": "/assets/images/blog/Q-A-live-session-october-2022-luos.jpg",
       "date": "2022-10-11T12:00",
-      "tags": ["Q&A", "embedded", "edge"],
+      "tags": ["Luos", "Embedded"],
       "author": "Nicolas Rabault",
       "author_img": "https://github.com/nicolas-rabault.png",
       "link": "/blog/should-I-use-Luos-in-embedded-development-q-and-a"
@@ -25,7 +25,7 @@
       "desc": "Another Luos use case, Alexis Gorlier created an amateur space rocket using the Luos engine with his space association. Let's discover his proof of concept.",
       "img": "/assets/images/blog/New-project-completed-with-luos-create-an-amateur-space-rocket.jpg",
       "date": "2022-09-23T12:00",
-      "tags": ["usecase", "embedded", "edge"],
+      "tags": ["Luos", "Embedded", "Usecases"],
       "author": "Alexis Gorlier",
       "author_img": "/assets/images/tutorials/school/authors/guest-author-luos.png",
       "link": "/blog/create-an-amateur-space-rocket-using-luos"
@@ -35,7 +35,7 @@
       "desc": "We answer some important questions about drivers, Luos, embedded, microservices, MCU, CPU, nodes, sensors and motors.",
       "img": "/assets/images/blog/q-and-a-session-Luos-august-2022-second-part.jpg",
       "date": "2022-08-30T12:00",
-      "tags": ["Q&A", "embedded", "edge"],
+      "tags": ["Luos", "Embedded"],
       "author": "Nicolas Rabault",
       "author_img": "https://github.com/nicolas-rabault.png",
       "link": "/blog/are-microservices-optimized-for-edge-and-embedded-q-and-a"
@@ -45,7 +45,7 @@
       "desc": "We answer some important questions about the embedded and edge worlds, orchestrators, Luos, industrial applications, etc.",
       "img": "/assets/images/blog/q-and-a-session-Luos-august-2022-first-part.jpg",
       "date": "2022-08-30T11:00",
-      "tags": ["Q&A", "embedded", "edge", "ROS"],
+      "tags": ["Luos", "Embedded"],
       "author": "Nicolas Rabault",
       "author_img": "https://github.com/nicolas-rabault.png",
       "link": "/blog/difference-between-luos-and-embedded-os-like-ros-q-and-a"
@@ -55,7 +55,7 @@
       "desc": "We aim to guide you through the integration of a Luos custom middleware used for the communication between multiple micro-ROS nodes.",
       "img": "/assets/images/blog/Micro-ros-and-luos-article.jpg",
       "date": "2022-08-16T10:00",
-      "tags": ["ROS", "micro-ros", "embedded", "edge"],
+      "tags": ["Luos", "Integrations", "Embedded"],
       "author": "Viktoria Biliouri",
       "author_img": "/assets/images/tutorials/school/authors/viktoria.png",
       "link": "/blog/ros-controlling-your-distributed-robot-using-micro-ros-and-luos"
@@ -65,7 +65,7 @@
       "desc": "Some IoT, edge and embedded projects should not involve such a dependence on hardware.",
       "img": "/assets/images/blog/how-to-develop-iot-edge-and-embedded-projects-easier.jpg",
       "date": "2022-08-12T11:00",
-      "tags": ["iot", "edge", "embedded"],
+      "tags": ["Luos", "Embedded", "Usecases"],
       "author": "Alexis Gorlier",
       "author_img": "/assets/images/tutorials/school/authors/guest-author-luos.png",
       "author_2": "Nicolas Lorenzi",
@@ -77,7 +77,7 @@
       "desc": "Open-source has opened the gate to a new way of thinking in our domain. Discover 5 top features and APIs for embedded systems and edge.",
       "img": "/assets/images/blog/5_Top_Open_Source_features_and_API_for_embedded_systems_and_Edge_Luos.jpg",
       "date": "2022-07-22T11:00",
-      "tags": ["embedded", "edge", "systems"],
+      "tags": ["Embedded"],
       "author": "Nicolas Lorenzi",
       "author_img": "https://github.com/lorenzi-nicolas.png",
       "link": "/blog/5-top-open-source-features-and-api-for-embedded-systems-and-edge"
@@ -87,7 +87,7 @@
       "desc": "Luos engine is plug-and-play compatible with the ESP32 family! Luos and Espressif have many concepts in common, find out more in this article.",
       "img": "/assets/images/blog/ESP32-and-Luos.png",
       "date": "2022-06-30T11:00",
-      "tags": ["esp32", "iot", "embedded", "edge", "systems"],
+      "tags": ["Luos", "Integrations", "Embedded"],
       "author": "Thomas Salembier",
       "author_img": "/assets/images/tutorials/school/authors/thomas.png",
       "link": "/blog/luos-and-esp32"
@@ -97,7 +97,7 @@
       "desc": "At Luos, we often talk about embedded systems and edge, but a term often resurfaces in our everyday vocabulary, Cyber-physical systems (CPS).",
       "img": "/assets/images/blog/cyber_physical_systems_Luos.png",
       "date": "2022-06-16T11:00",
-      "tags": ["embedded", "edge", "systems"],
+      "tags": ["Embedded"],
       "author": "Nicolas Lorenzi",
       "author_img": "https://github.com/lorenzi-nicolas.png",
       "link": "/blog/cyber-physical-systems"
@@ -107,7 +107,7 @@
       "desc": "At Luos, we deal with distributed (multi-MCU) critical and real-time environments. Everything in our technology has been thought to be fast and lightweight.",
       "img": "/assets/images/blog/distributed-latency-luos.png",
       "date": "2022-04-28T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Luos", "Embedded"],
       "author": "Nicolas Rabault",
       "author_img": "https://github.com/nicolas-rabault.png",
       "link": "/blog/distributed-latency-based-time-synchronization"
@@ -117,7 +117,7 @@
       "desc": "Luos enabled you to connect an embedded application with the outside world, this article takes place as an example of what you could do with it.",
       "img": "/assets/images/blog/luos-web-app-alpha-version.png",
       "date": "2022-04-15T10:00",
-      "tags": ["startup journey", "luos"],
+      "tags": ["Luos"],
       "author": "Benjamin Christau",
       "author_img": "https://github.com/K0rdan.png",
       "link": "/blog/luos-web-app-alpha-version"
@@ -127,7 +127,7 @@
       "desc": "Who never complains about a messy and unstable software they have to install to communicate with with an electronic board?",
       "img": "/assets/images/blog/connect-electronic-outside-luos.png",
       "date": "2022-04-12T10:00",
-      "tags": ["startup journey", "luos"],
+      "tags": ["Luos", "Embedded"],
       "author": "Nicolas Rabault",
       "author_img": "https://github.com/nicolas-rabault.png",
       "link": "/blog/how-to-connect-electronic-boards-to-the-outside-world"
@@ -137,7 +137,7 @@
       "desc": "Marie has developed a biometric security system using Luos.",
       "img": "/assets/images/blog/biometric-security-system-luos.png",
       "date": "2022-03-29T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Luos", "Embedded", "Usecases"],
       "author": "Nicolas Lorenzi",
       "author_img": "https://github.com/lorenzi-nicolas.png",
       "link": "/blog/new-project-completed-lets-create-a-biometric-security-system-using-luos-by-marie-9390"
@@ -147,7 +147,7 @@
       "desc": "Understand the semiconductor crisis and how the impact could have been minimize with several tips.",
       "img": "/assets/images/blog/semiconductor-crisis-luos.png",
       "date": "2022-02-13T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Embedded"],
       "author": "Nicolas Lorenzi",
       "author_img": "https://github.com/lorenzi-nicolas.png",
       "link": "/blog/semiconductor-crisis-how-to-minimize-the-impact"
@@ -157,7 +157,7 @@
       "desc": "New feature in the Luos v2.0.0: 'Gate discovering'",
       "img": "/assets/images/blog/gate-discovering-banner-luos.png",
       "date": "2022-01-13T10:00",
-      "tags": ["release", "luos"],
+      "tags": ["Luos", "Embedded", "Releases"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/gate-discovering"
@@ -167,7 +167,7 @@
       "desc": "🆕 Luos feature in the V2.0.0: the open-source bootloader",
       "img": "/assets/images/blog/the-bootloader-banner-luos.png",
       "date": "2021-12-13T10:00",
-      "tags": ["release", "luos"],
+      "tags": ["Luos", "Embedded", "Releases"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/the-bootloader"
@@ -177,7 +177,7 @@
       "desc": "🆕 New feature in the Luos release 2.0.0: Packages to simplify portability",
       "img": "/assets/images/blog/Embedded-packages-to-simplify-portability-banner-luos.png",
       "date": "2021-11-13T10:00",
-      "tags": ["release", "luos"],
+      "tags": ["Luos", "Embedded", "Releases"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/embedded-packages-to-simplify-portability"
@@ -187,7 +187,7 @@
       "desc": "🆕 New feature in the Luos release 2.0.0: Profiles to simplify user API",
       "img": "/assets/images/blog/Profiles-to-simplify-user-API-banner-luos.png",
       "date": "2021-10-13T10:00",
-      "tags": ["release", "luos"],
+      "tags": ["Luos", "Embedded", "Releases"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/profiles-to-simplify-user-api"
@@ -197,7 +197,7 @@
       "desc": "We are thrilled to share this new release note with you Luos v2.0.0 is out",
       "img": "/assets/images/blog/release-v-2-0-0-banner-luos.png",
       "date": "2021-09-13T10:00",
-      "tags": ["release", "luos"],
+      "tags": ["Luos", "Embedded", "Releases"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/luos-release-announcement-v2-0-0"
@@ -207,7 +207,7 @@
       "desc": "📢 Luos release announcement v1.3.0: new features, new bug fixes. Try it!",
       "img": "/assets/images/blog/release-v-1-3-0-banner-luos.png",
       "date": "2021-08-13T10:00",
-      "tags": ["release", "luos"],
+      "tags": ["Luos", "Embedded", "Releases"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/release-v130"
@@ -217,7 +217,7 @@
       "desc": "Embedded services have a lot of advantages over traditional code. You can write reusable code for different devices, deploy it to one or multiple microcontrollers.",
       "img": "/assets/images/blog/Embedded-Services-how-to-get-the-most-out-of-it-banner-luos.png",
       "date": "2021-07-13T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Embedded"],
       "author": "James Langbridge",
       "author_img": "https://github.com/jlangbridge.png",
       "link": "/blog/embedded-services"
@@ -227,7 +227,7 @@
       "desc": "Read this article to understand Luos benefits and vision. How to write an application inside a container witch can communicate with other containers?",
       "img": "/assets/images/blog/think-globally-banner-luos.png",
       "date": "2021-06-13T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Embedded"],
       "author": "James Langbridge",
       "author_img": "https://github.com/jlangbridge.png",
       "link": "/blog/think-globally"
@@ -237,7 +237,7 @@
       "desc": "At Luos, we split code into smaller pieces that can be run on several microcontrollers as if everything was on a single CPU. Read this article to discover our vision.",
       "img": "/assets/images/blog/safe-fast-lightweight-banner-luos.png",
       "date": "2021-05-13T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Embedded"],
       "author": "James Langbridge",
       "author_img": "https://github.com/jlangbridge.png",
       "link": "/blog/safe-fast-and-lightweight"
@@ -247,7 +247,7 @@
       "desc": "Luos is designed to have software and hardware containers. Discover our article to discover why it is essential to standardize data in embedded systems.",
       "img": "/assets/images/blog/Why-is-standardized-data-so-important-in-embedded-systems-banner-luos.png",
       "date": "2021-04-13T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Embedded"],
       "author": "James Langbridge",
       "author_img": "https://github.com/jlangbridge.png",
       "link": "/blog/why-is-standardized-data-so-important-in-embedded-systems"
@@ -257,7 +257,7 @@
       "desc": "The deeptech Luos announces a first round of fundraising of 1.2 million euros completed. Our ambition is to become a reflex for all embedded developers!",
       "img": "/assets/images/blog/Luos-raises-1-2-million-euros-and-opens-the-heart-of-its-embedded-technology-in-open-source-banner.png",
       "date": "2021-03-13T10:00",
-      "tags": ["startup journey", "luos"],
+      "tags": ["Luos"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/luos-raises-1-2-million-euros-and-opens-the-heart-of-its-embedded-technology-in-open-source"
@@ -267,7 +267,7 @@
       "desc": "First and last Luos article that talks about the lockdown. We have lived 8 peculiar weeks that drove us to review our way of working, roadmap, and objectives.",
       "img": "/assets/images/blog/How-the-lockdown-allowed-us-to-stay-on-track-and-consolidate-our-growth-banner-luos.png",
       "date": "2021-02-13T10:00",
-      "tags": ["startup journey", "luos"],
+      "tags": ["Luos"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/how-the-lockdown-allowed-us-to-stay-on-track-and-consolidate-our-growth"
@@ -277,7 +277,7 @@
       "desc": "The way electronic devices are made never evolved: it’s still monolithic. Companies have to design everything, every time. Discover how in this article.",
       "img": "/assets/images/blog/A-way-to-unleash-Embedded-Systems-banner-luos.png",
       "date": "2021-01-13T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Luos", "Embedded"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/a-way-to-unleash-embedded-systems"
@@ -287,7 +287,7 @@
       "desc": "To talk about Edge and Embedded systems, let’s consider the place where related issues are their climax: Robotics.",
       "img": "/assets/images/blog/How-to-make-Edge-and-Embedded-systems-skyrocket-banner-luos.png",
       "date": "2020-12-13T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Luos", "Embedded"],
       "author": "Emanuel Allely",
       "author_img": "https://github.com/Emanuel-Allely.png",
       "link": "/blog/how-to-make-embedded-systems-skyrocket"
@@ -297,7 +297,7 @@
       "desc": "This article discusses the evolution of our thinking about Luos. Luos is the name of the company and the technology behind it. Find out more in this article!",
       "img": "/assets/images/blog/What-is-Luos-really-How-we-built-the-speech-banner.png",
       "date": "2020-11-13T10:00",
-      "tags": ["embedded", "edge"],
+      "tags": ["Luos", "Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/what-is-luos-really-how-we-built-the-speech"
@@ -307,7 +307,7 @@
       "desc": "All the cheap neon letters are now lit up by your growing knowledge! We arrive at the last letter of PID: the letter D. Remember there is an introduction to PID, a proportional post for the P and an integral post for the I. It’s not the end, it’s only the beginning.",
       "img": "/assets/images/blog/PID-D-as-in-Derivative-banner-luos.png",
       "date": "2020-10-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/pid-d-as-in-derivative"
@@ -317,7 +317,7 @@
       "desc": "We go on with the PID letters. This post deals with the I. You can visit the first posts of this serie, the introduction to PID and the proportional post.",
       "img": "/assets/images/blog/PID-The-I-as-in-integral-banner-luos.png",
       "date": "2020-09-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/pid-the-i-as-in-integral"
@@ -327,7 +327,7 @@
       "desc": "This post is the follow up of the introduction post to PID control for DC motors. They can be read by virtually anyone who can read English, but I highly suggest you to read the introduction post first, as well as the basics about motors listed at the end of this post.",
       "img": "/assets/images/blog/PID-the-P-as-in-Proportional-banner-luos.png",
       "date": "2020-08-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/pid-the-p-as-in-proportional"
@@ -337,7 +337,7 @@
       "desc": "Discover the basics of PID control and why it comes in handy for robotic applications. You don’t need the background to read this, but know the basics of motors.",
       "img": "/assets/images/blog/An-introduction-to-PID-control-with-DC-motor-banner-luos.png",
       "date": "2020-07-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/an-introduction-to-pid-control-with-dc-motor"
@@ -347,7 +347,7 @@
       "desc": "All you need to know about motors following our previous posts. We will talk about rotation, speed, inertia, angular acceleration, force, heat, magnetic field, etc.",
       "img": "/assets/images/blog/All-the-things-getting-out-of-a-motor-banner-luos.png",
       "date": "2020-06-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/all-the-things-getting-out-of-a-motor"
@@ -357,7 +357,7 @@
       "desc": "Learn how to read and understand a motor’s datasheet. Accessible for anyone who knows the basics of DC motors. Discover now our articles on this topic.",
       "img": "/assets/images/blog/Get-to-know-your-DC-motor-how-to-read-a-datasheet-banner-luos.png",
       "date": "2020-05-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/get-to-know-your-dc-motor-how-to-read-a-datasheet"
@@ -367,7 +367,7 @@
       "desc": "Let's talk about direction control of your DC motor. Have a look at speed control, voltage, Pulse Width Modulation, etc.",
       "img": "/assets/images/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-2-banner-luos.png",
       "date": "2020-04-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/how-to-stop-being-controlled-by-your-dc-motor-reverse-the-roles-2"
@@ -377,7 +377,7 @@
       "desc": "Learn more about the basics of DC motors in robotics and precisely how to control them. We will present different concepts like direction control or motor rotation.",
       "img": "/assets/images/blog/How-to-stop-being-controlled-by-your-DC-motor-reverse-the-roles-Part-1-banner-luos.png",
       "date": "2020-03-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/how-to-stop-being-controlled-by-your-dc-motor-reverse-the-roles"
@@ -387,7 +387,7 @@
       "desc": "Controlling motors are complex, but you will know more about direction control, voltage, PWM, speed control, etc., with our several articles.",
       "img": "/assets/images/blog/dc-motor-control-welcome-to-the-jungle-banner-luos.png",
       "date": "2020-02-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/dc-motor-control-welcome-to-the-jungle"
@@ -397,7 +397,7 @@
       "desc": "This post introduces the basics of electric motors for robotic applications. Read our articles that go into more detail about motorization and control in robotics.",
       "img": "/assets/images/blog/how-to-lift-a-banana-a-guide-to-motors-in-robotics-banner-luos.png",
       "date": "2020-01-13T10:00",
-      "tags": ["motors", "robotics"],
+      "tags": ["Embedded"],
       "author": "Simon Baudry",
       "author_img": "https://github.com/Simonbdy.png",
       "link": "/blog/how-to-lift-a-banana-a-guide-to-motors-in-robotics"
