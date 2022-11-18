@@ -31,13 +31,12 @@ export default function BlogListPage(props) {
   });
 
   const handleFilter = (newLevel, filterName) => {
-    if (newLevel.indexOf('') !== -1) {
+    if (newLevel === '') {
       setfilters({
         tags: [],
       });
     } else {
       setfilters({
-        ...filters,
         [filterName]: newLevel,
       });
     }
@@ -87,14 +86,6 @@ export default function BlogListPage(props) {
                     onChange={(e) => {
                       handleFilter(e.target.value, 'tags');
                     }}
-                    multiple
-                    renderValue={(selected) => (
-                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                        {selected.map((value) => (
-                          <Chip key={value} label={value} />
-                        ))}
-                      </Box>
-                    )}
                   >
                     <MenuItem value="">All</MenuItem>
                     {tagList.map((label, index) => (
