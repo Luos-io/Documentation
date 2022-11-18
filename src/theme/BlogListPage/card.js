@@ -7,23 +7,15 @@ import styles from './index.module.css';
 
 const cardGrid = (props) => {
   let filtered = props.selection;
-
+  const allArticles = props.selection;
   const filters = props.filter;
 
-  Object.keys(filters).forEach((key) => {
-    if (filters[key]) {
-      filtered = filtered.filter((el) => {
-        switch (key) {
-          case 'tags':
-            return filters[key].every((v) => el[key].includes(v));
-        }
-      });
-    }
-  });
+  const displayedList =
+    filters.tags.length > 0 ? filtered.filter((el) => el.tags.includes(filters.tags)) : allArticles;
 
   return (
     <Grid container spacing={2}>
-      {filtered.map((x, y) => (
+      {displayedList.map((x, y) => (
         <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
           <a href={x.link} className={styles.link} style={{ textDecoration: 'none' }}>
             <Paper className={styles.card} elevation={1}>
