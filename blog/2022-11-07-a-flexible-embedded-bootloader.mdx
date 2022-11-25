@@ -27,7 +27,7 @@ Developing an embedded system can often present constraints that many of us are 
 
 Any embedded developer may have to develop or use a bootloader to update their project. In most cases, the bootloader is developed with regard to the boards present in the system, and this bootloader could often only be used for one board, not being compatible with other MCU brands.
 
-Each company develops its own [bootloader](https://www.luos.io/docs/tools/bootloader), the current operation is that to flash an MCU, it is necessary to connect to the card physically, use an IDE to launch the command, and update the firmware. The update is more complex in the case of several cards of different brands.
+Each company develops its own [bootloader](/docs/tools/bootloader), the current operation is that to flash an MCU, it is necessary to connect to the card physically, use an IDE to launch the command, and update the firmware. The update is more complex in the case of several cards of different brands.
 
 <h2>Part 2: Bootloaders in embedded systems: how does it work?</h2>
 
@@ -90,7 +90,7 @@ To answer the questions above, we targeted the four main needs that Luos should 
 
 We have previously mentioned what a constraint could be not to have a physical connection to each board you need to update. One of the most important functionalities is to **easily upgrade different boards** without the need to connect a programmer interface to a board. Luos bootloader is designed to work in one-entry-point distributed systems. In other words, as it is explained below, we need to connect only one MCU to the computer, that is programmed with a specific Luos application called gate, and connect our embedded network to this MCU. 
 
-Whichever your system configuration, through robust network and thanks to a [gate](https://www.luos.io/docs/tools/gate) that communicates between your computer and your embedded system, you can update a board even if it is not directly connected to your computer. 
+Whichever your system configuration, through robust network and thanks to a [gate](/docs/tools/gate) that communicates between your computer and your embedded system, you can update a board even if it is not directly connected to your computer. 
 
 The **gate** is a specific tool, that can be hosted on any board, and in combination with a **pipe** that transfers the data from a computer to the embedded network, and the opposite. It is responsible to convert this data from the format received by the computer (eg. JSON) to the embedded communication protocol (eg. the Luos communication protocol called [Robus](https://www.luos.io/docs/luos-technology/node/luos-hal#robus-hal)), and the opposite.
 
@@ -121,7 +121,7 @@ The process to update a firmware of a board using the Luos bootloader is divided
 
 **Gate and pipe**: The data sent from the computer is received by a Luos service called pipe, and the pipe streams them directly to the gate. The gate converts them to the format of the embedded communication protocol and distributes them to the bootloaders. It does exactly the same process for the opposite direction. By default, the messages coming from a computer are in JSON format and the embedded communication protocol that is used is Robus, the custom protocol proposed by Luos. 
 
-**Computer**: The computer software included in Luos Python library, called [Pyluos](https://www.luos.io/docs/integrations/pyluos), is responsible to initiate and guide all the procedure. Firstly, it commands the boards that we want to upload to be set in bootloader mode and erase the necessary space in flash memory. Then, it sends the chunks of the firmware we want to uplaod. Finally, it is responsible for checking if the process is completed with success.
+**Computer**: The computer software included in Luos Python library, called [Pyluos](/docs/integrations/pyluos), is responsible to initiate and guide all the procedure. Firstly, it commands the boards that we want to upload to be set in bootloader mode and erase the necessary space in flash memory. Then, it sends the chunks of the firmware we want to uplaod. Finally, it is responsible for checking if the process is completed with success.
 
 <h3>Speed</h3>
 
@@ -137,7 +137,7 @@ Since you are updating a set of boards through the same one, you will avoid nume
 
 The latest version of Luos bootloader includes a feature that will also help you save time, in case that your distributed system contains several boards that you need to update with the same firmware. 
 
-By using this feature, when we aim to upload the same firmware to multiple boards, the [messages](https://www.luos.io/docs/luos-technology/messages) are sent with the method publisher/subscriber, and the bootloader existing in them subscribes to a specific topic, in order to receive the binary chunks. So, each message is sent only once for all the boards, opposingly to the previous versions, where each message was sent to each board, helping us save a huge amount of time.
+By using this feature, when we aim to upload the same firmware to multiple boards, the [messages](/docs/luos-technology/messages) are sent with the method publisher/subscriber, and the bootloader existing in them subscribes to a specific topic, in order to receive the binary chunks. So, each message is sent only once for all the boards, opposingly to the previous versions, where each message was sent to each board, helping us save a huge amount of time.
 
 <div align="center">
   <Image

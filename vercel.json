@@ -29,6 +29,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/what-is-luos-really-how-we-built-the-speech…",
+      "destination": "/blog/what-is-luos-really-how-we-built-the-speech",
+      "statusCode": 301
+    },
+    {
       "source": "/community",
       "destination": "https://discord.gg/luos"
     },
@@ -65,6 +70,11 @@
     {
       "source": "/docs/hardware-consideration/minimum-requirement",
       "destination": "/docs/hardware-consideration/minimum-requirements",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/luos-technology/basics/basics",
+      "destination": "/docs/luos-technology/basics",
       "statusCode": 301
     },
     {
@@ -125,6 +135,11 @@
     {
       "source": "/docs/next/luos-technology/luos_tech",
       "destination": "/docs/next/luos-technology",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/next/tools/pyluos",
+      "destination": "/docs/integrations/pyluos",
       "statusCode": 301
     },
     {
@@ -198,6 +213,11 @@
       "statusCode": 301
     },
     {
+      "source": "/pages/demo_boards/demo-boards",
+      "destination": "/docs/compatibility/mcu_demoboard",
+      "statusCode": 301
+    },
+    {
       "source": "/pages/demo_boards/boards_list/led-strip(.*)",
       "destination": "/docs/compatibility/mcu_demoboard",
       "statusCode": 301
@@ -219,7 +239,7 @@
     },
     {
       "source": "/pages/embedded/dev_env/arduino(.*)",
-      "destination": "/tutorials/arduino/intro",
+      "destination": "/tutorials/arduino",
       "statusCode": 301
     },
     {
@@ -402,6 +422,10 @@
       "destination": "https://discord.gg/luos"
     },
     {
+      "source": "/us/contact",
+      "destination": "https://discord.gg/luos"
+    },
+    {
       "source": "/us/pricing",
       "destination": "/",
       "statusCode": 301
@@ -417,8 +441,13 @@
       "statusCode": 301
     },
     {
+      "source": "/tutorials/arduino/intro",
+      "destination": "/tutorials/arduino",
+      "statusCode": 301
+    },
+    {
       "source": "/tutorials/luos-and-tools/arduino",
-      "destination": "/tutorials/arduino/intro",
+      "destination": "/tutorials/arduino",
       "statusCode": 301
     },
     {
