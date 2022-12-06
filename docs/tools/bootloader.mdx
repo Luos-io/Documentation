@@ -253,3 +253,28 @@ You also have to add the precompilation flag `-D WITH_BOOTLOADER` to the file _p
 :::info
 You can find application examples in [the Luos engine's repository](https://github.com/Luos-io/luos_engine/tree/main/examples).
 :::
+
+### Bootloader update
+
+From v2.8.0 of Luos Engine it is possible to update the Bootloader of a board without the need of physical access to it. This version of the bootloader is enriched with a slightly modified bootloader application that is uploaded in the position of flash memory destined for the application, and after its execution, it updates the new bootloader in the place of the old one.
+
+In that way, there is no need of demounting a robot, or withdraw a machine that is already in production.
+
+#### How it works
+
+Then first condition on order to upgrade your bootloader is to have a bootloader already loaded on your board. This can be any old version of the Luos Bootloader. After that you should follow these 2 steps:
+
+- Compile the bootloader updater application and flash it to the board using the old bootloader version that you have already stored
+- Compile and reflash the new version of the bootloader using the bootloader application, in the place of the memory that you had the old one.
+
+<div align="center">
+  <Image
+    src="/assets/images/blog/bootloader-update-dark-luos.png"
+    darkSrc="/assets/images/blog/bootloader-update-white-luos.png"
+  />
+</div>
+
+The bootloader updater application, is a normal bootloader with some slight changes. First there is no need to reserve space for the shared memory because it is already reserved by the principal bootloader which is already loaded on the board. Also, the address of the application and the the bootloader should be reversed. 
+:::info
+For any bootloader exampled provided in Luos engine examples, the bootloader updater firmware is created after the compilation of the board_updater platformIO configuration.
+:::
