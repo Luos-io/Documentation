@@ -57,6 +57,7 @@ const Header = (props) => {
                 multiTextLoop={true}
                 multiText={[
                   'is an open-source project_',
+                  'is a digital twin builder_',
                   'is an embedded microservice orchestrator_',
                   'is an embedded library_',
                   'is a distributed IPC_',
@@ -66,12 +67,13 @@ const Header = (props) => {
                   'is a project toolset_',
                   'is a community_',
                 ]}
-                multiTextDelay={2000}
-                typeSpeed={100}
+                multiTextDelay={1000}
+                typeSpeed={50}
               />{' '}
               <p className={styles.text}>
-                Luos makes it easy to develop and scale your edge and embedded distributed software.
-                It's open source.
+                Don't waste time to create software architecture anymore. Luos allows you to easily
+                develop and scale your <b>cyber-physical system</b>. Our engine is free and open
+                source.
               </p>
               <div className={styles.btnContainer}>
                 <Button
