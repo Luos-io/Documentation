@@ -143,7 +143,7 @@ const Powered = (props) => {
       <Grid container>
         <Grid item xs={12} md={6} lg={6} className={styles.nebula}>
           <h2 className={`${styles.titleFooter} ${styles.underline}`}>
-            Develop and scale your edge and embedded distributed software now
+            Develop and scale your cyber-physical systems now
           </h2>
           <p className={styles.textGs}>
             Get started with Luos by setting up your development environment with your IDE and build

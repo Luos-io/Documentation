@@ -56,9 +56,9 @@ const Header = (props) => {
                 cursorColor="#BD99FF"
                 multiTextLoop={true}
                 multiText={[
-                  'is an open-source project_',
                   'is a digital twin builder_',
                   'is an embedded microservice orchestrator_',
+                  'is an open-source project_',
                   'is an embedded library_',
                   'is a distributed IPC_',
                   'is a message broker_',
@@ -71,8 +71,8 @@ const Header = (props) => {
                 typeSpeed={50}
               />{' '}
               <p className={styles.text}>
-                Don't waste time to create software architecture anymore. Luos allows you to easily
-                develop and scale your <b>cyber-physical system</b>. Our engine is free and open
+                Don't waste time to create software architectures anymore. Luos allows you to easily
+                develop and scale your <b>cyber-physical systems</b>. Our engine is free and open
                 source.
               </p>
               <div className={styles.btnContainer}>

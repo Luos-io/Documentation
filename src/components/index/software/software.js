@@ -42,9 +42,8 @@ const Software = (props) => {
 
   return (
     <div className={styles.container}>
-      <h4 style={{ textAlign: 'center', marginTop: '30px' }}>Split the monolith: </h4>
       <h2 className={`${styles.title} ${styles.underline}`}>
-        Develop scalable edge and embedded distributed software
+        Develop scalable cyber-physical systems
       </h2>
       <Grid container spacing={3} mb={5}>
         <Grid item md={1.5} lg={1.5} xl={1.5}></Grid>
@@ -53,7 +52,7 @@ const Software = (props) => {
           <Grid container spacing={3}>
             <Grid item md={3} lg={3} className={styles.green}>
               <h3 className={`${styles.subtitle} ${styles.underline}`}>
-                Network agnostic data format
+                Use network agnostic data format
               </h3>
               <p style={{ textAlign: 'justify' }}>
                 Luos engine provides a network agnostic multimaster data format. No matter how
@@ -63,7 +62,7 @@ const Software = (props) => {
             <Grid item md={1} lg={1}></Grid>
             <Grid item md={3} lg={3} className={styles.purple}>
               <h3 className={`${styles.subtitle} ${styles.underline}`}>
-                Portable and scalable code
+                Develop portable and scalable code
               </h3>
               <p style={{ textAlign: 'justify' }}>
                 Luos engine allows you to create packages and make them portable and scalable. You
@@ -84,6 +83,7 @@ const Software = (props) => {
         </Grid>
       </Grid>
       <div className={styles.btnContainer}>
+        <p>Lorem ipsum</p>
         <Button
           variant="contained"
           className={styles.pinkBtn}
