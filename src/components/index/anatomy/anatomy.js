@@ -11,13 +11,12 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useColorMode } from '@docusaurus/theme-common';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
-import SearchIcon from '@mui/icons-material/Search';
-import MemoryIcon from '@mui/icons-material/Memory';
-import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
-import ComputerIcon from '@mui/icons-material/Computer';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ComputerIcon from '@mui/icons-material/Computer';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import LinkIcon from '@mui/icons-material/Link';
+import SearchIcon from '@mui/icons-material/Search';
+import ViewTimelineIcon from '@mui/icons-material/ViewTimeline';
 
 const Anatomy = (props) => {
   const { isDarkTheme } = useColorMode();
@@ -55,20 +54,34 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/basics#introduction-to-luos"
+              href="/docs/integrations/pyluos"
               className={styles.listLink}
             >
               <ListItemAvatar>
                 <ComputerIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
-                primary="Control remotely"
+                primary="Digital Twins"
                 secondary={
-                  'You can use your digital twins anywhere, on your computer, another machine, or a cloud application.'
+                  'You can natively remote-control any service anywhere on your computer, on another machine, or in a cloud application.'
                 }
               />
             </ListItem>
-
+            <ListItem
+              alignitems="flex-start"
+              component={Link}
+              href="/docs/integrations"
+              className={styles.listLink}
+            >
+              <ListItemAvatar>
+                <LinkIcon fontSize="large" className={styles.listIcon} />
+              </ListItemAvatar>
+              <ListItemText
+                style={{ color: 'black !important' }}
+                primary="Integrations"
+                secondary={'Luos provides existing bridges with multiple other technologies.'}
+              />
+            </ListItem>
             <ListItem
               alignitems="flex-start"
               component={Link}
@@ -80,25 +93,9 @@ const Anatomy = (props) => {
               </ListItemAvatar>
               <ListItemText
                 style={{ color: 'black !important' }}
-                primary="Deploy easily"
+                primary="Deployment"
                 secondary={
-                  'The bootloader feature allows you to update any firmware of your cyber-physical systems, from anywhere.'
-                }
-              />
-            </ListItem>
-            <ListItem
-              alignitems="flex-start"
-              component={Link}
-              href="/tutorials/your-first-detection"
-              className={styles.listLink}
-            >
-              <ListItemAvatar>
-                <MemoryIcon fontSize="large" className={styles.listIcon} />
-              </ListItemAvatar>
-              <ListItemText
-                primary="Gain flexiblity"
-                secondary={
-                  'Luos detects all the services in your system and locates them. It allows you to access and adapt to any feature from anywhere.'
+                  'The bootloader feature allows you to update any firmware of your cyber-physical systems from anywhere.'
                 }
               />
             </ListItem>
@@ -113,50 +110,31 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/tutorials/get-started/get-started2"
+              href="https://discord.gg/luos"
               className={styles.listLink}
             >
               <ListItemAvatar>
                 <SearchIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
-                primary="Monitor"
+                primary="Community"
                 secondary={
-                  'You can control your cyber-physical systems with several SDKs (Python, TS, Browser app, and others - coming soon).'
-                }
-              />
-            </ListItem>
-
-            <ListItem
-              alignitems="flex-start"
-              component={Link}
-              href="/docs/luos-technology/services/timestamp"
-              className={styles.listLink}
-            >
-              <ListItemAvatar>
-                <CalendarMonthIcon fontSize="large" className={styles.listIcon} />
-              </ListItemAvatar>
-              <ListItemText
-                primary="Timestamp"
-                secondary={
-                  'Luos engine provides you with a distributed timestamp management system.'
+                  'Join our community to exchange with other developers and collaborate on projects.'
                 }
               />
             </ListItem>
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/basics#introduction-to-luos"
+              href="/roadmap"
               className={styles.listLink}
             >
               <ListItemAvatar>
-                <MiscellaneousServicesIcon fontSize="large" className={styles.listIcon} />
+                <ViewTimelineIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
-                primary="Create microservice architecture"
-                secondary={
-                  'Luos follows the microservices philosophy. Luos engine is a library that conceptualizes your features using small, independent and loosely coupled bricks.'
-                }
+                primary="Soon"
+                secondary={"We are always attentive to developers' needs to give them superpowers."}
               />
             </ListItem>
           </List>
