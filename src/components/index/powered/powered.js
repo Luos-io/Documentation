@@ -143,11 +143,11 @@ const Powered = (props) => {
       <Grid container>
         <Grid item xs={12} md={6} lg={6} className={styles.nebula}>
           <h2 className={`${styles.titleFooter} ${styles.underline}`}>
-            Develop and scale your cyber-physical systems now
+            Develop and scale cyber-physical systems now
           </h2>
           <p className={styles.textGs}>
-            Get started with Luos by setting up your development environment with your IDE and build
-            your first embedded microservice.
+            Get started with Luos by setting up your development environment and build your first
+            embedded microservices ready to be controlled by your digital twin.
           </p>
           <div className={styles.btnContainer}>
             <Button variant="contained" className={styles.pinkBtn} href="/tutorials/get-started">
