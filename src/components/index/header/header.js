@@ -3,6 +3,9 @@ import { BrowserView } from 'react-device-detect';
 import styles from './header.module.css';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Writer from '@site/src/components/writer';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -14,8 +17,30 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
-const Header = (props) => {
+const videos = [
+  {
+    label: 'What is Luos',
+    id: 'ujh0xNE3TZ8',
+  },
+  {
+    label: 'Bike alarm',
+    id: 'kTr-pwIrRqw',
+  },
+  {
+    label: 'Demonstration',
+    id: 'KHHB_jfBDEY',
+  },
+];
+
+const Header = () => {
   const { isDarkTheme } = useColorMode();
+  const [currentVideo, setCurrentVideo] = React.useState(videos[0]);
+
+  const handleChange = (event) => {
+    console.log('TEST', event.target.value);
+    setCurrentVideo(videos.find(({ id }) => event.target.value === id));
+  };
+
   return (
     <div className={styles.container}>
       <Grid container>
@@ -142,17 +167,31 @@ const Header = (props) => {
                   </>
                 )}
               </Grid>
-              <Grid item md={2} lg={2} className={styles.video}>
-                <span>
-                  <KeyboardArrowDownIcon className={styles.cardIcons} /> Video
-                </span>
-                <div className={styles.engine}>What is Luos engine?</div>
+              <Grid item md={2.5} className={styles.video}>
+                <RadioGroup
+                  className={styles.videoList}
+                  value={currentVideo.id}
+                  onChange={handleChange}
+                >
+                  {videos.map(({ id, label }, i) => (
+                    <FormControlLabel
+                      key={`header-video-${i}`}
+                      value={id}
+                      className={
+                        currentVideo.id === id ? styles.videoListItemActive : styles.videoListItem
+                      }
+                      control={<Radio />}
+                      label={label}
+                      sx={{ margin: '0 !important', padding: '8px 0', fontSize: '0.9rem' }}
+                    />
+                  ))}
+                </RadioGroup>
               </Grid>
-              <Grid item md={9} lg={9} className={styles.player}>
+              <Grid item md={8.5} className={styles.player}>
                 <LiteYouTubeEmbed
                   className={styles.player_iframe}
-                  id="ujh0xNE3TZ8"
-                  videotitle="What is Luos"
+                  id={currentVideo.id}
+                  videotitle={currentVideo.label}
                 ></LiteYouTubeEmbed>
               </Grid>
             </Grid>

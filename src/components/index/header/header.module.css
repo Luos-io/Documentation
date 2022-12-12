@@ -197,20 +197,21 @@ html[data-theme='light'] .text {
   color: white !important;
   border-right: 2px solid black;
 }
+.videoList > label {
+  padding-left: 5px;
+}
+.videoListItem {
+  font-size: 0.8rem;
+}
+.videoListItemActive {
+  background-color: #81c8be;
+}
 
 .cardIcons {
   float: left !important;
   width: 24px;
   margin-top: 3px;
   padding-right: 5px;
-}
-
-.engine {
-  color: black;
-  background-color: #81c8be;
-  padding: 5px;
-  font-size: 12px;
-  font-family: 'Roboto Mono';
 }
 
 .player_iframe {
