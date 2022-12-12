@@ -66,7 +66,7 @@ const Software = (props) => {
             </Grid>
           </div>
           <Grid container>
-            <Grid item md={1} lg={1} xl={1} className={styles.docs}>
+            <Grid item xs={'auto'} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
               {isDarkTheme ? (
@@ -82,7 +82,7 @@ const Software = (props) => {
               )}
             </Grid>
 
-            <Grid item md={11} lg={11} className={styles.playerLeft}>
+            <Grid item xs={true} className={styles.playerLeft}>
               <Grid container>
                 <Grid item md={4} lg={4} xl={4} className={styles.step}>
                   <div className={styles.file}>

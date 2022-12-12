@@ -66,10 +66,6 @@ html[data-theme='dark'] .text {
   }
 }
 
-.lines {
-  margin-bottom: -120px !important;
-}
-
 .linesImg {
   -webkit-user-drag: none;
   user-select: none;

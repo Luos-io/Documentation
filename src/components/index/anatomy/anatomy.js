@@ -230,8 +230,8 @@ const Anatomy = (props) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container>
-        <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
+      <Grid container sx={{ marginBottom: '-50px' }}>
+        <Grid item xs={4} className={styles.lines}>
           <img
             src="assets/images/index/integration/line-right.svg"
             alt="line-right"
@@ -239,8 +239,8 @@ const Anatomy = (props) => {
             className={styles.linesImg}
           />
         </Grid>
-        <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
-        <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
+        <Grid item xs={true}></Grid>
+        <Grid item xs={4} className={styles.lines}>
           <img
             src="assets/images/index/integration/line-right.svg"
             alt="line-right"
