@@ -83,7 +83,6 @@ const Software = (props) => {
         </Grid>
       </Grid>
       <div className={styles.btnContainer}>
-        <p>Lorem ipsum</p>
         <Button
           variant="contained"
           className={styles.pinkBtn}

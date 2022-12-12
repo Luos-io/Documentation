@@ -132,7 +132,7 @@ class TypeWriterEffect extends Component {
       <div ref={this.myRef} className="react-typewriter-text-wrap">
         <h1 style={{ ...this.props.textStyle }} className="react-typewriter-text">
           <span className="react-typewriter-text-luos" style={{ fontSize: '30px' }}>
-            Luos
+            Including
           </span>{' '}
           {this.state.text}
           <div

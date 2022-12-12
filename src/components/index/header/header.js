@@ -46,6 +46,10 @@ const Header = (props) => {
             </Grid>
 
             <Grid item xs={10} md={11} lg={11} pl={3} className={styles.playerLeft}>
+              <p className={styles.text}>
+                The devtool dedicated to cyber-physical systems making hardware as modular as
+                software.
+              </p>
               <Writer
                 textStyle={{
                   color: '#BD99FF',
@@ -56,24 +60,17 @@ const Header = (props) => {
                 cursorColor="#BD99FF"
                 multiTextLoop={true}
                 multiText={[
-                  'is a digital twin builder_',
-                  'is an embedded microservice orchestrator_',
-                  'is an open-source project_',
-                  'is an embedded library_',
-                  'is a distributed IPC_',
-                  'is a message broker_',
-                  'is an ecosystem_',
-                  'is an SDK_',
-                  'is a project toolset_',
-                  'is a community_',
+                  'an embedded microservice orchestrator_',
+                  'a helpful developers community_',
+                  'an easy-to-integrate library_',
                 ]}
-                multiTextDelay={1000}
-                typeSpeed={50}
+                multiTextDelay={2000}
+                typeSpeed={100}
               />{' '}
               <p className={styles.text}>
-                Don't waste time to create software architectures anymore. Luos allows you to easily
-                develop and scale your <b>cyber-physical systems</b>. Our engine is free and open
-                source.
+                Don't waste time to create complex software architectures anymore. Luos allows you
+                to easily develop and scale your <b>cyber-physical systems</b>. Our engine is free
+                and open source.
               </p>
               <div className={styles.btnContainer}>
                 <Button

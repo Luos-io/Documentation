@@ -17,7 +17,7 @@ html[data-theme='light'] .container {
   }
 
   .text {
-    margin-top: 100px;
+    padding-right: 50px !important;
   }
   .left {
     margin-top: -60px !important;
@@ -27,10 +27,6 @@ html[data-theme='light'] .container {
 @media screen and (min-width: 1024px) {
   .mobileNone {
     display: flex !important;
-  }
-
-  .playerLeft {
-    height: 250px !important;
   }
   .videoBtn {
     display: none !important;
@@ -46,11 +42,12 @@ html[data-theme='light'] .container {
 
 .text {
   font-family: 'Roboto';
-  font-size: 22px;
+  font-size: 18px;
   line-height: 20px;
-  margin-bottom: 30px;
   color: white;
-  padding-right: 60px;
+  margin-top: var(--ifm-paragraph-margin-bottom);
+  padding-right: 24px;
+  text-align: justify;
 }
 .footer {
   width: 100%;
