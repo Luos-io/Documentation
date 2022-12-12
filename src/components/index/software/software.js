@@ -119,7 +119,8 @@ const Software = (props) => {
                   />
                   <h3 className={styles.carousselTitle}>2. EXPOSITION</h3>
                   <p className={styles.carousselText}>
-                    Luos makes these APIs accessible from anywhere.
+                    Detect and use any service API accessible from anywhere, no matter how specific
+                    your network is.
                   </p>
                 </Grid>
                 <Grid item md={4} lg={4} xl={4}>
@@ -138,8 +139,7 @@ const Software = (props) => {
                   />
                   <h3 className={styles.carousselTitle}>3. EXPLOITATION</h3>
                   <p className={styles.carousselText}>
-                    Luos provides you with integrations and tools to design the software
-                    architectures of your dreams.
+                    Compose your product step by step and make it evolutive and future-proof easily.
                   </p>
                 </Grid>
               </Grid>
