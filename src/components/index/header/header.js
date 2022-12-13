@@ -71,7 +71,8 @@ const Header = () => {
             </Grid>
 
             <Grid item xs={10} md={11} lg={11} pl={3} className={styles.playerLeft}>
-              <p className={styles.text}>
+              <p className={styles.text1}>
+                {' '}
                 The devtool dedicated to cyber-physical systems making hardware as modular as
                 software.
               </p>
@@ -92,7 +93,7 @@ const Header = () => {
                 multiTextDelay={2000}
                 typeSpeed={100}
               />{' '}
-              <p className={styles.text}>
+              <p className={styles.text2}>
                 Don't waste time to create complex software architectures anymore. Luos allows you
                 to easily develop and scale your <b>cyber-physical systems</b>. Our engine is free
                 and open source.

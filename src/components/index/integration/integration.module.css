@@ -65,6 +65,15 @@ html[data-theme='light'] .container {
     height: 600px;
   }
 }
+
+.vscodeMobileImageList {
+  border: solid;
+  border-color: black;
+  border-width: 2px;
+  border-top: 0;
+  border-bottom: 0;
+}
+
 .footer {
   width: 100%;
   height: 15px;

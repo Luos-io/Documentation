@@ -16,7 +16,8 @@ html[data-theme='light'] .container {
     display: none !important;
   }
 
-  .text {
+  .text1,
+  .text2 {
     padding-right: 50px !important;
   }
   .left {
@@ -40,15 +41,23 @@ html[data-theme='light'] .container {
   }
 }
 
-.text {
+.text1,
+.text2 {
   font-family: 'Roboto';
-  font-size: 18px;
-  line-height: 20px;
   color: white;
   margin-top: var(--ifm-paragraph-margin-bottom);
   padding-right: 24px;
   text-align: justify;
 }
+.text1 {
+  font-size: 22px;
+  line-height: 22px;
+}
+.text2 {
+  font-size: 18px;
+  line-height: 20px;
+}
+
 .footer {
   width: 100%;
   height: 15px;
@@ -152,7 +161,10 @@ html[data-theme='light'] .playerLeft {
   background-color: #fafafa !important;
 }
 
-html[data-theme='light'] .text {
+html[data-theme='light'] .text1 {
+  color: black !important;
+}
+html[data-theme='light'] .text2 {
   color: black !important;
 }
 

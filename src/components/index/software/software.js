@@ -100,7 +100,7 @@ const Software = (props) => {
                   />
                   <h3 className={styles.carousselTitle}>1. ENCAPSULATION</h3>
                   <p className={styles.carousselText}>
-                    Luos engine translates your embedded features into APIs.
+                    Luos engine reference all your features as services by providing APIs.
                   </p>
                 </Grid>
                 <Grid item md={4} lg={4} xl={4} className={styles.step}>
