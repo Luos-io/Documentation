@@ -1,6 +1,26 @@
 {
   "articles": [
     {
+      "title": "Microservices and cyber-physical systems: the same approach to software development",
+      "desc": "Microservices and cyber-physical systems (CPS) are based on the same underlying principles and offer developers many benefits and challenges.",
+      "img": "/assets/images/blog/microservices-and-cps-the-same-approach-to-software-development-luos.png",
+      "date": "2022-12-19T12:00",
+      "tags": ["embedded", "edge, cyber-physical-systems"],
+      "author": "Nicolas Lorenzi",
+      "author_img": "https://github.com/lorenzi-nicolas.png",
+      "link": "/blog/microservices-and-cyber-physical-systems-the-same-approach-to-software-development"
+    },
+    {
+      "title": "Cyber-physical systems: how can they be improved?",
+      "desc": "Cyber-physical systems (CPS) integrate computer and physical elements; let's see with this article how we can improve them.",
+      "img": "/assets/images/blog/cyber-physical-systems-how-can-they-be-improved-luos.png",
+      "date": "2022-12-14T12:00",
+      "tags": ["embedded", "edge, cyber-physical-systems"],
+      "author": "Nicolas Lorenzi",
+      "author_img": "https://github.com/lorenzi-nicolas.png",
+      "link": "/blog/cyber-physical-systems-how-can-they-be-improved"
+    },
+    {
       "title": "Display your device in real time: collaboration Luos & Freedom Robotics",
       "desc": "Luos and Freedom Robotics have teamed up to build a tool that is able to easily connect a sensor to a project, allowing users to see the data being collected in real-time.",
       "img": "/assets/images/blog/Luos-with-FreedomRobotics.png",

@@ -1,0 +1,69 @@
+---
+title: 'Cyber-physical systems: how can they be improved?'
+description: Cyber-physical systems (CPS) integrate computer and physical elements; let's see with this article how we can improve them.
+slug: cyber-physical-systems-how-can-they-be-improved
+authors:
+  - name: Nicolas Lorenzi
+    title: Community and user acquisition @ Luos
+    url: https://github.com/lorenzi-nicolas
+    image_url: https://github.com/lorenzi-nicolas.png
+tags: [embedded, edge, cyber-physical systems]
+image: /assets/images/blog/cyber-physical-systems-how-can-they-be-improved-luos.png
+hide_table_of_contents: false
+date: 2022-12-14T12:00
+---
+
+import Image from '@site/src/components/Image';
+
+![Cyber-physical systems: how can they be improved?](/assets/images/blog/cyber-physical-systems-how-can-they-be-improved-luos.png)
+
+As we mentioned on [our previous article](/blog/cyber-physical-systems), cyber-physical systems (CPS) are a type of system that integrates computational and physical elements to perform tasks that involve both the physical world and the digital world.
+These systems are used in various applications, from manufacturing and transportation to healthcare and energy production. We are surrounded by them.
+
+<!--truncate-->
+
+<h2>A quick review of the concepts with some examples:</h2>
+
+One of the key characteristics of **cyber-physical systems** is that they are embedded in the physical/hardware world. This means they are integrated with sensors, actuators, and other physical devices (hardware) that can collect environmental data and control physical systems. 
+
+For example, a CPS in a manufacturing plant might be integrated with sensors that monitor the temperature and pressure of the manufacturing process and actuators that control the flow of materials and the operation of machinery.
+
+<h3>Hard usecases</h3>
+
+CPS are also intelligent in the sense that they can process data, make decisions, and take actions based on that data. This allows CPS to adapt to changing conditions and to perform complex tasks that would be difficult or impossible for humans to do. 
+
+One of our contributors, <a href="https://nimbl-bot.com/" rel="external nofollow">Nimbl'bot</a>, is currently working on a system to help people automate and secure their jobs, for example in a power plant to perform certain technical interventions. These systems improve worker safety in complex environments. Another example in the medical field is the company <a href="https://enchanted.tools/" rel="external nofollow">Enchanted Tools</a>, a partner of one of our contributors <a href="https://www.pollen-robotics.com/" rel="external nofollow">Pollen Robotics</a> who is currently developing a robot to distribute medicines in hospitals to patients. It could eventually allow us to follow the treatment of each hospitalized patient in real time.
+
+<h3>Coordinate actions</h3>
+
+Another key characteristic of CPS is that they network with each other. This means they are connected to other systems and devices through wired or wireless connections. These connections allow CPS to exchange data with other systems and devices and coordinate their actions to achieve a common goal. For example, a **cyber-physical system** in a transportation system might be connected to traffic lights, road signs, and vehicles to coordinate traffic flow and avoid accidents.
+
+<h3>Security</h3>
+
+Cyber-physical systems (CPS) are complex and pose unique challenges when it comes to security. CPS has this connection with the physical world (hardware) making them vulnerable to physical attacks, such as tampering with sensors, and actuators or disrupting the power supply. CPS also have a network, which means that they are connected to other systems and devices, and this makes them vulnerable to cyber-attacks. 
+
+In order to ensure the security of CPS, it is important to implement robust security measures, such as encryption, authentication, and intrusion detection, and to monitor and maintain the security of CPS on an ongoing basis.
+
+By **dividing the code into several parts**, security is increased in terms of the impact an attack could have on the overall system. **Dividing the functionality** of a cyber-physical system can help it to gain flexibility and security. Some may say that it will be more difficult to maintain because it is divided into several pieces of code, but being equipped with a monitoring tool and precise test scenarios can solve the problem.
+
+With [Pyluos](/docs/integrations/pyluos), this monitoring is possible natively. We have developed it so that you can quickly see what is happening on your system in real-time. We found some articles referring to the "Digital Twin" and its problems during development, pyLuos ensures these tasks.
+
+<h2>Improving cyber-physical systems</h2>
+
+With Luos, we are working on the continuous improvement of these cyber-physical systems to make them more agile. All this using the microservices concepts. 
+
+Many researchers still don't see the possibilities of microservices in the embedded and edge space. Sometimes called "Pre-Integrated Architectures" as mentioned in the <a href="https://cps4eu.eu/" rel="external nofollow">CPS4EU project</a>, the microservices philosophy allows to develop services independently so that no component of the system is dependent on each other.
+
+CPS are changing with the use of microservices, which are small, independent, and modular units of software that can be easily combined to create complex applications. 
+
+Microservices are changing CPS by making them more flexible, scalable, and interoperable.
+
+CPS were often [monolithic](/blog/a-way-to-unleash-embedded-systems), with a single large codebase containing all of the system's functionality. This made it difficult to change the system, as any modifications would require modifying the entire codebase. Every day we see and talk to developers who are forced to change an entire system (and months of work) because of a simple change. The semiconductor crisis was a good example of a lot of inflexible projects that had to stop abruptly.
+
+However, with the use of microservices, cyber-physical systems can be built using a collection of small, independent services that can be easily combined and modified.
+
+It's a future we're trying to build with <a href="https://github.com/luos-io" rel="external nofollow">Luos</a>. To be part of the adventure you can check out our open-source library on GitHub or join our community of developers who are currently exchanging new ways of developing. A platform of exchange and mutual aid to allow developers to learn and advance the approach.
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get started with Luos
+</a>
