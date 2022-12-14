@@ -1,6 +1,16 @@
 {
   "articles": [
     {
+      "title": "Display your device in real time: collaboration Luos & Freedom Robotics",
+      "desc": "Luos and Freedom Robotics have teamed up to build a tool that is able to easily connect a sensor to a project, allowing users to see the data being collected in real-time.",
+      "img": "/assets/images/blog/Luos-with-FreedomRobotics.png",
+      "date": "2022-12-13T12:00",
+      "tags": ["embedded", "edge"],
+      "author": "Nicolas Rabault",
+      "author_img": "https://github.com/nicolas-rabault.png",
+      "link": "/blog/display-your-device-real-time-luos-and-freedom-robotics"
+    },
+    {
       "title": "A flexible embedded bootloader: updating becomes easier",
       "desc": "Updating multiple boards from different brands without having to be physically connected to each one can help an embedded and edge developer.",
       "img": "/assets/images/blog/a-flexible-embedded-bootloader-luos.jpg",
