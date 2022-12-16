@@ -19,15 +19,15 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const videos = [
   {
-    label: 'What is Luos',
+    label: 'What is Luos?',
     id: 'ujh0xNE3TZ8',
   },
   {
-    label: 'Bike alarm',
+    label: 'Usecase: Bike alarm',
     id: 'kTr-pwIrRqw',
   },
   {
-    label: 'Demonstration',
+    label: 'A quick Luos demo',
     id: 'KHHB_jfBDEY',
   },
 ];
@@ -37,7 +37,6 @@ const Header = () => {
   const [currentVideo, setCurrentVideo] = React.useState(videos[0]);
 
   const handleChange = (event) => {
-    console.log('TEST', event.target.value);
     setCurrentVideo(videos.find(({ id }) => event.target.value === id));
   };
 
@@ -71,15 +70,13 @@ const Header = () => {
             </Grid>
 
             <Grid item xs={10} md={11} lg={11} pl={3} className={styles.playerLeft}>
-              <p className={styles.text1}>
-                {' '}
+              <h1 className={styles.text1}>
                 The devtool dedicated to cyber-physical systems making hardware as modular as
                 software.
-              </p>
+              </h1>
               <Writer
                 textStyle={{
                   color: '#BD99FF',
-                  height: '70px',
                   marginTop: '15px',
                 }}
                 startDelay={0}

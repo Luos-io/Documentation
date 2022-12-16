@@ -54,7 +54,7 @@ const Powered = (props) => {
               alt="buttons"
             />
           </div>
-          <Grid container style={{ height: '100%' }}>
+          <Grid container style={{ height: '100%', backgroundColor: '#1e1e1e' }}>
             <Grid item md={1} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />

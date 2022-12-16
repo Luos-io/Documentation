@@ -50,7 +50,8 @@ html[data-theme='light'] .container {
   text-align: justify;
 }
 .text1 {
-  font-size: 22px;
+  font-size: 22px !important;
+  font-weight: normal;
   line-height: 22px;
 }
 .text2 {
