@@ -1,14 +1,14 @@
 {
   "articles": [
     {
-      "title": "Microservices and cyber-physical systems: the same approach to software development",
-      "desc": "Microservices and cyber-physical systems (CPS) are based on the same underlying principles and offer developers many benefits and challenges.",
-      "img": "/assets/images/blog/microservices-and-cps-the-same-approach-to-software-development-luos.png",
-      "date": "2022-12-19T12:00",
+      "title": "Cyber-physical systems and microservices: benefits and challenges",
+      "desc": "Let's discover the benefits and challenges of using philosophies such as microservices to develop cyber-physical systems.",
+      "img": "/assets/images/blog/Cyber-physical-systems-and-microservices-benefits-and-challenges.png",
+      "date": "2022-12-20T12:00",
       "tags": ["embedded", "edge, cyber-physical-systems"],
       "author": "Nicolas Lorenzi",
       "author_img": "https://github.com/lorenzi-nicolas.png",
-      "link": "/blog/microservices-and-cyber-physical-systems-the-same-approach-to-software-development"
+      "link": "/blog/cyber-physical-systems-and-microservices-benefits-and-challenges"
     },
     {
       "title": "Cyber-physical systems: how can they be improved?",
