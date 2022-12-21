@@ -59,7 +59,7 @@ const Software = (props) => {
                   alt="buttons"
                 />
               </Grid>
-              <Grid item xs={true} style={{ textAlign: 'center' }}>
+              <Grid item xs={true} style={{ textAlign: 'center', marginLeft: -100 }}>
                 {' '}
                 <h2 className={`${styles.hiwTitle} ${styles.underline}`}>/How Luos engine works</h2>
               </Grid>
@@ -100,7 +100,8 @@ const Software = (props) => {
                   />
                   <h3 className={styles.carousselTitle}>1. ENCAPSULATION</h3>
                   <p className={styles.carousselText}>
-                    Luos engine reference all your features as services by providing APIs.
+                    Encapsulate any of your embedded features in services, wherever they are. They
+                    remain simple and become independent and loosely coupled.
                   </p>
                 </Grid>
                 <Grid item md={4} lg={4} xl={4} className={styles.step}>

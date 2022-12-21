@@ -130,6 +130,7 @@ const Anatomy = (props) => {
               alignitems="flex-start"
               component={Link}
               href="https://discord.gg/luos"
+              rel="external nofollow"
               className={styles.listLink}
             >
               <ListItemAvatar>
