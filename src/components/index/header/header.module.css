@@ -16,8 +16,9 @@ html[data-theme='light'] .container {
     display: none !important;
   }
 
-  .text {
-    margin-top: 100px;
+  .text1,
+  .text2 {
+    padding-right: 50px !important;
   }
   .left {
     margin-top: -60px !important;
@@ -27,10 +28,6 @@ html[data-theme='light'] .container {
 @media screen and (min-width: 1024px) {
   .mobileNone {
     display: flex !important;
-  }
-
-  .playerLeft {
-    height: 250px !important;
   }
   .videoBtn {
     display: none !important;
@@ -44,14 +41,24 @@ html[data-theme='light'] .container {
   }
 }
 
-.text {
+.text1,
+.text2 {
   font-family: 'Roboto';
+  color: white;
+  margin-top: var(--ifm-paragraph-margin-bottom);
+  padding-right: 24px;
+  text-align: justify;
+}
+.text1 {
+  font-size: 22px !important;
+  font-weight: normal;
+  line-height: 22px;
+}
+.text2 {
   font-size: 18px;
   line-height: 20px;
-  margin-bottom: 30px;
-  color: white;
-  padding-right: 60px;
 }
+
 .footer {
   width: 100%;
   height: 15px;
@@ -155,7 +162,10 @@ html[data-theme='light'] .playerLeft {
   background-color: #fafafa !important;
 }
 
-html[data-theme='light'] .text {
+html[data-theme='light'] .text1 {
+  color: black !important;
+}
+html[data-theme='light'] .text2 {
   color: black !important;
 }
 
@@ -200,20 +210,21 @@ html[data-theme='light'] .text {
   color: white !important;
   border-right: 2px solid black;
 }
+.videoList > label {
+  padding-left: 5px;
+}
+.videoListItem {
+  font-size: 0.8rem;
+}
+.videoListItemActive {
+  background-color: #81c8be;
+}
 
 .cardIcons {
   float: left !important;
   width: 24px;
   margin-top: 3px;
   padding-right: 5px;
-}
-
-.engine {
-  color: black;
-  background-color: #81c8be;
-  padding: 5px;
-  font-size: 12px;
-  font-family: 'Roboto Mono';
 }
 
 .player_iframe {

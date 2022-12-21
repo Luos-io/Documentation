@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import styles from './integration.module.css';
 import Grid from '@mui/material/Grid';
-import Link from '@docusaurus/Link';
-import Button from '@mui/material/Button';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -24,38 +22,20 @@ const Integration = (props) => {
       ['esp', 'ESP32'],
       ['stm', 'STM32'],
       ['microship', 'Microchip'],
-      ['raspberry', 'Raspberry Pi'],
       ['arduino', 'Arduino'],
+      ['ros', 'ROS-1 & ROS-2', 'ros-white'],
+      ['freertos-white', 'FreeRTOS', 'freertos-white'],
+      ['simplefoc', 'SimpleFOC'],
       ['pio', 'Platform IO'],
       ['eclipse', 'Eclipse'],
       ['vscodeico', 'VS Code'],
     ],
-    os: [
-      ['ros', 'ROS-1 & ROS-2', 'ros-white'],
-      ['freertos-white', 'FreeRTOS', 'freertos-white'],
-      ['microros', 'Micro-ROS', 'microros-white'],
-    ],
-    api: [
-      ['simplefoc', 'SimpleFOC'],
-      ['zapier', 'Zapier'],
-      ['ifttt', 'IFTTT', 'ifttt-white'],
-      ['freedom', 'Freedom Robotics'],
-    ],
-    sdk: [
-      ['c', 'C/C++'],
-      ['python', 'Python'],
-      ['js', 'Javascript'],
-      ['ts', 'Typescript'],
-    ],
   };
-
-  const soon = ['zapier', 'ifttt', 'freedom', 'microros'];
 
   const links = {
     esp: '',
     stm: '/docs/compatibility/mcu_demoboard#st',
     microship: '/docs/compatibility/mcu_demoboard',
-    raspberry: '',
     arduino: '/tutorials/arduino',
     pio: '/tutorials/get-started#2-set-up-your-development-environment',
     eclipse: '/docs/luos-technology/basics/organization#luos-engines-levels',
@@ -64,13 +44,6 @@ const Integration = (props) => {
     freertos: '/docs/integrations/ros',
     microros: '',
     simplefoc: '',
-    zapier: '',
-    ifttt: '',
-    freedom: '',
-    c: '',
-    python: '/docs/integrations/pyluos#required-installing-python-and-pip',
-    js: '',
-    ts: '',
   };
 
   const [currentImageTmp, setCurrentImageTmp] = useState(img['mcu']);
@@ -99,7 +72,7 @@ const Integration = (props) => {
         </Grid>
       </Grid>
       <Grid container spacing={3} sx={{ padding: '30px' }} className={styles.mobileNone}>
-        <Grid item xs={1} md={1} lg={1} xl={1}></Grid>
+        <Grid item xs={1}></Grid>
         <Grid
           item
           md={10}
@@ -128,7 +101,7 @@ const Integration = (props) => {
             </Grid>
           </div>
           <Grid container style={{ height: '87%' }}>
-            <Grid item md={1} lg={1} className={styles.docs}>
+            <Grid item md={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
               {isDarkTheme ? (
@@ -143,46 +116,7 @@ const Integration = (props) => {
                 </>
               )}
             </Grid>
-            <Grid item md={2.5} lg={2} xl={2} className={styles.video}>
-              <span>
-                <KeyboardArrowDownIcon className={styles.cardIcons} /> Integrations
-              </span>
-
-              <RadioGroup
-                aria-labelledby="demo-controlled-radio-buttons-group"
-                name="controlled-radio-buttons-group"
-                value={currentInt}
-                onChange={handleChange}
-              >
-                <FormControlLabel
-                  value="mcu"
-                  className={currentInt == 'mcu' ? styles.engineActive : styles.engine}
-                  control={<Radio />}
-                  label="MCU & IDE"
-                />
-                <FormControlLabel
-                  value="os"
-                  className={currentInt == 'os' ? styles.engineActive : styles.engine}
-                  control={<Radio />}
-                  label="OS & frameworks"
-                />
-                <FormControlLabel
-                  value="api"
-                  className={currentInt == 'api' ? styles.engineActive : styles.engine}
-                  control={<Radio />}
-                  label="APIs & 
-                  integrations"
-                />
-                <FormControlLabel
-                  value="sdk"
-                  className={currentInt == 'sdk' ? styles.engineActive : styles.engine}
-                  control={<Radio />}
-                  label="SDK & 
-                  languages"
-                />
-              </RadioGroup>
-            </Grid>
-            <Grid item md={8.5} lg={9} xl={9} className={styles.player}>
+            <Grid item md={11} className={styles.player}>
               <ImageList cols={4} style={{ padding: '15px' }}>
                 {currentImageTmp.map((element, index) => (
                   <a
@@ -209,7 +143,6 @@ const Integration = (props) => {
                       <div>
                         <ImageListItemBar
                           title={element[1]}
-                          subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
                           position="below"
                           style={{
                             width: '150px',
@@ -231,16 +164,8 @@ const Integration = (props) => {
         <Grid item md={1} lg={1} xl={1}></Grid>
       </Grid>
 
-      <Grid container>
-        <Grid item xs={0.5}></Grid>
-        <Grid
-          item
-          xs={11}
-          style={{
-            minHeight: '400px',
-          }}
-          className={styles.vscodeMobile}
-        >
+      <Grid container justifyContent={'center'}>
+        <Grid item xs={11} className={styles.vscodeMobile}>
           <div className={styles.head}>
             {' '}
             <img
@@ -250,46 +175,22 @@ const Integration = (props) => {
             />
           </div>
           <Grid container style={{ height: '87%' }}>
-            <Grid item xs={4} className={styles.video} style={{ borderLeft: '2px solid black' }}>
-              <span style={{ fontSize: '16px' }}>
-                <KeyboardArrowDownIcon className={styles.cardIcons} /> Integrations
-              </span>
-
-              <RadioGroup
-                aria-labelledby="demo-controlled-radio-buttons-group"
-                name="controlled-radio-buttons-group"
-                value={currentInt}
-                onChange={handleChange}
-              >
-                <FormControlLabel
-                  value="mcu"
-                  className={currentInt == 'mcu' ? styles.engineActive : styles.engine}
-                  control={<Radio />}
-                  label="MCU & IDE"
-                />
-                <FormControlLabel
-                  value="os"
-                  className={currentInt == 'os' ? styles.engineActive : styles.engine}
-                  control={<Radio />}
-                  label="OS & Frameworks"
-                />
-                <FormControlLabel
-                  value="api"
-                  className={currentInt == 'api' ? styles.engineActive : styles.engine}
-                  control={<Radio />}
-                  label="APIs & 
-                  integrations"
-                />
-                <FormControlLabel
-                  value="sdk"
-                  className={currentInt == 'sdk' ? styles.engineActive : styles.engine}
-                  control={<Radio />}
-                  label="SDK & 
-                  languages"
-                />
-              </RadioGroup>
+            <Grid item xs={2} className={styles.docs}>
+              <FileCopyIcon fontSize="large" className={styles.icons} />
+              <SearchIcon fontSize="large" className={styles.icons} />
+              {isDarkTheme ? (
+                <>
+                  {' '}
+                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                </>
+              )}
             </Grid>
-            <Grid item xs={8} lg={9} className={styles.player}>
+            <Grid item xs={10} className={styles.player}>
               <ImageList cols={2} style={{ padding: '10px' }}>
                 {currentImageTmp.map((element, index) => (
                   <a href={links[element[0]]} className={styles.imgLink}>
@@ -306,7 +207,6 @@ const Integration = (props) => {
                       />
                       <ImageListItemBar
                         title={element[1]}
-                        subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
                         position="below"
                         style={{
                           width: '150px',

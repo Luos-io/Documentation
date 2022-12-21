@@ -66,10 +66,6 @@ html[data-theme='dark'] .text {
   }
 }
 
-.lines {
-  margin-bottom: -120px !important;
-}
-
 .linesImg {
   -webkit-user-drag: none;
   user-select: none;
@@ -211,5 +207,4 @@ html[data-theme='dark'] .listIcon {
 
 .listLink:hover * {
   color: #be99ff !important;
-  fill: #be99ff !important;
 }
