@@ -1,0 +1,62 @@
+---
+title: 'Cyber-physical systems and microservices: benefits and challenges'
+description: Let's discover the benefits and challenges of using philosophies such as microservices to develop cyber-physical systems.
+slug: cyber-physical-systems-and-microservices-benefits-and-challenges
+authors:
+  - name: Nicolas Lorenzi
+    title: Community and user acquisition @ Luos
+    url: https://github.com/lorenzi-nicolas
+    image_url: https://github.com/lorenzi-nicolas.png
+tags: [embedded, edge, cyber-physical systems]
+image: /assets/images/blog/Cyber-physical-systems-and-microservices-benefits-and-challenges.png
+hide_table_of_contents: false
+date: 2022-12-20T12:00
+---
+
+import Image from '@site/src/components/Image';
+
+![Cyber-physical systems and microservices: benefits and challenges](/assets/images/blog/Cyber-physical-systems-and-microservices-benefits-and-challenges.png)
+
+While microservices are often used for building large and complex software applications, cyber-physical systems are typically used for building software systems embedded in physical devices and with a direct impact on the physical world.
+Let's discover the benefits and challenges of using philosophies such as microservices to develop cyber-physical systems.
+
+<!--truncate-->
+
+<h2>The benefits and challenges of using microservices for cyber-physical systems</h2>
+
+One of the main factors that differentiate the vision of a cyber-physical system and the microservices approach is the organization of its code. 
+Where the services/applications present in CPS are for the most part developed in an intertwined and often monolithic way, an approach popularized by the software domain such as microservices could bring a weak coupling of the code blocks used by a system.
+
+In a microservice philosophy, developers divide the system into **smaller**, **independent units** of code that can be developed, tested, and deployed independently from each other. This modular approach makes it possible to create cyber-physical systems that are flexible and can be easily updated and extended over time. Thanks to a [bootloader](/docs/tools/bootloader) for example.
+
+A similarity between a microservices architecture and CPS is their reliance on communication and collaboration.
+
+This requires the use of well-defined communication protocols and APIs.
+
+One of the key benefits of using microservices and cyber-physical systems is their ability to support [scalability](/docs/luos-technology#good-practices-with-luos) and resilience. 
+
+> By dividing the system into smaller code units, developers can create systems that can scale up and down based on demand and continue to function even if individual units fail or are taken offline for maintenance.
+
+One of the main challenges of using microservices and [cyber-physical systems](/blog/cyber-physical-systems) is the complexity of the systems that they create. 
+
+Because the system is divided into many small units of code, it is easier to manage and maintain it as a set of small systems rather than a single block.
+
+The streaming service **Netflix** massively used microservices. This method allows them to manage the constraints of **scalability**, quality, and robustness of their service. 
+
+We have the same kind of constraints on cars, especially today with autonomous vehicles that must deal with a large amount of sensor data. Cars are also driven by software. 
+
+The only difference is the industrial environment and normalization that change how the tools need to work. In the end, the microservice architecture strategy used by Netflix can also be applied to a car to improve scalability, quality, and robustness.
+The only difference will be the tools and implementation to achieve it.
+
+One of the main variables in the development of cyber-physical systems is often the time and money spent on research and development. Many of the developers we spoke to indicated that the lack of perspective and flexibility in projects prevented many projects from easily adapting to new technologies/methodologies. 
+Beyond promoting this philosophy of development, it is necessary to take into account this change of vision in the way of developing embedded and edge projects.
+
+<h2>Let's conclude</h2>
+
+In conclusion, a microservices architecture can offer some benefits to cyber-physical systems.
+
+By using modular and flexible approaches to develop, **microservices** paired with **cyber-physical systems** can help organizations create complex systems that are scalable, maintainable, and resilient.
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get started with Luos
+</a>
