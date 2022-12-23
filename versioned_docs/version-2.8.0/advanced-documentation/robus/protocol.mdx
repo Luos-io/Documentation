@@ -72,12 +72,12 @@ E.g.: Serial communication baudrate = 1Mb/s → Time for 1 bit is 1 microsecond 
 In this example, sending one byte of data takes 10 microseconds.
 :::
 
-Robus timeout is the time needed to transmit two bytes (or twenty times the basic timing).
+Robus timeout is the time needed to transmit three bytes (or twenty times the basic timing).
 
 :::tip
-Timeout = 20 \* Basic timing
+Timeout = 30 \* Basic timing
 
-In the previous example, Basic timing = 1 microsecond → Timeout = 20 microseconds.
+In the previous example, Basic timing = 1 microsecond → Timeout = 30 microseconds.
 :::
 
 Each time Robus receives or sends a byte, the timeout counter is reset. When no byte is received during the timeout period, Robus will consider that the current frame is finished and will try to send a new one if some messages are waiting to be sent.
