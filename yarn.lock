@@ -2637,18 +2637,18 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/docusaurus/-/docusaurus-1.0.6.tgz#7305a7fa590decc0d5968500234e95fd68788978"
   integrity sha512-1QxDaP54hpzM6bq9E+yFEo4F9WbWHhsDe4vktZXF/iDlc9FqGr9qlg+3X/nuKQXx8QxHV7ue8NXFazzajsxFBA==
 
-"@typeform/embed-react@^1.19.0":
-  version "1.20.0"
-  resolved "https://registry.yarnpkg.com/@typeform/embed-react/-/embed-react-1.20.0.tgz#4523f45e344eb2b7d0fc3d0c70484d1d9cdce43b"
-  integrity sha512-IJUo+LrINMoWrPriGmSARnNq5HVh4v0bju+wOzgavnBAWtbPBOyo8J9ekz42uPFDsGEnb2w8tS1wJUe3labsdg==
+"@typeform/embed-react@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@typeform/embed-react/-/embed-react-2.10.0.tgz#7213011d43078266a5f5ab9c61ba11eaf3123a90"
+  integrity sha512-vtmALabuj8zlfznOvjP/RRPEu4pKqRqDT+AhhBtoRxOtgwq1g+sMyE5jKPguU/onRybSDMp3QioOJqLeuU5ZIg==
   dependencies:
-    "@typeform/embed" "1.37.1"
+    "@typeform/embed" "2.5.1"
     fast-deep-equal "^3.1.3"
 
-"@typeform/embed@1.37.1":
-  version "1.37.1"
-  resolved "https://registry.yarnpkg.com/@typeform/embed/-/embed-1.37.1.tgz#f1d2dfe7199ca6d22d862a59107c953583fc069f"
-  integrity sha512-CE/4HxyCGqaoi+P8XvZA6Uzy+Ob6SBsSTseFkpZDLkOp+sy5Nbr17yqAJbn4fPi1BXeYK7jkg8+PGBEbxdeUCw==
+"@typeform/embed@2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@typeform/embed/-/embed-2.5.1.tgz#a4139c005b13c0d46737511d6e77498a7c721b18"
+  integrity sha512-fxyTFuv9H5Mqo/cTzwzHEp/WqchiD0HO+kE9LxHeOO+PrDtgXOoRcQAVKlI+/1UWxtO0GXhIe9cio3CyyVr/iA==
 
 "@types/body-parser@*":
   version "1.19.2"
