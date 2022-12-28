@@ -1,6 +1,16 @@
 {
   "articles": [
     {
+      "title": "Why open source is essential for cyber-physical systems (CPS)",
+      "desc": "In embedded and IoT (Internet of Things) design, there has always been a tight coupling between hardware devices and software",
+      "img": "/assets/images/blog/Why-open-source-is-essential-for-cyber-physical-systems.png",
+      "date": "2022-12-28T12:00",
+      "tags": ["embedded", "edge, cyber-physical-systems"],
+      "author": "Nicolas Rabault",
+      "author_img": "https://github.com/nicolas-rabault.png",
+      "link": "/blog/why-open-source-is-essential-for-cyber-physical-systems"
+    },
+    {
       "title": "Cyber-physical systems and microservices: benefits and challenges",
       "desc": "Let's discover the benefits and challenges of using philosophies such as microservices to develop cyber-physical systems.",
       "img": "/assets/images/blog/Cyber-physical-systems-and-microservices-benefits-and-challenges.png",
