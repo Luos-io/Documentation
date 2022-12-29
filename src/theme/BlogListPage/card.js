@@ -27,7 +27,7 @@ const cardGrid = (props) => {
         <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
           <a href={x.link} className={styles.link} style={{ textDecoration: 'none' }}>
             <Paper className={styles.card} elevation={1}>
-              <img src={x.img} style={{ borderRadius: '4px' }} alt={x.title} />
+              <img src={x.img} style={{ borderRadius: '4px' }} alt={x.title} loading="lazy"/>
               <h2 className={styles.cardTitle}>{x.title}</h2>
 
               <Grid container spacing={1}>
