@@ -15,17 +15,17 @@ date: 2022-12-28T12:00
 
 import Image from '@site/src/components/Image';
 
-In embedded and IoT (Internet of Things) design, there has always been a tight coupling between hardware devices and software. Systems have been more and more complex.
+In the fields of embedded and IoT design, hardware devices and software have traditionally been closely connected, and as systems have become more intricate, this coupling has only grown stronger. 
 
 <!--truncate-->
 
-In contrast, modern software design (outside of embedded/IoT) is more **flexible**. This modern design is less monolithic and is based on microservices concepts. Instead, it uses hardware-independent blocks of code.
+In contrast, modern software design (outside of embedded/IoT) is more **flexible**. This modern design adopts a microservices-based approach, which results in a less monolithic structure. It utilizes hardware-independent blocks of code rather than a single, unified block
 
 Now, when we look at cyber-physical systems, those characteristics are precisely needed – scalability and flexibility with the choice of hardware. 
 
-How do we as an industry make this huge transition from monolithic, tightly-coupled systems to **open source** microservices-type approach? We are discussing designing systems that allow for changes at the board level so that, for example, an ESP32 board could be swapped out for one from NXP if desired.
+How do we as an industry make this huge transition from monolithic, tightly-coupled systems to an **open source** microservices-type approach? We are considering designing a system that allows for interchangeability at the board level, so that, for instance, an ESP32 board can be replaced with one from NXP if desired.
 
-Since my studies and experiences in companies began, I have been confronted with the same problems. 
+Throughout my academic and professional career, I have consistently encountered the same issues.
 
 Change a component, a system, add a feature, and the whole project had to be redesigned. At the same time, I saw my friends working in the software industry change course with alarming ease. All the knowledge we developed to redo what had already been done could be much more efficient if it could be reused from project to project, whatever the purpose. 
 
@@ -33,28 +33,28 @@ And then having the ability to **reuse the code** and methods developed by other
 
 <h2>A common tool adaptable to the project</h2>
 
-With Luos, our goal is to give each developer the necessary and useful tools so that he can be as flexible and efficient in his personal or professional project. And for this change in method to take place and for us to talk about a change in philosophy beyond Luos, using the open-source philosophy was an obvious choice.
+With Luos, our goal is to give each developer the necessary and useful tools so that they can be as flexible and efficient in their personal or professional project. And for this change in method to take place and for us to talk about a change in philosophy beyond Luos, using the open-source philosophy was an obvious choice.
 > The open-source philosophy will allow anyone to improve, reuse, and share code. 
 
-Coupled with a [microservices philosophy](/blog/a-way-to-unleash-embedded-systems), unrelated pieces of hardware or code will be able to work together without having to know specifically how. This implies being vigilant about the system's security, but these checks are done independently depending on the parts of the code.
+Coupled with a [microservices philosophy](/blog/a-way-to-unleash-embedded-systems), unrelated pieces of hardware or code will be able to work together without having to know specifically how. This means being attentive to the security of the system, but these checks are carried out independently depending on the code sections.
 
 The next piece of the puzzle needed is to share an open API allowing users to use it as a command base, guaranteeing good compatibility. Users should be encouraged to improve those APIs, create new ones for uncovered features, and share those to create a versatile ecosystem.
 
 <h2>Sharing experience and knowledge</h2>
 
-One of the main obstacles to using collaborative projects and, more precisely, open-source projects is often the lack of direct contact if one is required to use the technology and needs help, for example. Open-source projects need to be carried out, understood, maintained, and improved by users who invest in themselves because they believe in the idea.
+One of the main challenges of collaborating on, and specifically using, open-source projects is often the lack of direct access to support or assistance when needed. These projects require users who are self-motivated and invested in the idea to develop, understand, maintain, and improve them. This can be difficult if one needs to use the technology but lacks the necessary resources or support.
 
-That is why we decided a few months ago with the Luos team to develop a <a href="https://discord.com/invite/luos" rel="external nofollow">community on Discord</a> of cyber-physical systems, embedded and edge developers to exchange visions, best practices, and tools to use with CPS, embedded and edge systems. As our idea/project involves a change in how we develop projects, we need to surround ourselves with as many people as possible who work daily in embedded systems of all types. 
+As a result, a few months ago the Luos team and I decided to create a <a href="https://discord.com/invite/luos" rel="external nofollow">community on Discord</a> for cyber-physical systems, embedded, and edge developers to share their perspectives, best practices, and recommended tools for working with CPS, embedded, and edge systems. As our idea/project involves a change in how we develop projects, we need to surround ourselves with as many people as possible who work in embedded systems of all types daily. 
 
-Makers have joined the community, companies such as Siemens, Dyson, and Bosch, students, and researchers who exchange to help, learn from each other, and evolve together.
+Makers have joined the community, as well as companies such as Siemens, Dyson, and Bosch, students, and researchers who come together to assist one another, learn from each other, and progress collectively.
 
 This community guarantees the maintenance of the technology and its exchanges keep ideas flowing, which helps more and more projects.
 
 <h2>A technology that improves thanks to the community</h2>
 
-With a community of CPS, embedded and edge developers who understand the issues and challenges that many face, it is also very interesting for Luos since the code developed will improve the technology globally. Linux or Github are living examples of this.
+The community of CPS, embedded, and edge developers, who are familiar with the problems and challenges that many encounter, is also very valuable for Luos as the code developed will enhance the technology on a global scale. Linux or Github are living examples of this.
 
-The embedded, CPS and edge developers <a href="https://discord.com/invite/luos" rel="external nofollow">Discord community</a> already now has over 11,000 members who exchange ideas daily. 
+The embedded, CPS and edge developers <a href="https://discord.com/invite/luos" rel="external nofollow">Discord community</a> already has over 11,000 members who exchange ideas daily. 
 
 If you are interested in joining the community and doing your monitoring, getting help, exchanging ideas or ways to develop, **we invite you to join**.
 
