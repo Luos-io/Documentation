@@ -1,14 +1,14 @@
 {
   "articles": [
     {
-      "title": "Luos native - compile Luos directly for your computer",
+      "title": "Luos native - compile Luos directly on your computer",
       "desc": "Get started with Luos easily and without the need for compatible hardware. With Luos Native, you can learn and experiment with Luos technology without a physical board.",
       "img": "/assets/images/blog/webp/luos-native-compile-luos-on-your-computer-without-hardware.webp",
       "date": "2023-01-03T12:00",
       "tags": ["embedded", "edge", "microservices"],
       "author": "Nicolas Rabault",
       "author_img": "https://github.com/nicolas-rabault.png",
-      "link": "/blog/luos-native-compile-luos-directly-for-your-computer"
+      "link": "/blog/luos-native-compile-luos-directly-on-your-computer"
     },
     {
       "title": "Why open source is essential for cyber-physical systems (CPS)",
