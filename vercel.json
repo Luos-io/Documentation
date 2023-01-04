@@ -93,6 +93,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/luos-technology/message/object-dictionary",
+      "destination": "/docs/luos-technology/messages/object-dictionary",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/luos-technology/node/node",
       "destination": "/docs/luos-technology/node",
       "statusCode": 301
