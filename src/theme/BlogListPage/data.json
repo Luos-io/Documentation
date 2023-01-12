@@ -1,11 +1,21 @@
 {
   "articles": [
     {
+      "title": "Luos native - compile Luos directly on your computer",
+      "desc": "Get started with Luos easily and without the need for compatible hardware. With Luos Native, you can learn and experiment with Luos technology without a physical board.",
+      "img": "/assets/images/blog/webp/luos-native-compile-luos-on-your-computer-without-hardware.webp",
+      "date": "2023-01-03T12:00",
+      "tags": ["embedded", "edge", "microservices"],
+      "author": "Nicolas Rabault",
+      "author_img": "https://github.com/nicolas-rabault.png",
+      "link": "/blog/luos-native-compile-luos-directly-on-your-computer"
+    },
+    {
       "title": "Why open source is essential for cyber-physical systems (CPS)",
       "desc": "In embedded and IoT (Internet of Things) design, there has always been a tight coupling between hardware devices and software",
       "img": "/assets/images/blog/webp/Why-open-source-is-essential-for-cyber-physical-systems.webp",
       "date": "2022-12-28T12:00",
-      "tags": ["embedded", "edge, cyber-physical-systems"],
+      "tags": ["embedded", "edge", "cyber-physical-systems"],
       "author": "Nicolas Rabault",
       "author_img": "https://github.com/nicolas-rabault.png",
       "link": "/blog/why-open-source-is-essential-for-cyber-physical-systems"
@@ -15,7 +25,7 @@
       "desc": "Let's discover the benefits and challenges of using philosophies such as microservices to develop cyber-physical systems.",
       "img": "/assets/images/blog/webp/Cyber-physical-systems-and-microservices-benefits-and-challenges.webp",
       "date": "2022-12-20T12:00",
-      "tags": ["embedded", "edge, cyber-physical-systems"],
+      "tags": ["embedded", "edge, cyber-physical systems"],
       "author": "Nicolas Lorenzi",
       "author_img": "https://github.com/lorenzi-nicolas.png",
       "link": "/blog/cyber-physical-systems-and-microservices-benefits-and-challenges"
@@ -25,7 +35,7 @@
       "desc": "Cyber-physical systems (CPS) integrate computer and physical elements; let's see with this article how we can improve them.",
       "img": "/assets/images/blog/webp/cyber-physical-systems-how-can-they-be-improved-luos.webp",
       "date": "2022-12-14T12:00",
-      "tags": ["embedded", "edge, cyber-physical-systems"],
+      "tags": ["embedded", "edge, cyber-physical systems"],
       "author": "Nicolas Lorenzi",
       "author_img": "https://github.com/lorenzi-nicolas.png",
       "link": "/blog/cyber-physical-systems-how-can-they-be-improved"

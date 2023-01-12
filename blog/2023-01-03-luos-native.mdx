@@ -1,0 +1,113 @@
+---
+title: 'Luos native - compile Luos directly on your computer'
+description: Get started with Luos easily and without the need for compatible hardware. With Luos Native, you can learn and experiment with Luos technology without a physical board.
+slug: luos-native-compile-luos-directly-on-your-computer
+authors:
+  - name: Nicolas Rabault
+    title: CEO @ Luos
+    url: https://github.com/nicolas-rabault
+    image_url: https://github.com/nicolas-rabault.png
+tags: [embedded, edge, microservices]
+image: /assets/images/blog/webp/luos-native-cover.webp
+hide_table_of_contents: false
+date: 2023-01-03T12:00
+---
+
+import Image from '@site/src/components/Image';
+
+Getting started with Luos is quick and easy, however until now you were obligated to have the compatible hardware to do so. 
+
+In order to resolve this issue and make Luos accessible to anyone, we have been working on an alternative to [get started](/tutorials/get-started) without a physical board, the **Luos Native**. 
+
+This new feature allows you to **compile** and **run Luos directly on your computer**, eliminating the need for hardware at the beginning. 
+
+As a result, you can develop and test your Luos projects in a computer environment.
+
+<!--truncate-->
+
+<h2>Native Testing: how does this work?</h2>
+
+How does this work? Let’s outline the big concept before going into detail. 
+
+The Luos Native emulates boards on your computer with either a LED or a button that are visually represented on your screen. 
+
+You are able, just like with physical boards, to connect as many emulated boards as you want through different computers. The only restraint is, you can’t connect physical and native boards with each other, only native boards with other native boards (at least not yet, but we will go into detail later on).
+
+So think of this feature like a fake [Robus](/docs/luos-technology/node/luos-hal#robus-hal) communication between your emulated board on your computer(s)!
+
+![Luos Native on your computer](/assets/images/blog/luos-native-testing-environement.png)
+
+> This is the overall concept, but let’s get down to the nitty gritty of things. 
+
+We’ve had the idea to develop a Luos Native for quite some time. But there was always one part about it that we weren’t sure about how to take on. 
+
+If there are no physical boards, how do we emulate the physical wires behaviour? 
+
+It was actually someone from the Luos community, <a href="https://github.com/AltayAkkus" rel="external nofollow">AltayAkkus</a> that pushed us in the right direction!
+
+He wanted to work on the [Luos Native](/docs/luos-technology/node/luos) and contributed to the issue on GitHub. Through his collaboration on the <a href="https://github.com/Luos-io/luos_engine/issues/292" rel="external nofollow">issue</a>.
+
+We had to develop something like the Robus wire, which is the default network layer, or communication protocol, used by Luos engine. 
+
+> In short, we had to create something that emulates the wires that link all the boards together to keep Robus working the same way. 
+
+We wanted to use Web Sockets because it’s very flexible and we created the “broker.py” file, which is basically a Web Socket server; as it connects the binary nodes to each other. This means that the broker.py route PTP signal is sent only to one other node, while messages are broadcast to all the other nodes, with each node representing a virtual board.
+
+
+<div align="center">
+  <Image
+    src="/assets/images/blog/luos-native-broker-py.svg"
+    darkSrc="/assets/images/blog/luos-native-broker-py-dark.svg"
+  />
+</div>
+
+<h2>Digital Twins</h2>
+
+When you use Luos engine you always have **Digital Twins** available for any service; 
+
+**Luos Native** provides you with the same feature.
+
+The Digital Twins for Luos are managed by [Pyluos](/docs/integrations/pyluos) by default which is designed to allow you to easily view what is happening and control any of your services in “real-time”. 
+
+Pyluos therefore creates a python representation of the embedded services and continuously updates the values to create a digital twin of your board on the computer, no matter if it is digital or physical. The only difference between the physical and the digital board is that with a native configuration the information is retrieved with a web socket, while it depends with a physical board on what your hardware is actually capable of. 
+
+Digital twins are beneficial for testing, as they allow you to validate the reactivity, enabling you to see directly when your code receives a certain information and if it reacts correctly.
+
+To be able to use pyluos in both situations (native or not) you need to run a [gate](/docs/tools/gate) somewhere on your system to retrieve your digital twin information.
+
+<div align="center">
+  <Image
+    src="/assets/images/blog/luos-native-digital-twin.svg"
+    darkSrc="/assets/images/blog/luos-native-digital-twin-dark.svg"
+  />
+</div>
+
+One of the Luos use cases you can take a look at that monitored their project is the [parachute project](/blog/how-to-develop-iot-edge-and-embedded-projects-easier) by <a href="https://github.com/alexgorlier" rel="external nofollow">Alexis Gorlier</a>.
+
+The project has two main purposes: **retrieving,** **storing** data and **ejecting** parachutes. The goal was to simulate the values that would be obtained during a rocket launch and flight to predict its behavior, and to improve future projects by understanding what happened during the flight. 
+
+[Check out the blog article](/blog/how-to-develop-iot-edge-and-embedded-projects-easier) about this to learn more about the project.
+
+<h2>Luos Native and Digital Twins: flexible solutions for testing</h2>
+
+To sum up, the Luos Native and Digital Twin are related technologies that offer flexible solutions for testing and developing Luos architectures. They will be key tools for improving the efficiency and effectiveness of our work in the future. To know more about what we are planning to release over the nexts months, take a look at [our *roadmap*](/roadmap). 
+
+As mentioned before, the Native Testing emulates Robus. In the future however we plan to replace Robus fully and create something that works entirely on a computer. 
+
+Whether you're an experienced embedded developer or just getting started, the Luos Native could be of help to you. 
+
+To test Luos without hardware, select the No-board folder in the *[Get Started](/tutorials/get-started),* the tutorial will guide you to use your native board step by step. 
+
+1. In the first part, you will learn how to easily take control of your board.
+2. In the second part, you will connect multiple boards to your network; which you will be able to connect to a web app in the third part.
+3. After completion, you will have a complete working environment and a network of boards interacting with each other.
+
+You can also open an issue on GitHub and <a href="https://github.com/Luos-io/luos_engine" rel="external nofollow">contribute to the Luos repository</a>.
+
+Of course, if you need any help, you can <a href="https://discord.gg/luos" rel="external nofollow">join our Discord server</a>.  
+
+Thank you for reading and we hope you enjoy the new Luos Native feature!
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get started with Luos
+</a>
