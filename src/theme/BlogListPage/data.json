@@ -1,6 +1,26 @@
 {
   "articles": [
     {
+      "title": "Simplify debugging to remove complexity from embedded system development",
+      "desc": "The complexity associated with the development of embedded systems is increasing rapidly.",
+      "img": "/assets/images/blog/webp/simplify-debugging-to-remove-complexity-from-embedded-system-development.webp",
+      "date": "2023-01-16T12:00",
+      "tags": ["embedded", "edge", "cyber-physical-systems"],
+      "author": "Nicolas Rabault",
+      "author_img": "https://github.com/nicolas-rabault.png",
+      "link": "/blog/simplify-debugging-to-remove-complexity-from-embedded-system-development"
+    },
+    {
+      "title": "How do we build our embedded developer community with Discord",
+      "desc": "We will present the path the Luos team took to develop a community of developers and give you some advice from our experience and testing.",
+      "img": "/assets/images/blog/webp/how-do-we-build-our-embedded-developer-community-with-discord.webp",
+      "date": "2023-01-13T12:00",
+      "tags": ["embedded", "edge", "cyber-physical-systems"],
+      "author": "Nicolas Lorenzi",
+      "author_img": "https://github.com/lorenzi-nicolas.png",
+      "link": "/blog/how-do-we-build-our-embedded-developer-community-with-discord"
+    },
+    {
       "title": "What is Luos? Explanation of our devtool dedicated to embedded, edge and cyber-physical systems",
       "desc": "Luos is an open-source, real-time and lightweight distributed microservices orchestrator dedicated to embedded, edge and cyber-physical systems.",
       "img": "/assets/images/blog/webp/What-is-Luos-Explanation-of-our-devtool-dedicated-to-cyber-physical-systems.webp",

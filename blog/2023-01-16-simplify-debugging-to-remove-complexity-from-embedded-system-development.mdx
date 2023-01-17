@@ -1,0 +1,73 @@
+---
+title: 'Simplify debugging to remove complexity from embedded system development'
+description: The complexity associated with the development of embedded systems is increasing rapidly.
+slug: simplify-debugging-to-remove-complexity-from-embedded-system-development
+authors:
+  - name: Nicolas Rabault
+    title: CEO @ Luos
+    url: https://github.com/nicolas-rabault
+    image_url: https://github.com/nicolas-rabault.png
+tags: [embedded, edge, cyber-physical systems]
+image: /assets/images/blog/simplify-debugging-to-remove-complexity-from-embedded-system-development.png
+hide_table_of_contents: false
+date: 2023-01-16T12:00
+---
+
+import Image from '@site/src/components/Image';
+
+*This article was originally for <a href="https://techcrunch.com/2022/12/20/simplify-debugging-to-reduce-the-complexity-of-embedded-system-development/Techcrunch" rel="external nofollow">Techcrunch</a> (available with a Techcrunch+ subscription).*
+
+The complexity associated with the development of embedded systems is increasing rapidly. For instance, it is estimated that the average complexity of software projects in the automotive industry has grown <a href="https://www.mckinsey.com/industries/advanced-electronics/our-insights/cracking-the-complexity-code-in-embedded-systems-development" rel="external nofollow">300% over the past decade</a>.
+
+Today, every piece of hardware is driven by software, and most hardware is composed of multiple electronic boards running synchronized applications. Devices have more and more features, but adding features means increasing development and debugging complexity. A University of Cambridge <a href="https://web.archive.org/web/20221004225508/https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.444.9094&rep=rep1&type=pdf" rel="external nofollow">report</a> found that developers spend up to 50% of their programming time debugging. But there are practical ways to reduce the complex debugging of embedded systems. Let’s explore those.
+
+<!--truncate-->
+
+<h2>Earlier is better</h2>
+
+Bugs will pop up during your entire product's lifetime: in development, testing, and in the field. Resolving a bug later down the road can <a href="https://www.parasoft.com/blog/an-ounce-of-prevention-software-safety-security-through-coding-standards/" rel="external nofollow">increase the cost</a> – as much as 15 times – and leads to user frustration and challenges associated with updates of embedded devices that are in production. By comparison, identifying bugs at the early stages of your product will allow you to <a href="https://brainhub.eu/library/strategies-for-managing-bugs#agile-strategies-for-managing-bugs" rel="external nofollow">keep and track these bugs</a> while prioritizing their severity before other dependencies and variables are introduced later in the lifecyle, which makes them easier, and cheaper, to solve.
+
+<h2>Manage versioning</h2>
+
+To properly replicate a bug, you need to be able to have the device in the exact same state as when it happened. With embedded devices, there are three distinct variables to look at when issues crop up.
+
+The first one is the software version, that is the version of each feature, such as motor software version v1.2.4, or sensor filtering v4.3.2 – this applies to the code you build but also potential dependencies such as imported libraries.
+
+The second one is the board version, more specifically, the design of the board. Board design is constantly changing – adding or removing a component or moving the location.
+
+The third one is manufacturing, which assembly line made the board and at what time. For this specific element, it is not a version but a unique serial number that is used for every single card. When designing the code, anything that references one of these three elements must be made a variable. To manage this versioning granularity, you need a registry. Open-source <a href="https://registry.platformio.org/" rel="external nofollow">PlatformIO</a> is a great tool to achieve this.
+
+<h2>Operationalize the replicability</h2>
+
+Once the ability to fully define a given device state is made possible, you need to be able to actually replicate it on a local device so that you can debug. For that, you need a script that will pull out the required version, compile the right binaries, and push them to your product. Here is a <a href="https://github.com/nicolas-rabault/home_stairs/blob/main/firmware/nodes/stair_step/update.sh" rel="external nofollow">code snippet containing</a> a script I use for one of my projects.
+
+Additionally, when you have a bug, you must find the simplest configuration possible to reproduce it easily and limit the area of code to inspect. By managing your features independently, you can easily enable and disable each of them on your code. The best way to achieve this is to compile each feature as a library, where each feature should have an init and loop function – Arduino style –  that can be called from the main file.
+
+<h2>Trace everything</h2>
+
+Now, it's debugging time. But your debugging will only be efficient if you have the right information. Traces – which log the low-level event of the program's execution – are a must-have here. Both hardware and software features must generate traces for everything they do. Tools such as open-source <a href="https://github.com/memfault" rel="external nofollow">Memfault</a> or <a href="https://www.freedomrobotics.com/" rel="external nofollow">Freedom Robotics</a> can help you get there.
+
+While your device should constantly be generating traces, only when an issue occurs should traces automatically be saved and sent back to you so that you can analyze them. And to be able to properly capture as many anomalies as possible, you must anticipate their types. They take different shapes with embedded devices, while it might be a software issue, it could also be hardware issues such as overheat, water damage, or broken components. The sky's the limit with embedded systems, for instance, one of our users is building articulated arm robots that perform sensitive maintenance operations in nuclear facilities, exposing the hardware to high levels of radiation which can impact the hardware and software in random ways.
+
+<h2>Ensure timeline consistency</h2>
+
+Another key component of traces is timing. Because embedded devices are often made of multiple cards with multiple inputs such as sensors and user input, and outputs such as engine and screen, timing is a key component to track so that you can reconstruct a timeline of what happened. The tracking needs to happen at the millisecond, sometimes nanosecond level, and each timing needs to be precisely aligned with other components. Because a device can have different microcontroller units (MCUs), started at different times, cadenced at different frequencies, with different temperatures – timelines across components can drift.
+
+There are two ways to ensure traces can be timed correctly. The first way is to synchronize time across different cards – to have a coherent timestamp of data across different nodes – by sending specific updating messages. Depending on how much the time is drifting, you will need to adjust the frequency of those messages. But because this synchronization message needs a predictable latency guaranteeing the accuracy of the date, devices generally need to stop every operation in the network to ensure that the latency will always be the same. This can be problematic for some products.
+
+A second and new way of doing it, pioneered by a <a href="https://www.semanticscholar.org/paper/A-Programming-Model-for-Time-Synchronized-Real-Time-Zhao-Liu/dd0a4b93ac9a41444d303c38a10c25bf8e17a30e" rel="external nofollow">paper</a> from the University of Berkeley, is to embrace latency – and compute timelines based on it. Latency is a sum of delays. By measuring delays across the product, latency can be calculated, and a timeline can be reconstructed.
+
+- sourceLatency = communicationDate - dataGenerationDate
+- targetLatency = dataConsumingDate - communicationDate
+- networkLatency = propagationTime + IRQraise
+- totalLatency = sourceLatency + targetLatency + networkLatency
+
+The advantage of that method is that it’s constantly producing consistent results without having to worry about the frequency of synchronization messages and without the need of stopping every other operation in the network. I wrote a <a href="https://www.luos.io/blog/distributed-latency-based-time-synchronization" rel="external nofollow">detailed paper</a> on how to implement this methodology for embedded purposes.
+
+<h2>Look for bug trends</h2>
+
+Finally, with embedded projects, issues can often come from a specific part and assembly of the implementation. That is why keeping track of your bug history is important to allow you to identify trends of problematic areas or a set of devices that have a specific set of versions, as quickly as possible. Open-source tools such as Luos or Freedom Robotics can help you to accurately monitor the events that occur in your embedded system to resolve them more easily and quickly.
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get started with Luos
+</a>
