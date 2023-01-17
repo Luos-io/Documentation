@@ -1,0 +1,98 @@
+---
+title: 'What is Luos? Explanation of our devtool dedicated to embedded, edge and cyber-physical systems'
+description: Luos is an open-source, real-time and lightweight distributed microservices orchestrator dedicated to embedded, edge and cyber-physical systems.
+slug: what-is-Luos-Explanation-of-our-devtool-dedicated-to-cyber-physical-systems
+authors:
+  - name: Nicolas Lorenzi
+    title: Community and user acquisition @ Luos
+    url: https://github.com/lorenzi-nicolas
+    image_url: https://github.com/lorenzi-nicolas.png
+tags: [embedded, edge, cyber-physical systems]
+image: /assets/images/blog/What-is-Luos-Explanation-of-our-devtool-dedicated-to-cyber-physical-systems.png
+hide_table_of_contents: false
+date: 2023-01-12T12:00
+---
+
+import Image from '@site/src/components/Image';
+import Grid from '@mui/material/Grid'
+
+Luos is an open-source, real-time and lightweight distributed microservices orchestrator dedicated to embedded, edge and cyber-physical systems.
+
+<!--truncate-->
+
+This devtool simplifies the process of linking any hardware component or application code together into a single system image, allowing for greater flexibility and ease of development.
+
+![Luos single system image](/assets/images/blog/what-is-luos/luos-single-system-image.jpg)
+
+Luos is also designed to be lightweight and easy to integrate into mass production. It can be used on [many microcontrollers](/docs/compatibility/mcu_demoboard), including small 8-bit MCU’s.
+
+<h2>A real life example of Luos benefits: say hi to Winky</h2>
+
+One example of how Luos can be used is in the development of complex machines such as educational robots. 
+
+For instance, consider a company called Mainbot that has developed a modular educational robot called Winky.
+
+Traditionally, machines like Winky would require the use of multiple microcontrollers to manage all their components. If each of these microcontrollers uses Luos technology, they can all access any feature of any other microcontroller in the system as if they were all located in the same component.
+
+<Grid container xs={12} spacing={1}>
+  <Grid item xs={12} md={6}>
+    <Image src="/assets/images/blog/what-is-luos/luos-benefits-for-winky.jpg"/>
+  </Grid>
+  <Grid item xs={12} md={6}>
+    <Image src="/assets/images/blog/what-is-luos/luos-benefits-for-winky-single-system.jpg"/>
+  </Grid>
+</Grid>
+
+<h3>How does Luos work?</h3>
+
+To do so, Luos sorts each feature into [services](/docs/luos-technology/services).
+
+Services can include drivers for hardware components like motors or LED screens, or they can be applications that perform specific tasks, such as computing movements
+
+In Luos, each microcontroller is called a [node](/docs/luos-technology/node), and each node can host multiple **services**.
+
+<iframe src="https://giphy.com/embed/AiIomPCEDypvg13Z9y" frameBorder="0" width="100%" height="100%" allowFullScreen></iframe>
+
+Nodes are linked together using any communication system. Luos manages service detections over the network as well as the [communication](/docs/luos-technology/messages) using defined API between them.
+
+Each service has a list of all the services in the architecture and uses Luos to share the data regardless of their physical position in the product.
+
+This way, you can easily have services running on a computer, on the cloud, or even on another Luos machine.
+
+This makes it much easier to **develop**, **modify**, and **reuse** features within the system, and reduces the time and effort required to implement inter-device communication protocols.
+
+> Thanks to Luos, the Mainbot company will be able to launch the development of Winky 2 which will be much more fluid and efficient.
+
+The modular nature of Luos means that new features and services can be easily added to the system, even after it has been released. This allows users to customize their Winky 2 robots with new functions without having to upgrade the system entire each time (say hello to the [bootloader feature](/docs/tools/bootloader)).
+
+As you see, Luos uses particular terms to define the different functionalities that make it up, in our documentation we talk about [nodes](/docs/luos-technology/node), [services](/docs/luos-technology/services), [packages](/docs/luos-technology/packages), [messages](/docs/luos-technology/messages), [service detection](/docs/luos-technology/services/routing-table#detection) and [routing table](/docs/luos-technology/services/routing-table).
+
+To find out what [Luos technology](/docs/luos-technology/basics) includes, follow the guide.
+
+<h2>The tools of Luos</h2>
+
+Luos is a tool that can significantly streamline the development of embedded, edge and cyber-physical systems, and make it easier to add, modify, and reuse features within them. 
+
+Its microservices-based architecture and lightweight, scalable design make it well-suited for use in mass production, and its growing community of users means it is constantly evolving and improving.
+
+![Luos mass production](/assets/images/blog/what-is-luos/luos-mass-production.jpg)
+
+In addition to its core features, Luos also offers a number of **tools** that make it easier to work with and monitor embedded, edge and cyber-physical systems. 
+
+For example, Luos includes tools for [monitoring](/docs/tools/monitoring), [inspecting](/docs/tools/inspector), [managing](/docs/tools/gate), and [updating products remotely](/docs/tools/bootloader), following a CI/CD (continuous integration/continuous deployment) methodology.
+
+This can be especially useful in cases where products are deployed in the field and need to be maintained or upgraded remotely.
+
+Whether you are working on a small hobby project or a large-scale industrial application, Luos deserves to be considered as a long-term development tool.
+
+> “We recently realized that we needed to spend time developing blocks of code that could be reused in the long term. Until now, we've been thinking short term, developing from scratch every time. It's time to change that.” - Gerald Baron, Pellenc Group
+> 
+
+If you want to learn more about Luos and how it can benefit your projects, we have created a lot of [documentation](/docs/luos-technology) and [tutorials](/tutorials) to help you [get started](/tutorials/get-started).
+
+And because a video is better than 1000 words:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ujh0xNE3TZ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get started with Luos
+</a>
