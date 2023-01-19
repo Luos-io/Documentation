@@ -14,7 +14,7 @@ const Image = (props) => {
   const height = props.height === undefined ? '100%' : props.height;
   const width = props.width === undefined ? null : props.width;
   return (
-    <div style={{ display: 'inline', marginRight: '15px' }}>
+    <div style={{ display: 'inline-flex', marginRight: '15px' }}>
       <img
         className="imgPreview"
         src={source}
