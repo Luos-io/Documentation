@@ -233,6 +233,36 @@ The LED of _board 1_ should blink thanks to the blinker app in _board 2_.
 
 **Congratulation, you've just created your first Luos distributed system. The objective of this part of our Get started was to use a service located in your first board, in another board to perform an action on it.**
 
+## 4. Use Pyluos to control your network
+
+You can now use `pyluos-shell` in your terminal, as we did in Part 2. You should see the following:
+
+```bash
+**$ pyluos-shell**
+Searching for a gate available
+Testing /dev/cu.usbserial-D308N885
+Testing /dev/cu.usbmodem13102
+Connected to "/dev/cu.usbmodem13102".
+Sending detection signal.
+Waiting for routing table...
+Device setup.
+
+ Hit Ctrl-D to exit this interpreter.
+
+Your luos device have been successfully mounted into a "device" object:
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> State               led                 2    ┃
+  ┃  ├> Pipe                Pipe                3    ┃
+  ┃  ╰> Gate                gate                1    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> Unknown             blinker             4    ┃
+     >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
 </TabItem>
 <TabItem value="No board" label="No board">
 
@@ -339,26 +369,23 @@ We are done!
 To check if everything is OK, the LED displayed on the terminal running _board 1_ should blink thanks to the blinker app in _board 2_.
 
 **Congratulation, you've just created your first Luos distributed system. The objective of this part of our Get started was to use a service located in your first program, in another board to perform an action on it.**
-</TabItem>
-</Tabs>
 
 ## 4. Use Pyluos to control your network
 
-You can now use `pyluos-shell` in your terminal, as we did in Part 2. You should see the following:
+You can now use `pyluos-shell -p 'localhost'` in your terminal, as we did in Part 2. You should see the following:
 
 ```bash
-**$ pyluos-shell**
-Searching for a gate available
-Testing /dev/cu.usbserial-D308N885
-Testing /dev/cu.usbmodem13102
-Connected to "/dev/cu.usbmodem13102".
+**$ pyluos-shell -p 'localhost'**
+
+Connected to "localhost".
 Sending detection signal.
 Waiting for routing table...
+Sending telemetry...
 Device setup.
 
  Hit Ctrl-D to exit this interpreter.
 
-Your luos device have been successfully mounted into a "device" object:
+Your luos device has been successfully mounted into a "device" object:
   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
   ┃  ╭node 1            /!\ Not certified            ┃
   ┃  │  Type                Alias               ID   ┃
@@ -372,7 +399,8 @@ Your luos device have been successfully mounted into a "device" object:
       ┃  ╰> Unknown             blinker             4    ┃
      >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
-
+</TabItem>
+</Tabs>
 As we can see, the blinker application is now displayed on a separate board. You still can control and interact with services on both boards with pyluos, as we did in Part 2.
 
 For example, with your network connected to the computer, follow the step 3 from Part 2 and try to execute these lines one by one in an IPython session:
