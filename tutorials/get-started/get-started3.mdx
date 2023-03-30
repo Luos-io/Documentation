@@ -269,11 +269,11 @@ Your luos device have been successfully mounted into a "device" object:
 As we saw in Part 1, Luos engine allows you to define services and use them together on one program. What really sets Luos apart and makes it special is that you can also make services work together on separated programs.
 
 In Part 1, you have downloaded or cloned the Get started code folder in your computer. We will use this code to demonstrate how Luos engine works using a network.
-To create a link between multiple programs on your computer Luos will use WebSockets to exchange information instead of a serial communication between electronic boards.
+To create a link between multiple programs on your computer, Luos will use WebSockets to exchange information instead of a serial communication between electronic boards.
 
 To be able to do that, you need to run a broker that will share any transmitted message with all other programs.
 
-This broker is a simple python script, to make it run you need to install simple_websocket_server:
+This broker is a simple Python script. To make it run, you need to install _simple_websocket_server_:
 
 ```
 pip install simple_websocket_server==0.4.2
@@ -287,7 +287,7 @@ python broker.py
 
 :::info
 By default the broker will use localhost IP address.
-If you want to experiment it using multiple computers you can configure your IP and port:
+If you want to experiment it using multiple computers, you can configure your IP and port:
 ```bash
 python broker.py --ip 'YOUR_LOCAL_IP' -p 8000
 ```
@@ -323,28 +323,28 @@ We will begin by moving the blinker app service from _board 1_ to _board 2_ and 
 These lines trigger the initialization and looping execution of all the packages in your project.
 :::
 :::info
-By default the program will use localhost IP address.
-If you want to experiment it using multiple computers you can set the broker IP and port on the node_config.h file by replacing #define WS_BROKER_ADDR "ws://YOUR_LOCAL_IP:8000" with the correct IP and port.
+By default the program will use a localhost IP address.
+If you want to experiment it using multiple computers, you can set the broker IP and port in the _node_config.h_ file by replacing `#define WS_BROKER_ADDR "ws://YOUR_LOCAL_IP:8000"` with the correct IP and port.
 :::
 
 4. Build  the project.
 
 :::info
-Windows users must install a specific 64 bits version of GCC to compile the no board projects.
-For example, the current version has been tested with MinGW-w64 (MSVCRT runtime). This library can be downloaded on https://winlibs.com/
+Windows users must install a specific 64-bit version of GCC to compile the no-board projects.
+For example, the current version has been tested with MinGW-w64 (MSVCRT runtime). This library can be downloaded at https://winlibs.com/
 
 :::
 
-5. On a new terminal run the compiled binary:
+5. In a new terminal, run the compiled binary:
 ```bash
 ./.pio/build/native/program
 ```
 
 ### Run _board 2_
 
-1. In VS Code, open the same folder _Get_started/No-Board_: `file/open folder`.
+1. In VS Code, open the same folder _Get_started/No-Board_: _File/Open folder_.
 2. From the left panel, find and open the file _src/main.c_.
-3. This time, comment the following six lines to remove all of the services except the blinker: `Led_Init();`, `Pipe_Init();`, `Gate_Init();`, `Led_Loop();`, `Pipe_Loop();`, and `Gate_Loop();`
+3. This time, comment the following six lines to remove all of the services except the blinker: `Led_Init();`, `Pipe_Init();`, `Gate_Init();`, `Led_Loop();`, `Pipe_Loop();`, and `Gate_Loop();`:
 
    ```c
    ...
@@ -408,6 +408,7 @@ Your luos device has been successfully mounted into a "device" object:
 ```
 </TabItem>
 </Tabs>
+
 As we can see, the blinker application is now displayed on a separate board. You still can control and interact with services on both boards with pyluos, as we did in Part 2.
 
 For example, with your network connected to the computer, follow the step 3 from Part 2 and try to execute these lines one by one in an IPython session:
