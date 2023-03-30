@@ -31,6 +31,8 @@ We will use the same board from the first two parts, but **you also need a secon
 :::
 
 ## 2. Create a physical network
+<Tabs>
+<TabItem value="Board" label="Board">
 
 As we saw in Part 1, Luos engine allows you to define services and use them together on one MCU. What really sets Luos apart and makes it special is that you can also make services work together on separated MCUs.
 
@@ -261,6 +263,151 @@ Your luos device have been successfully mounted into a "device" object:
       ┃  ╰> Unknown             blinker             4    ┃
      >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
+</TabItem>
+<TabItem value="No board" label="No board">
+
+As we saw in Part 1, Luos engine allows you to define services and use them together on one program. What really sets Luos apart and makes it special is that you can also make services work together on separated programs.
+
+In Part 1, you have downloaded or cloned the Get started code folder in your computer. We will use this code to demonstrate how Luos engine works using a network.
+To create a link between multiple programs on your computer, Luos will use WebSockets to exchange information instead of a serial communication between electronic boards.
+
+To be able to do that, you need to run a broker that will share any transmitted message with all other programs.
+
+This broker is a simple Python script. To make it run, you need to install _simple_websocket_server_:
+
+```
+pip install simple_websocket_server==0.4.2
+```
+
+Then you can run the broker script on `Get_started/No-Board/`:
+
+```bash
+python broker.py
+```
+
+:::info
+By default the broker will use localhost IP address.
+If you want to experiment it using multiple computers, you can configure your IP and port:
+```bash
+python broker.py --ip 'YOUR_LOCAL_IP' -p 8000
+```
+:::
+
+
+## 3. Build a Luos distributed system
+
+We will begin by moving the blinker app service from _board 1_ to _board 2_ and see what happens next.
+
+### Run _board 1_
+
+1. In VS Code, open the folder _Get_started/No-Board_: `file/open folder`.
+2. From the left panel, locate and open the file _src/main.c_.
+3. Comment the following two lines to remove the blinker service from this board: `Blinker_Init();` and `Blinker_Loop();`
+
+   ```c
+   ...
+       Luos_Init();
+       Led_Init();
+       Pipe_Init();
+       Gate_Init();
+       //Blinker_Init(); <== comment this line
+   ...
+       Luos_Loop();
+       Led_Loop();
+       Pipe_Loop();
+       Gate_Loop();
+       //Blinker_Loop(); <== comment this line
+   ```
+
+:::info
+These lines trigger the initialization and looping execution of all the packages in your project.
+:::
+:::info
+By default the program will use a localhost IP address.
+If you want to experiment it using multiple computers, you can set the broker IP and port in the _node_config.h_ file by replacing `#define WS_BROKER_ADDR "ws://YOUR_LOCAL_IP:8000"` with the correct IP and port.
+:::
+
+4. Build  the project.
+
+:::info
+Windows users must install a specific 64-bit version of GCC to compile the no-board projects.
+For example, the current version has been tested with MinGW-w64 (MSVCRT runtime). This library can be downloaded at https://winlibs.com/
+
+:::
+
+5. In a new terminal, run the compiled binary:
+```bash
+./.pio/build/native/program
+```
+
+### Run _board 2_
+
+1. In VS Code, open the same folder _Get_started/No-Board_: _File/Open folder_.
+2. From the left panel, find and open the file _src/main.c_.
+3. This time, comment the following six lines to remove all of the services except the blinker: `Led_Init();`, `Pipe_Init();`, `Gate_Init();`, `Led_Loop();`, `Pipe_Loop();`, and `Gate_Loop();`:
+
+   ```c
+   ...
+       Luos_Init();
+       //Led_Init(); <== comment this line
+       //Pipe_Init(); <== comment this line
+       //Gate_Init(); <== comment this line
+       Blinker_Init();
+   ...
+       Luos_Loop();
+       //Led_Loop(); <== comment this line
+       //Pipe_Loop(); <== comment this line
+       //Gate_Loop(); <== comment this line
+       Blinker_Loop();
+   ```
+
+:::tip
+In order to keep using Luos engine in your program, don't comment `Luos_init()` nor `Luos_Loop()`.
+:::
+
+4. Build  the project.
+5. On a new terminal run the compiled binary:
+```bash
+./.pio/build/native/program
+```
+
+We are done!
+
+To check if everything is OK, the LED displayed on the terminal running _board 1_ should blink thanks to the blinker app in _board 2_.
+
+**Congratulation, you've just created your first Luos distributed system. The objective of this part of our Get started was to use a service located in your first program, in another board to perform an action on it.**
+
+## 4. Use Pyluos to control your network
+
+You can now use `pyluos-shell -p 'localhost'` in your terminal, as we did in Part 2. You should see the following:
+
+```bash
+**$ pyluos-shell -p 'localhost'**
+
+Connected to "localhost".
+Sending detection signal.
+Waiting for routing table...
+Sending telemetry...
+Device setup.
+
+ Hit Ctrl-D to exit this interpreter.
+
+Your luos device has been successfully mounted into a "device" object:
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭node 1            /!\ Not certified            ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> State               led                 2    ┃
+  ┃  ├> Pipe                Pipe                3    ┃
+  ┃  ╰> Gate                gate                1    ┃
+╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚══ 0>┃0 ╭node 2            /!\ Not certified            ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> Unknown             blinker             4    ┃
+     >┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+</TabItem>
+</Tabs>
 
 As we can see, the blinker application is now displayed on a separate board. You still can control and interact with services on both boards with pyluos, as we did in Part 2.
 
