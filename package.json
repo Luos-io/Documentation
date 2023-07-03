@@ -63,7 +63,7 @@
     "@types/react": "^17.0.43",
     "@types/react-helmet": "^6.1.5",
     "@types/react-router-dom": "^5.3.3",
-    "dotenv-vault": "^1.11.2",
+    "dotenv-vault": "^1.24.0",
     "dotenv-webpack": "^8.0.1",
     "eslint-config-custom": "*",
     "typescript": "^4.8.2",
