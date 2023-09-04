@@ -41,7 +41,7 @@
     "@emotion/styled": "^11.10.4",
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.10.3",
-    "@mui/material": "^5.10.3",
+    "@mui/material": "^5.14.7",
     "@svgr/webpack": "^6.2.1",
     "@typeform/embed-react": "^1.19.0",
     "clsx": "^1.2.1",
